@@ -92,6 +92,14 @@ def test_release_workflow_builds_both_packages():
     assert "*.AppImage" in text
 
 
+def test_both_packaging_scripts_write_to_dist():
+    """Ambele pachete trebuie scrise în dist/ — sursa de adevăr comună."""
+    for script in ("build_appimage.sh", "build_deb.sh"):
+        text = (PACKAGING / script).read_text(encoding="utf-8")
+        assert '"$ROOT/dist' in text or '"$DIST' in text, \
+            f"{script} trebuie să scrie pachetul în dist/"
+
+
 def test_deb_control_fields_are_valid():
     """Controlul Debian trebuie să conțină câmpurile obligatorii."""
     text = (PACKAGING / "build_deb.sh").read_text(encoding="utf-8")

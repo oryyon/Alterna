@@ -50,7 +50,7 @@ Buildul complet, pe Ubuntu 24.04 x86_64:
 ./packaging/build_appimage.sh
 ```
 
-Rezultatul este `Alterna-0.1.0-x86_64.AppImage` în rădăcina proiectului.
+Rezultatul este `dist/Alterna-0.1.0-x86_64.AppImage`.
 
 Scriptul:
 
@@ -82,7 +82,7 @@ python -m pip install -r requirements.txt
 Verificare rapidă a resurselor incluse în bundle:
 
 ```bash
-./Alterna-0.1.0-x86_64.AppImage --appimage-extract-and-run --selftest
+./dist/Alterna-0.1.0-x86_64.AppImage --appimage-extract-and-run --selftest
 ```
 
 Ieșire așteptată:
@@ -99,7 +99,7 @@ REZULTAT: OK
 Pentru testare completă, fișierul poate fi extras și executat prin AppDir:
 
 ```bash
-./Alterna-0.1.0-x86_64.AppImage --appimage-extract
+./dist/Alterna-0.1.0-x86_64.AppImage --appimage-extract
 ./squashfs-root/AppRun --selftest
 ```
 

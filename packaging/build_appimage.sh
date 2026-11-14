@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Construiește Alterna-0.1.0-x86_64.AppImage pentru Linux x86_64.
+# Construiește Alterna-<versiune>-x86_64.AppImage pentru Linux x86_64.
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
@@ -140,12 +140,14 @@ fi
 chmod +x "$TOOL"
 
 printf '\n[6/6] Creare AppImage\n'
-rm -f "$ROOT/$APPIMAGE_NAME"
+mkdir -p "$ROOT/dist"
+OUT="$ROOT/dist/$APPIMAGE_NAME"
+rm -f "$OUT"
 # --no-appstream: metadata este inclusă în pachet, dar validarea strictă este
 # sărită — repository-ul GitHub nu este încă public, deci appstreamcli ar
 # eșua pe verificarea de accesibilitate a URL-urilor, nu pe conținut.
 # Varianta --appimage-extract-and-run evită dependența de FUSE pe build.
-"$TOOL" --appimage-extract-and-run --no-appstream "$APPDIR" "$ROOT/$APPIMAGE_NAME"
-chmod +x "$ROOT/$APPIMAGE_NAME"
+"$TOOL" --appimage-extract-and-run --no-appstream "$APPDIR" "$OUT"
+chmod +x "$OUT"
 
-printf '\n✔ AppImage creat: %s (%s)\n' "$ROOT/$APPIMAGE_NAME" "$(du -h "$ROOT/$APPIMAGE_NAME" | cut -f1)"
+printf '\n✔ AppImage creat: %s (%s)\n' "$OUT" "$(du -h "$OUT" | cut -f1)"

@@ -1,0 +1,58 @@
+# Alterna — construiește și publică AppImage-ul la crearea unui tag.
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Versiune (ex.: 0.1.0)"
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  appimage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Dependențe sistem
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y squashfs-tools desktop-file-utils imagemagick
+
+      - name: Dependențe Python
+        run: pip install -r requirements.txt
+
+      - name: Teste
+        run: python -m pytest tests/ -q
+
+      - name: Build AppImage
+        env:
+          VERSION: ${{ github.event.inputs.version || github.ref_name }}
+        run: |
+          VERSION="${VERSION#v}"
+          ./packaging/build_appimage.sh
+          mv "Alterna-${VERSION}-x86_64.AppImage" "Alterna-${VERSION}-x86_64.AppImage"
+
+      - name: Verificare artifact
+        run: |
+          ls -lh *.AppImage
+          chmod +x *.AppImage
+          ./Alterna-*-x86_64.AppImage --appimage-extract-and-run --selftest
+
+      - name: Publicare release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: "*.AppImage"
+          generate_release_notes: true

@@ -1,0 +1,146 @@
+name: Propunere aplicație
+description: Propune o aplicație nouă pentru catalogul Alterna
+title: "[Propunere] "
+labels: ["propunere-aplicatie"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Bun venit! Acest formular generează o propunere pentru catalogul Alterna.
+        Completează cât mai exact cu date; câmpurile marcate cu `obligatoriu`
+        sunt validate automat de `tools/build_catalog.py`.
+
+        **Înainte de a trimite:** verifică dacă aplicația nu există deja în
+        catalog (caută după nume în listă sau deschide
+        `data/apps/` în repository).
+
+  - type: input
+    id: nume
+    attributes:
+      label: Numele aplicației
+      placeholder: "Ex.: Krita"
+    validations:
+      required: true
+
+  - type: input
+    id: id
+    attributes:
+      label: Identificator (id)
+      description: >-
+        Doar litere mici, cifre și liniuțe. Numele fișierului YAML va fi
+        `<id>.yaml`. Exemplu: `krita`.
+      placeholder: "Ex.: krita"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: categorie
+    attributes:
+      label: Categorie
+      options:
+        - Grafică (graphics)
+        - Birou (office)
+        - Video (video)
+        - Audio & Playere (audio-players)
+        - Dezvoltare (development)
+        - Internet (internet)
+        - Comunicare (communication)
+        - Securitate (security)
+        - Streaming & Captură (streaming)
+        - Producție audio (audio-production)
+        - 3D & CAD (3d-cad)
+        - Notițe (notes)
+        - Utilitare (utilities)
+    validations:
+      required: true
+
+  - type: input
+    id: descriere
+    attributes:
+      label: Descriere scurtă
+      description: 1–2 fraze, în română.
+      placeholder: "Ex.: Editor de grafică vectorială liber, standardul open source pentru SVG."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: licenta
+    attributes:
+      label: Licență
+      options:
+        - Open Source (foss)
+        - Freemium (freemium)
+        - Comercial (commercial)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: pret
+    attributes:
+      label: Preț
+      options:
+        - Gratuit (free)
+        - Cu plată (paid)
+    validations:
+      required: true
+
+  - type: input
+    id: dezvoltator
+    attributes:
+      label: Dezvoltator
+      placeholder: "Ex.: Fundația Krita / KDE"
+    validations:
+      required: true
+
+  - type: input
+    id: website
+    attributes:
+      label: Site oficial
+      placeholder: "https://..."
+    validations:
+      required: true
+
+  - type: input
+    id: platforme
+    attributes:
+      label: Platforme
+      description: Separate prin virgulă.
+      placeholder: "linux, windows, macos"
+    validations:
+      required: true
+
+  - type: input
+    id: alternative
+    attributes:
+      label: Alternative cunoscute
+      description: >-
+        ID-urile din catalog, separate prin virgulă. Poate fi gol dacă nu
+        există încă în catalog.
+      placeholder: "Ex.: inkscape, gimp"
+
+  - type: input
+    id: indicatori
+    attributes:
+      label: Indicatori obiectivi
+      description: >-
+        Format: `popcon=<rank>`, `stars=<număr>`, `repo=<url>`, `release=<YYYY-MM>`.
+        Fiecare indicator trebuie să aibă sursa sa în lista de mai jos.
+      placeholder: "popcon=1234, stars=6500, repo=https://github.com/..., release=2026-11"
+
+  - type: textarea
+    id: surse
+    attributes:
+      label: Surse
+      description: >-
+        Linkuri care susțin datele de mai sus (site oficial, repo, pagina de
+        release, pagina de traduceri). Câte unul pe linie.
+    validations:
+      required: true
+
+  - type: textarea
+    id: note
+    attributes:
+      label: Note suplimentare
+      description: >-
+        Opțional: detalii despre licență, telemetrie, suport pentru limba
+        română, dimensiune la instalare, etc.

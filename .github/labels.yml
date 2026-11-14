@@ -1,0 +1,27 @@
+- name: propunere-aplicatie
+  description: Propunere de aplicație nouă pentru catalog
+  color: "0E8A16"
+
+- name: date
+  description: Modificări ale datelor din catalog
+  color: "1D76DB"
+
+- name: automat
+  description: Modificare generată automat de workflow
+  color: "C5DEF5"
+
+- name: bug
+  description: Eroare în aplicație sau în date
+  color: "D73A4A"
+
+- name: documentatie
+  description: Îmbunătățire a documentației
+  color: "0075CA"
+
+- name: distributie
+  description: Build, packaging și lansare
+  color: "FBCA04"
+
+- name: intrebare
+  description: Întrebare despre proiect
+  color: "D876E3"

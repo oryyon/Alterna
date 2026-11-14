@@ -1,0 +1,45 @@
+# Alterna — verificări continue: build, teste, validare metadata.
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Dependențe
+        run: pip install -r requirements.txt
+
+      - name: Build + validare catalog
+        run: python tools/build_catalog.py
+
+      - name: Suite de teste
+        run: python -m pytest tests/ -q
+
+      - name: Validare metadata desktop
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y desktop-file-utils
+          desktop-file-validate packaging/alterna.desktop
+
+      - name: Validare metadata AppStream
+        run: |
+          python - <<'PY'
+          import xml.etree.ElementTree as ET
+          ET.parse("packaging/org.alterna.app.appdata.xml")
+          print("AppStream XML valid")
+          PY

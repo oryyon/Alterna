@@ -1,0 +1,55 @@
+# Alterna — reîmprospătare automată a indicatorilor obiectivi (sec. 7, 8)
+# Rulează săptămânal (luni, 04:00 UTC) sau manual din Actions; deschide un PR
+# cu diferențele — aprobarea rămâne la maintainer (fluxul agreat în sec. 7).
+name: Reîmprospătare indicatori catalog
+
+on:
+  schedule:
+    - cron: "0 4 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: refresh-indicatori
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Dependențe
+        run: pip install -r requirements.txt
+
+      - name: Reîmprospătare indicatori (popcon / Ubuntu / GitHub)
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python tools/refresh_indicators.py
+
+      - name: Validare + rebuild catalog
+        run: python tools/build_catalog.py
+
+      - name: Suite de teste
+        run: python -m pytest tests/ -q
+
+      - name: Deschide PR cu diferențele
+        uses: peter-evans/create-pull-request@v7
+        with:
+          title: "chore(data): reîmprospătare indicatori"
+          commit-message: "Reîmprospătare automată indicatori (popcon, stele, versiuni, repo Ubuntu)"
+          branch: data/refresh-indicatori
+          labels: date, automat
+          body: |
+            Generat automat de `tools/refresh_indicators.py`.
+            Verifică în special:
+            - `in_ubuntu_repos` true→false (pachete scoase din depozite);
+            - liniile „?" din logul jobului — pachete noi detectate, dar
+              neconfirmate automat (posibile coliziuni de nume).

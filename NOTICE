@@ -1,0 +1,40 @@
+Alterna — informații privind drepturile de autor și licențiere
+==============================================================
+
+Copyright (C) 2026 Alterna contributors
+
+1. Codul aplicației
+-------------------
+
+Codul sursă al aplicației Alterna este licențiat conform GNU General Public
+License, version 3 (GPLv3). Textul complet și nemodificat este disponibil în
+fișierul LICENSE sau la https://www.gnu.org/licenses/gpl-3.0.html
+
+2. Datele originale ale catalogului
+-------------------------------------
+
+Conținutul original al catalogului (descrieri, taxonomie, relații dintre
+aplicații și alți indicatori redactați pentru Alterna) este licențiat conform
+Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0).
+Textul complet este disponibil în fișierul LICENSE-DATA sau la
+https://creativecommons.org/licenses/by-sa/4.0/
+
+Atribuirea recomandată: „Catalogul Alterna, contribuitorii Alterna, licențiat
+CC BY-SA 4.0”.
+
+3. Logo-uri, mărci și conținut terț
+------------------------------------
+
+Fișierele din data/logos/ sunt resurse ale unor terți. Ele NU sunt acoperite
+implicit de licența CC BY-SA 4.0 a catalogului și pot fi supuse drepturilor
+de autor, licențelor proprii și drepturilor de marcă ale titularilor lor.
+Sunt utilizate pentru identificarea aplicațiilor; consultă data/logos/README.md
+pentru proveniență și observații. Drepturile de marcă aparțin titularilor
+respectivi și nu sunt cedate prin licențierea acestui proiect.
+
+4. Dependențe
+--------------
+
+Proiectul folosește PySide6/Qt, PyYAML, ruamel.yaml și pytest. Licențele
+acestor componente sunt disponibile în distribuțiile lor respective și nu sunt
+modificate de acest proiect.

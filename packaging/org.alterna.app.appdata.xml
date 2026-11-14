@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>org.alterna.app</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+
+  <name>Alterna</name>
+  <summary>Descoperă alternative software, offline</summary>
+  <description>
+    <p>
+      Alterna este un catalog local de alternative la programe software, pentru
+      Linux. Caută între aplicații, filtrează după licență, platformă și preț,
+      compară până la patru variante și exportă rezultatele în mai multe formate.
+    </p>
+    <p>
+      Aplicația funcționează complet offline: datele sunt stocate local într-o
+      bază SQLite și nu sunt trimise nicăieri.
+    </p>
+  </description>
+
+  <developer id="org.alterna">
+    <name>Alterna contributors</name>
+  </developer>
+
+  <url type="homepage">https://github.com/alterna-app/Alterna</url>
+  <url type="bugtracker">https://github.com/alterna-app/Alterna/issues</url>
+
+  <launchable type="desktop-id">alterna.desktop</launchable>
+
+  <categories>
+    <category>Utility</category>
+  </categories>
+
+  <keywords>
+    <keyword>alternative</keyword>
+    <keyword>alternatives</keyword>
+    <keyword>software</keyword>
+    <keyword>linux</keyword>
+    <keyword>catalog</keyword>
+  </keywords>
+
+  <provides>
+    <binary>alterna</binary>
+  </provides>
+
+  <content_rating type="oars-1.1"/>
+  <update_contact>alterna_AT_github.com</update_contact>
+
+  <releases>
+    <release version="0.1.0" date="2026-11-14">
+      <description>
+        <p>Prima versiune distribuibilă: 100 de aplicații în catalog.</p>
+      </description>
+    </release>
+  </releases>
+</component>

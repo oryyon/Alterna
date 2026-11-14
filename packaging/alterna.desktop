@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Alterna
+Comment=Descoperă alternative software, offline
+Exec=alterna
+Icon=alterna
+Terminal=false
+Categories=Utility;
+Keywords=alternative;alternatives;software;linux;catalog;
+StartupNotify=true

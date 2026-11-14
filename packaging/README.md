@@ -1,5 +1,47 @@
 # Distribuție Linux
 
+Proiectul produce două pachete independente din aceeași sursă:
+
+| Format | Fișier | Instalare |
+|---|---|---|
+| AppImage | `Alterna-<versiune>-x86_64.AppImage` | executabil, chmod +x |
+| Debian | `alterna_<versiune>-1_amd64.deb` | `sudo apt install ./alterna_*.deb` |
+
+Versiunea provine din `app/version.py` — sursă unică de adevăr folosită de
+ambele pipeline-uri și de metadata pachetului.
+
+## Pachet Debian
+
+```bash
+./packaging/build_deb.sh
+```
+
+Rezultatul este `dist/alterna_<versiune>-1_amd64.deb`.
+
+Structura respectă Debian Policy:
+
+```text
+/opt/alterna/                        aplicația și resursele
+/usr/share/applications/alterna.desktop
+/usr/share/icons/hicolor/{16..256}x*/apps/alterna.png
+/usr/share/icons/hicolor/scalable/apps/alterna.svg
+/usr/share/metainfo/org.alterna.app.appdata.xml
+/usr/share/doc/alterna/{README.md.gz,CONTRIBUTING.md.gz,copyright,...}
+/DEBIAN/{control,postinst,prerm}
+```
+
+Validarea include `dpkg-deb --info` și `lintian`. Pachetul este construit cu
+`dpkg-deb --root-owner-group`, deci nu are nevoie de `fakeroot` la runtime.
+
+### Testarea pachetului
+
+```bash
+rm -rf /tmp/debtest && mkdir -p /tmp/debtest
+dpkg-deb --extract dist/alterna_*.deb /tmp/debtest
+QT_QPA_PLATFORM=offscreen /tmp/debtest/opt/alterna/alterna --version
+QT_QPA_PLATFORM=offscreen /tmp/debtest/opt/alterna/alterna --selftest
+```
+
 ## AppImage
 
 Buildul complet, pe Ubuntu 24.04 x86_64:

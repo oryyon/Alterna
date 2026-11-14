@@ -70,4 +70,34 @@ def test_icon_exists():
     assert (PACKAGING / "alterna.svg").exists()
 
 
+def test_deb_build_script_exists_and_is_complete():
+    text = (PACKAGING / "build_deb.sh").read_text(encoding="utf-8")
+    for required in ("dpkg-deb", "fakeroot", "DEBIAN/control",
+                     "postinst", "prerm", "/opt/", "usr/share/applications",
+                     "usr/share/icons/hicolor", "usr/share/metainfo",
+                     "usr/share/doc"):
+        assert required in text, f"lipsă {required} în build_deb.sh"
+
+
+def test_deb_build_script_uses_lintian():
+    text = (PACKAGING / "build_deb.sh").read_text(encoding="utf-8")
+    assert "lintian" in text
+
+
+def test_release_workflow_builds_both_packages():
+    text = (ROOT / ".github" / "workflows" / "release.yml").read_text(encoding="utf-8")
+    assert "build_appimage.sh" in text
+    assert "build_deb.sh" in text
+    assert "*.deb" in text
+    assert "*.AppImage" in text
+
+
+def test_deb_control_fields_are_valid():
+    """Controlul Debian trebuie să conțină câmpurile obligatorii."""
+    text = (PACKAGING / "build_deb.sh").read_text(encoding="utf-8")
+    for field in ("Package:", "Version:", "Architecture:", "Maintainer:",
+                  "Description:", "Depends:", "Homepage:", "Installed-Size:"):
+        assert field in text, f"lipsă câmpul {field} în control"
+
+
 

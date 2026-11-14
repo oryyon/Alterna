@@ -5,7 +5,7 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$ROOT"
 
-VERSION="${VERSION:-0.1.0}"
+VERSION="${VERSION:-$(python3 -c "import sys; sys.path.insert(0, '.'); from app.version import VERSION; print(VERSION)")}"
 ARCH="${ARCH:-x86_64}"
 APP_NAME="Alterna"
 APPIMAGE_NAME="${APP_NAME}-${VERSION}-${ARCH}.AppImage"

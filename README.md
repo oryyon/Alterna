@@ -51,14 +51,17 @@ python tools/refresh_indicators.py  # popcon + repo Ubuntu + stele GitHub → YA
 python tools/fetch_logos.py         # logo-uri din Simple Icons + Wikimedia → data/logos/
 ```
 
-### Distribuție AppImage
+### Distribuție Linux
+
+Ambele pachete se construiesc din aceeași sursă:
 
 ```bash
-./packaging/build_appimage.sh
+./packaging/build_appimage.sh   # Alterna-<versiune>-x86_64.AppImage
+./packaging/build_deb.sh        # alterna_<versiune>-1_amd64.deb
 ```
 
-Buildul include PySide6/Qt, catalogul SQLite, logo-urile și licențele într-un
-singur fișier executabil. Detalii și dependențe: [`packaging/README.md`](packaging/README.md).
+Pachetul Debian se instalează cu `sudo apt install ./alterna_*.deb` și
+integrează aplicația în meniul sistemului. Detalii: [`packaging/README.md`](packaging/README.md).
 
 ## Cum vezi macheta
 
@@ -74,7 +77,8 @@ Deschide `mockup-ui/index.html` în orice browser. Este complet funcțională (d
 6. ✅ Licențiere completă: GPLv3 pentru cod, CC BY-SA 4.0 pentru datele originale, `NOTICE` și excepția documentată pentru logo-urile terților.
 7. ✅ Distribuție Linux AppImage: pipeline PyInstaller + AppDir + `appimagetool` verificat prin SHA-256.
 8. ✅ Infrastructură GitHub: issue template pentru propuneri, etichete, workflow CI și workflow de release.
-9. Următorii pași (de agreat): pachetul `.deb`, publicarea repository-ului „Alterna" pe GitHub, apoi roadmap-ul post-MVP din IDEI_PROIECT.md.
+9. ✅ Pachet Debian (`.deb`) pentru integrare APT, cu pictograme la 9 dimensiuni, metadata AppStream și documentație.
+10. Următorii pași (de agreat): detectarea aplicațiilor deja instalate, extinderea catalogului și roadmap-ul post-MVP din IDEI_PROIECT.md.
 
 ## Structura proiectului
 

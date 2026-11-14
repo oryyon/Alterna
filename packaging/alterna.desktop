@@ -1,10 +1,13 @@
 [Desktop Entry]
 Type=Application
 Name=Alterna
+GenericName=Catalog de alternative software
 Comment=Descoperă alternative software, offline
 Exec=alterna
 Icon=alterna
 Terminal=false
 Categories=Utility;
-Keywords=alternative;alternatives;software;linux;catalog;
+Keywords=alternative;alternatives;software;linux;catalog;open source;
 StartupNotify=true
+StartupWMClass=alterna
+X-GNOME-UsesNotifications=false

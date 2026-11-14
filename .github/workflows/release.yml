@@ -47,17 +47,34 @@ jobs:
         run: |
           VERSION="${VERSION#v}"
           ./packaging/build_appimage.sh
-          mv "Alterna-${VERSION}-x86_64.AppImage" "Alterna-${VERSION}-x86_64.AppImage"
 
-      - name: Verificare artifact
+      - name: Build pachet Debian
+        env:
+          VERSION: ${{ github.event.inputs.version || github.ref_name }}
+        run: |
+          VERSION="${VERSION#v}"
+          ./packaging/build_deb.sh
+
+      - name: Verificare artifact AppImage
         run: |
           ls -lh *.AppImage
           chmod +x *.AppImage
           ./Alterna-*-x86_64.AppImage --appimage-extract-and-run --selftest
 
+      - name: Verificare pachet Debian
+        run: |
+          ls -lh *.deb
+          dpkg-deb --info *.deb
+          rm -rf /tmp/debtest && mkdir -p /tmp/debtest
+          dpkg-deb --extract *.deb /tmp/debtest
+          QT_QPA_PLATFORM=offscreen /tmp/debtest/opt/alterna/alterna --version
+          QT_QPA_PLATFORM=offscreen /tmp/debtest/opt/alterna/alterna --selftest
+
       - name: Publicare release
         if: startsWith(github.ref, 'refs/tags/')
         uses: softprops/action-gh-release@v2
         with:
-          files: "*.AppImage"
+          files: |
+            *.AppImage
+            *.deb
           generate_release_notes: true

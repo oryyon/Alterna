@@ -21,6 +21,7 @@ from .db import Catalog, CatalogError
 from .main_window import MainWindow
 from .paths import default_catalog_path, logos_dir, resource_root
 from .theme import apply_theme
+from .version import APP_NAME, VERSION
 
 
 def run_selftest(db_path: Path) -> int:
@@ -72,14 +73,17 @@ def main() -> int:
                         help="calea către catalog.db (implicit: catalogul inclus în aplicație)")
     parser.add_argument("--selftest", action="store_true",
                         help="verifică resursele incluse și afișează un raport, apoi iese")
+    parser.add_argument("--version", action="version",
+                        version=f"{APP_NAME} {VERSION}")
     args = parser.parse_args()
 
     if args.selftest:
         return run_selftest(args.db)
 
     app = QApplication(sys.argv)
-    app.setApplicationName("Alterna")
-    app.setOrganizationName("Alterna")
+    app.setApplicationName(APP_NAME)
+    app.setApplicationVersion(VERSION)
+    app.setOrganizationName(APP_NAME)
 
     try:
         catalog = Catalog(args.db)

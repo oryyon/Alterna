@@ -92,6 +92,31 @@ def test_release_workflow_builds_both_packages():
     assert "*.AppImage" in text
 
 
+def test_deb_dependencies_exist_on_target_system():
+    """Dependențele declarate trebuie să existe în arhiva Ubuntu 24.04.
+
+    Ubuntu 24.04 a redenumit libglib2.0-0 în libglib2.0-0t64; declararea
+    pachetului vechi făcea .deb-ul neinstalabil.
+    """
+    text = (PACKAGING / "build_deb.sh").read_text(encoding="utf-8")
+    depends = re.search(r"^Depends: (.+)$", text, re.MULTILINE)
+    assert depends, "controlul trebuie să declare Depends"
+    # Niciun pachet inexistent pe Ubuntu 24.04 nu poate fi dependență grea.
+    assert "libglib2.0-0 " not in depends.group(1), \
+        "libglib2.0-0 nu mai există în Ubuntu 24.04; folosiți libglib2.0-0t64"
+    for pkg in re.findall(r"[a-z0-9.+-]+", depends.group(1)):
+        if pkg in ("libc6", "libegl1"):
+            continue
+        assert "(" not in pkg, f"dependență neașteptată: {pkg}"
+
+
+def test_deb_keeps_libegl_as_hard_dependency():
+    """libEGL este singura bibliotecă Qt critică nebundată în PyInstaller."""
+    text = (PACKAGING / "build_deb.sh").read_text(encoding="utf-8")
+    depends = re.search(r"^Depends: (.+)$", text, re.MULTILINE)
+    assert "libegl1" in depends.group(1)
+
+
 def test_both_packaging_scripts_write_to_dist():
     """Ambele pachete trebuie scrise în dist/ — sursa de adevăr comună."""
     for script in ("build_appimage.sh", "build_deb.sh"):

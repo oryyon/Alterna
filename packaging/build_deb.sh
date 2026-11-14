@@ -135,8 +135,8 @@ Version: $DEB_VERSION
 Section: utils
 Priority: optional
 Architecture: $ARCH
-Depends: libc6 (>= 2.34), libglib2.0-0 (>= 2.66), libegl1, libxkbcommon0
-Recommends: fonts-noto-core
+Depends: libc6 (>= 2.34), libegl1
+Recommends: fonts-noto-core, libglib2.0-0t64 | libglib2.0-0
 Installed-Size: $INSTALLED_SIZE
 Maintainer: Alterna contributors <alterna@users.noreply.github.com>
 Homepage: https://github.com/oryyon/Alterna

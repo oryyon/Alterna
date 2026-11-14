@@ -1,0 +1,26 @@
+# Taxonomia canonică de funcționalități — categoria „Securitate" (pilot, sec. 15)
+# Aceeași funcție = același rând, indiferent de denumirea comercială din aplicații.
+# Cheile de aici sunt singurele permise în câmpul `features` al aplicațiilor cu category: security.
+# Valori posibile în fișierele de aplicații: free | paid | partial | no | unknown
+# (la rânduri factuale, ex. audit_independent, „free" = da, public/disponibil tuturor).
+
+category: security
+features:
+  offline:            Funcționare 100% offline
+  parole:             Generator de parole
+  autofill:           Completare automată în browser (autofill)
+  totp:               Authenticator integrat (TOTP / 2FA)
+  passkeys:           Suport passkeys
+  bio:                Deblocare biometrică
+  partajare:          Partajare seifuri / parole în echipă
+  audit:              Audit parole (compromise / slabe / refolosite)
+  import_export:      Import / export date
+  selfhost:           Auto-găzduire server (self-hosting)
+  extensii_browser:   Extensii de browser (Chrome / Firefox / Edge / Safari)
+  atasamente:         Stocare fișiere criptate (atașamente)
+  acces_urgenta:      Acces de urgență / recuperare prin contacte de încredere
+  chei_hardware:      Chei hardware de securitate (YubiKey / WebAuthn)
+  monitorizare_brese: Monitorizare breșe de date (dark web)
+  cli_api:            CLI / API pentru automatizări
+  ssh_agent:          Agent SSH integrat (gestionare chei SSH)
+  audit_independent:  Audit de securitate independent, cu raport public

@@ -1,0 +1,32 @@
+# Elisa — player muzical simplu de la KDE
+id: elisa
+popularity: 620
+name: Elisa
+description: Player muzical simplu și elegant, parte din proiectul KDE.
+category: audio-players
+license: foss
+price: free
+developer: Proiectul KDE
+website: https://apps.kde.org/elisa
+
+platforms: [linux, windows]
+tags: [player, muzica, kde]
+alternatives: [strawberry, vlc]
+
+details:
+  install_size_mb: 30
+  first_release_year: 2016
+  file_formats: [MP3, FLAC, OGG]
+  telemetry: none
+  romanian_language: true
+
+indicators:
+  popcon_rank: 9105
+  stars:
+  stars_url:
+  latest_release: "2026-10"
+  in_ubuntu_repos: true
+
+sources:
+- https://apps.kde.org/elisa
+- https://invent.kde.org/multimedia/elisa

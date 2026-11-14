@@ -1,0 +1,32 @@
+# Photopea — editor foto în browser
+id: photopea
+popularity: 480
+name: Photopea
+description: Editor foto în browser, compatibil cu fișiere PSD.
+category: graphics
+license: freemium
+price: free
+developer: Ivan Kutskir
+website: https://www.photopea.com
+logo: logos/photopea.svg
+
+platforms: [web]
+tags: [editare foto, browser, psd]
+alternatives: [gimp, photoshop]
+
+details:
+  install_size_mb: 0        # aplicație web
+  first_release_year: 2013
+  file_formats: [PSD, XCF, RAW]
+  telemetry: optional
+  romanian_language: true
+
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release: "2026-10"
+  in_ubuntu_repos: false
+
+sources:
+- https://www.photopea.com

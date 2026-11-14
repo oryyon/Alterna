@@ -1,0 +1,33 @@
+# Produs generat automat din data/ — nu se comite (sec. 7, 17 din IDEI_PROIECT.md)
+catalog.db
+
+# Mediu virtual Python
+.venv/
+
+# Cache Python
+__pycache__/
+*.pyc
+
+# Build și distribuție
+build/
+dist/
+.packaging/
+*.AppImage
+
+# Cache și instrumente de testare
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Note de lucru personale și exporturi generate
+/123
+/Problemele reale
+comparatie-alterna.*
+*.local
+
+# Editori și sisteme de fișiere
+.vscode/
+.idea/
+*.swp
+.DS_Store
+

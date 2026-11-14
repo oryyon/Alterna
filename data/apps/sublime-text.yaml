@@ -1,0 +1,32 @@
+# Sublime Text — editor de cod comercial, rapid și elegant
+id: sublime-text
+popularity: 400
+name: Sublime Text
+description: Editor de cod rapid și elegant, comercial cu evaluare nelimitată.
+category: development
+license: commercial
+price: paid
+developer: Sublime HQ
+website: https://www.sublimetext.com
+
+platforms: [linux, windows, macos]
+tags: [editor, cod]
+alternatives: [vscode, kate]
+
+details:
+  install_size_mb: 100
+  first_release_year: 2008
+  file_formats: ["orice fișier text / cod"]
+  telemetry: optional
+  romanian_language: false
+
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release: "2026-08"
+  in_ubuntu_repos: false
+
+sources:
+- https://www.sublimetext.com
+logo: logos/sublime-text.svg

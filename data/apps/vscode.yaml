@@ -1,0 +1,33 @@
+# VS Code — editorul de cod popular; build-ul Microsoft include telemetrie
+id: vscode
+popularity: 60
+name: VS Code
+description: Editor de cod popular, cu extensii; build-ul Microsoft include telemetrie.
+category: development
+license: freemium
+price: free
+developer: Microsoft
+website: https://code.visualstudio.com
+
+platforms: [linux, windows, macos]
+tags: [editor, cod, extensii]
+alternatives: [vscodium, kate]
+
+details:
+  install_size_mb: 350
+  first_release_year: 2015
+  file_formats: ["orice fișier text / cod"]
+  telemetry: "yes"
+  romanian_language: true
+
+indicators:
+  popcon_rank:
+  stars: 194496
+  stars_url: https://github.com/microsoft/vscode
+  latest_release: "2026-10"
+  in_ubuntu_repos: false
+
+sources:
+- https://code.visualstudio.com
+- https://github.com/microsoft/vscode
+logo: logos/vscode.png

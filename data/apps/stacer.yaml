@@ -1,0 +1,31 @@
+# Stacer — optimizator și monitor de sistem pentru Linux
+id: stacer
+popularity: 950
+name: Stacer
+description: Optimizator și monitor de sistem pentru Linux, cu interfață modernă.
+category: utilities
+license: foss
+price: free
+developer: Oğuzhan İnan
+website: https://github.com/oguzhaninan/Stacer
+
+platforms: [linux]
+tags: [sistem, monitor, curatare]
+alternatives: [bleachbit]
+
+details:
+  install_size_mb: 30
+  first_release_year: 2017
+  file_formats: []
+  telemetry: none
+  romanian_language: false
+
+indicators:
+  popcon_rank: 19086
+  stars: 9345
+  stars_url: https://github.com/oguzhaninan/Stacer
+  latest_release: "2019-05"
+  in_ubuntu_repos: true
+
+sources:
+- https://github.com/oguzhaninan/Stacer

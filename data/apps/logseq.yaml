@@ -1,0 +1,33 @@
+# Logseq — notițe outline interconectate, open source
+id: logseq
+popularity: 870
+name: Logseq
+description: Notițe outline interconectate peste fișiere markdown locale, open source.
+category: notes
+license: foss
+price: free
+developer: Logseq Inc. / comunitate
+website: https://logseq.com
+
+platforms: [linux, windows, macos, android]
+tags: [notite, outline, markdown]
+alternatives: [obsidian, joplin]
+
+details:
+  install_size_mb: 300
+  first_release_year: 2020
+  file_formats: [Markdown, Org]
+  telemetry: optional
+  romanian_language: false
+
+indicators:
+  popcon_rank:
+  stars: 45463
+  stars_url: https://github.com/logseq/logseq
+  latest_release: "2026-10"
+  in_ubuntu_repos: false
+
+sources:
+- https://logseq.com
+- https://github.com/logseq/logseq
+logo: logos/logseq.svg

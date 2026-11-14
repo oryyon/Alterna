@@ -1,0 +1,33 @@
+# Jitsi Meet — videoconferințe libere, fără cont
+id: jitsi-meet
+popularity: 700
+name: Jitsi Meet
+description: Videoconferințe libere, direct din browser, fără cont.
+category: communication
+license: foss
+price: free
+developer: 8x8 / comunitate
+website: https://meet.jit.si
+
+platforms: [web, android]
+tags: [video, conferinte, fara cont]
+alternatives: [zoom]
+
+details:
+  install_size_mb: 0
+  first_release_year: 2013
+  file_formats: []
+  telemetry: none
+  romanian_language: true
+
+indicators:
+  popcon_rank:
+  stars: 30188
+  stars_url: https://github.com/jitsi/jitsi-meet
+  latest_release: "2026-11"
+  in_ubuntu_repos: false
+
+sources:
+- https://meet.jit.si
+- https://github.com/jitsi/jitsi-meet
+logo: logos/jitsi-meet.svg

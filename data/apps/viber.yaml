@@ -1,0 +1,32 @@
+# Viber — mesagerie cu apeluri, populară în Europa de Est
+id: viber
+popularity: 690
+name: Viber
+description: Mesagerie cu apeluri, populară în Europa de Est.
+category: communication
+license: commercial
+price: free
+developer: Rakuten Viber
+website: https://www.viber.com
+
+platforms: [linux, windows, macos, android]
+tags: [mesagerie, apeluri]
+alternatives: [telegram, whatsapp]
+
+details:
+  install_size_mb: 400
+  first_release_year: 2010
+  file_formats: []
+  telemetry: "yes"
+  romanian_language: true
+
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release: "2026-06"
+  in_ubuntu_repos: false
+
+sources:
+- https://www.viber.com
+logo: logos/viber.svg

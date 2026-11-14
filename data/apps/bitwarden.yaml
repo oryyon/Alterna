@@ -1,0 +1,57 @@
+# Bitwarden — manager de parole cu cloud / self-hosted
+id: bitwarden
+popularity: 290
+name: Bitwarden
+description: Manager de parole cu sincronizare cloud; serverul poate fi auto-găzduit.
+category: security
+license: foss
+price: free
+developer: Bitwarden Inc.
+website: https://bitwarden.com
+logo: logos/bitwarden.svg
+
+platforms: [linux, windows, macos, android, web]
+tags: [parole, cloud, sincronizare]
+alternatives: [keepassxc, 1password]
+
+details:
+  install_size_mb: 250
+  first_release_year: 2016
+  file_formats: [import CSV, JSON]
+  telemetry: optional
+  romanian_language: true
+
+indicators:
+  popcon_rank:
+  stars: 17000
+  stars_url: https://github.com/bitwarden
+  latest_release: "2026-10"
+  in_ubuntu_repos: false
+
+features:
+  offline:
+    value: partial
+    note: Citire offline; modificările necesită conexiune la server.
+  parole: free
+  autofill: free
+  totp: paid
+  passkeys: free
+  bio: free
+  partajare: paid
+  audit: paid
+  import_export: free
+  selfhost: free
+  extensii_browser: free
+  atasamente: paid
+  acces_urgenta: paid
+  chei_hardware: free
+  monitorizare_brese:
+    value: free
+    note: Scanare gratuită; rapoartele detaliate sunt premium.
+  cli_api: free
+  ssh_agent: "no"
+  audit_independent: free
+
+sources:
+- https://bitwarden.com
+- https://github.com/bitwarden

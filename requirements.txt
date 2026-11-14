@@ -1,0 +1,10 @@
+# Dependențe proiect: unelte (build catalog, refresh indicatori) + aplicația desktop
+PyYAML>=6.0
+ruamel.yaml>=0.18
+PySide6>=6.6
+
+# Dezvoltare/testare
+pytest>=8.0
+
+# Build distribuibil (AppImage); nu este necesar pentru rularea din sursă
+pyinstaller>=6.10,<7

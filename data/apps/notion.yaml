@@ -1,0 +1,31 @@
+# Notion — spațiu de lucru all-in-one
+id: notion
+popularity: 270
+name: Notion
+description: Spațiu de lucru all-in-one — notițe, baze de date, wiki, proiecte.
+category: notes
+license: freemium
+price: free
+developer: Notion Labs
+website: https://www.notion.so
+
+platforms: [windows, macos, android, web]
+tags: [notite, wiki, baze de date]
+alternatives: [obsidian, joplin, logseq]
+
+details:
+  install_size_mb: 400
+  first_release_year: 2016
+  file_formats: [Markdown, CSV]
+  telemetry: "yes"
+  romanian_language: false
+
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release: "2026-10"
+  in_ubuntu_repos: false   # „notion" din depozite e un window manager neînrudit
+sources:
+- https://www.notion.so
+logo: logos/notion.svg

@@ -1,0 +1,33 @@
+# Simplenote — notițe minimaliste cu sincronizare
+id: simplenote
+popularity: 910
+name: Simplenote
+description: Notițe minimaliste cu sincronizare instantă, de la Automattic.
+category: notes
+license: foss
+price: free
+developer: Automattic
+website: https://simplenote.com
+
+platforms: [linux, windows, macos, android, web]
+tags: [notite, simplu, sincronizare]
+alternatives: [joplin]
+
+details:
+  install_size_mb: 150
+  first_release_year: 2008
+  file_formats: [TXT, Markdown]
+  telemetry: none
+  romanian_language: false
+
+indicators:
+  popcon_rank:
+  stars: 5280
+  stars_url: https://github.com/Automattic/simplenote-electron
+  latest_release: "2026-07"
+  in_ubuntu_repos: false
+
+sources:
+- https://simplenote.com
+- https://github.com/Automattic/simplenote-electron
+logo: logos/simplenote.svg

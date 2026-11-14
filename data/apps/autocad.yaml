@@ -1,0 +1,32 @@
+# AutoCAD — standardul industriei pentru CAD
+id: autocad
+popularity: 840
+name: AutoCAD
+description: Standardul industriei pentru CAD 2D/3D, pe abonament.
+category: 3d-cad
+license: commercial
+price: paid
+developer: Autodesk
+website: https://www.autodesk.com/products/autocad
+
+platforms: [windows, macos]
+tags: [cad, 2d, 3d, arhitectura]
+alternatives: [freecad, librecad]
+
+details:
+  install_size_mb: 5000
+  first_release_year: 1982
+  file_formats: [DWG, DXF]
+  telemetry: "yes"
+  romanian_language: false
+
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release: "2026-03"
+  in_ubuntu_repos: false
+
+sources:
+- https://www.autodesk.com/products/autocad
+logo: logos/autocad.svg

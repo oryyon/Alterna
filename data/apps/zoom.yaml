@@ -1,0 +1,32 @@
+# Zoom — videoconferințe
+id: zoom
+popularity: 190
+name: Zoom
+description: Videoconferințe cu plan gratuit limitat la 40 de minute.
+category: communication
+license: freemium
+price: free
+developer: Zoom Communications
+website: https://zoom.us
+
+platforms: [linux, windows, macos, android, web]
+tags: [video, conferinte, meetings]
+alternatives: [jitsi-meet]
+
+details:
+  install_size_mb: 500
+  first_release_year: 2013
+  file_formats: []
+  telemetry: "yes"
+  romanian_language: false
+
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release: "2026-10"
+  in_ubuntu_repos: false
+
+sources:
+- https://zoom.us
+logo: logos/zoom.svg

@@ -1,0 +1,31 @@
+# Timeshift — snapshots de sistem pentru restaurare rapidă
+id: timeshift
+popularity: 920
+name: Timeshift
+description: Snapshots de sistem (rsync/Btrfs) pentru restaurare rapidă.
+category: utilities
+license: foss
+price: free
+developer: Linux Mint
+website: https://github.com/linuxmint/timeshift
+
+platforms: [linux]
+tags: [backup, snapshots, sistem]
+alternatives: []
+
+details:
+  install_size_mb: 30
+  first_release_year: 2013
+  file_formats: ["snapshots rsync/Btrfs"]
+  telemetry: none
+  romanian_language: false
+
+indicators:
+  popcon_rank: 8589
+  stars: 4327
+  stars_url: https://github.com/linuxmint/timeshift
+  latest_release: "2026-10"
+  in_ubuntu_repos: true
+
+sources:
+- https://github.com/linuxmint/timeshift

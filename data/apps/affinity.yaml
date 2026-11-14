@@ -1,0 +1,31 @@
+# Affinity Photo — editor foto comercial cu plată unică
+id: affinity
+popularity: 510
+name: Affinity Photo
+description: Editor foto profesional, plată unică (fără abonament).
+category: graphics
+license: commercial
+price: paid
+developer: Serif
+website: https://affinity.serif.com
+platforms: [windows, macos]
+tags: [editare foto, raster]
+alternatives: [photoshop, gimp]
+
+details:
+  install_size_mb: 700
+  first_release_year: 2015
+  file_formats: [AFPHOTO, PSD, RAW]
+  telemetry: none
+  romanian_language: false
+
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release: "2026-08"
+  in_ubuntu_repos: false
+
+sources:
+- https://affinity.serif.com
+logo: logos/affinity.png

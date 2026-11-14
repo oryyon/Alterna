@@ -1,0 +1,32 @@
+# CopyQ — manager de clipboard cu istoric
+id: copyq
+popularity: 980
+name: CopyQ
+description: Manager de clipboard cu istoric, editare și scripturi.
+category: utilities
+license: foss
+price: free
+developer: Lukas Holecek / comunitate
+website: https://hluk.github.io/CopyQ
+
+platforms: [linux, windows, macos]
+tags: [clipboard, istoric, productivitate]
+alternatives: []
+
+details:
+  install_size_mb: 40
+  first_release_year: 2009
+  file_formats: []
+  telemetry: none
+  romanian_language: true
+
+indicators:
+  popcon_rank: 16440
+  stars: 12582
+  stars_url: https://github.com/hluk/CopyQ
+  latest_release: "2026-10"
+  in_ubuntu_repos: true
+
+sources:
+- https://hluk.github.io/CopyQ
+- https://github.com/hluk/CopyQ

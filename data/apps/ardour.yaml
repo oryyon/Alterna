@@ -1,0 +1,33 @@
+# Ardour — DAW complet pentru înregistrare și mixaj
+id: ardour
+popularity: 770
+name: Ardour
+description: Stație de lucru audio digitală (DAW) completă, pentru înregistrare și mixaj.
+category: audio-production
+license: foss
+price: free
+developer: Paul Davis / comunitate
+website: https://ardour.org
+
+platforms: [linux, windows, macos]
+tags: [daw, inregistrare, mixaj]
+alternatives: [reaper, lmms]
+
+details:
+  install_size_mb: 300
+  first_release_year: 2000
+  file_formats: [WAV, FLAC, "sesiuni Ardour"]
+  telemetry: none
+  romanian_language: false
+
+indicators:
+  popcon_rank: 11599
+  stars: 5404
+  stars_url: https://github.com/Ardour/ardour
+  latest_release: "2026-08"
+  in_ubuntu_repos: true
+
+sources:
+- https://ardour.org
+- https://github.com/Ardour/ardour
+logo: logos/ardour.svg

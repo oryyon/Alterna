@@ -1,0 +1,34 @@
+# Eclipse — IDE-ul clasic pentru Java
+id: eclipse-ide
+popularity: 430
+name: Eclipse IDE
+package: eclipse
+description: IDE clasic pentru Java, extensibil prin plugin-uri.
+category: development
+license: foss
+price: free
+developer: Fundația Eclipse
+website: https://www.eclipse.org
+
+platforms: [linux, windows, macos]
+tags: [ide, java]
+alternatives: [intellij-idea, vscode]
+
+details:
+  install_size_mb: 800
+  first_release_year: 2001
+  file_formats: [Java]
+  telemetry: none
+  romanian_language: false
+
+indicators:
+  popcon_rank: 48110
+  stars: 2000
+  stars_url: https://github.com/eclipse-platform
+  latest_release: "2026-09"
+  in_ubuntu_repos: false
+
+sources:
+- https://www.eclipse.org
+- https://github.com/eclipse-platform
+logo: logos/eclipse-ide.svg

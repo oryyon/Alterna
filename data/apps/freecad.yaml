@@ -1,0 +1,33 @@
+# FreeCAD — CAD parametric 3D
+id: freecad
+popularity: 810
+name: FreeCAD
+description: CAD parametric 3D pentru inginerie și design de produs.
+category: 3d-cad
+license: foss
+price: free
+developer: Comunitatea FreeCAD
+website: https://www.freecad.org
+
+platforms: [linux, windows, macos]
+tags: [cad, parametric, inginerie, 3d print]
+alternatives: [blender]
+
+details:
+  install_size_mb: 500
+  first_release_year: 2002
+  file_formats: [FCStd, STEP, STL, IGES]
+  telemetry: none
+  romanian_language: false
+
+indicators:
+  popcon_rank:
+  stars: 35065
+  stars_url: https://github.com/FreeCAD/FreeCAD
+  latest_release: "2026-10"
+  in_ubuntu_repos: false
+
+sources:
+- https://www.freecad.org
+- https://github.com/FreeCAD/FreeCAD
+logo: logos/freecad.svg

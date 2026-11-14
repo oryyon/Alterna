@@ -1,0 +1,33 @@
+# Signal — mesagerie cu criptare cap-la-cap implicită
+id: signal
+popularity: 80
+name: Signal
+description: Mesagerie cu criptare cap-la-cap implicită, administrată de o fundație non-profit.
+category: communication
+license: foss
+price: free
+developer: Signal Foundation
+website: https://signal.org
+
+platforms: [linux, windows, macos, android]
+tags: [mesagerie, criptare, privacitate]
+alternatives: [telegram]
+
+details:
+  install_size_mb: 200
+  first_release_year: 2014
+  file_formats: []
+  telemetry: none
+  romanian_language: true
+
+indicators:
+  popcon_rank:
+  stars: 16645
+  stars_url: https://github.com/signalapp/Signal-Desktop
+  latest_release: "2026-10"
+  in_ubuntu_repos: false
+
+sources:
+- https://signal.org
+- https://github.com/signalapp/Signal-Desktop
+logo: logos/signal.svg

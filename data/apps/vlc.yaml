@@ -1,0 +1,33 @@
+# VLC — playerul multimedia universal
+id: vlc
+popularity: 30
+name: VLC
+description: Player multimedia care redă aproape orice format, fără codecuri extra.
+category: audio-players
+license: foss
+price: free
+developer: VideoLAN
+website: https://www.videolan.org
+
+platforms: [linux, windows, macos, android]
+tags: [player, video, audio]
+alternatives: [mpv]
+
+details:
+  install_size_mb: 80
+  first_release_year: 2001
+  file_formats: [MKV, MP4, FLAC, "aproape orice"]
+  telemetry: none
+  romanian_language: true
+
+indicators:
+  popcon_rank: 2247
+  stars: 20309
+  stars_url: https://github.com/videolan/vlc
+  latest_release: "2026-09"
+  in_ubuntu_repos: true
+
+sources:
+- https://www.videolan.org
+- https://github.com/videolan/vlc
+logo: logos/vlc.png

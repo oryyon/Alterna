@@ -1,0 +1,33 @@
+# Inkscape — grafică vectorială liberă (SVG)
+id: inkscape
+popularity: 460
+name: Inkscape
+description: Editor de grafică vectorială liber, standardul open source pentru SVG.
+category: graphics
+license: foss
+price: free
+developer: Comunitatea Inkscape
+website: https://inkscape.org
+
+platforms: [linux, windows, macos]
+tags: [vectorial, svg, ilustratie]
+alternatives: [illustrator, figma, affinity]
+
+details:
+  install_size_mb: 400
+  first_release_year: 2003
+  file_formats: [SVG, PDF, EPS, PNG]
+  telemetry: none
+  romanian_language: true
+
+indicators:
+  popcon_rank: 3931
+  stars: 3500
+  stars_url: https://gitlab.com/inkscape/inkscape
+  latest_release: "2026-09"
+  in_ubuntu_repos: true
+
+sources:
+- https://inkscape.org
+- https://gitlab.com/inkscape/inkscape
+logo: logos/inkscape.svg

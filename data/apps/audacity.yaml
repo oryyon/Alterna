@@ -1,0 +1,33 @@
+# Audacity — editorul audio clasic
+id: audacity
+popularity: 240
+name: Audacity
+description: Editor audio multipistă, clasic pentru podcasturi și curățare de înregistrări.
+category: audio-production
+license: foss
+price: free
+developer: Muse Group / comunitate
+website: https://www.audacityteam.org
+
+platforms: [linux, windows, macos]
+tags: [audio, editare, podcast]
+alternatives: [tenacity]
+
+details:
+  install_size_mb: 60
+  first_release_year: 2000
+  file_formats: [WAV, MP3, FLAC, OGG]
+  telemetry: optional
+  romanian_language: true
+
+indicators:
+  popcon_rank: 4815
+  stars: 18931
+  stars_url: https://github.com/audacity/audacity
+  latest_release: "2026-11"
+  in_ubuntu_repos: true
+
+sources:
+- https://www.audacityteam.org
+- https://github.com/audacity/audacity
+logo: logos/audacity.svg

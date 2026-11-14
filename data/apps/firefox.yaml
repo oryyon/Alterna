@@ -1,0 +1,33 @@
+# Mozilla Firefox — browser independent cu motor propriu
+id: firefox
+popularity: 10
+name: Mozilla Firefox
+description: Browser independent, cu motor propriu și accent pe confidențialitate.
+category: internet
+license: foss
+price: free
+developer: Mozilla
+website: https://www.mozilla.org/firefox
+
+platforms: [linux, windows, macos, android]
+tags: [browser, navigare, privacitate]
+alternatives: [brave, chromium]
+
+details:
+  install_size_mb: 250
+  first_release_year: 2004
+  file_formats: []
+  telemetry: optional
+  romanian_language: true
+
+indicators:
+  popcon_rank: 7012
+  stars: 13702
+  stars_url: https://github.com/mozilla-firefox/firefox
+  latest_release: "2026-11"
+  in_ubuntu_repos: true
+
+sources:
+- https://www.mozilla.org/firefox
+- https://github.com/mozilla-firefox/firefox
+logo: logos/firefox.svg

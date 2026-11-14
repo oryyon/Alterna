@@ -1,0 +1,32 @@
+# vokoscreenNG — înregistrare de ecran modernă, rescriere Qt
+id: vokoscreenng
+popularity: 750
+name: vokoscreenNG
+package: vokoscreen-ng
+description: Înregistrare de ecran modernă pentru Linux, rescriere Qt a vokoscreen, cu webcam.
+category: streaming
+license: foss
+price: free
+developer: Volker Kohaupt
+website: https://github.com/vkohaupt/vokoscreenNG
+
+platforms: [linux, windows]
+tags: [inregistrare ecran, webcam]
+alternatives: [obs, ssr]
+
+details:
+  install_size_mb: 100
+  first_release_year: 2019
+  file_formats: [MP4, MKV]
+  telemetry: none
+  romanian_language: false
+
+indicators:
+  popcon_rank: 14975
+  stars: 1526
+  stars_url: https://github.com/vkohaupt/vokoscreenNG
+  latest_release: "2026-10"
+  in_ubuntu_repos: true
+
+sources:
+- https://github.com/vkohaupt/vokoscreenNG

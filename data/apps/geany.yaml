@@ -1,0 +1,33 @@
+# Geany — IDE ușor cu dependențe minime
+id: geany
+popularity: 440
+name: Geany
+description: IDE ușor și rapid, cu dependențe minime.
+category: development
+license: foss
+price: free
+developer: Comunitatea Geany
+website: https://www.geany.org
+
+platforms: [linux, windows, macos]
+tags: [editor, ide, usor]
+alternatives: [kate, vscode]
+
+details:
+  install_size_mb: 30
+  first_release_year: 2005
+  file_formats: ["orice fișier text / cod"]
+  telemetry: none
+  romanian_language: true
+
+indicators:
+  popcon_rank: 7162
+  stars: 3748
+  stars_url: https://github.com/geany/geany
+  latest_release: "2025-07"
+  in_ubuntu_repos: true
+
+sources:
+- https://www.geany.org
+- https://github.com/geany/geany
+logo: logos/geany.png

@@ -1,0 +1,32 @@
+# FileZilla — client FTP/SFTP clasic
+id: filezilla
+popularity: 660
+name: FileZilla
+description: Client FTP/SFTP clasic, cu manager de site-uri.
+category: internet
+license: foss
+price: free
+developer: Tim Kosse / comunitate
+website: https://filezilla-project.org
+
+platforms: [linux, windows, macos]
+tags: [ftp, sftp, transfer]
+alternatives: []
+
+details:
+  install_size_mb: 50
+  first_release_year: 2001
+  file_formats: [FTP, SFTP]
+  telemetry: none
+  romanian_language: true
+
+indicators:
+  popcon_rank: 5696
+  stars:
+  stars_url:
+  latest_release: "2026-07"
+  in_ubuntu_repos: true
+
+sources:
+- https://filezilla-project.org
+logo: logos/filezilla.svg

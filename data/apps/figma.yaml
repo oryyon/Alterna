@@ -1,0 +1,32 @@
+# Figma — design de interfețe colaborativ
+id: figma
+popularity: 490
+name: Figma
+description: Design de interfețe colaborativ, direct în browser, cu prototipare.
+category: graphics
+license: freemium
+price: free
+developer: Figma Inc.
+website: https://www.figma.com
+
+platforms: [web, windows, macos]
+tags: [ui design, prototipare, colaborare]
+alternatives: [inkscape, penpot]
+
+details:
+  install_size_mb: 300
+  first_release_year: 2016
+  file_formats: [FIG, SVG, PDF]
+  telemetry: "yes"
+  romanian_language: false
+
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release: "2026-10"
+  in_ubuntu_repos: false
+
+sources:
+- https://www.figma.com
+logo: logos/figma.svg

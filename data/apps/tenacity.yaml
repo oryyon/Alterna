@@ -1,0 +1,32 @@
+# Tenacity — fork al Audacity, fără telemetrie
+id: tenacity
+popularity: 760
+name: Tenacity
+description: Fork al Audacity, fără telemetrie, menținut de comunitate.
+category: audio-production
+license: foss
+price: free
+developer: Comunitatea Tenacity
+website: https://tenacityaudio.org
+
+platforms: [linux, windows, macos]
+tags: [audio, editare, fara telemetrie]
+alternatives: [audacity]
+
+details:
+  install_size_mb: 60
+  first_release_year: 2021
+  file_formats: [WAV, MP3, FLAC, OGG]
+  telemetry: none
+  romanian_language: false
+
+indicators:
+  popcon_rank:
+  stars: 824
+  stars_url: https://github.com/tenacityteam/tenacity
+  latest_release: "2026-07"
+  in_ubuntu_repos: false
+
+sources:
+- https://tenacityaudio.org
+- https://github.com/tenacityteam/tenacity

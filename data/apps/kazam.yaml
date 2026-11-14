@@ -1,0 +1,31 @@
+# Kazam — înregistrare de ecran simplistă pentru Linux
+id: kazam
+popularity: 740
+name: Kazam
+description: Înregistrare de ecran simplistă pentru Linux.
+category: streaming
+license: foss
+price: free
+developer: Comunitatea Kazam
+website: https://launchpad.net/kazam
+
+platforms: [linux]
+tags: [inregistrare ecran, simplu]
+alternatives: [ssr, obs]
+
+details:
+  install_size_mb: 10
+  first_release_year: 2010
+  file_formats: [MP4, WebM]
+  telemetry: none
+  romanian_language: false
+
+indicators:
+  popcon_rank: 11854
+  stars:
+  stars_url:
+  latest_release: "2023-07"
+  in_ubuntu_repos: true
+
+sources:
+- https://launchpad.net/kazam

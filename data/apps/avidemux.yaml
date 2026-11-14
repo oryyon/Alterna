@@ -1,0 +1,32 @@
+# Avidemux — tăieri și conversii video rapide
+id: avidemux
+popularity: 600
+name: Avidemux
+description: Editor video minimalist pentru tăieri și conversii rapide.
+category: video
+license: foss
+price: free
+developer: Comunitatea Avidemux
+website: http://avidemux.sourceforge.net
+
+platforms: [linux, windows, macos]
+tags: [editare video, conversie]
+alternatives: [shotcut, kdenlive]
+
+details:
+  install_size_mb: 50
+  first_release_year: 2002
+  file_formats: [MP4, MKV, AVI]
+  telemetry: none
+  romanian_language: false
+
+indicators:
+  popcon_rank:
+  stars: 987
+  stars_url: https://github.com/mean00/avidemux2
+  latest_release: "2022-09"
+  in_ubuntu_repos: false
+
+sources:
+- http://avidemux.sourceforge.net
+- https://github.com/mean00/avidemux2

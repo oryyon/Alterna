@@ -1,0 +1,32 @@
+# Calligra — suita de birou a proiectului KDE
+id: calligra
+popularity: 570
+name: Calligra
+description: Suita de birou a proiectului KDE — Words, Sheets, Stage.
+category: office
+license: foss
+price: free
+developer: Proiectul KDE
+website: https://calligra.org
+
+platforms: [linux, windows]
+tags: [documente, kde]
+alternatives: [libreoffice]
+
+details:
+  install_size_mb: 250
+  first_release_year: 2000
+  file_formats: [ODF]
+  telemetry: none
+  romanian_language: true
+
+indicators:
+  popcon_rank: 20836
+  stars:
+  stars_url:
+  latest_release: "2026-04"
+  in_ubuntu_repos: true
+
+sources:
+- https://calligra.org
+- https://invent.kde.org/office/calligra

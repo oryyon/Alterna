@@ -1,0 +1,31 @@
+# WPS Office — interfață similară MS Office, cu reclame în varianta gratuită
+id: wps
+popularity: 550
+name: WPS Office
+description: Suită de birou cu interfață similară MS Office; versiune gratuită cu reclame.
+category: office
+license: freemium
+price: free
+developer: Kingsoft
+website: https://www.wps.com
+
+platforms: [linux, windows, macos, android]
+tags: [documente, foi de calcul]
+alternatives: [libreoffice, msoffice]
+
+details:
+  install_size_mb: 400
+  first_release_year: 1988
+  file_formats: [DOCX, XLSX, PPTX]
+  telemetry: "yes"
+  romanian_language: false
+
+indicators:
+  popcon_rank: null
+  stars: null
+  stars_url: null
+  latest_release: "2026-07"
+  in_ubuntu_repos: false
+
+sources:
+  - https://www.wps.com

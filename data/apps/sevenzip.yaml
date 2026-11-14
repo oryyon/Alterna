@@ -1,0 +1,34 @@
+# 7-Zip — arhivatorul legendar cu formatul .7z
+id: sevenzip
+popularity: 320
+name: 7-Zip
+package: p7zip-full
+description: Arhivator legendar cu rata de compresie excelentă (formatul .7z).
+category: utilities
+license: foss
+price: free
+developer: Igor Pavlov
+website: https://www.7-zip.org
+
+platforms: [windows, linux]
+tags: [arhivare, 7z, compresie]
+alternatives: [peazip]
+
+details:
+  install_size_mb: 2
+  first_release_year: 1999
+  file_formats: ["7Z", "ZIP", "TAR", "extragere: RAR"]
+  telemetry: none
+  romanian_language: true
+
+indicators:
+  popcon_rank: 1951
+  stars: 4379
+  stars_url: https://github.com/ip7z/7zip
+  latest_release: "2026-10"
+  in_ubuntu_repos: true
+
+sources:
+- https://www.7-zip.org
+- https://github.com/ip7z/7zip
+logo: logos/sevenzip.svg

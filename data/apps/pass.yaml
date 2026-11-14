@@ -1,0 +1,31 @@
+# pass — manager de parole pentru terminal (GPG + Git)
+id: pass
+popularity: 710
+name: pass
+description: Manager de parole minimalist pentru terminal, bazat pe GPG și Git.
+category: security
+license: foss
+price: free
+developer: Jason A. Donenfeld / comunitate
+website: https://www.passwordstore.org
+
+platforms: [linux, macos]
+tags: [parole, terminal, gpg]
+alternatives: [keepassxc]
+
+details:
+  install_size_mb: 5
+  first_release_year: 2012
+  file_formats: [GPG, Git]
+  telemetry: none
+  romanian_language: false
+
+indicators:
+  popcon_rank: 7799
+  stars:
+  stars_url:
+  latest_release: "2024-06"
+  in_ubuntu_repos: true
+
+sources:
+- https://www.passwordstore.org

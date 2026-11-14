@@ -1,0 +1,32 @@
+# Proton Pass — manager de parole de la Proton
+id: proton-pass
+popularity: 310
+name: Proton Pass
+description: Manager de parole de la Proton, cu criptare cap-la-cap și aliasuri de e-mail.
+category: security
+license: foss
+price: free
+developer: Proton AG
+website: https://proton.me/pass
+
+platforms: [linux, windows, macos, android, web]
+tags: [parole, cloud, privacitate]
+alternatives: [bitwarden, keepassxc]
+
+details:
+  install_size_mb: 250
+  first_release_year: 2023
+  file_formats: [import CSV, JSON]
+  telemetry: optional
+  romanian_language: false
+
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release: "2026-10"
+  in_ubuntu_repos: false
+
+sources:
+- https://proton.me/pass
+logo: logos/proton-pass.svg

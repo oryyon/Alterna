@@ -1,0 +1,32 @@
+# LibreCAD — CAD 2D liber
+id: librecad
+popularity: 830
+name: LibreCAD
+description: CAD 2D liber, pentru desene tehnice și planuri.
+category: 3d-cad
+license: foss
+price: free
+developer: Comunitatea LibreCAD
+website: https://librecad.org
+
+platforms: [linux, windows, macos]
+tags: [cad, 2d, desen tehnic]
+alternatives: [freecad]
+
+details:
+  install_size_mb: 100
+  first_release_year: 2011
+  file_formats: [DXF, DWG]
+  telemetry: none
+  romanian_language: true
+
+indicators:
+  popcon_rank: 8582
+  stars: 6545
+  stars_url: https://github.com/LibreCAD/LibreCAD
+  latest_release: "2026-10"
+  in_ubuntu_repos: true
+
+sources:
+- https://librecad.org
+- https://github.com/LibreCAD/LibreCAD

@@ -1,0 +1,31 @@
+# Sweet Home 3D — design interior
+id: sweet-home-3d
+popularity: 860
+name: Sweet Home 3D
+description: Design interior — planuri de casă și vizualizare 3D.
+category: 3d-cad
+license: foss
+price: free
+developer: Emmanuel Puybaret / eTeks
+website: https://www.sweethome3d.com
+
+platforms: [linux, windows, macos]
+tags: [arhitectura, interior, 3d]
+alternatives: [blender, freecad]
+
+details:
+  install_size_mb: 250
+  first_release_year: 2006
+  file_formats: [SH3D, OBJ, PDF]
+  telemetry: none
+  romanian_language: true
+
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release: "2026-01"
+  in_ubuntu_repos: false
+
+sources:
+- https://www.sweethome3d.com

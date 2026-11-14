@@ -1,0 +1,32 @@
+# CherryTree — notițe ierarhice în arbore, stocate local
+id: cherrytree
+popularity: 890
+name: CherryTree
+description: Notițe ierarhice în arbore, stocate local (SQLite sau XML).
+category: notes
+license: foss
+price: free
+developer: Giuseppe Penone / comunitate
+website: https://www.giuspen.net/cherrytree
+
+platforms: [linux, windows, macos]
+tags: [notite, arbore, offline]
+alternatives: [joplin]
+
+details:
+  install_size_mb: 80
+  first_release_year: 2009
+  file_formats: [CTB, CTD, XML]
+  telemetry: none
+  romanian_language: true
+
+indicators:
+  popcon_rank: 20262
+  stars: 3987
+  stars_url: https://github.com/giuspen/cherrytree
+  latest_release: "2026-08"
+  in_ubuntu_repos: true
+
+sources:
+- https://www.giuspen.net/cherrytree
+- https://github.com/giuspen/cherrytree

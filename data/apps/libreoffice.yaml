@@ -1,0 +1,34 @@
+# LibreOffice — suita de birou liberă de referință
+id: libreoffice
+popularity: 50
+name: LibreOffice
+description: Suită de birou liberă și completă, compatibilă cu formatele MS Office.
+category: office
+license: foss
+price: free
+developer: The Document Foundation
+website: https://www.libreoffice.org
+
+platforms: [linux, windows, macos]
+tags: [documente, foi de calcul, prezentari]
+alternatives: [onlyoffice, msoffice]
+editors_choice: true
+
+details:
+  install_size_mb: 600
+  first_release_year: 2011
+  file_formats: [ODF, DOCX, XLSX, PPTX]
+  telemetry: none
+  romanian_language: true
+
+indicators:
+  popcon_rank: 4834
+  stars: 4590
+  stars_url: https://github.com/LibreOffice/core
+  latest_release: "2026-10"
+  in_ubuntu_repos: true
+
+sources:
+- https://www.libreoffice.org
+- https://github.com/LibreOffice/core
+logo: logos/libreoffice.svg

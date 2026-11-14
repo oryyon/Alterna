@@ -1,0 +1,34 @@
+# Chromium — versiunea open source a Chrome, fără serviciile Google
+id: chromium
+popularity: 160
+name: Chromium
+package: chromium-browser
+description: Versiunea open source a browserului Chrome, fără serviciile Google.
+category: internet
+license: foss
+price: free
+developer: Proiectul Chromium
+website: https://www.chromium.org
+
+platforms: [linux, windows, macos]
+tags: [browser, navigare]
+alternatives: [firefox, brave]
+
+details:
+  install_size_mb: 300
+  first_release_year: 2008
+  file_formats: []
+  telemetry: optional
+  romanian_language: true
+
+indicators:
+  popcon_rank: 33738
+  stars: 25223
+  stars_url: https://github.com/chromium/chromium
+  latest_release: "2026-11"
+  in_ubuntu_repos: true
+
+sources:
+- https://www.chromium.org
+- https://github.com/chromium/chromium
+logo: logos/chromium.png

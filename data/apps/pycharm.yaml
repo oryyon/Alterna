@@ -1,0 +1,32 @@
+# PyCharm — IDE Python de la JetBrains (ediție Community gratuită)
+id: pycharm
+popularity: 410
+name: PyCharm
+description: IDE Python complet, cu debugger și integrare de medii virtuale; ediția Community e gratuită.
+category: development
+license: freemium
+price: free
+developer: JetBrains
+website: https://www.jetbrains.com/pycharm
+
+platforms: [linux, windows, macos]
+tags: [ide, python, debugger]
+alternatives: [vscode, vscodium]
+
+details:
+  install_size_mb: 1200
+  first_release_year: 2010
+  file_formats: [Python]
+  telemetry: optional
+  romanian_language: false
+
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release: "2026-10"
+  in_ubuntu_repos: false
+
+sources:
+- https://www.jetbrains.com/pycharm
+logo: logos/pycharm.svg

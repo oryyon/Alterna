@@ -1,0 +1,32 @@
+# Adobe Illustrator — referința comercială în grafica vectorială
+id: illustrator
+popularity: 520
+name: Adobe Illustrator
+description: Grafică vectorială profesionistă, standard în industrie, pe abonament.
+category: graphics
+license: commercial
+price: paid
+developer: Adobe Inc.
+website: https://www.adobe.com/products/illustrator.html
+
+platforms: [windows, macos]
+tags: [vectorial, ilustratie, design]
+alternatives: [inkscape, affinity]
+
+details:
+  install_size_mb: 3500
+  first_release_year: 1987
+  file_formats: [AI, SVG, EPS, PDF]
+  telemetry: "yes"
+  romanian_language: false
+
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release: "2026-09"
+  in_ubuntu_repos: false
+
+sources:
+- https://www.adobe.com/products/illustrator.html
+logo: logos/illustrator.png

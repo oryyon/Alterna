@@ -1,0 +1,32 @@
+# Thunderbird — client de e-mail și calendar liber
+id: thunderbird
+popularity: 650
+name: Thunderbird
+description: Client de e-mail și calendar liber, de la Mozilla.
+category: internet
+license: foss
+price: free
+developer: MZLA / Mozilla
+website: https://www.thunderbird.net
+
+platforms: [linux, windows, macos]
+tags: [email, calendar, rss]
+alternatives: []
+
+details:
+  install_size_mb: 300
+  first_release_year: 2004
+  file_formats: [MBOX, EML]
+  telemetry: optional
+  romanian_language: true
+
+indicators:
+  popcon_rank: 3210
+  stars:
+  stars_url:
+  latest_release: "2026-10"
+  in_ubuntu_repos: true
+
+sources:
+- https://www.thunderbird.net
+logo: logos/thunderbird.svg

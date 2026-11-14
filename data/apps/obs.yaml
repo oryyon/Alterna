@@ -1,0 +1,33 @@
+# OBS Studio — înregistrare și streaming live, standardul de facto
+id: obs
+popularity: 200
+name: OBS Studio
+package: obs-studio
+description: Înregistrare de ecran și streaming live, standardul de facto.
+category: streaming
+license: foss
+price: free
+developer: OBS Project
+website: https://obsproject.com
+
+platforms: [linux, windows, macos]
+tags: [streaming, inregistrare ecran, twitch]
+alternatives: [ssr]
+
+details:
+  install_size_mb: 300
+  first_release_year: 2012
+  file_formats: [MP4, MKV, FLV, MOV]
+  telemetry: none
+  romanian_language: true
+
+indicators:
+  popcon_rank: 6056
+  stars: 78842
+  stars_url: https://github.com/obsproject/obs-studio
+  latest_release: "2026-10"
+  in_ubuntu_repos: true    # pachetul obs-studio
+sources:
+- https://obsproject.com
+- https://github.com/obsproject/obs-studio
+logo: logos/obs.svg

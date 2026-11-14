@@ -1,0 +1,33 @@
+# Xournal++ — notițe de mână și adnotare PDF
+id: xournalpp
+popularity: 900
+name: Xournal++
+description: Notițe de mână și adnotare PDF, cu suport pentru tabletă grafică.
+category: notes
+license: foss
+price: free
+developer: Comunitatea Xournal++
+website: https://xournalpp.github.io
+
+platforms: [linux, windows, macos]
+tags: [notite, pdf, scris de mana]
+alternatives: [joplin, obsidian]
+
+details:
+  install_size_mb: 100
+  first_release_year: 2010
+  file_formats: [XOPP, PDF]
+  telemetry: none
+  romanian_language: false
+
+indicators:
+  popcon_rank: 8483
+  stars: 15613
+  stars_url: https://github.com/xournalpp/xournalpp
+  latest_release: "2026-10"
+  in_ubuntu_repos: true
+
+sources:
+- https://xournalpp.github.io
+- https://github.com/xournalpp/xournalpp
+logo: logos/xournalpp.png

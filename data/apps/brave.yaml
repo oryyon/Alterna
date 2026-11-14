@@ -1,0 +1,33 @@
+# Brave — browser cu blocare de reclame implicită
+id: brave
+popularity: 170
+name: Brave
+description: Browser bazat pe Chromium, cu blocare de reclame și trackere implicită.
+category: internet
+license: foss
+price: free
+developer: Brave Software
+website: https://brave.com
+
+platforms: [linux, windows, macos, android]
+tags: [browser, adblock, privacitate]
+alternatives: [firefox, chromium]
+
+details:
+  install_size_mb: 300
+  first_release_year: 2016
+  file_formats: []
+  telemetry: optional
+  romanian_language: true
+
+indicators:
+  popcon_rank:
+  stars: 24079
+  stars_url: https://github.com/brave/brave-browser
+  latest_release: "2026-11"
+  in_ubuntu_repos: false
+
+sources:
+- https://brave.com
+- https://github.com/brave/brave-browser
+logo: logos/brave.svg

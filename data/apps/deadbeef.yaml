@@ -1,0 +1,32 @@
+# DeaDBeeF — player audio modular, foarte ușor
+id: deadbeef
+popularity: 630
+name: DeaDBeeF
+description: Player audio modular și foarte ușor, pentru melomani.
+category: audio-players
+license: foss
+price: free
+developer: Alexey Yakovenko / comunitate
+website: https://deadbeef.sourceforge.io
+
+platforms: [linux]
+tags: [player, audio, usor]
+alternatives: [strawberry]
+
+details:
+  install_size_mb: 15
+  first_release_year: 2009
+  file_formats: [MP3, FLAC, OGG, CUE]
+  telemetry: none
+  romanian_language: false
+
+indicators:
+  popcon_rank:
+  stars: 1986
+  stars_url: https://github.com/DeaDBeeF-Player/deadbeef
+  latest_release: "2026-06"
+  in_ubuntu_repos: false
+
+sources:
+- https://deadbeef.sourceforge.io
+- https://github.com/DeaDBeeF-Player/deadbeef

@@ -1,0 +1,32 @@
+# Adobe Premiere Pro — referința comercială din categoria Video
+id: premiere
+popularity: 230
+name: Adobe Premiere Pro
+description: Editor video profesional, pe bază de abonament Creative Cloud.
+category: video
+license: commercial
+price: paid
+developer: Adobe Inc.
+website: https://www.adobe.com/products/premiere.html
+
+platforms: [windows, macos]
+tags: [editare video, montaj]
+alternatives: [kdenlive, davinci]
+
+details:
+  install_size_mb: 8000
+  first_release_year: 2003
+  file_formats: [MP4, MOV, ProRes, MXF]
+  telemetry: "yes"
+  romanian_language: false
+
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release: "2026-09"
+  in_ubuntu_repos: false
+
+sources:
+- https://www.adobe.com/products/premiere.html
+logo: logos/premiere.png

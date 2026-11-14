@@ -1,0 +1,32 @@
+# Standard Notes — notițe criptate cap-la-cap
+id: standard-notes
+popularity: 880
+name: Standard Notes
+description: Notițe criptate cap-la-cap, sincronizate, open source.
+category: notes
+license: foss
+price: free
+developer: Standard Notes (Proton)
+website: https://standardnotes.com
+
+platforms: [linux, windows, macos, android, web]
+tags: [notite, criptare, sincronizare]
+alternatives: [joplin, obsidian]
+
+details:
+  install_size_mb: 300
+  first_release_year: 2017
+  file_formats: [TXT, Markdown, backup]
+  telemetry: none
+  romanian_language: false
+
+indicators:
+  popcon_rank:
+  stars: 6695
+  stars_url: https://github.com/standardnotes/app
+  latest_release: "2026-11"
+  in_ubuntu_repos: false
+
+sources:
+- https://standardnotes.com
+- https://github.com/standardnotes/app

@@ -1,0 +1,33 @@
+# Krita — pictură digitală. Format: vezi data/README.md
+id: krita
+popularity: 450
+name: Krita
+description: Aplicație de pictură digitală, făcută de artiști pentru artiști.
+category: graphics
+license: foss
+price: free
+developer: Fundația Krita / KDE
+website: https://krita.org
+logo: logos/krita.svg
+
+platforms: [linux, windows, macos, android]
+tags: [pictură, desen, tableta grafica]
+alternatives: [gimp, photoshop, photopea]
+
+details:
+  install_size_mb: 500
+  first_release_year: 2005
+  file_formats: [KRA, PSD, PNG, JPG]
+  telemetry: none
+  romanian_language: true
+
+indicators:
+  popcon_rank: 7314
+  stars: 8200
+  stars_url: https://invent.kde.org/graphics/krita
+  latest_release: "2026-09"
+  in_ubuntu_repos: true
+
+sources:
+- https://krita.org
+- https://invent.kde.org/graphics/krita

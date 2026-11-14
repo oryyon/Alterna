@@ -1,0 +1,32 @@
+# Microsoft Edge — browserul Microsoft bazat pe Chromium
+id: edge
+popularity: 150
+name: Microsoft Edge
+description: Browserul Microsoft bazat pe Chromium, cu integrare Copilot.
+category: internet
+license: commercial
+price: free
+developer: Microsoft
+website: https://www.microsoft.com/edge
+
+platforms: [linux, windows, macos, android]
+tags: [browser, navigare]
+alternatives: [chrome, firefox]
+
+details:
+  install_size_mb: 400
+  first_release_year: 2015
+  file_formats: []
+  telemetry: "yes"
+  romanian_language: true
+
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release: "2026-10"
+  in_ubuntu_repos: false
+
+sources:
+- https://www.microsoft.com/edge
+logo: logos/edge.png

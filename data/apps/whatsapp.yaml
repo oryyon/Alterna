@@ -1,0 +1,32 @@
+# WhatsApp — mesageria populară de la Meta
+id: whatsapp
+popularity: 90
+name: WhatsApp
+description: Mesagerie populară cu criptare cap-la-cap; clientul desktop necesită telefonul.
+category: communication
+license: commercial
+price: free
+developer: Meta
+website: https://www.whatsapp.com
+
+platforms: [windows, macos, android, web]
+tags: [mesagerie, chat]
+alternatives: [telegram, signal]
+
+details:
+  install_size_mb: 300
+  first_release_year: 2009
+  file_formats: []
+  telemetry: "yes"
+  romanian_language: true
+
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release: "2026-10"
+  in_ubuntu_repos: false
+
+sources:
+- https://www.whatsapp.com
+logo: logos/whatsapp.svg

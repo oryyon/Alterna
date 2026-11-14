@@ -1,0 +1,32 @@
+# Opera — browser cu VPN gratuit integrat
+id: opera
+popularity: 180
+name: Opera
+description: Browser cu VPN gratuit integrat și bară laterală de mesagerie.
+category: internet
+license: commercial
+price: free
+developer: Opera Software
+website: https://www.opera.com
+
+platforms: [linux, windows, macos]
+tags: [browser, vpn]
+alternatives: [chrome, firefox, brave]
+
+details:
+  install_size_mb: 250
+  first_release_year: 1995
+  file_formats: []
+  telemetry: "yes"
+  romanian_language: true
+
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release: "2026-09"
+  in_ubuntu_repos: false
+
+sources:
+- https://www.opera.com
+logo: logos/opera.svg

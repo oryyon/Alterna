@@ -1,0 +1,33 @@
+# Shotcut — editor video liber multiplatform
+id: shotcut
+popularity: 580
+name: Shotcut
+description: Editor video liber, multiplatform, bazat pe MLT și FFmpeg.
+category: video
+license: foss
+price: free
+developer: Meltytech / comunitate
+website: https://shotcut.org
+
+platforms: [linux, windows, macos]
+tags: [editare video, montaj]
+alternatives: [kdenlive, davinci]
+
+details:
+  install_size_mb: 300
+  first_release_year: 2011
+  file_formats: [MP4, MKV, MOV]
+  telemetry: none
+  romanian_language: true
+
+indicators:
+  popcon_rank: 10783
+  stars: 15577
+  stars_url: https://github.com/mltframework/shotcut
+  latest_release: "2026-10"
+  in_ubuntu_repos: true
+
+sources:
+- https://shotcut.org
+- https://github.com/mltframework/shotcut
+logo: logos/shotcut.png

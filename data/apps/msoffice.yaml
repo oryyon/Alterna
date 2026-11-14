@@ -1,0 +1,32 @@
+# Microsoft Office — referința comercială din categoria Birou
+id: msoffice
+popularity: 140
+name: Microsoft Office
+description: Suită de birou — Word, Excel, PowerPoint. Pe bază de abonament.
+category: office
+license: commercial
+price: paid
+developer: Microsoft
+website: https://www.microsoft.com/microsoft-365
+
+platforms: [windows, macos, android, web]
+tags: [documente, foi de calcul, prezentari]
+alternatives: [libreoffice, onlyoffice, wps]
+
+details:
+  install_size_mb: 3000
+  first_release_year: 1990
+  file_formats: [DOCX, XLSX, PPTX]
+  telemetry: "yes"
+  romanian_language: true
+
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release: "2026-10"
+  in_ubuntu_repos: false
+
+sources:
+- https://www.microsoft.com/microsoft-365
+logo: logos/msoffice.png

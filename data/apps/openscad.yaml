@@ -1,0 +1,33 @@
+# OpenSCAD — CAD programatic (modele descrise prin cod)
+id: openscad
+popularity: 820
+name: OpenSCAD
+description: CAD programatic — modelele 3D sunt descrise prin cod, ideal pentru 3D printing parametric.
+category: 3d-cad
+license: foss
+price: free
+developer: Comunitatea OpenSCAD
+website: https://openscad.org
+
+platforms: [linux, windows, macos]
+tags: [cad, parametric, cod, 3d print]
+alternatives: [freecad]
+
+details:
+  install_size_mb: 60
+  first_release_year: 2010
+  file_formats: [SCAD, STL, 3MF]
+  telemetry: none
+  romanian_language: false
+
+indicators:
+  popcon_rank: 10082
+  stars: 10577
+  stars_url: https://github.com/openscad/openscad
+  latest_release: "2026-10"
+  in_ubuntu_repos: true
+
+sources:
+- https://openscad.org
+- https://github.com/openscad/openscad
+logo: logos/openscad.svg

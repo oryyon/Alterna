@@ -1,0 +1,33 @@
+# Ente Auth — aplicație 2FA open source cu sincronizare criptată
+id: ente-auth
+popularity: 720
+name: Ente Auth
+description: Aplicație 2FA (TOTP) open source, cu sincronizare criptată cap-la-cap.
+category: security
+license: foss
+price: free
+developer: ente Technologies
+website: https://ente.io/auth
+
+platforms: [linux, windows, macos, android, web]
+tags: [2fa, totp, authenticator]
+alternatives: [keepassxc, bitwarden]
+
+details:
+  install_size_mb: 100
+  first_release_year: 2022
+  file_formats: [TOTP]
+  telemetry: none
+  romanian_language: false
+
+indicators:
+  popcon_rank:
+  stars: 29841
+  stars_url: https://github.com/ente-io/ente
+  latest_release: "2026-11"
+  in_ubuntu_repos: false
+
+sources:
+- https://ente.io/auth
+- https://github.com/ente-io/ente
+logo: logos/ente-auth.svg

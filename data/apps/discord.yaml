@@ -1,0 +1,32 @@
+# Discord — chat vocal și text pentru comunități
+id: discord
+popularity: 100
+name: Discord
+description: Chat vocal și text pentru comunități și gaming.
+category: communication
+license: freemium
+price: free
+developer: Discord Inc.
+website: https://discord.com
+
+platforms: [linux, windows, macos, android, web]
+tags: [chat, voce, gaming]
+alternatives: [element, telegram]
+
+details:
+  install_size_mb: 400
+  first_release_year: 2015
+  file_formats: []
+  telemetry: "yes"
+  romanian_language: true
+
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release: "2026-10"
+  in_ubuntu_repos: false
+
+sources:
+- https://discord.com
+logo: logos/discord.svg

@@ -1,0 +1,32 @@
+# Adobe Photoshop — referința comercială din categoria Grafică
+id: photoshop
+popularity: 130
+name: Adobe Photoshop
+description: Editor profesional de imagini raster, standard în industrie.
+category: graphics
+license: commercial
+price: paid
+developer: Adobe Inc.
+website: https://www.adobe.com/products/photoshop.html
+platforms: [windows, macos]
+tags: [editare foto, raster, design]
+alternatives: [gimp, krita, photopea, affinity]
+
+details:
+  install_size_mb: 4000
+  first_release_year: 1990
+  file_formats: [PSD, RAW, JPG, PNG, TIFF]
+  telemetry: "yes"
+  romanian_language: false
+
+indicators:
+  popcon_rank:             # nu există în Debian/Ubuntu
+  stars:                   # fără repo public
+  stars_url:
+  latest_release: "2026-09"
+  in_ubuntu_repos: false
+
+sources:
+- https://www.adobe.com/products/photoshop.html
+- https://www.adobe.com/privacy.html
+logo: logos/photoshop.png

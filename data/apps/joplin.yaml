@@ -1,0 +1,34 @@
+# Joplin — notițe markdown cu criptare
+id: joplin
+popularity: 250
+name: Joplin
+description: Notițe markdown cu criptare și sincronizare prin servicii la alegere.
+category: notes
+license: foss
+price: free
+developer: Laurent Cozic / comunitate
+website: https://joplinapp.org
+
+platforms: [linux, windows, macos, android]
+tags: [notite, markdown, criptare]
+alternatives: [obsidian]
+editors_choice: true
+
+details:
+  install_size_mb: 250
+  first_release_year: 2017
+  file_formats: [Markdown, JEX, ENEX]
+  telemetry: none
+  romanian_language: true
+
+indicators:
+  popcon_rank:
+  stars: 56996
+  stars_url: https://github.com/laurent22/joplin
+  latest_release: "2026-10"
+  in_ubuntu_repos: false
+
+sources:
+- https://joplinapp.org
+- https://github.com/laurent22/joplin
+logo: logos/joplin.svg

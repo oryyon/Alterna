@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alterna — Machetă UI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== Bară de titlu (simulare fereastră Qt) ===== -->
+  <header class="titlebar">
+    <div class="titlebar-left">
+      <span class="app-logo">◈</span>
+      <span class="app-name">Alterna</span>
+      <span class="app-tagline">— descoperă alternative software</span>
+    </div>
+    <div class="titlebar-right">
+      <button class="tb-btn" title="Propune o aplicație (deschide GitHub)">＋ Propune</button>
+      <button class="tb-btn" id="donateBtn" title="Susține proiectul">♥ Donează</button>
+      <button class="tb-btn" id="settingsBtn" title="Setări">⚙ Setări</button>
+      <button class="tb-btn tb-min" title="Minimizează">—</button>
+      <button class="tb-btn tb-max" title="Maximizează">▢</button>
+      <button class="tb-btn tb-close" title="Închide">✕</button>
+    </div>
+  </header>
+
+  <!-- ===== Bară de căutare + filtre ===== -->
+  <div class="toolbar">
+    <div class="search-box">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="searchInput" placeholder="Caută o aplicație… (ex: Photoshop)" autocomplete="off">
+      <button id="clearSearch" class="clear-btn" title="Golește">✕</button>
+    </div>
+    <div class="filters">
+      <select id="filterLicense" title="Licență">
+        <option value="">Licență: toate</option>
+        <option value="foss">Open Source</option>
+        <option value="freemium">Freemium</option>
+        <option value="comercial">Comercial</option>
+      </select>
+      <select id="filterPlatform" title="Platformă">
+        <option value="">Platformă: toate</option>
+        <option value="linux">Linux</option>
+        <option value="windows">Windows</option>
+        <option value="macos">macOS</option>
+        <option value="android">Android</option>
+        <option value="web">Web</option>
+      </select>
+      <select id="filterPrice" title="Preț">
+        <option value="">Preț: orice</option>
+        <option value="gratuit">Gratuit</option>
+        <option value="platit">Cu plată</option>
+      </select>
+      <select id="sortSelect" title="Sortare">
+        <option value="">Sortare: implicită</option>
+        <option value="az">Nume A → Z</option>
+        <option value="za">Nume Z → A</option>
+        <option value="recent">Recent actualizate</option>
+        <option value="mic">Dimensiune mică → mare</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- ===== Conținut principal ===== -->
+  <main class="content">
+
+    <!-- Panou stânga: categorii -->
+    <aside class="sidebar">
+      <h3>Categorii</h3>
+      <ul id="categoryList" class="category-list"></ul>
+      <div class="sidebar-footer">
+        <div class="db-status">
+          <span class="dot dot-ok"></span> Catalog local: <strong>152 aplicații</strong><br>
+          <span class="db-date">actualizat: 20.10.2026</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Panou dreapt: listă rezultate SAU pagina aplicației -->
+    <section class="main-panel">
+
+      <!-- Vizualizare: listă de aplicații -->
+      <div id="listView">
+        <div class="list-header">
+          <h2 id="listTitle">Aplicații populare</h2>
+          <span id="resultCount" class="result-count"></span>
+          <button id="compareBtn" class="btn-compare" title="Activează modul de comparare">⇄ Compară</button>
+        </div>
+        <div id="appList" class="app-list"></div>
+        <div id="compareBar" class="compare-bar hidden">
+          <span id="compareCount">0 selectate (max 4)</span>
+          <button id="openCompareBtn" class="btn-primary" disabled>Vezi comparația</button>
+        </div>
+      </div>
+
+      <!-- Vizualizare: pagina unei aplicații (ascunsă inițial) -->
+      <div id="detailView" class="hidden">
+        <button id="backBtn" class="back-btn">← Înapoi la rezultate</button>
+        <div id="detailContent"></div>
+      </div>
+
+      <!-- Vizualizare: tabel de comparație (ascuns inițial) -->
+      <div id="compareView" class="hidden">
+        <div class="compare-actions">
+          <button id="compareBackBtn" class="back-btn">← Înapoi la rezultate</button>
+          <div class="export-group">
+            <select id="exportFormat" title="Format fișier">
+              <option value="md">Markdown (.md)</option>
+              <option value="csv">CSV (.csv)</option>
+              <option value="html">HTML (.html)</option>
+              <option value="txt">Text (.txt)</option>
+              <option value="json">JSON (.json)</option>
+            </select>
+            <button id="exportCompareBtn" class="btn-secondary" title="Salvează comparația în fișier">💾 Salvează în fișier</button>
+          </div>
+        </div>
+        <div id="compareContent"></div>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- ===== Bară de stare ===== -->
+  <footer class="statusbar">
+    <span id="statusText">Gata.</span>
+    <span class="status-right">Offline • SQLite local • v0.1 (machetă)</span>
+  </footer>
+
+  <!-- ===== Modal: Setări ===== -->
+  <div id="settingsModal" class="modal-overlay hidden">
+    <div class="modal">
+      <div class="modal-header">
+        <h2>⚙ Setări</h2>
+        <button class="tb-btn modal-close" data-close="settingsModal">✕</button>
+      </div>
+      <div class="modal-body">
+
+        <section class="settings-group">
+          <h3>Aspect</h3>
+          <label class="settings-row">
+            <span>Temă</span>
+            <select id="themeSelect">
+              <option value="system">A sistemului (urmează Plasma)</option>
+              <option value="dark">Breeze Dark</option>
+              <option value="light">Breeze Light</option>
+              <option value="ocean">Ocean (albastru închis)</option>
+            </select>
+          </label>
+          <p class="settings-hint">În aplicația reală (Qt), tema va urma automat Plasma; aici simulăm comutarea.</p>
+        </section>
+
+        <section class="settings-group">
+          <h3>Catalog de date</h3>
+          <label class="settings-row">
+            <span>Verificare actualizări la pornire</span>
+            <input type="checkbox" id="optAutoUpdate" checked>
+          </label>
+          <label class="settings-row">
+            <span>Ultima actualizare</span>
+            <span class="settings-value">20.10.2026</span>
+          </label>
+          <button class="btn-secondary" disabled>Actualizează acum (demo)</button>
+        </section>
+
+        <section class="settings-group">
+          <h3>Indicatori afișați</h3>
+          <label class="settings-row"><span>Rang popcon Ubuntu</span><input type="checkbox" checked></label>
+          <label class="settings-row"><span>Stele GitHub</span><input type="checkbox" checked></label>
+          <label class="settings-row"><span>Data ultimei versiuni</span><input type="checkbox" checked></label>
+          <label class="settings-row"><span>„În depozitele Ubuntu"</span><input type="checkbox" checked></label>
+        </section>
+
+        <section class="settings-group">
+          <h3>Asistent AI (viitor)</h3>
+          <label class="settings-row">
+            <span>Sursă AI</span>
+            <select disabled>
+              <option>Dezactivat (implicit)</option>
+              <option>Model local (Ollama)</option>
+              <option>Claude API — cheie proprie</option>
+            </select>
+          </label>
+          <p class="settings-hint">Disponibil post-MVP. Nicio cheie nu e inclusă în aplicație.</p>
+        </section>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Modal: Donații ===== -->
+  <div id="donateModal" class="modal-overlay hidden">
+    <div class="modal modal-narrow">
+      <div class="modal-header">
+        <h2>♥ Susține Alterna</h2>
+        <button class="tb-btn modal-close" data-close="donateModal">✕</button>
+      </div>
+      <div class="modal-body">
+        <p class="donate-text">
+          Alterna este software liber (cod: GPLv3; date originale: CC BY-SA 4.0),
+          dezvoltat în timpul liber.
+          Dacă îți este utilă, o donație ajută la întreținerea catalogului
+          și la dezvoltarea de funcții noi. Absolut opțional — aplicația
+          rămâne gratuită și completă pentru toată lumea.
+        </p>
+        <div class="donate-options">
+          <button class="donate-btn" title="liberapay.com"><span class="donate-icon">🅻</span> Liberapay<span class="donate-note">donații recurente, fără comisioane (card / SEPA)</span></button>
+          <button class="donate-btn" title="ko-fi.com"><span class="donate-icon">☕</span> Ko-fi<span class="donate-note">donații unice, „o cafea" (card / PayPal)</span></button>
+          <button class="donate-btn" title="revolut.me"><span class="donate-icon">🅁</span> Revolut<span class="donate-note">link revolut.me — instant, popular în România</span></button>
+          <!-- Rezervate pentru viitor (se activează când e necesar):
+          <button class="donate-btn" title="github.com/sponsors"><span class="donate-icon">🐙</span> GitHub Sponsors<span class="donate-note">direct prin GitHub (card)</span></button>
+          <button class="donate-btn" title="paypal.me"><span class="donate-icon">🅿</span> PayPal<span class="donate-note">link PayPal.Me (card / cont PayPal)</span></button>
+          -->
+        </div>
+        <p class="settings-hint">În varianta reală, fiecare buton deschide pagina în browserul implicit.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

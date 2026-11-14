@@ -1,0 +1,32 @@
+# Obsidian — notițe interconectate peste fișiere markdown locale
+id: obsidian
+popularity: 260
+name: Obsidian
+description: Notițe interconectate peste fișiere markdown locale; gratuit pentru uz personal.
+category: notes
+license: freemium
+price: free
+developer: Dynalist Inc.
+website: https://obsidian.md
+
+platforms: [linux, windows, macos, android]
+tags: [notite, markdown, graf de cunostinte]
+alternatives: [joplin]
+
+details:
+  install_size_mb: 200
+  first_release_year: 2020
+  file_formats: [Markdown]
+  telemetry: optional
+  romanian_language: false
+
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release: "2026-10"
+  in_ubuntu_repos: false
+
+sources:
+- https://obsidian.md
+logo: logos/obsidian.svg

@@ -1,0 +1,31 @@
+# GParted — editor de partiții, standard pe Linux
+id: gparted
+popularity: 970
+name: GParted
+description: Editor de partiții cu interfață grafică, standard pe Linux.
+category: utilities
+license: foss
+price: free
+developer: Comunitatea GParted
+website: https://gparted.org
+
+platforms: [linux]
+tags: [partitii, discuri, sistem]
+alternatives: []
+
+details:
+  install_size_mb: 50
+  first_release_year: 2004
+  file_formats: []
+  telemetry: none
+  romanian_language: true
+
+indicators:
+  popcon_rank: 3633
+  stars:
+  stars_url:
+  latest_release: "2026-05"
+  in_ubuntu_repos: true
+
+sources:
+- https://gparted.org

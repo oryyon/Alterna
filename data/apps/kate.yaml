@@ -1,0 +1,33 @@
+# Kate — editor de text avansat de la KDE
+id: kate
+popularity: 360
+name: Kate
+description: Editor de text avansat de la KDE, cu LSP și sesiuni de proiect.
+category: development
+license: foss
+price: free
+developer: Proiectul KDE
+website: https://kate-editor.org
+
+platforms: [linux, windows]
+tags: [editor, cod, kde]
+alternatives: [vscode, vscodium]
+
+details:
+  install_size_mb: 30
+  first_release_year: 2001
+  file_formats: ["orice fișier text / cod"]
+  telemetry: none
+  romanian_language: true
+
+indicators:
+  popcon_rank: 2781
+  stars: 1500
+  stars_url: https://invent.kde.org/utilities/kate
+  latest_release: "2026-10"
+  in_ubuntu_repos: true
+
+sources:
+- https://kate-editor.org
+- https://invent.kde.org/utilities/kate
+logo: logos/kate.png

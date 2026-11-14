@@ -1,0 +1,32 @@
+# BleachBit — curățare de sistem
+id: bleachbit
+popularity: 1000
+name: BleachBit
+description: Curățare de sistem — cache, istorice, fișiere temporare.
+category: utilities
+license: foss
+price: free
+developer: Andrew Ziem / comunitate
+website: https://www.bleachbit.org
+
+platforms: [linux, windows]
+tags: [curatare, sistem, confidentialitate]
+alternatives: [stacer]
+
+details:
+  install_size_mb: 15
+  first_release_year: 2008
+  file_formats: []
+  telemetry: none
+  romanian_language: true
+
+indicators:
+  popcon_rank: 10513
+  stars: 7349
+  stars_url: https://github.com/bleachbit/bleachbit
+  latest_release: "2026-10"
+  in_ubuntu_repos: true
+
+sources:
+- https://www.bleachbit.org
+- https://github.com/bleachbit/bleachbit

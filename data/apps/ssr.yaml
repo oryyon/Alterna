@@ -1,0 +1,33 @@
+# SimpleScreenRecorder — înregistrare de ecran ușoară pentru Linux
+id: ssr
+popularity: 730
+name: SimpleScreenRecorder
+package: simplescreenrecorder
+description: Înregistrare simplă de ecran pentru Linux, ușoară și directă.
+category: streaming
+license: foss
+price: free
+developer: Maarten Baert
+website: https://www.maartenbaert.be/simplescreenrecorder
+
+platforms: [linux]
+tags: [inregistrare ecran, simplu]
+alternatives: [obs]
+
+details:
+  install_size_mb: 5
+  first_release_year: 2012
+  file_formats: [MP4, MKV, WebM]
+  telemetry: none
+  romanian_language: false
+
+indicators:
+  popcon_rank: 8878
+  stars: 2905
+  stars_url: https://github.com/MaartenBaert/ssr
+  latest_release: "2021-05"
+  in_ubuntu_repos: true
+
+sources:
+- https://www.maartenbaert.be/simplescreenrecorder
+- https://github.com/MaartenBaert/ssr

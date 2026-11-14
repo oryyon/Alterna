@@ -1,0 +1,33 @@
+# Telegram Desktop — mesagerie cu sincronizare în cloud
+id: telegram
+popularity: 70
+name: Telegram Desktop
+package: telegram-desktop
+description: Mesagerie rapidă cu sincronizare în cloud; clientul desktop e open source.
+category: communication
+license: foss
+price: free
+developer: Telegram FZ-LLC
+website: https://telegram.org
+
+platforms: [linux, windows, macos]
+tags: [mesagerie, chat]
+alternatives: [signal]
+
+details:
+  install_size_mb: 150
+  first_release_year: 2013
+  file_formats: []
+  telemetry: none
+  romanian_language: true
+
+indicators:
+  popcon_rank: 10674
+  stars: 33437
+  stars_url: https://github.com/telegramdesktop/tdesktop
+  latest_release: "2026-10"
+  in_ubuntu_repos: true    # pachetul telegram-desktop
+sources:
+- https://telegram.org
+- https://github.com/telegramdesktop/tdesktop
+logo: logos/telegram.svg

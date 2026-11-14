@@ -1,0 +1,32 @@
+# Spotify — streaming muzical
+id: spotify
+popularity: 110
+name: Spotify
+description: Streaming muzical cu client desktop; necesită cont.
+category: audio-players
+license: freemium
+price: free
+developer: Spotify AB
+website: https://www.spotify.com
+
+platforms: [linux, windows, macos, android, web]
+tags: [muzica, streaming, player]
+alternatives: [vlc, strawberry]
+
+details:
+  install_size_mb: 300
+  first_release_year: 2008
+  file_formats: [streaming]
+  telemetry: "yes"
+  romanian_language: true
+
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release: "2026-10"
+  in_ubuntu_repos: false
+
+sources:
+- https://www.spotify.com
+logo: logos/spotify.svg

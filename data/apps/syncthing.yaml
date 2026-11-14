@@ -1,0 +1,33 @@
+# Syncthing — sincronizare de fișiere P2P, fără cloud
+id: syncthing
+popularity: 930
+name: Syncthing
+description: Sincronizare de fișiere peer-to-peer, criptată, fără cloud.
+category: utilities
+license: foss
+price: free
+developer: Fundația Syncthing
+website: https://syncthing.net
+
+platforms: [linux, windows, macos, android]
+tags: [sincronizare, p2p, fara cloud]
+alternatives: []
+
+details:
+  install_size_mb: 100
+  first_release_year: 2013
+  file_formats: []
+  telemetry: none
+  romanian_language: false
+
+indicators:
+  popcon_rank: 6306
+  stars: 90019
+  stars_url: https://github.com/syncthing/syncthing
+  latest_release: "2026-10"
+  in_ubuntu_repos: true
+
+sources:
+- https://syncthing.net
+- https://github.com/syncthing/syncthing
+logo: logos/syncthing.svg

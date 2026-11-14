@@ -1,0 +1,32 @@
+# PeaZip — arhivator cu suport pentru peste 200 de formate
+id: peazip
+popularity: 340
+name: PeaZip
+description: Arhivator cu interfață prietenoasă, suportă peste 200 de formate.
+category: utilities
+license: foss
+price: free
+developer: Giorgio Tani
+website: https://peazip.github.io
+
+platforms: [linux, windows]
+tags: [arhivare, zip, compresie]
+alternatives: [sevenzip]
+
+details:
+  install_size_mb: 20
+  first_release_year: 2006
+  file_formats: ["7Z", "ZIP", "TAR", "+ alte 200"]
+  telemetry: none
+  romanian_language: true
+
+indicators:
+  popcon_rank:
+  stars: 8060
+  stars_url: https://github.com/peazip/PeaZip
+  latest_release: "2026-10"
+  in_ubuntu_repos: false
+
+sources:
+- https://peazip.github.io
+- https://github.com/peazip/PeaZip

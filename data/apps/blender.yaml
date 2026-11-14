@@ -1,0 +1,33 @@
+# Blender — suita 3D completă
+id: blender
+popularity: 120
+name: Blender
+description: Suită completă 3D — modelare, sculptură, animație, randare, VFX.
+category: 3d-cad
+license: foss
+price: free
+developer: Fundația Blender
+website: https://www.blender.org
+
+platforms: [linux, windows, macos]
+tags: [3d, modelare, animatie, randare]
+alternatives: [freecad]
+
+details:
+  install_size_mb: 350
+  first_release_year: 1998
+  file_formats: [BLEND, OBJ, FBX, glTF, STL]
+  telemetry: optional
+  romanian_language: false
+
+indicators:
+  popcon_rank: 7275
+  stars: 21549
+  stars_url: https://github.com/blender/blender
+  latest_release: "2026-10"
+  in_ubuntu_repos: true
+
+sources:
+- https://www.blender.org
+- https://github.com/blender/blender
+logo: logos/blender.svg

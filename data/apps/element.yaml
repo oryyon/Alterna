@@ -1,0 +1,33 @@
+# Element — client Matrix pentru chat descentralizat
+id: element
+popularity: 680
+name: Element
+description: Client Matrix cu criptare cap-la-cap, pentru chat descentralizat.
+category: communication
+license: foss
+price: free
+developer: Element
+website: https://element.io
+
+platforms: [linux, windows, macos, android, web]
+tags: [mesagerie, matrix, descentralizat]
+alternatives: [signal, telegram]
+
+details:
+  install_size_mb: 300
+  first_release_year: 2016
+  file_formats: []
+  telemetry: optional
+  romanian_language: true
+
+indicators:
+  popcon_rank:
+  stars: 13636
+  stars_url: https://github.com/element-hq/element-web
+  latest_release: "2026-10"
+  in_ubuntu_repos: false
+
+sources:
+- https://element.io
+- https://github.com/element-hq/element-web
+logo: logos/element.svg

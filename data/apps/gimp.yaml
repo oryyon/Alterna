@@ -1,0 +1,35 @@
+# GIMP — editor de imagini. Format: vezi data/README.md
+id: gimp
+popularity: 40
+name: GIMP
+description: Editor de imagini liber și gratuit, cu plugin-uri și scripturi.
+category: graphics
+license: foss
+price: free
+developer: Comunitatea GIMP
+website: https://www.gimp.org
+logo: logos/gimp.svg   # rezervat — logo-urile vin post-MVP
+
+platforms: [linux, windows, macos]
+tags: [editare foto, raster]
+alternatives: [krita, photopea, photoshop]
+editors_choice: true
+
+details:
+  install_size_mb: 300
+  first_release_year: 1996
+  file_formats: [XCF, PSD, JPG, PNG, TIFF]
+  telemetry: none
+  romanian_language: true
+
+indicators:
+  popcon_rank: 1860
+  stars: 6561
+  stars_url: https://github.com/GNOME/gimp
+  latest_release: "2026-11"
+  in_ubuntu_repos: true
+
+sources:
+- https://www.gimp.org
+- https://github.com/GNOME/gimp
+- https://popcon.debian.org

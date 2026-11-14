@@ -1,0 +1,33 @@
+# mpv — player minimalist controlat din tastatură
+id: mpv
+popularity: 350
+name: mpv
+description: Player minimalist și extrem de configurabil, controlat din tastatură.
+category: audio-players
+license: foss
+price: free
+developer: Comunitatea mpv
+website: https://mpv.io
+
+platforms: [linux, windows, macos]
+tags: [player, minimalist]
+alternatives: [vlc]
+
+details:
+  install_size_mb: 30
+  first_release_year: 2013
+  file_formats: ["orice suportă FFmpeg"]
+  telemetry: none
+  romanian_language: false
+
+indicators:
+  popcon_rank: 3950
+  stars: 37679
+  stars_url: https://github.com/mpv-player/mpv
+  latest_release: "2026-10"
+  in_ubuntu_repos: true
+
+sources:
+- https://mpv.io
+- https://github.com/mpv-player/mpv
+logo: logos/mpv.svg

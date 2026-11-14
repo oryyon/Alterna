@@ -1,0 +1,32 @@
+# DaVinci Resolve — editor video profesional cu versiune gratuită generoasă
+id: davinci
+popularity: 220
+name: DaVinci Resolve
+description: Editor video profesional cu etalonare cromatică de top; versiune gratuită generoasă.
+category: video
+license: freemium
+price: free
+developer: Blackmagic Design
+website: https://www.blackmagicdesign.com/products/davinciresolve
+
+platforms: [linux, windows, macos]
+tags: [editare video, color grading]
+alternatives: [kdenlive, premiere]
+
+details:
+  install_size_mb: 3000
+  first_release_year: 2004
+  file_formats: [MP4, MOV, ProRes, BRAW]
+  telemetry: optional
+  romanian_language: false
+
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release: "2026-08"
+  in_ubuntu_repos: false
+
+sources:
+- https://www.blackmagicdesign.com/products/davinciresolve
+logo: logos/davinci.svg

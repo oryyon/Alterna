@@ -1,0 +1,31 @@
+# REAPER — DAW comercial cu licență accesibilă
+id: reaper
+popularity: 790
+name: REAPER
+description: DAW comercial cu licență accesibilă și evaluare completă de 60 de zile.
+category: audio-production
+license: commercial
+price: paid
+developer: Cockos Inc.
+website: https://www.reaper.fm
+
+platforms: [linux, windows, macos]
+tags: [daw, inregistrare, mixaj]
+alternatives: [ardour]
+
+details:
+  install_size_mb: 30
+  first_release_year: 2005
+  file_formats: [RPP, WAV, MP3]
+  telemetry: none
+  romanian_language: false
+
+indicators:
+  popcon_rank: null
+  stars: null
+  stars_url: null
+  latest_release: "2026-10"
+  in_ubuntu_repos: false
+
+sources:
+  - https://www.reaper.fm

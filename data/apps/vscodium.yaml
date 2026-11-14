@@ -1,0 +1,33 @@
+# VSCodium — VS Code fără telemetrie, 100% open source
+id: vscodium
+popularity: 370
+name: VSCodium
+description: Build al VS Code fără telemetrie și 100% open source.
+category: development
+license: foss
+price: free
+developer: Comunitatea VSCodium
+website: https://vscodium.com
+
+platforms: [linux, windows, macos]
+tags: [editor, cod, fara telemetrie]
+alternatives: [vscode, kate]
+
+details:
+  install_size_mb: 350
+  first_release_year: 2018
+  file_formats: ["orice fișier text / cod"]
+  telemetry: none
+  romanian_language: true
+
+indicators:
+  popcon_rank:
+  stars: 33921
+  stars_url: https://github.com/VSCodium/vscodium
+  latest_release: "2026-10"
+  in_ubuntu_repos: false
+
+sources:
+- https://vscodium.com
+- https://github.com/VSCodium/vscodium
+logo: logos/vscodium.svg

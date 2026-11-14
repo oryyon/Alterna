@@ -1,0 +1,33 @@
+# ONLYOFFICE — compatibilitate excelentă cu formatele MS Office
+id: onlyoffice
+popularity: 540
+name: ONLYOFFICE
+description: Suită de birou cu compatibilitate excelentă cu formatele DOCX/XLSX.
+category: office
+license: foss
+price: free
+developer: Ascensio System
+website: https://www.onlyoffice.com
+
+platforms: [linux, windows, macos, web]
+tags: [documente, colaborare]
+alternatives: [libreoffice, msoffice]
+
+details:
+  install_size_mb: 500
+  first_release_year: 2014
+  file_formats: [DOCX, XLSX, PPTX, ODF]
+  telemetry: optional
+  romanian_language: true
+
+indicators:
+  popcon_rank:
+  stars: 5689
+  stars_url: https://github.com/ONLYOFFICE/DesktopEditors
+  latest_release: "2026-10"
+  in_ubuntu_repos: false
+
+sources:
+- https://www.onlyoffice.com
+- https://github.com/ONLYOFFICE
+logo: logos/onlyoffice.svg

@@ -1,0 +1,31 @@
+# Fusion 360 — CAD/CAM/CAE integrat, în cloud
+id: fusion360
+popularity: 850
+name: Fusion 360
+description: CAD/CAM/CAE integrat, în cloud; gratuit pentru uz hobby.
+category: 3d-cad
+license: freemium
+price: free
+developer: Autodesk
+website: https://www.autodesk.com/products/fusion-360
+
+platforms: [windows, macos]
+tags: [cad, cam, parametric]
+alternatives: [freecad]
+
+details:
+  install_size_mb: 3000
+  first_release_year: 2013
+  file_formats: [F3D, STEP, STL]
+  telemetry: "yes"
+  romanian_language: false
+
+indicators:
+  popcon_rank: null
+  stars: null
+  stars_url: null
+  latest_release: "2026-09"
+  in_ubuntu_repos: false
+
+sources:
+  - https://www.autodesk.com/products/fusion-360

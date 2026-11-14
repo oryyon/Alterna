@@ -1,0 +1,33 @@
+# Tor Browser — navigare anonimă prin rețeaua Tor
+id: tor-browser
+popularity: 640
+name: Tor Browser
+description: Browser pentru navigare anonimă prin rețeaua Tor.
+category: internet
+license: foss
+price: free
+developer: The Tor Project
+website: https://www.torproject.org
+
+platforms: [linux, windows, macos, android]
+tags: [browser, anonimat, privacitate]
+alternatives: [firefox, brave]
+
+details:
+  install_size_mb: 200
+  first_release_year: 2008
+  file_formats: []
+  telemetry: none
+  romanian_language: true
+
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release: "2026-10"
+  in_ubuntu_repos: false
+
+sources:
+- https://www.torproject.org
+- https://gitlab.torproject.org/tpo/applications/tor-browser
+logo: logos/tor-browser.svg

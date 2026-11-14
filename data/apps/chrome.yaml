@@ -1,0 +1,32 @@
+# Google Chrome — browserul Google
+id: chrome
+popularity: 20
+name: Google Chrome
+description: Browserul Google, cu integrare strânsă cu serviciile Google.
+category: internet
+license: commercial
+price: free
+developer: Google
+website: https://www.google.com/chrome
+
+platforms: [linux, windows, macos, android]
+tags: [browser, navigare]
+alternatives: [firefox, chromium, brave]
+
+details:
+  install_size_mb: 300
+  first_release_year: 2008
+  file_formats: []
+  telemetry: "yes"
+  romanian_language: true
+
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release: "2026-10"
+  in_ubuntu_repos: false
+
+sources:
+- https://www.google.com/chrome
+logo: logos/chrome.svg

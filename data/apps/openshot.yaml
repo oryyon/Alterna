@@ -1,0 +1,33 @@
+# OpenShot — editare video pentru începători
+id: openshot
+popularity: 590
+name: OpenShot
+description: Editor video simplu, orientat spre începători.
+category: video
+license: foss
+price: free
+developer: OpenShot Studios
+website: https://www.openshot.org
+
+platforms: [linux, windows, macos]
+tags: [editare video, simplu]
+alternatives: [kdenlive, shotcut]
+
+details:
+  install_size_mb: 400
+  first_release_year: 2008
+  file_formats: [MP4, MKV, WebM]
+  telemetry: optional
+  romanian_language: true
+
+indicators:
+  popcon_rank:
+  stars: 6737
+  stars_url: https://github.com/OpenShot/openshot-qt
+  latest_release: "2026-11"
+  in_ubuntu_repos: false
+
+sources:
+- https://www.openshot.org
+- https://github.com/OpenShot/openshot-qt
+logo: logos/openshot.png

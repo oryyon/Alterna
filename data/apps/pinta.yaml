@@ -1,0 +1,32 @@
+# Pinta — editare de imagini simplă, în spiritul Paint.NET
+id: pinta
+popularity: 530
+name: Pinta
+description: Editor de imagini simplu și ușor, în spiritul Paint.NET.
+category: graphics
+license: foss
+price: free
+developer: Comunitatea Pinta
+website: https://www.pinta-project.com
+
+platforms: [linux, windows, macos]
+tags: [editare foto, simplu]
+alternatives: [gimp, photopea]
+
+details:
+  install_size_mb: 50
+  first_release_year: 2010
+  file_formats: [PNG, JPG, BMP, ORA]
+  telemetry: none
+  romanian_language: true
+
+indicators:
+  popcon_rank:
+  stars: 4124
+  stars_url: https://github.com/PintaProject/Pinta
+  latest_release: "2026-04"
+  in_ubuntu_repos: false
+
+sources:
+- https://www.pinta-project.com
+- https://github.com/PintaProject/Pinta

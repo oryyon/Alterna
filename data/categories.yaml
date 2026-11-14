@@ -1,0 +1,31 @@
+# Categoriile fixe ale catalogului Alterna (sec. 13 din IDEI_PROIECT.md)
+# slug = valoarea câmpului `category` din fișierele apps/*.yaml
+# name = numele afișat în interfață (română)
+# Ordinea din acest fișier = ordinea din bara laterală.
+
+- slug: graphics
+  name: Grafică
+- slug: office
+  name: Birou
+- slug: video
+  name: Video
+- slug: audio-players
+  name: Audio & Playere
+- slug: development
+  name: Dezvoltare
+- slug: internet
+  name: Internet
+- slug: communication
+  name: Comunicare
+- slug: security
+  name: Securitate
+- slug: streaming
+  name: Streaming & Captură
+- slug: audio-production
+  name: Producție audio
+- slug: 3d-cad
+  name: 3D & CAD
+- slug: notes
+  name: Notițe
+- slug: utilities
+  name: Utilitare

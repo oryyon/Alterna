@@ -1,0 +1,32 @@
+# Apache OpenOffice — suita de birou clasică, predecesoarea LibreOffice
+id: openoffice
+popularity: 560
+name: Apache OpenOffice
+description: Suită de birou open source clasică, predecesoarea LibreOffice.
+category: office
+license: foss
+price: free
+developer: Apache Software Foundation
+website: https://www.openoffice.org
+
+platforms: [linux, windows, macos]
+tags: [documente, foi de calcul]
+alternatives: [libreoffice, onlyoffice]
+
+details:
+  install_size_mb: 400
+  first_release_year: 2002
+  file_formats: [ODF, DOCX, XLSX]
+  telemetry: none
+  romanian_language: true
+
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release: "2024-07"
+  in_ubuntu_repos: false
+
+sources:
+- https://www.openoffice.org
+logo: logos/openoffice.png

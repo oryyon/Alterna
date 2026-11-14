@@ -1,0 +1,33 @@
+# darktable — flux de lucru foto RAW
+id: darktable
+popularity: 470
+name: darktable
+description: Flux de lucru foto RAW, alternativă liberă la Lightroom.
+category: graphics
+license: foss
+price: free
+developer: Comunitatea darktable
+website: https://www.darktable.org
+
+platforms: [linux, windows, macos]
+tags: [raw, foto, developare]
+alternatives: [gimp, krita]
+
+details:
+  install_size_mb: 250
+  first_release_year: 2009
+  file_formats: [RAW, DNG, XMP]
+  telemetry: none
+  romanian_language: true
+
+indicators:
+  popcon_rank: 9370
+  stars: 13384
+  stars_url: https://github.com/darktable-org/darktable
+  latest_release: "2026-11"
+  in_ubuntu_repos: true
+
+sources:
+- https://www.darktable.org
+- https://github.com/darktable-org/darktable
+logo: logos/darktable.png

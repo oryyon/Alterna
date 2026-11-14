@@ -1,0 +1,362 @@
+#!/usr/bin/env python3
+"""Alterna — script de build al catalogului.
+
+Citește fișierele-sursă YAML din data/ (sursa adevărului — sec. 7, 17 din
+IDEI_PROIECT.md), aplică validările din data/README.md și generează
+catalog.db (SQLite) — produs generat automat, NU se editează manual.
+
+Utilizare:
+    python tools/build_catalog.py                # data/ -> catalog.db (în rădăcină)
+    python tools/build_catalog.py --out build/catalog.db
+
+Cod de ieșire: 0 = succes (eventual cu avertismente), 1 = erori de validare.
+Dependențe: Python 3.10+, PyYAML (vezi requirements.txt).
+"""
+
+from __future__ import annotations
+
+import argparse
+import re
+import sqlite3
+import sys
+from datetime import date
+from pathlib import Path
+
+import yaml
+
+SCHEMA_VERSION = 1
+
+# --- Valori legale (oglindă data/README.md) -----------------------------------
+LICENSES = {"foss", "freemium", "commercial"}
+PRICES = {"free", "paid"}
+PLATFORMS = {"linux", "windows", "macos", "android", "web"}
+TELEMETRY = {"none", "optional", "yes"}
+FEATURE_VALUES = {"free", "paid", "partial", "no", "unknown"}
+ID_RE = re.compile(r"^[a-z0-9-]+$")
+RELEASE_RE = re.compile(r"^\d{4}-(0[1-9]|1[0-2])$")
+STALE_YEARS = 2  # regula 6: latest_release mai veche de 2 ani -> avertisment
+
+# Câmpuri obligatorii (✅ în specificație)
+REQUIRED_FIELDS = [
+    "id", "name", "description", "category", "license", "price",
+    "developer", "website", "platforms", "tags", "alternatives",
+]
+# Câmpuri „✅*": cheia trebuie să existe; valoarea poate fi null -> avertisment
+REQUIRED_DETAILS = [
+    "install_size_mb", "first_release_year", "file_formats",
+    "telemetry", "romanian_language",
+]
+REQUIRED_INDICATORS = ["latest_release", "in_ubuntu_repos"]
+
+SCHEMA = """
+CREATE TABLE metadata (
+    key   TEXT PRIMARY KEY,
+    value TEXT NOT NULL
+);
+CREATE TABLE categories (
+    slug     TEXT PRIMARY KEY,
+    name     TEXT NOT NULL,
+    position INTEGER NOT NULL
+);
+CREATE TABLE applications (
+    id                 TEXT PRIMARY KEY,
+    name               TEXT NOT NULL,
+    description        TEXT NOT NULL,
+    category           TEXT NOT NULL REFERENCES categories(slug),
+    license            TEXT NOT NULL,
+    price              TEXT NOT NULL,
+    developer          TEXT NOT NULL,
+    website            TEXT NOT NULL,
+    logo               TEXT,
+    editors_choice     INTEGER NOT NULL DEFAULT 0,
+    popularity         INTEGER,
+    install_size_mb    INTEGER,
+    first_release_year INTEGER,
+    telemetry          TEXT,
+    romanian_language  INTEGER,
+    popcon_rank        INTEGER,
+    stars              INTEGER,
+    stars_url          TEXT,
+    latest_release     TEXT,
+    in_ubuntu_repos    INTEGER NOT NULL DEFAULT 0
+);
+CREATE TABLE platforms (
+    app_id   TEXT NOT NULL REFERENCES applications(id),
+    platform TEXT NOT NULL,
+    PRIMARY KEY (app_id, platform)
+);
+CREATE TABLE alternatives (
+    app_id         TEXT NOT NULL REFERENCES applications(id),
+    alternative_id TEXT NOT NULL REFERENCES applications(id),
+    PRIMARY KEY (app_id, alternative_id)
+);
+CREATE TABLE tags (
+    app_id TEXT NOT NULL REFERENCES applications(id),
+    tag    TEXT NOT NULL,
+    PRIMARY KEY (app_id, tag)
+);
+CREATE TABLE file_formats (
+    app_id TEXT NOT NULL REFERENCES applications(id),
+    format TEXT NOT NULL,
+    PRIMARY KEY (app_id, format)
+);
+CREATE TABLE sources (
+    app_id TEXT NOT NULL REFERENCES applications(id),
+    url    TEXT NOT NULL,
+    PRIMARY KEY (app_id, url)
+);
+CREATE TABLE taxonomy (
+    category TEXT NOT NULL REFERENCES categories(slug),
+    key      TEXT NOT NULL,
+    label    TEXT NOT NULL,
+    position INTEGER NOT NULL,
+    PRIMARY KEY (category, key)
+);
+CREATE TABLE features (
+    app_id      TEXT NOT NULL REFERENCES applications(id),
+    feature_key TEXT NOT NULL,
+    value       TEXT NOT NULL,
+    note        TEXT,
+    PRIMARY KEY (app_id, feature_key),
+    FOREIGN KEY (app_id) REFERENCES applications(id)
+);
+CREATE INDEX idx_apps_category ON applications(category);
+CREATE INDEX idx_tags_tag ON tags(tag);
+"""
+
+
+class Reporter:
+    """Colectează erorile (blochează build-ul) și avertismentele (nu blochează)."""
+
+    def __init__(self) -> None:
+        self.errors: list[str] = []
+        self.warnings: list[str] = []
+
+    def error(self, msg: str) -> None:
+        self.errors.append(msg)
+
+    def warn(self, msg: str) -> None:
+        self.warnings.append(msg)
+
+
+def load_yaml(path: Path, rep: Reporter):
+    try:
+        return yaml.safe_load(path.read_text(encoding="utf-8"))
+    except yaml.YAMLError as exc:
+        rep.error(f"{path.name}: YAML invalid — {exc}")
+        return None
+
+
+def validate_app(path: Path, app: dict, taxonomies: dict[str, set], rep: Reporter) -> None:
+    """Validările 1, 2, 4, 5, 6 din data/README.md (la nivel de fișier)."""
+    name = path.name
+    if not isinstance(app, dict):
+        rep.error(f"{name}: conținutul nu este un mapping YAML")
+        return
+
+    # Câmpuri obligatorii prezente
+    for field in REQUIRED_FIELDS:
+        if field not in app or app[field] is None:
+            rep.error(f"{name}: câmp obligatoriu lipsă — '{field}'")
+    for field in REQUIRED_DETAILS:
+        if "details" not in app or field not in app.get("details", {}):
+            rep.error(f"{name}: details.{field} lipsește")
+        elif app["details"][field] is None:
+            rep.warn(f"{name}: details.{field} este null (regula ≥90% acoperire)")
+    for field in REQUIRED_INDICATORS:
+        if "indicators" not in app or field not in app.get("indicators", {}):
+            rep.error(f"{name}: indicators.{field} lipsește")
+
+    # Regula 1: id == numele fișierului, format [a-z0-9-]
+    app_id = app.get("id")
+    if app_id is not None:
+        if app_id != path.stem:
+            rep.error(f"{name}: id '{app_id}' ≠ numele fișierului '{path.stem}'")
+        if not ID_RE.match(str(app_id)):
+            rep.error(f"{name}: id '{app_id}' nu respectă [a-z0-9-]+")
+
+    # Regula 4: enum-uri legale
+    if app.get("license") not in LICENSES:
+        rep.error(f"{name}: license invalidă — {app.get('license')!r}")
+    if app.get("price") not in PRICES:
+        rep.error(f"{name}: price invalid — {app.get('price')!r}")
+    for p in app.get("platforms", []) or []:
+        if p not in PLATFORMS:
+            rep.error(f"{name}: platformă invalidă — {p!r}")
+    tel = (app.get("details") or {}).get("telemetry")
+    if tel is not None and tel not in TELEMETRY:
+        rep.error(f"{name}: telemetry invalid — {tel!r}")
+
+    release = (app.get("indicators") or {}).get("latest_release")
+    if release is not None:
+        if not RELEASE_RE.match(str(release)):
+            rep.error(f"{name}: latest_release '{release}' nu are formatul YYYY-MM")
+        else:
+            year = int(str(release)[:4])
+            if date.today().year - year > STALE_YEARS:
+                rep.warn(f"{name}: latest_release '{release}' mai veche de {STALE_YEARS} ani")
+
+    # Regula 5: features doar pentru categorii cu taxonomie
+    features = app.get("features")
+    category = app.get("category")
+    if features:
+        if category not in taxonomies:
+            rep.error(f"{name}: 'features' fără taxonomie pentru categoria {category!r}")
+        else:
+            for key, val in features.items():
+                if key not in taxonomies[category]:
+                    rep.error(f"{name}: features.{key} nu există în taxonomia '{category}'")
+                value = val.get("value") if isinstance(val, dict) else val
+                if value not in FEATURE_VALUES:
+                    rep.error(f"{name}: features.{key} = {value!r} invalid "
+                              f"(ateptat: {'/'.join(sorted(FEATURE_VALUES))}; "
+                              f"atenție: 'no' se scrie cu ghilimele!)")
+
+    # Regula 6: surse
+    if not app.get("sources"):
+        rep.warn(f"{name}: 'sources' gol — indicatorii trebuie să aibă sursă citată")
+
+
+def build(data_dir: Path, out_path: Path) -> bool:
+    rep = Reporter()
+
+    # --- Categorii -------------------------------------------------------------
+    categories_raw = load_yaml(data_dir / "categories.yaml", rep) or []
+    categories = [(c["slug"], c["name"], i) for i, c in enumerate(categories_raw)]
+    category_slugs = {c[0] for c in categories}
+
+    # --- Taxonomii -------------------------------------------------------------
+    taxonomies: dict[str, set] = {}
+    taxonomy_rows: list[tuple[str, str, str, int]] = []
+    for tax_file in sorted((data_dir / "taxonomy").glob("*.yaml")):
+        tax = load_yaml(tax_file, rep) or {}
+        cat = tax.get("category", tax_file.stem)
+        keys = set()
+        for i, (key, label) in enumerate((tax.get("features") or {}).items()):
+            keys.add(key)
+            taxonomy_rows.append((cat, key, label, i))
+        taxonomies[cat] = keys
+
+    # --- Aplicații ---------------------------------------------------------------
+    apps: list[dict] = []
+    seen_ids: set[str] = set()
+    for app_file in sorted((data_dir / "apps").glob("*.yaml")):
+        app = load_yaml(app_file, rep)
+        if app is None:
+            continue
+        # Regula 2: categoria există
+        if app.get("category") not in category_slugs:
+            rep.error(f"{app_file.name}: categorie necunoscută — {app.get('category')!r}")
+        validate_app(app_file, app, taxonomies, rep)
+        if app.get("id") in seen_ids:
+            rep.error(f"{app_file.name}: id duplicat — {app.get('id')!r}")
+        seen_ids.add(app.get("id"))
+        apps.append(app)
+
+    # Regula 3: alternatives referă id-uri existente
+    for app in apps:
+        for alt in app.get("alternatives", []) or []:
+            if alt not in seen_ids:
+                rep.error(f"{app.get('id')}: alternativă inexistentă — '{alt}'")
+
+    # popularity: avertisment la valori duplicate (ordine editorială ambiguă)
+    seen_pop: dict[int, str] = {}
+    for app in apps:
+        pop = app.get("popularity")
+        if pop is None:
+            continue
+        if pop in seen_pop:
+            rep.warn(f"{app.get('id')}: popularity {pop} duplicat "
+                     f"(la fel ca {seen_pop[pop]})")
+        seen_pop[pop] = app.get("id")
+
+    # --- Raport ------------------------------------------------------------------
+    for w in rep.warnings:
+        print(f"  ⚠ {w}")
+    if rep.errors:
+        for e in rep.errors:
+            print(f"  ✗ {e}", file=sys.stderr)
+        print(f"\nEȘEC: {len(rep.errors)} erori, {len(rep.warnings)} avertismente. "
+              f"catalog.db NU a fost generat.", file=sys.stderr)
+        return False
+
+    # --- Scrierea bazei de date ----------------------------------------------------
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    if out_path.exists():
+        out_path.unlink()
+    con = sqlite3.connect(out_path)
+    try:
+        with con:
+            con.executescript(SCHEMA)
+            con.executemany(
+                "INSERT INTO categories VALUES (?, ?, ?)", categories)
+            con.executemany(
+                "INSERT INTO taxonomy VALUES (?, ?, ?, ?)", taxonomy_rows)
+            con.executemany(
+                "INSERT INTO metadata VALUES (?, ?)",
+                [("schema_version", str(SCHEMA_VERSION)),
+                 ("generated_at", date.today().isoformat()),
+                 ("app_count", str(len(apps)))])
+
+            for app in apps:
+                det = app.get("details") or {}
+                ind = app.get("indicators") or {}
+                con.execute(
+                    """INSERT INTO applications VALUES
+                       (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
+                    (app["id"], app["name"], app["description"], app["category"],
+                     app["license"], app["price"], app["developer"], app["website"],
+                     app.get("logo"), int(bool(app.get("editors_choice"))),
+                     app.get("popularity"),
+                     det.get("install_size_mb"), det.get("first_release_year"),
+                     det.get("telemetry"),
+                     None if det.get("romanian_language") is None
+                     else int(bool(det["romanian_language"])),
+                     ind.get("popcon_rank"), ind.get("stars"), ind.get("stars_url"),
+                     ind.get("latest_release"),
+                     int(bool(ind.get("in_ubuntu_repos")))))
+                for table, column, values in (
+                    ("platforms", "platform", app.get("platforms")),
+                    ("alternatives", "alternative_id", app.get("alternatives")),
+                    ("tags", "tag", app.get("tags")),
+                    ("file_formats", "format", det.get("file_formats")),
+                    ("sources", "url", app.get("sources")),
+                ):
+                    con.executemany(
+                        f"INSERT INTO {table} (app_id, {column}) VALUES (?, ?)",
+                        [(app["id"], v) for v in (values or [])])
+                for key, val in (app.get("features") or {}).items():
+                    if isinstance(val, dict):
+                        value, note = val["value"], val.get("note")
+                    else:
+                        value, note = val, None
+                    con.execute(
+                        "INSERT INTO features VALUES (?, ?, ?, ?)",
+                        (app["id"], key, value, note))
+    finally:
+        con.close()
+
+    print(f"✔ catalog.db generat: {len(apps)} aplicații, "
+          f"{len(categories)} categorii, "
+          f"{len(taxonomy_rows)} rânduri de taxonomie "
+          f"({len(rep.warnings)} avertismente)")
+    return True
+
+
+def main() -> int:
+    root = Path(__file__).resolve().parent.parent
+    parser = argparse.ArgumentParser(description="Build catalog Alterna: YAML -> SQLite")
+    parser.add_argument("--data", type=Path, default=root / "data",
+                        help="directorul-sursă YAML (implicit: data/)")
+    parser.add_argument("--out", type=Path, default=root / "catalog.db",
+                        help="fișierul SQLite generat (implicit: catalog.db în rădăcină)")
+    args = parser.parse_args()
+
+    if not args.data.is_dir():
+        print(f"Directorul de date nu există: {args.data}", file=sys.stderr)
+        return 1
+    return 0 if build(args.data, args.out) else 1
+
+
+if __name__ == "__main__":
+    sys.exit(main())

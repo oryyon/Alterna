@@ -1,0 +1,32 @@
+# Strawberry — player pentru colecții muzicale locale
+id: strawberry
+popularity: 610
+name: Strawberry
+description: Player muzical pentru colecții locale, fork modernizat al Clementine.
+category: audio-players
+license: foss
+price: free
+developer: Jonas Kvinge / comunitate
+website: https://www.strawberrymusicplayer.org
+
+platforms: [linux, windows, macos]
+tags: [player, muzica, colectii]
+alternatives: [vlc, elisa]
+
+details:
+  install_size_mb: 100
+  first_release_year: 2018
+  file_formats: [MP3, FLAC, OGG]
+  telemetry: none
+  romanian_language: true
+
+indicators:
+  popcon_rank: 13849
+  stars: 4052
+  stars_url: https://github.com/strawberrymusicplayer/strawberry
+  latest_release: "2026-10"
+  in_ubuntu_repos: true
+
+sources:
+- https://www.strawberrymusicplayer.org
+- https://github.com/strawberrymusicplayer/strawberry

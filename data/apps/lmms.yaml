@@ -1,0 +1,33 @@
+# LMMS — DAW liber pentru producție electronică
+id: lmms
+popularity: 780
+name: LMMS
+description: DAW liber orientat pe producție electronică și beatmaking.
+category: audio-production
+license: foss
+price: free
+developer: Comunitatea LMMS
+website: https://lmms.io
+
+platforms: [linux, windows, macos]
+tags: [daw, sintetizatoare, beatmaking]
+alternatives: [ardour, fl-studio]
+
+details:
+  install_size_mb: 200
+  first_release_year: 2004
+  file_formats: [MMP, WAV, MIDI]
+  telemetry: none
+  romanian_language: true
+
+indicators:
+  popcon_rank: 13339
+  stars: 10589
+  stars_url: https://github.com/LMMS/lmms
+  latest_release: "2026-09"
+  in_ubuntu_repos: true
+
+sources:
+- https://lmms.io
+- https://github.com/LMMS/lmms
+logo: logos/lmms.svg

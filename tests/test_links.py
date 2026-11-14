@@ -7,11 +7,11 @@ from app import links
 
 def test_repo_name_and_owner():
     assert links.REPO_NAME == "Alterna"
-    assert links.REPO_OWNER == "alterna-app"
+    assert links.REPO_OWNER == "oryyon"
 
 
 def test_urls_are_derived_from_repo_url():
-    assert links.REPO_URL == "https://github.com/alterna-app/Alterna"
+    assert links.REPO_URL == "https://github.com/oryyon/Alterna"
     assert links.ISSUES_URL == f"{links.REPO_URL}/issues"
     assert links.CONTRIBUTING_URL.endswith("/blob/main/CONTRIBUTING.md")
     assert links.DATA_LICENSE_URL.endswith("/blob/main/LICENSE-DATA")

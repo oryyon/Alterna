@@ -22,8 +22,8 @@
     <name>Alterna contributors</name>
   </developer>
 
-  <url type="homepage">https://github.com/alterna-app/Alterna</url>
-  <url type="bugtracker">https://github.com/alterna-app/Alterna/issues</url>
+  <url type="homepage">https://github.com/oryyon/Alterna</url>
+  <url type="bugtracker">https://github.com/oryyon/Alterna/issues</url>
 
   <launchable type="desktop-id">alterna.desktop</launchable>
 

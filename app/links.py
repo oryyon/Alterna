@@ -11,7 +11,7 @@ from __future__ import annotations
 REPO_NAME = "Alterna"
 
 #: Organizația (owner) de pe GitHub.
-REPO_OWNER = "alterna-app"
+REPO_OWNER = "oryyon"
 
 #: URL-ul repository-ului.
 REPO_URL = f"https://github.com/{REPO_OWNER}/{REPO_NAME}"

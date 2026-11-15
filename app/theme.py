@@ -77,6 +77,13 @@ def build_qss(theme: str) -> str:
     QLabel[link="true"] {{ color: {p['accent']}; }}
     QLabel[link="true"]:hover {{ color: {p['text']}; }}
 
+    /* Marcajele de certitudine (sec. 8): verde = verificată, portocaliu =
+       estimată, cenușiu = necunoscută. */
+    QLabel[conf="auto"] {{ color: {FOSS}; }}
+    QLabel[conf="manual"] {{ color: {FOSS}; }}
+    QLabel[conf="estimated"] {{ color: {FREEMIUM}; }}
+    QLabel[conf="unknown"] {{ color: {p['text_dim']}; }}
+
     QLabel[badge="foss"] {{ color: {FOSS}; background: #2627ae60; border: 1px solid #5527ae60;
                             border-radius: 4px; padding: 1px 6px; font-size: 11px; }}
     QLabel[badge="freemium"] {{ color: {FREEMIUM}; background: #26f39c12; border: 1px solid #55f39c12;

@@ -89,6 +89,10 @@ class Catalog:
             ("sources", "SELECT url FROM sources WHERE app_id = ?"),
         ):
             app[field] = [r[0] for r in self._con.execute(sql, (app_id,))]
+        # Marcajele de certitudine (sec. 8): {câmp: nivel}
+        app["confidence"] = {
+            r["field"]: r["level"] for r in self._con.execute(
+                "SELECT field, level FROM confidence WHERE app_id = ?", (app_id,))}
         app["features"] = {
             r["feature_key"]: {"value": r["value"], "note": r["note"]}
             for r in self._con.execute(

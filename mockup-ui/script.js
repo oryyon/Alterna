@@ -373,6 +373,38 @@ const SOURCES = {
 // Text lizibil al unei surse: fără schemă, fără slash final.
 const sourceLabel = (url) => url.replace(/^https?:\/\//, "").replace(/\/$/, "");
 
+// ---------- Certitudine (sec. 8): cât de mult te poți baza pe fiecare valoare ----
+// Nivelul implicit per tip de câmp — oglindă data/confidence.yaml.
+const CONF_DEFAULT = {
+  name: "manual", description: "manual", categorie: "manual", licenta: "manual",
+  pret: "manual", dev: "manual", site: "manual", platforme: "manual",
+  tags: "manual", alternative: "estimated",
+  dimMB: "estimated", an: "estimated", formate: "estimated",
+  tel: "estimated", ro: "estimated",
+  popcon: "auto", stele: "auto", ultimaVersiune: "auto", inRepoUbuntu: "auto",
+  func: "manual",
+};
+const CONF_MARKS = { auto: "⟳", manual: "✓", estimated: "≈", unknown: "?" };
+const CONF_RANK = { auto: 3, manual: 2, estimated: 1, unknown: 0 };
+
+// Nivelul efectiv: valoarea lipsă e întotdeauna „unknown" (nu se poate
+// verifica ceea ce nu există).
+function confLevel(camp, valoare) {
+  if (valoare === null || valoare === undefined || valoare === "")
+    return "unknown";
+  return CONF_DEFAULT[camp] || "estimated";
+}
+
+// Cel mai slab nivel dintr-o mulțime — marcajul unui rând de comparație.
+function confWeakest(camp, valori) {
+  let nivel = null;
+  valori.forEach(v => {
+    const l = confLevel(camp, v);
+    if (nivel === null || CONF_RANK[l] < CONF_RANK[nivel]) nivel = l;
+  });
+  return nivel || "unknown";
+}
+
 // ---------- Telemetrie (fapt documentabil din politica de confidențialitate) ----------
 const TEL = {
   photoshop: "da", gimp: "nu", krita: "nu", photopea: "optional", affinity: "nu",
@@ -645,11 +677,14 @@ function renderCompare() {
   const bestVers = apps.map(a => a.ultimaVersiune).sort().reverse()[0];
   const fmtMB = n => n == null ? "—" : n === 0 ? "0 (aplicație web)" : n >= 1000 ? `~${(n / 1000).toLocaleString("ro-RO")} GB` : `~${n} MB`;
 
-  const rand = (label, valori, bestFn) => `
+  const rand = (label, valori, bestFn, camp) => {
+    const nivel = camp ? confWeakest(camp, valori) : "estimated";
+    return `
     <tr>
-      <th class="row-label">${label}</th>
+      <th class="row-label"><span class="conf-mark conf-${nivel}" title="Certitudine: ${nivel}">${CONF_MARKS[nivel]}</span>${label}</th>
       ${apps.map((a, i) => `<td class="${bestFn && bestFn(a) ? "cell-best" : ""}">${valori[i]}</td>`).join("")}
     </tr>`;
+  };
 
   $("compareContent").innerHTML = `
     <div class="compare-table-wrap">
@@ -665,20 +700,20 @@ function renderCompare() {
           </tr>
         </thead>
         <tbody>
-          ${rand("Descriere", apps.map(a => a.descriere))}
-          ${rand("Dezvoltator", apps.map(a => a.dev))}
-          ${rand("Categorie", apps.map(a => a.categorie))}
-          ${rand("Licență", apps.map(a => `<span class="badge ${badgeClass(a.licenta)}">${LICENTE[a.licenta]}</span>`), a => a.licenta === "foss")}
-          ${rand("Preț", apps.map(a => a.pret === "gratuit" ? "Gratuit" : "Cu plată"), a => a.pret === "gratuit")}
-          ${rand("Platforme", apps.map(a => a.platforme.map(p => PLATFORME[p]).join(", ")), a => a.platforme.includes("linux"))}
-          ${rand("Site oficial", apps.map(a => a.site))}
-          ${rand("Dimensiune la instalare", apps.map(a => fmtMB(a.dimMB)), a => a.dimMB != null && a.dimMB === bestDim)}
-          ${rand("Anul primei versiuni", apps.map(a => a.an))}
-          ${rand("Ultima versiune", apps.map(a => a.ultimaVersiune), a => a.ultimaVersiune === bestVers)}
-          ${rand("Telemetrie", apps.map(a => TEL_LABELS[a.tel] || "—"), a => a.tel === "nu")}
-          ${rand("Limbă română", apps.map(a => a.ro === null ? "—" : a.ro ? "✓ Da" : "✗ Nu"), a => a.ro === true)}
-          ${rand("Formate de fișiere", apps.map(a => a.formate || "—"))}
-          ${rand("Taguri", apps.map(a => a.tags.map(t => "#" + t).join(" ")))}
+          ${rand("Descriere", apps.map(a => a.descriere), "description")}
+          ${rand("Dezvoltator", apps.map(a => a.dev), "dev")}
+          ${rand("Categorie", apps.map(a => a.categorie), "categorie")}
+          ${rand("Licență", apps.map(a => `<span class="badge ${badgeClass(a.licenta)}">${LICENTE[a.licenta]}</span>`), a => a.licenta === "foss", "licenta")}
+          ${rand("Preț", apps.map(a => a.pret === "gratuit" ? "Gratuit" : "Cu plată"), a => a.pret === "gratuit", "pret")}
+          ${rand("Platforme", apps.map(a => a.platforme.map(p => PLATFORME[p]).join(", ")), a => a.platforme.includes("linux"), "platforme")}
+          ${rand("Site oficial", apps.map(a => a.site), "site")}
+          ${rand("Dimensiune la instalare", apps.map(a => fmtMB(a.dimMB)), a => a.dimMB != null && a.dimMB === bestDim, "dimMB")}
+          ${rand("Anul primei versiuni", apps.map(a => a.an), "an")}
+          ${rand("Ultima versiune", apps.map(a => a.ultimaVersiune), a => a.ultimaVersiune === bestVers, "ultimaVersiune")}
+          ${rand("Telemetrie", apps.map(a => TEL_LABELS[a.tel] || "—"), a => a.tel === "nu", "tel")}
+          ${rand("Limbă română", apps.map(a => a.ro === null ? "—" : a.ro ? "✓ Da" : "✗ Nu"), a => a.ro === true, "ro")}
+          ${rand("Formate de fișiere", apps.map(a => a.formate || "—"), "formate")}
+          ${rand("Taguri", apps.map(a => a.tags.map(t => "#" + t).join(" ")), "tags")}
           ${renderFuncRows(apps)}
         </tbody>
       </table>
@@ -716,23 +751,28 @@ function showDetail(id) {
       </div>
     </div>
     <div class="detail-facts">
-      <div class="fact"><div class="fact-label">Popcon Ubuntu</div>
+      <div class="fact"><div class="fact-label">Popcon Ubuntu
+          <span class="conf-mark conf-${confLevel("popcon", a.popcon)}" title="Certitudine">${CONF_MARKS[confLevel("popcon", a.popcon)]}</span></div>
         <div class="fact-value">${a.popcon ? "#" + a.popcon : "—"}</div>
         <div class="fact-source">${a.popcon
           ? `<a href="https://popcon.debian.org" target="_blank" rel="noopener">sursa: popularity-contest</a>`
           : "nu e pachet Debian/Ubuntu"}</div></div>
-      <div class="fact"><div class="fact-label">Stele GitHub</div>
+      <div class="fact"><div class="fact-label">Stele GitHub
+          <span class="conf-mark conf-${confLevel("stele", a.stele)}" title="Certitudine">${CONF_MARKS[confLevel("stele", a.stele)]}</span></div>
         <div class="fact-value">${a.stele ? "★ " + a.stele.toLocaleString("ro-RO") : "—"}</div>
         <div class="fact-source">${a.stele
           ? `<a href="https://api.github.com" target="_blank" rel="noopener">sursa: GitHub API</a>`
           : "fără repo public"}</div></div>
-      <div class="fact"><div class="fact-label">Ultima versiune</div>
+      <div class="fact"><div class="fact-label">Ultima versiune
+          <span class="conf-mark conf-${confLevel("ultimaVersiune", a.ultimaVersiune)}" title="Certitudine">${CONF_MARKS[confLevel("ultimaVersiune", a.ultimaVersiune)]}</span></div>
         <div class="fact-value">${a.ultimaVersiune}</div>
         <div class="fact-source"><a href="https://www.wikidata.org" target="_blank" rel="noopener">sursa: catalog / Wikidata</a></div></div>
-      <div class="fact"><div class="fact-label">În depozitele Ubuntu</div>
+      <div class="fact"><div class="fact-label">În depozitele Ubuntu
+          <span class="conf-mark conf-${confLevel("inRepoUbuntu", a.inRepoUbuntu)}" title="Certitudine">${CONF_MARKS[confLevel("inRepoUbuntu", a.inRepoUbuntu)]}</span></div>
         <div class="fact-value ${a.inRepoUbuntu ? "ok" : ""}">${a.inRepoUbuntu ? "✓ Da — apt install" : "✗ Nu"}</div>
         <div class="fact-source"><a href="https://packages.ubuntu.com" target="_blank" rel="noopener">sursa: apt</a></div></div>
-      <div class="fact"><div class="fact-label">Preț</div>
+      <div class="fact"><div class="fact-label">Preț
+          <span class="conf-mark conf-${confLevel("pret", a.pret)}" title="Certitudine">${CONF_MARKS[confLevel("pret", a.pret)]}</span></div>
         <div class="fact-value">${a.pret === "gratuit" ? "Gratuit" : "Cu plată"}</div>
         <div class="fact-source"><a href="https://${a.site}" target="_blank" rel="noopener">sursa: catalog</a></div></div>
     </div>

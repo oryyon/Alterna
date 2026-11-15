@@ -48,6 +48,57 @@ REQUIRED_DETAILS = [
 ]
 REQUIRED_INDICATORS = ["latest_release", "in_ubuntu_repos"]
 
+# --- Certitudine (sec. 8) ----------------------------------------------------
+# Nivelurile declarabile în YAML. „unknown" NU se declară: se deduce
+# automat din absența valorii (null/vid) — nu poți verifica ce nu există.
+CONFIDENCE_LEVELS = ("auto", "manual", "estimated")
+#: Câmpurile de nivel superior care pot purta un marcaj de certitudine.
+CONFIDENCE_TOP_FIELDS = (
+    "name", "description", "category", "license", "price", "developer",
+    "website", "platforms", "tags", "alternatives", "popularity", "features",
+)
+#: Câmpurile din grupele `details` și `indicators`.
+CONFIDENCE_GROUP_FIELDS = {
+    "details": ("install_size_mb", "first_release_year", "file_formats",
+                "telemetry", "romanian_language"),
+    "indicators": ("popcon_rank", "stars", "stars_url", "latest_release",
+                   "in_ubuntu_repos"),
+}
+#: Toate câmpurile marcabile, în ordine stabilă.
+CONFIDENCE_FIELDS = (
+    CONFIDENCE_TOP_FIELDS
+    + tuple(f"details.{f}" for f in CONFIDENCE_GROUP_FIELDS["details"])
+    + tuple(f"indicators.{f}" for f in CONFIDENCE_GROUP_FIELDS["indicators"])
+)
+
+
+def known_confidence_field(field: str) -> bool:
+    """Adevărat dacă `field` e un câmp care poate purta marcaj."""
+    if field in CONFIDENCE_TOP_FIELDS:
+        return True
+    if "." in field:
+        group, key = field.split(".", 1)
+        return key in CONFIDENCE_GROUP_FIELDS.get(group, ())
+    return False
+
+
+def confidence_value(app: dict, field: str):
+    """Valoarea brută a unui câmp marcabil (None dacă lipsește)."""
+    if "." in field:
+        group, key = field.split(".", 1)
+        return (app.get(group) or {}).get(key)
+    return app.get(field)
+
+
+def is_absent(value) -> bool:
+    """Adevărat dacă valoarea e lipsă (nu poate fi verificată)."""
+    if value is None:
+        return True
+    if isinstance(value, (str, list, dict)) and len(value) == 0:
+        return True
+    return False
+
+
 SCHEMA = """
 CREATE TABLE metadata (
     key   TEXT PRIMARY KEY,
@@ -104,6 +155,12 @@ CREATE TABLE sources (
     app_id TEXT NOT NULL REFERENCES applications(id),
     url    TEXT NOT NULL,
     PRIMARY KEY (app_id, url)
+);
+CREATE TABLE confidence (
+    app_id TEXT NOT NULL REFERENCES applications(id),
+    field  TEXT NOT NULL,
+    level  TEXT NOT NULL,
+    PRIMARY KEY (app_id, field)
 );
 CREATE TABLE taxonomy (
     category TEXT NOT NULL REFERENCES categories(slug),
@@ -225,6 +282,70 @@ def validate_app(path: Path, app: dict, taxonomies: dict[str, set], rep: Reporte
     if website and website not in (app.get("sources") or []):
         rep.warn(f"{name}: site-ul oficial '{website}' nu apare în 'sources'")
 
+    # Regula 8: marcajele de certitudine per aplicație
+    for field, level in (app.get("confidence") or {}).items():
+        if not known_confidence_field(field):
+            rep.error(f"{name}: confidence.{field} — câmp necunoscut")
+            continue
+        if level == "unknown":
+            rep.error(f"{name}: confidence.{field} — 'unknown' se deduce automat "
+                      f"din valoarea lipsă; nu se declară")
+        elif level not in CONFIDENCE_LEVELS:
+            rep.error(f"{name}: confidence.{field} — nivel invalid {level!r} "
+                      f"(permise: {'/'.join(CONFIDENCE_LEVELS)})")
+
+
+def load_confidence_defaults(data_dir: Path, rep: Reporter) -> dict[str, str]:
+    """Citește data/confidence.yaml — nivelul implicit per tip de câmp.
+
+    Configurația e sursa adevărului pentru „cât de mult te poți baza pe
+    fiecare tip de valoare". O aplicație poate avea alt nivel, declarat în
+    fișierul ei YAML (cheia `confidence:`).
+    """
+    raw = load_yaml(data_dir / "confidence.yaml", rep)
+    if not isinstance(raw, dict):
+        rep.error("confidence.yaml: conținutul nu e un mapping YAML")
+        return {}
+    defaults = raw.get("defaults") or {}
+    if not isinstance(defaults, dict):
+        rep.error("confidence.yaml: 'defaults' nu e un mapping")
+        return {}
+
+    for field, level in defaults.items():
+        if not known_confidence_field(field):
+            rep.error(f"confidence.yaml: câmp necunoscut {field!r}")
+            continue
+        if level == "unknown":
+            rep.error(f"confidence.yaml: {field} — 'unknown' se deduce automat; "
+                      f"nu se declară")
+        elif level not in CONFIDENCE_LEVELS:
+            rep.error(f"confidence.yaml: {field} — nivel invalid {level!r} "
+                      f"(permise: {'/'.join(CONFIDENCE_LEVELS)})")
+
+    # Avertisment pentru câmpuri marcabile fără nivel implicit: ar moșteni
+    # „estimated" tacit, iar contributorul n-ar ști că trebuie să declare.
+    lipsa = [f for f in CONFIDENCE_FIELDS if f not in defaults]
+    if lipsa:
+        rep.warn(f"confidence.yaml: fără nivel implicit pentru: {', '.join(lipsa)}")
+    return defaults
+
+
+def resolve_confidence(app: dict, defaults: dict[str, str]) -> list[tuple[str, str]]:
+    """Nivelul efectiv de certitudine pentru fiecare câmp marcabil.
+
+    Precedență: override-ul din fișierul aplicației > implicitul din
+    `confidence.yaml`. Dacă valoarea e lipsă (null/vid), nivelul e „unknown",
+    oricât s-ar declara altfel — nu poți verifica ceea ce nu există.
+    """
+    overrides = app.get("confidence") or {}
+    rezultat = []
+    for field in CONFIDENCE_FIELDS:
+        level = overrides.get(field) or defaults.get(field) or "estimated"
+        if is_absent(confidence_value(app, field)):
+            level = "unknown"
+        rezultat.append((field, level))
+    return rezultat
+
 
 def build(data_dir: Path, out_path: Path) -> bool:
     rep = Reporter()
@@ -233,6 +354,9 @@ def build(data_dir: Path, out_path: Path) -> bool:
     categories_raw = load_yaml(data_dir / "categories.yaml", rep) or []
     categories = [(c["slug"], c["name"], i) for i, c in enumerate(categories_raw)]
     category_slugs = {c[0] for c in categories}
+
+    # --- Certitudine (sec. 8) --------------------------------------------------
+    confidence_defaults = load_confidence_defaults(data_dir, rep)
 
     # --- Taxonomii -------------------------------------------------------------
     taxonomies: dict[str, set] = {}
@@ -342,6 +466,11 @@ def build(data_dir: Path, out_path: Path) -> bool:
                     con.execute(
                         "INSERT INTO features VALUES (?, ?, ?, ?)",
                         (app["id"], key, value, note))
+                # Marcajele de certitudine (sec. 8) — vezi data/confidence.yaml
+                con.executemany(
+                    "INSERT INTO confidence (app_id, field, level) VALUES (?, ?, ?)",
+                    [(app["id"], field, level)
+                     for field, level in resolve_confidence(app, confidence_defaults)])
     finally:
         con.close()
 

@@ -19,10 +19,23 @@ from PySide6.QtWidgets import (QFileDialog, QFrame, QHBoxLayout, QLabel,
                                QScrollArea, QTableWidget, QTableWidgetItem,
                                QVBoxLayout, QWidget)
 
+from .confidence import (CONF_COLORS, LEVEL_HINTS, LEVEL_LABELS, LEVEL_MARKS,
+                      weakest)
 from .db import (FEATURE_DISPLAY, FEATURE_EXPORT, LICENSE_LABELS,
-                 PLATFORM_LABELS, TELEMETRY_LABELS, format_size)
+                  PLATFORM_LABELS, TELEMETRY_LABELS, format_size)
 
 BEST_BG = QColor(39, 174, 96, 60)  # verde transparent — „cea mai bună valoare"
+
+def row_confidence(field: str, apps: list[dict]) -> str:
+    """Nivelul de certitudine al unui rând: cel mai slab dintre celulele lui.
+
+    Un rând e doar atât de credibil cât cea mai slabă valoare din el — dacă
+    o singură aplicație are o valoare estimată, rândul e estimat.
+    """
+    if not field:
+        return "estimated"
+    levels = [(a.get("confidence") or {}).get(field, "estimated") for a in apps]
+    return weakest(levels)
 
 
 # ---------------------------------------------------------------------------
@@ -32,8 +45,9 @@ BEST_BG = QColor(39, 174, 96, 60)  # verde transparent — „cea mai bună valo
 def comparison_rows(apps: list[dict], taxonomy: list[tuple[str, str]],
                     for_export: bool = False) -> list[tuple[str, list[str], dict]]:
     """Returnează rândurile: (etichetă, [valori], {'best': set(indexuri)})."""
-    def row(label, values, best=()):
-        return (label, [str(v) for v in values], {"best": set(best)})
+    def row(label, values, best=(), field=""):
+        return (label, [str(v) for v in values],
+                {"best": set(best), "field": field})
 
     platforms = [", ".join(PLATFORM_LABELS[p] for p in a["platforms"]) for a in apps]
     best_dim = min((a["install_size_mb"] for a in apps
@@ -41,40 +55,50 @@ def comparison_rows(apps: list[dict], taxonomy: list[tuple[str, str]],
     best_release = max(a["latest_release"] or "" for a in apps)
 
     rows = [
-        row("Descriere", [a["description"] for a in apps]),
-        row("Dezvoltator", [a["developer"] for a in apps]),
-        row("Categorie", [a["category_name"] for a in apps]),
+        row("Descriere", [a["description"] for a in apps], field="description"),
+        row("Dezvoltator", [a["developer"] for a in apps], field="developer"),
+        row("Categorie", [a["category_name"] for a in apps], field="category"),
         row("Licență", [LICENSE_LABELS[a["license"]] for a in apps],
-            [i for i, a in enumerate(apps) if a["license"] == "foss"]),
+            [i for i, a in enumerate(apps) if a["license"] == "foss"],
+            field="license"),
         row("Preț", ["Gratuit" if a["price"] == "free" else "Cu plată" for a in apps],
-            [i for i, a in enumerate(apps) if a["price"] == "free"]),
+            [i for i, a in enumerate(apps) if a["price"] == "free"],
+            field="price"),
         row("Platforme", platforms,
-            [i for i, a in enumerate(apps) if "linux" in a["platforms"]]),
-        row("Site oficial", [a["website"] for a in apps]),
+            [i for i, a in enumerate(apps) if "linux" in a["platforms"]],
+            field="platforms"),
+        row("Site oficial", [a["website"] for a in apps], field="website"),
         row("Dimensiune la instalare",
             [format_size(a["install_size_mb"]) for a in apps],
             [i for i, a in enumerate(apps)
-             if a["install_size_mb"] is not None and a["install_size_mb"] == best_dim]),
-        row("Anul primei versiuni", [a["first_release_year"] or "—" for a in apps]),
+             if a["install_size_mb"] is not None and a["install_size_mb"] == best_dim],
+            field="details.install_size_mb"),
+        row("Anul primei versiuni", [a["first_release_year"] or "—" for a in apps],
+            field="details.first_release_year"),
         row("Ultima versiune", [a["latest_release"] or "—" for a in apps],
-            [i for i, a in enumerate(apps) if a["latest_release"] == best_release]),
+            [i for i, a in enumerate(apps) if a["latest_release"] == best_release],
+            field="indicators.latest_release"),
         row("Telemetrie", [TELEMETRY_LABELS.get(a["telemetry"], "—") for a in apps],
-            [i for i, a in enumerate(apps) if a["telemetry"] == "none"]),
+            [i for i, a in enumerate(apps) if a["telemetry"] == "none"],
+            field="details.telemetry"),
         row("Limbă română",
             ["—" if a["romanian_language"] is None
              else ("✓ Da" if not for_export and a["romanian_language"]
                    else "Da" if a["romanian_language"] else "✗ Nu" if not for_export else "Nu")
              for a in apps],
-            [i for i, a in enumerate(apps) if a["romanian_language"]]),
+            [i for i, a in enumerate(apps) if a["romanian_language"]],
+            field="details.romanian_language"),
         row("Formate de fișiere",
-            [", ".join(a["file_formats"]) if a["file_formats"] else "—" for a in apps]),
-        row("Taguri", [" ".join("#" + t for t in a["tags"]) for a in apps]),
+            [", ".join(a["file_formats"]) if a["file_formats"] else "—" for a in apps],
+            field="details.file_formats"),
+        row("Taguri", [" ".join("#" + t for t in a["tags"]) for a in apps],
+            field="tags"),
     ]
 
     # Matricea de funcționalități (sec. 15): doar aceeași categorie cu taxonomie
     if taxonomy and len({a["category"] for a in apps}) == 1:
         labels = FEATURE_EXPORT if for_export else FEATURE_DISPLAY
-        rows.append(row("FUNCȚIONALITĂȚI", [""] * len(apps)))
+        rows.append(row("FUNCȚIONALITĂȚI", [""] * len(apps), field="features"))
         for key, label in taxonomy:
             values = []
             best = []
@@ -84,7 +108,7 @@ def comparison_rows(apps: list[dict], taxonomy: list[tuple[str, str]],
                 values.append(labels[value])
                 if value == "free":
                     best.append(i)
-            rows.append(row(label, values, best))
+            rows.append(row(label, values, best, field="features"))
     return rows
 
 
@@ -212,6 +236,15 @@ class CompareView(QScrollArea):
             f = head.font()
             f.setBold(True)
             head.setFont(f)
+            if not is_separator:
+                # Marcajul de certitudine al rândului (sec. 8): cel mai slab
+                # nivel dintre celulele rândului. E în prima coloană, ca
+                # lectura criteriului să nu fie tulburată de dată.
+                level = row_confidence(meta.get("field", ""), apps)
+                head.setText(f"{LEVEL_MARKS[level]} {label}")
+                head.setToolTip(f"Certitudine: {LEVEL_LABELS[level]} — "
+                                f"{LEVEL_HINTS[level]}")
+                head.setForeground(CONF_COLORS[level])
             table.setItem(r, 0, head)
             if is_separator:
                 table.setSpan(r, 0, 1, n + 1)
@@ -247,7 +280,11 @@ class CompareView(QScrollArea):
             "Funcționalitățile sunt <b>normalizate per categorie</b>: aceeași funcție apare "
             "pe același rând, indiferent de denumirea comercială din fiecare aplicație.<br>"
             "⚠ <i>parțial</i> = funcția există, dar cu limitări "
-            "(ține cursorul pe celulă pentru explicație).")
+            "(ține cursorul pe celulă pentru explicație).<br>"
+            "<b>Certitudine pe rând:</b> ⟳ verificată automat · "
+            "✓ verificată manual · ≈ valoare estimată · "
+            "? valoare necunoscută. Rândul e marcat cu cel mai slab "
+            "nivel dintre celulele lui.")
         legend.setProperty("dim", "true")
         legend.setWordWrap(True)
         layout.addWidget(legend)

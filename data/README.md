@@ -66,6 +66,30 @@ data/
 | `indicators.in_ubuntu_repos` | bool | ✅ | Prezent în depozitele oficiale Ubuntu |
 | `features` | map | — | **Doar** dacă `category` are taxonomie în `taxonomy/`. Chei = taxonomia |
 | `sources` | listă URL | ✅ | Surse oficiale pentru datele de mai sus |
+| `confidence` | map | — | Certitudinea per câmp, pentru această aplicație (vezi mai jos) |
+
+### Certitudinea datelor (`confidence`)
+
+Fiecare valoare afișată poartă un **nivel de certitudine**, afișat în interfață ca marcaj — ca utilizatorul să vadă cât de mult se poate baza pe ea.
+
+| Nivel | Semnificație | Cum se stabilește |
+|---|---|---|
+| `auto` | valoare sincronizată automat din surse publice | `tools/refresh_indicators.py` (popcon, GitHub, Ubuntu) |
+| `manual` | valoare verificată de un om împotriva sursei citate | contributor, prin override |
+| `estimated` | valoare estimată/editorială, fără verificare individuală | implicit |
+| `unknown` | valoare lipsă | se deduce automat (null/vid) |
+
+Nivelul implicit per tip de câmp se configurează în **[`confidence.yaml`](confidence.yaml)** — sursa unică de adevăr. O aplicație poate avea alt nivel, declarat în fișierul ei YAML:
+
+```yaml
+confidence:
+  details.romanian_language: manual   # verificat manual de un contributor
+```
+
+Reguli:
+- `unknown` **nu se declară** — se deduce automat din valoarea absentă (nu poți verifica ceea ce nu există);
+- un override nu poate transforma o valoare absentă în „verificată";
+- un câmp necunoscut sau un nivel invalid blochează build-ul (eroare).
 
 ### Valori `features` (matricea de funcționalități, sec. 15)
 
@@ -98,6 +122,7 @@ Vezi [apps/keepassxc.yaml](apps/keepassxc.yaml) — acoperă toate câmpurile, i
 5. `features` este permis **doar** pentru categorii cu taxonomie definită (deocamdată: `security`).
 6. Avertisment (nu eroare) dacă `sources` e gol sau dacă `latest_release` e mai veche de 2 ani.
 7. Avertisment (nu eroare) dacă o sursă nu e HTTPS sau dacă site-ul oficial nu apare în `sources` — sursele sunt afișate ca linkuri în interfață, deci trebuie să fie sigure și să acopere valoarea prezentată.
+8. Eroare dacă `confidence` conține un câmp necunoscut, un nivel invalid sau încearcă să declare `unknown` (care se deduce automat).
 
 ## Automatizare
 

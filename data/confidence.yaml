@@ -1,0 +1,49 @@
+# Certitudinea implicită a datelor (sec. 8 din IDEI_PROIECT.md).
+#
+# Fiecare câmp al catalogului poartă un nivel de certitudine, afișat în
+# interfață ca marcaj, ca utilizatorul să vadă cât de mult se poate baza
+# pe fiecare valoare. Nivelul implicit se setează aici, per tip de câmp;
+# o aplicație poate avea un nivel diferit (de regulă mai bun), declarat
+# în fișierul ei YAML, la cheia `confidence:`.
+#
+# Niveluri:
+#   auto      — valoare sincronizată automat din surse publice
+#               (popcon.debian.org, GitHub API, packages.ubuntu.com);
+#   manual    — valoare verificată de un om împotriva sursei citate;
+#   estimated — valoare estimată/editorială, fără verificare individuală;
+#   unknown   — valoare lipsă; se deduce automat (null/vid → unknown),
+#               deci nu se configurează aici.
+#
+# Notă: `unknown` nu poate fi declarat explicit — o valoare inexistentă
+# nu e „necunoscută", e absentă, iar build-ul o tratează ca atare.
+
+defaults:
+  # --- Identitate și clasificare: date de bază, ușor de verificat ---------
+  name: manual
+  description: manual
+  category: manual
+  license: manual
+  price: manual
+  developer: manual
+  website: manual
+  platforms: manual
+  tags: manual
+  alternatives: estimated
+  popularity: estimated
+
+  # --- Detalii: în mare parte estimări editoriale -----------------------
+  details.install_size_mb: estimated
+  details.first_release_year: estimated
+  details.file_formats: estimated
+  details.telemetry: estimated
+  details.romanian_language: estimated
+
+  # --- Indicatori: sincronizați automat (refresh_indicators.py) ----------
+  indicators.popcon_rank: auto
+  indicators.stars: auto
+  indicators.stars_url: auto
+  indicators.latest_release: auto
+  indicators.in_ubuntu_repos: auto
+
+  # --- Matricea de funcționalități: cercetată pe surse oficiale --------
+  features: manual

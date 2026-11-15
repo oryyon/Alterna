@@ -16,19 +16,20 @@ Aplicație **desktop nativă pentru Kubuntu 24.04** (KDE Plasma) pentru descoper
 
 🚀 **MVP funcțional cu 100 de aplicații în catalog.** Aplicația desktop pornește, citește `catalog.db` și reproduce macheta: căutare live, filtre, sortare, categorii, pagină de detalii, comparare cu tabel + matrice de funcționalități + export în 5 formate, teme comutabile.
 
-**Fiecare valoare afișată e verificabilă:** sursele citate în `data/apps/<id>.yaml` apar în pagina de detalii ca linkuri clicabile (și sursa fiecărui indicator obiectiv), astfel încât „totul e verificabil" e o promisiune clicabilă, nu declarativă.
+**Fiecare valoare afișată e verificabilă:** sursele citate în `data/apps/<id>.yaml` apar în pagina de detalii ca linkuri clicabile (și sursa fiecărui indicator obiectiv), iar fiecare valoare poartă un **marcaj de certitudine** — `⟳` verificată automat, `✓` verificată manual, `≈` valoare estimată, `?` valoare necunoscută. Promisiunea „totul e verificabil" devine clicabilă și măsurabilă, nu declarativă.
 
 | Ce există | Unde |
 |---|---|
 | Toate deciziile proiectului (viziune, stack, date, UI, licențe) | [IDEI_PROIECT.md](IDEI_PROIECT.md) |
 | Machetă UI funcțională (referința vizuală agreată) | [mockup-ui/](mockup-ui) |
 | Formatul YAML + **100 aplicații** pe cele 13 categorii | [data/](data) |
+| Nivelurile de certitudine ale datelor (implicit per câmp) | [data/confidence.yaml](data/confidence.yaml) |
 | Script de build YAML → `catalog.db` (SQLite), cu validări | [tools/build_catalog.py](tools/build_catalog.py) |
 | Reîmprospătare automată indicatori (popcon / Ubuntu / GitHub) | [tools/refresh_indicators.py](tools/refresh_indicators.py) |
 | 72 logo-uri reale (Simple Icons CC0 + Wikimedia Commons) + fallback inițiale | [data/logos/](data/logos), [tools/fetch_logos.py](tools/fetch_logos.py) |
 | GitHub Actions: PR săptămânal cu indicatori reîmprospătați | [.github/workflows/refresh.yml](.github/workflows/refresh.yml) |
 | Aplicația desktop (schelet PySide6/Qt Widgets) | [app/](app) |
-| Suită de teste automate (111 teste: build, validări, interogări, comparație, export, GUI, surse, licențiere, resurse, packaging, integrare GitHub) | [tests/](tests) |
+| Suită de teste automate (135 teste: build, validări, interogări, comparație, export, GUI, surse, licențiere, resurse, packaging, integrare GitHub) | [tests/](tests) |
 
 > Indicatorii (popcon, stele, versiuni, „în repo Ubuntu") sunt acum **valori reale**, reîmprospătate automat săptămânal prin PR — aprobarea rămâne la maintainer (sec. 7).
 
@@ -46,7 +47,7 @@ Aplicație **desktop nativă pentru Kubuntu 24.04** (KDE Plasma) pentru descoper
 pip install -r requirements.txt
 python tools/build_catalog.py       # data/ → catalog.db (cu validări; eșuează la erori)
 python -m app.main                  # pornește aplicația desktop
-python -m pytest tests/             # rulează suita de teste (111)
+python -m pytest tests/             # rulează suita de teste (135)
 
 # unelte de întreținere (rulate automat săptămânal prin GitHub Actions):
 python tools/refresh_indicators.py  # popcon + repo Ubuntu + stele GitHub → YAML

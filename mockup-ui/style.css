@@ -305,6 +305,17 @@ body {
 }
 .source-link:hover { text-decoration: underline; }
 
+/* Marcajele de certitudine (sec. 8) */
+.conf-mark {
+  font-size: 12px;
+  margin-left: 4px;
+  font-weight: 700;
+}
+.conf-auto, .conf-manual { color: var(--foss); }
+.conf-estimated { color: var(--freemium); }
+.conf-unknown { color: var(--text-dim); }
+.row-label .conf-mark { margin-left: 0; margin-right: 5px; }
+
 .alternatives-title {
   font-size: 16px;
   margin: 20px 0 10px;

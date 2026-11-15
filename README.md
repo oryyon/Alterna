@@ -29,10 +29,11 @@ Aplicație **desktop nativă pentru Kubuntu 24.04** (KDE Plasma) pentru descoper
 | Nivelurile de certitudine ale datelor (implicit per câmp) | [data/confidence.yaml](data/confidence.yaml) |
 | Script de build YAML → `catalog.db` (SQLite), cu validări | [tools/build_catalog.py](tools/build_catalog.py) |
 | Reîmprospătare automată indicatori (popcon / Ubuntu / GitHub) | [tools/refresh_indicators.py](tools/refresh_indicators.py) |
+| Verificarea pachetelor Ubuntu (un indicator nu poate fi fals) | [tools/check_packages.py](tools/check_packages.py) |
 | 95 de logo-uri reale (Simple Icons CC0 + Wikimedia Commons) + fallback pe inițiale | [data/logos/](data/logos), [tools/fetch_logos.py](tools/fetch_logos.py) |
 | GitHub Actions: PR săptămânal cu indicatori reîmprospătați | [.github/workflows/refresh.yml](.github/workflows/refresh.yml) |
-| Aplicația desktop (schelet PySide6/Qt Widgets) | [app/](app) |
-| Suită de teste automate (194 teste: build, validări, interogări, comparație, export, GUI, surse, certitudine, actualizare, AI, licențiere, resurse, packaging, integrare GitHub) | [tests/](tests) |
+| Aplicația desktop (PySide6/Qt Widgets) — cu surse clicabile, certitudine și actualizare din rețea | [app/](app) |
+| Suită de teste automate (195 teste: build, validări, interogări, comparație, export, GUI, surse, certitudine, actualizare, AI, licențiere, resurse, packaging, integrare GitHub) | [tests/](tests) |
 
 > Indicatorii (popcon, stele, versiuni, „în repo Ubuntu") sunt acum **valori reale**, reîmprospătate automat săptămânal prin PR — aprobarea rămâne la maintainer (sec. 7).
 
@@ -50,7 +51,7 @@ Aplicație **desktop nativă pentru Kubuntu 24.04** (KDE Plasma) pentru descoper
 pip install -r requirements.txt
 python tools/build_catalog.py       # data/ → catalog.db (cu validări; eșuează la erori)
 python -m app.main                  # pornește aplicația desktop
-python -m pytest tests/             # rulează suita de teste (194)
+python -m pytest tests/             # rulează suita de teste (195)
 
 # unelte de întreținere (rulate automat săptămânal prin GitHub Actions):
 python tools/refresh_indicators.py  # popcon + repo Ubuntu + stele GitHub → YAML
@@ -71,7 +72,7 @@ integrează aplicația în meniul sistemului. Detalii: [`packaging/README.md`](p
 
 ## Cum vezi macheta
 
-Deschide `mockup-ui/index.html` în orice browser. Este complet funcțională (date demo): căutare live, 12 categorii, filtre, sortare, teme (dark/light/ocean), comparare aplicații cu tabel + matrice de funcționalități (categoria „Securitate"), export în 5 formate.
+Deschide `mockup-ui/index.html` în orice browser. Este complet funcțională (date demo): căutare live, 13 categorii, filtre, sortare, teme (dark/light/ocean), comparare aplicații cu tabel + matrice de funcționalități (categoria „Securitate"), export în 5 formate.
 
 ## Pașii următori
 
@@ -84,7 +85,10 @@ Deschide `mockup-ui/index.html` în orice browser. Este complet funcțională (d
 7. ✅ Distribuție Linux AppImage: pipeline PyInstaller + AppDir + `appimagetool` verificat prin SHA-256.
 8. ✅ Infrastructură GitHub: issue template pentru propuneri, etichete, workflow CI și workflow de release.
 9. ✅ Pachet Debian (`.deb`) pentru integrare APT, cu pictograme la 9 dimensiuni, metadata AppStream și documentație.
-10. Următorii pași (de agreat): detectarea aplicațiilor deja instalate, extinderea catalogului și roadmap-ul post-MVP din IDEI_PROIECT.md.
+10. ✅ Verificabilitate: sursele clicabile în interfață, marcajul de certitudine pe fiecare valoare, „avantaj obiectiv" în loc de „cea mai bună valoare".
+11. ✅ Funcții puse la punct: actualizarea catalogului din release (cu verificare SHA-256), asistent AI (Ollama local / Claude API cu cheia ta), butoane de donație care deschid pagini reale.
+12. ✅ Dependențe fixate (`pyproject.toml` + lockfile), pachete Ubuntu verificate, 95 de logo-uri reale.
+13. Următorii pași (de agreat): detectarea aplicațiilor deja instalate, extinderea catalogului spre 200–300 și roadmap-ul post-MVP din IDEI_PROIECT.md.
 
 ## Structura proiectului
 
@@ -95,8 +99,10 @@ kimi/
 ├── LICENSE              ← GNU GPLv3 (codul aplicației)
 ├── LICENSE-DATA         ← CC BY-SA 4.0 (datele originale)
 ├── NOTICE               ← aplicarea și delimitarea licențelor
-├── requirements.txt     ← dependențe (PyYAML, PySide6)
-├── packaging/           ← AppImage: script build, AppRun, desktop entry, iconă
+├── pyproject.toml       ← metadate + dependențe cu limite superioare
+├── requirements.txt     ← dependențe (oglindă a lui pyproject.toml)
+├── requirements-lock.txt← versiuni exacte (build reproducibil)
+├── packaging/           ← AppImage + .deb: scripturi build, AppRun, desktop entry, iconă
 ├── CONTRIBUTING.md      ← reguli pentru contribuitori
 ├── mockup-ui/           ← macheta UI (referință vizuală)
 │   ├── index.html
@@ -105,23 +111,34 @@ kimi/
 ├── data/                ← catalogul-sursă YAML (sursa adevărului pentru date)
 │   ├── README.md        ← specificația formatului (v1)
 │   ├── categories.yaml  ← cele 13 categorii fixe
+│   ├── confidence.yaml  ← nivelul de certitudine implicit per tip de câmp
 │   ├── taxonomy/        ← taxonomii de funcționalități (pilot: security)
 │   ├── apps/            ← câte un fișier YAML per aplicație (100)
-│   └── logos/           ← logo-uri reale (72 aplicații; restul primesc inițiale)
-├── tests/               ← suita pytest (build, db, comparare/export, GUI offscreen)
+│   └── logos/           ← logo-uri reale (95 aplicații; restul primesc inițiale)
+├── tests/               ← suita pytest (195 teste)
 ├── tools/
 │   ├── build_catalog.py      ← build YAML → catalog.db (generat, gitignored)
 │   ├── refresh_indicators.py ← reîmprospătare indicatori (popcon/Ubuntu/GitHub)
-│   └── fetch_logos.py        ← descărcare logo-uri SVG
+│   ├── check_packages.py     ← verifică pachetele Ubuntu (indicatorul nu poate fi fals)
+│   └── fetch_logos.py        ← descărcare logo-uri (Simple Icons + Wikimedia)
 ├── .github/workflows/
-│   └── refresh.yml      ← PR săptămânal automat cu indicatori actualizați
+│   ├── ci.yml           ← build + teste + validare metadata
+│   ├── refresh.yml      ← PR săptămânal automat cu indicatori actualizați
+│   └── release.yml      ← AppImage + .deb + catalog.db la fiecare tag
 └── app/                 ← aplicația desktop (PySide6 / Qt Widgets)
     ├── main.py          ← punctul de intrare (python -m app.main)
     ├── db.py            ← stratul de date read-only peste catalog.db
+    ├── confidence.py    ← modelul de certitudine (4 niveluri) + marcajele
+    ├── catalog_update.py← descărcarea + verificarea SHA-256 a catalogului
+    ├── ai.py            ← clienții Ollama / Claude (AI propune, omul aprobă)
+    ├── net.py           ← stratul HTTP (urllib + QThread)
+    ├── links.py         ← URL-urile oficiale (un punct unic de definiție)
+    ├── version.py       ← versiunea unică a aplicației
+    ├── paths.py         ← localizarea resurselor (dev vs. bundle)
     ├── theme.py         ← temele: Sistem / Breeze Dark / Light / Ocean (persistă)
-    ├── widgets.py       ← carduri de aplicație, badge-uri, pictograme provizorii
+    ├── widgets.py       ← carduri de aplicație, badge-uri, linkuri, pictograme
     ├── main_window.py   ← fereastra principală: căutare, filtre, sortare, categorii
-    ├── detail_view.py   ← pagina de detalii (5 carduri de fapte + alternative)
+    ├── detail_view.py   ← pagina de detalii (surse, certitudine, alternative)
     ├── compare_view.py  ← tabelul de comparație + matrice + export (5 formate)
-    └── dialogs.py       ← Setări (teme, indicatori, AI viitor) + Donații
+    └── dialogs.py       ← Setări (teme, catalog, indicatori, AI) + Donații
 ```

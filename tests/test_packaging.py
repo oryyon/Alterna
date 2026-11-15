@@ -284,3 +284,113 @@ class TestDependente:
         root = Path(__file__).resolve().parent.parent
         with (root / "pyproject.toml").open("rb") as handle:
             tomllib.load(handle)
+
+
+class TestDocumentatie:
+    """Documentația trebuie să spună același lucru ca realitatea.
+
+    Fiecare număr verificat aici a fost cândva greșit în README sau în
+    IDEI_PROIECT.md — testul împiedică recurența.
+    """
+
+    def _root(self):
+        from pathlib import Path
+
+        return Path(__file__).resolve().parent.parent
+
+    def _read(self, nume: str) -> str:
+        return (self._root() / nume).read_text(encoding="utf-8")
+
+    def _apps(self):
+        from pathlib import Path
+        import yaml
+
+        return [yaml.safe_load(p.read_text(encoding="utf-8"))
+                for p in sorted((self._root() / "data" / "apps").glob("*.yaml"))]
+
+    def _numar_de_teste(self) -> int:
+        """Numărul de teste colectate de pytest (include parametrizările)."""
+        import re
+        import subprocess
+        import sys
+
+        rezultat = subprocess.run(
+            [sys.executable, "-m", "pytest", "--collect-only"],
+            cwd=self._root(), capture_output=True, text=True)
+        ieșire = rezultat.stdout
+        m = re.search(r"(\d+) tests? collected", ieșire)
+        if m:
+            return int(m.group(1))
+        # rezumatul poate fi ascuns de opțiunile de quiet — sumăm pe fișiere
+        per_fișier = re.findall(r"^tests/\S+:\s*(\d+)$", ieșire, re.M)
+        assert per_fișier, "nu s-a putut număra testele colectate"
+        return sum(int(n) for n in per_fișier)
+
+    def _afirmații_curente(self, document: str) -> str:
+        """Textul documentului, fără istoricul.
+
+        Istoricul din IDEI_PROIECT.md consemnează corect numărul de teste
+        de la momentul respectiv — nu e o afirmație despre starea de acum.
+        """
+        text = self._read(document)
+        if "## 📝 Istoric modificări" in text:
+            text = text.split("## 📝 Istoric modificări")[0]
+        return text
+
+    def test_numarul_de_teste_din_readme(self):
+        """README-ul trebuie să anunțe numărul real de teste."""
+        import re
+
+        n = self._numar_de_teste()
+        for document in ("README.md", "IDEI_PROIECT.md"):
+            # prinde ambele forme: „194 de teste" și „(194 teste)"
+            for afirmatie in re.findall(r"(\d+)\s+de teste|\((\d+)\s+teste",
+                                       self._afirmații_curente(document)):
+                spus = int(afirmatie[0] or afirmatie[1])
+                assert spus == n, \
+                    f"{document}: spune {spus} teste, realul e {n}"
+
+    def test_numarul_de_logo_uri_din_documente(self):
+        import re
+
+        n = sum(1 for app in self._apps() if app.get("logo"))
+        for document in ("README.md", "IDEI_PROIECT.md"):
+            for afirmatie in re.findall(r"(\d+)\s+de logo-uri reale",
+                                       self._afirmații_curente(document)):
+                assert int(afirmatie) == n, \
+                    f"{document}: spune {afirmatie} logo-uri, realul e {n}"
+
+    def test_numarul_de_aplicatii_si_categorii(self):
+        import re
+
+        n_apps = len(self._apps())
+        n_categorii = len(re.findall(r"^\s*- slug:",
+                                     self._read("data/categories.yaml"), re.M))
+        for document in ("README.md", "IDEI_PROIECT.md"):
+            text = self._afirmații_curente(document)
+            for afirmatie in re.findall(r"\*\*(\d+) aplicații\*\*", text):
+                assert int(afirmatie) == n_apps, \
+                    f"{document}: spune {afirmatie} aplicații, realul e {n_apps}"
+            for afirmatie in re.findall(r"cele (\d+) categorii", text):
+                assert int(afirmatie) == n_categorii, \
+                    f"{document}: spune {afirmatie} categorii, realul e {n_categorii}"
+
+    def test_data_ultima_actualizare_din_idei(self):
+        """Data din antetul IDEI_PROIECT.md trebuie să fie recentă."""
+        import re
+        from datetime import date
+
+        text = self._read("IDEI_PROIECT.md")
+        m = re.search(r"\*\*Ultima actualizare:\*\* (\d{4}-\d{2}-\d{2})", text)
+        assert m, "antetul nu mai spune data ultimei actualizări"
+        data = date.fromisoformat(m.group(1))
+        assert (date.today() - data).days <= 60, \
+            f"antetul spune {data} — peste 60 de zile, e neactualizat"
+
+    def test_pasii_urmatori_sunt_actuali(self):
+        """Secțiunea „Stare curentă” nu mai poate promite pași deja făcuți."""
+        text = self._read("IDEI_PROIECT.md")
+        stare = text.split("## 📍 Stare curentă")[1].split("## ✅")[0]
+        for facut in ("crearea repo-ului GitHub", "împachetare AppImage"):
+            assert facut not in stare, \
+                f"„Stare curentă” promite un pas deja făcut: {facut}"

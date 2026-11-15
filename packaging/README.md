@@ -98,7 +98,7 @@ resurse: .../squashfs-root/usr/lib/alterna/_internal
 catalog: .../catalog.db (există: True)
 aplicatii: 100
 categorii: 13
-logo-uri: 73 fișiere, 72 aplicații cu logo
+logo-uri: 96 fișiere, 95 aplicații cu logo
 REZULTAT: OK
 ```
 

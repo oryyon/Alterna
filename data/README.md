@@ -28,6 +28,7 @@ conținutul original licențiat CC BY-SA și au condiții distincte de utilizare
 data/
 ├── README.md            ← acest fișier (specificația)
 ├── categories.yaml      ← cele 13 categorii fixe (slug → nume afișat)
+├── confidence.yaml      ← nivelul de certitudine implicit per tip de câmp
 ├── taxonomy/            ← taxonomii de funcționalități per categorie (pilot: security)
 │   └── security.yaml
 └── apps/                ← câte un fișier YAML per aplicație

@@ -26,6 +26,60 @@ from .db import (FEATURE_DISPLAY, FEATURE_EXPORT, LICENSE_LABELS,
 
 BEST_BG = QColor(39, 174, 96, 60)  # verde transparent — „cea mai bună valoare"
 
+#: De ce este o celulă evidențiată — textul explicativ al avantajului.
+#: Fiecare rând evidențiat spune CE e avantajul, nu doar că „e mai bun".
+ROW_REASONS = {
+    "Licență": "Open Source — cod liber, auditabil și modificabil.",
+    "Preț": "Gratuit — nu costă nimic și nu cere cont.",
+    "Platforme": "Include Linux — rulează nativ pe sistemul nostru.",
+    "Ultima versiune": "Cea mai recentă versiune — proiectul e activ.",
+    "Dimensiune la instalare": "Cea mai mică instalare din aceeași distribuție.",
+    "Telemetrie": "Fără telemetrie — nu trimite date despre tine.",
+    "Limbă română": "Are interfață în română.",
+    "FUNCȚIONALITĂȚI": "Funcția e disponibilă gratuit.",
+}
+
+#: Distribuțiile din care vine dimensiunea la instalare. „web" nu se
+#: instalează local, deci nu intră în comparația de dimensiune.
+SIZE_BASIS_LABELS = {
+    "deb": "pachet Debian/Ubuntu",
+    "flatpak": "pachet Flatpak",
+    "snap": "pachet Snap",
+    "appimage": "AppImage",
+    "web": "aplicație web",
+    "other": "altă distribuție",
+}
+
+
+def size_basis(a: dict) -> str:
+    """Distribuția dimensiunii la instalare pentru o aplicație."""
+    return a.get("size_basis") or "deb"
+
+
+def size_best_indexes(apps: list[dict]) -> set[int]:
+    """Aplicațiile cu cea mai mică instalare, comparând doar între ele.
+
+    Dimensiunile din distribuții diferite nu sunt comparabile (un .deb și
+    un AppImage măsoară lucruri diferite), deci se compară doar în grupuri
+    cu aceeași distribuție. Aplicațiile web nu se instalează local, deci
+    sunt excluse din comparație.
+    """
+    best: set[int] = set()
+    grupuri: dict[str, list[tuple[int, int]]] = {}
+    for i, a in enumerate(apps):
+        size = a["install_size_mb"]
+        basis = size_basis(a)
+        if size is None or basis == "web":
+            continue
+        grupuri.setdefault(basis, []).append((i, size))
+    for members in grupuri.values():
+        if len(members) < 2:
+            continue  # un singur membru nu e „cel mai mic" din ceva
+        minim = min(size for _, size in members)
+        best |= {i for i, size in members if size == minim}
+    return best
+
+
 def row_confidence(field: str, apps: list[dict]) -> str:
     """Nivelul de certitudine al unui rând: cel mai slab dintre celulele lui.
 
@@ -50,8 +104,6 @@ def comparison_rows(apps: list[dict], taxonomy: list[tuple[str, str]],
                 {"best": set(best), "field": field})
 
     platforms = [", ".join(PLATFORM_LABELS[p] for p in a["platforms"]) for a in apps]
-    best_dim = min((a["install_size_mb"] for a in apps
-                    if a["install_size_mb"] is not None), default=None)
     best_release = max(a["latest_release"] or "" for a in apps)
 
     rows = [
@@ -70,8 +122,7 @@ def comparison_rows(apps: list[dict], taxonomy: list[tuple[str, str]],
         row("Site oficial", [a["website"] for a in apps], field="website"),
         row("Dimensiune la instalare",
             [format_size(a["install_size_mb"]) for a in apps],
-            [i for i, a in enumerate(apps)
-             if a["install_size_mb"] is not None and a["install_size_mb"] == best_dim],
+            size_best_indexes(apps),
             field="details.install_size_mb"),
         row("Anul primei versiuni", [a["first_release_year"] or "—" for a in apps],
             field="details.first_release_year"),
@@ -109,7 +160,19 @@ def comparison_rows(apps: list[dict], taxonomy: list[tuple[str, str]],
                 if value == "free":
                     best.append(i)
             rows.append(row(label, values, best, field="features"))
-    return rows
+
+    # Regula „avantaj obiectiv" (sec. 14): pe un criteriu estimat nu
+    # declarăm niciun avantaj — „cea mai mică" dintr-o valoare neverificată
+    # nu e un avantaj dovedit, e o presupunere. Evidențierea rămâne doar
+    # pe criteriile verificate (⟳ automat sau ✓ manual).
+    rezultat = []
+    for label, values, meta in rows:
+        if meta["best"]:
+            nivel = row_confidence(meta.get("field", ""), apps)
+            if nivel not in ("auto", "manual"):
+                meta = dict(meta, best=set(), neevidentiat=nivel)
+        rezultat.append((label, values, meta))
+    return rezultat
 
 
 # ---------------------------------------------------------------------------
@@ -128,7 +191,13 @@ EXPORT_FORMATS = {
 def export_content(fmt: str, apps: list[dict], rows: list[tuple[str, list[str], dict]]) -> str:
     names = [a["name"] for a in apps]
     today = date.today().strftime("%d.%m.%Y")
-    plain = [[label, *values] for label, values, _ in rows]
+    # Marcajul de certitudine ajunge și în export: o comparație trimisă
+    # altcuva trebuie să fie la fel de onestă ca cea afișată în aplicație.
+    plain = []
+    for label, values, meta in rows:
+        nivel = meta.get("neevidentiat")
+        marcaj = LEVEL_MARKS.get(nivel, "") if nivel else ""
+        plain.append([f"{marcaj} {label}".strip() if marcaj else label, *values])
 
     if fmt == "md":
         line = lambda cells: "| " + " | ".join(cells) + " |"
@@ -249,10 +318,21 @@ class CompareView(QScrollArea):
             if is_separator:
                 table.setSpan(r, 0, 1, n + 1)
                 continue
+            motiv = ROW_REASONS.get(label, "")
             for c, value in enumerate(values, start=1):
                 item = QTableWidgetItem(value)
                 if c - 1 in meta["best"]:
                     item.setBackground(BEST_BG)
+                    # Explicația avantajului: „de ce" e evidențiată această
+                    # celulă, nu doar „că" (review: explicație la fiecare highlight)
+                    item.setToolTip(f"Avantaj obiectiv: {motiv}")
+                elif label == "Dimensiune la instalare":
+                    # Dimensiunile se compară doar în aceeași distribuție —
+                    # spune utilizatorului din ce e măsurată fiecare valoare.
+                    baza = SIZE_BASIS_LABELS.get(size_basis(apps[c - 1]), "—")
+                    item.setToolTip(f"Dimensiune din: {baza}.\n"
+                                    f"Dimensiunile din distribuții diferite nu "
+                                    f"sunt comparabile.")
                 # Tooltip cu explicația la „⚠ parțial" (sec. 15)
                 # rândul r din tabel = rândul r-1 din self.rows; funcționalitățile
                 # încep după separatorul FUNCȚIONALITĂȚI (index matrix_start)
@@ -275,8 +355,12 @@ class CompareView(QScrollArea):
         layout.addWidget(table)
 
         legend = QLabel(
-            "🟩 = cea mai bună valoare din selecție, pe acel criteriu. "
-            "Click pe numele unei aplicații pentru pagina ei de detalii.<br>"
+            "🟩 = <b>avantaj obiectiv</b> pe acel criteriu, verificat "
+            "(⟳ automat sau ✓ manual) — ține cursorul pe celulă pentru "
+            "explicație. Criteriile estimate (≈) nu primesc evidențiere: "
+            "„cea mai mică” dintr-o valoare neverificată nu e un avantaj "
+            "dovedit. Click pe numele unei aplicații pentru pagina ei de "
+            "detalii.<br>"
             "Funcționalitățile sunt <b>normalizate per categorie</b>: aceeași funcție apare "
             "pe același rând, indiferent de denumirea comercială din fiecare aplicație.<br>"
             "⚠ <i>parțial</i> = funcția există, dar cu limitări "

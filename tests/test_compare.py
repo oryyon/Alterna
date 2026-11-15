@@ -40,19 +40,105 @@ class TestRanduri:
         rows = comparison_rows(apps, catalog.taxonomy("security"))
         assert all(r[0] != "FUNCȚIONALITĂȚI" for r in rows)
 
-    def test_evidentiere_verde(self, catalog, apps_security):
+    def test_evidentiere_pe_criterii_verificate(self, catalog, apps_security):
+        """Evidențierea (avantajul obiectiv) rămâne pe criteriile verificate."""
         rows = comparison_rows(apps_security, catalog.taxonomy("security"))
         by_label = {r[0]: r for r in rows}
         # Licență: keepassxc + bitwarden sunt FOSS (index 0, 1)
         assert by_label["Licență"][2]["best"] == {0, 1}
         # Preț: 1password e plătit
         assert by_label["Preț"][2]["best"] == {0, 1}
-        # Dimensiune: keepassxc (50 MB) e cea mai mică
-        assert by_label["Dimensiune la instalare"][2]["best"] == {0}
-        # Telemetrie: doar keepassxc fără
-        assert by_label["Telemetrie"][2]["best"] == {0}
         # Matrice: „ssh_agent" — doar keepassxc are „free"
         assert by_label["Agent SSH integrat (gestionare chei SSH)"][2]["best"] == {0}
+
+    def test_criterii_estimate_nu_sunt_evidentiate(self, catalog, apps_security):
+        """Pe un criteriu estimat nu declarăm avantaj (review: „recomandată
+        doar când este demonstrabilă"). Dimensiunea, telemetria și limba
+        română sunt estimări editoriale → fără verde."""
+        rows = comparison_rows(apps_security, catalog.taxonomy("security"))
+        by_label = {r[0]: r for r in rows}
+        for label in ("Dimensiune la instalare", "Telemetrie", "Limbă română"):
+            assert by_label[label][2]["best"] == set(), label
+            assert by_label[label][2]["neevidentiat"] == "estimated", label
+
+
+class TestComparabilitate:
+    """Dimensiunile se compară doar între ele, în aceeași distribuție."""
+
+    def _app(self, size, basis="deb"):
+        return {"install_size_mb": size, "size_basis": basis}
+
+    def test_aplicatii_web_sunt_excluse(self):
+        """O aplicație web nu se instalează local — nu are ce „câștiga"."""
+        from app.compare_view import size_best_indexes
+
+        apps = [self._app(0, "web"), self._app(50, "deb")]
+        assert size_best_indexes(apps) == set()
+
+    def test_comparare_doar_in_aceeasi_distributie(self):
+        """Un .deb și un AppImage nu se raportează la același lucru."""
+        from app.compare_view import size_best_indexes
+
+        apps = [self._app(500, "appimage"), self._app(50, "deb")]
+        # fiecare grup are un singur membru → niciun „cel mai mic"
+        assert size_best_indexes(apps) == set()
+
+    def test_cea_mai_mica_din_aceeasi_distributie(self):
+        from app.compare_view import size_best_indexes
+
+        apps = [self._app(300, "deb"), self._app(50, "deb"), self._app(900, "appimage")]
+        assert size_best_indexes(apps) == {1}
+
+    def test_grup_de_un_singur_membru(self):
+        """Un singur candidat nu e „cel mai mic" din ceva — nu are cu cine."""
+        from app.compare_view import size_best_indexes
+
+        apps = [self._app(50, "deb")]
+        assert size_best_indexes(apps) == set()
+
+    def test_egalitate_la_minim(self):
+        from app.compare_view import size_best_indexes
+
+        apps = [self._app(50, "deb"), self._app(50, "deb")]
+        assert size_best_indexes(apps) == {0, 1}
+
+
+class TestMotivEvidentiere:
+    """Fiecare avantaj evidențiat spune ȘI de ce (review: „explicație la
+    fiecare highlight")."""
+
+    def test_motiv_pentru_fiecare_rand_evidentiat(self):
+        from app.compare_view import ROW_REASONS
+
+        for rand in ("Licență", "Preț", "Platforme", "Ultima versiune"):
+            assert rand in ROW_REASONS, rand
+            assert len(ROW_REASONS[rand]) > 10, rand
+
+    def test_legenda_spune_avantaj_obiectiv(self):
+        from app.compare_view import CompareView
+
+        assert CompareView is not None
+        import inspect
+        text = inspect.getsource(CompareView)
+        assert "avantaj obiectiv" in text
+        assert "cea mai bună valoare" not in text
+
+
+class TestExportHonest:
+    """Exportul poartă marcajul de certitudine — o comparație trimisă
+    altcuva trebuie să fie la fel de onestă ca cea din aplicație."""
+
+    def test_exportul_marcheaza_criteriile_estimate(self, catalog, apps_security):
+        rows = comparison_rows(apps_security, catalog.taxonomy("security"))
+        md = export_content("md", apps_security, rows)
+        assert "≈ Dimensiune la instalare" in md
+        assert "≈ Telemetrie" in md
+
+    def test_exportul_pastreaza_criteriile_verificate(self, catalog, apps_security):
+        rows = comparison_rows(apps_security, catalog.taxonomy("security"))
+        md = export_content("md", apps_security, rows)
+        assert "Licență" in md
+        assert "≈ Licență" not in md
 
 
 class TestExport:

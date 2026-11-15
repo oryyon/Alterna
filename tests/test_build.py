@@ -34,7 +34,7 @@ class TestBuildReal:
         assert apps == 100 and int(meta["app_count"]) == 100
         assert cats == 13
         assert tax == 18  # taxonomia Securitate (sec. 15)
-        assert meta["schema_version"] == "1"
+        assert meta["schema_version"] == "2"
 
     def test_popularity_column(self, built_db):
         con = sqlite3.connect(built_db)

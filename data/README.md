@@ -55,6 +55,7 @@ data/
 | `logo` | path | — | SVG în `data/logos/<id>.svg`, descărcat de `tools/fetch_logos.py`; dacă lipsește, aplicația afișează inițiale |
 | `package` | string | — | Numele pachetului Debian/Ubuntu, doar dacă diferă de `id` (ex. `sevenzip` → `p7zip-full`); folosit de `tools/refresh_indicators.py` pentru popcon/repo |
 | `details.install_size_mb` | int | ✅* | MB la instalare; `0` pentru aplicații web. \*„✅*" = completabil ≥90% din catalog (regula din sec. 14) |
+| `details.size_basis` | enum | — | Distribuția din care vine dimensiunea: `deb` (implicit) \| `flatpak` \| `snap` \| `appimage` \| `web` \| `other`. Implicit: `web` dacă `install_size_mb` e 0, altfel `deb`. Dimensiunile din distribuții diferite nu sunt comparabile, deci comparația se face doar în grupuri cu aceeași distribuție. |
 | `details.first_release_year` | int | ✅* | Anul primei versiuni |
 | `details.file_formats` | listă | ✅* | Formate principale; `[]` dacă nu are sens (ex. browser) |
 | `details.telemetry` | enum | ✅* | `none` \| `optional` \| `yes` — fapt din politica de confidențialitate |
@@ -123,6 +124,7 @@ Vezi [apps/keepassxc.yaml](apps/keepassxc.yaml) — acoperă toate câmpurile, i
 6. Avertisment (nu eroare) dacă `sources` e gol sau dacă `latest_release` e mai veche de 2 ani.
 7. Avertisment (nu eroare) dacă o sursă nu e HTTPS sau dacă site-ul oficial nu apare în `sources` — sursele sunt afișate ca linkuri în interfață, deci trebuie să fie sigure și să acopere valoarea prezentată.
 8. Eroare dacă `confidence` conține un câmp necunoscut, un nivel invalid sau încearcă să declare `unknown` (care se deduce automat).
+9. Eroare dacă `details.size_basis` are o valoare în afara listei de distribuții admise.
 
 ## Automatizare
 

@@ -29,7 +29,7 @@ Aplicație **desktop nativă pentru Kubuntu 24.04** (KDE Plasma) pentru descoper
 | 72 logo-uri reale (Simple Icons CC0 + Wikimedia Commons) + fallback inițiale | [data/logos/](data/logos), [tools/fetch_logos.py](tools/fetch_logos.py) |
 | GitHub Actions: PR săptămânal cu indicatori reîmprospătați | [.github/workflows/refresh.yml](.github/workflows/refresh.yml) |
 | Aplicația desktop (schelet PySide6/Qt Widgets) | [app/](app) |
-| Suită de teste automate (135 teste: build, validări, interogări, comparație, export, GUI, surse, licențiere, resurse, packaging, integrare GitHub) | [tests/](tests) |
+| Suită de teste automate (145 teste: build, validări, interogări, comparație, export, GUI, surse, licențiere, resurse, packaging, integrare GitHub) | [tests/](tests) |
 
 > Indicatorii (popcon, stele, versiuni, „în repo Ubuntu") sunt acum **valori reale**, reîmprospătate automat săptămânal prin PR — aprobarea rămâne la maintainer (sec. 7).
 
@@ -47,7 +47,7 @@ Aplicație **desktop nativă pentru Kubuntu 24.04** (KDE Plasma) pentru descoper
 pip install -r requirements.txt
 python tools/build_catalog.py       # data/ → catalog.db (cu validări; eșuează la erori)
 python -m app.main                  # pornește aplicația desktop
-python -m pytest tests/             # rulează suita de teste (135)
+python -m pytest tests/             # rulează suita de teste (145)
 
 # unelte de întreținere (rulate automat săptămânal prin GitHub Actions):
 python tools/refresh_indicators.py  # popcon + repo Ubuntu + stele GitHub → YAML

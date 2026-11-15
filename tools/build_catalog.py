@@ -24,7 +24,7 @@ from pathlib import Path
 
 import yaml
 
-SCHEMA_VERSION = 1
+SCHEMA_VERSION = 2
 
 # --- Valori legale (oglindă data/README.md) -----------------------------------
 LICENSES = {"foss", "freemium", "commercial"}
@@ -32,6 +32,10 @@ PRICES = {"free", "paid"}
 PLATFORMS = {"linux", "windows", "macos", "android", "web"}
 TELEMETRY = {"none", "optional", "yes"}
 FEATURE_VALUES = {"free", "paid", "partial", "no", "unknown"}
+#: Distribuția din care vine dimensiunea la instalare. Dimensiunile din
+#: distribuții diferite nu sunt comparabile (un .deb și un AppImage nu se
+#: raportează la același lucru), deci comparația se face doar în grupuri.
+SIZE_BASES = {"deb", "flatpak", "snap", "appimage", "web", "other"}
 ID_RE = re.compile(r"^[a-z0-9-]+$")
 RELEASE_RE = re.compile(r"^\d{4}-(0[1-9]|1[0-2])$")
 STALE_YEARS = 2  # regula 6: latest_release mai veche de 2 ani -> avertisment
@@ -99,6 +103,22 @@ def is_absent(value) -> bool:
     return False
 
 
+def resolve_size_basis(details: dict) -> str:
+    """Distribuția din care vine dimensiunea la instalare.
+
+    Implicit: o aplicație web (`install_size_mb: 0`) nu se instalează local,
+    iar orice altă aplicație e măsurată ca pachet Debian/Ubuntu — convenția
+    din `package` (câmpul e doar override-ul când numele diferă de `id`).
+    Poate fi declarat explicit în YAML, pentru aplicațiile distribuite altfel.
+    """
+    explicit = details.get("size_basis")
+    if explicit:
+        return explicit
+    if details.get("install_size_mb") == 0:
+        return "web"
+    return "deb"
+
+
 SCHEMA = """
 CREATE TABLE metadata (
     key   TEXT PRIMARY KEY,
@@ -122,6 +142,7 @@ CREATE TABLE applications (
     editors_choice     INTEGER NOT NULL DEFAULT 0,
     popularity         INTEGER,
     install_size_mb    INTEGER,
+    size_basis         TEXT NOT NULL DEFAULT 'deb',
     first_release_year INTEGER,
     telemetry          TEXT,
     romanian_language  INTEGER,
@@ -294,6 +315,12 @@ def validate_app(path: Path, app: dict, taxonomies: dict[str, set], rep: Reporte
             rep.error(f"{name}: confidence.{field} — nivel invalid {level!r} "
                       f"(permise: {'/'.join(CONFIDENCE_LEVELS)})")
 
+    # Regula 9: distribuția dimensiunii la instalare (comparabilitate)
+    basis = (app.get("details") or {}).get("size_basis")
+    if basis is not None and basis not in SIZE_BASES:
+        rep.error(f"{name}: details.size_basis invalid {basis!r} "
+                  f"(permise: {'/'.join(sorted(SIZE_BASES))})")
+
 
 def load_confidence_defaults(data_dir: Path, rep: Reporter) -> dict[str, str]:
     """Citește data/confidence.yaml — nivelul implicit per tip de câmp.
@@ -436,12 +463,13 @@ def build(data_dir: Path, out_path: Path) -> bool:
                 ind = app.get("indicators") or {}
                 con.execute(
                     """INSERT INTO applications VALUES
-                       (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
+                       (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
                     (app["id"], app["name"], app["description"], app["category"],
                      app["license"], app["price"], app["developer"], app["website"],
                      app.get("logo"), int(bool(app.get("editors_choice"))),
                      app.get("popularity"),
-                     det.get("install_size_mb"), det.get("first_release_year"),
+                     det.get("install_size_mb"), resolve_size_basis(det),
+                     det.get("first_release_year"),
                      det.get("telemetry"),
                      None if det.get("romanian_language") is None
                      else int(bool(det["romanian_language"])),

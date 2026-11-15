@@ -673,7 +673,21 @@ function renderCompare() {
   const badgeClass = l => ({ foss: "badge-foss", freemium: "badge-freemium", comercial: "badge-comercial" })[l];
 
   // „Cel mai bun" pe fiecare rând (evidențiat cu verde)
-  const bestDim = Math.min(...apps.map(a => a.dimMB ?? Infinity));
+  // Dimensiunile se compară doar în aceeași distribuție; aplicațiile web
+  // nu se instalează local, deci sunt excluse din comparație.
+  const sizeBasis = (a) => (a.dimMB === 0 ? "web" : "deb");
+  const bestDim = (() => {
+    const grupuri = {};
+    apps.forEach(a => {
+      if (a.dimMB == null || sizeBasis(a) === "web") return;
+      (grupuri[sizeBasis(a)] ||= []).push(a.dimMB);
+    });
+    const mins = Object.values(grupuri)
+      .filter(v => v.length >= 2).map(v => Math.min(...v));
+    return mins.length ? Math.min(...mins) : null;
+  })();
+  const sizeIsBest = (a) => a.dimMB != null && sizeBasis(a) !== "web"
+    && a.dimMB === bestDim;
   const bestVers = apps.map(a => a.ultimaVersiune).sort().reverse()[0];
   const fmtMB = n => n == null ? "—" : n === 0 ? "0 (aplicație web)" : n >= 1000 ? `~${(n / 1000).toLocaleString("ro-RO")} GB` : `~${n} MB`;
 
@@ -707,7 +721,7 @@ function renderCompare() {
           ${rand("Preț", apps.map(a => a.pret === "gratuit" ? "Gratuit" : "Cu plată"), a => a.pret === "gratuit", "pret")}
           ${rand("Platforme", apps.map(a => a.platforme.map(p => PLATFORME[p]).join(", ")), a => a.platforme.includes("linux"), "platforme")}
           ${rand("Site oficial", apps.map(a => a.site), "site")}
-          ${rand("Dimensiune la instalare", apps.map(a => fmtMB(a.dimMB)), a => a.dimMB != null && a.dimMB === bestDim, "dimMB")}
+          ${rand("Dimensiune la instalare", apps.map(a => fmtMB(a.dimMB)), sizeIsBest, "dimMB")}
           ${rand("Anul primei versiuni", apps.map(a => a.an), "an")}
           ${rand("Ultima versiune", apps.map(a => a.ultimaVersiune), a => a.ultimaVersiune === bestVers, "ultimaVersiune")}
           ${rand("Telemetrie", apps.map(a => TEL_LABELS[a.tel] || "—"), a => a.tel === "nu", "tel")}
@@ -718,7 +732,7 @@ function renderCompare() {
         </tbody>
       </table>
     </div>
-    <p class="compare-legend"><span class="swatch"></span> = cea mai bună valoare din selecție, pe acel criteriu. Click pe numele unei aplicații pentru pagina ei de detalii.<br>
+    <p class="compare-legend"><span class="swatch"></span> = <b>avantaj obiectiv</b> pe acel criteriu, verificat (⟳ automat sau ✓ manual). Criteriile estimate (≈) nu primesc evidențiere: „cea mai mică” dintr-o valoare neverificată nu e un avantaj dovedit. Click pe numele unei aplicații pentru pagina ei de detalii.<br>
     Funcționalitățile sunt <b>normalizate per categorie</b>: aceeași funcție apare pe același rând, indiferent de denumirea comercială din fiecare aplicație.<br>
     ⚠ <i>parțial</i> = funcția există, dar cu limitări (ex: doar citire offline, doar import fără export).</p>`;
 

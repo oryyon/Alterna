@@ -175,6 +175,20 @@ def test_deb_normalizes_permissions_without_breaking_binary():
         "launcherul din /usr/bin trebuie forțat executabil"
 
 
+def test_launcher_resolves_app_relative_to_itself():
+    """Launcherul trebuie să funcționeze și în afara /opt.
+
+    Cu o cale strict absolută, testarea dintr-un director extras eșua,
+    deși instalarea reală funcționa.
+    """
+    launcher = PACKAGING / "alterna-launcher"
+    text = launcher.read_text(encoding="utf-8")
+    assert "readlink -f" in text, "launcherul trebuie să-și rezolve propria poziție"
+    assert "SELF_DIR" in text
+    assert '"$SELF_DIR/../../opt/alterna"' in text, \
+        "trebuie căutată aplicația relativ la launcher"
+
+
 def test_both_packaging_scripts_write_to_dist():
     """Ambele pachete trebuie scrise în dist/ — sursa de adevăr comună."""
     for script in ("build_appimage.sh", "build_deb.sh"):

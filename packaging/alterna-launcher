@@ -8,6 +8,22 @@ set -eu
 
 APPDIR="/opt/alterna"
 
+# Cale relativă la launcher, pentru ca testarea dintr-un director extras să
+# funcționeze la fel ca după instalarea reală în /opt.
+if [ ! -x "$APPDIR/alterna" ]; then
+  SELF="$(readlink -f "$0" 2>/dev/null || echo "$0")"
+  SELF_DIR="$(dirname "$SELF")"
+  for candidate in \
+    "$SELF_DIR/../../opt/alterna" \
+    "$SELF_DIR/../../lib/alterna" \
+    "$SELF_DIR/../alterna"; do
+    if [ -x "$candidate/alterna" ]; then
+      APPDIR="$(cd "$candidate" && pwd)"
+      break
+    fi
+  done
+fi
+
 if [ ! -x "$APPDIR/alterna" ]; then
     echo "Alterna: binarul nu a fost găsit la $APPDIR/alterna" >&2
     echo "Pachetul pare incomplet. Reinstalează cu:" >&2

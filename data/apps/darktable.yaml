@@ -14,7 +14,7 @@ tags: [raw, foto, developare]
 alternatives: [gimp, krita]
 
 details:
-  install_size_mb: 250
+  install_size_mb: 311
   first_release_year: 2009
   file_formats: [RAW, DNG, XMP]
   telemetry: none
@@ -31,3 +31,5 @@ sources:
 - https://www.darktable.org
 - https://github.com/darktable-org/darktable
 logo: logos/darktable.png
+confidence:
+  details.install_size_mb: auto

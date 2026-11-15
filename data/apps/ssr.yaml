@@ -15,7 +15,7 @@ tags: [inregistrare ecran, simplu]
 alternatives: [obs]
 
 details:
-  install_size_mb: 5
+  install_size_mb: 456
   first_release_year: 2012
   file_formats: [MP4, MKV, WebM]
   telemetry: none
@@ -32,3 +32,5 @@ sources:
 - https://www.maartenbaert.be/simplescreenrecorder
 - https://github.com/MaartenBaert/ssr
 logo: logos/ssr.png
+confidence:
+  details.install_size_mb: auto

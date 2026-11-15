@@ -14,7 +14,7 @@ tags: [player, minimalist]
 alternatives: [vlc]
 
 details:
-  install_size_mb: 30
+  install_size_mb: 482
   first_release_year: 2013
   file_formats: ["orice suportă FFmpeg"]
   telemetry: none
@@ -31,3 +31,5 @@ sources:
 - https://mpv.io
 - https://github.com/mpv-player/mpv
 logo: logos/mpv.svg
+confidence:
+  details.install_size_mb: auto

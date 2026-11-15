@@ -14,7 +14,7 @@ tags: [cad, 2d, desen tehnic]
 alternatives: [freecad]
 
 details:
-  install_size_mb: 100
+  install_size_mb: 435
   first_release_year: 2011
   file_formats: [DXF, DWG]
   telemetry: none
@@ -31,3 +31,5 @@ sources:
 - https://librecad.org
 - https://github.com/LibreCAD/LibreCAD
 logo: logos/librecad.png
+confidence:
+  details.install_size_mb: auto

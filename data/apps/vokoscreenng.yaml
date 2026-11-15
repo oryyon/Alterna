@@ -15,7 +15,7 @@ tags: [inregistrare ecran, webcam]
 alternatives: [obs, ssr]
 
 details:
-  install_size_mb: 100
+  install_size_mb: 414
   first_release_year: 2019
   file_formats: [MP4, MKV]
   telemetry: none
@@ -31,3 +31,5 @@ indicators:
 sources:
 - https://github.com/vkohaupt/vokoscreenNG
 logo: logos/vokoscreenng.png
+confidence:
+  details.install_size_mb: auto

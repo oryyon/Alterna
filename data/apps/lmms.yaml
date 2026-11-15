@@ -14,7 +14,7 @@ tags: [daw, sintetizatoare, beatmaking]
 alternatives: [ardour, fl-studio]
 
 details:
-  install_size_mb: 200
+  install_size_mb: 423
   first_release_year: 2004
   file_formats: [MMP, WAV, MIDI]
   telemetry: none
@@ -31,3 +31,5 @@ sources:
 - https://lmms.io
 - https://github.com/LMMS/lmms
 logo: logos/lmms.svg
+confidence:
+  details.install_size_mb: auto

@@ -14,7 +14,7 @@ tags: [3d, modelare, animatie, randare]
 alternatives: [freecad]
 
 details:
-  install_size_mb: 350
+  install_size_mb: 938
   first_release_year: 1998
   file_formats: [BLEND, OBJ, FBX, glTF, STL]
   telemetry: optional
@@ -31,3 +31,5 @@ sources:
 - https://www.blender.org
 - https://github.com/blender/blender
 logo: logos/blender.svg
+confidence:
+  details.install_size_mb: auto

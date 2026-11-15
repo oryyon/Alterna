@@ -14,7 +14,7 @@ tags: [editor, ide, usor]
 alternatives: [kate, vscode]
 
 details:
-  install_size_mb: 30
+  install_size_mb: 243
   first_release_year: 2005
   file_formats: ["orice fișier text / cod"]
   telemetry: none
@@ -31,3 +31,5 @@ sources:
 - https://www.geany.org
 - https://github.com/geany/geany
 logo: logos/geany.png
+confidence:
+  details.install_size_mb: auto

@@ -14,7 +14,7 @@ tags: [virtualizare, vm, sisteme]
 alternatives: []
 
 details:
-  install_size_mb: 500
+  install_size_mb: 695
   first_release_year: 2007
   file_formats: [VDI, OVA]
   telemetry: none
@@ -30,3 +30,5 @@ indicators:
 sources:
 - https://www.virtualbox.org
 logo: logos/virtualbox.svg
+confidence:
+  details.install_size_mb: auto

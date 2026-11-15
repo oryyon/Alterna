@@ -14,7 +14,7 @@ tags: [parole, terminal, gpg]
 alternatives: [keepassxc]
 
 details:
-  install_size_mb: 5
+  install_size_mb: 31
   first_release_year: 2012
   file_formats: [GPG, Git]
   telemetry: none
@@ -29,3 +29,5 @@ indicators:
 
 sources:
 - https://www.passwordstore.org
+confidence:
+  details.install_size_mb: auto

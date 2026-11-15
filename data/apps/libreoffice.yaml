@@ -15,7 +15,7 @@ alternatives: [onlyoffice, msoffice]
 editors_choice: true
 
 details:
-  install_size_mb: 600
+  install_size_mb: 726
   first_release_year: 2011
   file_formats: [ODF, DOCX, XLSX, PPTX]
   telemetry: none
@@ -32,3 +32,5 @@ sources:
 - https://www.libreoffice.org
 - https://github.com/LibreOffice/core
 logo: logos/libreoffice.svg
+confidence:
+  details.install_size_mb: auto

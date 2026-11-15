@@ -14,7 +14,7 @@ tags: [ftp, sftp, transfer]
 alternatives: []
 
 details:
-  install_size_mb: 50
+  install_size_mb: 267
   first_release_year: 2001
   file_formats: [FTP, SFTP]
   telemetry: none
@@ -30,3 +30,5 @@ indicators:
 sources:
 - https://filezilla-project.org
 logo: logos/filezilla.svg
+confidence:
+  details.install_size_mb: auto

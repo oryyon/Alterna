@@ -14,7 +14,7 @@ tags: [curatare, sistem, confidentialitate]
 alternatives: [stacer]
 
 details:
-  install_size_mb: 15
+  install_size_mb: 267
   first_release_year: 2008
   file_formats: []
   telemetry: none
@@ -31,3 +31,5 @@ sources:
 - https://www.bleachbit.org
 - https://github.com/bleachbit/bleachbit
 logo: logos/bleachbit.png
+confidence:
+  details.install_size_mb: auto

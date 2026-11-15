@@ -14,7 +14,7 @@ tags: [cad, parametric, cod, 3d print]
 alternatives: [freecad]
 
 details:
-  install_size_mb: 60
+  install_size_mb: 386
   first_release_year: 2010
   file_formats: [SCAD, STL, 3MF]
   telemetry: none
@@ -31,3 +31,5 @@ sources:
 - https://openscad.org
 - https://github.com/openscad/openscad
 logo: logos/openscad.svg
+confidence:
+  details.install_size_mb: auto

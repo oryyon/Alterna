@@ -14,7 +14,7 @@ tags: [sincronizare, p2p, fara cloud]
 alternatives: []
 
 details:
-  install_size_mb: 100
+  install_size_mb: 35
   first_release_year: 2013
   file_formats: []
   telemetry: none
@@ -31,3 +31,5 @@ sources:
 - https://syncthing.net
 - https://github.com/syncthing/syncthing
 logo: logos/syncthing.svg
+confidence:
+  details.install_size_mb: auto

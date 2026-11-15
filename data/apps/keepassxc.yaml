@@ -16,7 +16,7 @@ alternatives: [bitwarden, 1password]
 editors_choice: true
 
 details:
-  install_size_mb: 50
+  install_size_mb: 396
   first_release_year: 2016
   file_formats: [KDBX]
   telemetry: none
@@ -56,3 +56,5 @@ sources:
 - https://keepassxc.org
 - https://github.com/keepassxreboot/keepassxc
 - https://keepassxc.org/project/#audits
+confidence:
+  details.install_size_mb: auto

@@ -14,7 +14,7 @@ tags: [daw, inregistrare, mixaj]
 alternatives: [reaper, lmms]
 
 details:
-  install_size_mb: 300
+  install_size_mb: 379
   first_release_year: 2000
   file_formats: [WAV, FLAC, "sesiuni Ardour"]
   telemetry: none
@@ -31,3 +31,5 @@ sources:
 - https://ardour.org
 - https://github.com/Ardour/ardour
 logo: logos/ardour.svg
+confidence:
+  details.install_size_mb: auto

@@ -14,7 +14,7 @@ tags: [documente, kde]
 alternatives: [libreoffice]
 
 details:
-  install_size_mb: 250
+  install_size_mb: 750
   first_release_year: 2000
   file_formats: [ODF]
   telemetry: none
@@ -31,3 +31,5 @@ sources:
 - https://calligra.org
 - https://invent.kde.org/office/calligra
 logo: logos/calligra.png
+confidence:
+  details.install_size_mb: auto

@@ -14,7 +14,7 @@ tags: [vectorial, svg, ilustratie]
 alternatives: [illustrator, figma, affinity]
 
 details:
-  install_size_mb: 400
+  install_size_mb: 401
   first_release_year: 2003
   file_formats: [SVG, PDF, EPS, PNG]
   telemetry: none
@@ -31,3 +31,5 @@ sources:
 - https://inkscape.org
 - https://gitlab.com/inkscape/inkscape
 logo: logos/inkscape.svg
+confidence:
+  details.install_size_mb: auto

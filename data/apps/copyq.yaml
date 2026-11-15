@@ -14,7 +14,7 @@ tags: [clipboard, istoric, productivitate]
 alternatives: []
 
 details:
-  install_size_mb: 40
+  install_size_mb: 374
   first_release_year: 2009
   file_formats: []
   telemetry: none
@@ -30,3 +30,5 @@ indicators:
 sources:
 - https://hluk.github.io/CopyQ
 - https://github.com/hluk/CopyQ
+confidence:
+  details.install_size_mb: auto

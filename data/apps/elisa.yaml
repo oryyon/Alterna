@@ -14,7 +14,7 @@ tags: [player, muzica, kde]
 alternatives: [strawberry, vlc]
 
 details:
-  install_size_mb: 30
+  install_size_mb: 662
   first_release_year: 2016
   file_formats: [MP3, FLAC, OGG]
   telemetry: none
@@ -31,3 +31,5 @@ sources:
 - https://apps.kde.org/elisa
 - https://invent.kde.org/multimedia/elisa
 logo: logos/elisa.png
+confidence:
+  details.install_size_mb: auto

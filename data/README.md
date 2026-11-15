@@ -55,7 +55,7 @@ data/
 | `popularity` | int | — | Ordinea editorială a catalogului (mic = mai popular); baza sortării „implicite". Multipli de 10, ca să poți insera între |
 | `logo` | path | — | SVG în `data/logos/<id>.svg`, descărcat de `tools/fetch_logos.py`; dacă lipsește, aplicația afișează inițiale |
 | `package` | string | — | Numele pachetului Debian/Ubuntu, **doar dacă diferă de `id`** (ex. `sevenzip` → `p7zip-full`, `openshot` → `openshot-qt`); folosit de `tools/refresh_indicators.py` pentru popcon/repo. Verifică-l cu `python tools/check_packages.py` |
-| `details.install_size_mb` | int | ✅* | MB la instalare; `0` pentru aplicații web. \*„✅*" = completabil ≥90% din catalog (regula din sec. 14) |
+| `details.install_size_mb` | int | ✅* | MB pe disc în Ubuntu 24.04: pachetul **împreună cu dependențele sale** (măsurat din arhivă, nu estimat); `0` pentru aplicații web. \*„✅*" = completabil ≥90% din catalog (regula din sec. 14). Se reîmprospătează cu `python tools/refresh_sizes.py` |
 | `details.size_basis` | enum | — | Distribuția din care vine dimensiunea: `deb` (implicit) \| `flatpak` \| `snap` \| `appimage` \| `web` \| `other`. Implicit: `web` dacă `install_size_mb` e 0, altfel `deb`. Dimensiunile din distribuții diferite nu sunt comparabile, deci comparația se face doar în grupuri cu aceeași distribuție. |
 | `details.first_release_year` | int | ✅* | Anul primei versiuni |
 | `details.file_formats` | listă | ✅* | Formate principale; `[]` dacă nu are sens (ex. browser) |
@@ -131,6 +131,7 @@ Vezi [apps/keepassxc.yaml](apps/keepassxc.yaml) — acoperă toate câmpurile, i
 
 ```bash
 python tools/check_packages.py    # pachetele Ubuntu presupunute + indicatorii în_ubuntu_repos
+python tools/refresh_sizes.py     # dimensiunea la instalare, măsurată din arhivă
 python tools/fetch_logos.py       # logo-urile (Simple Icons + Wikimedia Commons)
 ```
 

@@ -14,7 +14,7 @@ tags: [sistem, monitor, curatare]
 alternatives: [bleachbit]
 
 details:
-  install_size_mb: 30
+  install_size_mb: 366
   first_release_year: 2017
   file_formats: []
   telemetry: none
@@ -30,3 +30,5 @@ indicators:
 sources:
 - https://github.com/oguzhaninan/Stacer
 logo: logos/stacer.png
+confidence:
+  details.install_size_mb: auto

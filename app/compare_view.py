@@ -33,7 +33,8 @@ ROW_REASONS = {
     "Preț": "Gratuit — nu costă nimic și nu cere cont.",
     "Platforme": "Include Linux — rulează nativ pe sistemul nostru.",
     "Ultima versiune": "Cea mai recentă versiune — proiectul e activ.",
-    "Dimensiune la instalare": "Cea mai mică instalare din aceeași distribuție.",
+    "Dimensiune la instalare": "Cea mai mică dimensiune pe disc în Ubuntu 24.04 "
+                           "(pachet + dependențe).",
     "Telemetrie": "Fără telemetrie — nu trimite date despre tine.",
     "Limbă română": "Are interfață în română.",
     "FUNCȚIONALITĂȚI": "Funcția e disponibilă gratuit.",
@@ -327,12 +328,14 @@ class CompareView(QScrollArea):
                     # celulă, nu doar „că" (review: explicație la fiecare highlight)
                     item.setToolTip(f"Avantaj obiectiv: {motiv}")
                 elif label == "Dimensiune la instalare":
-                    # Dimensiunile se compară doar în aceeași distribuție —
-                    # spune utilizatorului din ce e măsurată fiecare valoare.
+                    # Spune exact ce metrica e — altfel „cea mai mică" înseamnă
+                    # orice: cu dependențe, fără, sau doar pachetul.
                     baza = SIZE_BASIS_LABELS.get(size_basis(apps[c - 1]), "—")
-                    item.setToolTip(f"Dimensiune din: {baza}.\n"
-                                    f"Dimensiunile din distribuții diferite nu "
-                                    f"sunt comparabile.")
+                    item.setToolTip(
+                        f"Dimensiune pe disc în Ubuntu 24.04: pachetul "
+                        f"{baza} împreună cu dependențele sale.\n"
+                        f"Aplicațiile instalate ca snap sau din altă sursă "
+                        f"nu au această valoare.")
                 # Tooltip cu explicația la „⚠ parțial" (sec. 15)
                 # rândul r din tabel = rândul r-1 din self.rows; funcționalitățile
                 # încep după separatorul FUNCȚIONALITĂȚI (index matrix_start)

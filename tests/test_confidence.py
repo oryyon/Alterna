@@ -81,10 +81,10 @@ class TestBuild:
         assert photopea["confidence"]["indicators.stars_url"] == "unknown"
 
     def test_detaliile_sunt_estimari(self, catalog):
-        """Dimensiunea, telemetria și limba română sunt estimări editoriale."""
+        """Dimensiunea e măsurată (vezi TestDimensiuniVerificate); telemetria
+        și limba română rămân estimări editoriale."""
         gimp = catalog.get("gimp")
-        for field in ("details.install_size_mb", "details.telemetry",
-                      "details.romanian_language"):
+        for field in ("details.telemetry", "details.romanian_language"):
             assert gimp["confidence"][field] == "estimated", field
 
     def test_identitatea_este_manuala(self, catalog):
@@ -231,3 +231,36 @@ class TestUI:
         antet = [table.item(r, 0).text() for r in range(1, table.rowCount())]
         marcate = [t for t in antet if t and t[0] in "⟳✓≈?"]
         assert marcate, "niciun rând nu e marcat cu nivelul de certitudine"
+
+
+class TestDimensiuniVerificate:
+    """Dimensiunea la instalare e măsurată, nu estimată (pachet + dependențe)."""
+
+    def test_dimensiunile_verificate_sunt_marcate_auto(self, catalog):
+        """Aplicațiile cu pachet Ubuntu au dimensiunea verificată automat."""
+        gimp = catalog.get("gimp")
+        assert gimp["confidence"]["details.install_size_mb"] == "auto"
+        assert gimp["install_size_mb"] > 0
+
+    def test_aplicatii_fara_pachet_isi_pastreaza_estimarea(self, catalog):
+        """Fără pachet Ubuntu nu se inventează o dimensiune."""
+        chrome = catalog.get("chrome")
+        assert chrome["confidence"]["details.install_size_mb"] != "auto"
+
+    def test_coliziune_de_nume_nu_trec_negresit(self, catalog):
+        """„notion” în Ubuntu e un window manager, nu aplicația Notion —
+        deci nu i se atribuie o dimensiune măsurată."""
+        notion = catalog.get("notion")
+        assert notion["confidence"]["details.install_size_mb"] != "auto"
+
+    def test_randul_de_dimensiune_este_evidentiat_doar_daca_e_verificat(self, catalog):
+        """Regula „avantaj obiectiv": verde doar pe criterii verificate."""
+        from app.compare_view import comparison_rows
+
+        gimp = catalog.get("gimp")
+        vlc = catalog.get("vlc")
+        rows = comparison_rows([gimp, vlc], [])
+        by_label = {r[0]: r for r in rows}
+        # ambele au dimensiune verificată → rândul e verificat → se evidențiază
+        assert by_label["Dimensiune la instalare"][2]["best"], \
+            "două dimensiuni verificate ar trebui evidențiate"

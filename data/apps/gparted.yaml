@@ -14,7 +14,7 @@ tags: [partitii, discuri, sistem]
 alternatives: []
 
 details:
-  install_size_mb: 50
+  install_size_mb: 247
   first_release_year: 2004
   file_formats: []
   telemetry: none
@@ -30,3 +30,5 @@ indicators:
 sources:
 - https://gparted.org
 logo: logos/gparted.png
+confidence:
+  details.install_size_mb: auto

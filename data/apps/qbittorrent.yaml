@@ -14,7 +14,7 @@ tags: [torrent, p2p, descarcare]
 alternatives: []
 
 details:
-  install_size_mb: 100
+  install_size_mb: 370
   first_release_year: 2006
   file_formats: [torrent, magnet]
   telemetry: none
@@ -31,3 +31,5 @@ sources:
 - https://www.qbittorrent.org
 - https://github.com/qbittorrent/qBittorrent
 logo: logos/qbittorrent.svg
+confidence:
+  details.install_size_mb: auto

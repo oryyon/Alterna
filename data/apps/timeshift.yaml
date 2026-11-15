@@ -14,7 +14,7 @@ tags: [backup, snapshots, sistem]
 alternatives: []
 
 details:
-  install_size_mb: 30
+  install_size_mb: 303
   first_release_year: 2013
   file_formats: ["snapshots rsync/Btrfs"]
   telemetry: none
@@ -30,3 +30,5 @@ indicators:
 sources:
 - https://github.com/linuxmint/timeshift
 logo: logos/timeshift.png
+confidence:
+  details.install_size_mb: auto

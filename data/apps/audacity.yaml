@@ -14,7 +14,7 @@ tags: [audio, editare, podcast]
 alternatives: [tenacity]
 
 details:
-  install_size_mb: 60
+  install_size_mb: 289
   first_release_year: 2000
   file_formats: [WAV, MP3, FLAC, OGG]
   telemetry: optional
@@ -31,3 +31,5 @@ sources:
 - https://www.audacityteam.org
 - https://github.com/audacity/audacity
 logo: logos/audacity.svg
+confidence:
+  details.install_size_mb: auto

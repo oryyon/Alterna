@@ -15,7 +15,7 @@ alternatives: [davinci, premiere]
 editors_choice: true
 
 details:
-  install_size_mb: 200
+  install_size_mb: 1095
   first_release_year: 2003
   file_formats: [MP4, MKV, MOV, WebM]
   telemetry: none
@@ -32,3 +32,5 @@ sources:
 - https://kdenlive.org
 - https://invent.kde.org/multimedia/kdenlive
 logo: logos/kdenlive.svg
+confidence:
+  details.install_size_mb: auto

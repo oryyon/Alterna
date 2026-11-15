@@ -15,7 +15,7 @@ tags: [streaming, inregistrare ecran, twitch]
 alternatives: [ssr]
 
 details:
-  install_size_mb: 300
+  install_size_mb: 574
   first_release_year: 2012
   file_formats: [MP4, MKV, FLV, MOV]
   telemetry: none
@@ -31,3 +31,5 @@ sources:
 - https://obsproject.com
 - https://github.com/obsproject/obs-studio
 logo: logos/obs.svg
+confidence:
+  details.install_size_mb: auto

@@ -15,7 +15,7 @@ tags: [ide, java]
 alternatives: [intellij-idea, vscode]
 
 details:
-  install_size_mb: 800
+  install_size_mb: 502
   first_release_year: 2001
   file_formats: [Java]
   telemetry: none
@@ -32,3 +32,5 @@ sources:
 - https://www.eclipse.org
 - https://github.com/eclipse-platform
 logo: logos/eclipse-ide.svg
+confidence:
+  details.install_size_mb: auto

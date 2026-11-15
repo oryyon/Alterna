@@ -15,7 +15,7 @@ tags: [pictură, desen, tableta grafica]
 alternatives: [gimp, photoshop, photopea]
 
 details:
-  install_size_mb: 500
+  install_size_mb: 867
   first_release_year: 2005
   file_formats: [KRA, PSD, PNG, JPG]
   telemetry: none
@@ -31,3 +31,5 @@ indicators:
 sources:
 - https://krita.org
 - https://invent.kde.org/graphics/krita
+confidence:
+  details.install_size_mb: auto

@@ -14,7 +14,7 @@ tags: [captura ecran, screenshot, adnotare]
 alternatives: []
 
 details:
-  install_size_mb: 20
+  install_size_mb: 365
   first_release_year: 2017
   file_formats: [PNG]
   telemetry: none
@@ -31,3 +31,5 @@ sources:
 - https://flameshot.org
 - https://github.com/flameshot-org/flameshot
 logo: logos/flameshot.png
+confidence:
+  details.install_size_mb: auto

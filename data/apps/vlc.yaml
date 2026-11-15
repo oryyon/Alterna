@@ -14,7 +14,7 @@ tags: [player, video, audio]
 alternatives: [mpv]
 
 details:
-  install_size_mb: 80
+  install_size_mb: 471
   first_release_year: 2001
   file_formats: [MKV, MP4, FLAC, "aproape orice"]
   telemetry: none
@@ -31,3 +31,5 @@ sources:
 - https://www.videolan.org
 - https://github.com/videolan/vlc
 logo: logos/vlc.png
+confidence:
+  details.install_size_mb: auto

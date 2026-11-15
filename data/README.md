@@ -97,6 +97,7 @@ Vezi [apps/keepassxc.yaml](apps/keepassxc.yaml) — acoperă toate câmpurile, i
 4. Toate câmpurile obligatorii sunt prezente; enum-urile au valori legale.
 5. `features` este permis **doar** pentru categorii cu taxonomie definită (deocamdată: `security`).
 6. Avertisment (nu eroare) dacă `sources` e gol sau dacă `latest_release` e mai veche de 2 ani.
+7. Avertisment (nu eroare) dacă o sursă nu e HTTPS sau dacă site-ul oficial nu apare în `sources` — sursele sunt afișate ca linkuri în interfață, deci trebuie să fie sigure și să acopere valoarea prezentată.
 
 ## Automatizare
 

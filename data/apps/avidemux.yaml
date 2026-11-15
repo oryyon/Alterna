@@ -7,7 +7,7 @@ category: video
 license: foss
 price: free
 developer: Comunitatea Avidemux
-website: http://avidemux.sourceforge.net
+website: https://avidemux.sourceforge.net
 
 platforms: [linux, windows, macos]
 tags: [editare video, conversie]
@@ -28,5 +28,5 @@ indicators:
   in_ubuntu_repos: false
 
 sources:
-- http://avidemux.sourceforge.net
+- https://avidemux.sourceforge.net
 - https://github.com/mean00/avidemux2

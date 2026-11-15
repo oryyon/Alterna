@@ -74,6 +74,8 @@ def build_qss(theme: str) -> str:
     QLabel[dim="true"] {{ color: {p['text_dim']}; }}
     QLabel[h1="true"] {{ font-size: 20px; font-weight: bold; color: {p['text']}; }}
     QLabel[h2="true"] {{ font-size: 15px; font-weight: bold; color: {p['text']}; }}
+    QLabel[link="true"] {{ color: {p['accent']}; }}
+    QLabel[link="true"]:hover {{ color: {p['text']}; }}
 
     QLabel[badge="foss"] {{ color: {FOSS}; background: #2627ae60; border: 1px solid #5527ae60;
                             border-radius: 4px; padding: 1px 6px; font-size: 11px; }}

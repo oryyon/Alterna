@@ -215,6 +215,15 @@ def validate_app(path: Path, app: dict, taxonomies: dict[str, set], rep: Reporte
     # Regula 6: surse
     if not app.get("sources"):
         rep.warn(f"{name}: 'sources' gol — indicatorii trebuie să aibă sursă citată")
+    for url in app.get("sources") or []:
+        if not str(url).startswith("https://"):
+            rep.warn(f"{name}: sursa '{url}' nu e HTTPS — linkul e afișat în UI, "
+                     f"deci trebuie să fie sigur")
+
+    # Regula 7: site-ul oficial trebuie să fie și el sursă (verificabilitate)
+    website = app.get("website")
+    if website and website not in (app.get("sources") or []):
+        rep.warn(f"{name}: site-ul oficial '{website}' nu apare în 'sources'")
 
 
 def build(data_dir: Path, out_path: Path) -> bool:

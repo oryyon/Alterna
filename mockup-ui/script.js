@@ -330,6 +330,49 @@ APPS.forEach(a => Object.assign(a,
   { site: "—", dimMB: null, an: "—", formate: null, dev: "—", ro: null },
   EXTRA[a.id] || {}));
 
+// ---------- Surse citate (sec. 8) — aceleași URL-uri ca în data/apps/*.yaml ----------
+// Fiecare intrare: sursele oficiale din fișierul YAML al aplicației.
+const SOURCES = {
+  photoshop: ["https://www.adobe.com/products/photoshop.html", "https://www.adobe.com/privacy.html"],
+  gimp: ["https://www.gimp.org", "https://github.com/GNOME/gimp", "https://popcon.debian.org"],
+  krita: ["https://krita.org", "https://invent.kde.org/graphics/krita"],
+  photopea: ["https://www.photopea.com"],
+  affinity: ["https://affinity.serif.com"],
+  msoffice: ["https://www.microsoft.com/microsoft-365"],
+  libreoffice: ["https://www.libreoffice.org", "https://github.com/LibreOffice/core"],
+  onlyoffice: ["https://www.onlyoffice.com", "https://github.com/ONLYOFFICE"],
+  wps: ["https://www.wps.com"],
+  premiere: ["https://www.adobe.com/products/premiere.html"],
+  kdenlive: ["https://kdenlive.org", "https://invent.kde.org/multimedia/kdenlive"],
+  davinci: ["https://www.blackmagicdesign.com/products/davinciresolve"],
+  vlc: ["https://www.videolan.org", "https://github.com/videolan/vlc"],
+  mpv: ["https://mpv.io", "https://github.com/mpv-player/mpv"],
+  vscode: ["https://code.visualstudio.com", "https://github.com/microsoft/vscode"],
+  vscodium: ["https://vscodium.com", "https://github.com/VSCodium/vscodium"],
+  kate: ["https://kate-editor.org", "https://invent.kde.org/utilities/kate"],
+  firefox: ["https://www.mozilla.org/firefox", "https://github.com/mozilla-firefox/firefox"],
+  brave: ["https://brave.com", "https://github.com/brave/brave-browser"],
+  chromium: ["https://www.chromium.org", "https://github.com/chromium/chromium"],
+  telegram: ["https://telegram.org", "https://github.com/telegramdesktop/tdesktop"],
+  signal: ["https://signal.org", "https://github.com/signalapp/Signal-Desktop"],
+  keepassxc: ["https://keepassxc.org", "https://github.com/keepassxreboot/keepassxc", "https://keepassxc.org/project/#audits"],
+  bitwarden: ["https://bitwarden.com", "https://github.com/bitwarden"],
+  "1password": ["https://1password.com", "https://1password.com/privacy"],
+  obs: ["https://obsproject.com", "https://github.com/obsproject/obs-studio"],
+  ssr: ["https://www.maartenbaert.be/simplescreenrecorder", "https://github.com/MaartenBaert/ssr"],
+  audacity: ["https://www.audacityteam.org", "https://github.com/audacity/audacity"],
+  tenacity: ["https://tenacityaudio.org", "https://github.com/tenacityteam/tenacity"],
+  blender: ["https://www.blender.org", "https://github.com/blender/blender"],
+  freecad: ["https://www.freecad.org", "https://github.com/FreeCAD/FreeCAD"],
+  joplin: ["https://joplinapp.org", "https://github.com/laurent22/joplin"],
+  obsidian: ["https://obsidian.md"],
+  peazip: ["https://peazip.github.io", "https://github.com/peazip/PeaZip"],
+  sevenzip: ["https://www.7-zip.org", "https://github.com/ip7z/7zip"],
+};
+
+// Text lizibil al unei surse: fără schemă, fără slash final.
+const sourceLabel = (url) => url.replace(/^https?:\/\//, "").replace(/\/$/, "");
+
 // ---------- Telemetrie (fapt documentabil din politica de confidențialitate) ----------
 const TEL = {
   photoshop: "da", gimp: "nu", krita: "nu", photopea: "optional", affinity: "nu",
@@ -675,19 +718,29 @@ function showDetail(id) {
     <div class="detail-facts">
       <div class="fact"><div class="fact-label">Popcon Ubuntu</div>
         <div class="fact-value">${a.popcon ? "#" + a.popcon : "—"}</div>
-        <div class="fact-source">sursa: popularity-contest</div></div>
+        <div class="fact-source">${a.popcon
+          ? `<a href="https://popcon.debian.org" target="_blank" rel="noopener">sursa: popularity-contest</a>`
+          : "nu e pachet Debian/Ubuntu"}</div></div>
       <div class="fact"><div class="fact-label">Stele GitHub</div>
         <div class="fact-value">${a.stele ? "★ " + a.stele.toLocaleString("ro-RO") : "—"}</div>
-        <div class="fact-source">sursa: GitHub API</div></div>
+        <div class="fact-source">${a.stele
+          ? `<a href="https://api.github.com" target="_blank" rel="noopener">sursa: GitHub API</a>`
+          : "fără repo public"}</div></div>
       <div class="fact"><div class="fact-label">Ultima versiune</div>
         <div class="fact-value">${a.ultimaVersiune}</div>
-        <div class="fact-source">sursa: catalog / Wikidata</div></div>
+        <div class="fact-source"><a href="https://www.wikidata.org" target="_blank" rel="noopener">sursa: catalog / Wikidata</a></div></div>
       <div class="fact"><div class="fact-label">În depozitele Ubuntu</div>
         <div class="fact-value ${a.inRepoUbuntu ? "ok" : ""}">${a.inRepoUbuntu ? "✓ Da — apt install" : "✗ Nu"}</div>
-        <div class="fact-source">sursa: apt</div></div>
+        <div class="fact-source"><a href="https://packages.ubuntu.com" target="_blank" rel="noopener">sursa: apt</a></div></div>
       <div class="fact"><div class="fact-label">Preț</div>
         <div class="fact-value">${a.pret === "gratuit" ? "Gratuit" : "Cu plată"}</div>
-        <div class="fact-source">sursa: catalog</div></div>
+        <div class="fact-source"><a href="https://${a.site}" target="_blank" rel="noopener">sursa: catalog</a></div></div>
+    </div>
+    <div class="fact sources-box">
+      <div class="fact-label sources-title">🔗 Surse — de unde provin datele</div>
+      ${(SOURCES[a.id] || []).map(u =>
+        `<a class="source-link" href="${u}" target="_blank" rel="noopener">🔗 ${sourceLabel(u)}</a>`).join("")}
+      <div class="fact-source">${(SOURCES[a.id] || []).length} surse oficiale, din fișierul data/apps/${a.id}.yaml</div>
     </div>
     <h3 class="alternatives-title">Alternative <span>— ${a.alternative.length} programe similare</span></h3>
     <div class="app-list">

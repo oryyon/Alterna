@@ -280,6 +280,30 @@ body {
 .fact-value { font-size: 15px; font-weight: 600; margin-top: 2px; }
 .fact-value.ok { color: var(--foss); }
 .fact-source { font-size: 10px; color: var(--text-dim); }
+.fact-source a { color: var(--text-dim); text-decoration: none; }
+.fact-source a:hover { color: var(--accent); text-decoration: underline; }
+
+/* Panoul de surse — de unde provin datele (sec. 8) */
+.sources-box {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 20px;
+}
+.sources-title {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--text);
+}
+.source-link {
+  font-size: 12px;
+  color: var(--accent);
+  text-decoration: none;
+  word-break: break-all;
+}
+.source-link:hover { text-decoration: underline; }
 
 .alternatives-title {
   font-size: 16px;

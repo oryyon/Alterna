@@ -53,6 +53,42 @@ def color_for(app_id: str) -> QColor:
     return QColor.fromHsl(hue, 130, 95)
 
 
+def source_label(url: str) -> str:
+    """Text lizibil pentru o sursă: fără schemă, fără slash final.
+
+    „https://www.gimp.org" → „www.gimp.org"; sursele rămân identificabile
+    la un glance, iar URL-ul complet stă în tooltip (sec. 8).
+    """
+    text = (url or "").strip()
+    for prefix in ("https://", "http://"):
+        if text.startswith(prefix):
+            text = text[len(prefix):]
+            break
+    return text.rstrip("/")
+
+
+class LinkLabel(QLabel):
+    """Etichetă-hiperlink (sec. 8): click-ul emite URL-ul, îl deschide gazda.
+
+    Emite `clicked` în loc să deschidă browserul singură — așa rămâne
+    testabil (offscreen) și controlul rămâne în view-ul care o conține.
+    """
+
+    clicked = Signal(str)
+
+    def __init__(self, text: str, url: str, parent=None):
+        super().__init__(text, parent)
+        self.url = url
+        self.setCursor(Qt.PointingHandCursor)
+        self.setProperty("link", "true")
+        self.setToolTip(url)
+
+    def mouseReleaseEvent(self, event) -> None:
+        if event.button() == Qt.LeftButton and self.url:
+            self.clicked.emit(self.url)
+        super().mouseReleaseEvent(event)
+
+
 class IconLabel(QLabel):
     """Pictograma aplicației: logo-ul SVG real dacă există în data/logos/
     (descărcat de tools/fetch_logos.py), altfel inițiale pe pătrat colorat."""

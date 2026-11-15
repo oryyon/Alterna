@@ -70,6 +70,22 @@ jobs:
           QT_QPA_PLATFORM=offscreen /tmp/debtest/opt/alterna/alterna --version
           QT_QPA_PLATFORM=offscreen /tmp/debtest/opt/alterna/alterna --selftest
 
+      - name: Verificare consistență versiune
+        # Versiunea din metadata pachetului trebuie să coincidă cu cea
+        # raportată de binar; altfel bytecode-ul vechi ajunge în bundle.
+        run: |
+          set -euo pipefail
+          EXPECTED="${VERSION#v}"
+          BIN_VER=$(QT_QPA_PLATFORM=offscreen \
+            /tmp/debtest/opt/alterna/alterna --version | awk '{print $2}')
+          DEB_VER=$(dpkg-deb --field dist/*.deb Version | cut -d- -f1)
+          echo "așteptat=${EXPECTED} binar=${BIN_VER} pachet=${DEB_VER}"
+          if [ "$BIN_VER" != "$EXPECTED" ] || [ "$DEB_VER" != "$EXPECTED" ]; then
+            echo "Eroare: versiunea din bundle nu coincide cu cea din sursă" >&2
+            exit 1
+          fi
+          echo "Versiuni consistente: ${BIN_VER}"
+
       - name: Publicare release
         if: startsWith(github.ref, 'refs/tags/')
         uses: softprops/action-gh-release@v2

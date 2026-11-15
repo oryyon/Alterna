@@ -148,6 +148,33 @@ def test_desktop_entry_exec_matches_installed_binary():
         "binarul din /usr/bin trebuie să aibă același nume ca Exec= din .desktop"
 
 
+def test_packaging_scripts_verify_built_version():
+    """Scripturile trebuie să compare versiunea împachetată cu cea din sursă.
+
+    Altfel, un build rulat înainte de schimbarea versiunii publică un
+    pachet cu metadata inconsistentă.
+    """
+    for script in ("build_appimage.sh", "build_deb.sh"):
+        text = (PACKAGING / script).read_text(encoding="utf-8")
+        assert "BUILT_VER" in text, f"{script} trebuie să verifice versiunea"
+        assert "--version" in text, f"{script} trebuie să interogheze binarul"
+        assert "Buildul este inconsistent" in text, \
+            f"{script} trebuie să eșueze la mismatch de versiune"
+
+
+def test_deb_normalizes_permissions_without_breaking_binary():
+    """Normalizarea permisiunilor nu trebuie să scoată bitul de execuție.
+
+    O rundă anterioară a aplicat chmod 644 după marcarea executabilelor,
+    ceea ce lăsa binarul principal neexecutabil (Permission denied).
+    """
+    text = (PACKAGING / "build_deb.sh").read_text(encoding="utf-8")
+    assert 'chmod 755 "$DEB_ROOT/opt/$PACKAGE/$PACKAGE"' in text, \
+        "binarul principal trebuie forțat executabil după normalizare"
+    assert 'chmod 755 "$DEB_ROOT/usr/bin/$PACKAGE"' in text, \
+        "launcherul din /usr/bin trebuie forțat executabil"
+
+
 def test_both_packaging_scripts_write_to_dist():
     """Ambele pachete trebuie scrise în dist/ — sursa de adevăr comună."""
     for script in ("build_appimage.sh", "build_deb.sh"):

@@ -1,0 +1,59 @@
+.TH ALTERNА 1 "2026-11-15" "Alterna 0.1.2" "User Commands"
+.SH NAME
+alterna \- descoperă alternative la programe software
+.SH SYNOPSIS
+.B alterna
+.RI [ OPȚIUNI ]
+.SH DESCRIPTION
+.B Alterna
+este o aplicație desktop pentru Linux care descoperă alternative la programe
+software, folosind un catalog local în limba română.
+.PP
+Catalogul include aplicații din 13 categorii, cu indicatori obiectivi
+(popcon Debian, stele GitHub, ultima versiune, prezența în depozitele
+Ubuntu) și surse citate pentru fiecare intrare.
+.PP
+Funcționalități principale:
+.RS
+.IP \(bu 2
+Căutare live și filtre pe categorie, licență, platformă și preț.
+.IP \(bu 2
+Pagini de detalii și comparare între până la patru aplicații.
+.IP \(bu 2
+Matriză de funcționalități pentru categoria Securitate.
+.IP \(bu 2
+Export al comparațiilor în Markdown, CSV, HTML, TXT și JSON.
+.IP \(bu 2
+Teme comutabile, persistate între sesiuni.
+.RE
+.PP
+Aplicația funcționează complet offline: datele sunt stocate local într-o bază
+SQLite și nu sunt trimise nicăieri.
+.SH OPTIONS
+.TP
+.B \-\-db CALE
+Folosește catalogul SQLite de la calea indicată în locul celui inclus.
+.TP
+.B \-\-selftest
+Verifică resursele incluse, afișează un raport și iese.
+.TP
+.B \-\-version
+Afișează versiunea și iese.
+.SH FILES
+.TP
+.I /opt/alterna/
+Aplicația și resursele sale.
+.TP
+.I ~/.config/Alterna/
+Setările persistate ale aplicației.
+.SH EXIT STATUS
+.TP
+.B 0
+Finalizare fără erori.
+.TP
+.B 1
+Catalog lipsă, invalid sau resurse lipsă.
+.SH SEE ALSO
+Proiectul: https://github.com/oryyon/Alterna
+.SH AUTHOR
+Alterna contributors.

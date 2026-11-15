@@ -100,6 +100,7 @@ mkdir -p "$DEB_ROOT/DEBIAN" \
          "$DEB_ROOT/usr/bin" \
          "$DEB_ROOT/usr/share/applications" \
          "$DEB_ROOT/usr/share/metainfo" \
+         "$DEB_ROOT/usr/share/man/man1" \
          "$DEB_ROOT/usr/share/doc/$PACKAGE"
 cp -a "$DIST/$PACKAGE/." "$DEB_ROOT/opt/$PACKAGE/"
 
@@ -112,13 +113,18 @@ cp "$ROOT/packaging/alterna.desktop" "$DEB_ROOT/usr/share/applications/"
 cp "$ROOT/packaging/org.alterna.app.appdata.xml" \
    "$DEB_ROOT/usr/share/metainfo/org.alterna.app.appdata.xml"
 
+# Pagină de manual, pentru integrarea completă în sistem.
+mkdir -p "$DEB_ROOT/usr/share/man/man1"
+cp "$ROOT/packaging/alterna.1" "$DEB_ROOT/usr/share/man/man1/$PACKAGE.1"
+
 cp "$ROOT/README.md" "$DEB_ROOT/usr/share/doc/$PACKAGE/README.md"
 cp "$ROOT/CONTRIBUTING.md" "$DEB_ROOT/usr/share/doc/$PACKAGE/CONTRIBUTING.md"
 cp "$ROOT/LICENSE" "$DEB_ROOT/usr/share/doc/$PACKAGE/copyright"
 cp "$ROOT/LICENSE-DATA" "$DEB_ROOT/usr/share/doc/$PACKAGE/LICENSE-DATA"
 cp "$ROOT/NOTICE" "$DEB_ROOT/usr/share/doc/$PACKAGE/NOTICE"
 for doc in README.md CONTRIBUTING.md LICENSE-DATA NOTICE; do
-  gzip -9f "$DEB_ROOT/usr/share/doc/$PACKAGE/$doc"
+  # -n: nu include timestamp-ul buildului în arhiva gzip.
+  gzip -9nf "$DEB_ROOT/usr/share/doc/$PACKAGE/$doc"
 done
 
 printf '\n[4/7] Pictograme\n'
@@ -132,6 +138,24 @@ mkdir -p "$DEB_ROOT/usr/share/icons/hicolor/scalable/apps"
 cp "$SVG" "$DEB_ROOT/usr/share/icons/hicolor/scalable/apps/$PACKAGE.svg"
 
 printf '\n[5/7] Metadata DEBIAN\n'
+
+# Normalizare permisiuni: fișierele copiate din mediul de build pot avea
+# 0664/0775, iar Debian Policy cere 0644 pentru date și 0755 pentru
+# directoare. dpkg-deb --root-owner-group nu corectează permisiunile.
+find "$DEB_ROOT/opt" -type d -exec chmod 755 {} +
+find "$DEB_ROOT/opt" -type f -exec chmod 644 {} +
+# Binarele din bundle (executable, shiboken) trebuie să rămână executabile.
+# Ordinea contează: întâi se marchează executabilele, apoi se fixează
+# permisiunile bibliotecilor partajate.
+find "$DEB_ROOT/opt" -type f -perm -u+x -exec chmod 755 {} +
+find "$DEB_ROOT/opt" -type f \( -name '*.so' -o -name '*.so.*' \) \
+  -exec chmod 755 {} +
+# Executabilul principal al aplicației.
+chmod 755 "$DEB_ROOT/opt/$PACKAGE/$PACKAGE"
+find "$DEB_ROOT/usr" -type d -exec chmod 755 {} +
+find "$DEB_ROOT/usr" -type f -exec chmod 644 {} +
+chmod 755 "$DEB_ROOT/usr/bin/$PACKAGE"
+
 INSTALLED_SIZE=$(du -sk "$DEB_ROOT" | cut -f1)
 CONTROL="$DEB_ROOT/DEBIAN/control"
 
@@ -205,6 +229,18 @@ chmod 644 "$OUT"
 
 printf '\n[7/7] Validare\n'
 dpkg-deb --info "$OUT" | sed -n '2,12p'
+
+# Verificare de consistență: versiunea raportată de binarul împachetat trebuie
+# să coincidă cu cea din sursă. Fără asta, un bytecode vechi sau un build
+# rulat înainte de schimbarea versiunii ar trece neobservat.
+BUILT_VER="$(QT_QPA_PLATFORM=offscreen "$DEB_ROOT/opt/$PACKAGE/$PACKAGE" --version 2>/dev/null | awk '{print $2}')"
+if [ "$BUILT_VER" != "$APP_VERSION" ]; then
+  echo "Eroare: binarul împachetat raportează versiunea '$BUILT_VER'," >&2
+  echo "       dar sursa indică '$APP_VERSION'. Buildul este inconsistent." >&2
+  exit 1
+fi
+echo "✔ versiune consistentă: $BUILT_VER"
+
 if command -v lintian >/dev/null 2>&1; then
   echo '--- lintian ---'
   lintian --no-tag-display-limit "$OUT" || true

@@ -150,4 +150,14 @@ rm -f "$OUT"
 "$TOOL" --appimage-extract-and-run --no-appstream "$APPDIR" "$OUT"
 chmod +x "$OUT"
 
+# Verificare de consistență: versiunea raportată de binarul împachetat trebuie
+# să coincidă cu cea din sursă.
+BUILT_VER="$(QT_QPA_PLATFORM=offscreen "$APPDIR/usr/lib/alterna/Alterna" --version 2>/dev/null | awk '{print $2}')"
+if [ "$BUILT_VER" != "$VERSION" ]; then
+  echo "Eroare: binarul împachetat raportează versiunea '$BUILT_VER'," >&2
+  echo "       dar sursa indică '$VERSION'. Buildul este inconsistent." >&2
+  exit 1
+fi
+echo "✔ versiune consistentă: $BUILT_VER"
+
 printf '\n✔ AppImage creat: %s (%s)\n' "$OUT" "$(du -h "$OUT" | cut -f1)"

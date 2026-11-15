@@ -30,3 +30,4 @@ indicators:
 sources:
 - https://www.bleachbit.org
 - https://github.com/bleachbit/bleachbit
+logo: logos/bleachbit.png

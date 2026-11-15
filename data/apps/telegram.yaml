@@ -22,11 +22,11 @@ details:
   romanian_language: true
 
 indicators:
-  popcon_rank: 10674
+  popcon_rank: 10776
   stars: 33437
   stars_url: https://github.com/telegramdesktop/tdesktop
   latest_release: "2026-10"
-  in_ubuntu_repos: true    # pachetul telegram-desktop
+  in_ubuntu_repos: false   # in Ubuntu 24.04 e snap, nu pachet .deb
 sources:
 - https://telegram.org
 - https://github.com/telegramdesktop/tdesktop

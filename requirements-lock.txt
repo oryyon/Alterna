@@ -1,0 +1,24 @@
+# Versiunile exacte cu care a fost construit și testat release-ul curent.
+#
+# Reproducibilitate: instalează cu
+#     pip install -r requirements-lock.txt
+#
+# Actualizat: vezi `pip list --format=freeze` din mediul de test.
+# Limitele permise (nu doar cele exacte) stau în pyproject.toml.
+
+# --- Runtime ---
+PyYAML==6.0.3
+ruamel.yaml==0.19.1
+PySide6==6.12.0
+shiboken6==6.12.0
+
+# --- Dezvoltare / testare ---
+pytest==9.2.0
+iniconfig==2.3.1
+packaging==26.3
+pluggy==1.7.0
+
+# --- Build distribuibil ---
+pyinstaller==6.22.3
+pyinstaller-hooks-contrib==2026.10
+altgraph==0.17.5

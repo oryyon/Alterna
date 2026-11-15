@@ -31,3 +31,4 @@ indicators:
 sources:
 - https://www.maartenbaert.be/simplescreenrecorder
 - https://github.com/MaartenBaert/ssr
+logo: logos/ssr.png

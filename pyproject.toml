@@ -1,0 +1,66 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "alterna"
+description = "Aplicație desktop Linux pentru descoperirea de alternative software — catalog offline în română, cu comparații detaliate între aplicații."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "GPL-3.0-or-later" }
+authors = [{ name = "Alterna contributors" }]
+keywords = ["alternative-to", "catalog", "linux", "kde", "pyside6", "romanian"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: X11 Applications :: Qt",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+    "Natural Language :: Romanian",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Topic :: Desktop Environment",
+]
+# Versiunea vine din app/version.py — sursa unică de adevăr (vezi app/version.py).
+dynamic = ["version"]
+
+# Limitele superioare sunt testate, nu ghicite: vezi requirements-lock.txt
+# pentru exact versiunile cu care s-a construit și testat release-ul curent.
+dependencies = [
+    "PyYAML>=6.0,<7",
+    "ruamel.yaml>=0.18,<1",
+    "PySide6>=6.6,<7",
+]
+
+[project.optional-dependencies]
+# Unelte de dezvoltare și testare.
+dev = [
+    "pytest>=8,<10",
+]
+# Build-ul distribuibilului (AppImage / .deb).
+build = [
+    "pyinstaller>=6.10,<7",
+]
+# Toate opționalele, pentru instalare într-un singur pas.
+all = [
+    "pytest>=8,<10",
+    "pyinstaller>=6.10,<7",
+]
+
+[project.urls]
+Homepage = "https://github.com/oryyon/Alterna"
+Repository = "https://github.com/oryyon/Alterna"
+Issues = "https://github.com/oryyon/Alterna/issues"
+
+[tool.setuptools]
+packages = ["app"]
+
+[tool.setuptools.dynamic]
+version = { attr = "app.version.VERSION" }
+
+[tool.setuptools.package-data]
+app = ["assets/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-q"

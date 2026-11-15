@@ -53,7 +53,7 @@ data/
 | `editors_choice` | bool | — | Implicit `false`. Max 1–2 per categorie; afișat marcat ca opinie |
 | `popularity` | int | — | Ordinea editorială a catalogului (mic = mai popular); baza sortării „implicite". Multipli de 10, ca să poți insera între |
 | `logo` | path | — | SVG în `data/logos/<id>.svg`, descărcat de `tools/fetch_logos.py`; dacă lipsește, aplicația afișează inițiale |
-| `package` | string | — | Numele pachetului Debian/Ubuntu, doar dacă diferă de `id` (ex. `sevenzip` → `p7zip-full`); folosit de `tools/refresh_indicators.py` pentru popcon/repo |
+| `package` | string | — | Numele pachetului Debian/Ubuntu, **doar dacă diferă de `id`** (ex. `sevenzip` → `p7zip-full`, `openshot` → `openshot-qt`); folosit de `tools/refresh_indicators.py` pentru popcon/repo. Verifică-l cu `python tools/check_packages.py` |
 | `details.install_size_mb` | int | ✅* | MB la instalare; `0` pentru aplicații web. \*„✅*" = completabil ≥90% din catalog (regula din sec. 14) |
 | `details.size_basis` | enum | — | Distribuția din care vine dimensiunea: `deb` (implicit) \| `flatpak` \| `snap` \| `appimage` \| `web` \| `other`. Implicit: `web` dacă `install_size_mb` e 0, altfel `deb`. Dimensiunile din distribuții diferite nu sunt comparabile, deci comparația se face doar în grupuri cu aceeași distribuție. |
 | `details.first_release_year` | int | ✅* | Anul primei versiuni |
@@ -125,6 +125,18 @@ Vezi [apps/keepassxc.yaml](apps/keepassxc.yaml) — acoperă toate câmpurile, i
 7. Avertisment (nu eroare) dacă o sursă nu e HTTPS sau dacă site-ul oficial nu apare în `sources` — sursele sunt afișate ca linkuri în interfață, deci trebuie să fie sigure și să acopere valoarea prezentată.
 8. Eroare dacă `confidence` conține un câmp necunoscut, un nivel invalid sau încearcă să declare `unknown` (care se deduce automat).
 9. Eroare dacă `details.size_basis` are o valoare în afara listei de distribuții admise.
+
+## Verificarea datelor
+
+```bash
+python tools/check_packages.py    # pachetele Ubuntu presupunute + indicatorii în_ubuntu_repos
+python tools/fetch_logos.py       # logo-urile (Simple Icons + Wikimedia Commons)
+```
+
+`check_packages.py` verifică, pentru fiecare aplicație, dacă pachetul presupus
+(`package` sau, prin convenție, `id`) există în arhiva Ubuntu Noble — și
+dacă `in_ubuntu_repos` corespunde realității. Un indicator nu poate fi fals:
+build-ul și testele verifică aceeași regulă.
 
 ## Automatizare
 

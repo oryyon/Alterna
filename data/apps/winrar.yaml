@@ -21,11 +21,12 @@ details:
   romanian_language: true
 
 indicators:
-  popcon_rank: null
-  stars: null
-  stars_url: null
+  popcon_rank:
+  stars:
+  stars_url:
   latest_release: "2026-06"
   in_ubuntu_repos: false
 
 sources:
-  - https://www.rarlab.com
+- https://www.rarlab.com
+logo: logos/winrar.png

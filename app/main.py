@@ -50,7 +50,7 @@ def run_selftest(db_path: Path) -> int:
         logo_files = list(logo_dir.glob("*")) if logo_dir.is_dir() else []
         with_logo = 0
         for app in apps:
-            for ext in ("svg", "png"):
+            for ext in ("svg", "png", "jpg"):
                 if (logo_dir / f"{app['id']}.{ext}").exists():
                     with_logo += 1
                     break

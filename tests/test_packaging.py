@@ -206,3 +206,81 @@ def test_deb_control_fields_are_valid():
 
 
 
+
+
+class TestDependente:
+    """pyproject.toml, requirements.txt și requirements-lock.txt nu pot să
+    se dezincronizeze — o limită superioară lipsă înseamnă o instalare
+    nereproducibilă."""
+
+    def _pyproject(self):
+        import tomllib
+        from pathlib import Path
+
+        root = Path(__file__).resolve().parent.parent
+        with (root / "pyproject.toml").open("rb") as handle:
+            return tomllib.load(handle)
+
+    def _requirements(self):
+        from pathlib import Path
+
+        root = Path(__file__).resolve().parent.parent
+        text = (root / "requirements.txt").read_text(encoding="utf-8")
+        return [line.strip() for line in text.splitlines()
+                if line.strip() and not line.startswith("#")]
+
+    def test_pyproject_exista_si_are_versiune_dinamica(self):
+        data = self._pyproject()
+        assert data["project"]["name"] == "alterna"
+        assert "version" in data["project"]["dynamic"], \
+            "versiunea trebuie să vină din app/version.py (sursa unică)"
+
+    def test_dependente_au_limita_superioara(self):
+        """Fără limită superioară, o versiune majoră nouă poate rupe aplicația."""
+        data = self._pyproject()
+        for grup in ("dependencies",):
+            for req in data["project"][grup]:
+                assert "<" in req, f"{req} nu are limită superioară"
+        for grup in ("dev", "build", "all"):
+            for req in data["project"]["optional-dependencies"][grup]:
+                assert "<" in req, f"{req} nu are limită superioară"
+
+    def test_requirements_sincronizat_cu_pyproject(self):
+        """requirements.txt trebuie să declare aceleași limite ca pyproject.toml."""
+        data = self._pyproject()
+        din_pyproject = {r.split(">=")[0].strip().lower(): r
+                         for r in data["project"]["dependencies"]}
+        for linie in self._requirements():
+            nume = linie.split(">=")[0].strip().lower()
+            if nume in din_pyproject:
+                assert linie.lower() == din_pyproject[nume].lower(), \
+                    f"{nume}: requirements.txt={linie} vs pyproject={din_pyproject[nume]}"
+
+    def test_lockfile_Are_versiuni_exacte(self):
+        """Lockfile-ul fixează versiuni exacte, nu intervale."""
+        from pathlib import Path
+
+        root = Path(__file__).resolve().parent.parent
+        text = (root / "requirements-lock.txt").read_text(encoding="utf-8")
+        for linie in text.splitlines():
+            linie = linie.strip()
+            if not linie or linie.startswith("#"):
+                continue
+            assert "==" in linie, f"{linie} nu e o versiune exactă"
+            assert ">=" not in linie and "<" not in linie, linie
+
+    def test_dependente_critice_sunt_in_lockfile(self):
+        from pathlib import Path
+
+        root = Path(__file__).resolve().parent.parent
+        lock = (root / "requirements-lock.txt").read_text(encoding="utf-8").lower()
+        for pachet in ("pyside6", "pyyaml", "ruamel.yaml", "pytest", "pyinstaller"):
+            assert pachet in lock, pachet
+
+    def test_pyproject_parseaza_ca_toml_valid(self):
+        import tomllib
+        from pathlib import Path
+
+        root = Path(__file__).resolve().parent.parent
+        with (root / "pyproject.toml").open("rb") as handle:
+            tomllib.load(handle)

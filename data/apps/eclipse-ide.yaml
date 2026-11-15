@@ -2,7 +2,7 @@
 id: eclipse-ide
 popularity: 430
 name: Eclipse IDE
-package: eclipse
+package: eclipse-titan
 description: IDE clasic pentru Java, extensibil prin plugin-uri.
 category: development
 license: foss
@@ -22,11 +22,11 @@ details:
   romanian_language: false
 
 indicators:
-  popcon_rank: 48110
+  popcon_rank: 64881
   stars: 2000
   stars_url: https://github.com/eclipse-platform
   latest_release: "2026-09"
-  in_ubuntu_repos: false
+  in_ubuntu_repos: true
 
 sources:
 - https://www.eclipse.org

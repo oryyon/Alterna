@@ -8,6 +8,7 @@ license: foss
 price: free
 developer: OpenShot Studios
 website: https://www.openshot.org
+package: openshot-qt
 
 platforms: [linux, windows, macos]
 tags: [editare video, simplu]
@@ -21,11 +22,11 @@ details:
   romanian_language: true
 
 indicators:
-  popcon_rank:
+  popcon_rank: 10321
   stars: 6737
   stars_url: https://github.com/OpenShot/openshot-qt
   latest_release: "2026-11"
-  in_ubuntu_repos: false
+  in_ubuntu_repos: true
 
 sources:
 - https://www.openshot.org

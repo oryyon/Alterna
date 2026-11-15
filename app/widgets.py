@@ -97,7 +97,7 @@ class IconLabel(QLabel):
         super().__init__(parent)
         self.setFixedSize(size, size)
         self.setAlignment(Qt.AlignCenter)
-        for ext in ("svg", "png"):
+        for ext in ("svg", "png", "jpg"):
             logo = LOGOS_DIR / f"{app['id']}.{ext}"
             if logo.exists():
                 margin = max(4, size // 8)

@@ -25,13 +25,14 @@ Aplicație **desktop nativă pentru Kubuntu 24.04** (KDE Plasma) pentru descoper
 | Toate deciziile proiectului (viziune, stack, date, UI, licențe) | [IDEI_PROIECT.md](IDEI_PROIECT.md) |
 | Machetă UI funcțională (referința vizuală agreată) | [mockup-ui/](mockup-ui) |
 | Formatul YAML + **100 aplicații** pe cele 13 categorii | [data/](data) |
+| Dependențe fixate (limite superioare + lockfile) | [pyproject.toml](pyproject.toml), [requirements-lock.txt](requirements-lock.txt) |
 | Nivelurile de certitudine ale datelor (implicit per câmp) | [data/confidence.yaml](data/confidence.yaml) |
 | Script de build YAML → `catalog.db` (SQLite), cu validări | [tools/build_catalog.py](tools/build_catalog.py) |
 | Reîmprospătare automată indicatori (popcon / Ubuntu / GitHub) | [tools/refresh_indicators.py](tools/refresh_indicators.py) |
-| 72 logo-uri reale (Simple Icons CC0 + Wikimedia Commons) + fallback inițiale | [data/logos/](data/logos), [tools/fetch_logos.py](tools/fetch_logos.py) |
+| 95 de logo-uri reale (Simple Icons CC0 + Wikimedia Commons) + fallback pe inițiale | [data/logos/](data/logos), [tools/fetch_logos.py](tools/fetch_logos.py) |
 | GitHub Actions: PR săptămânal cu indicatori reîmprospătați | [.github/workflows/refresh.yml](.github/workflows/refresh.yml) |
 | Aplicația desktop (schelet PySide6/Qt Widgets) | [app/](app) |
-| Suită de teste automate (183 teste: build, validări, interogări, comparație, export, GUI, surse, certitudine, actualizare, AI, licențiere, resurse, packaging, integrare GitHub) | [tests/](tests) |
+| Suită de teste automate (194 teste: build, validări, interogări, comparație, export, GUI, surse, certitudine, actualizare, AI, licențiere, resurse, packaging, integrare GitHub) | [tests/](tests) |
 
 > Indicatorii (popcon, stele, versiuni, „în repo Ubuntu") sunt acum **valori reale**, reîmprospătate automat săptămânal prin PR — aprobarea rămâne la maintainer (sec. 7).
 
@@ -49,7 +50,7 @@ Aplicație **desktop nativă pentru Kubuntu 24.04** (KDE Plasma) pentru descoper
 pip install -r requirements.txt
 python tools/build_catalog.py       # data/ → catalog.db (cu validări; eșuează la erori)
 python -m app.main                  # pornește aplicația desktop
-python -m pytest tests/             # rulează suita de teste (183)
+python -m pytest tests/             # rulează suita de teste (194)
 
 # unelte de întreținere (rulate automat săptămânal prin GitHub Actions):
 python tools/refresh_indicators.py  # popcon + repo Ubuntu + stele GitHub → YAML

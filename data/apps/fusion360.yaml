@@ -21,11 +21,12 @@ details:
   romanian_language: false
 
 indicators:
-  popcon_rank: null
-  stars: null
-  stars_url: null
+  popcon_rank:
+  stars:
+  stars_url:
   latest_release: "2026-09"
   in_ubuntu_repos: false
 
 sources:
-  - https://www.autodesk.com/products/fusion-360
+- https://www.autodesk.com/products/fusion-360
+logo: logos/fusion360.png

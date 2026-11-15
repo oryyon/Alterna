@@ -30,3 +30,4 @@ indicators:
 sources:
 - https://apps.kde.org/elisa
 - https://invent.kde.org/multimedia/elisa
+logo: logos/elisa.png

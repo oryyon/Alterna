@@ -21,11 +21,12 @@ details:
   romanian_language: false
 
 indicators:
-  popcon_rank: null
-  stars: null
-  stars_url: null
+  popcon_rank:
+  stars:
+  stars_url:
   latest_release: "2026-05"
   in_ubuntu_repos: false
 
 sources:
-  - https://www.image-line.com
+- https://www.image-line.com
+logo: logos/fl-studio.png

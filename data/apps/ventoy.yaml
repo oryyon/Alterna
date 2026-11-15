@@ -30,3 +30,4 @@ indicators:
 sources:
 - https://www.ventoy.net
 - https://github.com/ventoy/Ventoy
+logo: logos/ventoy.png

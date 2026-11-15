@@ -21,11 +21,12 @@ details:
   romanian_language: false
 
 indicators:
-  popcon_rank: null
-  stars: null
-  stars_url: null
+  popcon_rank:
+  stars:
+  stars_url:
   latest_release: "2026-07"
   in_ubuntu_repos: false
 
 sources:
-  - https://www.wps.com
+- https://www.wps.com
+logo: logos/wps.png

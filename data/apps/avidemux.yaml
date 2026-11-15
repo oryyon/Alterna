@@ -30,3 +30,4 @@ indicators:
 sources:
 - https://avidemux.sourceforge.net
 - https://github.com/mean00/avidemux2
+logo: logos/avidemux.png

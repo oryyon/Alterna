@@ -86,3 +86,17 @@ class TestValidari:
         bad = (DATA / "apps" / "gimp.yaml").read_text(encoding="utf-8") \
             + "\nfeatures:\n  offline: free\n"
         assert not self._fail(tmp_path, "gimp.yaml", bad)
+
+    def test_fisierele_logo_sunt_imagini_valide(self):
+        """Fiecare logo trebuie să fie o imagine reală — altfel Qt afișează
+        un pătrat gol în locul pictogramei."""
+        from pathlib import Path
+
+        root = Path(__file__).resolve().parent.parent / "data" / "logos"
+        for f in sorted(root.iterdir()):
+            if f.suffix == ".svg":
+                assert b"<svg" in f.read_bytes()[:500], f.name
+            elif f.suffix == ".png":
+                assert f.read_bytes()[:8].startswith(b"\x89PNG"), f.name
+            elif f.suffix == ".jpg":
+                assert f.read_bytes()[:3] == b"\xff\xd8\xff", f.name

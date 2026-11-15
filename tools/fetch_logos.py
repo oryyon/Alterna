@@ -69,6 +69,30 @@ WIKIMEDIA = {
     "flameshot": "Flameshot.svg",
     "affinity": "Affinity Photo icon.png",
     "xournalpp": "Xournal++ logo.svg",
+    # --- Descoperite in Wikimedia Commons (pilotul de logo-uri) ---
+    "avidemux": "Avidemux-logo.png",
+    "bleachbit": "Bleachbit logo.svg",
+    "calligra": "Calligra-logo.svg",
+    "deadbeef": "DeadbeefLOGO.png",
+    "elisa": "Elisa logo 2000.svg",
+    "fl-studio": "FL Studio Logo Wordmark.svg",
+    "fusion360": "Fusion 360 Logo.png",
+    "gparted": "Scalable gparted.svg",
+    "kazam": "KAZAM Logo.svg",
+    "librecad": "LibreCAD-Logo.png",
+    "peazip": "Peazip ico.svg",
+    "stacer": "Biglinux-Icons \u2013 stacer 1.svg",
+    "standard-notes": "Standard Notes - Icon.png",
+    "sweet-home-3d": "Sweet Home 3D - AboutIcon.png",
+    "tenacity": "Tenacity logo.jpg",
+    "timeshift": "Biglinux-Icons \u2013 timeshift.svg",
+    "ventoy": "Ventoy Logo.png",
+    "zed": "Zed Editor Logo.png",
+    "pinta": "Pinta.png",
+    "winrar": "WinRAR icon.svg",
+    "ssr": "Biglinux-Icons \u2013 simplescreenrecorder.svg",
+    "vokoscreenng": "Breezeicons-apps-48-vokoscreen.svg",
+    "wps": "Deepin Icon Theme \u2013 application-wps-office.wps.svg",
 }
 WIKIMEDIA_URL = "https://commons.wikimedia.org/wiki/Special:FilePath/{}?width=256"
 
@@ -87,6 +111,8 @@ def extensie(data: bytes) -> str | None:
         return "svg"
     if data.startswith(b"\x89PNG"):
         return "png"
+    if data.startswith(b"\xff\xd8\xff"):
+        return "jpg"
     return None
 
 

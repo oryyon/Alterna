@@ -30,4 +30,7 @@ indicators:
 sources:
 - https://ente.io/auth
 - https://github.com/ente-io/ente
+- https://ente.io/privacy
 logo: logos/ente-auth.svg
+confidence:
+  details.telemetry: manual

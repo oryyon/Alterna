@@ -55,3 +55,6 @@ features:
 sources:
 - https://bitwarden.com
 - https://github.com/bitwarden
+- https://bitwarden.com/privacy/
+confidence:
+  details.telemetry: manual

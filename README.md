@@ -30,10 +30,12 @@ Aplicație **desktop nativă pentru Kubuntu 24.04** (KDE Plasma) pentru descoper
 | Script de build YAML → `catalog.db` (SQLite), cu validări | [tools/build_catalog.py](tools/build_catalog.py) |
 | Reîmprospătare automată indicatori (popcon / Ubuntu / GitHub) | [tools/refresh_indicators.py](tools/refresh_indicators.py) |
 | Verificarea pachetelor Ubuntu (un indicator nu poate fi fals) | [tools/check_packages.py](tools/check_packages.py) |
+| Limba română verificată din arhiva Ubuntu + repository | [tools/check_ro.py](tools/check_ro.py) |
+| Telemetria verificată din politicile oficiale de confidențialitate | [tools/check_telemetry.py](tools/check_telemetry.py) |
 | 95 de logo-uri reale (Simple Icons CC0 + Wikimedia Commons) + fallback pe inițiale | [data/logos/](data/logos), [tools/fetch_logos.py](tools/fetch_logos.py) |
 | GitHub Actions: PR săptămânal cu indicatori reîmprospătați | [.github/workflows/refresh.yml](.github/workflows/refresh.yml) |
 | Aplicația desktop (PySide6/Qt Widgets) — cu surse clicabile, certitudine și actualizare din rețea | [app/](app) |
-| Suită de teste automate (199 teste: build, validări, interogări, comparație, export, GUI, surse, certitudine, actualizare, AI, licențiere, resurse, packaging, integrare GitHub) | [tests/](tests) |
+| Suită de teste automate (217 teste: build, validări, interogări, comparație, export, GUI, surse, certitudine, verificări, actualizare, AI, licențiere, resurse, packaging, integrare GitHub) | [tests/](tests) |
 
 > Indicatorii (popcon, stele, versiuni, „în repo Ubuntu") sunt acum **valori reale**, reîmprospătate automat săptămânal prin PR — aprobarea rămâne la maintainer (sec. 7).
 
@@ -51,11 +53,15 @@ Aplicație **desktop nativă pentru Kubuntu 24.04** (KDE Plasma) pentru descoper
 pip install -r requirements.txt
 python tools/build_catalog.py       # data/ → catalog.db (cu validări; eșuează la erori)
 python -m app.main                  # pornește aplicația desktop
-python -m pytest tests/             # rulează suita de teste (199)
+python -m pytest tests/             # rulează suita de teste (217)
 
 # unelte de întreținere (rulate automat săptămânal prin GitHub Actions):
 python tools/refresh_indicators.py  # popcon + repo Ubuntu + stele GitHub → YAML
 python tools/fetch_logos.py         # logo-uri din Simple Icons + Wikimedia → data/logos/
+
+# unelte de verificare (punctul 8: datele trebuie să fie dovedite, nu estimate):
+python tools/check_ro.py            # limba română: `.mo` din arhivă + repository → YAML
+python tools/check_telemetry.py      # telemetria: politici oficiale → YAML
 ```
 
 ### Distribuție Linux
@@ -115,11 +121,14 @@ kimi/
 │   ├── taxonomy/        ← taxonomii de funcționalități (pilot: security)
 │   ├── apps/            ← câte un fișier YAML per aplicație (100)
 │   └── logos/           ← logo-uri reale (95 aplicații; restul primesc inițiale)
-├── tests/               ← suita pytest (199 teste)
+├── tests/               ← suita pytest (217 teste)
 ├── tools/
 │   ├── build_catalog.py      ← build YAML → catalog.db (generat, gitignored)
 │   ├── refresh_indicators.py ← reîmprospătare indicatori (popcon/Ubuntu/GitHub)
 │   ├── check_packages.py     ← verifică pachetele Ubuntu (indicatorul nu poate fi fals)
+│   ├── refresh_sizes.py      ← dimensiunea la instalare, măsurată din arhivă
+│   ├── check_ro.py           ← limba română: `.mo` din arhivă + repository
+│   ├── check_telemetry.py     ← telemetria: politici oficiale de confidențialitate
 │   └── fetch_logos.py        ← descărcare logo-uri (Simple Icons + Wikimedia)
 ├── .github/workflows/
 │   ├── ci.yml           ← build + teste + validare metadata

@@ -18,7 +18,7 @@ details:
   first_release_year: 1998
   file_formats: [BLEND, OBJ, FBX, glTF, STL]
   telemetry: optional
-  romanian_language: false
+  romanian_language: true
 
 indicators:
   popcon_rank: 7275
@@ -33,3 +33,4 @@ sources:
 logo: logos/blender.svg
 confidence:
   details.install_size_mb: auto
+  details.romanian_language: manual

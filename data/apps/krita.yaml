@@ -33,3 +33,4 @@ sources:
 - https://invent.kde.org/graphics/krita
 confidence:
   details.install_size_mb: auto
+  details.romanian_language: manual

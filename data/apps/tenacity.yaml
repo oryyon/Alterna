@@ -18,7 +18,7 @@ details:
   first_release_year: 2021
   file_formats: [WAV, MP3, FLAC, OGG]
   telemetry: none
-  romanian_language: false
+  romanian_language: true
 
 indicators:
   popcon_rank:
@@ -31,3 +31,5 @@ sources:
 - https://tenacityaudio.org
 - https://github.com/tenacityteam/tenacity
 logo: logos/tenacity.jpg
+confidence:
+  details.romanian_language: manual

@@ -18,7 +18,7 @@ details:
   first_release_year: 2021
   file_formats: [SVG, penpot]
   telemetry: optional
-  romanian_language: false
+  romanian_language: true
 
 indicators:
   popcon_rank:
@@ -31,3 +31,5 @@ sources:
 - https://penpot.app
 - https://github.com/penpot/penpot
 logo: logos/penpot.svg
+confidence:
+  details.romanian_language: manual

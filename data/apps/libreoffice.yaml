@@ -18,7 +18,7 @@ details:
   install_size_mb: 726
   first_release_year: 2011
   file_formats: [ODF, DOCX, XLSX, PPTX]
-  telemetry: none
+  telemetry: optional
   romanian_language: true
 
 indicators:
@@ -31,6 +31,8 @@ indicators:
 sources:
 - https://www.libreoffice.org
 - https://github.com/LibreOffice/core
+- https://www.libreoffice.org/about-us/privacy/
 logo: logos/libreoffice.svg
 confidence:
   details.install_size_mb: auto
+  details.telemetry: manual

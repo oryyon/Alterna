@@ -33,3 +33,4 @@ sources:
 logo: logos/darktable.png
 confidence:
   details.install_size_mb: auto
+  details.romanian_language: manual

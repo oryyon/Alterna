@@ -30,4 +30,7 @@ indicators:
 sources:
 - https://element.io
 - https://github.com/element-hq/element-web
+- https://element.io/privacy
 logo: logos/element.svg
+confidence:
+  details.telemetry: manual

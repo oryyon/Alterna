@@ -34,3 +34,4 @@ sources:
 logo: logos/kdenlive.svg
 confidence:
   details.install_size_mb: auto
+  details.romanian_language: manual

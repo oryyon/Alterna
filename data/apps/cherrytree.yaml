@@ -32,3 +32,4 @@ sources:
 - https://github.com/giuspen/cherrytree
 confidence:
   details.install_size_mb: auto
+  details.romanian_language: manual

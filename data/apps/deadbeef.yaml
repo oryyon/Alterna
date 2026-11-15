@@ -18,7 +18,7 @@ details:
   first_release_year: 2009
   file_formats: [MP3, FLAC, OGG, CUE]
   telemetry: none
-  romanian_language: false
+  romanian_language: true
 
 indicators:
   popcon_rank:
@@ -31,3 +31,5 @@ sources:
 - https://deadbeef.sourceforge.io
 - https://github.com/DeaDBeeF-Player/deadbeef
 logo: logos/deadbeef.png
+confidence:
+  details.romanian_language: manual

@@ -30,4 +30,7 @@ indicators:
 sources:
 - https://www.mozilla.org/firefox
 - https://github.com/mozilla-firefox/firefox
+- https://www.mozilla.org/en-US/privacy/firefox/
 logo: logos/firefox.svg
+confidence:
+  details.telemetry: manual

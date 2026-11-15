@@ -80,12 +80,14 @@ class TestBuild:
         assert photopea["confidence"]["indicators.stars"] == "unknown"
         assert photopea["confidence"]["indicators.stars_url"] == "unknown"
 
-    def test_detaliile_sunt_estimari(self, catalog):
-        """Dimensiunea e măsurată (vezi TestDimensiuniVerificate); telemetria
-        și limba română rămân estimări editoriale."""
+    def test_detaliile_sunt_estimari_fara_verificare(self, catalog):
+        """Dimensiunea e măsurată (vezi TestDimensiuniVerificate); limba
+        română e verificată pentru aplicațiile confirmate (vezi
+        `tests/test_verificari.py`), dar telemetria rămâne estimare editorială
+        dacă nu are politică de confidențialitate verificată."""
         gimp = catalog.get("gimp")
-        for field in ("details.telemetry", "details.romanian_language"):
-            assert gimp["confidence"][field] == "estimated", field
+        assert gimp["confidence"]["details.telemetry"] == "estimated"
+        assert gimp["confidence"]["details.romanian_language"] == "manual"
 
     def test_identitatea_este_manuala(self, catalog):
         gimp = catalog.get("gimp")

@@ -132,6 +132,8 @@ Vezi [apps/keepassxc.yaml](apps/keepassxc.yaml) — acoperă toate câmpurile, i
 ```bash
 python tools/check_packages.py    # pachetele Ubuntu presupunute + indicatorii în_ubuntu_repos
 python tools/refresh_sizes.py     # dimensiunea la instalare, măsurată din arhivă
+python tools/check_ro.py          # limba română: `.mo` din arhivă + traduceri din repository
+python tools/check_telemetry.py    # telemetria: verificată din politici oficiale
 python tools/fetch_logos.py       # logo-urile (Simple Icons + Wikimedia Commons)
 ```
 
@@ -139,6 +141,17 @@ python tools/fetch_logos.py       # logo-urile (Simple Icons + Wikimedia Commons
 (`package` sau, prin convenție, `id`) există în arhiva Ubuntu Noble — și
 dacă `in_ubuntu_repos` corespunde realității. Un indicator nu poate fi fals:
 build-ul și testele verifică aceeași regulă.
+
+`check_ro.py` verifică **limba română**, nu o estimează: caută în indexul
+`Contents` al arhivei Ubuntu fișierul `usr/share/locale/ro/LC_MESSAGES/<aplicatie>.mo`
+(livrând de un pachet înrudit cu aplicația) și, pentru aplicațiile din afara
+Ubuntu, fișierul de traducere din repository (`po/ro.po` și asemenea). Aplicațiile
+confirmate primesc `confidence: details.romanian_language: manual`. Cele fără
+dovadă rămân `estimated` — absența dovezilor nu dovedește că nu există traducere.
+
+`check_telemetry.py` verifică **telemetria** din politicile oficiale de
+confidențialitate, păstrând sursa și citatul care susține fiecare verdict.
+Sursa e testată la fiecare rulare: un link mort înseamnă verificare pierdută.
 
 ## Automatizare
 

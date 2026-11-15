@@ -31,3 +31,5 @@ sources:
 - https://www.pinta-project.com
 - https://github.com/PintaProject/Pinta
 logo: logos/pinta.png
+confidence:
+  details.romanian_language: manual

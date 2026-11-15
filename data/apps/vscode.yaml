@@ -17,7 +17,7 @@ details:
   install_size_mb: 350
   first_release_year: 2015
   file_formats: ["orice fișier text / cod"]
-  telemetry: "yes"
+  telemetry: "optional"
   romanian_language: true
 
 indicators:
@@ -30,4 +30,7 @@ indicators:
 sources:
 - https://code.visualstudio.com
 - https://github.com/microsoft/vscode
+- https://code.visualstudio.com/docs/configure/telemetry
 logo: logos/vscode.png
+confidence:
+  details.telemetry: manual

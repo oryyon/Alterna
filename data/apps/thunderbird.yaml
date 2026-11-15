@@ -29,4 +29,7 @@ indicators:
 
 sources:
 - https://www.thunderbird.net
+- https://www.mozilla.org/en-US/privacy/thunderbird/
 logo: logos/thunderbird.svg
+confidence:
+  details.telemetry: manual

@@ -32,3 +32,5 @@ sources:
 - https://joplinapp.org
 - https://github.com/laurent22/joplin
 logo: logos/joplin.svg
+confidence:
+  details.romanian_language: manual

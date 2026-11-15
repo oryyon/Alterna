@@ -33,3 +33,4 @@ sources:
 logo: logos/bleachbit.png
 confidence:
   details.install_size_mb: auto
+  details.romanian_language: manual

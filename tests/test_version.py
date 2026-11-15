@@ -29,6 +29,39 @@ def test_get_version_matches_constant():
     assert version.get_version() == version.VERSION
 
 
+def test_git_tag_matches_source_version():
+    """Tag-ul Git curent trebuie să corespundă versiunii din sursă.
+
+    O etichetă „v0.1.3” peste o sursă care încă spune 0.1.2 face
+    release-ul să publice metadata și binar incoherente.
+    """
+    import subprocess
+
+    try:
+        tag = subprocess.run(
+            ["git", "describe", "--tags", "--abbrev=0"],
+            capture_output=True, text=True, timeout=10, check=True,
+        ).stdout.strip()
+    except (subprocess.CalledProcessError, subprocess.TimeoutExpired, FileNotFoundError):
+        return  # fără istoric Git (de ex. într-un tarball sursă)
+
+    if not tag.startswith("v"):
+        return
+
+    tagged = subprocess.run(
+        ["git", "show", f"{tag}:app/version.py"],
+        capture_output=True, text=True, timeout=10, check=True,
+    ).stdout
+    tagged_version = re.search(r'VERSION = "([^"]+)"', tagged).group(1)
+
+    # Tag-ul poate fi cu un commit înaintea celui curent; verificăm doar
+    # să nu existe o etichetă nouă care contrazice sursa.
+    assert tagged_version == version.VERSION, (
+        f"tagul {tag} indică versiunea {tagged_version}, dar sursa are "
+        f"{version.VERSION}. Sincronizează app/version.py înainte de release."
+    )
+
+
 def test_packaging_scripts_use_version_module():
     """Scripturile de build trebuie să citească versiunea din app/version.py."""
     from pathlib import Path

@@ -42,18 +42,12 @@ jobs:
         run: python -m pytest tests/ -q
 
       - name: Build AppImage
-        env:
-          VERSION: ${{ github.event.inputs.version || github.ref_name }}
         run: |
-          VERSION="${VERSION#v}"
           ./packaging/build_appimage.sh
           ls -lh dist/*.AppImage
 
       - name: Build pachet Debian
-        env:
-          VERSION: ${{ github.event.inputs.version || github.ref_name }}
         run: |
-          VERSION="${VERSION#v}"
           ./packaging/build_deb.sh
           ls -lh dist/*.deb
 
@@ -73,9 +67,10 @@ jobs:
       - name: Verificare consistență versiune
         # Versiunea din metadata pachetului trebuie să coincidă cu cea
         # raportată de binar; altfel bytecode-ul vechi ajunge în bundle.
+        # Sursa de adevăr este app/version.py, nu numele tag-ului.
         run: |
           set -euo pipefail
-          EXPECTED="${VERSION#v}"
+          EXPECTED=$(python -c "from app.version import VERSION; print(VERSION)")
           BIN_VER=$(QT_QPA_PLATFORM=offscreen \
             /tmp/debtest/opt/alterna/alterna --version | awk '{print $2}')
           DEB_VER=$(dpkg-deb --field dist/*.deb Version | cut -d- -f1)

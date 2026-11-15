@@ -81,6 +81,18 @@ jobs:
           fi
           echo "Versiuni consistente: ${BIN_VER}"
 
+      - name: Catalog pentru actualizarea din aplicație
+        # Catalogul compilat e publicat și ca asset, ca „Actualizează
+        # catalogul" din aplicație să-l poată descărca și verifica cu
+        # SHA-256 (sec. 7: catalogul e un produs generat, nu se editează).
+        run: |
+          set -euo pipefail
+          python tools/build_catalog.py
+          cp catalog.db dist/catalog.db
+          cd dist && sha256sum catalog.db > catalog.db.sha256
+          cat catalog.db.sha256
+          ls -lh catalog.db catalog.db.sha256
+
       - name: Publicare release
         if: startsWith(github.ref, 'refs/tags/')
         uses: softprops/action-gh-release@v2
@@ -88,4 +100,6 @@ jobs:
           files: |
             dist/*.AppImage
             dist/*.deb
+            dist/catalog.db
+            dist/catalog.db.sha256
           generate_release_notes: true

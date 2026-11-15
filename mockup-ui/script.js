@@ -915,6 +915,37 @@ function inchideModal(id) { $(id).classList.add("hidden"); }
 
 $("settingsBtn").addEventListener("click", () => deschideModal("settingsModal"));
 $("donateBtn").addEventListener("click", () => deschideModal("donateModal"));
+
+// Butoanele de donație deschid pagina reală în browser (oglindă app/links.py).
+document.querySelectorAll("[data-donate]").forEach(btn =>
+  btn.addEventListener("click", () => window.open(btn.dataset.donate, "_blank", "noopener")));
+
+// Secțiunea AI: fără configurație, funcția nu apare (ca în aplicație).
+(() => {
+  const sursa = $("aiSource"), url = $("aiOllamaUrl"), model = $("aiModel"),
+        cheie = $("aiClaudeKey"), test = $("aiTestBtn"), propunere = $("aiProposeBtn"),
+        status = $("aiStatus");
+  if (!sursa) return;
+  const aplica = () => {
+    const valoare = sursa.value;
+    const ollama = valoare === "Model local (Ollama)";
+    const claude = valoare === "Claude API — cheie proprie";
+    url.disabled = !ollama;
+    model.disabled = valoare === "Dezactivat (implicit)";
+    cheie.disabled = !claude;
+    test.disabled = valoare === "Dezactivat (implicit)";
+    propunere.disabled = valoare === "Dezactivat (implicit)";
+    if (valoare === "Dezactivat (implicit)")
+      status.textContent = "Asistentul AI e dezactivat. Fără configurație, funcția nu apare — nimic nu e trimis în rețea. Nicio cheie API nu e inclusă în aplicație.";
+    else if (claude && !cheie.value)
+      status.textContent = "Introdu cheia ta Claude API pentru a folosi sursa.";
+    else
+      status.textContent = "Apasă „Testează conexiunea” ca să verifici sursa.";
+  };
+  sursa.addEventListener("change", aplica);
+  sursa.addEventListener("input", aplica);
+  aplica();
+})();
 document.querySelectorAll(".modal-close").forEach(b =>
   b.addEventListener("click", () => inchideModal(b.dataset.close)));
 document.querySelectorAll(".modal-overlay").forEach(m =>

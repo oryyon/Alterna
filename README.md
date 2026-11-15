@@ -16,6 +16,8 @@ Aplicație **desktop nativă pentru Kubuntu 24.04** (KDE Plasma) pentru descoper
 
 🚀 **MVP funcțional cu 100 de aplicații în catalog.** Aplicația desktop pornește, citește `catalog.db` și reproduce macheta: căutare live, filtre, sortare, categorii, pagină de detalii, comparare cu tabel + matrice de funcționalități + export în 5 formate, teme comutabile.
 
+**Funcțiile care promit, funcționează:** „Actualizează catalogul acum" descarcă catalogul nou de la release-urile publice și îl verifică cu SHA-256 (vechiul rămâne ca backup); asistentul AI generează propuneri de catalog validate cu validatorul proiectului, cu Ollama local sau Claude API și cheia ta proprie; butoanele de donație deschid pagini reale, centralizate în `app/links.py`. Nimic nu e buton decorativ.
+
 **Fiecare valoare afișată e verificabilă:** sursele citate în `data/apps/<id>.yaml` apar în pagina de detalii ca linkuri clicabile (și sursa fiecărui indicator obiectiv), iar fiecare valoare poartă un **marcaj de certitudine** — `⟳` verificată automat, `✓` verificată manual, `≈` valoare estimată, `?` valoare necunoscută. Promisiunea „totul e verificabil" devine clicabilă și măsurabilă, nu declarativă.
 
 | Ce există | Unde |
@@ -29,7 +31,7 @@ Aplicație **desktop nativă pentru Kubuntu 24.04** (KDE Plasma) pentru descoper
 | 72 logo-uri reale (Simple Icons CC0 + Wikimedia Commons) + fallback inițiale | [data/logos/](data/logos), [tools/fetch_logos.py](tools/fetch_logos.py) |
 | GitHub Actions: PR săptămânal cu indicatori reîmprospătați | [.github/workflows/refresh.yml](.github/workflows/refresh.yml) |
 | Aplicația desktop (schelet PySide6/Qt Widgets) | [app/](app) |
-| Suită de teste automate (145 teste: build, validări, interogări, comparație, export, GUI, surse, licențiere, resurse, packaging, integrare GitHub) | [tests/](tests) |
+| Suită de teste automate (183 teste: build, validări, interogări, comparație, export, GUI, surse, certitudine, actualizare, AI, licențiere, resurse, packaging, integrare GitHub) | [tests/](tests) |
 
 > Indicatorii (popcon, stele, versiuni, „în repo Ubuntu") sunt acum **valori reale**, reîmprospătate automat săptămânal prin PR — aprobarea rămâne la maintainer (sec. 7).
 
@@ -47,7 +49,7 @@ Aplicație **desktop nativă pentru Kubuntu 24.04** (KDE Plasma) pentru descoper
 pip install -r requirements.txt
 python tools/build_catalog.py       # data/ → catalog.db (cu validări; eșuează la erori)
 python -m app.main                  # pornește aplicația desktop
-python -m pytest tests/             # rulează suita de teste (145)
+python -m pytest tests/             # rulează suita de teste (183)
 
 # unelte de întreținere (rulate automat săptămânal prin GitHub Actions):
 python tools/refresh_indicators.py  # popcon + repo Ubuntu + stele GitHub → YAML

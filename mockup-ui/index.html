@@ -160,7 +160,8 @@
             <span>Ultima actualizare</span>
             <span class="settings-value">20.10.2026</span>
           </label>
-          <button class="btn-secondary" disabled>Actualizează acum (demo)</button>
+          <button class="btn-secondary">Actualizează catalogul acum</button>
+          <p class="settings-hint">Catalogul vine din release-urile publice și e verificat cu SHA-256 înainte de a fi folosit; catalogul vechi rămâne ca backup.</p>
         </section>
 
         <section class="settings-group">
@@ -172,16 +173,21 @@
         </section>
 
         <section class="settings-group">
-          <h3>Asistent AI (viitor)</h3>
+          <h3>Asistent AI</h3>
           <label class="settings-row">
             <span>Sursă AI</span>
-            <select disabled>
-              <option>Dezactivat (implicit)</option>
+            <select id="aiSource">
+              <option selected>Dezactivat (implicit)</option>
               <option>Model local (Ollama)</option>
               <option>Claude API — cheie proprie</option>
             </select>
           </label>
-          <p class="settings-hint">Disponibil post-MVP. Nicio cheie nu e inclusă în aplicație.</p>
+          <label class="settings-row"><span>Adresa serverului</span><input type="text" id="aiOllamaUrl" value="http://localhost:11434" disabled></label>
+          <label class="settings-row"><span>Model</span><input type="text" id="aiModel" value="llama3.1" disabled></label>
+          <label class="settings-row"><span>Cheie Claude API</span><input type="password" id="aiClaudeKey" placeholder="sk-ant-…" disabled></label>
+          <button class="btn-secondary" id="aiTestBtn" disabled>Testează conexiunea</button>
+          <button class="btn-secondary" id="aiProposeBtn" disabled>Propune o aplicație cu AI…</button>
+          <p class="settings-hint" id="aiStatus">Asistentul AI e dezactivat. Fără configurație, funcția nu apare — nimic nu e trimis în rețea. Nicio cheie API nu e inclusă în aplicație.</p>
         </section>
 
       </div>
@@ -204,15 +210,9 @@
           rămâne gratuită și completă pentru toată lumea.
         </p>
         <div class="donate-options">
-          <button class="donate-btn" title="liberapay.com"><span class="donate-icon">🅻</span> Liberapay<span class="donate-note">donații recurente, fără comisioane (card / SEPA)</span></button>
-          <button class="donate-btn" title="ko-fi.com"><span class="donate-icon">☕</span> Ko-fi<span class="donate-note">donații unice, „o cafea" (card / PayPal)</span></button>
-          <button class="donate-btn" title="revolut.me"><span class="donate-icon">🅁</span> Revolut<span class="donate-note">link revolut.me — instant, popular în România</span></button>
-          <!-- Rezervate pentru viitor (se activează când e necesar):
-          <button class="donate-btn" title="github.com/sponsors"><span class="donate-icon">🐙</span> GitHub Sponsors<span class="donate-note">direct prin GitHub (card)</span></button>
-          <button class="donate-btn" title="paypal.me"><span class="donate-icon">🅿</span> PayPal<span class="donate-note">link PayPal.Me (card / cont PayPal)</span></button>
-          -->
+          <button class="donate-btn" data-donate="https://github.com/sponsors/oryyon" title="https://github.com/sponsors/oryyon"><span class="donate-icon">🐙</span> GitHub Sponsors<span class="donate-note">donații recurente, fără comisioane (card)</span></button>
         </div>
-        <p class="settings-hint">În varianta reală, fiecare buton deschide pagina în browserul implicit.</p>
+        <p class="settings-hint">Fiecare opțiune deschide pagina în browserul implicit — aplicația nu atinge plăți sau date financiare. Canalele de donație sunt centralizate în <code>app/links.py</code>, ca un buton să nu poată duce la o pagină inexistentă.</p>
       </div>
     </div>
   </div>

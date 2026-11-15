@@ -54,6 +54,7 @@ class Catalog:
             raise CatalogError(
                 f"Nu am găsit {db_path}.\n"
                 f"Generează-l cu: python tools/build_catalog.py")
+        self.db_path = db_path
         try:
             self._con = sqlite3.connect(db_path)
             self._con.row_factory = sqlite3.Row

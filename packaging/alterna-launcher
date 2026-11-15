@@ -1,0 +1,24 @@
+#!/bin/sh
+# Launcher pentru Alterna instalat ca pachet Debian.
+#
+# Aplicația trăiește în /opt/alterna (convenția Debian pentru software
+# third-party). Acest wrapper o expune în /usr/bin, adică în PATH, și
+# configurează mediul pentru PyInstaller onedir.
+set -eu
+
+APPDIR="/opt/alterna"
+
+if [ ! -x "$APPDIR/alterna" ]; then
+    echo "Alterna: binarul nu a fost găsit la $APPDIR/alterna" >&2
+    echo "Pachetul pare incomplet. Reinstalează cu:" >&2
+    echo "  sudo apt install --reinstall alterna" >&2
+    exit 1
+fi
+
+# PyInstaller onedir: bibliotecile Qt sunt lângă binar, în _internal/.
+if [ -d "$APPDIR/_internal" ]; then
+    LD_LIBRARY_PATH="$APPDIR/_internal${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
+    export LD_LIBRARY_PATH
+fi
+
+exec "$APPDIR/alterna" "$@"

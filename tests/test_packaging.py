@@ -117,6 +117,37 @@ def test_deb_keeps_libegl_as_hard_dependency():
     assert "libegl1" in depends.group(1)
 
 
+def test_deb_installs_launcher_in_usr_bin():
+    """Aplicația stă în /opt, dar trebuie să fie accesibilă din PATH.
+
+    Fără /usr/bin/alterna, comanda „alterna” și desktop entry-ul cu
+    Exec=alterna nu funcționează după instalare.
+    """
+    text = (PACKAGING / "build_deb.sh").read_text(encoding="utf-8")
+    assert 'usr/bin' in text, "pachetul trebuie să creeze directorul usr/bin"
+    assert '"$DEB_ROOT/usr/bin/$PACKAGE"' in text, \
+        "pachetul trebuie să instaleze launcherul în /usr/bin"
+    assert 'alterna-launcher' in text, "buildul trebuie să folosească launcherul"
+
+
+def test_launcher_script_is_valid_and_executable_path():
+    launcher = PACKAGING / "alterna-launcher"
+    assert launcher.exists()
+    text = launcher.read_text(encoding="utf-8")
+    assert text.startswith("#!/bin/sh")
+    assert "/opt/alterna" in text, "launcherul trebuie să refere aplicația din /opt"
+    assert "exec" in text
+
+
+def test_desktop_entry_exec_matches_installed_binary():
+    """Exec= din desktop entry trebuie să corespundă binarului instalat."""
+    desktop = (PACKAGING / "alterna.desktop").read_text(encoding="utf-8")
+    assert "Exec=alterna" in desktop
+    build = (PACKAGING / "build_deb.sh").read_text(encoding="utf-8")
+    assert 'usr/bin/$PACKAGE' in build, \
+        "binarul din /usr/bin trebuie să aibă același nume ca Exec= din .desktop"
+
+
 def test_both_packaging_scripts_write_to_dist():
     """Ambele pachete trebuie scrise în dist/ — sursa de adevăr comună."""
     for script in ("build_appimage.sh", "build_deb.sh"):

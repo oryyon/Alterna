@@ -97,10 +97,16 @@ printf '\n[3/7] Asamblare arbore Debian\n'
 rm -rf "$DEB_ROOT"
 mkdir -p "$DEB_ROOT/DEBIAN" \
          "$DEB_ROOT/opt/$PACKAGE" \
+         "$DEB_ROOT/usr/bin" \
          "$DEB_ROOT/usr/share/applications" \
          "$DEB_ROOT/usr/share/metainfo" \
          "$DEB_ROOT/usr/share/doc/$PACKAGE"
 cp -a "$DIST/$PACKAGE/." "$DEB_ROOT/opt/$PACKAGE/"
+
+# Launcher în /usr/bin — aplicația stă în /opt, dar trebuie să fie în PATH
+# pentru terminal și pentru Exec=alterna din desktop entry.
+cp "$ROOT/packaging/alterna-launcher" "$DEB_ROOT/usr/bin/$PACKAGE"
+chmod 755 "$DEB_ROOT/usr/bin/$PACKAGE"
 
 cp "$ROOT/packaging/alterna.desktop" "$DEB_ROOT/usr/share/applications/"
 cp "$ROOT/packaging/org.alterna.app.appdata.xml" \

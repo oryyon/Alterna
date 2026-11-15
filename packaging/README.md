@@ -22,6 +22,7 @@ Structura respectă Debian Policy:
 
 ```text
 /opt/alterna/                        aplicația și resursele
+/usr/bin/alterna                     launcher (face aplicația accesibilă din PATH)
 /usr/share/applications/alterna.desktop
 /usr/share/icons/hicolor/{16..256}x*/apps/alterna.png
 /usr/share/icons/hicolor/scalable/apps/alterna.svg
@@ -29,6 +30,11 @@ Structura respectă Debian Policy:
 /usr/share/doc/alterna/{README.md.gz,CONTRIBUTING.md.gz,copyright,...}
 /DEBIAN/{control,postinst,prerm}
 ```
+
+Aplicația este instalată în `/opt/alterna` (convenția Debian pentru software
+third-party), iar `/usr/bin/alterna` este un launcher care o expune în `PATH`.
+De aceea, comanda `alterna` funcționează imediat după instalare, iar
+intrare din meniul aplicațiilor (`Exec=alterna`) pornește corect.
 
 Validarea include `dpkg-deb --info` și `lintian`. Pachetul este construit cu
 `dpkg-deb --root-owner-group`, deci nu are nevoie de `fakeroot` la runtime.

@@ -14,8 +14,6 @@ from __future__ import annotations
 
 from pathlib import Path
 
-import pytest
-
 from app.installed import (Installed, citeste_deb, citeste_flatpak,
                            citeste_snap, comanda_instalare, detecteaza,
                            nume_pachet)

@@ -8,6 +8,8 @@ există paginile reale de donații (nota din sec. 13).
 
 from __future__ import annotations
 
+from pathlib import Path
+
 from PySide6.QtCore import Qt, QUrl, Signal
 from PySide6.QtGui import QDesktopServices
 from PySide6.QtWidgets import (QCheckBox, QDialog, QFormLayout, QHBoxLayout,

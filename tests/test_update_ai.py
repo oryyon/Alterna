@@ -400,3 +400,26 @@ class TestDialoguri:
         dialog._open("https://github.com/sponsors/oryyon")
         assert deschise == ["https://github.com/sponsors/oryyon"]
         dialog.close()
+
+
+class TestImporturiDialoguri:
+    """Dialogurile trebuie să folosească doar nume importate (Pylance)."""
+
+    def test_actualizarea_catalogului_nu_arunca_name_error(self, catalog):
+        """Regresie: `Path` lipsea din importuri — butonul arunca NameError.
+
+        Fluxul e simulat (fără rețea): se verifică doar că `Path` e definit
+        și că ținta descărcării e calculată corect.
+        """
+        from app import dialogs
+
+        assert hasattr(dialogs, "Path"), "Path nu e importat în app/dialogs.py"
+        țintă = dialogs.Path(catalog.db_path).parent / "catalog-nou.db"
+        assert țintă.name == "catalog-nou.db"
+
+    def test_salvarea_propunerii_are_path_importat(self):
+        """Aceeași verificare pentru salvarea propunerii AI."""
+        from app import dialogs
+
+        assert hasattr(dialogs, "Path")
+

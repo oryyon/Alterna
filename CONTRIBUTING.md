@@ -41,7 +41,21 @@ Validează local înainte de a trimite:
 ```bash
 python tools/build_catalog.py       # build + validări (eroare = blocat)
 python tools/check_packages.py      # pachetele Ubuntu presupunute
-python -m pytest tests/ -q
+python -m pytest tests/ -q          # include verificarea statică (pyflakes)
+```
+
+### Verificarea statică
+
+`pytest` rulează și **pyflakes**: orice nume folosit fără să fie definit sau
+importat eșuează testul. Asta a prins un `Path` lipsă din `app/dialogs.py` —
+un bug care ar fi aruncat `NameError` abia la apăsarea butonului „Actualizează
+catalogul acum", în drum care nu era acoperit de teste.
+
+Dacă nu ai pyflakes instalat, testul e sărit local (nu și în CI):
+
+```bash
+pip install pyflakes
+python -m pyflakes app tools tests
 ```
 
 ## Corectitudinea datelor

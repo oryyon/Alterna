@@ -255,7 +255,7 @@ class MainWindow(QMainWindow):
         self.installed_label = QLabel("Se verifică aplicațiile instalate…")
         self.installed_label.setProperty("dim", "true")
         self.status.addPermanentWidget(self.installed_label)
-        right = QLabel(f"Offline • SQLite local • v0.1 (schelet)")
+        right = QLabel("Offline • SQLite local")
         right.setProperty("dim", "true")
         self.status.addPermanentWidget(right)
 

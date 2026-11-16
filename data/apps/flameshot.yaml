@@ -9,6 +9,8 @@ price: free
 developer: Comunitatea Flameshot
 website: https://flameshot.org
 
+snap: flameshot
+flatpak: org.flameshot.Flameshot
 platforms: [linux, windows, macos]
 tags: [captura ecran, screenshot, adnotare]
 alternatives: []

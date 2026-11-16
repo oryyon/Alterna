@@ -9,6 +9,8 @@ price: free
 developer: Ascensio System
 website: https://www.onlyoffice.com
 
+snap: onlyoffice-desktopeditors
+flatpak: org.onlyoffice.desktopeditors
 platforms: [linux, windows, macos, web]
 tags: [documente, colaborare]
 alternatives: [libreoffice, msoffice]

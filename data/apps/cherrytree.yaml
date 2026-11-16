@@ -9,6 +9,7 @@ price: free
 developer: Giuseppe Penone / comunitate
 website: https://www.giuspen.net/cherrytree
 
+snap: cherrytree
 platforms: [linux, windows, macos]
 tags: [notite, arbore, offline]
 alternatives: [joplin]

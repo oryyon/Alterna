@@ -9,6 +9,7 @@ price: free
 developer: Comunitatea Tenacity
 website: https://tenacityaudio.org
 
+flatpak: org.tenacityaudio.Tenacity
 platforms: [linux, windows, macos]
 tags: [audio, editare, fara telemetrie]
 alternatives: [audacity]

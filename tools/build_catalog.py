@@ -24,7 +24,7 @@ from pathlib import Path
 
 import yaml
 
-SCHEMA_VERSION = 2
+SCHEMA_VERSION = 3
 
 # --- Valori legale (oglindă data/README.md) -----------------------------------
 LICENSES = {"foss", "freemium", "commercial"}
@@ -150,7 +150,10 @@ CREATE TABLE applications (
     stars              INTEGER,
     stars_url          TEXT,
     latest_release     TEXT,
-    in_ubuntu_repos    INTEGER NOT NULL DEFAULT 0
+    in_ubuntu_repos    INTEGER NOT NULL DEFAULT 0,
+    package            TEXT,
+    snap               TEXT,
+    flatpak            TEXT
 );
 CREATE TABLE platforms (
     app_id   TEXT NOT NULL REFERENCES applications(id),
@@ -463,7 +466,7 @@ def build(data_dir: Path, out_path: Path) -> bool:
                 ind = app.get("indicators") or {}
                 con.execute(
                     """INSERT INTO applications VALUES
-                       (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
+                       (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
                     (app["id"], app["name"], app["description"], app["category"],
                      app["license"], app["price"], app["developer"], app["website"],
                      app.get("logo"), int(bool(app.get("editors_choice"))),
@@ -475,7 +478,10 @@ def build(data_dir: Path, out_path: Path) -> bool:
                      else int(bool(det["romanian_language"])),
                      ind.get("popcon_rank"), ind.get("stars"), ind.get("stars_url"),
                      ind.get("latest_release"),
-                     int(bool(ind.get("in_ubuntu_repos")))))
+                     int(bool(ind.get("in_ubuntu_repos"))),
+                     app.get("package") or app.get("id"),
+                     app.get("snap"),
+                     app.get("flatpak")))
                 for table, column, values in (
                     ("platforms", "platform", app.get("platforms")),
                     ("alternatives", "alternative_id", app.get("alternatives")),

@@ -9,6 +9,8 @@ price: free
 developer: MZLA / Mozilla
 website: https://www.thunderbird.net
 
+snap: thunderbird
+flatpak: org.mozilla.Thunderbird
 platforms: [linux, windows, macos]
 tags: [email, calendar, rss]
 alternatives: []

@@ -9,6 +9,7 @@ price: free
 developer: Zoom Communications
 website: https://zoom.us
 
+snap: zoom-client
 platforms: [linux, windows, macos, android, web]
 tags: [video, conferinte, meetings]
 alternatives: [jitsi-meet]

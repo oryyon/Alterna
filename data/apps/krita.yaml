@@ -8,6 +8,8 @@ license: foss
 price: free
 developer: Fundația Krita / KDE
 website: https://krita.org
+snap: krita
+flatpak: org.kde.krita
 logo: logos/krita.svg
 
 platforms: [linux, windows, macos, android]

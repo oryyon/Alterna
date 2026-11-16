@@ -9,6 +9,7 @@ price: free
 developer: Apache Software Foundation
 website: https://www.openoffice.org
 
+snap: openoffice
 platforms: [linux, windows, macos]
 tags: [documente, foi de calcul]
 alternatives: [libreoffice, onlyoffice]

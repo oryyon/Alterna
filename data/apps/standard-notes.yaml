@@ -9,6 +9,7 @@ price: free
 developer: Standard Notes (Proton)
 website: https://standardnotes.com
 
+snap: standard-notes
 platforms: [linux, windows, macos, android, web]
 tags: [notite, criptare, sincronizare]
 alternatives: [joplin, obsidian]

@@ -9,6 +9,7 @@ price: free
 developer: Jonas Kvinge / comunitate
 website: https://www.strawberrymusicplayer.org
 
+flatpak: org.strawberrymusicplayer.strawberry
 platforms: [linux, windows, macos]
 tags: [player, muzica, colectii]
 alternatives: [vlc, elisa]

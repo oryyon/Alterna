@@ -202,6 +202,8 @@ body {
 .badge-foss      { background: #27ae6026; color: var(--foss); border: 1px solid #27ae6055; }
 .badge-freemium  { background: #f39c1226; color: var(--freemium); border: 1px solid #f39c1255; }
 .badge-comercial { background: #e74c3c26; color: var(--comercial); border: 1px solid #e74c3c55; }
+/* Marcajul „✓ instalat” (punctul 16) — starea locală, verificată direct. */
+.badge-instalat  { background: #27ae6026; color: var(--foss); border: 1px solid #27ae6055; }
 .badge-installed { background: var(--accent-soft); color: var(--accent); border: 1px solid var(--accent); }
 
 .app-desc {

@@ -9,6 +9,8 @@ price: free
 developer: Comunitatea mpv
 website: https://mpv.io
 
+snap: mpv
+flatpak: io.mpv.Mpv
 platforms: [linux, windows, macos]
 tags: [player, minimalist]
 alternatives: [vlc]

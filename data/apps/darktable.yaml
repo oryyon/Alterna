@@ -9,6 +9,8 @@ price: free
 developer: Comunitatea darktable
 website: https://www.darktable.org
 
+snap: darktable
+flatpak: org.darktable.Darktable
 platforms: [linux, windows, macos]
 tags: [raw, foto, developare]
 alternatives: [gimp, krita]

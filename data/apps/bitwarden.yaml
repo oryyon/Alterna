@@ -8,6 +8,8 @@ license: foss
 price: free
 developer: Bitwarden Inc.
 website: https://bitwarden.com
+snap: bitwarden
+flatpak: com.bitwarden.desktop
 logo: logos/bitwarden.svg
 
 platforms: [linux, windows, macos, android, web]

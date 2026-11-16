@@ -9,6 +9,7 @@ price: free
 developer: The Document Foundation
 website: https://www.libreoffice.org
 
+snap: libreoffice
 platforms: [linux, windows, macos]
 tags: [documente, foi de calcul, prezentari]
 alternatives: [onlyoffice, msoffice]

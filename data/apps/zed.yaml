@@ -9,6 +9,7 @@ price: free
 developer: Zed Industries
 website: https://zed.dev
 
+flatpak: dev.zed.Zed
 platforms: [linux, macos]
 tags: [editor, cod, rust]
 alternatives: [vscode, vscodium]

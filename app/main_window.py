@@ -9,7 +9,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from PySide6.QtCore import Qt, QSettings, QUrl
+from PySide6.QtCore import QObject, QThread, Qt, QSettings, QUrl, Signal
 from PySide6.QtGui import QDesktopServices
 from PySide6.QtWidgets import (QFrame, QHBoxLayout, QLabel,
                                QLineEdit, QListWidget, QMainWindow, QPushButton,
@@ -19,6 +19,7 @@ from .compare_view import EXPORT_FORMATS, CompareView
 from .db import Catalog
 from .detail_view import DetailView
 from .dialogs import DonateDialog, SettingsDialog
+from .installed import Installed, detecteaza
 from .links import NEW_ISSUE_URL
 from .theme import apply_theme
 from .widgets import AppCard, ComboBox, empty_state
@@ -26,24 +27,53 @@ from .widgets import AppCard, ComboBox, empty_state
 MAX_COMPARE = 4  # limita e configurabilă / poate fi extinsă ulterior (sec. 14)
 
 
+class DetectWorker(QObject):
+    """Detectarea aplicațiilor instalate, într-un thread (sec. 16).
+
+    Interogarea pachetelor poate dura o fracțiune de secundă — suficient
+    cât să blochezi interfața, deci rulează în afara thread-ului UI.
+    """
+
+    finished = Signal(object)
+    failed = Signal(str)
+
+    def __init__(self, apps: list[dict]):
+        super().__init__()
+        self._apps = apps
+
+    def run(self) -> None:
+        try:
+            rezultat = detecteaza(self._apps)
+        except Exception as exc:  # noqa: BLE001 — UI-ul nu trebuie să cadă
+            self.failed.emit(str(exc))
+        else:
+            self.finished.emit(rezultat)
+
+
 class MainWindow(QMainWindow):
-    def __init__(self, catalog: Catalog):
+    def __init__(self, catalog: Catalog, detecta: bool = True):
         super().__init__()
         self.catalog = catalog
         self.settings = QSettings("Alterna", "Alterna")
+        #: Detectarea instalării poate fi oprită (din Setări sau la construire).
+        self._detect_enabled = detecta
 
         # Stare (oglindă `state` din machetă)
         self.state = {"search": "", "category": "", "license": "",
-                      "platform": "", "price": "", "sort": ""}
+                      "platform": "", "price": "", "sort": "", "installed": ""}
         self.compare_mode = False
         self.selected: list[str] = []  # ordonat, max MAX_COMPARE
         self._current_detail: str | None = None  # pagina de detalii afișată
+        # Aplicațiile deja instalate pe computer (punctul 16)
+        self.installed: dict[str, Installed] = {}
+        self._detect_thread: QThread | None = None
 
         self.setWindowTitle("Alterna — descoperă alternative software")
         self.resize(1100, 720)
         self._build_ui()
         self.refresh_list()
         self.status.showMessage("Gata.")
+        self._detect_installed()
 
     # ------------------------------------------------------------------ UI
     def _build_ui(self) -> None:
@@ -94,12 +124,16 @@ class MainWindow(QMainWindow):
         self.filter_price = self._combo(
             [("", "Preț: orice"), ("free", "Gratuit"), ("paid", "Cu plată")],
             lambda v: self._set_state("price", v))
+        self.filter_installed = self._combo(
+            [("", "Instalare: toate"), ("yes", "Doar instalate"),
+             ("no", "Doar neinstalate")],
+            lambda v: self._set_state("installed", v))
         self.sort_select = self._combo(
             [("", "Sortare: implicită"), ("az", "Nume A → Z"), ("za", "Nume Z → A"),
              ("recent", "Recent actualizate"), ("mic", "Dimensiune mică → mare")],
             lambda v: self._set_state("sort", v))
         for c in (self.filter_license, self.filter_platform,
-                  self.filter_price, self.sort_select):
+                  self.filter_price, self.filter_installed, self.sort_select):
             bar.addWidget(c)
         root.addWidget(toolbar)
 
@@ -218,6 +252,9 @@ class MainWindow(QMainWindow):
         self.status = QStatusBar()
         self.setStatusBar(self.status)
         self.status.showMessage("Gata.")
+        self.installed_label = QLabel("Se verifică aplicațiile instalate…")
+        self.installed_label.setProperty("dim", "true")
+        self.status.addPermanentWidget(self.installed_label)
         right = QLabel(f"Offline • SQLite local • v0.1 (schelet)")
         right.setProperty("dim", "true")
         self.status.addPermanentWidget(right)
@@ -259,6 +296,12 @@ class MainWindow(QMainWindow):
             license_=self.state["license"], platform=self.state["platform"],
             price=self.state["price"], sort=self.state["sort"])
 
+        # Filtrarea după starea de instalare (punctul 16)
+        if self.state["installed"]:
+            dorite = self.state["installed"] == "yes"
+            results = [a for a in results
+                       if (a["id"] in self.installed) is dorite]
+
         # Titlu + număr rezultate (ca în machetă)
         if self.state["category"]:
             title = dict(self.catalog.categories)[self.state["category"]]
@@ -281,7 +324,8 @@ class MainWindow(QMainWindow):
                 "Încearcă să le relaxezi sau propune o aplicație nouă."))
         for app in results:
             card = AppCard(app, flags, compare_mode=self.compare_mode,
-                           selected=app["id"] in self.selected)
+                           selected=app["id"] in self.selected,
+                           installed=self.installed.get(app["id"]))
             card.clicked.connect(self._on_card_clicked)
             self.list_box.addWidget(card)
         self.list_box.addStretch(1)
@@ -308,9 +352,57 @@ class MainWindow(QMainWindow):
         if app is None:
             return
         self._current_detail = app_id  # pentru re-randare la comutarea temei
-        self.detail_view.show_app(app, self._indicator_flags())
+        self.detail_view.show_app(app, self._indicator_flags(),
+                                  self.installed.get(app_id))
         self.stack.setCurrentIndex(1)
         self.status.showMessage(f"Detalii: {app['name']}")
+
+    # ------------------------------------------------------------------ instalare
+    def _detect_installed(self) -> None:
+        """Verifică ce aplicații din catalog sunt deja instalate (punctul 16).
+
+        Rulează într-un thread: interogarea sistemului de pachete poate dura
+        o fracțiune de secundă, iar interfața nu trebuie să îngheze.
+        """
+        if not (self._detect_enabled
+                and self.settings.value("detect_installed", True, type=bool)):
+            self.installed_label.setText("Detectarea instalării: oprită")
+            return
+        apps = self.catalog.search()
+        worker = DetectWorker(apps)
+        thread = QThread()
+        worker.moveToThread(thread)
+        worker.finished.connect(self._on_installed)
+        worker.failed.connect(self._on_detect_failed)
+        thread.started.connect(worker.run)
+        worker.finished.connect(thread.quit)
+        worker.failed.connect(thread.quit)
+        thread.finished.connect(worker.deleteLater)
+        self._detect_thread = thread  # capcană clasică Qt: garbage collector
+        thread.start()
+
+    def _on_installed(self, rezultat: dict) -> None:
+        self.installed = rezultat
+        n = len(rezultat)
+        self.installed_label.setText(
+            f"✓ {n} aplicație{'i' if n != 1 else ''} instalate"
+            if n else "Nicio aplicație din catalog nu e instalată")
+        self.refresh_list()
+        if self.stack.currentIndex() == 1 and self._current_detail:
+            self._open_detail(self._current_detail)
+
+    def _on_detect_failed(self, mesaj: str) -> None:
+        self.installed_label.setText("Starea instalării nu a putut fi verificată")
+        self.status.showMessage(f"Detectarea instalării a eșuat: {mesaj}")
+
+    def closeEvent(self, event) -> None:  # noqa: N802 — semnătură Qt
+        """Oprește thread-ul de detectare înainte de a închide fereastra."""
+        thread = self._detect_thread
+        if thread is not None:
+            thread.quit()
+            thread.wait(2000)
+            self._detect_thread = None
+        super().closeEvent(event)
 
     # ------------------------------------------------------------------ comparare
     def _toggle_compare_mode(self) -> None:
@@ -360,6 +452,13 @@ class MainWindow(QMainWindow):
         if dialog.exec() == 0:  # închis fără „Închide" — nu salvăm restul opțiunilor
             return
         self.refresh_list()  # comutatoarele de indicatori se aplică la închidere
+        # Detectarea instalării poate fi pornită sau oprită din Setări.
+        if self.settings.value("detect_installed", True, type=bool):
+            self._detect_installed()
+        else:
+            self.installed = {}
+            self.installed_label.setText("Detectarea instalării: oprită")
+            self.refresh_list()
 
     def _on_theme_changed(self, theme: str) -> None:
         """Previzualizare live a temei (emis de SettingsDialog la fiecare schimbare)."""

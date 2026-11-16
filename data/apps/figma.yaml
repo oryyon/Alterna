@@ -9,6 +9,7 @@ price: free
 developer: Figma Inc.
 website: https://www.figma.com
 
+snap: figma-linux
 platforms: [web, windows, macos]
 tags: [ui design, prototipare, colaborare]
 alternatives: [inkscape, penpot]

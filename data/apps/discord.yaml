@@ -9,6 +9,8 @@ price: free
 developer: Discord Inc.
 website: https://discord.com
 
+snap: discord
+flatpak: com.discordapp.Discord
 platforms: [linux, windows, macos, android, web]
 tags: [chat, voce, gaming]
 alternatives: [element, telegram]

@@ -9,6 +9,8 @@ price: free
 developer: Spotify AB
 website: https://www.spotify.com
 
+snap: spotify
+flatpak: com.spotify.Client
 platforms: [linux, windows, macos, android, web]
 tags: [muzica, streaming, player]
 alternatives: [vlc, strawberry]

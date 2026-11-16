@@ -9,6 +9,7 @@ price: free
 developer: JetBrains
 website: https://www.jetbrains.com/pycharm
 
+snap: pycharm-community
 platforms: [linux, windows, macos]
 tags: [ide, python, debugger]
 alternatives: [vscode, vscodium]

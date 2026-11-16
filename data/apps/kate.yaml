@@ -9,6 +9,8 @@ price: free
 developer: Proiectul KDE
 website: https://kate-editor.org
 
+snap: kate
+flatpak: org.kde.kate
 platforms: [linux, windows]
 tags: [editor, cod, kde]
 alternatives: [vscode, vscodium]

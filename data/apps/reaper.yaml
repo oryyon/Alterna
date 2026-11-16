@@ -9,6 +9,7 @@ price: paid
 developer: Cockos Inc.
 website: https://www.reaper.fm
 
+snap: reaper
 platforms: [linux, windows, macos]
 tags: [daw, inregistrare, mixaj]
 alternatives: [ardour]
@@ -21,11 +22,11 @@ details:
   romanian_language: false
 
 indicators:
-  popcon_rank: null
-  stars: null
-  stars_url: null
+  popcon_rank:
+  stars:
+  stars_url:
   latest_release: "2026-10"
   in_ubuntu_repos: false
 
 sources:
-  - https://www.reaper.fm
+- https://www.reaper.fm

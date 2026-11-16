@@ -9,6 +9,8 @@ price: free
 developer: Element
 website: https://element.io
 
+snap: element-desktop
+flatpak: im.riot.Riot
 platforms: [linux, windows, macos, android, web]
 tags: [mesagerie, matrix, descentralizat]
 alternatives: [signal, telegram]

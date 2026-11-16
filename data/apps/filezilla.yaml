@@ -9,6 +9,7 @@ price: free
 developer: Tim Kosse / comunitate
 website: https://filezilla-project.org
 
+flatpak: org.filezillaproject.Filezilla
 platforms: [linux, windows, macos]
 tags: [ftp, sftp, transfer]
 alternatives: []

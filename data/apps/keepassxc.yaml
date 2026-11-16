@@ -8,6 +8,8 @@ license: foss
 price: free
 developer: Comunitatea KeePassXC
 website: https://keepassxc.org
+snap: keepassxc
+flatpak: org.keepassxc.KeePassXC
 logo: logos/keepassxc.svg
 
 platforms: [linux, windows, macos]

@@ -9,6 +9,7 @@ price: free
 developer: Comunitatea FreeCAD
 website: https://www.freecad.org
 
+snap: freecad
 platforms: [linux, windows, macos]
 tags: [cad, parametric, inginerie, 3d print]
 alternatives: [blender]

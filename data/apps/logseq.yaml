@@ -9,6 +9,7 @@ price: free
 developer: Logseq Inc. / comunitate
 website: https://logseq.com
 
+snap: logseq
 platforms: [linux, windows, macos, android]
 tags: [notite, outline, markdown]
 alternatives: [obsidian, joplin]

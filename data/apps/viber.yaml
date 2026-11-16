@@ -9,6 +9,7 @@ price: free
 developer: Rakuten Viber
 website: https://www.viber.com
 
+snap: viber
 platforms: [linux, windows, macos, android]
 tags: [mesagerie, apeluri]
 alternatives: [telegram, whatsapp]

@@ -9,6 +9,7 @@ price: free
 developer: Proton AG
 website: https://proton.me/pass
 
+snap: proton-pass
 platforms: [linux, windows, macos, android, web]
 tags: [parole, cloud, privacitate]
 alternatives: [bitwarden, keepassxc]

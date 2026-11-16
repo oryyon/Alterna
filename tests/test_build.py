@@ -34,7 +34,22 @@ class TestBuildReal:
         assert apps == 100 and int(meta["app_count"]) == 100
         assert cats == 13
         assert tax == 18  # taxonomia Securitate (sec. 15)
-        assert meta["schema_version"] == "2"
+        assert meta["schema_version"] == "3"
+
+    def test_coloanele_de_instalare_sunt_populate(self, built_db):
+        """Numele de pachet / snap / Flatpak sunt în catalog (punctul 16)."""
+        con = sqlite3.connect(built_db)
+        coloane = {r[1] for r in con.execute("PRAGMA table_info(applications)")}
+        assert {"package", "snap", "flatpak"} <= coloane
+        fara_pachet = con.execute(
+            "SELECT COUNT(*) FROM applications WHERE package IS NULL").fetchone()[0]
+        cu_snap = con.execute(
+            "SELECT COUNT(*) FROM applications WHERE snap IS NOT NULL").fetchone()[0]
+        cu_flatpak = con.execute(
+            "SELECT COUNT(*) FROM applications WHERE flatpak IS NOT NULL").fetchone()[0]
+        con.close()
+        assert fara_pachet == 0, "fiecare aplicație are un nume de pachet"
+        assert cu_snap > 20 and cu_flatpak > 10
 
     def test_popularity_column(self, built_db):
         con = sqlite3.connect(built_db)

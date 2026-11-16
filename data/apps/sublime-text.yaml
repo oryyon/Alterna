@@ -9,6 +9,7 @@ price: paid
 developer: Sublime HQ
 website: https://www.sublimetext.com
 
+snap: sublime-text
 platforms: [linux, windows, macos]
 tags: [editor, cod]
 alternatives: [vscode, kate]

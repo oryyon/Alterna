@@ -9,6 +9,7 @@ price: free
 developer: Proiectul KDE
 website: https://calligra.org
 
+flatpak: org.kde.calligra
 platforms: [linux, windows]
 tags: [documente, kde]
 alternatives: [libreoffice]

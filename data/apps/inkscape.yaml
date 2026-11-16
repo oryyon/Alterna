@@ -9,6 +9,8 @@ price: free
 developer: Comunitatea Inkscape
 website: https://inkscape.org
 
+snap: inkscape
+flatpak: org.inkscape.Inkscape
 platforms: [linux, windows, macos]
 tags: [vectorial, svg, ilustratie]
 alternatives: [illustrator, figma, affinity]

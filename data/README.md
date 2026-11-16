@@ -54,7 +54,9 @@ data/
 | `editors_choice` | bool | — | Implicit `false`. Max 1–2 per categorie; afișat marcat ca opinie |
 | `popularity` | int | — | Ordinea editorială a catalogului (mic = mai popular); baza sortării „implicite". Multipli de 10, ca să poți insera între |
 | `logo` | path | — | SVG în `data/logos/<id>.svg`, descărcat de `tools/fetch_logos.py`; dacă lipsește, aplicația afișează inițiale |
-| `package` | string | — | Numele pachetului Debian/Ubuntu, **doar dacă diferă de `id`** (ex. `sevenzip` → `p7zip-full`, `openshot` → `openshot-qt`); folosit de `tools/refresh_indicators.py` pentru popcon/repo. Verifică-l cu `python tools/check_packages.py` |
+| `package` | string | — | Numele pachetului Debian/Ubuntu, **doar dacă diferă de `id`** (ex. `sevenzip` → `p7zip-full`, `openshot` → `openshot-qt`); folosit de `tools/refresh_indicators.py` pentru popcon/repo și de detectarea instalării. Verifică-l cu `python tools/check_packages.py` |
+| `snap` | string | — | Numele snap-ului, **doar dacă există și e confirmat** în magazinul oficial (`snapcraft.io`). Detectarea instalării îl folosește ca sursă secundară |
+| `flatpak` | string | — | ID-ul aplicației Flatpak, **doar dacă e confirmat** în API-ul Flathub (`flathub.org`). Detectarea instalării îl folosește ca sursă terțiară |
 | `details.install_size_mb` | int | ✅* | MB pe disc în Ubuntu 24.04: pachetul **împreună cu dependențele sale** (măsurat din arhivă, nu estimat); `0` pentru aplicații web. \*„✅*" = completabil ≥90% din catalog (regula din sec. 14). Se reîmprospătează cu `python tools/refresh_sizes.py` |
 | `details.size_basis` | enum | — | Distribuția din care vine dimensiunea: `deb` (implicit) \| `flatpak` \| `snap` \| `appimage` \| `web` \| `other`. Implicit: `web` dacă `install_size_mb` e 0, altfel `deb`. Dimensiunile din distribuții diferite nu sunt comparabile, deci comparația se face doar în grupuri cu aceeași distribuție. |
 | `details.first_release_year` | int | ✅* | Anul primei versiuni |
@@ -134,6 +136,7 @@ python tools/check_packages.py    # pachetele Ubuntu presupunute + indicatorii �
 python tools/refresh_sizes.py     # dimensiunea la instalare, măsurată din arhivă
 python tools/check_ro.py          # limba română: `.mo` din arhivă + traduceri din repository
 python tools/check_telemetry.py    # telemetria: verificată din politici oficiale
+python tools/check_installed_sources.py  # snap/Flatpak: confirmate în snapcraft.io și Flathub
 python tools/fetch_logos.py       # logo-urile (Simple Icons + Wikimedia Commons)
 ```
 

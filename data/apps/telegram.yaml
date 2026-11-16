@@ -3,6 +3,8 @@ id: telegram
 popularity: 70
 name: Telegram Desktop
 package: telegram-desktop
+snap: telegram-desktop
+flatpak: org.telegram.desktop
 description: Mesagerie rapidă cu sincronizare în cloud; clientul desktop e open source.
 category: communication
 license: foss

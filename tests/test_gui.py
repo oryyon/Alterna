@@ -14,7 +14,9 @@ def window(qapp, catalog, tmp_path, monkeypatch):
     monkeypatch.setattr(
         "app.main_window.QSettings",
         lambda *a: QSettings(str(tmp_path / "test.ini"), QSettings.IniFormat))
-    w = MainWindow(catalog)
+    # `detecta=False`: detectarea instalării pornește un thread care ar
+    # supraviețui fixture-ului (și ar face testele nedependente de sistem).
+    w = MainWindow(catalog, detecta=False)
     yield w
     w.close()
     w.deleteLater()

@@ -93,6 +93,10 @@ def build_qss(theme: str) -> str:
     QLabel[badge="tag"] {{ color: {p['text_dim']}; background: {p['bg_view']};
                            border: 1px solid {p['border']}; border-radius: 4px;
                            padding: 1px 6px; font-size: 11px; }}
+    /* Marcajul „✓ instalat” (punctul 16): starea locală, verificată direct. */
+    QLabel[badge="installed"] {{ color: {FOSS}; background: #2627ae60;
+                                 border: 1px solid #5527ae60; border-radius: 4px;
+                                 padding: 1px 6px; font-size: 11px; }}
 
     QLineEdit, QComboBox {{
         background: {p['bg_view']}; color: {p['text']};

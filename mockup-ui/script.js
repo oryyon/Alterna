@@ -463,6 +463,7 @@ APPS.forEach(a => a.func = FUNC[a.id] || null);
 // ---------- Stare ----------
 const state = {
   search: "", categorie: "", licenta: "", platforma: "", pret: "", sort: "",
+  instalare: "",
   compareMode: false, selected: new Set(),
 };
 const MAX_COMPARE = 4;
@@ -470,6 +471,16 @@ const MAX_COMPARE = 4;
 const LICENTE = { foss: "Open Source", freemium: "Freemium", comercial: "Comercial" };
 const PLATFORME = { linux: "Linux", windows: "Windows", macos: "macOS", android: "Android", web: "Web" };
 const byId = Object.fromEntries(APPS.map(a => [a.id, a]));
+
+// ---------- Starea de instalare (punctul 16) ----------
+// In aplicatia reala se citeste din dpkg / snap / flatpak; aici e simulata,
+// ca macheta sa arate cum arata lista filtrata dupa „ce am deja".
+const INSTALATE = {
+  gimp: "deb 2.10.38", vlc: "deb 3.0.20", firefox: "snap 141.0",
+  inkscape: "deb 1.4", krita: "flatpak 5.2.0", blender: "deb 4.3",
+  thunderbird: "snap 128.2", spotify: "deb 1.2.5",
+};
+const esteInstalata = (a) => INSTALATE[a.id] || null;
 
 // ---------- Elemente DOM ----------
 const $ = (id) => document.getElementById(id);
@@ -505,6 +516,8 @@ function filtreaza() {
     if (state.licenta && a.licenta !== state.licenta) return false;
     if (state.platforma && !a.platforme.includes(state.platforma)) return false;
     if (state.pret && a.pret !== state.pret) return false;
+    if (state.instalare === "instalate" && !esteInstalata(a)) return false;
+    if (state.instalare === "neinstalate" && esteInstalata(a)) return false;
     return true;
   });
 }
@@ -544,6 +557,7 @@ function cardHTML(a) {
         <span class="app-title">${a.nume}</span>
         <span class="badge ${badgeClass}">${LICENTE[a.licenta]}</span>
         ${a.pret === "platit" ? '<span class="badge badge-comercial">cu plată</span>' : ""}
+        ${esteInstalata(a) ? `<span class="badge badge-instalat" title="Instalat local ca ${INSTALATE[a.id]}">✓ instalat</span>` : ""}
       </div>
       <div class="app-desc">${a.descriere}</div>
       <div class="app-meta">${indicatori(a)}</div>
@@ -907,6 +921,7 @@ $("clearSearch").addEventListener("click", () => {
 $("filterLicense").addEventListener("change", e => { state.licenta = e.target.value; renderList(); });
 $("filterPlatform").addEventListener("change", e => { state.platforma = e.target.value; renderList(); });
 $("filterPrice").addEventListener("change", e => { state.pret = e.target.value; renderList(); });
+$("filterInstalled").addEventListener("change", e => { state.instalare = e.target.value; renderList(); });
 $("sortSelect").addEventListener("change", e => { state.sort = e.target.value; renderList(); });
 
 // ---------- Modale (Setări / Donații) ----------

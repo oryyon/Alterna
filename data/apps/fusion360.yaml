@@ -9,6 +9,7 @@ price: free
 developer: Autodesk
 website: https://www.autodesk.com/products/fusion-360
 
+snap: fusion360
 platforms: [windows, macos]
 tags: [cad, cam, parametric]
 alternatives: [freecad]

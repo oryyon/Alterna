@@ -58,6 +58,16 @@ def run_selftest(db_path: Path) -> int:
         print(f"aplicatii: {len(apps)}")
         print(f"categorii: {categories}")
         print(f"logo-uri: {len(logo_files)} fișiere, {with_logo} aplicații cu logo")
+        # Aplicațiile deja instalate (punctul 16) — raport de diagnosticare.
+        try:
+            from .installed import detecteaza
+
+            instalate = detecteaza(apps)
+            print(f"instalate local: {len(instalate)} "
+                  f"({', '.join(sorted(instalate)[:6])}"
+                  f"{'…' if len(instalate) > 6 else ''})")
+        except Exception as exc:  # noqa: BLE001 — selftest-ul nu trebuie să cadă
+            print(f"instalate local: nu s-a putut verifica ({exc})")
         print(f"generat la: {catalog.generated_at}")
         ok = len(apps) > 0 and categories > 0
         print(f"REZULTAT: {'OK' if ok else 'EROARE'}")

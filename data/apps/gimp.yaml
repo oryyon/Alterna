@@ -8,6 +8,8 @@ license: foss
 price: free
 developer: Comunitatea GIMP
 website: https://www.gimp.org
+snap: gimp
+flatpak: org.gimp.GIMP
 logo: logos/gimp.svg   # rezervat — logo-urile vin post-MVP
 
 platforms: [linux, windows, macos]

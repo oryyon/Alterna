@@ -9,6 +9,8 @@ price: free
 developer: Laurent Cozic / comunitate
 website: https://joplinapp.org
 
+snap: joplin-desktop
+flatpak: net.cozic.joplin_desktop
 platforms: [linux, windows, macos, android]
 tags: [notite, markdown, criptare]
 alternatives: [obsidian]

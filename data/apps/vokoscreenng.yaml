@@ -3,6 +3,7 @@ id: vokoscreenng
 popularity: 750
 name: vokoscreenNG
 package: vokoscreen-ng
+snap: vokoscreen-ng
 description: Înregistrare de ecran modernă pentru Linux, rescriere Qt a vokoscreen, cu webcam.
 category: streaming
 license: foss

@@ -91,6 +91,15 @@ class SettingsDialog(QDialog):
         self.update_status.setWordWrap(True)
         layout.addWidget(self.update_status)
 
+        # --- Aplicațiile deja instalate (punctul 16) -----------------------------
+        self.detect_installed = QCheckBox("Detectează aplicațiile deja instalate")
+        self.detect_installed.setChecked(
+            settings.value("detect_installed", True, type=bool))
+        layout.addWidget(self.detect_installed)
+        layout.addWidget(self._hint(
+            "Se verifică local, cu dpkg / snap / flatpak — nimic nu iese de pe "
+            "computer. Dacă oprești, marcajul „✓ instalat” nu mai apare."))
+
         self.update_btn = QPushButton("Actualizează catalogul acum")
         self.update_btn.setEnabled(True)
         self.update_btn.clicked.connect(self._update_catalog)
@@ -284,6 +293,8 @@ class SettingsDialog(QDialog):
     def accept(self) -> None:
         self.settings.setValue("theme", self.theme_combo.currentData())
         self.settings.setValue("auto_update", self.auto_update.isChecked())
+        self.settings.setValue("detect_installed",
+                               self.detect_installed.isChecked())
         for key, check in self.indicator_checks.items():
             self.settings.setValue(f"show_{key}", check.isChecked())
         # Setările asistentului AI (cheia Claude rămâne locală, în QSettings)

@@ -9,6 +9,8 @@ price: free
 developer: Signal Foundation
 website: https://signal.org
 
+snap: signal-desktop
+flatpak: org.signal.Signal
 platforms: [linux, windows, macos, android]
 tags: [mesagerie, criptare, privacitate]
 alternatives: [telegram]

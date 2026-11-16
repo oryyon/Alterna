@@ -9,6 +9,7 @@ price: free
 developer: Fundația Syncthing
 website: https://syncthing.net
 
+snap: syncthing
 platforms: [linux, windows, macos, android]
 tags: [sincronizare, p2p, fara cloud]
 alternatives: []

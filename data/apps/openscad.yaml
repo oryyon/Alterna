@@ -9,6 +9,7 @@ price: free
 developer: Comunitatea OpenSCAD
 website: https://openscad.org
 
+snap: openscad
 platforms: [linux, windows, macos]
 tags: [cad, parametric, cod, 3d print]
 alternatives: [freecad]

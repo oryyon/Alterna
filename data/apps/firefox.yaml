@@ -9,6 +9,8 @@ price: free
 developer: Mozilla
 website: https://www.mozilla.org/firefox
 
+snap: firefox
+flatpak: org.mozilla.firefox
 platforms: [linux, windows, macos, android]
 tags: [browser, navigare, privacitate]
 alternatives: [brave, chromium]

@@ -9,6 +9,7 @@ price: free
 developer: JetBrains
 website: https://www.jetbrains.com/idea
 
+snap: intellij-idea-community
 platforms: [linux, windows, macos]
 tags: [ide, java, kotlin]
 alternatives: [eclipse-ide, vscode]

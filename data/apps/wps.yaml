@@ -9,6 +9,7 @@ price: free
 developer: Kingsoft
 website: https://www.wps.com
 
+snap: wps-office
 platforms: [linux, windows, macos, android]
 tags: [documente, foi de calcul]
 alternatives: [libreoffice, msoffice]

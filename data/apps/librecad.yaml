@@ -9,6 +9,7 @@ price: free
 developer: Comunitatea LibreCAD
 website: https://librecad.org
 
+snap: librecad
 platforms: [linux, windows, macos]
 tags: [cad, 2d, desen tehnic]
 alternatives: [freecad]

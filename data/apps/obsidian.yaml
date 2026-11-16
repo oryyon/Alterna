@@ -9,6 +9,8 @@ price: free
 developer: Dynalist Inc.
 website: https://obsidian.md
 
+snap: obsidian
+flatpak: md.obsidian.Obsidian
 platforms: [linux, windows, macos, android]
 tags: [notite, markdown, graf de cunostinte]
 alternatives: [joplin]

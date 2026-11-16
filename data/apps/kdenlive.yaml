@@ -9,6 +9,8 @@ price: free
 developer: Proiectul KDE
 website: https://kdenlive.org
 
+snap: kdenlive
+flatpak: org.kde.kdenlive
 platforms: [linux, windows, macos]
 tags: [editare video, montaj, kde]
 alternatives: [davinci, premiere]

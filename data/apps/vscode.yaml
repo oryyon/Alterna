@@ -9,6 +9,7 @@ price: free
 developer: Microsoft
 website: https://code.visualstudio.com
 
+snap: code
 platforms: [linux, windows, macos]
 tags: [editor, cod, extensii]
 alternatives: [vscodium, kate]

@@ -14,9 +14,15 @@ from PySide6.QtWidgets import (QComboBox, QFrame, QHBoxLayout, QLabel,
                                QVBoxLayout, QWidget)
 
 from .db import LICENSE_LABELS, TELEMETRY_LABELS  # noqa: F401  (re-export convenabil)
+from .installed import SOURCE_LABELS
 from .paths import logos_dir
 
 LOGOS_DIR = logos_dir()
+
+
+def installed_source_label(source: str) -> str:
+    """Numele prietenos al sursei de instalare („pachet Debian”, „snap”…)."""
+    return SOURCE_LABELS.get(source, source)
 
 
 class ComboBox(QComboBox):
@@ -125,6 +131,17 @@ def license_badges(app: dict) -> list[QLabel]:
     return badges
 
 
+def installed_badge(instalat) -> QLabel:
+    """Badge-ul „✓ instalat” (punctul 16) — starea locală, verificată direct."""
+    versiune = f" · {instalat.version}" if instalat.version else ""
+    etichetă = f"✓ instalat · {instalat.source}{versiune}"
+    badge = make_badge(etichetă, "installed")
+    badge.setToolTip(
+        f"Instalat local ca {installed_source_label(instalat.source)}: "
+        f"{instalat.name}{(' ' + instalat.version) if instalat.version else ''}")
+    return badge
+
+
 def indicators_text(app: dict, show: dict[str, bool]) -> str:
     """Indicatorii obiectivi de pe card (sec. 8), respectând comutatoarele din Setări."""
     parts = []
@@ -145,7 +162,8 @@ class AppCard(QFrame):
     clicked = Signal(str)
 
     def __init__(self, app: dict, show_indicators: dict[str, bool],
-                 compare_mode: bool = False, selected: bool = False, parent=None):
+                 compare_mode: bool = False, selected: bool = False,
+                 installed=None, parent=None):
         super().__init__(parent)
         self.app_id = app["id"]
         self.setObjectName("appCard")
@@ -174,6 +192,8 @@ class AppCard(QFrame):
         title_row.addWidget(title)
         for badge in license_badges(app):
             title_row.addWidget(badge)
+        if installed is not None:
+            title_row.addWidget(installed_badge(installed))
         if app["editors_choice"]:
             pick = QLabel("✎ Recomandarea editorilor")
             pick.setProperty("dim", "true")

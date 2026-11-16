@@ -9,6 +9,7 @@ price: free
 developer: Muse Group / comunitate
 website: https://www.audacityteam.org
 
+snap: audacity
 platforms: [linux, windows, macos]
 tags: [audio, editare, podcast]
 alternatives: [tenacity]

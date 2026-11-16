@@ -9,6 +9,8 @@ price: free
 developer: Fundația Blender
 website: https://www.blender.org
 
+snap: blender
+flatpak: org.blender.Blender
 platforms: [linux, windows, macos]
 tags: [3d, modelare, animatie, randare]
 alternatives: [freecad]

@@ -3,6 +3,8 @@ id: obs
 popularity: 200
 name: OBS Studio
 package: obs-studio
+snap: obs-studio
+flatpak: com.obsproject.Studio
 description: Înregistrare de ecran și streaming live, standardul de facto.
 category: streaming
 license: foss

@@ -9,6 +9,7 @@ price: free
 developer: Andrew Ziem / comunitate
 website: https://www.bleachbit.org
 
+flatpak: org.bleachbit.BleachBit
 platforms: [linux, windows]
 tags: [curatare, sistem, confidentialitate]
 alternatives: [stacer]

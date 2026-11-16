@@ -9,6 +9,7 @@ price: paid
 developer: win.rar GmbH
 website: https://www.rarlab.com
 
+snap: winrar
 platforms: [windows]
 tags: [arhivare, rar, compresie]
 alternatives: [sevenzip, peazip]

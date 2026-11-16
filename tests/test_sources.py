@@ -125,6 +125,18 @@ class TestParitateMacheta:
         assert "const SOURCES = {" in js
         assert "🔗 Surse — de unde provin datele" in js
 
+    def test_macheta_are_filtrul_si_marcajul_de_instalare(self):
+        """Punctul 16 trebuie să existe și în machetă (sec. 13)."""
+        from pathlib import Path
+
+        root = Path(__file__).resolve().parent.parent
+        js = (root / "mockup-ui" / "script.js").read_text(encoding="utf-8")
+        html = (root / "mockup-ui" / "index.html").read_text(encoding="utf-8")
+        css = (root / "mockup-ui" / "style.css").read_text(encoding="utf-8")
+        assert "filterInstalled" in html
+        assert "✓ instalat" in js
+        assert "badge-instalat" in js and "badge-instalat" in css
+
     def test_sursele_machetei_sunt_in_cataloagele_real(self):
         """URL-urile din machetă există și în YAML-urile reale."""
         from pathlib import Path

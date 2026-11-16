@@ -9,6 +9,7 @@ price: free
 developer: Automattic
 website: https://simplenote.com
 
+snap: simplenote
 platforms: [linux, windows, macos, android, web]
 tags: [notite, simplu, sincronizare]
 alternatives: [joplin]

@@ -3,6 +3,8 @@ id: chromium
 popularity: 160
 name: Chromium
 package: chromium-browser
+snap: chromium
+flatpak: org.chromium.Chromium
 description: Versiunea open source a browserului Chrome, fără serviciile Google.
 category: internet
 license: foss

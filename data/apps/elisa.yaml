@@ -9,6 +9,8 @@ price: free
 developer: Proiectul KDE
 website: https://apps.kde.org/elisa
 
+snap: elisa
+flatpak: org.kde.elisa
 platforms: [linux, windows]
 tags: [player, muzica, kde]
 alternatives: [strawberry, vlc]

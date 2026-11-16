@@ -9,6 +9,8 @@ price: free
 developer: VideoLAN
 website: https://www.videolan.org
 
+snap: vlc
+flatpak: org.videolan.VLC
 platforms: [linux, windows, macos, android]
 tags: [player, video, audio]
 alternatives: [mpv]

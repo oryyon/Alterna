@@ -3,6 +3,7 @@ id: ssr
 popularity: 730
 name: SimpleScreenRecorder
 package: simplescreenrecorder
+snap: simplescreenrecorder
 description: Înregistrare simplă de ecran pentru Linux, ușoară și directă.
 category: streaming
 license: foss

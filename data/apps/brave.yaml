@@ -9,6 +9,7 @@ price: free
 developer: Brave Software
 website: https://brave.com
 
+snap: brave
 platforms: [linux, windows, macos, android]
 tags: [browser, adblock, privacitate]
 alternatives: [firefox, chromium]

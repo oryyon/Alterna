@@ -3,6 +3,7 @@ id: eclipse-ide
 popularity: 430
 name: Eclipse IDE
 package: eclipse-titan
+snap: eclipse
 description: IDE clasic pentru Java, extensibil prin plugin-uri.
 category: development
 license: foss

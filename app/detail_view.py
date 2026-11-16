@@ -13,8 +13,9 @@ from PySide6.QtWidgets import (QFrame, QGridLayout, QHBoxLayout, QLabel,
 
 from .confidence import ConfidenceBadge, field_label
 from .db import PLATFORM_LABELS
-from .widgets import (AppCard, IconLabel, LinkLabel, license_badges,
-                      make_badge, source_label)
+from .installed import comanda_instalare
+from .widgets import (AppCard, IconLabel, LinkLabel, installed_source_label,
+                      license_badges, make_badge, source_label)
 
 #: Sursa concretă a rangului popcon (indicatorul e chiar de acolo).
 POPCON_URL = "https://popcon.debian.org"
@@ -146,7 +147,8 @@ class DetailView(QScrollArea):
         box_layout.addWidget(legend)
         return box
 
-    def show_app(self, app: dict, show_indicators: dict[str, bool]) -> None:
+    def show_app(self, app: dict, show_indicators: dict[str, bool],
+                 installed=None) -> None:
         # Reconstruim conținutul la fiecare navigare
         content = QWidget()
         content.setObjectName("view")
@@ -213,6 +215,23 @@ class DetailView(QScrollArea):
             ("Preț", "Gratuit" if app["price"] == "free" else "Cu plată",
              "sursa: catalog", app["website"] or "", True, "price"),
         ]
+        # Starea locală (punctul 16): fapt verificat direct pe computer, nu
+        # valoare de catalog — deci nu primește marcaj de certitudine.
+        if installed is not None:
+            versiune = f" {installed.version}" if installed.version else ""
+            fact_data.append((
+                "Pe acest computer",
+                f"✓ Instalată ({installed.source}{versiune})",
+                f"{installed_source_label(installed.source)}: {installed.name}",
+                "", True, ""))
+        else:
+            comanda = comanda_instalare(app)
+            if comanda:
+                fact_data.append((
+                    "Pe acest computer",
+                    "Nu e instalată",
+                    f"instalează cu: {comanda[0]} ({comanda[1]})",
+                    "", True, ""))
         for i, (label, value, source, url, visible, field) in enumerate(fact_data):
             if not visible:
                 continue
@@ -227,11 +246,14 @@ class DetailView(QScrollArea):
             l.setProperty("dim", "true")
             head_row.addWidget(l)
             head_row.addStretch(1)
-            head_row.addWidget(ConfidenceBadge(
-                app.get("confidence", {}).get(field, "unknown")))
+            if field:
+                head_row.addWidget(ConfidenceBadge(
+                    app.get("confidence", {}).get(field, "unknown")))
             v = QLabel(value)
             v.setProperty("h2", "true")
             if label == "În depozitele Ubuntu" and app["in_ubuntu_repos"]:
+                v.setStyleSheet("color: #27ae60;")
+            if label == "Pe acest computer" and installed is not None:
                 v.setStyleSheet("color: #27ae60;")
             if url:
                 # Sursa indicatorului e un link: utilizatorul poate verifica

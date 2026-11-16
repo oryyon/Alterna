@@ -50,6 +50,14 @@ jobs:
         run: python -m pytest tests/ -q
 
       - name: Deschide PR cu diferențele
+        # ATENȚIE — setare de repo (Settings → Actions → General → Workflow
+        # permissions): „Allow GitHub Actions to create and approve pull
+        # requests" trebuie să fie ACTIVAT. Fără ea, ramura e împinsă, dar
+        # pasul de mai jos pică cu „GitHub Actions is not permitted to create
+        # or approve pull requests" — și workflow-ul nu deschide NICIODATĂ PR,
+        # fără niciun semn în interfața Actions.
+        #   gh api -X PUT repos/oryyon/Alterna/actions/permissions/workflow \
+        #     -F enabled=true -F can_approve_pull_request_reviews=true
         uses: peter-evans/create-pull-request@v7
         with:
           title: "chore(data): reîmprospătare indicatori"

@@ -25,9 +25,9 @@ details:
 
 indicators:
   popcon_rank:
-  stars: 56996
+  stars: 57210
   stars_url: https://github.com/laurent22/joplin
-  latest_release: "2026-10"
+  latest_release: "2026-11"
   in_ubuntu_repos: false
 
 sources:

@@ -22,8 +22,8 @@ details:
   romanian_language: true
 
 indicators:
-  popcon_rank: 4815
-  stars: 18931
+  popcon_rank: 4810
+  stars: 19087
   stars_url: https://github.com/audacity/audacity
   latest_release: "2026-11"
   in_ubuntu_repos: true

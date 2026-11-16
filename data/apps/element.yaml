@@ -24,9 +24,9 @@ details:
 
 indicators:
   popcon_rank:
-  stars: 13636
+  stars: 13662
   stars_url: https://github.com/element-hq/element-web
-  latest_release: "2026-10"
+  latest_release: "2026-11"
   in_ubuntu_repos: false
 
 sources:

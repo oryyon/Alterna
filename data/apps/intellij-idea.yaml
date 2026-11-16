@@ -23,9 +23,9 @@ details:
 
 indicators:
   popcon_rank:
-  stars: 20702
+  stars: 20735
   stars_url: https://github.com/JetBrains/intellij-community
-  latest_release: "2026-10"
+  latest_release: "2026-11"
   in_ubuntu_repos: false
 
 sources:

@@ -23,9 +23,9 @@ details:
 
 indicators:
   popcon_rank:
-  stars: 35065
+  stars: 35505
   stars_url: https://github.com/FreeCAD/FreeCAD
-  latest_release: "2026-10"
+  latest_release: "2026-11"
   in_ubuntu_repos: false
 
 sources:

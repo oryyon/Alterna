@@ -24,7 +24,7 @@ details:
   romanian_language: true
 
 indicators:
-  popcon_rank: 7034
+  popcon_rank: 7051
   stars: 2900
   stars_url: https://invent.kde.org/multimedia/kdenlive
   latest_release: "2026-10"

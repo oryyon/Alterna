@@ -21,8 +21,8 @@ details:
   romanian_language: true
 
 indicators:
-  popcon_rank: 7162
-  stars: 3748
+  popcon_rank: 7145
+  stars: 3757
   stars_url: https://github.com/geany/geany
   latest_release: "2025-07"
   in_ubuntu_repos: true

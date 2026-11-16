@@ -21,8 +21,8 @@ details:
   romanian_language: false
 
 indicators:
-  popcon_rank: 19086
-  stars: 9345
+  popcon_rank: 19080
+  stars: 9350
   stars_url: https://github.com/oguzhaninan/Stacer
   latest_release: "2019-05"
   in_ubuntu_repos: true

@@ -22,10 +22,10 @@ details:
   romanian_language: true
 
 indicators:
-  popcon_rank: 1951
-  stars: 4379
+  popcon_rank: 1969
+  stars: 4527
   stars_url: https://github.com/ip7z/7zip
-  latest_release: "2026-10"
+  latest_release: "2026-11"
   in_ubuntu_repos: true
 
 sources:

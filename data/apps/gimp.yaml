@@ -25,8 +25,8 @@ details:
   romanian_language: true
 
 indicators:
-  popcon_rank: 1860
-  stars: 6561
+  popcon_rank: 1865
+  stars: 6590
   stars_url: https://github.com/GNOME/gimp
   latest_release: "2026-11"
   in_ubuntu_repos: true

@@ -24,7 +24,7 @@ details:
   romanian_language: true
 
 indicators:
-  popcon_rank: 7314
+  popcon_rank: 7325
   stars: 8200
   stars_url: https://invent.kde.org/graphics/krita
   latest_release: "2026-09"

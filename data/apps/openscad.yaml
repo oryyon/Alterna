@@ -22,10 +22,10 @@ details:
   romanian_language: false
 
 indicators:
-  popcon_rank: 10082
-  stars: 10577
+  popcon_rank: 10024
+  stars: 10665
   stars_url: https://github.com/openscad/openscad
-  latest_release: "2026-10"
+  latest_release: "2026-11"
   in_ubuntu_repos: true
 
 sources:

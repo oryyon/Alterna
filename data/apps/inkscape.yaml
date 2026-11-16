@@ -23,7 +23,7 @@ details:
   romanian_language: true
 
 indicators:
-  popcon_rank: 3931
+  popcon_rank: 3948
   stars: 3500
   stars_url: https://gitlab.com/inkscape/inkscape
   latest_release: "2026-09"

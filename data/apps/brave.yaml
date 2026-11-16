@@ -23,7 +23,7 @@ details:
 
 indicators:
   popcon_rank:
-  stars: 24079
+  stars: 24232
   stars_url: https://github.com/brave/brave-browser
   latest_release: "2026-11"
   in_ubuntu_repos: false

@@ -23,7 +23,7 @@ details:
 
 indicators:
   popcon_rank:
-  stars: 824
+  stars: 830
   stars_url: https://github.com/tenacityteam/tenacity
   latest_release: "2026-07"
   in_ubuntu_repos: false

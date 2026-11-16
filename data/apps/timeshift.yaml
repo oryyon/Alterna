@@ -21,10 +21,10 @@ details:
   romanian_language: true
 
 indicators:
-  popcon_rank: 8589
-  stars: 4327
+  popcon_rank: 8604
+  stars: 4337
   stars_url: https://github.com/linuxmint/timeshift
-  latest_release: "2026-10"
+  latest_release: "2026-11"
   in_ubuntu_repos: true
 
 sources:

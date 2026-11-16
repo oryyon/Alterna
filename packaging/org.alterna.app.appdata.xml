@@ -47,6 +47,47 @@
   <update_contact>alterna_AT_github.com</update_contact>
 
   <releases>
+    <release version="0.1.5" date="2026-11-16">
+      <description>
+        <p>Detectarea aplicațiilor deja instalate: marcajul „✓ instalat”, filtru
+        „Doar instalate” și comanda de instalare în pagina de detalii. Sursele
+        (deb / snap / Flatpak) sunt verificate în snapcraft.io și Flathub.</p>
+        <p>Datele sunt acum dovezi, nu estimări: dimensiunea la instalare e
+        măsurată din arhivă, limba română e confirmată din fișierele de
+        traducere, iar telemetria e verificată în politicile oficiale.</p>
+      </description>
+    </release>
+    <release version="0.1.4" date="2026-11-15">
+      <description>
+        <p>Butoanele puse la punct: actualizarea catalogului (cu verificare
+        SHA-256), asistentul AI (Ollama local / Claude API) și donațiile care
+        deschid pagini reale.</p>
+      </description>
+    </release>
+    <release version="0.1.3" date="2026-11-15">
+      <description>
+        <p>Pachet Debian (.deb) pentru integrare APT, cu pictograme și
+        documentație.</p>
+      </description>
+    </release>
+    <release version="0.1.2" date="2026-11-15">
+      <description>
+        <p>Launcher instalat în /usr/bin, ca aplicația să fie accesibilă din
+        PATH.</p>
+      </description>
+    </release>
+    <release version="0.1.1" date="2026-11-15">
+      <description>
+        <p>Dependențe Debian corectate pentru Ubuntu 24.04.</p>
+      </description>
+    </release>
+    <release version="0.1.0" date="2026-11-14">
+      <description>
+        <p>Prima versiune distribuibilă: 100 de aplicații în catalog.</p>
+      </description>
+    </release>
+  </releases>
+  <releases>
     <release version="0.1.0" date="2026-11-14">
       <description>
         <p>Prima versiune distribuibilă: 100 de aplicații în catalog.</p>

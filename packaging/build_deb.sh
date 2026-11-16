@@ -116,6 +116,8 @@ cp "$ROOT/packaging/org.alterna.app.appdata.xml" \
 # Pagină de manual, pentru integrarea completă în sistem.
 mkdir -p "$DEB_ROOT/usr/share/man/man1"
 cp "$ROOT/packaging/alterna.1" "$DEB_ROOT/usr/share/man/man1/$PACKAGE.1"
+# Pagina de manual se distribuie comprimată (altfel lintian: uncompressed-manual-page)
+gzip -9nf "$DEB_ROOT/usr/share/man/man1/$PACKAGE.1"
 
 cp "$ROOT/README.md" "$DEB_ROOT/usr/share/doc/$PACKAGE/README.md"
 cp "$ROOT/CONTRIBUTING.md" "$DEB_ROOT/usr/share/doc/$PACKAGE/CONTRIBUTING.md"
@@ -147,9 +149,12 @@ find "$DEB_ROOT/opt" -type f -exec chmod 644 {} +
 # Binarele din bundle (executable, shiboken) trebuie să rămână executabile.
 # Ordinea contează: întâi se marchează executabilele, apoi se fixează
 # permisiunile bibliotecilor partajate.
-find "$DEB_ROOT/opt" -type f -perm -u+x -exec chmod 755 {} +
-find "$DEB_ROOT/opt" -type f \( -name '*.so' -o -name '*.so.*' \) \
+find "$DEB_ROOT/opt" -type f -perm -u+x ! -name '*.so' ! -name '*.so.*' \
   -exec chmod 755 {} +
+# Bibliotecile partajate nu sunt executabile (Debian Policy 10.1): dlopen nu
+# are nevoie de bitul de execuție, iar lintian cere 0644 pentru ele.
+find "$DEB_ROOT/opt" -type f \( -name '*.so' -o -name '*.so.*' \) \
+  -exec chmod 644 {} +
 # Executabilul principal al aplicației.
 chmod 755 "$DEB_ROOT/opt/$PACKAGE/$PACKAGE"
 find "$DEB_ROOT/usr" -type d -exec chmod 755 {} +

@@ -197,6 +197,49 @@ def test_both_packaging_scripts_write_to_dist():
             f"{script} trebuie să scrie pachetul în dist/"
 
 
+def test_bibliotecile_partajate_nu_sunt_executabile():
+    """Debian Policy 10.1: bibliotecile sunt 0644, nu 0755.
+
+    lintian raportează `shared-library-is-executable` pentru fiecare `.so`
+    marcat executabil. Bitul de execuție nu e necesar pentru `dlopen`.
+    """
+    text = (PACKAGING / "build_deb.sh").read_text(encoding="utf-8")
+    comenzi = text.replace("\\\n", " ")      # lipesc continuările de linie
+    biblioteci = [linie for linie in comenzi.splitlines()
+                  if "-name '*.so'" in linie and "-exec chmod" in linie]
+    assert biblioteci, "lipsește normalizarea bibliotecilor partajate"
+    for linie in biblioteci:
+        # comanda care fixează bibliotecile trebuie să le dea 644
+        if "! -name '*.so'" in linie:
+            continue        # asta marchează executabilele (non-.so) ca 755
+        assert "644" in linie, \
+            f"bibliotecile trebuie chmod 644, nu 755: {linie.strip()}"
+    # executabilele rămân executabile
+    executabile = [linie for linie in comenzi.splitlines()
+                   if "-perm -u+x" in linie and "-exec chmod" in linie]
+    assert executabile and all("755" in l for l in executabile), \
+        "binarele din bundle trebuie să rămână executabile"
+
+
+def test_pagina_de_manual_e_comprimata():
+    """`man` primește pagini `.gz` — altfel lintian: uncompressed-manual-page."""
+    text = (PACKAGING / "build_deb.sh").read_text(encoding="utf-8")
+    assert "alterna.1" in text
+    assert "gzip" in text, "pagina de manual trebuie comprimată"
+
+
+def test_appstream_are_istoricul_releaseurilor():
+    """Metadata-ul trebuie să listeze release-urile, nu doar primul."""
+    import xml.etree.ElementTree as ET
+
+    arbore = ET.parse(PACKAGING / "org.alterna.app.appdata.xml").getroot()
+    versiuni = [r.get("version") for r in arbore.iter("release")]
+    assert len(versiuni) >= 2, f"istoricul are doar {versiuni}"
+    from app.version import VERSION as din_app
+    assert din_app in versiuni, \
+        f"release-ul curent {din_app} nu e în metadata ({versiuni})"
+
+
 def test_deb_control_fields_are_valid():
     """Controlul Debian trebuie să conțină câmpurile obligatorii."""
     text = (PACKAGING / "build_deb.sh").read_text(encoding="utf-8")

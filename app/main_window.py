@@ -67,6 +67,7 @@ class MainWindow(QMainWindow):
         # Aplicațiile deja instalate pe computer (punctul 16)
         self.installed: dict[str, Installed] = {}
         self._detect_thread: QThread | None = None
+        self._detect_worker: DetectWorker | None = None
 
         self.setWindowTitle("Alterna — descoperă alternative software")
         self.resize(1100, 720)
@@ -378,7 +379,12 @@ class MainWindow(QMainWindow):
         worker.finished.connect(thread.quit)
         worker.failed.connect(thread.quit)
         thread.finished.connect(worker.deleteLater)
-        self._detect_thread = thread  # capcană clasică Qt: garbage collector
+        # Referințele Python ale ambelor obiecte trebuie păstrate: altfel
+        # garbage collectorul distruge workerul în timp ce thread-ul rulează,
+        # iar Qt accesează un obiect C++ deja eliberat → segfault. E aceeași
+        # capcană pe care `net.py` o tratează cu `_net_tasks`.
+        self._detect_thread = thread
+        self._detect_worker = worker
         thread.start()
 
     def _on_installed(self, rezultat: dict) -> None:

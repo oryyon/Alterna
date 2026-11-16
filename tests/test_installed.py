@@ -195,3 +195,60 @@ class TestFiltrare:
         ids = self._ids(window)
         assert "gimp" not in ids
         assert len(ids) == catalog.app_count - 1
+
+
+class TestDetectareInThread:
+    """Detectarea rulează într-un QThread — și asta a cauzat un segfault.
+
+    Regresie: workerul (`DetectWorker`) nu avea referință Python, deci
+    garbage collectorul îl distrugea în timp ce thread-ul lucra, iar Qt
+    accesa un obiect C++ deja eliberat → segfault la pornirea aplicației.
+    Testele anterioare evitau exact acest drum (`detecta=False`), deci
+    bugul trecuse neobservat.
+    """
+
+    def test_detectarea_rezultatul_ajunge_in_fereastra(self, catalog, qapp,
+                                                       monkeypatch):
+        from PySide6.QtCore import QEventLoop, QTimer
+
+        from app import main_window
+
+        monkeypatch.setattr(
+            main_window, "detecteaza",
+            lambda apps: {"gimp": Installed("gimp", "deb", "gimp", "2.10.38")})
+        window = main_window.MainWindow(catalog)   # detectare pornită
+        try:
+            buclă = QEventLoop()
+            QTimer.singleShot(3000, buclă.quit)
+            buclă.exec()                            # procesează semnalul
+            assert "gimp" in window.installed, "rezultatul nu a ajuns în fereastră"
+            assert "instalate" in window.installed_label.text()
+        finally:
+            window.close()
+
+    def test_workerul_supravietuieste_garbage_collectorului(self, catalog,
+                                                             qapp, monkeypatch):
+        """Referința Python a workerului trebuie păstrată cât timp rulează."""
+        import gc
+
+        from app import main_window
+
+        monkeypatch.setattr(main_window, "detecteaza", lambda apps: {})
+        window = main_window.MainWindow(catalog)
+        try:
+            gc.collect()   # fără referință, workerul ar fi eliberat aici
+            assert window._detect_worker is not None, \
+                "workerul trebuie păstrat ca referință (vezi net.py)"
+            assert window._detect_thread is not None
+        finally:
+            window.close()
+
+    def test_inchiderea_fereastrei_opreste_threadul(self, catalog, qapp,
+                                                      monkeypatch):
+        """La închidere, threadul e oprit — altfel ar depăși fereastra."""
+        from app import main_window
+
+        monkeypatch.setattr(main_window, "detecteaza", lambda apps: {})
+        window = main_window.MainWindow(catalog)
+        window.close()
+        assert window._detect_thread is None

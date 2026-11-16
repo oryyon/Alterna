@@ -133,7 +133,7 @@ def license_badges(app: dict) -> list[QLabel]:
 
 def installed_badge(instalat) -> QLabel:
     """Badge-ul „✓ instalat” (punctul 16) — starea locală, verificată direct."""
-    versiune = f" · {instalat.version}" if instalat.version else ""
+    versiune = f" {instalat.version}" if instalat.version else ""
     etichetă = f"✓ instalat · {instalat.source}{versiune}"
     badge = make_badge(etichetă, "installed")
     badge.setToolTip(

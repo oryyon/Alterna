@@ -46,17 +46,43 @@ python -m pytest tests/ -q          # include verificarea statică (pyflakes)
 
 ### Verificarea statică
 
-`pytest` rulează și **pyflakes**: orice nume folosit fără să fie definit sau
-importat eșuează testul. Asta a prins un `Path` lipsă din `app/dialogs.py` —
-un bug care ar fi aruncat `NameError` abia la apăsarea butonului „Actualizează
-catalogul acum", în drum care nu era acoperit de teste.
+`pytest` rulează și verificările statice proprii (doar biblioteca standardă,
+deci nu depind de nimic instalat):
 
-Dacă nu ai pyflakes instalat, testul e sărit local (nu și în CI):
+- **nicio variabilă nedefinită** — un `Path` folosit fără import în
+  `app/dialogs.py` arunca `NameError` abia la apăsarea butonului „Actualizează
+  catalogul acum”, în drum neacoperit de teste;
+- **nicio clasă de test cu nume dublu** — Python păstrează doar a doua
+  definiție, deci teste dispar din suita fără niciun semn;
+- **nicio ocolire neregistrată** — vezi mai jos.
+
+Dacă ai pyflakes instalat, verifică și el (prind importuri nefolosite):
 
 ```bash
 pip install pyflakes
 python -m pyflakes app tools tests
 ```
+
+### Regula: niciun test nu ocolește codul pe care pretinde că îl verifică
+
+O caracteristică **oprită printr-un steag de constructor** (ex.
+`MainWindow(catalog, detecta=False)`) scindează suita în două: cea care
+verifică și cea care nu verifică nimic. Așa a rămas nedetectat un segfault la
+pornire: testele punctului 16 porneau fereastra cu detectarea oprită — adică
+dezactivau exact drumul care crăpa.
+
+Deci:
+
+1. orice caracteristică oprită în teste trebuie declarată în `OCOLIRI`
+   (`tests/test_lint.py`), cu **motivul** și cu **testul care acoperă calea
+   pornită**;
+2. orice modul al aplicației înlocuit cu `monkeypatch` se declară în
+   `OCOLIRI_MONKEYPATCH`, tot cu motiv — înlocuirea e acceptabilă doar la
+   *granița externă* (rețea, setări de utilizator);
+3. testul care acoperă calea pornită nu poate ocoli el însuși caracteristica.
+
+Verificările astea rulează în `pytest` și în CI — deci o ocolire nouă nu poate
+trece neobservată.
 
 ## Corectitudinea datelor
 

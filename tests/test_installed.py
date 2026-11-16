@@ -162,6 +162,39 @@ class TestInterfata:
         assert not any("instalat" in t for t in texte), texte
 
 
+class TestCardCuDateReale:
+    """Cardul trebuie verificat și cu date reale din catalog."""
+
+    def test_badge_ul_vine_din_catalog(self, catalog, qapp):
+        """Aplicația reală (GIMP) + stare reală → marcaj pe card."""
+        from PySide6.QtWidgets import QLabel
+
+        from app.widgets import AppCard
+
+        app = catalog.get("gimp")
+        card = AppCard(app, {}, installed=Installed("gimp", "deb", "gimp",
+                                                     "2.10.38"))
+        texte = [w.text() for w in card.findChildren(QLabel)]
+        assert any("instalat" in t for t in texte), texte
+        assert any("GIMP" in t for t in texte), texte  # numele din catalog
+
+    def test_detectarea_foloseste_numele_de_pachet_din_catalog(self, catalog):
+        """Numele pachetului vine din catalog, nu din dicționarul de test."""
+        from app.installed import nume_pachet
+
+        assert nume_pachet(catalog.get("gimp")) == "gimp"
+        assert nume_pachet(catalog.get("openshot")) == "openshot-qt"
+
+    def test_aplicatia_din_catalog_are_sursele_de_instalare(self, catalog):
+        """Catalogul spune și cum se instalează fiecare aplicație."""
+        for app_id in ("gimp", "firefox", "vlc"):
+            app = catalog.get(app_id)
+            assert app["package"], app_id
+        # aplicațiile cu surse confirmate au și snap / Flatpak
+        assert catalog.get("firefox")["snap"] == "firefox"
+        assert catalog.get("gimp")["flatpak"] == "org.gimp.GIMP"
+
+
 class TestFiltrare:
     def _ids(self, window) -> list[str]:
         """Cardurile din randarea curenta (nu cele sterse, care asteapta

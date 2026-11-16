@@ -22,7 +22,7 @@ details:
 
 indicators:
   popcon_rank:
-  stars: 8060
+  stars: 8155
   stars_url: https://github.com/peazip/PeaZip
   latest_release: "2026-10"
   in_ubuntu_repos: false

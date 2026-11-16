@@ -22,7 +22,7 @@ details:
 
 indicators:
   popcon_rank:
-  stars: 1986
+  stars: 1996
   stars_url: https://github.com/DeaDBeeF-Player/deadbeef
   latest_release: "2026-06"
   in_ubuntu_repos: false

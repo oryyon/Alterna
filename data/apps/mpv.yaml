@@ -23,10 +23,10 @@ details:
   romanian_language: false
 
 indicators:
-  popcon_rank: 3950
-  stars: 37679
+  popcon_rank: 3959
+  stars: 38151
   stars_url: https://github.com/mpv-player/mpv
-  latest_release: "2026-10"
+  latest_release: "2026-11"
   in_ubuntu_repos: true
 
 sources:

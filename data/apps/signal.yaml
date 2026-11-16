@@ -24,9 +24,9 @@ details:
 
 indicators:
   popcon_rank:
-  stars: 16645
+  stars: 16714
   stars_url: https://github.com/signalapp/Signal-Desktop
-  latest_release: "2026-10"
+  latest_release: "2026-11"
   in_ubuntu_repos: false
 
 sources:

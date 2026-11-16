@@ -23,8 +23,8 @@ details:
   romanian_language: true
 
 indicators:
-  popcon_rank: 9370
-  stars: 13384
+  popcon_rank: 9353
+  stars: 13461
   stars_url: https://github.com/darktable-org/darktable
   latest_release: "2026-11"
   in_ubuntu_repos: true

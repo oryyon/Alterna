@@ -22,10 +22,10 @@ details:
   romanian_language: true
 
 indicators:
-  popcon_rank: 8483
-  stars: 15613
+  popcon_rank: 8465
+  stars: 15683
   stars_url: https://github.com/xournalpp/xournalpp
-  latest_release: "2026-10"
+  latest_release: "2026-11"
   in_ubuntu_repos: true
 
 sources:

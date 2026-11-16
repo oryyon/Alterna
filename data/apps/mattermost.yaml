@@ -1,0 +1,42 @@
+# Mattermost — Platformă de mesagerie pentru echipe, găzduită de tine.
+id: mattermost
+popularity: 1190
+name: Mattermost
+description: Platformă de mesagerie pentru echipe, găzduită de tine.
+category: communication
+license: foss
+price: free
+developer: Mattermost
+website: https://mattermost.com/
+platforms:
+- linux
+- windows
+- macos
+- android
+- web
+tags:
+- echipa
+- mesagerie
+- auto-gazduire
+alternatives:
+- slack
+- rocket-chat
+details:
+  install_size_mb: 0
+  first_release_year: 2015
+  file_formats: []
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars: 39632
+  stars_url: https://github.com/mattermost/mattermost
+  latest_release: 2026-11
+  in_ubuntu_repos: false
+sources:
+- https://mattermost.com/
+- https://github.com/mattermost/mattermost
+- https://www.wikidata.org/wiki/Q55478510
+confidence:
+  details.first_release_year: auto
+logo: logos/mattermost.svg

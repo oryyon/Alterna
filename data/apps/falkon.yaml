@@ -1,0 +1,39 @@
+# Falkon — Browser web ușor, bazat pe QtWebEngine.
+id: falkon
+popularity: 1300
+name: Falkon
+description: Browser web ușor, bazat pe QtWebEngine.
+category: internet
+license: foss
+price: free
+developer: David Rosca
+website: https://www.falkon.org/
+snap: falkon
+platforms:
+- linux
+tags:
+- browser
+- web
+- qt
+alternatives:
+- konqueror
+- chromium
+details:
+  install_size_mb: 672
+  first_release_year: 2011
+  file_formats: []
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars: 1132
+  stars_url: https://github.com/QupZilla/qupzilla
+  latest_release: 2018-03
+  in_ubuntu_repos: true
+sources:
+- https://www.falkon.org/
+- https://github.com/QupZilla/qupzilla
+- https://www.wikidata.org/wiki/Q404293
+confidence:
+  details.first_release_year: auto
+  details.install_size_mb: auto

@@ -1,6 +1,6 @@
 # Proton Pass — manager de parole de la Proton
 id: proton-pass
-popularity: 310
+popularity: 320
 name: Proton Pass
 description: Manager de parole de la Proton, cu criptare cap-la-cap și aliasuri de e-mail.
 category: security

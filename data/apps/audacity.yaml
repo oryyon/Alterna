@@ -1,6 +1,6 @@
 # Audacity — editorul audio clasic
 id: audacity
-popularity: 240
+popularity: 250
 name: Audacity
 description: Editor audio multipistă, clasic pentru podcasturi și curățare de înregistrări.
 category: audio-production
@@ -23,7 +23,7 @@ details:
 
 indicators:
   popcon_rank: 4810
-  stars: 19087
+  stars: 19088
   stars_url: https://github.com/audacity/audacity
   latest_release: "2026-11"
   in_ubuntu_repos: true

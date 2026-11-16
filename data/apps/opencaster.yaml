@@ -1,0 +1,37 @@
+# OpenCaster — Server de streaming video pentru transmisiuni live.
+id: opencaster
+popularity: 1610
+name: OpenCaster
+description: Server de streaming video pentru transmisiuni live.
+category: streaming
+license: foss
+price: free
+developer: OpenCaster
+website: https://www.opencaster.org/
+platforms:
+- linux
+tags:
+- streaming
+- live
+- server
+alternatives:
+- owncast
+details:
+  install_size_mb: 0
+  first_release_year: 2008
+  file_formats:
+  - flv
+  - mp4
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://www.opencaster.org/
+- https://www.wikidata.org/wiki/Q7095754
+confidence:
+  details.first_release_year: auto

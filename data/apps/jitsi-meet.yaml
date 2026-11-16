@@ -1,6 +1,6 @@
 # Jitsi Meet — videoconferințe libere, fără cont
 id: jitsi-meet
-popularity: 700
+popularity: 740
 name: Jitsi Meet
 description: Videoconferințe libere, direct din browser, fără cont.
 category: communication
@@ -22,7 +22,7 @@ details:
 
 indicators:
   popcon_rank:
-  stars: 30243
+  stars: 30244
   stars_url: https://github.com/jitsi/jitsi-meet
   latest_release: "2026-11"
   in_ubuntu_repos: false

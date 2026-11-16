@@ -1,0 +1,777 @@
+# Semințe pentru import — Tranche 1 (extindere 100 → 168)
+#
+# Ce e aici: părțile EDITORIALE (descriere în română, categorie, alternative,
+# etichete, preț, formate). Ce e obiectiv (anul primei versiuni, site-ul
+# oficial, dezvoltatorul, licența) e luat de `tools/import_apps.py` din
+# Wikidata, cu sursa citată în fișierul rezultat.
+#
+# Reguli:
+# - `alternatives` referă doar id-uri care există în catalog (validat la build);
+# - `telemetry` rămâne estimare editorială (doar aplicațiile cu politică
+#   verificată primesc `manual`, prin `tools/check_telemetry.py`);
+# - `romanian_language` e corectat de `tools/check_ro.py` doar cu dovezi;
+# - `popularity` = poziția editorială în catalog (multiplu de 10; cu cât e mai
+#   mică, cu atât aplicația e mai prominentă). Valorile sunt interpolate pe
+#   scara catalogului, ca noile intrări să se intercaleze printre cele existente.
+
+# --- streaming & captură (era 4) ---------------------------------------------
+- id: kodi
+  developer: Kodi Foundation
+  name: Kodi
+  category: streaming
+  description: Centru multimedia pentru TV, filme și seriale.
+  popularity: 450
+  platforms: [linux, windows, macos, android]
+  tags: [media center, video, tv]
+  alternatives: [vlc, mpv]
+  file_formats: [mkv, mp4, avi]
+- id: plex
+  developer: Plex
+  first_release_year: 2008
+  wikidata_qid: Q7204887
+  name: Plex
+  category: streaming
+  description: Server media personal, cu biblioteci și streaming.
+  popularity: 950
+  price: paid
+  platforms: [linux, windows, macos, android, web]
+  tags: [media center, server, streaming]
+  alternatives: [kodi, owncast]
+  file_formats: [mkv, mp4, avi]
+- id: opencaster
+  developer: OpenCaster
+  first_release_year: 2011
+  website: https://www.opencaster.org/
+  wikidata_qid: Q7095754
+  name: OpenCaster
+  category: streaming
+  description: Server de streaming video pentru transmisiuni live.
+  popularity: 1600
+  platforms: [linux]
+  tags: [streaming, live, server]
+  alternatives: [owncast]
+  file_formats: [flv, mp4]
+- id: owncast
+  developer: Owncast
+  first_release_year: 2020
+  name: Owncast
+  category: streaming
+  description: Server de streaming video și chat, cu interfață web.
+  popularity: 1600
+  platforms: [linux, windows, macos]
+  tags: [streaming, live, server]
+  alternatives: [opencaster]
+  file_formats: [flv, mp4]
+
+# --- birou (era 6) -----------------------------------------------------------
+- id: gnumeric
+  name: Gnumeric
+  category: office
+  description: Foaie de calcul pentru fișiere spreadsheet, în format ODF.
+  popularity: 1200
+  platforms: [linux]
+  tags: [spreadsheet, calcul, office]
+  alternatives: [libreoffice, calligra]
+  file_formats: [ods, xlsx, csv]
+- id: abiword
+  repo: https://github.com/AbiWord/abiword
+  first_release_year: 1998
+  name: AbiWord
+  category: office
+  description: Procesor de text ușor, cu format ODF.
+  popularity: 1400
+  platforms: [linux, windows, macos]
+  tags: [editor de text, office]
+  alternatives: [calligra, libreoffice]
+  file_formats: [odt, docx, rtf]
+- id: scribus
+  name: Scribus
+  category: office
+  description: Editor de pagini pentru tipografie și desktop publishing.
+  popularity: 1400
+  platforms: [linux, windows, macos]
+  tags: [publicare, layout, pdf]
+  alternatives: [onlyoffice, libreoffice]
+  file_formats: [pdf, ps, odt]
+- id: okular
+  first_release_year: 2007
+  wikidata_qid: Q1165933
+  name: Okular
+  category: office
+  description: Cititor de PDF cu adnotări și suport pentru formulare.
+  popularity: 1200
+  platforms: [linux]
+  tags: [pdf, cititor, documente]
+  alternatives: [xournalpp, scribus]
+  file_formats: [pdf]
+
+# --- audio & playere (era 6) -------------------------------------------------
+- id: clementine
+  developer: Clementine Development Team
+  name: Clementine
+  category: audio-players
+  description: Player de muzică cu suport pentru colecții și transcodare.
+  popularity: 1200
+  platforms: [linux, windows, macos]
+  tags: [player audio, muzica, biblioteca]
+  alternatives: [strawberry, lollypop]
+  file_formats: [mp3, flac, ogg]
+- id: lollypop
+  developer: GNOME
+  first_release_year: 2005
+  name: Lollypop
+  category: audio-players
+  description: Player de muzică cu navigare prin colecție și etichete.
+  popularity: 1400
+  platforms: [linux]
+  tags: [player audio, muzica, biblioteca]
+  alternatives: [clementine, strawberry]
+  file_formats: [mp3, flac, ogg]
+- id: rhythmbox
+  developer: GNOME
+  name: Rhythmbox
+  category: audio-players
+  description: Player de muzică și radio, cu sincronizare pe dispozitive.
+  popularity: 1200
+  platforms: [linux]
+  tags: [player audio, radio, biblioteca]
+  alternatives: [clementine, strawberry]
+  file_formats: [mp3, flac, ogg]
+- id: amarok
+  developer: KDE
+  name: Amarok
+  category: audio-players
+  description: Player de muzică cu bibliotecă mare și integrare web.
+  popularity: 1400
+  platforms: [linux]
+  tags: [player audio, muzica, biblioteca]
+  alternatives: [clementine, strawberry]
+  file_formats: [mp3, flac, ogg]
+- id: sayonara
+  developer: Sayonara
+  website: https://www.sayonara-player.org
+  first_release_year: 2009
+  name: Sayonara
+  category: audio-players
+  description: Player de muzică ușor, orientat pe colecții mari.
+  popularity: 1600
+  platforms: [linux]
+  tags: [player audio, muzica]
+  alternatives: [clementine, lollypop]
+  file_formats: [mp3, flac, ogg]
+- id: kid3
+  developer: KDE
+  name: Kid3
+  category: audio-players
+  description: Editor de etichete pentru fișiere audio.
+  popularity: 1600
+  platforms: [linux, windows, macos]
+  tags: [etichete, metadata, audio]
+  alternatives: [clementine, audacity]
+  file_formats: [mp3, flac, ogg]
+
+# --- producție audio (era 6) -------------------------------------------------
+- id: hydrogen
+  developer: Hydrogen Development Team
+  website: https://www.hydrogen-music.org/
+  first_release_year: 2002
+  wikidata_qid: Q1459314
+  name: Hydrogen
+  category: audio-production
+  description: Ritmătoare cu bibliotecă de mostre și secvențe.
+  popularity: 1400
+  platforms: [linux, windows, macos]
+  tags: [beat making, secventa, drum]
+  alternatives: [lmms, rosegarden]
+  file_formats: [wav, mid]
+- id: rosegarden
+  repo: https://github.com/Rosegarden/rosegarden
+  developer: Rosegarden
+  name: Rosegarden
+  category: audio-production
+  description: Stație de lucru pentru compoziție și editare audio.
+  popularity: 1600
+  platforms: [linux]
+  tags: [compozitie, editare audio, secventa]
+  alternatives: [lmms, hydrogen]
+  file_formats: [wav, mid, ogg]
+- id: musescore
+  wikidata_qid: Q240192
+  name: MuseScore
+  category: audio-production
+  description: Editor de partituri cu audiție și export în multe formate.
+  popularity: 950
+  platforms: [linux, windows, macos]
+  tags: [partituri, notație, muzica]
+  alternatives: [lmms, tenacity]
+  file_formats: [musescore, mxl, pdf]
+- id: mixxx
+  developer: Mixxx Team
+  name: Mixxx
+  category: audio-production
+  description: Software de mixare pentru DJ, cu control în timp real.
+  popularity: 1400
+  platforms: [linux, windows, macos]
+  tags: [dj, mixare, muzica]
+  alternatives: [lmms, rosegarden]
+  file_formats: [wav, mp3, ogg]
+- id: tuxguitar
+  developer: TuxGuitar
+  first_release_year: 2006
+  name: TuxGuitar
+  category: audio-production
+  description: Editor de tablaturi pentru chitară și bass.
+  popularity: 1600
+  platforms: [linux, windows, macos]
+  tags: [tablituri, chitara, notație]
+  alternatives: [musescore, lmms]
+  file_formats: [gp, ptb, pdf]
+- id: ocenaudio
+  developer: OcenAudio
+  first_release_year: 2006
+  name: Ocenaudio
+  category: audio-production
+  description: Editor audio multipistă, cu efecte și editare spectrală.
+  popularity: 1400
+  platforms: [windows, linux]
+  tags: [editare audio, efecte, spectru]
+  alternatives: [audacity, tenacity]
+  file_formats: [wav, flac, mp3]
+
+# --- securitate (era 6) ------------------------------------------------------
+- id: vaultwarden
+  developer: Vaultwarden
+  website: https://github.com/dani-garcia/vaultwarden
+  first_release_year: 2021
+  name: Vaultwarden
+  category: security
+  description: Server pentru manager de parole Bitwarden, găzduit de tine.
+  popularity: 1400
+  platforms: [linux, windows, macos]
+  tags: [parole, server, auto-gazduire]
+  alternatives: [bitwarden, keepassxc]
+  file_formats: [json]
+- id: gnome-keyring
+  developer: GNOME
+  first_release_year: 2002
+  name: GNOME Keyring
+  category: security
+  description: Depozit de secrete al desktopului GNOME, integrat cu sistemul.
+  popularity: 1400
+  platforms: [linux]
+  tags: [parole, chei, desktop]
+  alternatives: [keepassxc, kwallet]
+  file_formats: []
+- id: kwallet
+  developer: KDE
+  package: kwalletmanager
+  first_release_year: 2007
+  wikidata_qid: Q39150115
+  name: KWallet
+  category: security
+  description: Manager de parole și chei al desktopului KDE.
+  popularity: 1400
+  platforms: [linux]
+  tags: [parole, chei, desktop]
+  alternatives: [keepassxc, gnome-keyring]
+  file_formats: []
+
+# --- video (era 6) ----------------------------------------------------------
+- id: olive
+  developer: Olive Video Editor
+  first_release_year: 2012
+  wikidata_qid: Q65218115
+  name: Olive
+  category: video
+  description: Editor video nelinear, în dezvoltare activă.
+  popularity: 1400
+  platforms: [linux, windows, macos]
+  tags: [montaj video, editare, ne-linear]
+  alternatives: [kdenlive, shotcut]
+  file_formats: [mp4, mov, mkv]
+- id: flowblade
+  first_release_year: 2018
+  name: Flowblade
+  category: video
+  description: Editor video nelinear pentru Linux, cu interfață simplă.
+  popularity: 1600
+  platforms: [linux]
+  tags: [montaj video, editare]
+  alternatives: [openshot, kdenlive]
+  file_formats: [mp4, mkv, avi]
+- id: pitivi
+  developer: Pitivi
+  website: https://www.pitivi.org/
+  name: Pitivi
+  category: video
+  description: Editor video nelinear bazat pe Python, cu efecte.
+  popularity: 1400
+  platforms: [linux]
+  tags: [montaj video, editare, python]
+  alternatives: [openshot, flowblade]
+  file_formats: [mp4, mkv, avi]
+- id: handbrake
+  developer: HandBrake Team
+  name: HandBrake
+  category: video
+  description: Transcodor video pentru conversie între formate.
+  popularity: 1200
+  platforms: [linux, windows, macos]
+  tags: [transcodare, conversie, video]
+  alternatives: [avidemux, shotcut]
+  file_formats: [mp4, mkv, webm]
+
+# --- 3D & CAD (era 7) --------------------------------------------------------
+- id: brl-cad
+  name: BRL-CAD
+  category: 3d-cad
+  description: Modelator 3D pentru proiectare și simulare.
+  popularity: 1600
+  platforms: [linux, windows, macos]
+  tags: [3d, cad, modelare]
+  alternatives: [freecad, openscad]
+  file_formats: [stl, obj, dxf]
+- id: solvespace
+  website: https://solvespace.com/
+  name: SolveSpace
+  category: 3d-cad
+  description: Modelator 3D parametric, cu restricții geometrice.
+  popularity: 1400
+  platforms: [linux, windows, macos]
+  tags: [3d, cad, parametric]
+  alternatives: [openscad, librecad]
+  file_formats: [stl, obj, dxf]
+- id: qcad
+  developer: QCAD
+  name: QCAD
+  category: 3d-cad
+  description: Editor de desene tehnice 2D, cu librărie de piese.
+  popularity: 1600
+  platforms: [linux, windows, macos]
+  tags: [cad, 2d, desen tehnic]
+  alternatives: [librecad, solvespace]
+  file_formats: [dxf, svg]
+
+# --- comunicare (era 8) ------------------------------------------------------
+- id: slack
+  wikidata_qid: Q17130715
+  name: Slack
+  category: communication
+  description: Platformă de lucru în echipă, cu canale și integrare.
+  popularity: 450
+  price: paid
+  platforms: [linux, windows, macos, android, web]
+  tags: [echipa, mesagerie, colaborare]
+  alternatives: [discord, mattermost]
+  file_formats: []
+- id: mattermost
+  developer: Mattermost
+  name: Mattermost
+  category: communication
+  description: Platformă de mesagerie pentru echipe, găzduită de tine.
+  popularity: 1200
+  platforms: [linux, windows, macos, android, web]
+  tags: [echipa, mesagerie, auto-gazduire]
+  alternatives: [slack, rocket-chat]
+  file_formats: []
+- id: rocket-chat
+  developer: Rocket.Chat
+  first_release_year: 2013
+  name: Rocket.Chat
+  category: communication
+  description: Platformă de mesagerie și colaborare, auto-găzduită.
+  popularity: 1400
+  platforms: [linux, windows, macos, android, web]
+  tags: [mesagerie, echipa, auto-gazduire]
+  alternatives: [mattermost, slack]
+  file_formats: []
+- id: mumble
+  name: Mumble
+  category: communication
+  description: VoIP cu latență mică, pentru jocuri și discuții.
+  popularity: 1200
+  platforms: [linux, windows, macos, android]
+  tags: [voip, jocuri, audio]
+  alternatives: [discord, jitsi-meet]
+  file_formats: []
+- id: hexchat
+  wikidata_qid: Q17117379
+  name: HexChat
+  category: communication
+  description: Client de chat IRC, cu suport pentru plug-in-uri.
+  popularity: 1600
+  platforms: [linux, windows, macos]
+  tags: [irc, chat, text]
+  alternatives: [pidgin, telegram]
+  file_formats: []
+- id: pidgin
+  wikidata_qid: Q71380
+  name: Pidgin
+  category: communication
+  description: Client de chat pentru mai multe rețele, într-o singură fereastră.
+  popularity: 1400
+  platforms: [linux, windows]
+  tags: [chat, mesagerie, instant messaging]
+  alternatives: [hexchat, telegram]
+  file_formats: []
+
+# --- notițe (era 8) ----------------------------------------------------------
+- id: zettlr
+  first_release_year: 2017
+  name: Zettlr
+  category: notes
+  description: Editor de text academic, cu citări și note de subsol.
+  popularity: 1200
+  platforms: [linux, windows, macos]
+  tags: [markdown, academic, scriere]
+  alternatives: [marktext, obsidian]
+  file_formats: [md, odt, docx]
+- id: marktext
+  developer: MarkText
+  first_release_year: 2015
+  website: https://github.com/marktext/marktext
+  name: MarkText
+  category: notes
+  description: Editor Markdown cu previzualizare în timp real.
+  popularity: 1200
+  platforms: [linux, windows, macos]
+  tags: [markdown, editare, scriere]
+  alternatives: [zettlr, obsidian]
+  file_formats: [md, html, pdf]
+- id: zotero
+  name: Zotero
+  category: notes
+  description: Manager de referințe cu biblioteci și stiluri citare.
+  popularity: 1200
+  platforms: [linux, windows, macos]
+  tags: [bibliografie, academic, citari]
+  alternatives: [zettlr, joplin]
+  file_formats: [bib, ris, pdf]
+- id: anytype
+  developer: Anytype
+  first_release_year: 2021
+  name: Anytype
+  category: notes
+  description: Spațiu de lucru local-first, cu blocuri și baze de date.
+  popularity: 1200
+  platforms: [linux, windows, macos, android]
+  tags: [notite, baza de date, local-first]
+  alternatives: [notion, obsidian]
+  file_formats: []
+
+# --- internet (era 10) -------------------------------------------------------
+- id: gnome-web
+  wikidata_qid: Q167784
+  name: GNOME Web (Epiphany)
+  category: internet
+  description: Browser web ușor, cu integrare în desktopul GNOME.
+  popularity: 1200
+  platforms: [linux]
+  tags: [browser, web, gnome]
+  alternatives: [firefox, chromium]
+  file_formats: []
+- id: konqueror
+  name: Konqueror
+  category: internet
+  description: Browser și manager de fișiere al desktopului KDE.
+  popularity: 1400
+  platforms: [linux]
+  tags: [browser, web, kde]
+  alternatives: [firefox, falkon]
+  file_formats: []
+- id: falkon
+  wikidata_qid: Q404293
+  name: Falkon
+  category: internet
+  description: Browser web ușor, bazat pe QtWebEngine.
+  popularity: 1400
+  platforms: [linux]
+  tags: [browser, web, qt]
+  alternatives: [konqueror, chromium]
+  file_formats: []
+- id: lynx
+  wikidata_qid: Q207872
+  name: Lynx
+  category: internet
+  description: Browser text pentru terminal, fără interfață grafică.
+  popularity: 1600
+  platforms: [linux]
+  tags: [browser, terminal, text]
+  alternatives: [netsurf, gnome-web]
+  file_formats: []
+- id: netsurf
+  repo: https://github.com/netsurf/netsurf
+  developer: NetSurf
+  package: netsurf-gtk
+  first_release_year: 1994
+  wikidata_qid: Q1185648
+  name: NetSurf
+  category: internet
+  description: Browser web ușor, cu consum redus de resurse.
+  popularity: 1600
+  platforms: [linux]
+  tags: [browser, web, usor]
+  alternatives: [lynx, gnome-web]
+  file_formats: []
+
+# --- dezvoltare (era 10) ------------------------------------------------------
+- id: vim
+  name: Vim
+  category: development
+  description: Editor de text în terminal, cu modă de comandă.
+  popularity: 200
+  platforms: [linux, windows, macos]
+  tags: [editor de text, terminal, productivitate]
+  alternatives: [neovim, geany]
+  file_formats: []
+- id: emacs
+  name: GNU Emacs
+  category: development
+  description: Editor de text extensibil, cu un ecosistem de pachete.
+  popularity: 700
+  platforms: [linux, windows, macos]
+  tags: [editor de text, extensibil, lisp]
+  alternatives: [vim, kate]
+  file_formats: []
+- id: bluefish
+  developer: The Bluefish Project
+  first_release_year: 2003
+  name: Bluefish
+  category: development
+  description: Editor de cod pentru web, cu ajutoare pentru HTML și CSS.
+  popularity: 1600
+  platforms: [linux, windows, macos]
+  tags: [editor de cod, web, html]
+  alternatives: [geany, kate]
+  file_formats: []
+- id: qtcreator
+  first_release_year: 2009
+  wikidata_qid: Q2121795
+  name: Qt Creator
+  category: development
+  description: Mediu de dezvoltare integrat pentru Qt și C++.
+  popularity: 1400
+  platforms: [linux, windows, macos]
+  tags: [ide, c++, qt]
+  alternatives: [eclipse-ide, intellij-idea]
+  file_formats: []
+- id: arduino-ide
+  developer: Arduino
+  package: arduino
+  first_release_year: 2010
+  wikidata_qid: Q55080330
+  name: Arduino IDE
+  category: development
+  description: Mediu de dezvoltare pentru plăcile Arduino.
+  popularity: 1200
+  platforms: [linux, windows, macos]
+  tags: [ide, electronica, embedded]
+  alternatives: [qtcreator, geany]
+  file_formats: []
+
+# --- grafică (era 11) ---------------------------------------------------------
+- id: rawtherapee
+  developer: RawTherapee
+  first_release_year: 2010
+  name: RawTherapee
+  category: graphics
+  description: Dezvoltator de imagini RAW, cu procesare non-distructivă.
+  popularity: 950
+  platforms: [linux, windows, macos]
+  tags: [foto, raw, editare]
+  alternatives: [darktable, gimp]
+  file_formats: [raw, tiff, jpeg]
+- id: synfig
+  developer: Synfig
+  wikidata_qid: Q599608
+  name: Synfig Studio
+  category: graphics
+  description: Animație 2D cu grafică vectorială și temporală.
+  popularity: 1400
+  platforms: [linux, windows, macos]
+  tags: [animatie, 2d, vectorial]
+  alternatives: [inkscape, krita]
+  file_formats: [sif, svg, mp4]
+- id: gwenview
+  developer: KDE
+  first_release_year: 2002
+  name: Gwenview
+  category: graphics
+  description: Vizualizator de imagini al desktopului KDE.
+  popularity: 1400
+  platforms: [linux]
+  tags: [vizualizator, foto, kde]
+  alternatives: [shotwell, gimp]
+  file_formats: [jpg, png, tiff]
+- id: shotwell
+  name: Shotwell
+  category: graphics
+  description: Organizator de fotografii cu etichetare și cronologie.
+  popularity: 1400
+  platforms: [linux]
+  tags: [foto, galerie, catalog]
+  alternatives: [gwenview, darktable]
+  file_formats: [jpg, png, raw]
+- id: mypaint
+  developer: Myrbrush
+  website: https://github.com/mypaint/mypaint
+  name: MyPaint
+  category: graphics
+  description: Program de pictură cu pensule, pentru desen digital.
+  popularity: 1600
+  platforms: [linux, windows]
+  tags: [pictura, desene, pensule]
+  alternatives: [pinta, gimp]
+  file_formats: [png, jpeg, bmp]
+
+# --- utilitare (era 12) -------------------------------------------------------
+- id: alacritty
+  wikidata_qid: Q94997987
+  name: Alacritty
+  category: utilities
+  description: Emulator de terminal rapid, bazat pe OpenGL.
+  popularity: 1200
+  platforms: [linux, macos]
+  tags: [terminal, emulatoare, rapid]
+  alternatives: [konsole, xterm]
+  file_formats: []
+- id: konsole
+  developer: KDE
+  first_release_year: 1997
+  wikidata_qid: Q257793
+  name: Konsole
+  category: utilities
+  description: Emulator de terminal al desktopului KDE.
+  popularity: 1200
+  platforms: [linux]
+  tags: [terminal, kde, emulatoare]
+  alternatives: [alacritty, xterm]
+  file_formats: []
+- id: xterm
+  first_release_year: 1984
+  wikidata_qid: Q284297
+  name: XTerm
+  category: utilities
+  description: Emulator de terminal clasic din X Window System.
+  popularity: 1600
+  platforms: [linux]
+  tags: [terminal, x11, clasic]
+  alternatives: [konsole, alacritty]
+  file_formats: []
+- id: baobab
+  first_release_year: 2003
+  wikidata_qid: Q1792893
+  name: Disk Usage Analyzer (Baobab)
+  category: utilities
+  description: Analyzer grafic al spațiului ocupat pe disc.
+  popularity: 1400
+  platforms: [linux]
+  tags: [disc, spatiu, analiza]
+  alternatives: [filelight, ncdu]
+  file_formats: []
+- id: filelight
+  developer: KDE
+  first_release_year: 2004
+  name: Filelight
+  category: utilities
+  description: Analyzer al spațiului ocupat pe disc, din desktopul KDE.
+  popularity: 1600
+  platforms: [linux]
+  tags: [disc, spatiu, kde]
+  alternatives: [baobab, ncdu]
+  file_formats: []
+- id: ncdu
+  developer: Ncdu Project
+  first_release_year: 2001
+  wikidata_qid: Q19598118
+  name: ncdu
+  category: utilities
+  description: Analyzer al spațiului pe disc, în terminal.
+  popularity: 1600
+  platforms: [linux]
+  tags: [disc, spatiu, terminal]
+  alternatives: [baobab, filelight]
+  file_formats: []
+- id: dbeaver
+  developer: DBeaver
+  name: DBeaver
+  category: utilities
+  description: Client de baze de date pentru SQL, cu suport multi-motor.
+  popularity: 1200
+  platforms: [linux, windows, macos]
+  tags: [baze de date, sql, client]
+  alternatives: [beekeeper-studio, sqlitebrowser]
+  file_formats: []
+- id: beekeeper-studio
+  developer: BeeKeeper Studio
+  first_release_year: 2020
+  name: Beekeeper Studio
+  category: utilities
+  description: Client de baze de date SQL, rapid și modern.
+  popularity: 1400
+  platforms: [linux, windows, macos]
+  tags: [baze de date, sql, client]
+  alternatives: [dbeaver, sqlitebrowser]
+  file_formats: []
+- id: sqlitebrowser
+  developer: SQLiteStudio
+  first_release_year: 2006
+  website: https://sqlitestudio.org/
+  wikidata_qid: Q114282317
+  name: SQLiteStudio
+  category: utilities
+  description: Client pentru baze de date SQLite.
+  popularity: 1600
+  platforms: [linux, windows, macos]
+  tags: [baze de date, sqlite, client]
+  alternatives: [dbeaver, beekeeper-studio]
+  file_formats: []
+- id: balena-etcher
+  developer: Balena
+  first_release_year: 2016
+  wikidata_qid: Q30068972
+  name: balenaEtcher
+  category: utilities
+  description: Scrie imagini pe carduri SD și USB-uri.
+  popularity: 1200
+  platforms: [linux, windows, macos]
+  tags: [usb, card sd, imagine]
+  alternatives: [ventoy, gparted]
+  file_formats: [img, iso]
+- id: dconf-editor
+  developer: GNOME
+  website: https://gitlab.gnome.org/GNOME/dconf-editor
+  first_release_year: 2011
+  wikidata_qid: Q47426502
+  name: dconf Editor
+  category: utilities
+  description: Editor grafic pentru setările GNOME.
+  popularity: 1600
+  platforms: [linux]
+  tags: [setari, gnome, configurare]
+  alternatives: [stacer, kwallet]
+  file_formats: []
+- id: ark
+  developer: KDE
+  website: https://invent.kde.org/utilities/ark
+  wikidata_qid: Q671759
+  name: Ark
+  category: utilities
+  description: Manager de arhive al desktopului KDE.
+  popularity: 1400
+  platforms: [linux]
+  tags: [arhive, comprimat, kde]
+  alternatives: [file-roller, peazip]
+  file_formats: [zip, tar, 7z]
+- id: file-roller
+  website: https://fileroller.sourceforge.net/
+  first_release_year: 2001
+  wikidata_qid: Q1143010
+  name: File Roller
+  category: utilities
+  description: Manager de arhive al desktopului GNOME.
+  popularity: 1400
+  platforms: [linux]
+  tags: [arhive, comprimat, gnome]
+  alternatives: [ark, peazip]
+  file_formats: [zip, tar, 7z]

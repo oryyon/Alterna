@@ -1,6 +1,6 @@
 # ONLYOFFICE — compatibilitate excelentă cu formatele MS Office
 id: onlyoffice
-popularity: 540
+popularity: 570
 name: ONLYOFFICE
 description: Suită de birou cu compatibilitate excelentă cu formatele DOCX/XLSX.
 category: office
@@ -24,7 +24,7 @@ details:
 
 indicators:
   popcon_rank:
-  stars: 5743
+  stars: 5744
   stars_url: https://github.com/ONLYOFFICE/DesktopEditors
   latest_release: "2026-10"
   in_ubuntu_repos: false

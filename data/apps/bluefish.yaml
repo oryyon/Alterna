@@ -1,0 +1,39 @@
+# Bluefish — Editor de cod pentru web, cu ajutoare pentru HTML și CSS.
+id: bluefish
+popularity: 1500
+name: Bluefish
+description: Editor de cod pentru web, cu ajutoare pentru HTML și CSS.
+category: development
+license: foss
+price: free
+developer: The Bluefish Project
+website: https://bluefish.openoffice.nl
+platforms:
+- linux
+- windows
+- macos
+tags:
+- editor de cod
+- web
+- html
+alternatives:
+- geany
+- kate
+details:
+  install_size_mb: 357
+  first_release_year: 2003
+  file_formats: []
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url: https://sf.net/p/bluefish/code/
+  latest_release:
+  in_ubuntu_repos: true
+sources:
+- https://bluefish.openoffice.nl
+- https://sf.net/p/bluefish/code/
+- https://www.wikidata.org/wiki/Q651027
+confidence:
+  details.install_size_mb: auto

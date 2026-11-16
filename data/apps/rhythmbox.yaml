@@ -1,0 +1,41 @@
+# Rhythmbox — Player de muzică și radio, cu sincronizare pe dispozitive.
+id: rhythmbox
+popularity: 1220
+name: Rhythmbox
+description: Player de muzică și radio, cu sincronizare pe dispozitive.
+category: audio-players
+license: foss
+price: free
+developer: GNOME
+website: https://wiki.gnome.org/Apps/Rhythmbox
+platforms:
+- linux
+tags:
+- player audio
+- radio
+- biblioteca
+alternatives:
+- clementine
+- strawberry
+details:
+  install_size_mb: 324
+  first_release_year: 2001
+  file_formats:
+  - mp3
+  - flac
+  - ogg
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url: https://gitlab.gnome.org/GNOME/rhythmbox
+  latest_release:
+  in_ubuntu_repos: true
+sources:
+- https://wiki.gnome.org/Apps/Rhythmbox
+- https://gitlab.gnome.org/GNOME/rhythmbox
+- https://www.wikidata.org/wiki/Q319897
+confidence:
+  details.first_release_year: auto
+  details.install_size_mb: auto

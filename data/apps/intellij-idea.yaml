@@ -1,6 +1,6 @@
 # IntelliJ IDEA — IDE Java/Kotlin (Community = FOSS, Ultimate = comercial)
 id: intellij-idea
-popularity: 420
+popularity: 430
 name: IntelliJ IDEA
 description: IDE Java/Kotlin cu ediții Community (open source) și Ultimate (comercială).
 category: development
@@ -23,7 +23,7 @@ details:
 
 indicators:
   popcon_rank:
-  stars: 20735
+  stars: 20737
   stars_url: https://github.com/JetBrains/intellij-community
   latest_release: "2026-11"
   in_ubuntu_repos: false

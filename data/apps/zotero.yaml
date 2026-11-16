@@ -1,0 +1,43 @@
+# Zotero — Manager de referințe cu biblioteci și stiluri citare.
+id: zotero
+popularity: 1240
+name: Zotero
+description: Manager de referințe cu biblioteci și stiluri citare.
+category: notes
+license: foss
+price: free
+developer: Roy Rosenzweig Center for History and New Media
+website: https://www.zotero.org/
+platforms:
+- linux
+- windows
+- macos
+tags:
+- bibliografie
+- academic
+- citari
+alternatives:
+- zettlr
+- joplin
+details:
+  install_size_mb: 0
+  first_release_year: 2006
+  file_formats:
+  - bib
+  - ris
+  - pdf
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars: 15965
+  stars_url: https://github.com/zotero/zotero
+  latest_release: 2026-11
+  in_ubuntu_repos: false
+sources:
+- https://www.zotero.org/
+- https://github.com/zotero/zotero
+- https://www.wikidata.org/wiki/Q226915
+confidence:
+  details.first_release_year: auto
+logo: logos/zotero.svg

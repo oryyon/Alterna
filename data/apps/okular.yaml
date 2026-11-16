@@ -1,0 +1,39 @@
+# Okular — Cititor de PDF cu adnotări și suport pentru formulare.
+id: okular
+popularity: 1210
+name: Okular
+description: Cititor de PDF cu adnotări și suport pentru formulare.
+category: office
+license: foss
+price: free
+developer: Albert Astals Cid
+website: https://okular.kde.org
+snap: okular
+platforms:
+- linux
+tags:
+- pdf
+- cititor
+- documente
+alternatives:
+- xournalpp
+- scribus
+details:
+  install_size_mb: 668
+  first_release_year: 2007
+  file_formats:
+  - pdf
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url: https://invent.kde.org/graphics/okular
+  latest_release:
+  in_ubuntu_repos: true
+sources:
+- https://okular.kde.org
+- https://invent.kde.org/graphics/okular
+- https://www.wikidata.org/wiki/Q1165933
+confidence:
+  details.install_size_mb: auto

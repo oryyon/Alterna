@@ -1,0 +1,39 @@
+# Qt Creator — Mediu de dezvoltare integrat pentru Qt și C++.
+id: qtcreator
+popularity: 1430
+name: Qt Creator
+description: Mediu de dezvoltare integrat pentru Qt și C++.
+category: development
+license: foss
+price: free
+developer: Qt Group Plc
+website: https://www.qt.io/product/development-tools
+platforms:
+- linux
+- windows
+- macos
+tags:
+- ide
+- c++
+- qt
+alternatives:
+- eclipse-ide
+- intellij-idea
+details:
+  install_size_mb: 710
+  first_release_year: 2009
+  file_formats: []
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url: https://github.com/qt-creator/qt-creator.git
+  latest_release:
+  in_ubuntu_repos: true
+sources:
+- https://www.qt.io/product/development-tools
+- https://github.com/qt-creator/qt-creator.git
+- https://www.wikidata.org/wiki/Q2121795
+confidence:
+  details.install_size_mb: auto

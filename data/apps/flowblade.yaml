@@ -1,0 +1,40 @@
+# Flowblade — Editor video nelinear pentru Linux, cu interfață simplă.
+id: flowblade
+popularity: 1540
+name: Flowblade
+description: Editor video nelinear pentru Linux, cu interfață simplă.
+category: video
+license: foss
+price: free
+developer: Janne Liljeblad
+website: https://jliljebl.github.io/flowblade/
+platforms:
+- linux
+tags:
+- montaj video
+- editare
+alternatives:
+- openshot
+- kdenlive
+details:
+  install_size_mb: 1067
+  first_release_year: 2018
+  file_formats:
+  - mp4
+  - mkv
+  - avi
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars: 3109
+  stars_url: https://github.com/jliljebl/flowblade
+  latest_release: 2026-05
+  in_ubuntu_repos: true
+sources:
+- https://jliljebl.github.io/flowblade/
+- https://github.com/jliljebl/flowblade
+- https://www.wikidata.org/wiki/Q28923878
+confidence:
+  license: auto
+  details.install_size_mb: auto

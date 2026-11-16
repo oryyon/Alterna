@@ -1,0 +1,38 @@
+# Konsole — Emulator de terminal al desktopului KDE.
+id: konsole
+popularity: 1170
+name: Konsole
+description: Emulator de terminal al desktopului KDE.
+category: utilities
+license: foss
+price: free
+developer: KDE
+website: https://konsole.kde.org/
+snap: konsole
+platforms:
+- linux
+tags:
+- terminal
+- kde
+- emulatoare
+alternatives:
+- alacritty
+- xterm
+details:
+  install_size_mb: 504
+  first_release_year: 1997
+  file_formats: []
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url: https://anongit.kde.org/konsole.git
+  latest_release:
+  in_ubuntu_repos: true
+sources:
+- https://konsole.kde.org/
+- https://anongit.kde.org/konsole.git
+- https://www.wikidata.org/wiki/Q257793
+confidence:
+  details.install_size_mb: auto

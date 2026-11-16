@@ -1,0 +1,37 @@
+# XTerm — Emulator de terminal clasic din X Window System.
+id: xterm
+popularity: 1680
+name: XTerm
+description: Emulator de terminal clasic din X Window System.
+category: utilities
+license: foss
+price: free
+developer: Thomas E. Dickey
+website: https://invisible-island.net/xterm/
+platforms:
+- linux
+tags:
+- terminal
+- x11
+- clasic
+alternatives:
+- konsole
+- alacritty
+details:
+  install_size_mb: 120
+  first_release_year: 1984
+  file_formats: []
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url: https://invisible-mirror.net/archives/xterm/
+  latest_release:
+  in_ubuntu_repos: true
+sources:
+- https://invisible-island.net/xterm/
+- https://invisible-mirror.net/archives/xterm/
+- https://www.wikidata.org/wiki/Q284297
+confidence:
+  details.install_size_mb: auto

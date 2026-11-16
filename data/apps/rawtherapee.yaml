@@ -1,0 +1,42 @@
+# RawTherapee — Dezvoltator de imagini RAW, cu procesare non-distructivă.
+id: rawtherapee
+popularity: 1010
+name: RawTherapee
+description: Dezvoltator de imagini RAW, cu procesare non-distructivă.
+category: graphics
+license: foss
+price: free
+developer: RawTherapee
+website: https://www.rawtherapee.com/
+platforms:
+- linux
+- windows
+- macos
+tags:
+- foto
+- raw
+- editare
+alternatives:
+- darktable
+- gimp
+details:
+  install_size_mb: 367
+  first_release_year: 2010
+  file_formats:
+  - raw
+  - tiff
+  - jpeg
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars: 4298
+  stars_url: https://github.com/RawTherapee/RawTherapee
+  latest_release: 2026-07
+  in_ubuntu_repos: true
+sources:
+- https://www.rawtherapee.com/
+- https://github.com/RawTherapee/RawTherapee
+- https://www.wikidata.org/wiki/Q568370
+confidence:
+  details.install_size_mb: auto

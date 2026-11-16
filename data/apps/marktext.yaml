@@ -1,0 +1,39 @@
+# MarkText — Editor Markdown cu previzualizare în timp real.
+id: marktext
+popularity: 1180
+name: MarkText
+description: Editor Markdown cu previzualizare în timp real.
+category: notes
+license: foss
+price: free
+developer: MarkText
+website: https://github.com/marktext/marktext
+snap: marktext
+platforms:
+- linux
+- windows
+- macos
+tags:
+- markdown
+- editare
+- scriere
+alternatives:
+- zettlr
+- obsidian
+details:
+  install_size_mb: 0
+  first_release_year: 2015
+  file_formats:
+  - md
+  - html
+  - pdf
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://github.com/marktext/marktext

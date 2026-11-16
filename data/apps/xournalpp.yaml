@@ -1,6 +1,6 @@
 # Xournal++ — notițe de mână și adnotare PDF
 id: xournalpp
-popularity: 900
+popularity: 940
 name: Xournal++
 description: Notițe de mână și adnotare PDF, cu suport pentru tabletă grafică.
 category: notes
@@ -23,7 +23,7 @@ details:
 
 indicators:
   popcon_rank: 8465
-  stars: 15683
+  stars: 15684
   stars_url: https://github.com/xournalpp/xournalpp
   latest_release: "2026-11"
   in_ubuntu_repos: true

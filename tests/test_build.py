@@ -31,7 +31,7 @@ class TestBuildReal:
         tax = con.execute("SELECT COUNT(*) FROM taxonomy").fetchone()[0]
         meta = dict(con.execute("SELECT key, value FROM metadata"))
         con.close()
-        assert apps == 100 and int(meta["app_count"]) == 100
+        assert apps >= 100 and int(meta["app_count"]) == apps
         assert cats == 13
         assert tax == 18  # taxonomia Securitate (sec. 15)
         assert meta["schema_version"] == "3"

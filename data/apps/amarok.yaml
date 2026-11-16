@@ -1,0 +1,40 @@
+# Amarok — Player de muzică cu bibliotecă mare și integrare web.
+id: amarok
+popularity: 1260
+name: Amarok
+description: Player de muzică cu bibliotecă mare și integrare web.
+category: audio-players
+license: foss
+price: free
+developer: KDE
+website: https://amarok.kde.org/
+platforms:
+- linux
+tags:
+- player audio
+- muzica
+- biblioteca
+alternatives:
+- clementine
+- strawberry
+details:
+  install_size_mb: 0
+  first_release_year: 2003
+  file_formats:
+  - mp3
+  - flac
+  - ogg
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars: 216
+  stars_url: https://github.com/KDE/amarok
+  latest_release: 2026-06
+  in_ubuntu_repos: false
+sources:
+- https://amarok.kde.org/
+- https://github.com/KDE/amarok
+- https://www.wikidata.org/wiki/Q185037
+confidence:
+  details.first_release_year: auto

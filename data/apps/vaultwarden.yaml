@@ -1,0 +1,38 @@
+# Vaultwarden — Server pentru manager de parole Bitwarden, găzduit de tine.
+id: vaultwarden
+popularity: 1490
+name: Vaultwarden
+description: Server pentru manager de parole Bitwarden, găzduit de tine.
+category: security
+license: foss
+price: free
+developer: Vaultwarden
+website: https://github.com/dani-garcia/vaultwarden
+snap: vaultwarden
+platforms:
+- linux
+- windows
+- macos
+tags:
+- parole
+- server
+- auto-gazduire
+alternatives:
+- bitwarden
+- keepassxc
+details:
+  install_size_mb: 0
+  first_release_year: 2021
+  file_formats:
+  - json
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://github.com/dani-garcia/vaultwarden
+logo: logos/vaultwarden.svg

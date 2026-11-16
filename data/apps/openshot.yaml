@@ -1,6 +1,6 @@
 # OpenShot — editare video pentru începători
 id: openshot
-popularity: 590
+popularity: 620
 name: OpenShot
 description: Editor video simplu, orientat spre începători.
 category: video
@@ -23,7 +23,7 @@ details:
 
 indicators:
   popcon_rank: 10323
-  stars: 6795
+  stars: 6797
   stars_url: https://github.com/OpenShot/openshot-qt
   latest_release: "2026-11"
   in_ubuntu_repos: true

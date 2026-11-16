@@ -1,0 +1,44 @@
+# Kid3 — Editor de etichete pentru fișiere audio.
+id: kid3
+popularity: 1560
+name: Kid3
+description: Editor de etichete pentru fișiere audio.
+category: audio-players
+license: foss
+price: free
+developer: KDE
+website: https://kid3.kde.org/
+snap: kid3
+platforms:
+- linux
+- windows
+- macos
+tags:
+- etichete
+- metadata
+- audio
+alternatives:
+- clementine
+- audacity
+details:
+  install_size_mb: 586
+  first_release_year: 2003
+  file_formats:
+  - mp3
+  - flac
+  - ogg
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url: https://invent.kde.org/kde/kid3.git
+  latest_release:
+  in_ubuntu_repos: true
+sources:
+- https://kid3.kde.org/
+- https://invent.kde.org/kde/kid3.git
+- https://www.wikidata.org/wiki/Q15557540
+confidence:
+  details.first_release_year: auto
+  details.install_size_mb: auto

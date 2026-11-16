@@ -1,0 +1,38 @@
+# Konqueror — Browser și manager de fișiere al desktopului KDE.
+id: konqueror
+popularity: 1350
+name: Konqueror
+description: Browser și manager de fișiere al desktopului KDE.
+category: internet
+license: foss
+price: free
+developer: KDE
+website: https://apps.kde.org/konqueror/
+snap: konqueror
+platforms:
+- linux
+tags:
+- browser
+- web
+- kde
+alternatives:
+- firefox
+- falkon
+details:
+  install_size_mb: 795
+  first_release_year: 1996
+  file_formats: []
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release:
+  in_ubuntu_repos: true
+sources:
+- https://apps.kde.org/konqueror/
+- https://www.wikidata.org/wiki/Q178565
+confidence:
+  details.first_release_year: auto
+  details.install_size_mb: auto

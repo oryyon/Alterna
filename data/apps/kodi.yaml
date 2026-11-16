@@ -1,0 +1,45 @@
+# Kodi — Centru multimedia pentru TV, filme și seriale.
+id: kodi
+popularity: 460
+name: Kodi
+description: Centru multimedia pentru TV, filme și seriale.
+category: streaming
+license: foss
+price: free
+developer: Kodi Foundation
+website: https://kodi.tv/
+platforms:
+- linux
+- windows
+- macos
+- android
+tags:
+- media center
+- video
+- tv
+alternatives:
+- vlc
+- mpv
+details:
+  install_size_mb: 648
+  first_release_year: 2002
+  file_formats:
+  - mkv
+  - mp4
+  - avi
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars: 21498
+  stars_url: https://github.com/xbmc/xbmc
+  latest_release: 2026-11
+  in_ubuntu_repos: true
+sources:
+- https://kodi.tv/
+- https://github.com/xbmc/xbmc
+- https://www.wikidata.org/wiki/Q919760
+confidence:
+  details.first_release_year: auto
+  details.install_size_mb: auto
+logo: logos/kodi.svg

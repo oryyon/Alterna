@@ -1,0 +1,37 @@
+# dconf Editor — Editor grafic pentru setările GNOME.
+id: dconf-editor
+popularity: 1520
+name: dconf Editor
+description: Editor grafic pentru setările GNOME.
+category: utilities
+license: foss
+price: free
+developer: GNOME
+website: https://gitlab.gnome.org/GNOME/dconf-editor
+platforms:
+- linux
+tags:
+- setari
+- gnome
+- configurare
+alternatives:
+- stacer
+- kwallet
+details:
+  install_size_mb: 232
+  first_release_year: 2011
+  file_formats: []
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url: https://git.gnome.org/browse/dconf-editor
+  latest_release:
+  in_ubuntu_repos: true
+sources:
+- https://gitlab.gnome.org/GNOME/dconf-editor
+- https://git.gnome.org/browse/dconf-editor
+- https://www.wikidata.org/wiki/Q47426502
+confidence:
+  details.install_size_mb: auto

@@ -1,6 +1,6 @@
 # CherryTree — notițe ierarhice în arbore, stocate local
 id: cherrytree
-popularity: 890
+popularity: 930
 name: CherryTree
 description: Notițe ierarhice în arbore, stocate local (SQLite sau XML).
 category: notes
@@ -23,7 +23,7 @@ details:
 
 indicators:
   popcon_rank: 20194
-  stars: 3998
+  stars: 3999
   stars_url: https://github.com/giuspen/cherrytree
   latest_release: "2026-11"
   in_ubuntu_repos: true

@@ -1,0 +1,39 @@
+# Pidgin — Client de chat pentru mai multe rețele, într-o singură fereastră.
+id: pidgin
+popularity: 1410
+name: Pidgin
+description: Client de chat pentru mai multe rețele, într-o singură fereastră.
+category: communication
+license: foss
+price: free
+developer: Mark Spencer
+website: https://pidgin.im
+platforms:
+- linux
+- windows
+tags:
+- chat
+- mesagerie
+- instant messaging
+alternatives:
+- hexchat
+- telegram
+details:
+  install_size_mb: 355
+  first_release_year: 1998
+  file_formats: []
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url: https://keep.imfreedom.org/pidgin/pidgin/
+  latest_release:
+  in_ubuntu_repos: true
+sources:
+- https://pidgin.im
+- https://keep.imfreedom.org/pidgin/pidgin/
+- https://www.wikidata.org/wiki/Q71380
+confidence:
+  details.first_release_year: auto
+  details.install_size_mb: auto

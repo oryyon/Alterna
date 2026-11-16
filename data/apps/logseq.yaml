@@ -1,6 +1,6 @@
 # Logseq — notițe outline interconectate, open source
 id: logseq
-popularity: 870
+popularity: 910
 name: Logseq
 description: Notițe outline interconectate peste fișiere markdown locale, open source.
 category: notes
@@ -23,7 +23,7 @@ details:
 
 indicators:
   popcon_rank:
-  stars: 45616
+  stars: 45617
   stars_url: https://github.com/logseq/logseq
   latest_release: "2026-10"
   in_ubuntu_repos: false

@@ -1,0 +1,40 @@
+# Olive — Editor video nelinear, în dezvoltare activă.
+id: olive
+popularity: 1400
+name: Olive
+description: Editor video nelinear, în dezvoltare activă.
+category: video
+license: foss
+price: free
+developer: Olive Video Editor
+website: https://www.olivevideoeditor.org/
+platforms:
+- linux
+- windows
+- macos
+tags:
+- montaj video
+- editare
+- ne-linear
+alternatives:
+- kdenlive
+- shotcut
+details:
+  install_size_mb: 0
+  first_release_year: 2012
+  file_formats:
+  - mp4
+  - mov
+  - mkv
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars: 9159
+  stars_url: https://github.com/olive-editor/olive
+  latest_release: 2024-12
+  in_ubuntu_repos: false
+sources:
+- https://www.olivevideoeditor.org/
+- https://github.com/olive-editor/olive
+- https://www.wikidata.org/wiki/Q65218115

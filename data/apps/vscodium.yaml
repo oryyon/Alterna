@@ -1,6 +1,6 @@
 # VSCodium — VS Code fără telemetrie, 100% open source
 id: vscodium
-popularity: 370
+popularity: 380
 name: VSCodium
 description: Build al VS Code fără telemetrie și 100% open source.
 category: development
@@ -22,7 +22,7 @@ details:
 
 indicators:
   popcon_rank:
-  stars: 34149
+  stars: 34153
   stars_url: https://github.com/VSCodium/vscodium
   latest_release: "2026-10"
   in_ubuntu_repos: false

@@ -1,0 +1,44 @@
+# SolveSpace — Modelator 3D parametric, cu restricții geometrice.
+id: solvespace
+popularity: 1470
+name: SolveSpace
+description: Modelator 3D parametric, cu restricții geometrice.
+category: 3d-cad
+license: foss
+price: free
+developer: Jonathan Westhues
+website: https://solvespace.com/
+snap: solvespace
+platforms:
+- linux
+- windows
+- macos
+tags:
+- 3d
+- cad
+- parametric
+alternatives:
+- openscad
+- librecad
+details:
+  install_size_mb: 309
+  first_release_year: 2008
+  file_formats:
+  - stl
+  - obj
+  - dxf
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars: 4251
+  stars_url: https://github.com/solvespace/solvespace
+  latest_release: 2026-10
+  in_ubuntu_repos: true
+sources:
+- https://solvespace.com/
+- https://github.com/solvespace/solvespace
+- https://www.wikidata.org/wiki/Q7559005
+confidence:
+  details.first_release_year: auto
+  details.install_size_mb: auto

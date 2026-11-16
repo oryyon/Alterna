@@ -1,6 +1,6 @@
 # Bitwarden — manager de parole cu cloud / self-hosted
 id: bitwarden
-popularity: 290
+popularity: 300
 name: Bitwarden
 description: Manager de parole cu sincronizare cloud; serverul poate fi auto-găzduit.
 category: security

@@ -1,0 +1,42 @@
+# TuxGuitar — Editor de tablaturi pentru chitară și bass.
+id: tuxguitar
+popularity: 1670
+name: TuxGuitar
+description: Editor de tablaturi pentru chitară și bass.
+category: audio-production
+license: foss
+price: free
+developer: TuxGuitar
+website: https://www.tuxguitar.app/
+platforms:
+- linux
+- windows
+- macos
+tags:
+- tablituri
+- chitara
+- notație
+alternatives:
+- musescore
+- lmms
+details:
+  install_size_mb: 737
+  first_release_year: 2006
+  file_formats:
+  - gp
+  - ptb
+  - pdf
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url: https://sourceforge.net/p/tuxguitar/code/HEAD/tree/
+  latest_release:
+  in_ubuntu_repos: true
+sources:
+- https://www.tuxguitar.app/
+- https://sourceforge.net/p/tuxguitar/code/HEAD/tree/
+- https://www.wikidata.org/wiki/Q2031313
+confidence:
+  details.install_size_mb: auto

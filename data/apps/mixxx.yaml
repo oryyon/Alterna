@@ -1,0 +1,43 @@
+# Mixxx — Software de mixare pentru DJ, cu control în timp real.
+id: mixxx
+popularity: 1380
+name: Mixxx
+description: Software de mixare pentru DJ, cu control în timp real.
+category: audio-production
+license: foss
+price: free
+developer: Mixxx Team
+website: https://www.mixxx.org/
+platforms:
+- linux
+- windows
+- macos
+tags:
+- dj
+- mixare
+- muzica
+alternatives:
+- lmms
+- rosegarden
+details:
+  install_size_mb: 506
+  first_release_year: 2001
+  file_formats:
+  - wav
+  - mp3
+  - ogg
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars: 7408
+  stars_url: https://github.com/mixxxdj/mixxx
+  latest_release: 2026-03
+  in_ubuntu_repos: true
+sources:
+- https://www.mixxx.org/
+- https://github.com/mixxxdj/mixxx
+- https://www.wikidata.org/wiki/Q1576579
+confidence:
+  details.first_release_year: auto
+  details.install_size_mb: auto

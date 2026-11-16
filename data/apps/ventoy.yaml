@@ -1,6 +1,6 @@
 # Ventoy — stick USB bootabil multiplu
 id: ventoy
-popularity: 990
+popularity: 1060
 name: Ventoy
 description: Stick USB bootabil multiplu — copiezi ISO-urile și alegi la pornire.
 category: utilities
@@ -22,7 +22,7 @@ details:
 
 indicators:
   popcon_rank:
-  stars: 80887
+  stars: 80920
   stars_url: https://github.com/ventoy/Ventoy
   latest_release: "2026-10"
   in_ubuntu_repos: false

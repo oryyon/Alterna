@@ -1,0 +1,38 @@
+# NetSurf — Browser web ușor, cu consum redus de resurse.
+id: netsurf
+popularity: 1600
+name: NetSurf
+description: Browser web ușor, cu consum redus de resurse.
+category: internet
+license: foss
+price: free
+developer: NetSurf
+website: https://www.netsurf-browser.org
+platforms:
+- linux
+package: netsurf-gtk
+tags:
+- browser
+- web
+- usor
+alternatives:
+- lynx
+- gnome-web
+details:
+  install_size_mb: 250
+  first_release_year: 1994
+  file_formats: []
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank: 22449
+  stars:
+  stars_url: https://github.com/netsurf/netsurf
+  latest_release:
+  in_ubuntu_repos: true
+sources:
+- https://www.netsurf-browser.org
+- https://github.com/netsurf/netsurf
+- https://www.wikidata.org/wiki/Q1185648
+confidence:
+  details.install_size_mb: auto

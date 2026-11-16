@@ -1,6 +1,6 @@
 # pass — manager de parole pentru terminal (GPG + Git)
 id: pass
-popularity: 710
+popularity: 750
 name: pass
 description: Manager de parole minimalist pentru terminal, bazat pe GPG și Git.
 category: security

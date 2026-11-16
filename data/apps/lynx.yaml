@@ -1,0 +1,38 @@
+# Lynx — Browser text pentru terminal, fără interfață grafică.
+id: lynx
+popularity: 1570
+name: Lynx
+description: Browser text pentru terminal, fără interfață grafică.
+category: internet
+license: foss
+price: free
+developer: Thomas E. Dickey
+website: https://lynx.invisible-island.net/
+platforms:
+- linux
+tags:
+- browser
+- terminal
+- text
+alternatives:
+- netsurf
+- gnome-web
+details:
+  install_size_mb: 21
+  first_release_year: 1992
+  file_formats: []
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url: https://invisible-island.net/archives/lynx/tarballs/
+  latest_release:
+  in_ubuntu_repos: true
+sources:
+- https://lynx.invisible-island.net/
+- https://invisible-island.net/archives/lynx/tarballs/
+- https://www.wikidata.org/wiki/Q207872
+confidence:
+  details.first_release_year: auto
+  details.install_size_mb: auto

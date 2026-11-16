@@ -1,0 +1,41 @@
+# GNU Emacs — Editor de text extensibil, cu un ecosistem de pachete.
+id: emacs
+popularity: 730
+name: GNU Emacs
+description: Editor de text extensibil, cu un ecosistem de pachete.
+category: development
+license: foss
+price: free
+developer: Proiectul GNU
+website: https://www.gnu.org/software/emacs/
+snap: emacs
+platforms:
+- linux
+- windows
+- macos
+tags:
+- editor de text
+- extensibil
+- lisp
+alternatives:
+- vim
+- kate
+details:
+  install_size_mb: 637
+  first_release_year: 1984
+  file_formats: []
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url: https://cgit.git.savannah.gnu.org/cgit/emacs.git
+  latest_release:
+  in_ubuntu_repos: true
+sources:
+- https://www.gnu.org/software/emacs/
+- https://cgit.git.savannah.gnu.org/cgit/emacs.git
+- https://www.wikidata.org/wiki/Q1252773
+confidence:
+  details.first_release_year: auto
+  details.install_size_mb: auto

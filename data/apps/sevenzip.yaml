@@ -1,6 +1,6 @@
 # 7-Zip — arhivatorul legendar cu formatul .7z
 id: sevenzip
-popularity: 320
+popularity: 330
 name: 7-Zip
 package: p7zip-full
 description: Arhivator legendar cu rata de compresie excelentă (formatul .7z).
@@ -23,7 +23,7 @@ details:
 
 indicators:
   popcon_rank: 1969
-  stars: 4527
+  stars: 4528
   stars_url: https://github.com/ip7z/7zip
   latest_release: "2026-11"
   in_ubuntu_repos: true

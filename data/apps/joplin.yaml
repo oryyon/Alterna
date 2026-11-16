@@ -1,6 +1,6 @@
 # Joplin — notițe markdown cu criptare
 id: joplin
-popularity: 250
+popularity: 260
 name: Joplin
 description: Notițe markdown cu criptare și sincronizare prin servicii la alegere.
 category: notes
@@ -25,7 +25,7 @@ details:
 
 indicators:
   popcon_rank:
-  stars: 57210
+  stars: 57215
   stars_url: https://github.com/laurent22/joplin
   latest_release: "2026-11"
   in_ubuntu_repos: false

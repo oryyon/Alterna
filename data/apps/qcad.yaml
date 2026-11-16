@@ -1,0 +1,41 @@
+# QCAD — Editor de desene tehnice 2D, cu librărie de piese.
+id: qcad
+popularity: 1630
+name: QCAD
+description: Editor de desene tehnice 2D, cu librărie de piese.
+category: 3d-cad
+license: foss
+price: free
+developer: QCAD
+website: https://www.qcad.org/fr/
+platforms:
+- linux
+- windows
+- macos
+tags:
+- cad
+- 2d
+- desen tehnic
+alternatives:
+- librecad
+- solvespace
+details:
+  install_size_mb: 0
+  first_release_year: 1999
+  file_formats:
+  - dxf
+  - svg
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars: 1938
+  stars_url: https://github.com/qcad/qcad
+  latest_release: 2026-11
+  in_ubuntu_repos: false
+sources:
+- https://www.qcad.org/fr/
+- https://github.com/qcad/qcad
+- https://www.wikidata.org/wiki/Q683003
+confidence:
+  details.first_release_year: auto

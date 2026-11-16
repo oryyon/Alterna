@@ -1,0 +1,41 @@
+# Hydrogen — Ritmătoare cu bibliotecă de mostre și secvențe.
+id: hydrogen
+popularity: 1340
+name: Hydrogen
+description: Ritmătoare cu bibliotecă de mostre și secvențe.
+category: audio-production
+license: foss
+price: free
+developer: Hydrogen Development Team
+website: https://www.hydrogen-music.org/
+platforms:
+- linux
+- windows
+- macos
+tags:
+- beat making
+- secventa
+- drum
+alternatives:
+- lmms
+- rosegarden
+details:
+  install_size_mb: 394
+  first_release_year: 2002
+  file_formats:
+  - wav
+  - mid
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars: 1355
+  stars_url: https://github.com/hydrogen-music/hydrogen
+  latest_release: 2026-10
+  in_ubuntu_repos: true
+sources:
+- https://www.hydrogen-music.org/
+- https://github.com/hydrogen-music/hydrogen
+- https://www.wikidata.org/wiki/Q1459314
+confidence:
+  details.install_size_mb: auto

@@ -1,0 +1,43 @@
+# HandBrake — Transcodor video pentru conversie între formate.
+id: handbrake
+popularity: 1160
+name: HandBrake
+description: Transcodor video pentru conversie între formate.
+category: video
+license: foss
+price: free
+developer: HandBrake Team
+website: https://handbrake.fr
+platforms:
+- linux
+- windows
+- macos
+tags:
+- transcodare
+- conversie
+- video
+alternatives:
+- avidemux
+- shotcut
+details:
+  install_size_mb: 401
+  first_release_year: 2003
+  file_formats:
+  - mp4
+  - mkv
+  - webm
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars: 25024
+  stars_url: https://github.com/HandBrake/HandBrake
+  latest_release: 2026-06
+  in_ubuntu_repos: true
+sources:
+- https://handbrake.fr
+- https://github.com/HandBrake/HandBrake
+- https://www.wikidata.org/wiki/Q607119
+confidence:
+  details.first_release_year: auto
+  details.install_size_mb: auto

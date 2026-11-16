@@ -1,0 +1,41 @@
+# Gnumeric — Foaie de calcul pentru fișiere spreadsheet, în format ODF.
+id: gnumeric
+popularity: 1150
+name: Gnumeric
+description: Foaie de calcul pentru fișiere spreadsheet, în format ODF.
+category: office
+license: foss
+price: free
+developer: The GNOME Project
+website: https://www.gnumeric.org/
+platforms:
+- linux
+tags:
+- spreadsheet
+- calcul
+- office
+alternatives:
+- libreoffice
+- calligra
+details:
+  install_size_mb: 272
+  first_release_year: 1998
+  file_formats:
+  - ods
+  - xlsx
+  - csv
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url: https://gitlab.gnome.org/GNOME/gnumeric/
+  latest_release:
+  in_ubuntu_repos: true
+sources:
+- https://www.gnumeric.org/
+- https://gitlab.gnome.org/GNOME/gnumeric/
+- https://www.wikidata.org/wiki/Q220993
+confidence:
+  details.first_release_year: auto
+  details.install_size_mb: auto

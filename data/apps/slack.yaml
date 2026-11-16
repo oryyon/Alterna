@@ -1,0 +1,41 @@
+# Slack — Platformă de lucru în echipă, cu canale și integrare.
+id: slack
+popularity: 480
+name: Slack
+description: Platformă de lucru în echipă, cu canale și integrare.
+category: communication
+license: foss
+price: paid
+developer: Slack Technologies
+website: https://slack.com
+snap: slack
+platforms:
+- linux
+- windows
+- macos
+- android
+- web
+tags:
+- echipa
+- mesagerie
+- colaborare
+alternatives:
+- discord
+- mattermost
+details:
+  install_size_mb: 0
+  first_release_year: 2013
+  file_formats: []
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://slack.com
+- https://www.wikidata.org/wiki/Q17130715
+confidence:
+  details.first_release_year: auto

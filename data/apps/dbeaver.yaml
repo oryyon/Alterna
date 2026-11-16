@@ -1,0 +1,40 @@
+# DBeaver — Client de baze de date pentru SQL, cu suport multi-motor.
+id: dbeaver
+popularity: 1130
+name: DBeaver
+description: Client de baze de date pentru SQL, cu suport multi-motor.
+category: utilities
+license: foss
+price: free
+developer: DBeaver
+website: https://dbeaver.io/
+platforms:
+- linux
+- windows
+- macos
+tags:
+- baze de date
+- sql
+- client
+alternatives:
+- beekeeper-studio
+- sqlitebrowser
+details:
+  install_size_mb: 0
+  first_release_year: 2011
+  file_formats: []
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars: 52447
+  stars_url: https://github.com/dbeaver/dbeaver
+  latest_release: 2026-11
+  in_ubuntu_repos: false
+sources:
+- https://dbeaver.io/
+- https://github.com/dbeaver/dbeaver
+- https://www.wikidata.org/wiki/Q28956992
+confidence:
+  details.first_release_year: auto
+logo: logos/dbeaver.svg

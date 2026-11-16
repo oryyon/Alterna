@@ -23,7 +23,7 @@ details:
 
 indicators:
   popcon_rank:
-  stars: 195444
+  stars: 195496
   stars_url: https://github.com/microsoft/vscode
   latest_release: "2026-11"
   in_ubuntu_repos: false

@@ -1,6 +1,6 @@
 # Geany — IDE ușor cu dependențe minime
 id: geany
-popularity: 440
+popularity: 450
 name: Geany
 description: IDE ușor și rapid, cu dependențe minime.
 category: development
@@ -22,7 +22,7 @@ details:
 
 indicators:
   popcon_rank: 7145
-  stars: 3757
+  stars: 3758
   stars_url: https://github.com/geany/geany
   latest_release: "2025-07"
   in_ubuntu_repos: true

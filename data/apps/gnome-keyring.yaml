@@ -1,0 +1,37 @@
+# GNOME Keyring — Depozit de secrete al desktopului GNOME, integrat cu sistemul.
+id: gnome-keyring
+popularity: 1320
+name: GNOME Keyring
+description: Depozit de secrete al desktopului GNOME, integrat cu sistemul.
+category: security
+license: foss
+price: free
+developer: GNOME
+website: https://wiki.gnome.org/Projects/GnomeKeyring
+platforms:
+- linux
+tags:
+- parole
+- chei
+- desktop
+alternatives:
+- keepassxc
+- kwallet
+details:
+  install_size_mb: 250
+  first_release_year: 2002
+  file_formats: []
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url: https://gitlab.gnome.org/GNOME/gnome-keyring
+  latest_release:
+  in_ubuntu_repos: true
+sources:
+- https://wiki.gnome.org/Projects/GnomeKeyring
+- https://gitlab.gnome.org/GNOME/gnome-keyring
+- https://www.wikidata.org/wiki/Q383474
+confidence:
+  details.install_size_mb: auto

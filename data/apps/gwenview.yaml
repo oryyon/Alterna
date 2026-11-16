@@ -1,0 +1,41 @@
+# Gwenview — Vizualizator de imagini al desktopului KDE.
+id: gwenview
+popularity: 1330
+name: Gwenview
+description: Vizualizator de imagini al desktopului KDE.
+category: graphics
+license: foss
+price: free
+developer: KDE
+website: https://apps.kde.org/gwenview/
+snap: gwenview
+platforms:
+- linux
+tags:
+- vizualizator
+- foto
+- kde
+alternatives:
+- shotwell
+- gimp
+details:
+  install_size_mb: 622
+  first_release_year: 2002
+  file_formats:
+  - jpg
+  - png
+  - tiff
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url: https://cgit.kde.org/gwenview.git
+  latest_release:
+  in_ubuntu_repos: true
+sources:
+- https://apps.kde.org/gwenview/
+- https://cgit.kde.org/gwenview.git
+- https://www.wikidata.org/wiki/Q1144917
+confidence:
+  details.install_size_mb: auto

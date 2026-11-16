@@ -1,6 +1,6 @@
 # CopyQ — manager de clipboard cu istoric
 id: copyq
-popularity: 980
+popularity: 1050
 name: CopyQ
 description: Manager de clipboard cu istoric, editare și scripturi.
 category: utilities
@@ -22,7 +22,7 @@ details:
 
 indicators:
   popcon_rank: 16396
-  stars: 12643
+  stars: 12646
   stars_url: https://github.com/hluk/CopyQ
   latest_release: "2026-10"
   in_ubuntu_repos: true

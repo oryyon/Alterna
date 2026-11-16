@@ -1,0 +1,42 @@
+# Ark — Manager de arhive al desktopului KDE.
+id: ark
+popularity: 1270
+name: Ark
+description: Manager de arhive al desktopului KDE.
+category: utilities
+license: foss
+price: free
+developer: KDE
+website: https://invent.kde.org/utilities/ark
+snap: ark
+platforms:
+- linux
+tags:
+- arhive
+- comprimat
+- kde
+alternatives:
+- file-roller
+- peazip
+details:
+  install_size_mb: 489
+  first_release_year: 1997
+  file_formats:
+  - zip
+  - tar
+  - 7z
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url: https://anongit.kde.org/ark.git
+  latest_release:
+  in_ubuntu_repos: true
+sources:
+- https://invent.kde.org/utilities/ark
+- https://anongit.kde.org/ark.git
+- https://www.wikidata.org/wiki/Q671759
+confidence:
+  details.first_release_year: auto
+  details.install_size_mb: auto

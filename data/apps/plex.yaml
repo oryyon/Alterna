@@ -1,0 +1,42 @@
+# Plex — Server media personal, cu biblioteci și streaming.
+id: plex
+popularity: 1000
+name: Plex
+description: Server media personal, cu biblioteci și streaming.
+category: streaming
+license: foss
+price: paid
+developer: Plex
+website: https://plex.tv/
+platforms:
+- linux
+- windows
+- macos
+- android
+- web
+tags:
+- media center
+- server
+- streaming
+alternatives:
+- kodi
+- owncast
+details:
+  install_size_mb: 0
+  first_release_year: 2008
+  file_formats:
+  - mkv
+  - mp4
+  - avi
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://plex.tv/
+- https://www.wikidata.org/wiki/Q7204887
+logo: logos/plex.svg

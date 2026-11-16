@@ -1,0 +1,42 @@
+# BRL-CAD — Modelator 3D pentru proiectare și simulare.
+id: brl-cad
+popularity: 1510
+name: BRL-CAD
+description: Modelator 3D pentru proiectare și simulare.
+category: 3d-cad
+license: foss
+price: free
+developer: United States Army Research Laboratory
+website: https://brlcad.org
+platforms:
+- linux
+- windows
+- macos
+tags:
+- 3d
+- cad
+- modelare
+alternatives:
+- freecad
+- openscad
+details:
+  install_size_mb: 0
+  first_release_year: 1979
+  file_formats:
+  - stl
+  - obj
+  - dxf
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url: https://svn.code.sf.net/p/brlcad/code/brlcad/trunk
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://brlcad.org
+- https://svn.code.sf.net/p/brlcad/code/brlcad/trunk
+- https://www.wikidata.org/wiki/Q796941
+confidence:
+  details.first_release_year: auto

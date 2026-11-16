@@ -1,0 +1,42 @@
+# MuseScore — Editor de partituri cu audiție și export în multe formate.
+id: musescore
+popularity: 990
+name: MuseScore
+description: Editor de partituri cu audiție și export în multe formate.
+category: audio-production
+license: foss
+price: free
+developer: Muse Group
+website: https://musescore.org
+platforms:
+- linux
+- windows
+- macos
+tags:
+- partituri
+- notație
+- muzica
+alternatives:
+- lmms
+- tenacity
+details:
+  install_size_mb: 474
+  first_release_year: 2002
+  file_formats:
+  - musescore
+  - mxl
+  - pdf
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release:
+  in_ubuntu_repos: true
+sources:
+- https://musescore.org
+- https://www.wikidata.org/wiki/Q240192
+confidence:
+  details.first_release_year: auto
+  details.install_size_mb: auto

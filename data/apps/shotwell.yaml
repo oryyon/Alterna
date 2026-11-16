@@ -1,0 +1,42 @@
+# Shotwell — Organizator de fotografii cu etichetare și cronologie.
+id: shotwell
+popularity: 1460
+name: Shotwell
+description: Organizator de fotografii cu etichetare și cronologie.
+category: graphics
+license: foss
+price: free
+developer: Q131724922
+website: https://wiki.gnome.org/Apps/Shotwell
+snap: shotwell
+platforms:
+- linux
+tags:
+- foto
+- galerie
+- catalog
+alternatives:
+- gwenview
+- darktable
+details:
+  install_size_mb: 324
+  first_release_year: 2009
+  file_formats:
+  - jpg
+  - png
+  - raw
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url: https://git.gnome.org/browse/shotwell/
+  latest_release:
+  in_ubuntu_repos: true
+sources:
+- https://wiki.gnome.org/Apps/Shotwell
+- https://git.gnome.org/browse/shotwell/
+- https://www.wikidata.org/wiki/Q2426283
+confidence:
+  details.first_release_year: auto
+  details.install_size_mb: auto

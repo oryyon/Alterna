@@ -1,0 +1,42 @@
+# Pitivi — Editor video nelinear bazat pe Python, cu efecte.
+id: pitivi
+popularity: 1420
+name: Pitivi
+description: Editor video nelinear bazat pe Python, cu efecte.
+category: video
+license: foss
+price: free
+developer: Pitivi
+website: https://www.pitivi.org/
+platforms:
+- linux
+tags:
+- montaj video
+- editare
+- python
+alternatives:
+- openshot
+- flowblade
+details:
+  install_size_mb: 786
+  first_release_year: 2004
+  file_formats:
+  - mp4
+  - mkv
+  - avi
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars: 125
+  stars_url: https://github.com/GNOME/pitivi
+  latest_release: 2023-03
+  in_ubuntu_repos: true
+sources:
+- https://www.pitivi.org/
+- https://github.com/GNOME/pitivi
+- https://www.wikidata.org/wiki/Q387021
+confidence:
+  details.first_release_year: auto
+  license: auto
+  details.install_size_mb: auto

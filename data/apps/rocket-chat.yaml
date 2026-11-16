@@ -1,0 +1,39 @@
+# Rocket.Chat — Platformă de mesagerie și colaborare, auto-găzduită.
+id: rocket-chat
+popularity: 1440
+name: Rocket.Chat
+description: Platformă de mesagerie și colaborare, auto-găzduită.
+category: communication
+license: foss
+price: free
+developer: Rocket.Chat
+website: https://rocket.chat/
+platforms:
+- linux
+- windows
+- macos
+- android
+- web
+tags:
+- mesagerie
+- echipa
+- auto-gazduire
+alternatives:
+- mattermost
+- slack
+details:
+  install_size_mb: 0
+  first_release_year: 2013
+  file_formats: []
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars: 46493
+  stars_url: https://github.com/RocketChat/Rocket.Chat
+  latest_release: 2026-11
+  in_ubuntu_repos: false
+sources:
+- https://rocket.chat/
+- https://github.com/RocketChat/Rocket.Chat
+- https://www.wikidata.org/wiki/Q24050001

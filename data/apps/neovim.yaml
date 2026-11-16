@@ -1,6 +1,6 @@
 # Neovim — editor modal în terminal, extensibil prin Lua
 id: neovim
-popularity: 380
+popularity: 390
 name: Neovim
 description: Editor modal în terminal, fork modernizat al Vim, extensibil prin Lua.
 category: development
@@ -22,7 +22,7 @@ details:
 
 indicators:
   popcon_rank: 5467
-  stars: 103656
+  stars: 103702
   stars_url: https://github.com/neovim/neovim
   latest_release: "2026-11"
   in_ubuntu_repos: true

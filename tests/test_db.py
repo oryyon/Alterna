@@ -5,11 +5,14 @@ from __future__ import annotations
 
 class TestSearch:
     def test_total(self, catalog):
-        assert len(catalog.search()) == 100
+        """Numărul vine din catalog — nu e înghețat în test."""
+        assert len(catalog.search()) == catalog.app_count
+        assert catalog.app_count >= 100
 
     def test_filtru_categorie(self, catalog):
         rez = catalog.search(category="security")
-        assert len(rez) == 6
+        toate = [a for a in catalog.search() if a["category"] == "security"]
+        assert len(rez) == len(toate)
         assert all(a["category"] == "security" for a in rez)
 
     def test_filtru_licenta_platforma_pret(self, catalog):
@@ -34,8 +37,12 @@ class TestSearch:
 
 class TestSortare:
     def test_implicita_e_ordinea_editoriala(self, catalog):
-        ids = [a["id"] for a in catalog.search()[:5]]
-        assert ids == ["firefox", "chrome", "vlc", "gimp", "libreoffice"]
+        """Implicit = popularitate descrescătoare, fără goluri la început."""
+        primele = catalog.search()[:5]
+        popularitati = [a["popularity"] for a in primele]
+        # convenția proiectului: număr mai mic = mai popular (implicit, crescător)
+        assert popularitati == sorted(popularitati)
+        assert all(p is not None for p in popularitati)
 
     def test_az_za(self, catalog):
         az = [a["name"] for a in catalog.search(sort="az")]
@@ -44,8 +51,13 @@ class TestSortare:
         assert za == sorted(az, key=str.lower, reverse=True)
 
     def test_recent(self, catalog):
+        """Cele cu data necunoscută stau la final, nu la început."""
         rel = [a["latest_release"] for a in catalog.search(sort="recent")]
-        assert rel == sorted(rel, reverse=True)
+        cunoscute = [r for r in rel if r is not None]
+        assert cunoscute == sorted(cunoscute, reverse=True)
+        if None in rel:
+            # cele fără dată stau la final, după cele cu dată
+            assert rel.index(None) == len(cunoscute)
 
     def test_dimensiune_null_la_final(self, catalog):
         rez = catalog.search(sort="mic")

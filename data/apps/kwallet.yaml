@@ -1,0 +1,38 @@
+# KWallet — Manager de parole și chei al desktopului KDE.
+id: kwallet
+popularity: 1360
+name: KWallet
+description: Manager de parole și chei al desktopului KDE.
+category: security
+license: foss
+price: free
+developer: KDE
+website: https://kde.org/applications/system/org.kde.kwalletmanager5
+platforms:
+- linux
+package: kwalletmanager
+tags:
+- parole
+- chei
+- desktop
+alternatives:
+- keepassxc
+- gnome-keyring
+details:
+  install_size_mb: 486
+  first_release_year: 2007
+  file_formats: []
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank: 2807
+  stars:
+  stars_url: https://cgit.kde.org/kwalletmanager.git
+  latest_release:
+  in_ubuntu_repos: true
+sources:
+- https://kde.org/applications/system/org.kde.kwalletmanager5
+- https://cgit.kde.org/kwalletmanager.git
+- https://www.wikidata.org/wiki/Q39150115
+confidence:
+  details.install_size_mb: auto

@@ -1,0 +1,41 @@
+# Vim — Editor de text în terminal, cu modă de comandă.
+id: vim
+popularity: 210
+name: Vim
+description: Editor de text în terminal, cu modă de comandă.
+category: development
+license: foss
+price: free
+developer: Bram Moolenaar
+website: https://www.vim.org/
+platforms:
+- linux
+- windows
+- macos
+tags:
+- editor de text
+- terminal
+- productivitate
+alternatives:
+- neovim
+- geany
+details:
+  install_size_mb: 83
+  first_release_year: 1991
+  file_formats: []
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars: 41295
+  stars_url: https://github.com/vim/vim
+  latest_release: 2026-11
+  in_ubuntu_repos: true
+sources:
+- https://www.vim.org/
+- https://github.com/vim/vim
+- https://www.wikidata.org/wiki/Q131382
+confidence:
+  details.first_release_year: auto
+  details.install_size_mb: auto
+logo: logos/vim.svg

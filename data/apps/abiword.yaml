@@ -1,0 +1,41 @@
+# AbiWord — Procesor de text ușor, cu format ODF.
+id: abiword
+popularity: 1250
+name: AbiWord
+description: Procesor de text ușor, cu format ODF.
+category: office
+license: foss
+price: free
+developer: J.M. Maurer
+website: https://abisource.com/
+platforms:
+- linux
+- windows
+- macos
+tags:
+- editor de text
+- office
+alternatives:
+- calligra
+- libreoffice
+details:
+  install_size_mb: 294
+  first_release_year: 1998
+  file_formats:
+  - odt
+  - docx
+  - rtf
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars: 181
+  stars_url: https://github.com/AbiWord/abiword
+  latest_release: 2019-11
+  in_ubuntu_repos: true
+sources:
+- https://abisource.com/
+- https://github.com/AbiWord/abiword
+- https://www.wikidata.org/wiki/Q136775
+confidence:
+  details.install_size_mb: auto

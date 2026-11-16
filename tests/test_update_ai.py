@@ -155,7 +155,7 @@ class TestDescarcare:
         assert rezultat.exists()
         assert rezultat.stat().st_size > 0
         con = sqlite3.connect(rezultat)
-        assert con.execute("SELECT COUNT(*) FROM applications").fetchone()[0] == 100
+        assert con.execute("SELECT COUNT(*) FROM applications").fetchone()[0] >= 100
         con.close()
 
     def test_amprenta_greita_respinge_catalogul(self, tmp_path, release_server,

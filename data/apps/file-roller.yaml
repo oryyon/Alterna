@@ -1,0 +1,40 @@
+# File Roller — Manager de arhive al desktopului GNOME.
+id: file-roller
+popularity: 1310
+name: File Roller
+description: Manager de arhive al desktopului GNOME.
+category: utilities
+license: foss
+price: free
+developer: The GNOME Project
+website: https://fileroller.sourceforge.net/
+platforms:
+- linux
+tags:
+- arhive
+- comprimat
+- gnome
+alternatives:
+- ark
+- peazip
+details:
+  install_size_mb: 239
+  first_release_year: 2001
+  file_formats:
+  - zip
+  - tar
+  - 7z
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url: https://git.gnome.org/browse/file-roller/
+  latest_release:
+  in_ubuntu_repos: true
+sources:
+- https://fileroller.sourceforge.net/
+- https://git.gnome.org/browse/file-roller/
+- https://www.wikidata.org/wiki/Q1143010
+confidence:
+  details.install_size_mb: auto

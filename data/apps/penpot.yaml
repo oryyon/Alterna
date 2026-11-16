@@ -1,6 +1,6 @@
 # Penpot — design de interfețe open source, alternativă la Figma
 id: penpot
-popularity: 500
+popularity: 530
 name: Penpot
 description: Platformă de design și prototipare open source, alternativă liberă la Figma; poate fi auto-găzduită.
 category: graphics
@@ -22,7 +22,7 @@ details:
 
 indicators:
   popcon_rank:
-  stars: 62426
+  stars: 62431
   stars_url: https://github.com/penpot/penpot
   latest_release: "2026-11"
   in_ubuntu_repos: false

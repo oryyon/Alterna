@@ -1,0 +1,43 @@
+# Mumble — VoIP cu latență mică, pentru jocuri și discuții.
+id: mumble
+popularity: 1200
+name: Mumble
+description: VoIP cu latență mică, pentru jocuri și discuții.
+category: communication
+license: foss
+price: free
+developer: Mumble's development team
+website: https://wiki.mumble.info/wiki/Main_Page
+snap: mumble
+platforms:
+- linux
+- windows
+- macos
+- android
+tags:
+- voip
+- jocuri
+- audio
+alternatives:
+- discord
+- jitsi-meet
+details:
+  install_size_mb: 376
+  first_release_year: 2005
+  file_formats: []
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars: 8424
+  stars_url: https://github.com/mumble-voip/mumble
+  latest_release: 2026-10
+  in_ubuntu_repos: true
+sources:
+- https://wiki.mumble.info/wiki/Main_Page
+- https://github.com/mumble-voip/mumble
+- https://www.wikidata.org/wiki/Q748932
+confidence:
+  details.first_release_year: auto
+  details.install_size_mb: auto
+logo: logos/mumble.svg

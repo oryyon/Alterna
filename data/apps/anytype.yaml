@@ -1,0 +1,39 @@
+# Anytype — Spațiu de lucru local-first, cu blocuri și baze de date.
+id: anytype
+popularity: 1090
+name: Anytype
+description: Spațiu de lucru local-first, cu blocuri și baze de date.
+category: notes
+license: foss
+price: free
+developer: Anytype
+website: https://anytype.io/
+platforms:
+- linux
+- windows
+- macos
+- android
+tags:
+- notite
+- baza de date
+- local-first
+alternatives:
+- notion
+- obsidian
+details:
+  install_size_mb: 0
+  first_release_year: 2021
+  file_formats: []
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url: https://github.com/anyproto
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://anytype.io/
+- https://github.com/anyproto
+- https://www.wikidata.org/wiki/Q125872917
+logo: logos/anytype.svg

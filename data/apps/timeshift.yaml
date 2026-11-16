@@ -1,6 +1,6 @@
 # Timeshift — snapshots de sistem pentru restaurare rapidă
 id: timeshift
-popularity: 920
+popularity: 960
 name: Timeshift
 description: Snapshots de sistem (rsync/Btrfs) pentru restaurare rapidă.
 category: utilities
@@ -22,7 +22,7 @@ details:
 
 indicators:
   popcon_rank: 8604
-  stars: 4337
+  stars: 4338
   stars_url: https://github.com/linuxmint/timeshift
   latest_release: "2026-11"
   in_ubuntu_repos: true

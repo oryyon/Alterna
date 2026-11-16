@@ -1,0 +1,39 @@
+# SQLiteStudio — Client pentru baze de date SQLite.
+id: sqlitebrowser
+popularity: 1660
+name: SQLiteStudio
+description: Client pentru baze de date SQLite.
+category: utilities
+license: foss
+price: free
+developer: SQLiteStudio
+website: https://sqlitestudio.org/
+snap: sqlitebrowser
+platforms:
+- linux
+- windows
+- macos
+tags:
+- baze de date
+- sqlite
+- client
+alternatives:
+- dbeaver
+- beekeeper-studio
+details:
+  install_size_mb: 376
+  first_release_year: 2006
+  file_formats: []
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release:
+  in_ubuntu_repos: true
+sources:
+- https://sqlitestudio.org/
+- https://www.wikidata.org/wiki/Q114282317
+confidence:
+  details.install_size_mb: auto

@@ -1,0 +1,38 @@
+# Sayonara — Player de muzică ușor, orientat pe colecții mari.
+id: sayonara
+popularity: 1650
+name: Sayonara
+description: Player de muzică ușor, orientat pe colecții mari.
+category: audio-players
+license: foss
+price: free
+developer: Sayonara
+website: https://www.sayonara-player.org
+snap: sayonara
+platforms:
+- linux
+tags:
+- player audio
+- muzica
+alternatives:
+- clementine
+- lollypop
+details:
+  install_size_mb: 612
+  first_release_year: 2009
+  file_formats:
+  - mp3
+  - flac
+  - ogg
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release:
+  in_ubuntu_repos: true
+sources:
+- https://www.sayonara-player.org
+confidence:
+  details.install_size_mb: auto

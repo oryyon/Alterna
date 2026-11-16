@@ -1,6 +1,6 @@
 # LibreCAD — CAD 2D liber
 id: librecad
-popularity: 830
+popularity: 870
 name: LibreCAD
 description: CAD 2D liber, pentru desene tehnice și planuri.
 category: 3d-cad
@@ -23,7 +23,7 @@ details:
 
 indicators:
   popcon_rank: 8573
-  stars: 6603
+  stars: 6604
   stars_url: https://github.com/LibreCAD/LibreCAD
   latest_release: "2026-11"
   in_ubuntu_repos: true

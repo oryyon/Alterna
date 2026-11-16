@@ -1,0 +1,39 @@
+# Owncast — Server de streaming video și chat, cu interfață web.
+id: owncast
+popularity: 1620
+name: Owncast
+description: Server de streaming video și chat, cu interfață web.
+category: streaming
+license: foss
+price: free
+developer: Owncast
+website: https://owncast.online/
+snap: owncast
+platforms:
+- linux
+- windows
+- macos
+tags:
+- streaming
+- live
+- server
+alternatives:
+- opencaster
+details:
+  install_size_mb: 0
+  first_release_year: 2020
+  file_formats:
+  - flv
+  - mp4
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars: 11671
+  stars_url: https://github.com/owncast/owncast
+  latest_release: 2026-09
+  in_ubuntu_repos: false
+sources:
+- https://owncast.online/
+- https://github.com/owncast/owncast
+- https://www.wikidata.org/wiki/Q104533790

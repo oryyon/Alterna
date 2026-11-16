@@ -1,0 +1,38 @@
+# Beekeeper Studio — Client de baze de date SQL, rapid și modern.
+id: beekeeper-studio
+popularity: 1290
+name: Beekeeper Studio
+description: Client de baze de date SQL, rapid și modern.
+category: utilities
+license: foss
+price: free
+developer: BeeKeeper Studio
+website: https://www.beekeeperstudio.io/
+snap: beekeeper-studio
+platforms:
+- linux
+- windows
+- macos
+tags:
+- baze de date
+- sql
+- client
+alternatives:
+- dbeaver
+- sqlitebrowser
+details:
+  install_size_mb: 0
+  first_release_year: 2020
+  file_formats: []
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars: 23899
+  stars_url: https://github.com/beekeeper-studio/beekeeper-studio
+  latest_release: 2026-11
+  in_ubuntu_repos: false
+sources:
+- https://www.beekeeperstudio.io/
+- https://github.com/beekeeper-studio/beekeeper-studio
+- https://www.wikidata.org/wiki/Q93533441

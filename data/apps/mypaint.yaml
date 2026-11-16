@@ -1,0 +1,41 @@
+# MyPaint — Program de pictură cu pensule, pentru desen digital.
+id: mypaint
+popularity: 1580
+name: MyPaint
+description: Program de pictură cu pensule, pentru desen digital.
+category: graphics
+license: foss
+price: free
+developer: Myrbrush
+website: https://github.com/mypaint/mypaint
+platforms:
+- linux
+- windows
+tags:
+- pictura
+- desene
+- pensule
+alternatives:
+- pinta
+- gimp
+details:
+  install_size_mb: 316
+  first_release_year: 2005
+  file_formats:
+  - png
+  - jpeg
+  - bmp
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars: 3002
+  stars_url: https://github.com/mypaint/mypaint
+  latest_release: 2020-05
+  in_ubuntu_repos: true
+sources:
+- https://github.com/mypaint/mypaint
+- https://www.wikidata.org/wiki/Q1956333
+confidence:
+  details.first_release_year: auto
+  details.install_size_mb: auto

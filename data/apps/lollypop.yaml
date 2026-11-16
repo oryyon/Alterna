@@ -1,0 +1,41 @@
+# Lollypop — Player de muzică cu navigare prin colecție și etichete.
+id: lollypop
+popularity: 1370
+name: Lollypop
+description: Player de muzică cu navigare prin colecție și etichete.
+category: audio-players
+license: foss
+price: free
+developer: GNOME
+website: https://wiki.gnome.org/Apps/Lollypop
+platforms:
+- linux
+tags:
+- player audio
+- muzica
+- biblioteca
+alternatives:
+- clementine
+- strawberry
+details:
+  install_size_mb: 451
+  first_release_year: 2005
+  file_formats:
+  - mp3
+  - flac
+  - ogg
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url: https://gitlab.gnome.org/World/lollypop
+  latest_release:
+  in_ubuntu_repos: true
+sources:
+- https://wiki.gnome.org/Apps/Lollypop
+- https://gitlab.gnome.org/World/lollypop
+- https://www.wikidata.org/wiki/Q47103661
+confidence:
+  license: auto
+  details.install_size_mb: auto

@@ -1,0 +1,43 @@
+# Synfig Studio — Animație 2D cu grafică vectorială și temporală.
+id: synfig
+popularity: 1480
+name: Synfig Studio
+description: Animație 2D cu grafică vectorială și temporală.
+category: graphics
+license: foss
+price: free
+developer: Synfig
+website: https://synfig.org
+platforms:
+- linux
+- windows
+- macos
+tags:
+- animatie
+- 2d
+- vectorial
+alternatives:
+- inkscape
+- krita
+details:
+  install_size_mb: 677
+  first_release_year: 2005
+  file_formats:
+  - sif
+  - svg
+  - mp4
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars: 2437
+  stars_url: https://github.com/synfig/synfig
+  latest_release: 2026-03
+  in_ubuntu_repos: true
+sources:
+- https://synfig.org
+- https://github.com/synfig/synfig
+- https://www.wikidata.org/wiki/Q599608
+confidence:
+  details.first_release_year: auto
+  details.install_size_mb: auto

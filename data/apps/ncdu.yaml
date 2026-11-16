@@ -1,0 +1,37 @@
+# ncdu — Analyzer al spațiului pe disc, în terminal.
+id: ncdu
+popularity: 1590
+name: ncdu
+description: Analyzer al spațiului pe disc, în terminal.
+category: utilities
+license: foss
+price: free
+developer: Ncdu Project
+website: https://dev.yorhel.nl/ncdu
+snap: ncdu
+platforms:
+- linux
+tags:
+- disc
+- spatiu
+- terminal
+alternatives:
+- baobab
+- filelight
+details:
+  install_size_mb: 13
+  first_release_year: 2001
+  file_formats: []
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release:
+  in_ubuntu_repos: true
+sources:
+- https://dev.yorhel.nl/ncdu
+- https://www.wikidata.org/wiki/Q19598118
+confidence:
+  details.install_size_mb: auto

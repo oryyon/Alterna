@@ -1,6 +1,6 @@
 # mpv — player minimalist controlat din tastatură
 id: mpv
-popularity: 350
+popularity: 360
 name: mpv
 description: Player minimalist și extrem de configurabil, controlat din tastatură.
 category: audio-players
@@ -24,7 +24,7 @@ details:
 
 indicators:
   popcon_rank: 3959
-  stars: 38151
+  stars: 38157
   stars_url: https://github.com/mpv-player/mpv
   latest_release: "2026-11"
   in_ubuntu_repos: true

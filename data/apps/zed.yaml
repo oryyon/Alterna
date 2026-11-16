@@ -1,6 +1,6 @@
 # Zed — editor de cod nou, foarte rapid, scris în Rust
 id: zed
-popularity: 390
+popularity: 400
 name: Zed
 description: Editor de cod nou, foarte rapid, scris în Rust, cu colaborare integrată.
 category: development
@@ -23,7 +23,7 @@ details:
 
 indicators:
   popcon_rank:
-  stars: 95149
+  stars: 95163
   stars_url: https://github.com/zed-industries/zed
   latest_release: "2026-11"
   in_ubuntu_repos: false

@@ -1,0 +1,42 @@
+# Zettlr — Editor de text academic, cu citări și note de subsol.
+id: zettlr
+popularity: 1230
+name: Zettlr
+description: Editor de text academic, cu citări și note de subsol.
+category: notes
+license: foss
+price: free
+developer: Hendrik Erz
+website: https://www.zettlr.com/
+snap: zettlr
+platforms:
+- linux
+- windows
+- macos
+tags:
+- markdown
+- academic
+- scriere
+alternatives:
+- marktext
+- obsidian
+details:
+  install_size_mb: 0
+  first_release_year: 2017
+  file_formats:
+  - md
+  - odt
+  - docx
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars: 13923
+  stars_url: https://github.com/Zettlr/Zettlr
+  latest_release: 2026-11
+  in_ubuntu_repos: false
+sources:
+- https://www.zettlr.com/
+- https://github.com/Zettlr/Zettlr
+- https://www.wikidata.org/wiki/Q124476915
+logo: logos/zettlr.svg

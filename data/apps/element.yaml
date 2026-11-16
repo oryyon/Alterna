@@ -1,6 +1,6 @@
 # Element — client Matrix pentru chat descentralizat
 id: element
-popularity: 680
+popularity: 710
 name: Element
 description: Client Matrix cu criptare cap-la-cap, pentru chat descentralizat.
 category: communication
@@ -24,7 +24,7 @@ details:
 
 indicators:
   popcon_rank:
-  stars: 13662
+  stars: 13663
   stars_url: https://github.com/element-hq/element-web
   latest_release: "2026-11"
   in_ubuntu_repos: false

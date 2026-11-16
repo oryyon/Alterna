@@ -1,0 +1,38 @@
+# Ocenaudio — Editor audio multipistă, cu efecte și editare spectrală.
+id: ocenaudio
+popularity: 1390
+name: Ocenaudio
+description: Editor audio multipistă, cu efecte și editare spectrală.
+category: audio-production
+license: foss
+price: free
+developer: OcenAudio
+website: https://www.ocenaudio.com
+platforms:
+- windows
+- linux
+tags:
+- editare audio
+- efecte
+- spectru
+alternatives:
+- audacity
+- tenacity
+details:
+  install_size_mb: 0
+  first_release_year: 2006
+  file_formats:
+  - wav
+  - flac
+  - mp3
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://www.ocenaudio.com
+- https://www.wikidata.org/wiki/Q78185201

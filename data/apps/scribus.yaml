@@ -1,0 +1,42 @@
+# Scribus — Editor de pagini pentru tipografie și desktop publishing.
+id: scribus
+popularity: 1450
+name: Scribus
+description: Editor de pagini pentru tipografie și desktop publishing.
+category: office
+license: foss
+price: free
+developer: Petr Vaněk
+website: https://www.scribus.net/
+platforms:
+- linux
+- windows
+- macos
+tags:
+- publicare
+- layout
+- pdf
+alternatives:
+- onlyoffice
+- libreoffice
+details:
+  install_size_mb: 589
+  first_release_year: 2003
+  file_formats:
+  - pdf
+  - ps
+  - odt
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release:
+  in_ubuntu_repos: true
+sources:
+- https://www.scribus.net/
+- https://www.wikidata.org/wiki/Q8295
+confidence:
+  details.first_release_year: auto
+  details.install_size_mb: auto

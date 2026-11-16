@@ -1,0 +1,40 @@
+# HexChat — Client de chat IRC, cu suport pentru plug-in-uri.
+id: hexchat
+popularity: 1550
+name: HexChat
+description: Client de chat IRC, cu suport pentru plug-in-uri.
+category: communication
+license: foss
+price: free
+developer: FLOSS contributor
+website: https://hexchat.github.io
+platforms:
+- linux
+- windows
+- macos
+tags:
+- irc
+- chat
+- text
+alternatives:
+- pidgin
+- telegram
+details:
+  install_size_mb: 243
+  first_release_year: 2010
+  file_formats: []
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars: 3224
+  stars_url: https://github.com/hexchat/hexchat
+  latest_release: 2024-02
+  in_ubuntu_repos: true
+sources:
+- https://hexchat.github.io
+- https://github.com/hexchat/hexchat
+- https://www.wikidata.org/wiki/Q17117379
+confidence:
+  details.first_release_year: auto
+  details.install_size_mb: auto

@@ -1,6 +1,6 @@
 # Shotcut — editor video liber multiplatform
 id: shotcut
-popularity: 580
+popularity: 610
 name: Shotcut
 description: Editor video liber, multiplatform, bazat pe MLT și FFmpeg.
 category: video
@@ -23,7 +23,7 @@ details:
 
 indicators:
   popcon_rank: 10742
-  stars: 15704
+  stars: 15703
   stars_url: https://github.com/mltframework/shotcut
   latest_release: "2026-11"
   in_ubuntu_repos: true

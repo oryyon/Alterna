@@ -1,0 +1,44 @@
+# Clementine — Player de muzică cu suport pentru colecții și transcodare.
+id: clementine
+popularity: 1120
+name: Clementine
+description: Player de muzică cu suport pentru colecții și transcodare.
+category: audio-players
+license: foss
+price: free
+developer: Clementine Development Team
+website: https://www.clementine-player.org/
+snap: clementine
+platforms:
+- linux
+- windows
+- macos
+tags:
+- player audio
+- muzica
+- biblioteca
+alternatives:
+- strawberry
+- lollypop
+details:
+  install_size_mb: 430
+  first_release_year: 2010
+  file_formats:
+  - mp3
+  - flac
+  - ogg
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars: 4279
+  stars_url: https://github.com/clementine-player/Clementine
+  latest_release: 2026-11
+  in_ubuntu_repos: true
+sources:
+- https://www.clementine-player.org/
+- https://github.com/clementine-player/Clementine
+- https://www.wikidata.org/wiki/Q1100372
+confidence:
+  details.first_release_year: auto
+  details.install_size_mb: auto

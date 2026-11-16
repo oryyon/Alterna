@@ -1,0 +1,41 @@
+# Rosegarden — Stație de lucru pentru compoziție și editare audio.
+id: rosegarden
+popularity: 1640
+name: Rosegarden
+description: Stație de lucru pentru compoziție și editare audio.
+category: audio-production
+license: foss
+price: free
+developer: Rosegarden
+website: https://www.rosegardenmusic.com/
+platforms:
+- linux
+tags:
+- compozitie
+- editare audio
+- secventa
+alternatives:
+- lmms
+- hydrogen
+details:
+  install_size_mb: 456
+  first_release_year: 1993
+  file_formats:
+  - wav
+  - mid
+  - ogg
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url: https://github.com/Rosegarden/rosegarden
+  latest_release:
+  in_ubuntu_repos: true
+sources:
+- https://www.rosegardenmusic.com/
+- https://github.com/Rosegarden/rosegarden
+- https://www.wikidata.org/wiki/Q1500106
+confidence:
+  details.first_release_year: auto
+  details.install_size_mb: auto

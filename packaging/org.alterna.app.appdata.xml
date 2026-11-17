@@ -47,6 +47,20 @@
   <update_contact>alterna_AT_github.com</update_contact>
 
   <releases>
+    <release version="0.1.6" date="2026-11-17">
+      <description>
+        <p>Catalogul dublat: 213 aplicații pe toate cele 13 categorii, cu
+        datele obiective luate din Wikidata (anul primei versiuni, site
+        oficial, dezvoltator, licență) și sursa citată pentru fiecare.</p>
+        <p>Comparația arată acum și funcționalitățile: taxonomie nouă pentru
+        categoria „Video”, iar matricea „Securitate” e completă pentru toate
+        aplicațiile ei.</p>
+        <p>Linkuri directe către pachete (apt://, snap://, flathub://) în
+        pagina de detalii, capturi de ecran cu atribuire, și aplicațiile
+        instalate care nu sunt în catalog — lista de intrări care
+        îmbogățește catalogul.</p>
+      </description>
+    </release>
     <release version="0.1.5" date="2026-11-16">
       <description>
         <p>Detectarea aplicațiilor deja instalate: marcajul „✓ instalat”, filtru

@@ -40,3 +40,15 @@ sources:
 logo: logos/subtitleedit.svg
 confidence:
   alternatives: manual
+features:
+  timeline: 'no'
+  cut_trim: 'no'
+  keyframes: 'no'
+  tranzitii: 'no'
+  filtre: 'no'
+  subtitrari: free
+  stabilizare: 'no'
+  audio_avansat: 'no'
+  gpu: 'no'
+  export_formate: partial
+  open_source: free

@@ -43,3 +43,15 @@ confidence:
   details.first_release_year: auto
   details.install_size_mb: auto
   alternatives: manual
+features:
+  timeline: 'no'
+  cut_trim: 'no'
+  keyframes: 'no'
+  tranzitii: 'no'
+  filtre: 'no'
+  subtitrari: 'no'
+  stabilizare: 'no'
+  audio_avansat: 'no'
+  gpu: free
+  export_formate: free
+  open_source: free

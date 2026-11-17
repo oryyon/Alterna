@@ -38,3 +38,22 @@ sources:
 logo: logos/vaultwarden.svg
 confidence:
   alternatives: manual
+features:
+  offline: free
+  parole: free
+  autofill: free
+  totp: free
+  passkeys: partial
+  bio: free
+  partajare: free
+  audit: 'no'
+  import_export: free
+  selfhost: free
+  extensii_browser: free
+  atasamente: free
+  acces_urgenta: 'no'
+  chei_hardware: free
+  monitorizare_brese: 'no'
+  cli_api: free
+  ssh_agent: 'no'
+  audit_independent: 'no'

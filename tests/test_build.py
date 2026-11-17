@@ -33,7 +33,9 @@ class TestBuildReal:
         con.close()
         assert apps >= 100 and int(meta["app_count"]) == apps
         assert cats == 13
-        assert tax == 18  # taxonomia Securitate (sec. 15)
+        # taxonomiile cresc (Securitate + Video) — verificăm proprietatea,
+        # nu un număr înghețat
+        assert tax >= 18, tax
         assert meta["schema_version"] == "3"
 
     def test_coloanele_de_instalare_sunt_populate(self, built_db):

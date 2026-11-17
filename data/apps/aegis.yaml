@@ -35,3 +35,22 @@ sources:
 - https://www.wikidata.org/wiki/Q83424257
 confidence:
   alternatives: manual
+features:
+  offline: free
+  parole: 'no'
+  autofill: 'no'
+  totp: free
+  passkeys: 'no'
+  bio: free
+  partajare: 'no'
+  audit: 'no'
+  import_export: free
+  selfhost: 'no'
+  extensii_browser: 'no'
+  atasamente: 'no'
+  acces_urgenta: 'no'
+  chei_hardware: partial
+  monitorizare_brese: 'no'
+  cli_api: 'no'
+  ssh_agent: 'no'
+  audit_independent: 'no'

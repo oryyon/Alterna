@@ -57,7 +57,7 @@ features:
     value: free
     note: Scanare gratuită; rapoartele detaliate sunt premium.
   cli_api: free
-  ssh_agent: "no"
+  ssh_agent: 'no'
   audit_independent: free
 
 sources:

@@ -40,3 +40,15 @@ sources:
 - https://www.wikidata.org/wiki/Q65218115
 confidence:
   alternatives: manual
+features:
+  timeline: free
+  cut_trim: free
+  keyframes: partial
+  tranzitii: partial
+  filtre: partial
+  subtitrari: 'no'
+  stabilizare: 'no'
+  audio_avansat: partial
+  gpu: free
+  export_formate: free
+  open_source: free

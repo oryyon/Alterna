@@ -47,17 +47,17 @@ features:
   totp: free
   passkeys: free
   bio: free
-  partajare: "no"
+  partajare: 'no'
   audit: free
   import_export: free
   selfhost: free
   extensii_browser: free
   atasamente: free
-  acces_urgenta: "no"
+  acces_urgenta: 'no'
   chei_hardware:
     value: partial
     note: YubiKey doar prin HMAC-SHA1 challenge-response, nu FIDO2.
-  monitorizare_brese: "no"
+  monitorizare_brese: 'no'
   cli_api: free
   ssh_agent: free
   audit_independent: free   # rapoarte publicate pe keepassxc.org

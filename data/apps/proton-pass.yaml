@@ -36,3 +36,22 @@ sources:
 logo: logos/proton-pass.svg
 confidence:
   alternatives: manual
+features:
+  offline: free
+  parole: free
+  autofill: free
+  totp: free
+  passkeys: free
+  bio: free
+  partajare: free
+  audit: free
+  import_export: free
+  selfhost: 'no'
+  extensii_browser: free
+  atasamente: free
+  acces_urgenta: free
+  chei_hardware: free
+  monitorizare_brese: free
+  cli_api: free
+  ssh_agent: 'no'
+  audit_independent: 'no'

@@ -38,3 +38,22 @@ logo: logos/ente-auth.svg
 confidence:
   details.telemetry: manual
   alternatives: manual
+features:
+  offline: free
+  parole: 'no'
+  autofill: 'no'
+  totp: free
+  passkeys: free
+  bio: free
+  partajare: 'no'
+  audit: 'no'
+  import_export: free
+  selfhost: free
+  extensii_browser: 'no'
+  atasamente: 'no'
+  acces_urgenta: 'no'
+  chei_hardware: free
+  monitorizare_brese: 'no'
+  cli_api: 'no'
+  ssh_agent: 'no'
+  audit_independent: 'no'

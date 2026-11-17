@@ -1,0 +1,20 @@
+# Taxonomia canonică de funcționalități — categoria „Video" (sec. 15)
+# Aceeași funcție = același rând, indiferent de denumirea comercială.
+# Cheile de aici sunt singurele permise în câmpul `features` al aplicațiilor cu
+# category: video.
+# Valori posibile: free | paid | partial | no | unknown
+# (la rânduri factuale, ex. open_source, „free" = da, disponibil tuturor).
+
+category: video
+features:
+  timeline:           Timeline vizual pe mai multe piste
+  cut_trim:            Tăiere și decupare fără re-codare
+  keyframes:           Cadruri cheie (keyframes) și animație
+  tranzitii:           Tranziții și efecte între clișe
+  filtre:              Filtre video (corectare culoare, întuneric)
+  subtitrari:          Subtitrare și editare în interiorul aplicației
+  stabilizare:         Stabilizare a imaginii
+  audio_avansat:       Editare audio avansată (compresor, equalizator)
+  gpu:                 Accelerare hardware (GPU)
+  export_formate:      Export în multe formate / codificatoare
+  open_source:         Open source

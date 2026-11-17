@@ -41,3 +41,15 @@ confidence:
   license: auto
   details.install_size_mb: auto
   alternatives: manual
+features:
+  timeline: free
+  cut_trim: free
+  keyframes: free
+  tranzitii: free
+  filtre: free
+  subtitrari: free
+  stabilizare: 'no'
+  audio_avansat: partial
+  gpu: free
+  export_formate: free
+  open_source: free

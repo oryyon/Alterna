@@ -32,3 +32,22 @@ sources:
 confidence:
   details.install_size_mb: auto
   alternatives: manual
+features:
+  offline: free
+  parole: free
+  autofill: 'no'
+  totp: free
+  passkeys: 'no'
+  bio: 'no'
+  partajare: 'no'
+  audit: 'no'
+  import_export: free
+  selfhost: 'no'
+  extensii_browser: partial
+  atasamente: 'no'
+  acces_urgenta: free
+  chei_hardware: partial
+  monitorizare_brese: 'no'
+  cli_api: free
+  ssh_agent: free
+  audit_independent: 'no'

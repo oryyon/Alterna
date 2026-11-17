@@ -37,3 +37,22 @@ sources:
 logo: logos/enpass.svg
 confidence:
   alternatives: manual
+features:
+  offline: free
+  parole: free
+  autofill: free
+  totp: free
+  passkeys: free
+  bio: free
+  partajare: free
+  audit: partial
+  import_export: free
+  selfhost: 'no'
+  extensii_browser: free
+  atasamente: partial
+  acces_urgenta: free
+  chei_hardware: partial
+  monitorizare_brese: 'no'
+  cli_api: 'no'
+  ssh_agent: 'no'
+  audit_independent: 'no'

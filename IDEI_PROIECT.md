@@ -172,9 +172,9 @@
 > Se implementează după validarea MVP-ului, în ordinea priorităților de la momentul respectiv.
 
 ### Funcționalități post-MVP
-- Detectarea automată a pachetelor instalate local (deb / flatpak / snap) + sugestii de alternative.
-- Sincronizarea catalogului din GitHub (buton „Actualizează catalogul").
-- Screenshot-uri (la MVP: doar logo-uri mici).
+- ✅ Detectarea automată a pachetelor instalate local (deb / flatpak / snap) + mapa inversă (aplicațiile instalate care nu-s în catalog).
+- ✅ Sincronizarea catalogului din GitHub (buton „Actualizează catalogul” — verificată end-to-end împotriva release-ului real.
+- ✅ Screenshot-uri (84, din Wikidata P18, cu atribuire).
 - ✅ Îmbogățirea automată din Wikidata — realizată ca instrument (`tools/import_apps.py`): semințele editoriale + datele obiective din Wikidata (anul primei versiuni, site, dezvoltator, licență, repo), cu sursa citată.
 - Conturi, comentarii, voturi ale utilizatorilor (necesită backend — doar dacă proiectul crește).
 

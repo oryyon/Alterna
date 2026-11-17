@@ -48,11 +48,35 @@ def github_json(url: str, token: str = "") -> dict | None:
         return None
 
 
-def verifica_repo(repo: str, token: str = "") -> dict:
-    """Stele + ultima versiune, dintr-un repository GitHub."""
+def _acelasi_site(a: str, b: str) -> bool:
+    """Aceleași domeniu, ignorând schema, www. și slash-ul final."""
+    def domeniu(url: str) -> str:
+        url = (url or "").strip().lower()
+        url = re.sub(r"^https?://", "", url)
+        url = re.sub(r"^www\.", "", url)
+        return url.rstrip("/").split("/")[0]
+    return bool(a) and bool(b) and domeniu(a) == domeniu(b)
+
+
+def verifica_repo(repo: str, token: str = "", website: str = "") -> dict:
+    """Stele + ultima versiune, dintr-un repository GitHub.
+
+    **Garda:** repository-ul trebuie să declare drept homepage site-ul
+    aplicației (sau același domeniu). Fără asta, AI-ul ar putea propune
+    „KDE/ark” în loc de „flame-engine/ark” — iar stelele ar fi ale altui
+    proiect, adică o valoare *corectă* pentru altceva. Cel mai rău lucru
+    pentru onestitatea catalogului.
+    """
     info = github_json(f"https://api.github.com/repos/{repo}", token)
     if not info or "stargazers_count" not in info:
         return {}
+    if website:
+        homepage = str(info.get("homepage") or "")
+        descriere = str(info.get("description") or "")
+        if not (_acelasi_site(homepage, website)
+                or _acelasi_site(descriere, website)):
+            # nu putem lega repo-ul de aplicație -> nu scriem nimic
+            return {}
     rezultat = {"stars": int(info.get("stargazers_count") or 0),
                 "stars_url": f"https://github.com/{repo}"}
     eliberare = github_json(
@@ -103,7 +127,7 @@ def aplica(app: dict, surse: dict, token: str = "",
     if repo:
         repo = re.sub(r"^https?://(www\.)?github\.com/", "", repo).strip("/")
         if "/" in repo:
-            rezultat.update(verifica_repo(repo, token))
+            rezultat.update(verifica_repo(repo, token, str(app.get("website") or "")))
     pachet = str(surse.get("ubuntu_package") or "")
     if pachet:
         rezultat.update(verifica_pachet(pachet, liste))

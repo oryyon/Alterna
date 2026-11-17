@@ -42,4 +42,6 @@ confidence:
   details.first_release_year: auto
   details.install_size_mb: auto
   alternatives: manual
+  indicators.in_ubuntu_repos: auto
 screenshot: screenshots/easytag.jpg
+package: easytag

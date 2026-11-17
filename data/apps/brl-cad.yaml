@@ -30,9 +30,9 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars:
-  stars_url: https://svn.code.sf.net/p/brlcad/code/brlcad/trunk
-  latest_release:
+  stars: 1046
+  stars_url: https://github.com/BRL-CAD/brlcad
+  latest_release: 2026-11
   in_ubuntu_repos: false
 sources:
 - https://brlcad.org
@@ -42,4 +42,7 @@ sources:
 confidence:
   details.first_release_year: auto
   alternatives: manual
+  indicators.stars: auto
+  indicators.stars_url: auto
+  indicators.latest_release: auto
 screenshot: screenshots/brl-cad.jpg

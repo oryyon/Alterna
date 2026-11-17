@@ -80,6 +80,10 @@ class DetailView(QScrollArea):
         for eticheta, url in linkuri:
             buton = LinkLabel(eticheta, url)
             buton.setProperty("installLink", "true")
+            # Nu e un hyperlink de citire, ci o acțiune: regula QSS „link"
+            # (culoare de accent + hover propriu) ar intra în conflict cu
+            # „installLink" și ar face textul invizibil la hover.
+            buton.setProperty("link", "false")
             buton.clicked.connect(self.open_url)
             rand.addWidget(buton)
         rand.addStretch(1)

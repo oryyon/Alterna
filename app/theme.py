@@ -80,11 +80,16 @@ def build_qss(theme: str) -> str:
     QLabel[screenshot="true"] {{ border: 1px solid {p['border']}; border-radius: 6px;
                                 background: {p['bg_view']}; }}
 
-    /* Linkurile de instalare arată ca butoane: sunt acțiuni, nu citări. */
+    /* Linkurile de instalare arată ca butoane: sunt acțiuni, nu citări.
+       ATENȚIE: hover-ul trebuie să declare și `color` — altfel culoarea textului
+       e moștenită de la regula QLabel[link="true"]:hover (culoarea textului
+       temei), iar fundalul devine tot aceeași culoare → text alb pe alb,
+       invizibil (raportat de utilizator în toate temele). */
     QLabel[installLink="true"] {{ color: {p['bg_view']}; background: {p['accent']};
                                   border: 1px solid {p['accent']}; border-radius: 4px;
                                   padding: 3px 10px; font-weight: bold; }}
-    QLabel[installLink="true"]:hover {{ background: {p['text']}; border-color: {p['text']}; }}
+    QLabel[installLink="true"]:hover {{ color: {p['text']}; background: {p['bg_window']};
+                                        border-color: {p['accent']}; }}
 
     /* Marcajele de certitudine (sec. 8): verde = verificată, portocaliu =
        estimată, cenușiu = necunoscută. */
@@ -155,6 +160,8 @@ def build_qss(theme: str) -> str:
     }}
 
     QScrollArea {{ border: none; background: transparent; }}
+    /* Conținutul derulant din Setări: fundalul temei, nu al paletei. */
+    QWidget#settingsContent {{ background: {p['bg_window']}; }}
     QScrollBar:vertical {{ background: {p['bg_view']}; width: 10px; border-radius: 5px; }}
     QScrollBar::handle:vertical {{ background: {p['border']}; border-radius: 5px; min-height: 30px; }}
     QScrollBar::handle:vertical:hover {{ background: {p['text_dim']}; }}

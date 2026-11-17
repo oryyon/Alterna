@@ -12,9 +12,10 @@ from pathlib import Path
 
 from PySide6.QtCore import Qt, QUrl, Signal
 from PySide6.QtGui import QDesktopServices
-from PySide6.QtWidgets import (QCheckBox, QDialog, QFormLayout, QHBoxLayout,
-                               QLabel, QLineEdit, QPushButton, QTextEdit,
-                               QVBoxLayout, QWidget)
+from PySide6.QtWidgets import (QCheckBox, QDialog, QFormLayout, QFrame,
+                                QHBoxLayout,
+                               QLabel, QLineEdit, QPushButton, QScrollArea,
+                               QTextEdit, QVBoxLayout, QWidget)
 
 from . import links
 from .ai import (CLAUDE_DEFAULT_MODEL, OLLAMA_DEFAULT_MODEL, ClaudeClient,
@@ -58,9 +59,23 @@ class SettingsDialog(QDialog):
     def __init__(self, settings, catalog, parent=None):
         super().__init__(parent)
         self.settings = settings
+        # Catalogul e păstrat ca atribut: „Actualizează catalogul acum" și
+        # „Propune o aplicație cu AI…" au nevoie de el (fără, arunca
+        # AttributeError în thread → „Eroare neașteptată").
+        self.catalog = catalog
         self.setWindowTitle("⚙ Setări")
         self.setMinimumWidth(480)
-        layout = QVBoxLayout(self)
+
+        # Conținutul e într-o zonă de derulare: pe ecrane mici (sau cu conținut
+        # extins) rândurile de jos nu mai sunt tăiate — apare un scrollbar.
+        outer = QVBoxLayout(self)
+        outer.setSpacing(12)
+        self.scroll = QScrollArea()
+        self.scroll.setWidgetResizable(True)
+        self.scroll.setFrameShape(QFrame.NoFrame)
+        content = QWidget()
+        content.setObjectName("settingsContent")
+        layout = QVBoxLayout(content)
         layout.setSpacing(16)
 
         # --- Aspect -------------------------------------------------------------
@@ -178,6 +193,11 @@ class SettingsDialog(QDialog):
             "Nicio cheie API nu e inclusă în aplicație."))
         self._on_ai_source_changed()
 
+        # Conținutul merge în zona de derulare; butonul „Închide" rămâne
+        # permanent vizibil, în afara ei (altfel ar dispărea sub margine).
+        self.scroll.setWidget(content)
+        outer.addWidget(self.scroll, 1)
+
         # --- Butoane ------------------------------------------------------------------
         buttons = QHBoxLayout()
         buttons.addStretch(1)
@@ -185,9 +205,24 @@ class SettingsDialog(QDialog):
         ok.setProperty("primary", True)
         ok.clicked.connect(self.accept)
         buttons.addWidget(ok)
-        layout.addLayout(buttons)
+        outer.addLayout(buttons)
 
     # --------------------------------------------------------- actualizare catalog
+    def showEvent(self, event) -> None:
+        """Limitează dialogul la ecran — altfel conținutul iese din vedere.
+
+        QScrollArea cu `widgetResizable` ar întinde dialogul până la
+        dimensiunea conținutului (adic NU ar apărea scrollbar-ul); de aceea
+        limităm explicit înălțimea la cea disponibilă pe ecran.
+        """
+        super().showEvent(event)
+        screen = self.screen()
+        if screen is None:
+            return
+        disponibil = screen.availableGeometry().height() - 40
+        if self.height() > disponibil:
+            self.resize(self.width(), disponibil)
+
     def _update_catalog(self) -> None:
         """Descarcă catalogul nou de la release-ul public și îl aplică."""
         from .catalog_update import (UpdateError, apply_catalog,

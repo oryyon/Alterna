@@ -76,7 +76,7 @@ def verifica_pachet(pachet: str, liste: Path | None = None) -> dict:
     return {}
 
 
-def surse_din_ai(app: dict, model: str = "") -> dict:
+def surse_din_ai(app: dict, model: str = "", timeout: int = 600) -> dict:
     """Cere AI-ului sursele pentru indicatorii aplicatiei."""
     from app import ai
 
@@ -88,6 +88,7 @@ def surse_din_ai(app: dict, model: str = "") -> dict:
         raise RuntimeError("Ollama nu răspunde — pornește `ollama serve` "
                            "și instalează un model (de ex. llama3.1).")
     text = backend.generate(ai.indicators_prompt(cerere),
+                             timeout=timeout,
                              system=ai.INDICATORS_SYSTEM_PROMPT)
     bloc = ai.extract_yaml(text)
     date = YAML(typ="safe", pure=True).load(bloc) or {}
@@ -119,6 +120,8 @@ def main() -> int:
                         help="folosește sursele deja din YAML, fără AI")
     parser.add_argument("--model", default=os.environ.get("OLLAMA_MODEL", ""),
                         help="modelul Ollama (implicit: primul disponibil)")
+    parser.add_argument("--timeout", type=int, default=600,
+                        help="timp maxim pentru model (implicit: 600 s)")
     parser.add_argument("--dry-run", action="store_true",
                         help="nu scrie în YAML")
     args = parser.parse_args()
@@ -143,7 +146,7 @@ def main() -> int:
         surse["ubuntu_package"] = app.get("package") or app.get("id") or ""
         surse["website"] = app.get("website") or ""
     else:
-        surse = surse_din_ai(app, args.model)
+        surse = surse_din_ai(app, args.model, args.timeout)
 
     token = os.environ.get("GITHUB_TOKEN", "")
     valori = aplica(app, surse, token)

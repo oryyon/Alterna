@@ -7,17 +7,13 @@ catalog — o valoare nesurprinsă de nicaieri nu se scrie niciodată.
 
 from __future__ import annotations
 
-import sys
-from pathlib import Path
+import pytest
 
-ROOT = Path(__file__).resolve().parent.parent
-sys.path.insert(0, str(ROOT / "tools"))
+from tools import complete_indicators as ci
 
 
 class TestVerificareSurse:
     def test_repo_goleste_stelele_si_versiunea(self, monkeypatch):
-        import complete_indicators as ci
-
         def fake_json(url, token=""):
             if url.endswith("/releases/latest"):
                 return {"published_at": "2026-11-03T10:00:00Z"}
@@ -30,15 +26,11 @@ class TestVerificareSurse:
         assert rezultat["latest_release"] == "2026-11"
 
     def test_repo_inaccesibil_nu_produce_valori(self, monkeypatch):
-        import complete_indicators as ci
-
         monkeypatch.setattr(ci, "github_json", lambda url, token="": None)
         assert ci.verifica_repo("nope/nope") == {}
 
     def test_pachet_existent_in_arhiva(self, tmp_path):
         """Index injectat — testul nu depinde de listele APT de pe masina."""
-        import complete_indicators as ci
-
         index = tmp_path / ("archive.ubuntu.com_ubuntu_dists_noble_"
                             "main_binary-amd64_Packages")
         index.write_text("Package: gimp\nVersion: 2.10.38\n\n", encoding="utf-8")
@@ -46,16 +38,12 @@ class TestVerificareSurse:
         assert rezultat.get("in_ubuntu_repos") is True
 
     def test_pachet_inexistent(self, tmp_path):
-        import complete_indicators as ci
-
         index = tmp_path / ("archive.ubuntu.com_ubuntu_dists_noble_"
                             "main_binary-amd64_Packages")
         index.write_text("Package: altceva\n", encoding="utf-8")
         assert ci.verifica_pachet("pachet-inexistent-xyz", tmp_path) == {}
 
     def test_aplica_scrie_doar_valori_verificate(self, monkeypatch, tmp_path):
-        import complete_indicators as ci
-
         index = tmp_path / ("archive.ubuntu.com_ubuntu_dists_noble_"
                             "main_binary-amd64_Packages")
         index.write_text("Package: gimp\n", encoding="utf-8")

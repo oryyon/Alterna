@@ -21,7 +21,11 @@ Utilizare:
 from __future__ import annotations
 
 import argparse
+import base64
+import json
+import os
 import subprocess
+import urllib.request
 import sys
 from pathlib import Path
 
@@ -31,6 +35,9 @@ from ruamel.yaml import YAML  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data" / "apps"
+
+#: User-agent pentru cererile HTTP ( politeza pentru API-uri )
+UA = {"User-Agent": "Alterna/0.2 (+https://github.com/oryyon/Alterna)"}
 
 #: id aplicatie -> (valoare verificata, sursa, citatul care o sustine)
 VERIFICARI: dict[str, tuple[str, str, str]] = {
@@ -208,10 +215,12 @@ def main() -> int:
                         help="scrie valorile verificate in YAML")
     parser.add_argument("--cautare", action="store_true",
                         help="cauta pagini de politica pe site-urile oficiale")
+    parser.add_argument("--doar-readme", action="store_true",
+                        help="cauta doar in README-ul repository-ului (mai rapid)")
     args = parser.parse_args()
 
     if args.cautare:
-        return cauta()
+        return cauta(args.doar_readme)
 
     yaml_rw = YAML()
     yaml_rw.allow_duplicate_keys = False
@@ -253,7 +262,48 @@ def main() -> int:
     return 1 if erori else 0
 
 
-def cauta() -> int:
+def cauta_in_readme(repo: str, timeout: int = 20) -> list[tuple[str, str]]:
+    """Cauta declaratia de telemetrie in README-ul repository-ului.
+
+    Multe aplicatii FOSS isi declara atitudinea chiar acolo („we don't collect
+    any data”, „no telemetry”). E sursa cea mai la indemana si cea mai
+    verificabila: linkul catre README, cu citatul exact.
+    """
+    if not repo:
+        return []
+    url = f"https://api.github.com/repos/{repo}/readme"
+    antet = dict(UA)
+    token = os.environ.get("GITHUB_TOKEN", "")
+    if token:
+        antet["Authorization"] = f"Bearer {token}"
+    try:
+        cerere = urllib.request.Request(url, headers=antet)
+        with urllib.request.urlopen(cerere, timeout=timeout) as răspuns:
+            date = json.loads(răspuns.read().decode("utf-8", "replace"))
+    except Exception:  # noqa: BLE001 — rețeaua e best-effort
+        return []
+    import base64
+    import html
+    import re
+    continut = base64.b64decode(date.get("content") or "").decode(
+        "utf-8", "replace")
+    text = html.unescape(re.sub(r"<[^>]+>", " ", continut))
+    text = re.sub(r"\s+", " ", text)
+    link = f"https://github.com/{repo}#readme"
+    gasite = []
+    for cuvant in ("does not collect", "doesn't collect", "no telemetry",
+                   "do not collect", "don't collect", "without collecting",
+                   "no data is collected", "no personal data"):
+        for propozitie in re.split(r"(?<=[.!?]) ", text):
+            if cuvant in propozitie.lower() and len(propozitie) < 300:
+                gasite.append((link, propozitie.strip()))
+                break
+        if gasite:
+            break
+    return gasite
+
+
+def cauta(doar_readme: bool = False) -> int:
     """Cauta politici de confidentialitate pentru aplicatiile neverificate.
 
     Paralel: fiecare aplicatie probeaza cateva cai pe site-ul oficial, si
@@ -271,11 +321,21 @@ def cauta() -> int:
         app_id = app.get("id")
         if not app_id or app_id in verificate:
             continue
-        aplicatii.append((app_id, app.get("website") or ""))
+        aplicatii.append((app_id, app.get("website") or "",
+                          list(app.get("sources") or [])))
 
     def unu(item):
-        app_id, website = item
-        return app_id, website, cauta_politica(website)
+        app_id, website, surse = item
+        rezultate = [] if doar_readme else cauta_politica(website)
+        if not rezultate:
+            # README-ul repository-ului: multe aplicatii FOSS isi declara
+            # acolo atitudinea, cu citat exact
+            for url in surse:
+                if "github.com/" in url:
+                    repo = url.split("github.com/", 1)[1].strip("/")
+                    rezultate = cauta_in_readme(repo)
+                    break
+        return app_id, website, rezultate
 
     gasite = 0
     with ThreadPoolExecutor(max_workers=8) as executor:

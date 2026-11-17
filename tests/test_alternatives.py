@@ -14,8 +14,9 @@ from pathlib import Path
 
 import pytest
 
+from tools.check_alternatives import justificat
+
 ROOT = Path(__file__).resolve().parent.parent
-sys.path.insert(0, str(ROOT / "tools"))
 
 
 @pytest.fixture(scope="module")
@@ -61,8 +62,6 @@ class TestRelatiiAlternative:
             f"relații într-un singur sens: {nesimetrice[:10]}"
 
     def test_relatiile_intre_categorii_sunt_justificate(self, catalog_yaml):
-        from check_alternatives import justificat
-
         nejustificate = []
         for app_id, app in catalog_yaml.items():
             for alt in app.get("alternatives") or []:

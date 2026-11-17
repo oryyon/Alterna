@@ -29,7 +29,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 37539
+  stars: 37542
   stars_url: https://github.com/nextcloud/server
   latest_release: 2026-11
   in_ubuntu_repos: false
@@ -41,5 +41,8 @@ sources:
 confidence:
   details.first_release_year: auto
   alternatives: manual
+  indicators.stars: auto
+  indicators.stars_url: auto
+  indicators.latest_release: auto
 logo: logos/nextcloud.svg
 screenshot: screenshots/nextcloud.jpg

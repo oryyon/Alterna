@@ -27,7 +27,7 @@ indicators:
   popcon_rank:
   stars: 3310
   stars_url: https://github.com/virt-manager/virt-manager
-  latest_release: 2026-01
+  latest_release: 2025-08
   in_ubuntu_repos: true
 sources:
 - https://virt-manager.org/
@@ -38,4 +38,9 @@ confidence:
   license: auto
   details.install_size_mb: auto
   alternatives: manual
+  indicators.stars: auto
+  indicators.stars_url: auto
+  indicators.latest_release: auto
+  indicators.in_ubuntu_repos: auto
 screenshot: screenshots/virt-manager.jpg
+package: virt-manager

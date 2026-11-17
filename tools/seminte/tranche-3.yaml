@@ -1,0 +1,88 @@
+# Semințe pentru import — Tranche 3 (golurile de alternative)
+#
+# Aceste 7 aplicații există în special ca **echivalente** pentru aplicațiile
+# care nu aveau nicio alternativă în catalog (copyq, filezilla, gparted,
+# syncthing, timeshift, virtualbox): clipboard, transfer de fișiere,
+# partiționare, sincronizare, backup, hipervizor.
+#
+# `popularity` = poziția editorială în catalog (multiplu de 10; cu cât e mai
+# mică, cu atât aplicația e mai prominentă).
+
+- id: parcellite
+  developer: Parcellite
+  first_release_year: 2011
+  wikidata_qid: Q16999578
+  name: Parcellite
+  category: utilities
+  description: Manager de clipboard, cu istoric și căutare.
+  popularity: 1550
+  website: https://parcellite.sourceforge.net/
+  platforms: [linux]
+  tags: [clipboard, productivitate, usor]
+  alternatives: [copyq, flameshot]
+  file_formats: []
+- id: rclone
+  developer: rclone (Nick Craig-Wood)
+  first_release_year: 2012
+  name: rclone
+  category: utilities
+  description: Transfer și sincronizare de fișiere între clouduri.
+  popularity: 1350
+  platforms: [linux, windows, macos]
+  tags: [sincronizare, cloud, transfer]
+  alternatives: [syncthing, filezilla]
+  file_formats: []
+- id: gnome-disks
+  developer: GNOME
+  website: https://gnome-disk-utility.pages.freedesktop.org/
+  first_release_year: 2011
+  name: GNOME Disks
+  category: utilities
+  description: Gestionarea discurilor și a partițiilor, din GNOME.
+  popularity: 1450
+  platforms: [linux]
+  tags: [discuri, partiții, gnome]
+  alternatives: [gparted, baobab]
+  file_formats: []
+- id: nextcloud
+  name: Nextcloud
+  category: utilities
+  description: "Client pentru platforma Nextcloud: fișiere, sync, calendar."
+  popularity: 1150
+  platforms: [linux, windows, macos, android]
+  tags: [sync, cloud, auto-gazduire]
+  alternatives: [syncthing, rclone]
+  file_formats: []
+- id: deja-dup
+  developer: GNOME
+  wikidata_qid: Q130555797
+  name: Déjà Dup
+  category: utilities
+  description: Copii de rezervă simple, cu interfață grafică.
+  popularity: 1500
+  platforms: [linux]
+  tags: [backup, copii de rezerva, gnome]
+  alternatives: [timeshift, rclone]
+  file_formats: []
+- id: virt-manager
+  first_release_year: 2007
+  website: https://virt-manager.org/
+  wikidata_qid: Q3266778
+  name: Virt Manager
+  category: utilities
+  description: Interfață grafică pentru mașini virtuale KVM/QEMU.
+  popularity: 1450
+  platforms: [linux]
+  tags: [virtualizare, kvm, masini virtuale]
+  alternatives: [virtualbox, qemu]
+  file_formats: []
+- id: qemu
+  first_release_year: 1998
+  name: QEMU
+  category: utilities
+  description: Emulator de hardware și hipervizor pentru mașini virtuale.
+  popularity: 1400
+  platforms: [linux, windows, macos]
+  tags: [virtualizare, emulator, kvm]
+  alternatives: [virtualbox, virt-manager]
+  file_formats: []

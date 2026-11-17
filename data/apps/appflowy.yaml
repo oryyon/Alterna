@@ -1,12 +1,12 @@
 # AppFlowy — Suită de birou local-first, cu note, tablouri și taskuri.
 id: appflowy
-popularity: 1490
+popularity: 1400
 name: AppFlowy
 description: Suită de birou local-first, cu note, tablouri și taskuri.
 category: notes
 license: foss
 price: paid
-developer: 'AppFlowy'
+developer: AppFlowy
 website: https://appflowy.com/
 snap: appflowy
 platforms:

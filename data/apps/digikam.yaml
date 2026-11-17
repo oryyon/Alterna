@@ -1,12 +1,12 @@
 # digiKam — Organizator de fotografii cu etichetare și geolocalizare.
 id: digikam
-popularity: 1390
+popularity: 1350
 name: digiKam
 description: Organizator de fotografii cu etichetare și geolocalizare.
 category: graphics
 license: foss
 price: free
-developer: 'digiKam'
+developer: digiKam
 website: https://www.digikam.org/
 snap: digikam
 platforms:

@@ -31,7 +31,7 @@ details:
 
 indicators:
   popcon_rank: 10742
-  stars: 15703
+  stars: 15705
   stars_url: https://github.com/mltframework/shotcut
   latest_release: "2026-11"
   in_ubuntu_repos: true

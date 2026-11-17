@@ -6,7 +6,7 @@ description: Client de torrent, ușor și fără reclame.
 category: internet
 license: foss
 price: free
-developer: 'Transmission'
+developer: Transmission
 website: https://transmissionbt.com/
 snap: transmission
 platforms:

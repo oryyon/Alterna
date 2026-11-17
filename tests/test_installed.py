@@ -259,7 +259,7 @@ class TestDetectareInThread:
                 qapp.processEvents()
                 time.sleep(0.02)
             assert "gimp" in window.installed, "rezultatul nu a ajuns în fereastră"
-            assert "instalate" in window.installed_label.text()
+            assert "instalat" in window.installed_label.text()
         finally:
             window.close()
 
@@ -333,3 +333,50 @@ class TestLinkuriInstalare:
 
         app = {"id": "arduino-ide", "package": "arduino", "in_ubuntu_repos": True}
         assert linkuri_instalare(app) == [("APT", "apt://arduino")]
+
+
+class TestMapareInversa:
+    """Aplicațiile instalate care NU sunt în catalog (maparea inversă)."""
+
+    def test_aplicatiile_neacoperite_sunt_raportate(self, tmp_path):
+        from app.installed import aplicatii_neacoperite
+
+        # un „desktop” pentru aplicația necunoscută
+        (tmp_path / "necunoscuta.desktop").write_text("[Desktop Entry]\n")
+        apps = [{"id": "cunoscuta", "package": "cunoscuta"}]
+        surse = {"deb": {"cunoscuta": "1.0", "necunoscuta": "2.0"},
+                 "snap": {}, "flatpak": {}}
+        rezultat = aplicatii_neacoperite(apps, surse, [tmp_path])
+        assert [i.name for i in rezultat] == ["necunoscuta"]
+        assert rezultat[0].version == "2.0"
+
+    def test_pachetele_fara_desktop_sunt_ignorate(self, tmp_path):
+        """Bibliotecile și pachetele de sistem nu sunt „aplicații”."""
+        from app.installed import aplicatii_neacoperite
+
+        (tmp_path / "aplicatie.desktop").write_text("[Desktop Entry]\n")
+        apps = []
+        surse = {"deb": {"libceva": "1.0", "aplicatie": "2.0"},
+                 "snap": {}, "flatpak": {}}
+        rezultat = aplicatii_neacoperite(apps, surse, [tmp_path])
+        assert [i.name for i in rezultat] == ["aplicatie"]
+
+    def test_ce_din_catalog_nu_sunt_raportate(self, tmp_path):
+        from app.installed import aplicatii_neacoperite
+
+        (tmp_path / "gimp.desktop").write_text("[Desktop Entry]\n")
+        apps = [{"id": "gimp", "package": "gimp"}]
+        surse = {"deb": {"gimp": "2.10"}, "snap": {}, "flatpak": {}}
+        assert aplicatii_neacoperite(apps, surse, [tmp_path]) == []
+
+    def test_snap_si_flatpak_neacoperite_sunt_raportate(self, tmp_path):
+        """Snap-ul și Flatpak-ul necunoscute sunt și ele raportate."""
+        from app.installed import aplicatii_neacoperite
+
+        (tmp_path / "spotify.desktop").write_text("[Desktop Entry]\n")
+        (tmp_path / "org.x.Y.desktop").write_text("[Desktop Entry]\n")
+        apps = [{"id": "gimp", "package": "gimp"}]
+        surse = {"deb": {}, "snap": {"spotify": "1"},
+                 "flatpak": {"org.x.Y": "2"}}
+        rezultat = aplicatii_neacoperite(apps, surse, [tmp_path])
+        assert {i.source for i in rezultat} == {"snap", "flatpak"}

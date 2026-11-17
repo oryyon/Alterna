@@ -1,6 +1,6 @@
 # DBeaver — Client de baze de date pentru SQL, cu suport multi-motor.
 id: dbeaver
-popularity: 1150
+popularity: 1170
 name: DBeaver
 description: Client de baze de date pentru SQL, cu suport multi-motor.
 category: utilities
@@ -27,7 +27,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 52447
+  stars: 52451
   stars_url: https://github.com/dbeaver/dbeaver
   latest_release: 2026-11
   in_ubuntu_repos: false

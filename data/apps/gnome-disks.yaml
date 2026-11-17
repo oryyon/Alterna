@@ -1,0 +1,35 @@
+# GNOME Disks — Gestionarea discurilor și a partițiilor, din GNOME.
+id: gnome-disks
+popularity: 1870
+name: GNOME Disks
+description: Gestionarea discurilor și a partițiilor, din GNOME.
+category: utilities
+license: foss
+price: free
+developer: 'GNOME'
+website: https://gnome-disk-utility.pages.freedesktop.org/
+platforms:
+- linux
+tags:
+- discuri
+- partiții
+- gnome
+alternatives:
+- gparted
+- baobab
+details:
+  install_size_mb: 0
+  first_release_year: 2011
+  file_formats: []
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://gnome-disk-utility.pages.freedesktop.org/
+confidence:
+  alternatives: manual

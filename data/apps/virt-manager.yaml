@@ -1,0 +1,39 @@
+# Virt Manager — Interfață grafică pentru mașini virtuale KVM/QEMU.
+id: virt-manager
+popularity: 1910
+name: Virt Manager
+description: Interfață grafică pentru mașini virtuale KVM/QEMU.
+category: utilities
+license: foss
+price: free
+developer: Red Hat
+website: https://virt-manager.org/
+platforms:
+- linux
+tags:
+- virtualizare
+- kvm
+- masini virtuale
+alternatives:
+- virtualbox
+- qemu
+details:
+  install_size_mb: 284
+  first_release_year: 2007
+  file_formats: []
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars: 3310
+  stars_url: https://github.com/virt-manager/virt-manager
+  latest_release: 2026-01
+  in_ubuntu_repos: true
+sources:
+- https://virt-manager.org/
+- https://github.com/virt-manager/virt-manager
+- https://www.wikidata.org/wiki/Q3266778
+confidence:
+  license: auto
+  details.install_size_mb: auto
+  alternatives: manual

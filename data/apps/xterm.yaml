@@ -1,6 +1,6 @@
 # XTerm — Emulator de terminal clasic din X Window System.
 id: xterm
-popularity: 2060
+popularity: 2130
 name: XTerm
 description: Emulator de terminal clasic din X Window System.
 category: utilities
@@ -24,7 +24,7 @@ details:
   telemetry: none
   romanian_language: false
 indicators:
-  popcon_rank: 1092
+  popcon_rank:
   stars:
   stars_url: https://invisible-mirror.net/archives/xterm/
   latest_release:

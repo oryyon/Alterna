@@ -1,6 +1,6 @@
 # Filelight — Analyzer al spațiului ocupat pe disc, din desktopul KDE.
 id: filelight
-popularity: 1910
+popularity: 1980
 name: Filelight
 description: Analyzer al spațiului ocupat pe disc, din desktopul KDE.
 category: utilities
@@ -25,7 +25,7 @@ details:
   telemetry: none
   romanian_language: false
 indicators:
-  popcon_rank: 7866
+  popcon_rank:
   stars: 302
   stars_url: https://github.com/KDE/filelight
   latest_release: 2026-11

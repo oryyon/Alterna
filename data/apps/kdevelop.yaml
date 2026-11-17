@@ -1,12 +1,12 @@
 # KDevelop — IDE pentru C++ și Qt, din desktopul KDE.
 id: kdevelop
-popularity: 1680
+popularity: 1650
 name: KDevelop
 description: IDE pentru C++ și Qt, din desktopul KDE.
 category: development
 license: foss
 price: free
-developer: 'KDE'
+developer: KDE
 website: https://www.kdevelop.org/
 snap: kdevelop
 platforms:

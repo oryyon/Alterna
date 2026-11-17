@@ -1,6 +1,6 @@
 # Simplenote — notițe minimaliste cu sincronizare
 id: simplenote
-popularity: 960
+popularity: 990
 name: Simplenote
 description: Notițe minimaliste cu sincronizare instantă, de la Automattic.
 category: notes
@@ -26,7 +26,7 @@ details:
 
 indicators:
   popcon_rank:
-  stars: 5290
+  stars: 5291
   stars_url: https://github.com/Automattic/simplenote-electron
   latest_release: "2026-07"
   in_ubuntu_repos: false

@@ -1,0 +1,37 @@
+# Parcellite — Manager de clipboard, cu istoric și căutare.
+id: parcellite
+popularity: 1940
+name: Parcellite
+description: Manager de clipboard, cu istoric și căutare.
+category: utilities
+license: foss
+price: free
+developer: 'Parcellite'
+website: https://parcellite.sourceforge.net/
+platforms:
+- linux
+tags:
+- clipboard
+- productivitate
+- usor
+alternatives:
+- copyq
+- flameshot
+details:
+  install_size_mb: 231
+  first_release_year: 2011
+  file_formats: []
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release:
+  in_ubuntu_repos: true
+sources:
+- https://parcellite.sourceforge.net/
+- https://www.wikidata.org/wiki/Q16999578
+confidence:
+  details.install_size_mb: auto
+  alternatives: manual

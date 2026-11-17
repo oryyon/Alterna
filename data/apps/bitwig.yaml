@@ -1,12 +1,12 @@
 # Bitwig Studio — Statie audio digitală cu procesare modulară.
 id: bitwig
-popularity: 1640
+popularity: 1560
 name: Bitwig Studio
 description: Statie audio digitală cu procesare modulară.
 category: audio-production
 license: foss
 price: paid
-developer: 'Bitwig'
+developer: Bitwig
 website: https://www.bitwig.com
 platforms:
 - linux

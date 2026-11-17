@@ -1,6 +1,6 @@
 # Timeshift — snapshots de sistem pentru restaurare rapidă
 id: timeshift
-popularity: 970
+popularity: 1000
 name: Timeshift
 description: Snapshots de sistem (rsync/Btrfs) pentru restaurare rapidă.
 category: utilities
@@ -11,7 +11,8 @@ website: https://github.com/linuxmint/timeshift
 
 platforms: [linux]
 tags: [backup, snapshots, sistem]
-alternatives: []
+alternatives:
+- deja-dup
 
 details:
   install_size_mb: 303

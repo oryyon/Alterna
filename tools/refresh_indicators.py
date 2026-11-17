@@ -117,6 +117,7 @@ def main() -> int:
 
     token = os.environ.get("GITHUB_TOKEN")
     yaml = YAML()
+    yaml.allow_duplicate_keys = False
     yaml.preserve_quotes = True
     yaml.width = 4096  # nu rescrie liniile lungi
 

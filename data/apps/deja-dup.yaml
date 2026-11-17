@@ -1,0 +1,39 @@
+# Déjà Dup — Copii de rezervă simple, cu interfață grafică.
+id: deja-dup
+popularity: 1920
+name: Déjà Dup
+description: Copii de rezervă simple, cu interfață grafică.
+category: utilities
+license: foss
+price: free
+developer: 'GNOME'
+website: https://apps.gnome.org/DejaDup/
+platforms:
+- linux
+tags:
+- backup
+- copii de rezerva
+- gnome
+alternatives:
+- timeshift
+- rclone
+details:
+  install_size_mb: 273
+  first_release_year: 2008
+  file_formats: []
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url: https://gitlab.gnome.org/World/deja-dup
+  latest_release:
+  in_ubuntu_repos: true
+sources:
+- https://apps.gnome.org/DejaDup/
+- https://gitlab.gnome.org/World/deja-dup
+- https://www.wikidata.org/wiki/Q130555797
+confidence:
+  details.first_release_year: auto
+  details.install_size_mb: auto
+  alternatives: manual

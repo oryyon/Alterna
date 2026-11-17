@@ -32,7 +32,7 @@ details:
 
 indicators:
   popcon_rank: 4835
-  stars: 4649
+  stars: 4650
   stars_url: https://github.com/LibreOffice/core
   latest_release: "2026-11"
   in_ubuntu_repos: true

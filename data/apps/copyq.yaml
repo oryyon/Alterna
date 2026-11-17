@@ -11,7 +11,8 @@ website: https://hluk.github.io/CopyQ
 
 platforms: [linux, windows, macos]
 tags: [clipboard, istoric, productivitate]
-alternatives: []
+alternatives:
+- parcellite
 
 details:
   install_size_mb: 374

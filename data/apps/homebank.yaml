@@ -1,13 +1,13 @@
 # HomeBank — Gestionarea bugetului personal, cu import de extrase.
 id: homebank
-popularity: 1530
+popularity: 1440
 name: HomeBank
 description: Gestionarea bugetului personal, cu import de extrase.
 category: office
 license: foss
 price: free
-developer: 'HomeBank'
-website: https://sourceforge.net/projects/homebank/
+developer: HomeBank
+website: https://homebank.free.fr
 platforms:
 - linux
 - windows
@@ -35,7 +35,6 @@ indicators:
   latest_release:
   in_ubuntu_repos: true
 sources:
-- https://sourceforge.net/projects/homebank/
 - https://homebank.free.fr
 - https://code.launchpad.net/~mdoyen/homebank/5.3.x
 - https://www.wikidata.org/wiki/Q3139598

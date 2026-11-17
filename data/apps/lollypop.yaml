@@ -1,6 +1,6 @@
 # Lollypop — Player de muzică cu navigare prin colecție și etichete.
 id: lollypop
-popularity: 1590
+popularity: 1680
 name: Lollypop
 description: Player de muzică cu navigare prin colecție și etichete.
 category: audio-players
@@ -30,7 +30,7 @@ details:
   telemetry: none
   romanian_language: false
 indicators:
-  popcon_rank: 23451
+  popcon_rank:
   stars:
   stars_url: https://gitlab.gnome.org/World/lollypop
   latest_release:

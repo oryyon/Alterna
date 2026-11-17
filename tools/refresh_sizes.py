@@ -153,6 +153,7 @@ def main() -> int:
     print(f"✔ index Ubuntu: {len(arhiva.dimensiuni)} pachete")
 
     yaml_rw = YAML()
+    yaml_rw.allow_duplicate_keys = False
     yaml_rw.preserve_quotes = True
     yaml_rw.width = 4096
 

@@ -55,6 +55,7 @@ EXCEPTII_CATEGORIE = {
     ("communication", "office"): "client de e-mail vs. suită de birou",
     ("notes", "utilities"): "note vs. unealtă de sincronizare",
     ("utilities", "streaming"): "captura de ecran (flameshot) vs. inregistrare (kazam)",
+    ("internet", "utilities"): "client de transfer de fisiere (filezilla) vs. sincronizare (rclone)",
 }
 
 #: Relații curate pentru aplicațiile care nu aveau alternative, dar au
@@ -65,6 +66,13 @@ COMPLETARI = {
     "thunderbird": ["evolution", "mailspring"],
     "ventoy": ["balena-etcher"],
     "flameshot": ["kazam", "vokoscreenng", "ssr"],
+    # golurile acoperite de tranz 3 (aplicatii „de umplere”):
+    "copyq": ["parcellite"],
+    "filezilla": ["rclone"],
+    "gparted": ["gnome-disks"],
+    "syncthing": ["nextcloud", "rclone"],
+    "timeshift": ["deja-dup"],
+    "virtualbox": ["qemu", "virt-manager"],
 }
 
 
@@ -81,6 +89,7 @@ def main() -> int:
     args = parser.parse_args()
 
     yaml = YAML()
+    yaml.allow_duplicate_keys = False
     yaml.preserve_quotes = True
     yaml.width = 4096
 

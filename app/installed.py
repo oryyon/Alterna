@@ -218,6 +218,64 @@ def surse_disponibile() -> dict[str, bool]:
     return disponibile
 
 
+#: Unde caută fișierele .desktop (un pachet care are unul e o aplicație,
+#: nu o bibliotecă — semnalul e obiectiv, nu o ghicire).
+CAI_DESKTOP = (
+    Path("/usr/share/applications"),
+    Path("/var/lib/flatpak/exports/share/applications"),
+    Path("/var/lib/snapd/desktop/applications"),
+    Path.home() / ".local/share/applications",
+)
+
+
+def are_desktop(pachet: str,
+                cai: Iterable[Path] = CAI_DESKTOP) -> bool:
+    """Pachetul are o intrare de meniu? (deci e aplicație, nu bibliotecă)"""
+    for director in cai:
+        try:
+            if (director / f"{pachet}.desktop").exists():
+                return True
+        except OSError:
+            continue
+    return False
+
+
+def aplicatii_neacoperite(apps: Iterable[dict],
+                          surse: dict[str, dict[str, str]] | None = None,
+                          cai_desktop: Iterable[Path] = CAI_DESKTOP,
+                          ) -> list[Installed]:
+    """Aplicațiile instalate pe computer care **nu sunt** în catalog.
+
+    Maparea inversă: catalogul spune ce aplicații există, dar utilizatorul
+    are și aplicații pe care Alterna nu le cunoaște. Raportăm acele
+    aplicații — e exact lista de intrări care îmbogățește catalogul.
+
+    Se raportează doar ce are o intrare de meniu (`.desktop`): bibliotecile
+    și pachetele de sistem nu sunt „aplicații” și ar umple raportul cu zgomot.
+    """
+    if surse is None:
+        surse = {nume: CITITORI[nume]() for nume in SOURCES}
+    cunoscute: set[str] = set()
+    for app in apps:
+        for câmp in (nume_pachet(app), app.get("snap") or "",
+                     app.get("flatpak") or ""):
+            if câmp:
+                cunoscute.add(câmp.lower())
+
+    rezultat: list[Installed] = []
+    for nume, pachete in surse.items():
+        for pachet, versiune in pachete.items():
+            if pachet.lower() in cunoscute:
+                continue
+            # doar ce are intrare de meniu: bibliotecile și pachetele de
+            # sistem nu sunt „aplicații” și ar umple raportul cu zgomot
+            if not are_desktop(pachet, cai_desktop):
+                continue
+            rezultat.append(Installed("", nume, pachet, versiune))
+    rezultat.sort(key=lambda i: i.name)
+    return rezultat
+
+
 def linkuri_instalare(app: dict) -> list[tuple[str, str]]:
     """Linkuri directe către magazinele de pachete: [(etichetă, url)].
 

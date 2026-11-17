@@ -1,0 +1,43 @@
+# Nextcloud — Client pentru platforma Nextcloud: fișiere, sync, calendar.
+id: nextcloud
+popularity: 1110
+name: Nextcloud
+description: "Client pentru platforma Nextcloud: fișiere, sync, calendar."
+category: utilities
+license: foss
+price: free
+developer: Nextcloud GmbH
+website: https://nextcloud.com/
+snap: nextcloud
+platforms:
+- linux
+- windows
+- macos
+- android
+tags:
+- sync
+- cloud
+- auto-gazduire
+alternatives:
+- syncthing
+- rclone
+details:
+  install_size_mb: 0
+  first_release_year: 2016
+  file_formats: []
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars: 37539
+  stars_url: https://github.com/nextcloud/server
+  latest_release: 2026-11
+  in_ubuntu_repos: false
+sources:
+- https://nextcloud.com/
+- https://github.com/nextcloud/server
+- https://www.wikidata.org/wiki/Q25874683
+confidence:
+  details.first_release_year: auto
+  alternatives: manual
+logo: logos/nextcloud.svg

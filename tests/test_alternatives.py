@@ -23,6 +23,7 @@ def catalog_yaml():
     from ruamel.yaml import YAML
 
     yaml = YAML()
+    yaml.allow_duplicate_keys = False
     aplicații = {}
     for cale in sorted((ROOT / "data" / "apps").glob("*.yaml")):
         app = yaml.load(cale.read_text(encoding="utf-8"))
@@ -82,6 +83,11 @@ class TestRelatiiAlternative:
             [sys.executable, str(ROOT / "tools" / "check_alternatives.py")],
             capture_output=True, text=True, cwd=str(ROOT))
         assert rezultat.returncode == 0, rezultat.stdout + rezultat.stderr
-        assert "simetrice: 622/622" in rezultat.stdout or \
-            "simetrice: 100%" in rezultat.stdout or \
-            "nejustificate" not in rezultat.stdout
+        import re
+
+        # proprietăți, nu numere înghețate: 100% simetrice, 0 nejustificate
+        sim = re.search(r"simetrice: (\d+)/(\d+)", rezultat.stdout)
+        assert sim, rezultat.stdout
+        assert sim.group(1) == sim.group(2), rezultat.stdout
+        nejust = re.search(r"din care (\d+) nejustificate", rezultat.stdout)
+        assert nejust and nejust.group(1) == "0", rezultat.stdout

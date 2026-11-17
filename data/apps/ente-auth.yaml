@@ -25,7 +25,7 @@ details:
 
 indicators:
   popcon_rank:
-  stars: 30216
+  stars: 30220
   stars_url: https://github.com/ente-io/ente
   latest_release: "2026-11"
   in_ubuntu_repos: false

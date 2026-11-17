@@ -1,6 +1,6 @@
 # Konqueror — Browser și manager de fișiere al desktopului KDE.
 id: konqueror
-popularity: 1540
+popularity: 1660
 name: Konqueror
 description: Browser și manager de fișiere al desktopului KDE.
 category: internet
@@ -25,7 +25,7 @@ details:
   telemetry: none
   romanian_language: false
 indicators:
-  popcon_rank: 3012
+  popcon_rank:
   stars:
   stars_url:
   latest_release:

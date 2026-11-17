@@ -1,6 +1,6 @@
 # Mixxx — Software de mixare pentru DJ, cu control în timp real.
 id: mixxx
-popularity: 1600
+popularity: 1700
 name: Mixxx
 description: Software de mixare pentru DJ, cu control în timp real.
 category: audio-production
@@ -29,7 +29,7 @@ details:
   telemetry: none
   romanian_language: false
 indicators:
-  popcon_rank: 16058
+  popcon_rank:
   stars: 7407
   stars_url: https://github.com/mixxxdj/mixxx
   latest_release: 2026-03

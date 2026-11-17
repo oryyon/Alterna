@@ -17,7 +17,7 @@ alternatives:
 - kazam
 - vokoscreenng
 - ssr
-
+- parcellite
 details:
   install_size_mb: 365
   first_release_year: 2017
@@ -27,7 +27,7 @@ details:
 
 indicators:
   popcon_rank: 7665
-  stars: 31565
+  stars: 31569
   stars_url: https://github.com/flameshot-org/flameshot
   latest_release: "2026-11"
   in_ubuntu_repos: true

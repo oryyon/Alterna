@@ -1,0 +1,44 @@
+# rclone — Transfer și sincronizare de fișiere între clouduri.
+id: rclone
+popularity: 1460
+name: rclone
+description: Transfer și sincronizare de fișiere între clouduri.
+category: utilities
+license: foss
+price: free
+developer: 'rclone (Nick Craig-Wood)'
+website: https://rclone.org/
+snap: rclone
+platforms:
+- linux
+- windows
+- macos
+tags:
+- sincronizare
+- cloud
+- transfer
+alternatives:
+- syncthing
+- filezilla
+- deja-dup
+- nextcloud
+details:
+  install_size_mb: 70
+  first_release_year: 2012
+  file_formats: []
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars: 61062
+  stars_url: https://github.com/rclone/rclone
+  latest_release: 2026-11
+  in_ubuntu_repos: true
+sources:
+- https://rclone.org/
+- https://github.com/rclone/rclone
+- https://www.wikidata.org/wiki/Q56795481
+confidence:
+  details.install_size_mb: auto
+  alternatives: manual
+logo: logos/rclone.svg

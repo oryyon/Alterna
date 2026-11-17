@@ -1,6 +1,6 @@
 # Gwenview — Vizualizator de imagini al desktopului KDE.
 id: gwenview
-popularity: 1470
+popularity: 1620
 name: Gwenview
 description: Vizualizator de imagini al desktopului KDE.
 category: graphics
@@ -28,7 +28,7 @@ details:
   telemetry: none
   romanian_language: false
 indicators:
-  popcon_rank: 2936
+  popcon_rank:
   stars:
   stars_url: https://cgit.kde.org/gwenview.git
   latest_release:

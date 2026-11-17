@@ -12,7 +12,8 @@ website: https://filezilla-project.org
 flatpak: org.filezillaproject.Filezilla
 platforms: [linux, windows, macos]
 tags: [ftp, sftp, transfer]
-alternatives: []
+alternatives:
+- rclone
 
 details:
   install_size_mb: 267

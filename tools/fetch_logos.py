@@ -128,6 +128,7 @@ def main() -> int:
     logos_dir.mkdir(exist_ok=True)
 
     yaml = YAML()
+    yaml.allow_duplicate_keys = False
     yaml.preserve_quotes = True
     yaml.width = 4096
 

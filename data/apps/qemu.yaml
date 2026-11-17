@@ -1,0 +1,40 @@
+# QEMU — Emulator de hardware și hipervizor pentru mașini virtuale.
+id: qemu
+popularity: 1760
+name: QEMU
+description: Emulator de hardware și hipervizor pentru mașini virtuale.
+category: utilities
+license: foss
+price: free
+developer: Paolo Bonzini
+website: https://www.qemu.org/
+platforms:
+- linux
+- windows
+- macos
+tags:
+- virtualizare
+- emulator
+- kvm
+alternatives:
+- virtualbox
+- virt-manager
+details:
+  install_size_mb: 0
+  first_release_year: 1998
+  file_formats: []
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url: https://git.qemu.org/qemu.git
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://www.qemu.org/
+- https://git.qemu.org/qemu.git
+- https://www.wikidata.org/wiki/Q624699
+logo: logos/qemu.svg
+confidence:
+  alternatives: manual

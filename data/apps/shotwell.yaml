@@ -1,6 +1,6 @@
 # Shotwell — Organizator de fotografii cu etichetare și cronologie.
 id: shotwell
-popularity: 1830
+popularity: 1800
 name: Shotwell
 description: Organizator de fotografii cu etichetare și cronologie.
 category: graphics
@@ -29,7 +29,7 @@ details:
   telemetry: none
   romanian_language: false
 indicators:
-  popcon_rank: 1653
+  popcon_rank:
   stars:
   stars_url: https://git.gnome.org/browse/shotwell/
   latest_release:

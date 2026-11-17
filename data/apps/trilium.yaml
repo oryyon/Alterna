@@ -6,7 +6,7 @@ description: Note ierarhice, cu totul local și fără limită de adâncime.
 category: notes
 license: foss
 price: free
-developer: 'Trilium'
+developer: Trilium
 website: https://triliumnotes.org/
 snap: trilium
 platforms:
@@ -30,7 +30,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 38968
+  stars: 38969
   stars_url: https://github.com/TriliumNext/Trilium
   latest_release: 2026-11
   in_ubuntu_repos: false

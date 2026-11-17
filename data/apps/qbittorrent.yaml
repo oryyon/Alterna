@@ -1,6 +1,6 @@
 # qBittorrent — client BitTorrent liber, fără reclame
 id: qbittorrent
-popularity: 710
+popularity: 720
 name: qBittorrent
 description: Client BitTorrent liber, fără reclame, cu motor de căutare integrat.
 category: internet
@@ -14,7 +14,6 @@ tags: [torrent, p2p, descarcare]
 alternatives:
 - transmission
 - deluge
-
 details:
   install_size_mb: 370
   first_release_year: 2006
@@ -24,7 +23,7 @@ details:
 
 indicators:
   popcon_rank: 6759
-  stars: 41680
+  stars: 41689
   stars_url: https://github.com/qbittorrent/qBittorrent
   latest_release: "2026-10"
   in_ubuntu_repos: true

@@ -1,12 +1,12 @@
 # Renoise — Tracker și secuencer pentru producție rapidă.
 id: renoise
-popularity: 1790
+popularity: 1880
 name: Renoise
 description: Tracker și secuencer pentru producție rapidă.
 category: audio-production
 license: foss
 price: paid
-developer: 'Renoise'
+developer: Renoise
 website: https://www.renoise.com/
 platforms:
 - linux

@@ -303,6 +303,7 @@ def construiește_app(seed: dict, ent: dict, etichete: dict) -> dict:
 def scrie_yaml(app: dict, cale: Path) -> None:
     """Scrie intrarea în formatul proiectului (comentariu de titlu + YAML)."""
     yaml = YAML()
+    yaml.allow_duplicate_keys = False
     yaml.preserve_quotes = True
     yaml.width = 4096
     titlu = f"# {app['name']} — {app['description']}\n"
@@ -328,6 +329,7 @@ def main() -> int:
 
     cache = încarcă_cache()
     yaml = YAML()
+    yaml.allow_duplicate_keys = False
     yaml.preserve_quotes = True
 
     semințe: list[dict] = []

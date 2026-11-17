@@ -1,12 +1,12 @@
 # Notesnook — Note personale cu sincronizare între dispozitive.
 id: notesnook
-popularity: 1430
+popularity: 1380
 name: Notesnook
 description: Note personale cu sincronizare între dispozitive.
 category: notes
 license: foss
 price: paid
-developer: 'Notesnook'
+developer: Notesnook
 website: https://notesnook.com/
 snap: notesnook
 platforms:
@@ -32,7 +32,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 14953
+  stars: 14954
   stars_url: https://github.com/streetwriters/notesnook
   latest_release: 2026-11
   in_ubuntu_repos: false

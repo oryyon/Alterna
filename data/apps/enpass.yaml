@@ -1,12 +1,12 @@
 # Enpass — Manager de parole cu sincronizare între dispozitive.
 id: enpass
-popularity: 1400
+popularity: 1360
 name: Enpass
 description: Manager de parole cu sincronizare între dispozitive.
 category: security
 license: foss
 price: paid
-developer: 'Enpass'
+developer: Enpass
 website: https://www.enpass.io
 snap: enpass
 platforms:

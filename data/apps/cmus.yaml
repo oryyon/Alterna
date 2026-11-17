@@ -1,12 +1,12 @@
 # CMus — Player de muzică pentru terminal, cu navigare prin colecție.
 id: cmus
-popularity: 1780
+popularity: 1860
 name: CMus
 description: Player de muzică pentru terminal, cu navigare prin colecție.
 category: audio-players
 license: foss
 price: free
-developer: 'CMus'
+developer: CMus
 website: https://cmus.sourceforge.net/
 platforms:
 - linux

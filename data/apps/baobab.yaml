@@ -1,6 +1,6 @@
 # Disk Usage Analyzer (Baobab) — Analyzer grafic al spațiului ocupat pe disc.
 id: baobab
-popularity: 1370
+popularity: 1540
 name: Disk Usage Analyzer (Baobab)
 description: Analyzer grafic al spațiului ocupat pe disc.
 category: utilities
@@ -17,6 +17,7 @@ tags:
 alternatives:
 - filelight
 - ncdu
+- gnome-disks
 details:
   install_size_mb: 238
   first_release_year: 2003
@@ -24,7 +25,7 @@ details:
   telemetry: none
   romanian_language: false
 indicators:
-  popcon_rank: 1648
+  popcon_rank:
   stars:
   stars_url: https://gitlab.gnome.org/GNOME/baobab.git
   latest_release:

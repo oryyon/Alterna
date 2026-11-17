@@ -1,6 +1,6 @@
 # Olive — Editor video nelinear, în dezvoltare activă.
 id: olive
-popularity: 1700
+popularity: 1720
 name: Olive
 description: Editor video nelinear, în dezvoltare activă.
 category: video
@@ -30,7 +30,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 9159
+  stars: 9160
   stars_url: https://github.com/olive-editor/olive
   latest_release: 2024-12
   in_ubuntu_repos: false

@@ -6,7 +6,7 @@ description: Client de e-mail modern, cu unificarea conturilor.
 category: communication
 license: foss
 price: free
-developer: 'Mailspring'
+developer: Mailspring
 website: https://getmailspring.com/
 snap: mailspring
 platforms:

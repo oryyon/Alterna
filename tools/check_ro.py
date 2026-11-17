@@ -305,6 +305,7 @@ def main() -> int:
           f"{len(mo)} traduceri romaneesti in arhiva")
 
     yaml_rw = YAML()
+    yaml_rw.allow_duplicate_keys = False
     yaml_rw.preserve_quotes = True
     yaml_rw.width = 4096
 

@@ -1,12 +1,12 @@
 # Clonezilla — Clonare și restaurare de discuri, cu interfață text.
 id: clonezilla
-popularity: 1650
+popularity: 1570
 name: Clonezilla
 description: Clonare și restaurare de discuri, cu interfață text.
 category: utilities
 license: foss
 price: free
-developer: 'Clonezilla'
+developer: Clonezilla
 website: https://clonezilla.org/
 platforms:
 - linux

@@ -87,6 +87,7 @@ def main() -> int:
     print(f"✔ index: {len(index)} pachete")
 
     yaml = YAML()
+    yaml.allow_duplicate_keys = False
     yaml.preserve_quotes = True
     yaml.width = 4096
 

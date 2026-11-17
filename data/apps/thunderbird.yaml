@@ -16,7 +16,6 @@ tags: [email, calendar, rss]
 alternatives:
 - evolution
 - mailspring
-
 details:
   install_size_mb: 300
   first_release_year: 2004

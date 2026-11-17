@@ -197,6 +197,7 @@ def main() -> int:
 
     cache = încarcă_cache()
     yaml = YAML()
+    yaml.allow_duplicate_keys = False
     yaml.preserve_quotes = True
     yaml.width = 4096
 

@@ -11,7 +11,7 @@ from pathlib import Path
 
 from PySide6.QtCore import QObject, QThread, Qt, QSettings, QUrl, Signal
 from PySide6.QtGui import QDesktopServices
-from PySide6.QtWidgets import (QFrame, QHBoxLayout, QLabel,
+from PySide6.QtWidgets import (QMessageBox, QFrame, QHBoxLayout, QLabel,
                                QLineEdit, QListWidget, QMainWindow, QPushButton,
                                QScrollArea, QStackedWidget, QVBoxLayout, QWidget)
 
@@ -19,10 +19,11 @@ from .compare_view import EXPORT_FORMATS, CompareView
 from .db import Catalog
 from .detail_view import DetailView
 from .dialogs import DonateDialog, SettingsDialog
-from .installed import Installed, detecteaza
+from .installed import (Installed, aplicatii_neacoperite,
+                       detecteaza)
 from .links import NEW_ISSUE_URL
 from .theme import apply_theme
-from .widgets import AppCard, ComboBox, empty_state
+from .widgets import AppCard, ComboBox, LinkLabel, empty_state
 
 MAX_COMPARE = 4  # limita e configurabilă / poate fi extinsă ulterior (sec. 14)
 
@@ -44,10 +45,13 @@ class DetectWorker(QObject):
     def run(self) -> None:
         try:
             rezultat = detecteaza(self._apps)
+            # Maparea inversă: aplicațiile instalate care nu-s în catalog.
+            neacoperite = aplicatii_neacoperite(self._apps)
         except Exception as exc:  # noqa: BLE001 — UI-ul nu trebuie să cadă
             self.failed.emit(str(exc))
         else:
-            self.finished.emit(rezultat)
+            self.finished.emit((rezultat, neacoperite))
+
 
 
 class MainWindow(QMainWindow):
@@ -256,6 +260,13 @@ class MainWindow(QMainWindow):
         self.installed_label = QLabel("Se verifică aplicațiile instalate…")
         self.installed_label.setProperty("dim", "true")
         self.status.addPermanentWidget(self.installed_label)
+        #: Aplicațiile instalate care NU sunt în catalog (maparea inversă).
+        self.neacoperite: list = []
+        self.neacoperite_label = LinkLabel("", "")
+        self.neacoperite_label.setProperty("link", "true")
+        self.neacoperite_label.setVisible(False)
+        self.neacoperite_label.clicked.connect(self._arată_neacoperite)
+        self.status.addPermanentWidget(self.neacoperite_label)
         right = QLabel("Offline • SQLite local")
         right.setProperty("dim", "true")
         self.status.addPermanentWidget(right)
@@ -387,15 +398,46 @@ class MainWindow(QMainWindow):
         self._detect_worker = worker
         thread.start()
 
-    def _on_installed(self, rezultat: dict) -> None:
+    def _on_installed(self, rezultat) -> None:
+        if isinstance(rezultat, tuple):
+            rezultat, neacoperite = rezultat
+        else:
+            neacoperite = []
         self.installed = rezultat
+        self.neacoperite = neacoperite
         n = len(rezultat)
         self.installed_label.setText(
-            f"✓ {n} aplicație{'i' if n != 1 else ''} instalate"
-            if n else "Nicio aplicație din catalog nu e instalată")
+            f"✓ {n} de aplicații instalate" if n != 1
+            else ("✓ 1 aplicație instalată" if n
+                  else "Nicio aplicație din catalog nu e instalată"))
+        # Maparea inversă: ce aplicații are utilizatorul, dar catalogul nu
+        # le cunoaște — exact lista de intrări care îmbogățește catalogul.
+        m = len(neacoperite)
+        self.neacoperite_label.setText(
+            f"+{m} necunoscute" if m else "")
+        self.neacoperite_label.setVisible(bool(m))
         self.refresh_list()
         if self.stack.currentIndex() == 1 and self._current_detail:
             self._open_detail(self._current_detail)
+
+    def _arată_neacoperite(self) -> None:
+        """Arată aplicațiile instalate care nu sunt în catalog.
+
+        Maparea inversă: de aceste intrări se facețează propunerile pentru
+        catalog („am aceste aplicații, lipsesc din listă”).
+        """
+        if not self.neacoperite:
+            return
+        lista = "\n".join(f"• {i.name} ({i.version})" if i.version
+                           else f"• {i.name}"
+                           for i in self.neacoperite[:80])
+        if len(self.neacoperite) > 80:
+            lista += f"\n… și încă {len(self.neacoperite) - 80}"
+        QMessageBox.information(
+            self, "Aplicații instalate, lipsite din catalog",
+            "Catalogul nu conține încă aceste aplicații:\n\n" + lista +
+            "\n\nPoți propune-le ca intrări noi (fișierul de propunere e "
+            "la .github/ISSUE_TEMPLATE/propunere-aplicatie.yml).")
 
     def _on_detect_failed(self, mesaj: str) -> None:
         self.installed_label.setText("Starea instalării nu a putut fi verificată")

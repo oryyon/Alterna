@@ -1,6 +1,6 @@
 # Clementine — Player de muzică cu suport pentru colecții și transcodare.
 id: clementine
-popularity: 1140
+popularity: 1160
 name: Clementine
 description: Player de muzică cu suport pentru colecții și transcodare.
 category: audio-players
@@ -35,7 +35,7 @@ details:
   telemetry: none
   romanian_language: false
 indicators:
-  popcon_rank: 10800
+  popcon_rank:
   stars: 4279
   stars_url: https://github.com/clementine-player/Clementine
   latest_release: 2026-11

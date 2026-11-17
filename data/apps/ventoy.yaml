@@ -14,7 +14,6 @@ tags: [usb, boot, iso]
 alternatives:
 - balena-etcher
 - clonezilla
-
 details:
   install_size_mb: 30
   first_release_year: 2020
@@ -24,7 +23,7 @@ details:
 
 indicators:
   popcon_rank:
-  stars: 80920
+  stars: 80926
   stars_url: https://github.com/ventoy/Ventoy
   latest_release: "2026-10"
   in_ubuntu_repos: false

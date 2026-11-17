@@ -220,9 +220,30 @@ class Reporter:
         self.warnings.append(msg)
 
 
+class _LoaderStrict(yaml.SafeLoader):
+    """SafeLoader care refuză cheile duplicate.
+
+    PyYAML accepta cheile duplicate in tacere — ultima castiga — deci o
+    intrare cu `price` de doua ori ar trece build-ul fara niciun semnal.
+    Aici devine eroare: o cheie repetata e intotdeauna o gresala de editare.
+    """
+
+    def construct_mapping(self, node, deep=False):
+        mapping = {}
+        for key_node, value_node in node.value:
+            key = self.construct_object(key_node, deep=deep)
+            if key in mapping:
+                raise yaml.constructor.ConstructorError(
+                    "while constructing a mapping", node.start_mark,
+                    f"cheie duplicata: {key!r}", key_node.start_mark)
+            mapping[key] = self.construct_object(value_node, deep=deep)
+        return mapping
+
+
 def load_yaml(path: Path, rep: Reporter):
     try:
-        return yaml.safe_load(path.read_text(encoding="utf-8"))
+        return yaml.load(path.read_text(encoding="utf-8"),
+                         Loader=_LoaderStrict)
     except yaml.YAMLError as exc:
         rep.error(f"{path.name}: YAML invalid — {exc}")
         return None

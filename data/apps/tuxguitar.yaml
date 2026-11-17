@@ -1,6 +1,6 @@
 # TuxGuitar — Editor de tablaturi pentru chitară și bass.
 id: tuxguitar
-popularity: 2050
+popularity: 2120
 name: TuxGuitar
 description: Editor de tablaturi pentru chitară și bass.
 category: audio-production
@@ -29,7 +29,7 @@ details:
   telemetry: none
   romanian_language: false
 indicators:
-  popcon_rank: 17070
+  popcon_rank:
   stars:
   stars_url: https://sourceforge.net/p/tuxguitar/code/HEAD/tree/
   latest_release:

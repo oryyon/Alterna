@@ -108,6 +108,7 @@ def main() -> int:
     args = parser.parse_args()
 
     yaml_rw = YAML()
+    yaml_rw.allow_duplicate_keys = False
     yaml_rw.preserve_quotes = True
     yaml_rw.width = 4096
 

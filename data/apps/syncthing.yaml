@@ -34,3 +34,4 @@ sources:
 logo: logos/syncthing.svg
 confidence:
   details.install_size_mb: auto
+  alternatives: manual

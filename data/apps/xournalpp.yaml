@@ -12,7 +12,10 @@ website: https://xournalpp.github.io
 snap: xournalpp
 platforms: [linux, windows, macos]
 tags: [notite, pdf, scris de mana]
-alternatives: [joplin, obsidian]
+alternatives:
+- joplin
+- obsidian
+- okular
 
 details:
   install_size_mb: 258
@@ -35,3 +38,4 @@ logo: logos/xournalpp.png
 confidence:
   details.install_size_mb: auto
   details.romanian_language: manual
+  alternatives: manual

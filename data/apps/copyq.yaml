@@ -32,3 +32,4 @@ sources:
 - https://github.com/hluk/CopyQ
 confidence:
   details.install_size_mb: auto
+  alternatives: manual

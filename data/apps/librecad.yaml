@@ -12,7 +12,11 @@ website: https://librecad.org
 snap: librecad
 platforms: [linux, windows, macos]
 tags: [cad, 2d, desen tehnic]
-alternatives: [freecad]
+alternatives:
+- freecad
+- autocad
+- qcad
+- solvespace
 
 details:
   install_size_mb: 435
@@ -34,3 +38,4 @@ sources:
 logo: logos/librecad.png
 confidence:
   details.install_size_mb: auto
+  alternatives: manual

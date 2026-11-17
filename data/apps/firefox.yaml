@@ -13,7 +13,15 @@ snap: firefox
 flatpak: org.mozilla.firefox
 platforms: [linux, windows, macos, android]
 tags: [browser, navigare, privacitate]
-alternatives: [brave, chromium]
+alternatives:
+- brave
+- chromium
+- chrome
+- edge
+- gnome-web
+- konqueror
+- opera
+- tor-browser
 
 details:
   install_size_mb: 250
@@ -36,3 +44,4 @@ sources:
 logo: logos/firefox.svg
 confidence:
   details.telemetry: manual
+  alternatives: manual

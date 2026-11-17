@@ -11,7 +11,9 @@ website: https://meet.jit.si
 
 platforms: [web, android]
 tags: [video, conferinte, fara cont]
-alternatives: [zoom]
+alternatives:
+- zoom
+- mumble
 
 details:
   install_size_mb: 0
@@ -31,3 +33,5 @@ sources:
 - https://meet.jit.si
 - https://github.com/jitsi/jitsi-meet
 logo: logos/jitsi-meet.svg
+confidence:
+  alternatives: manual

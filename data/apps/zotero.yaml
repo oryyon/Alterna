@@ -19,6 +19,7 @@ tags:
 alternatives:
 - zettlr
 - joplin
+- calibre
 details:
   install_size_mb: 0
   first_release_year: 2006
@@ -40,4 +41,5 @@ sources:
 - https://www.wikidata.org/wiki/Q226915
 confidence:
   details.first_release_year: auto
+  alternatives: manual
 logo: logos/zotero.svg

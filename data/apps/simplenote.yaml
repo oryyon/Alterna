@@ -12,7 +12,10 @@ website: https://simplenote.com
 snap: simplenote
 platforms: [linux, windows, macos, android, web]
 tags: [notite, simplu, sincronizare]
-alternatives: [joplin]
+alternatives:
+- joplin
+- evolution
+- notesnook
 
 details:
   install_size_mb: 150
@@ -32,3 +35,5 @@ sources:
 - https://simplenote.com
 - https://github.com/Automattic/simplenote-electron
 logo: logos/simplenote.svg
+confidence:
+  alternatives: manual

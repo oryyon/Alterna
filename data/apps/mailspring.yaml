@@ -38,3 +38,5 @@ sources:
 - https://getmailspring.com/
 - https://github.com/Foundry376/Mailspring
 - https://www.wikidata.org/wiki/Q47487583
+confidence:
+  alternatives: manual

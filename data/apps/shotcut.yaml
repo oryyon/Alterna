@@ -12,7 +12,15 @@ website: https://shotcut.org
 snap: shotcut
 platforms: [linux, windows, macos]
 tags: [editare video, montaj]
-alternatives: [kdenlive, davinci]
+alternatives:
+- kdenlive
+- davinci
+- avidemux
+- handbrake
+- losslesscut
+- olive
+- openshot
+- subtitleedit
 
 details:
   install_size_mb: 769
@@ -34,3 +42,4 @@ sources:
 logo: logos/shotcut.png
 confidence:
   details.install_size_mb: auto
+  alternatives: manual

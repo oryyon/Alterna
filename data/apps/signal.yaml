@@ -13,7 +13,11 @@ snap: signal-desktop
 flatpak: org.signal.Signal
 platforms: [linux, windows, macos, android]
 tags: [mesagerie, criptare, privacitate]
-alternatives: [telegram]
+alternatives:
+- telegram
+- element
+- whatsapp
+- wire
 
 details:
   install_size_mb: 200
@@ -33,3 +37,5 @@ sources:
 - https://signal.org
 - https://github.com/signalapp/Signal-Desktop
 logo: logos/signal.svg
+confidence:
+  alternatives: manual

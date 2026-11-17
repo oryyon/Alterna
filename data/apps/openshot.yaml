@@ -12,7 +12,11 @@ package: openshot-qt
 
 platforms: [linux, windows, macos]
 tags: [editare video, simplu]
-alternatives: [kdenlive, shotcut]
+alternatives:
+- kdenlive
+- shotcut
+- flowblade
+- pitivi
 
 details:
   install_size_mb: 747
@@ -34,3 +38,4 @@ sources:
 logo: logos/openshot.png
 confidence:
   details.install_size_mb: auto
+  alternatives: manual

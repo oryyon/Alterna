@@ -19,6 +19,7 @@ tags:
 alternatives:
 - lmms
 - rosegarden
+- renoise
 details:
   install_size_mb: 394
   first_release_year: 2002
@@ -39,3 +40,4 @@ sources:
 - https://www.wikidata.org/wiki/Q1459314
 confidence:
   details.install_size_mb: auto
+  alternatives: manual

@@ -14,7 +14,15 @@ logo: logos/keepassxc.svg
 
 platforms: [linux, windows, macos]
 tags: [parole, criptare, offline]
-alternatives: [bitwarden, 1password]
+alternatives:
+- bitwarden
+- 1password
+- ente-auth
+- gnome-keyring
+- kwallet
+- pass
+- proton-pass
+- vaultwarden
 editors_choice: true
 
 details:
@@ -60,3 +68,4 @@ sources:
 - https://keepassxc.org/project/#audits
 confidence:
   details.install_size_mb: auto
+  alternatives: manual

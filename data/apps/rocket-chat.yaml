@@ -37,3 +37,5 @@ sources:
 - https://rocket.chat/
 - https://github.com/RocketChat/Rocket.Chat
 - https://www.wikidata.org/wiki/Q24050001
+confidence:
+  alternatives: manual

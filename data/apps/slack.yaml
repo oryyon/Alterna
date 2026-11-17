@@ -22,6 +22,7 @@ tags:
 alternatives:
 - discord
 - mattermost
+- rocket-chat
 details:
   install_size_mb: 0
   first_release_year: 2013
@@ -39,3 +40,4 @@ sources:
 - https://www.wikidata.org/wiki/Q17130715
 confidence:
   details.first_release_year: auto
+  alternatives: manual

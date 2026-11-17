@@ -21,6 +21,7 @@ tags:
 alternatives:
 - discord
 - jitsi-meet
+- jami
 details:
   install_size_mb: 376
   first_release_year: 2005
@@ -40,4 +41,5 @@ sources:
 confidence:
   details.first_release_year: auto
   details.install_size_mb: auto
+  alternatives: manual
 logo: logos/mumble.svg

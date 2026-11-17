@@ -36,3 +36,5 @@ sources:
 - https://www.beekeeperstudio.io/
 - https://github.com/beekeeper-studio/beekeeper-studio
 - https://www.wikidata.org/wiki/Q93533441
+confidence:
+  alternatives: manual

@@ -13,7 +13,15 @@ snap: joplin-desktop
 flatpak: net.cozic.joplin_desktop
 platforms: [linux, windows, macos, android]
 tags: [notite, markdown, criptare]
-alternatives: [obsidian]
+alternatives:
+- obsidian
+- cherrytree
+- logseq
+- notion
+- simplenote
+- standard-notes
+- xournalpp
+- zotero
 editors_choice: true
 
 details:
@@ -36,3 +44,4 @@ sources:
 logo: logos/joplin.svg
 confidence:
   details.romanian_language: manual
+  alternatives: manual

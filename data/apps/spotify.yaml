@@ -32,3 +32,5 @@ indicators:
 sources:
 - https://www.spotify.com
 logo: logos/spotify.svg
+confidence:
+  alternatives: manual

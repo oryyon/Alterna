@@ -12,7 +12,10 @@ website: https://tenacityaudio.org
 flatpak: org.tenacityaudio.Tenacity
 platforms: [linux, windows, macos]
 tags: [audio, editare, fara telemetrie]
-alternatives: [audacity]
+alternatives:
+- audacity
+- musescore
+- ocenaudio
 
 details:
   install_size_mb: 60
@@ -34,3 +37,4 @@ sources:
 logo: logos/tenacity.jpg
 confidence:
   details.romanian_language: manual
+  alternatives: manual

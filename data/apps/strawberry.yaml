@@ -12,7 +12,16 @@ website: https://www.strawberrymusicplayer.org
 flatpak: org.strawberrymusicplayer.strawberry
 platforms: [linux, windows, macos]
 tags: [player, muzica, colectii]
-alternatives: [vlc, elisa]
+alternatives:
+- vlc
+- elisa
+- amarok
+- clementine
+- deadbeef
+- lollypop
+- quodlibet
+- rhythmbox
+- spotify
 
 details:
   install_size_mb: 428
@@ -33,3 +42,4 @@ sources:
 - https://github.com/strawberrymusicplayer/strawberry
 confidence:
   details.install_size_mb: auto
+  alternatives: manual

@@ -35,3 +35,5 @@ sources:
 - https://www.enpass.io
 - https://www.wikidata.org/wiki/Q22095973
 logo: logos/enpass.svg
+confidence:
+  alternatives: manual

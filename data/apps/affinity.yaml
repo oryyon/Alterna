@@ -10,7 +10,11 @@ developer: Serif
 website: https://affinity.serif.com
 platforms: [windows, macos]
 tags: [editare foto, raster]
-alternatives: [photoshop, gimp]
+alternatives:
+- photoshop
+- gimp
+- illustrator
+- inkscape
 
 details:
   install_size_mb: 700
@@ -29,3 +33,5 @@ indicators:
 sources:
 - https://affinity.serif.com
 logo: logos/affinity.png
+confidence:
+  alternatives: manual

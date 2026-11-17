@@ -12,7 +12,11 @@ website: https://logseq.com
 snap: logseq
 platforms: [linux, windows, macos, android]
 tags: [notite, outline, markdown]
-alternatives: [obsidian, joplin]
+alternatives:
+- obsidian
+- joplin
+- notion
+- trilium
 
 details:
   install_size_mb: 300
@@ -32,3 +36,5 @@ sources:
 - https://logseq.com
 - https://github.com/logseq/logseq
 logo: logos/logseq.svg
+confidence:
+  alternatives: manual

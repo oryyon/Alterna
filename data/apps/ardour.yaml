@@ -11,7 +11,10 @@ website: https://ardour.org
 
 platforms: [linux, windows, macos]
 tags: [daw, inregistrare, mixaj]
-alternatives: [reaper, lmms]
+alternatives:
+- reaper
+- lmms
+- fl-studio
 
 details:
   install_size_mb: 379
@@ -33,3 +36,4 @@ sources:
 logo: logos/ardour.svg
 confidence:
   details.install_size_mb: auto
+  alternatives: manual

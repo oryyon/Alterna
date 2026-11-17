@@ -36,3 +36,4 @@ sources:
 - https://www.sayonara-player.org
 confidence:
   details.install_size_mb: auto
+  alternatives: manual

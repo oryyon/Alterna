@@ -20,6 +20,7 @@ tags:
 alternatives:
 - vlc
 - mpv
+- plex
 details:
   install_size_mb: 648
   first_release_year: 2002
@@ -42,4 +43,5 @@ sources:
 confidence:
   details.first_release_year: auto
   details.install_size_mb: auto
+  alternatives: manual
 logo: logos/kodi.svg

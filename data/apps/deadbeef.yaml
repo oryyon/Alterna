@@ -33,3 +33,4 @@ sources:
 logo: logos/deadbeef.png
 confidence:
   details.romanian_language: manual
+  alternatives: manual

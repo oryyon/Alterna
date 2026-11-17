@@ -31,3 +31,5 @@ indicators:
 sources:
 - https://www.wps.com
 logo: logos/wps.png
+confidence:
+  alternatives: manual

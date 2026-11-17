@@ -30,3 +30,5 @@ indicators:
 sources:
 - https://www.microsoft.com/edge
 logo: logos/edge.png
+confidence:
+  alternatives: manual

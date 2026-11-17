@@ -40,3 +40,5 @@ sources:
 - https://plex.tv/
 - https://www.wikidata.org/wiki/Q7204887
 logo: logos/plex.svg
+confidence:
+  alternatives: manual

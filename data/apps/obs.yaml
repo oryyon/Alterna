@@ -14,7 +14,11 @@ website: https://obsproject.com
 
 platforms: [linux, windows, macos]
 tags: [streaming, inregistrare ecran, twitch]
-alternatives: [ssr]
+alternatives:
+- ssr
+- guvcview
+- kazam
+- vokoscreenng
 
 details:
   install_size_mb: 574
@@ -35,3 +39,4 @@ sources:
 logo: logos/obs.svg
 confidence:
   details.install_size_mb: auto
+  alternatives: manual

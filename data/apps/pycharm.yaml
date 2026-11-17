@@ -31,3 +31,5 @@ indicators:
 sources:
 - https://www.jetbrains.com/pycharm
 logo: logos/pycharm.svg
+confidence:
+  alternatives: manual

@@ -36,3 +36,4 @@ logo: logos/elisa.png
 confidence:
   details.install_size_mb: auto
   details.romanian_language: manual
+  alternatives: manual

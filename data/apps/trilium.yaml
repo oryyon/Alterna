@@ -39,3 +39,5 @@ sources:
 - https://github.com/TriliumNext/Trilium
 - https://www.wikidata.org/wiki/Q106880914
 logo: logos/trilium.svg
+confidence:
+  alternatives: manual

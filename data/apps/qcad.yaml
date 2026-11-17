@@ -39,3 +39,4 @@ sources:
 - https://www.wikidata.org/wiki/Q683003
 confidence:
   details.first_release_year: auto
+  alternatives: manual

@@ -13,7 +13,10 @@ snap: flameshot
 flatpak: org.flameshot.Flameshot
 platforms: [linux, windows, macos]
 tags: [captura ecran, screenshot, adnotare]
-alternatives: []
+alternatives:
+- kazam
+- vokoscreenng
+- ssr
 
 details:
   install_size_mb: 365
@@ -35,3 +38,4 @@ sources:
 logo: logos/flameshot.png
 confidence:
   details.install_size_mb: auto
+  alternatives: manual

@@ -19,6 +19,7 @@ tags:
 alternatives:
 - onlyoffice
 - libreoffice
+- okular
 details:
   install_size_mb: 589
   first_release_year: 2003
@@ -40,3 +41,4 @@ sources:
 confidence:
   details.first_release_year: auto
   details.install_size_mb: auto
+  alternatives: manual

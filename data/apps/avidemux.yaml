@@ -11,7 +11,12 @@ website: https://avidemux.sourceforge.net
 
 platforms: [linux, windows, macos]
 tags: [editare video, conversie]
-alternatives: [shotcut, kdenlive]
+alternatives:
+- shotcut
+- kdenlive
+- ffmpeg
+- handbrake
+- losslesscut
 
 details:
   install_size_mb: 50
@@ -31,3 +36,5 @@ sources:
 - https://avidemux.sourceforge.net
 - https://github.com/mean00/avidemux2
 logo: logos/avidemux.png
+confidence:
+  alternatives: manual

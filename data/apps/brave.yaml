@@ -12,7 +12,12 @@ website: https://brave.com
 snap: brave
 platforms: [linux, windows, macos, android]
 tags: [browser, adblock, privacitate]
-alternatives: [firefox, chromium]
+alternatives:
+- firefox
+- chromium
+- chrome
+- opera
+- tor-browser
 
 details:
   install_size_mb: 300
@@ -32,3 +37,5 @@ sources:
 - https://brave.com
 - https://github.com/brave/brave-browser
 logo: logos/brave.svg
+confidence:
+  alternatives: manual

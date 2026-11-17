@@ -14,7 +14,14 @@ website: https://telegram.org
 
 platforms: [linux, windows, macos]
 tags: [mesagerie, chat]
-alternatives: [signal]
+alternatives:
+- signal
+- discord
+- element
+- hexchat
+- pidgin
+- viber
+- whatsapp
 
 details:
   install_size_mb: 150
@@ -33,3 +40,5 @@ sources:
 - https://telegram.org
 - https://github.com/telegramdesktop/tdesktop
 logo: logos/telegram.svg
+confidence:
+  alternatives: manual

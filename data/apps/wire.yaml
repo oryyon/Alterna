@@ -39,4 +39,5 @@ sources:
 - https://www.wikidata.org/wiki/Q26934461
 confidence:
   details.first_release_year: auto
+  alternatives: manual
 logo: logos/wire.svg

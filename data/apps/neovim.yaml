@@ -11,7 +11,10 @@ website: https://neovim.io
 
 platforms: [linux, windows, macos]
 tags: [editor, terminal, vim]
-alternatives: [vscode, kate]
+alternatives:
+- vscode
+- kate
+- vim
 
 details:
   install_size_mb: 40
@@ -31,3 +34,5 @@ sources:
 - https://neovim.io
 - https://github.com/neovim/neovim
 logo: logos/neovim.svg
+confidence:
+  alternatives: manual

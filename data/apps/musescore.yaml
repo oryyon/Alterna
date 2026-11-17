@@ -20,6 +20,7 @@ tags:
 alternatives:
 - lmms
 - tenacity
+- tuxguitar
 details:
   install_size_mb: 474
   first_release_year: 2002
@@ -41,3 +42,4 @@ sources:
 confidence:
   details.first_release_year: auto
   details.install_size_mb: auto
+  alternatives: manual

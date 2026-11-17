@@ -19,6 +19,9 @@ tags:
 alternatives:
 - geany
 - kate
+- lazarus
+- texstudio
+- thonny
 details:
   install_size_mb: 357
   first_release_year: 2003
@@ -37,3 +40,4 @@ sources:
 - https://www.wikidata.org/wiki/Q651027
 confidence:
   details.install_size_mb: auto
+  alternatives: manual

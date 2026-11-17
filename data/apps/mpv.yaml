@@ -13,7 +13,9 @@ snap: mpv
 flatpak: io.mpv.Mpv
 platforms: [linux, windows, macos]
 tags: [player, minimalist]
-alternatives: [vlc]
+alternatives:
+- vlc
+- kodi
 
 details:
   install_size_mb: 482
@@ -35,3 +37,4 @@ sources:
 logo: logos/mpv.svg
 confidence:
   details.install_size_mb: auto
+  alternatives: manual

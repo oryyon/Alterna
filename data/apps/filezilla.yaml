@@ -33,3 +33,4 @@ sources:
 logo: logos/filezilla.svg
 confidence:
   details.install_size_mb: auto
+  alternatives: manual

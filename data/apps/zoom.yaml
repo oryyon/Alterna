@@ -31,3 +31,5 @@ indicators:
 sources:
 - https://zoom.us
 logo: logos/zoom.svg
+confidence:
+  alternatives: manual

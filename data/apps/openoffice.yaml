@@ -31,3 +31,5 @@ indicators:
 sources:
 - https://www.openoffice.org
 logo: logos/openoffice.png
+confidence:
+  alternatives: manual

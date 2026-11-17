@@ -13,7 +13,9 @@ snap: blender
 flatpak: org.blender.Blender
 platforms: [linux, windows, macos]
 tags: [3d, modelare, animatie, randare]
-alternatives: [freecad]
+alternatives:
+- freecad
+- sweet-home-3d
 
 details:
   install_size_mb: 938
@@ -36,3 +38,4 @@ logo: logos/blender.svg
 confidence:
   details.install_size_mb: auto
   details.romanian_language: manual
+  alternatives: manual

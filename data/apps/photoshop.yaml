@@ -30,3 +30,5 @@ sources:
 - https://www.adobe.com/products/photoshop.html
 - https://www.adobe.com/privacy.html
 logo: logos/photoshop.png
+confidence:
+  alternatives: manual

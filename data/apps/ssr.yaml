@@ -13,7 +13,11 @@ website: https://www.maartenbaert.be/simplescreenrecorder
 
 platforms: [linux]
 tags: [inregistrare ecran, simplu]
-alternatives: [obs]
+alternatives:
+- obs
+- flameshot
+- kazam
+- vokoscreenng
 
 details:
   install_size_mb: 456
@@ -35,3 +39,4 @@ sources:
 logo: logos/ssr.png
 confidence:
   details.install_size_mb: auto
+  alternatives: manual

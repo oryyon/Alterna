@@ -19,6 +19,7 @@ tags:
 - server
 alternatives:
 - opencaster
+- plex
 details:
   install_size_mb: 0
   first_release_year: 2020
@@ -37,3 +38,5 @@ sources:
 - https://owncast.online/
 - https://github.com/owncast/owncast
 - https://www.wikidata.org/wiki/Q104533790
+confidence:
+  alternatives: manual

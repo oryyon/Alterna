@@ -30,3 +30,5 @@ indicators:
 sources:
 - https://www.microsoft.com/microsoft-365
 logo: logos/msoffice.png
+confidence:
+  alternatives: manual

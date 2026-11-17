@@ -38,3 +38,5 @@ sources:
 - https://www.olivevideoeditor.org/
 - https://github.com/olive-editor/olive
 - https://www.wikidata.org/wiki/Q65218115
+confidence:
+  alternatives: manual

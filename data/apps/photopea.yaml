@@ -12,7 +12,12 @@ logo: logos/photopea.svg
 
 platforms: [web]
 tags: [editare foto, browser, psd]
-alternatives: [gimp, photoshop]
+alternatives:
+- gimp
+- photoshop
+- gravit-designer
+- krita
+- pinta
 
 details:
   install_size_mb: 0        # aplicație web
@@ -30,3 +35,5 @@ indicators:
 
 sources:
 - https://www.photopea.com
+confidence:
+  alternatives: manual

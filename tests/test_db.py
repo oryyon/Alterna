@@ -71,7 +71,10 @@ class TestHidratare:
     def test_get_complet(self, catalog):
         g = catalog.get("gimp")
         assert g["category_name"] == "Grafică"
-        assert set(g["alternatives"]) == {"krita", "photopea", "photoshop"}
+        # lista e simetrică și poate avea mai multe elemente; verificăm
+        # relațiile care contează, nu un set înghețat
+        assert {"krita", "photopea", "photoshop"} <= set(g["alternatives"])
+        assert g["id"] not in g["alternatives"]
         assert g["platforms"] and g["tags"] and g["sources"]
         assert g["editors_choice"] == 1
 

@@ -13,7 +13,11 @@ snap: onlyoffice-desktopeditors
 flatpak: org.onlyoffice.desktopeditors
 platforms: [linux, windows, macos, web]
 tags: [documente, colaborare]
-alternatives: [libreoffice, msoffice]
+alternatives:
+- libreoffice
+- msoffice
+- openoffice
+- scribus
 
 details:
   install_size_mb: 500
@@ -33,3 +37,5 @@ sources:
 - https://www.onlyoffice.com
 - https://github.com/ONLYOFFICE
 logo: logos/onlyoffice.svg
+confidence:
+  alternatives: manual

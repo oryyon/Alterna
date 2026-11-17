@@ -11,7 +11,17 @@ website: https://lmms.io
 
 platforms: [linux, windows, macos]
 tags: [daw, sintetizatoare, beatmaking]
-alternatives: [ardour, fl-studio]
+alternatives:
+- ardour
+- fl-studio
+- bitwig
+- hydrogen
+- mixxx
+- musescore
+- renoise
+- rosegarden
+- tuxguitar
+- zrythm
 
 details:
   install_size_mb: 423
@@ -34,3 +44,4 @@ logo: logos/lmms.svg
 confidence:
   details.install_size_mb: auto
   details.romanian_language: manual
+  alternatives: manual

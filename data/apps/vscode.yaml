@@ -12,7 +12,16 @@ website: https://code.visualstudio.com
 snap: code
 platforms: [linux, windows, macos]
 tags: [editor, cod, extensii]
-alternatives: [vscodium, kate]
+alternatives:
+- vscodium
+- kate
+- eclipse-ide
+- geany
+- intellij-idea
+- neovim
+- pycharm
+- sublime-text
+- zed
 
 details:
   install_size_mb: 350
@@ -35,3 +44,4 @@ sources:
 logo: logos/vscode.png
 confidence:
   details.telemetry: manual
+  alternatives: manual

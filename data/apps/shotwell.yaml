@@ -18,6 +18,7 @@ tags:
 alternatives:
 - gwenview
 - darktable
+- digikam
 details:
   install_size_mb: 324
   first_release_year: 2009
@@ -40,3 +41,4 @@ sources:
 confidence:
   details.first_release_year: auto
   details.install_size_mb: auto
+  alternatives: manual

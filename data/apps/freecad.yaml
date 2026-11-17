@@ -12,7 +12,16 @@ website: https://www.freecad.org
 snap: freecad
 platforms: [linux, windows, macos]
 tags: [cad, parametric, inginerie, 3d print]
-alternatives: [blender]
+alternatives:
+- blender
+- autocad
+- brl-cad
+- fusion360
+- librecad
+- openscad
+- sketchup
+- sweet-home-3d
+- tinkercad
 
 details:
   install_size_mb: 500
@@ -32,3 +41,5 @@ sources:
 - https://www.freecad.org
 - https://github.com/FreeCAD/FreeCAD
 logo: logos/freecad.svg
+confidence:
+  alternatives: manual

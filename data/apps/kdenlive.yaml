@@ -13,7 +13,15 @@ snap: kdenlive
 flatpak: org.kde.kdenlive
 platforms: [linux, windows, macos]
 tags: [editare video, montaj, kde]
-alternatives: [davinci, premiere]
+alternatives:
+- davinci
+- premiere
+- avidemux
+- flowblade
+- olive
+- openshot
+- shotcut
+- subtitleedit
 editors_choice: true
 
 details:
@@ -37,3 +45,4 @@ logo: logos/kdenlive.svg
 confidence:
   details.install_size_mb: auto
   details.romanian_language: manual
+  alternatives: manual

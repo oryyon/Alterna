@@ -12,7 +12,10 @@ website: https://www.jetbrains.com/idea
 snap: intellij-idea-community
 platforms: [linux, windows, macos]
 tags: [ide, java, kotlin]
-alternatives: [eclipse-ide, vscode]
+alternatives:
+- eclipse-ide
+- vscode
+- qtcreator
 
 details:
   install_size_mb: 1500
@@ -32,3 +35,5 @@ sources:
 - https://www.jetbrains.com/idea
 - https://github.com/JetBrains/intellij-community
 logo: logos/intellij-idea.svg
+confidence:
+  alternatives: manual

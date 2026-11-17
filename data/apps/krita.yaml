@@ -14,7 +14,12 @@ logo: logos/krita.svg
 
 platforms: [linux, windows, macos, android]
 tags: [pictură, desen, tableta grafica]
-alternatives: [gimp, photoshop, photopea]
+alternatives:
+- gimp
+- photoshop
+- photopea
+- darktable
+- synfig
 
 details:
   install_size_mb: 867
@@ -36,3 +41,4 @@ sources:
 confidence:
   details.install_size_mb: auto
   details.romanian_language: manual
+  alternatives: manual

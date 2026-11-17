@@ -38,3 +38,5 @@ sources:
 - https://www.sketchup.com/
 - https://www.wikidata.org/wiki/Q79604
 logo: logos/sketchup.svg
+confidence:
+  alternatives: manual

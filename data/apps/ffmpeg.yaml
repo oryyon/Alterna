@@ -42,4 +42,5 @@ sources:
 confidence:
   details.first_release_year: auto
   details.install_size_mb: auto
+  alternatives: manual
 logo: logos/ffmpeg.svg

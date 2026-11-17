@@ -11,7 +11,9 @@ website: https://github.com/oguzhaninan/Stacer
 
 platforms: [linux]
 tags: [sistem, monitor, curatare]
-alternatives: [bleachbit]
+alternatives:
+- bleachbit
+- dconf-editor
 
 details:
   install_size_mb: 366
@@ -32,3 +34,4 @@ sources:
 logo: logos/stacer.png
 confidence:
   details.install_size_mb: auto
+  alternatives: manual

@@ -33,3 +33,4 @@ sources:
 logo: logos/penpot.svg
 confidence:
   details.romanian_language: manual
+  alternatives: manual

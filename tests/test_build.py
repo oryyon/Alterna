@@ -77,8 +77,14 @@ class TestValidari:
         assert not self._fail(tmp_path, "gimp.yaml", bad)
 
     def test_alternativa_inexistenta(self, tmp_path):
-        bad = (DATA / "apps" / "gimp.yaml").read_text(encoding="utf-8") \
-                .replace("alternatives: [krita", "alternatives: [fantoma-app, krita")
+        import re
+
+        # stilul YAML poate fi bloc sau flux — înlocuim rândul, nu o secvență
+        text = (DATA / "apps" / "gimp.yaml").read_text(encoding="utf-8")
+        bad = re.sub(r"^alternatives:.*$",
+                     "alternatives: [fantoma-app, krita]", text, count=1,
+                     flags=re.M)
+        assert bad != text, "nu s-a putut modifica lista de alternative"
         assert not self._fail(tmp_path, "gimp.yaml", bad)
 
     def test_id_diferit_de_fisier(self, tmp_path):

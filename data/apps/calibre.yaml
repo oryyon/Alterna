@@ -43,3 +43,4 @@ confidence:
   details.first_release_year: auto
   license: auto
   details.install_size_mb: auto
+  alternatives: manual

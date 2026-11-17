@@ -13,7 +13,9 @@ snap: thunderbird
 flatpak: org.mozilla.Thunderbird
 platforms: [linux, windows, macos]
 tags: [email, calendar, rss]
-alternatives: []
+alternatives:
+- evolution
+- mailspring
 
 details:
   install_size_mb: 300
@@ -35,3 +37,4 @@ sources:
 logo: logos/thunderbird.svg
 confidence:
   details.telemetry: manual
+  alternatives: manual

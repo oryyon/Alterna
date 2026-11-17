@@ -20,6 +20,11 @@ tags:
 alternatives:
 - strawberry
 - lollypop
+- amarok
+- kid3
+- quodlibet
+- rhythmbox
+- sayonara
 details:
   install_size_mb: 430
   first_release_year: 2010
@@ -42,3 +47,4 @@ sources:
 confidence:
   details.first_release_year: auto
   details.install_size_mb: auto
+  alternatives: manual

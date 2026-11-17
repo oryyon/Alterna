@@ -19,6 +19,10 @@ tags:
 alternatives:
 - eclipse-ide
 - intellij-idea
+- arduino-ide
+- codeblocks
+- kdevelop
+- lazarus
 details:
   install_size_mb: 710
   first_release_year: 2009
@@ -37,3 +41,4 @@ sources:
 - https://www.wikidata.org/wiki/Q2121795
 confidence:
   details.install_size_mb: auto
+  alternatives: manual

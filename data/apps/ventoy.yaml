@@ -11,7 +11,9 @@ website: https://www.ventoy.net
 
 platforms: [linux, windows]
 tags: [usb, boot, iso]
-alternatives: []
+alternatives:
+- balena-etcher
+- clonezilla
 
 details:
   install_size_mb: 30
@@ -31,3 +33,5 @@ sources:
 - https://www.ventoy.net
 - https://github.com/ventoy/Ventoy
 logo: logos/ventoy.png
+confidence:
+  alternatives: manual

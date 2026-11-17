@@ -30,3 +30,5 @@ indicators:
 sources:
 - https://www.adobe.com/products/illustrator.html
 logo: logos/illustrator.png
+confidence:
+  alternatives: manual

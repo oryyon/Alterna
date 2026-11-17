@@ -31,3 +31,5 @@ sources:
 - https://www.torproject.org
 - https://gitlab.torproject.org/tpo/applications/tor-browser
 logo: logos/tor-browser.svg
+confidence:
+  alternatives: manual

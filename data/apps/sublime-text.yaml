@@ -31,3 +31,5 @@ indicators:
 sources:
 - https://www.sublimetext.com
 logo: logos/sublime-text.svg
+confidence:
+  alternatives: manual

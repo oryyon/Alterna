@@ -14,7 +14,12 @@ website: https://www.chromium.org
 
 platforms: [linux, windows, macos]
 tags: [browser, navigare]
-alternatives: [firefox, brave]
+alternatives:
+- firefox
+- brave
+- chrome
+- falkon
+- gnome-web
 
 details:
   install_size_mb: 300
@@ -34,3 +39,5 @@ sources:
 - https://www.chromium.org
 - https://github.com/chromium/chromium
 logo: logos/chromium.png
+confidence:
+  alternatives: manual

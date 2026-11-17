@@ -39,3 +39,5 @@ sources:
 - https://www.mifi.no/losslesscut/
 - https://github.com/mifi/lossless-cut
 - https://www.wikidata.org/wiki/Q104771861
+confidence:
+  alternatives: manual

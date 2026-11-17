@@ -31,3 +31,5 @@ indicators:
 sources:
 - https://www.rarlab.com
 logo: logos/winrar.png
+confidence:
+  alternatives: manual

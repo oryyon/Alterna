@@ -12,7 +12,9 @@ website: https://www.giuspen.net/cherrytree
 snap: cherrytree
 platforms: [linux, windows, macos]
 tags: [notite, arbore, offline]
-alternatives: [joplin]
+alternatives:
+- joplin
+- calibre
 
 details:
   install_size_mb: 264
@@ -34,3 +36,4 @@ sources:
 confidence:
   details.install_size_mb: auto
   details.romanian_language: manual
+  alternatives: manual

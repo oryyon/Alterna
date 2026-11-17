@@ -11,7 +11,12 @@ website: https://www.google.com/chrome
 
 platforms: [linux, windows, macos, android]
 tags: [browser, navigare]
-alternatives: [firefox, chromium, brave]
+alternatives:
+- firefox
+- chromium
+- brave
+- edge
+- opera
 
 details:
   install_size_mb: 300
@@ -30,3 +35,5 @@ indicators:
 sources:
 - https://www.google.com/chrome
 logo: logos/chrome.svg
+confidence:
+  alternatives: manual

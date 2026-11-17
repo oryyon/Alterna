@@ -31,3 +31,4 @@ sources:
 - https://www.passwordstore.org
 confidence:
   details.install_size_mb: auto
+  alternatives: manual

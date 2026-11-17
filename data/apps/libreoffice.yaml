@@ -12,7 +12,15 @@ website: https://www.libreoffice.org
 snap: libreoffice
 platforms: [linux, windows, macos]
 tags: [documente, foi de calcul, prezentari]
-alternatives: [onlyoffice, msoffice]
+alternatives:
+- onlyoffice
+- msoffice
+- abiword
+- calligra
+- gnumeric
+- openoffice
+- scribus
+- wps
 editors_choice: true
 
 details:
@@ -37,3 +45,4 @@ logo: logos/libreoffice.svg
 confidence:
   details.install_size_mb: auto
   details.telemetry: manual
+  alternatives: manual

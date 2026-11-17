@@ -38,7 +38,7 @@ Aplicație **desktop nativă pentru Kubuntu 24.04** (KDE Plasma) pentru descoper
 | 120 de logo-uri reale (Simple Icons CC0 + Wikimedia Commons) + fallback pe inițiale | [data/logos/](data/logos), [tools/fetch_logos.py](tools/fetch_logos.py) |
 | GitHub Actions: PR săptămânal cu indicatori reîmprospătați | [.github/workflows/refresh.yml](.github/workflows/refresh.yml) |
 | Aplicația desktop (PySide6/Qt Widgets) — cu surse clicabile, certitudine, detectarea instalării și actualizare din rețea | [app/](app) |
-| Suită de teste automate (278 teste: build, validări, interogări, comparație, export, GUI, surse, certitudine, verificări, detectarea instalării, actualizare, AI, licențiere, resurse, packaging, integrare GitHub) | [tests/](tests) |
+| Suită de teste automate (284 teste: build, validări, interogări, comparație, export, GUI, surse, certitudine, verificări, detectarea instalării, actualizare, AI, licențiere, resurse, packaging, integrare GitHub) | [tests/](tests) |
 
 > Indicatorii (popcon, stele, versiuni, „în repo Ubuntu") sunt acum **valori reale**, reîmprospătate automat săptămânal prin PR — aprobarea rămâne la maintainer (sec. 7).
 
@@ -56,7 +56,7 @@ Aplicație **desktop nativă pentru Kubuntu 24.04** (KDE Plasma) pentru descoper
 pip install -r requirements.txt
 python tools/build_catalog.py       # data/ → catalog.db (cu validări; eșuează la erori)
 python -m app.main                  # pornește aplicația desktop
-python -m pytest tests/             # rulează suita de teste (278)
+python -m pytest tests/             # rulează suita de teste (284)
 
 # unelte de întreținere (rulate automat săptămânal prin GitHub Actions):
 python tools/refresh_indicators.py  # popcon + repo Ubuntu + stele GitHub → YAML
@@ -100,6 +100,7 @@ Deschide `mockup-ui/index.html` în orice browser. Este complet funcțională (d
 12. ✅ Dependențe fixate (`pyproject.toml` + lockfile), pachete Ubuntu verificate, 120 de logo-uri reale.
 13. ✅ Detectarea aplicațiilor deja instalate: marcajul „✓ instalat” pe card, filtru „Doar instalate”, comanda de instalare în pagina de detalii. Sursele (deb / snap / Flatpak) sunt verificate în snapcraft.io și Flathub.
 14. ✅ Linkuri directe către pachete: în pagina de detalii, butoanele APT / Snap / Flatpak deschid magazinul implicit al sistemului (`apt://`, `snap://`, `flathub://`) — se oferă doar sursele verificate (pachet confirmat în arhiva Ubuntu, snap și Flatpak confirmate în registre).
+15. ✅ Relațiile de alternative verificate: toate sunt simetrice (dacă A e alternativa lui B, și B e a lui A), cele între categorii diferite sunt justificate explicit, iar câmpul poartă marcajul de certitudine „verificat”. Verificarea rulează în CI.
 14. Următorii pași (de agreat): extinderea catalogului spre 200–300 și roadmap-ul post-MVP din IDEI_PROIECT.md.
 
 ## Structura proiectului
@@ -127,7 +128,7 @@ kimi/
 │   ├── taxonomy/        ← taxonomii de funcționalități (pilot: security)
 │   ├── apps/            ← câte un fișier YAML per aplicație (100)
 │   └── logos/           ← logo-uri reale (95 aplicații; restul primesc inițiale)
-├── tests/               ← suita pytest (278 teste)
+├── tests/               ← suita pytest (284 teste)
 ├── tools/
 │   ├── build_catalog.py      ← build YAML → catalog.db (generat, gitignored)
 │   ├── refresh_indicators.py ← reîmprospătare indicatori (popcon/Ubuntu/GitHub)

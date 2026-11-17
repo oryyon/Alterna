@@ -32,3 +32,4 @@ sources:
 logo: logos/virtualbox.svg
 confidence:
   details.install_size_mb: auto
+  alternatives: manual

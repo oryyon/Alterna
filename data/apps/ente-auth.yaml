@@ -11,7 +11,10 @@ website: https://ente.io/auth
 
 platforms: [linux, windows, macos, android, web]
 tags: [2fa, totp, authenticator]
-alternatives: [keepassxc, bitwarden]
+alternatives:
+- keepassxc
+- bitwarden
+- aegis
 
 details:
   install_size_mb: 100
@@ -34,3 +37,4 @@ sources:
 logo: logos/ente-auth.svg
 confidence:
   details.telemetry: manual
+  alternatives: manual

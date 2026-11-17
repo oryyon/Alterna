@@ -41,3 +41,4 @@ sources:
 confidence:
   license: auto
   details.install_size_mb: auto
+  alternatives: manual

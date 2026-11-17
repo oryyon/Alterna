@@ -11,7 +11,10 @@ website: https://www.blackmagicdesign.com/products/davinciresolve
 
 platforms: [linux, windows, macos]
 tags: [editare video, color grading]
-alternatives: [kdenlive, premiere]
+alternatives:
+- kdenlive
+- premiere
+- shotcut
 
 details:
   install_size_mb: 3000
@@ -30,3 +33,5 @@ indicators:
 sources:
 - https://www.blackmagicdesign.com/products/davinciresolve
 logo: logos/davinci.svg
+confidence:
+  alternatives: manual

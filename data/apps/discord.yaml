@@ -13,7 +13,11 @@ snap: discord
 flatpak: com.discordapp.Discord
 platforms: [linux, windows, macos, android, web]
 tags: [chat, voce, gaming]
-alternatives: [element, telegram]
+alternatives:
+- element
+- telegram
+- mumble
+- slack
 
 details:
   install_size_mb: 400
@@ -32,3 +36,5 @@ indicators:
 sources:
 - https://discord.com
 logo: logos/discord.svg
+confidence:
+  alternatives: manual

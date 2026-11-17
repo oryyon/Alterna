@@ -30,3 +30,5 @@ indicators:
 sources:
 - https://www.adobe.com/products/premiere.html
 logo: logos/premiere.png
+confidence:
+  alternatives: manual

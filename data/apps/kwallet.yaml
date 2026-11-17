@@ -18,6 +18,7 @@ tags:
 alternatives:
 - keepassxc
 - gnome-keyring
+- dconf-editor
 details:
   install_size_mb: 486
   first_release_year: 2007
@@ -36,3 +37,4 @@ sources:
 - https://www.wikidata.org/wiki/Q39150115
 confidence:
   details.install_size_mb: auto
+  alternatives: manual

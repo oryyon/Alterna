@@ -14,7 +14,16 @@ logo: logos/gimp.svg   # rezervat — logo-urile vin post-MVP
 
 platforms: [linux, windows, macos]
 tags: [editare foto, raster]
-alternatives: [krita, photopea, photoshop]
+alternatives:
+- krita
+- photopea
+- photoshop
+- affinity
+- darktable
+- gwenview
+- mypaint
+- pinta
+- rawtherapee
 editors_choice: true
 
 details:
@@ -38,3 +47,4 @@ sources:
 confidence:
   details.install_size_mb: auto
   details.romanian_language: manual
+  alternatives: manual

@@ -13,7 +13,12 @@ snap: darktable
 flatpak: org.darktable.Darktable
 platforms: [linux, windows, macos]
 tags: [raw, foto, developare]
-alternatives: [gimp, krita]
+alternatives:
+- gimp
+- krita
+- digikam
+- rawtherapee
+- shotwell
 
 details:
   install_size_mb: 311
@@ -36,3 +41,4 @@ logo: logos/darktable.png
 confidence:
   details.install_size_mb: auto
   details.romanian_language: manual
+  alternatives: manual

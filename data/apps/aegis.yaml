@@ -33,3 +33,5 @@ sources:
 - https://getaegis.app/
 - https://github.com/beemdevelopment/Aegis
 - https://www.wikidata.org/wiki/Q83424257
+confidence:
+  alternatives: manual

@@ -30,3 +30,5 @@ indicators:
 sources:
 - https://www.sweethome3d.com
 logo: logos/sweet-home-3d.png
+confidence:
+  alternatives: manual

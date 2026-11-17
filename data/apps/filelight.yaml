@@ -36,3 +36,4 @@ sources:
 - https://www.wikidata.org/wiki/Q3510027
 confidence:
   details.install_size_mb: auto
+  alternatives: manual

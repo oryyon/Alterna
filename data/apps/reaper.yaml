@@ -12,7 +12,9 @@ website: https://www.reaper.fm
 snap: reaper
 platforms: [linux, windows, macos]
 tags: [daw, inregistrare, mixaj]
-alternatives: [ardour]
+alternatives:
+- ardour
+- bitwig
 
 details:
   install_size_mb: 30
@@ -30,3 +32,5 @@ indicators:
 
 sources:
 - https://www.reaper.fm
+confidence:
+  alternatives: manual

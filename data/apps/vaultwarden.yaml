@@ -36,3 +36,5 @@ indicators:
 sources:
 - https://github.com/dani-garcia/vaultwarden
 logo: logos/vaultwarden.svg
+confidence:
+  alternatives: manual

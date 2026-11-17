@@ -12,7 +12,12 @@ website: https://www.notion.so
 snap: notion-desktop
 platforms: [windows, macos, android, web]
 tags: [notite, wiki, baze de date]
-alternatives: [obsidian, joplin, logseq]
+alternatives:
+- obsidian
+- joplin
+- logseq
+- anytype
+- appflowy
 
 details:
   install_size_mb: 400
@@ -30,3 +35,5 @@ indicators:
 sources:
 - https://www.notion.so
 logo: logos/notion.svg
+confidence:
+  alternatives: manual

@@ -12,7 +12,10 @@ website: https://www.audacityteam.org
 snap: audacity
 platforms: [linux, windows, macos]
 tags: [audio, editare, podcast]
-alternatives: [tenacity]
+alternatives:
+- tenacity
+- kid3
+- ocenaudio
 
 details:
   install_size_mb: 289
@@ -35,3 +38,4 @@ logo: logos/audacity.svg
 confidence:
   details.install_size_mb: auto
   details.romanian_language: manual
+  alternatives: manual

@@ -11,7 +11,9 @@ website: https://gparted.org
 
 platforms: [linux]
 tags: [partitii, discuri, sistem]
-alternatives: []
+alternatives:
+- balena-etcher
+- clonezilla
 
 details:
   install_size_mb: 247
@@ -32,3 +34,4 @@ sources:
 logo: logos/gparted.png
 confidence:
   details.install_size_mb: auto
+  alternatives: manual

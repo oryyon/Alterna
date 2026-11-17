@@ -31,3 +31,5 @@ indicators:
 sources:
 - https://www.autodesk.com/products/fusion-360
 logo: logos/fusion360.png
+confidence:
+  alternatives: manual

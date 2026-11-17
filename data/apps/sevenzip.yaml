@@ -12,7 +12,9 @@ website: https://www.7-zip.org
 
 platforms: [windows, linux]
 tags: [arhivare, 7z, compresie]
-alternatives: [peazip]
+alternatives:
+- peazip
+- winrar
 
 details:
   install_size_mb: 22
@@ -34,3 +36,4 @@ sources:
 logo: logos/sevenzip.svg
 confidence:
   details.install_size_mb: auto
+  alternatives: manual

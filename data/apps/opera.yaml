@@ -31,3 +31,5 @@ indicators:
 sources:
 - https://www.opera.com
 logo: logos/opera.svg
+confidence:
+  alternatives: manual

@@ -12,7 +12,10 @@ website: https://proton.me/pass
 snap: proton-pass
 platforms: [linux, windows, macos, android, web]
 tags: [parole, cloud, privacitate]
-alternatives: [bitwarden, keepassxc]
+alternatives:
+- bitwarden
+- keepassxc
+- aegis
 
 details:
   install_size_mb: 250
@@ -31,3 +34,5 @@ indicators:
 sources:
 - https://proton.me/pass
 logo: logos/proton-pass.svg
+confidence:
+  alternatives: manual

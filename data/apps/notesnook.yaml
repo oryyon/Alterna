@@ -42,4 +42,5 @@ sources:
 - https://www.wikidata.org/wiki/Q128944229
 confidence:
   details.first_release_year: auto
+  alternatives: manual
 logo: logos/notesnook.svg

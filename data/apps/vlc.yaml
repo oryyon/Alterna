@@ -13,7 +13,12 @@ snap: vlc
 flatpak: org.videolan.VLC
 platforms: [linux, windows, macos, android]
 tags: [player, video, audio]
-alternatives: [mpv]
+alternatives:
+- mpv
+- elisa
+- kodi
+- spotify
+- strawberry
 
 details:
   install_size_mb: 471
@@ -36,3 +41,4 @@ logo: logos/vlc.png
 confidence:
   details.install_size_mb: auto
   details.romanian_language: manual
+  alternatives: manual

@@ -13,7 +13,12 @@ snap: element-desktop
 flatpak: im.riot.Riot
 platforms: [linux, windows, macos, android, web]
 tags: [mesagerie, matrix, descentralizat]
-alternatives: [signal, telegram]
+alternatives:
+- signal
+- telegram
+- discord
+- jami
+- wire
 
 details:
   install_size_mb: 300
@@ -36,3 +41,4 @@ sources:
 logo: logos/element.svg
 confidence:
   details.telemetry: manual
+  alternatives: manual

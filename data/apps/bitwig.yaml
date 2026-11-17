@@ -38,3 +38,5 @@ sources:
 - https://www.bitwig.com
 - https://www.wikidata.org/wiki/Q21843360
 logo: logos/bitwig.svg
+confidence:
+  alternatives: manual

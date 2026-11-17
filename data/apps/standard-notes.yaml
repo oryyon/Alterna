@@ -12,7 +12,10 @@ website: https://standardnotes.com
 snap: standard-notes
 platforms: [linux, windows, macos, android, web]
 tags: [notite, criptare, sincronizare]
-alternatives: [joplin, obsidian]
+alternatives:
+- joplin
+- obsidian
+- notesnook
 
 details:
   install_size_mb: 300
@@ -32,3 +35,5 @@ sources:
 - https://standardnotes.com
 - https://github.com/standardnotes/app
 logo: logos/standard-notes.png
+confidence:
+  alternatives: manual

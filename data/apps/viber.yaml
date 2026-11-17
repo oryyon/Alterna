@@ -31,3 +31,5 @@ indicators:
 sources:
 - https://www.viber.com
 logo: logos/viber.svg
+confidence:
+  alternatives: manual

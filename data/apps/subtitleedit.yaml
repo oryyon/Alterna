@@ -38,3 +38,5 @@ sources:
 - https://github.com/SubtitleEdit/subtitleedit
 - https://www.wikidata.org/wiki/Q7632233
 logo: logos/subtitleedit.svg
+confidence:
+  alternatives: manual

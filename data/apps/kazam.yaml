@@ -11,7 +11,11 @@ website: https://launchpad.net/kazam
 
 platforms: [linux]
 tags: [inregistrare ecran, simplu]
-alternatives: [ssr, obs]
+alternatives:
+- ssr
+- obs
+- flameshot
+- guvcview
 
 details:
   install_size_mb: 451
@@ -32,3 +36,4 @@ sources:
 logo: logos/kazam.png
 confidence:
   details.install_size_mb: auto
+  alternatives: manual

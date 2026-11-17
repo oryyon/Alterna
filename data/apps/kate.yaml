@@ -13,7 +13,16 @@ snap: kate
 flatpak: org.kde.kate
 platforms: [linux, windows]
 tags: [editor, cod, kde]
-alternatives: [vscode, vscodium]
+alternatives:
+- vscode
+- vscodium
+- bluefish
+- emacs
+- geany
+- kdevelop
+- neovim
+- sublime-text
+- texstudio
 
 details:
   install_size_mb: 556
@@ -36,3 +45,4 @@ logo: logos/kate.png
 confidence:
   details.install_size_mb: auto
   details.romanian_language: manual
+  alternatives: manual

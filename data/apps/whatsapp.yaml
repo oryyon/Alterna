@@ -11,7 +11,10 @@ website: https://www.whatsapp.com
 
 platforms: [windows, macos, android, web]
 tags: [mesagerie, chat]
-alternatives: [telegram, signal]
+alternatives:
+- telegram
+- signal
+- viber
 
 details:
   install_size_mb: 300
@@ -30,3 +33,5 @@ indicators:
 sources:
 - https://www.whatsapp.com
 logo: logos/whatsapp.svg
+confidence:
+  alternatives: manual

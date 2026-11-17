@@ -13,7 +13,13 @@ snap: inkscape
 flatpak: org.inkscape.Inkscape
 platforms: [linux, windows, macos]
 tags: [vectorial, svg, ilustratie]
-alternatives: [illustrator, figma, affinity]
+alternatives:
+- illustrator
+- figma
+- affinity
+- gravit-designer
+- penpot
+- synfig
 
 details:
   install_size_mb: 401
@@ -36,3 +42,4 @@ logo: logos/inkscape.svg
 confidence:
   details.install_size_mb: auto
   details.romanian_language: manual
+  alternatives: manual

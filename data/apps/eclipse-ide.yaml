@@ -13,7 +13,11 @@ website: https://www.eclipse.org
 
 platforms: [linux, windows, macos]
 tags: [ide, java]
-alternatives: [intellij-idea, vscode]
+alternatives:
+- intellij-idea
+- vscode
+- codeblocks
+- qtcreator
 
 details:
   install_size_mb: 502
@@ -35,3 +39,4 @@ sources:
 logo: logos/eclipse-ide.svg
 confidence:
   details.install_size_mb: auto
+  alternatives: manual

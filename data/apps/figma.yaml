@@ -31,3 +31,5 @@ indicators:
 sources:
 - https://www.figma.com
 logo: logos/figma.svg
+confidence:
+  alternatives: manual

@@ -34,3 +34,5 @@ indicators:
 sources:
 - https://www.designer.io/
 - https://www.wikidata.org/wiki/Q56354069
+confidence:
+  alternatives: manual

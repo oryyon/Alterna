@@ -11,7 +11,9 @@ website: https://www.qbittorrent.org
 
 platforms: [linux, windows, macos]
 tags: [torrent, p2p, descarcare]
-alternatives: []
+alternatives:
+- transmission
+- deluge
 
 details:
   install_size_mb: 370
@@ -33,3 +35,4 @@ sources:
 logo: logos/qbittorrent.svg
 confidence:
   details.install_size_mb: auto
+  alternatives: manual

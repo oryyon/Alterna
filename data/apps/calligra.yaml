@@ -12,7 +12,11 @@ website: https://calligra.org
 flatpak: org.kde.calligra
 platforms: [linux, windows]
 tags: [documente, kde]
-alternatives: [libreoffice]
+alternatives:
+- libreoffice
+- abiword
+- gnucash
+- gnumeric
 
 details:
   install_size_mb: 750
@@ -35,3 +39,4 @@ logo: logos/calligra.png
 confidence:
   details.install_size_mb: auto
   details.romanian_language: manual
+  alternatives: manual

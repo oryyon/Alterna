@@ -17,6 +17,8 @@ tags:
 alternatives:
 - ark
 - peazip
+- dolphin
+- thunar
 details:
   install_size_mb: 239
   first_release_year: 2001
@@ -38,3 +40,4 @@ sources:
 - https://www.wikidata.org/wiki/Q1143010
 confidence:
   details.install_size_mb: auto
+  alternatives: manual

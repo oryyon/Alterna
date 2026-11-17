@@ -14,7 +14,13 @@ logo: logos/bitwarden.svg
 
 platforms: [linux, windows, macos, android, web]
 tags: [parole, cloud, sincronizare]
-alternatives: [keepassxc, 1password]
+alternatives:
+- keepassxc
+- 1password
+- enpass
+- ente-auth
+- proton-pass
+- vaultwarden
 
 details:
   install_size_mb: 250
@@ -60,3 +66,4 @@ sources:
 - https://bitwarden.com/privacy/
 confidence:
   details.telemetry: manual
+  alternatives: manual

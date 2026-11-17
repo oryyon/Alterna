@@ -17,6 +17,8 @@ tags:
 alternatives:
 - firefox
 - chromium
+- lynx
+- netsurf
 details:
   install_size_mb: 0
   first_release_year: 2002
@@ -35,3 +37,4 @@ sources:
 - https://www.wikidata.org/wiki/Q167784
 confidence:
   details.first_release_year: auto
+  alternatives: manual

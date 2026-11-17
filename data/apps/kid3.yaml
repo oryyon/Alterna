@@ -1,6 +1,6 @@
 # Kid3 — Editor de etichete pentru fișiere audio.
 id: kid3
-popularity: 1560
+popularity: 1940
 name: Kid3
 description: Editor de etichete pentru fișiere audio.
 category: audio-players
@@ -30,7 +30,7 @@ details:
   telemetry: none
   romanian_language: false
 indicators:
-  popcon_rank:
+  popcon_rank: 15486
   stars:
   stars_url: https://invent.kde.org/kde/kid3.git
   latest_release:

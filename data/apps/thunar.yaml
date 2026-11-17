@@ -1,0 +1,37 @@
+# Thunar — Manager de fișiere ușor, din desktopul Xfce.
+id: thunar
+popularity: 1730
+name: Thunar
+description: Manager de fișiere ușor, din desktopul Xfce.
+category: utilities
+license: foss
+price: free
+developer: Alexander Schwinn
+website: https://docs.xfce.org/xfce/thunar/start
+platforms:
+- linux
+tags:
+- fisiere
+- xfce
+- usor
+alternatives:
+- dolphin
+- file-roller
+details:
+  install_size_mb: 239
+  first_release_year: 2004
+  file_formats: []
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url: https://gitlab.xfce.org/xfce/thunar
+  latest_release:
+  in_ubuntu_repos: true
+sources:
+- https://docs.xfce.org/xfce/thunar/start
+- https://gitlab.xfce.org/xfce/thunar
+- https://www.wikidata.org/wiki/Q757834
+confidence:
+  details.install_size_mb: auto

@@ -1,0 +1,41 @@
+# LosslessCut — Tăiere rapidă a videoclipurilor, fără re-codare.
+id: losslesscut
+popularity: 1310
+name: LosslessCut
+description: Tăiere rapidă a videoclipurilor, fără re-codare.
+category: video
+license: foss
+price: free
+developer: 'LosslessCut'
+website: https://www.mifi.no/losslesscut/
+snap: losslesscut
+platforms:
+- linux
+- windows
+- macos
+tags:
+- montaj video
+- taiere
+- rapid
+alternatives:
+- avidemux
+- shotcut
+details:
+  install_size_mb: 0
+  first_release_year: 2016
+  file_formats:
+  - mp4
+  - mkv
+  - mov
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars: 46101
+  stars_url: https://github.com/mifi/lossless-cut
+  latest_release: 2026-10
+  in_ubuntu_repos: false
+sources:
+- https://www.mifi.no/losslesscut/
+- https://github.com/mifi/lossless-cut
+- https://www.wikidata.org/wiki/Q104771861

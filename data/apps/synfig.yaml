@@ -1,6 +1,6 @@
 # Synfig Studio — Animație 2D cu grafică vectorială și temporală.
 id: synfig
-popularity: 1480
+popularity: 1850
 name: Synfig Studio
 description: Animație 2D cu grafică vectorială și temporală.
 category: graphics
@@ -29,7 +29,7 @@ details:
   telemetry: none
   romanian_language: false
 indicators:
-  popcon_rank:
+  popcon_rank: 41950
   stars: 2437
   stars_url: https://github.com/synfig/synfig
   latest_release: 2026-03

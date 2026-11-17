@@ -1,0 +1,41 @@
+# Code::Blocks — IDE pentru C/C++, cu extensii și debugger.
+id: codeblocks
+popularity: 1500
+name: Code::Blocks
+description: IDE pentru C/C++, cu extensii și debugger.
+category: development
+license: foss
+price: free
+developer: 'Code::Blocks'
+website: https://www.codeblocks.org/
+platforms:
+- linux
+- windows
+- macos
+tags:
+- ide
+- c++
+- debugger
+alternatives:
+- qtcreator
+- eclipse-ide
+details:
+  install_size_mb: 293
+  first_release_year: 2005
+  file_formats: []
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url: https://sf.net/p/codeblocks/code/
+  latest_release:
+  in_ubuntu_repos: true
+sources:
+- https://www.codeblocks.org/
+- https://sf.net/p/codeblocks/code/
+- https://www.wikidata.org/wiki/Q835824
+confidence:
+  details.first_release_year: auto
+  details.install_size_mb: auto
+logo: logos/codeblocks.svg

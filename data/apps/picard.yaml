@@ -1,0 +1,44 @@
+# MusicBrainz Picard — Identifică și etichetează fișierele muzicale automat.
+id: picard
+popularity: 1710
+name: MusicBrainz Picard
+description: Identifică și etichetează fișierele muzicale automat.
+category: audio-players
+license: foss
+price: free
+developer: MusicBrainz
+website: https://picard.musicbrainz.org/
+snap: picard
+platforms:
+- linux
+- windows
+- macos
+tags:
+- etichete
+- metadata
+- muzica
+alternatives:
+- kid3
+- easytag
+details:
+  install_size_mb: 515
+  first_release_year: 2006
+  file_formats:
+  - mp3
+  - flac
+  - ogg
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars: 5379
+  stars_url: https://github.com/metabrainz/picard
+  latest_release: 2026-11
+  in_ubuntu_repos: true
+sources:
+- https://picard.musicbrainz.org/
+- https://github.com/metabrainz/picard
+- https://www.wikidata.org/wiki/Q117725
+confidence:
+  license: auto
+  details.install_size_mb: auto

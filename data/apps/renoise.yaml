@@ -1,0 +1,41 @@
+# Renoise — Tracker și secuencer pentru producție rapidă.
+id: renoise
+popularity: 1790
+name: Renoise
+description: Tracker și secuencer pentru producție rapidă.
+category: audio-production
+license: foss
+price: paid
+developer: 'Renoise'
+website: https://www.renoise.com/
+platforms:
+- linux
+- windows
+- macos
+tags:
+- tracker
+- secventa
+- producție
+alternatives:
+- hydrogen
+- lmms
+details:
+  install_size_mb: 0
+  first_release_year: 2002
+  file_formats:
+  - wav
+  - ogg
+  - mid
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://www.renoise.com/
+- https://www.wikidata.org/wiki/Q1972611
+confidence:
+  details.first_release_year: auto

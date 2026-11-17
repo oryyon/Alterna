@@ -1,0 +1,45 @@
+# Calibre — Gestionarea bibliotecii de cărți electronice.
+id: calibre
+popularity: 1060
+name: Calibre
+description: Gestionarea bibliotecii de cărți electronice.
+category: office
+license: foss
+price: free
+developer: Kovid Goyal
+website: https://calibre-ebook.com
+snap: calibre
+platforms:
+- linux
+- windows
+- macos
+tags:
+- ebooks
+- biblioteca
+- office
+alternatives:
+- zotero
+- cherrytree
+details:
+  install_size_mb: 865
+  first_release_year: 2006
+  file_formats:
+  - epub
+  - mobi
+  - pdf
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars: 26454
+  stars_url: https://github.com/kovidgoyal/calibre
+  latest_release: 2026-11
+  in_ubuntu_repos: true
+sources:
+- https://calibre-ebook.com
+- https://github.com/kovidgoyal/calibre
+- https://www.wikidata.org/wiki/Q747793
+confidence:
+  details.first_release_year: auto
+  license: auto
+  details.install_size_mb: auto

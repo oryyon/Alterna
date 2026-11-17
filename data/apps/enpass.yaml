@@ -1,0 +1,37 @@
+# Enpass — Manager de parole cu sincronizare între dispozitive.
+id: enpass
+popularity: 1400
+name: Enpass
+description: Manager de parole cu sincronizare între dispozitive.
+category: security
+license: foss
+price: paid
+developer: 'Enpass'
+website: https://www.enpass.io
+snap: enpass
+platforms:
+- windows
+- macos
+- linux
+tags:
+- parole
+- sincronizare
+alternatives:
+- 1password
+- bitwarden
+details:
+  install_size_mb: 0
+  first_release_year: 2013
+  file_formats: []
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://www.enpass.io
+- https://www.wikidata.org/wiki/Q22095973
+logo: logos/enpass.svg

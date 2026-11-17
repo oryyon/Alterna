@@ -1,0 +1,43 @@
+# GnuCash — Contabilitate pentru persoane fizice și firme mici.
+id: gnucash
+popularity: 1230
+name: GnuCash
+description: Contabilitate pentru persoane fizice și firme mici.
+category: office
+license: foss
+price: free
+developer: Proiectul GNU
+website: https://www.gnucash.org/
+platforms:
+- linux
+- windows
+- macos
+tags:
+- contabilitate
+- finante
+- office
+alternatives:
+- homebank
+- calligra
+details:
+  install_size_mb: 834
+  first_release_year: 1997
+  file_formats:
+  - gnucash
+  - csv
+  - ofx
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url: https://github.com/Gnucash/gnucash.git
+  latest_release:
+  in_ubuntu_repos: true
+sources:
+- https://www.gnucash.org/
+- https://github.com/Gnucash/gnucash.git
+- https://www.wikidata.org/wiki/Q123326
+confidence:
+  details.first_release_year: auto
+  details.install_size_mb: auto

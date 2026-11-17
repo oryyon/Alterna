@@ -1,6 +1,6 @@
 # Pidgin — Client de chat pentru mai multe rețele, într-o singură fereastră.
 id: pidgin
-popularity: 1410
+popularity: 1740
 name: Pidgin
 description: Client de chat pentru mai multe rețele, într-o singură fereastră.
 category: communication
@@ -25,7 +25,7 @@ details:
   telemetry: none
   romanian_language: false
 indicators:
-  popcon_rank:
+  popcon_rank: 5130
   stars:
   stars_url: https://keep.imfreedom.org/pidgin/pidgin/
   latest_release:

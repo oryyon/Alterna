@@ -1,0 +1,43 @@
+# Quod Libet — Player de muzică cu etichete și filtrare avansată.
+id: quodlibet
+popularity: 1550
+name: Quod Libet
+description: Player de muzică cu etichete și filtrare avansată.
+category: audio-players
+license: foss
+price: free
+developer: 'Quod Libet'
+website: https://quodlibet.readthedocs.io/
+platforms:
+- linux
+- windows
+- macos
+tags:
+- player audio
+- muzica
+- etichete
+alternatives:
+- clementine
+- strawberry
+details:
+  install_size_mb: 471
+  first_release_year: 2005
+  file_formats:
+  - mp3
+  - flac
+  - ogg
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars: 1770
+  stars_url: https://github.com/quodlibet/quodlibet
+  latest_release: 2025-05
+  in_ubuntu_repos: true
+sources:
+- https://quodlibet.readthedocs.io/
+- https://github.com/quodlibet/quodlibet
+- https://www.wikidata.org/wiki/Q1621193
+confidence:
+  license: auto
+  details.install_size_mb: auto

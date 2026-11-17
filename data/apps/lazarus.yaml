@@ -1,0 +1,41 @@
+# Lazarus — Mediu de dezvoltare vizual pentru Pascal și Object Pascal.
+id: lazarus
+popularity: 1420
+name: Lazarus
+description: Mediu de dezvoltare vizual pentru Pascal și Object Pascal.
+category: development
+license: foss
+price: free
+developer: Mattias Gärtner
+website: https://www.lazarus-ide.org
+platforms:
+- linux
+- windows
+- macos
+tags:
+- ide
+- pascal
+- rapid
+alternatives:
+- bluefish
+- qtcreator
+details:
+  install_size_mb: 1699
+  first_release_year: 2001
+  file_formats: []
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url: https://gitlab.com/freepascal.org/lazarus
+  latest_release:
+  in_ubuntu_repos: true
+sources:
+- https://www.lazarus-ide.org
+- https://gitlab.com/freepascal.org/lazarus
+- https://www.wikidata.org/wiki/Q258448
+confidence:
+  details.first_release_year: auto
+  details.install_size_mb: auto
+logo: logos/lazarus.svg

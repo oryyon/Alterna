@@ -1,0 +1,40 @@
+# Zrythm — Statie de lucru pentru producție muzicală, cu aranjor.
+id: zrythm
+popularity: 1570
+name: Zrythm
+description: Statie de lucru pentru producție muzicală, cu aranjor.
+category: audio-production
+license: foss
+price: free
+developer: Alexandros Theodotou
+website: https://www.zrythm.org
+platforms:
+- linux
+tags:
+- compozitie
+- producție
+- secventa
+alternatives:
+- lmms
+- rosegarden
+details:
+  install_size_mb: 0
+  first_release_year: 2018
+  file_formats:
+  - wav
+  - mid
+  - ogg
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url: https://git.sr.ht/~alextee/zrythm
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://www.zrythm.org
+- https://git.sr.ht/~alextee/zrythm
+- https://www.wikidata.org/wiki/Q102241944
+confidence:
+  details.first_release_year: auto

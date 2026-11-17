@@ -1,0 +1,45 @@
+# FFmpeg — Trusă de instrumente pentru conversie și editare video.
+id: ffmpeg
+popularity: 700
+name: FFmpeg
+description: Trusă de instrumente pentru conversie și editare video.
+category: utilities
+license: foss
+price: free
+developer: Fabrice Bellard
+website: https://ffmpeg.org
+snap: ffmpeg
+platforms:
+- linux
+- windows
+- macos
+tags:
+- video
+- conversie
+- linie de comanda
+alternatives:
+- handbrake
+- avidemux
+details:
+  install_size_mb: 479
+  first_release_year: 2000
+  file_formats:
+  - mp4
+  - mkv
+  - webm
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url: https://git.ffmpeg.org/ffmpeg.git
+  latest_release:
+  in_ubuntu_repos: true
+sources:
+- https://ffmpeg.org
+- https://git.ffmpeg.org/ffmpeg.git
+- https://www.wikidata.org/wiki/Q847465
+confidence:
+  details.first_release_year: auto
+  details.install_size_mb: auto
+logo: logos/ffmpeg.svg

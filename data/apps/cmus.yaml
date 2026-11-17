@@ -1,0 +1,40 @@
+# CMus — Player de muzică pentru terminal, cu navigare prin colecție.
+id: cmus
+popularity: 1780
+name: CMus
+description: Player de muzică pentru terminal, cu navigare prin colecție.
+category: audio-players
+license: foss
+price: free
+developer: 'CMus'
+website: https://cmus.sourceforge.net/
+platforms:
+- linux
+tags:
+- player audio
+- terminal
+- muzica
+alternatives:
+- audacious
+- lollypop
+details:
+  install_size_mb: 25
+  first_release_year: 2003
+  file_formats:
+  - mp3
+  - flac
+  - ogg
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars: 6295
+  stars_url: https://github.com/cmus/cmus
+  latest_release: 2026-10
+  in_ubuntu_repos: true
+sources:
+- https://cmus.sourceforge.net/
+- https://github.com/cmus/cmus
+- https://www.wikidata.org/wiki/Q1940750
+confidence:
+  details.install_size_mb: auto

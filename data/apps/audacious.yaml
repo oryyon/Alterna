@@ -1,0 +1,44 @@
+# Audacious — Player de muzică ușor, cu skinuri și efecte.
+id: audacious
+popularity: 1630
+name: Audacious
+description: Player de muzică ușor, cu skinuri și efecte.
+category: audio-players
+license: foss
+price: free
+developer: William Pitcock
+website: https://audacious-media-player.org/
+snap: audacious
+platforms:
+- linux
+- windows
+- macos
+tags:
+- player audio
+- muzica
+- usor
+alternatives:
+- cmus
+- lollypop
+details:
+  install_size_mb: 504
+  first_release_year: 2005
+  file_formats:
+  - mp3
+  - flac
+  - ogg
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars: 1305
+  stars_url: https://github.com/audacious-media-player/audacious
+  latest_release: 2026-10
+  in_ubuntu_repos: true
+sources:
+- https://audacious-media-player.org/
+- https://github.com/audacious-media-player/audacious
+- https://www.wikidata.org/wiki/Q758685
+confidence:
+  details.first_release_year: auto
+  details.install_size_mb: auto

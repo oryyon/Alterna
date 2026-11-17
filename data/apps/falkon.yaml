@@ -1,6 +1,6 @@
 # Falkon — Browser web ușor, bazat pe QtWebEngine.
 id: falkon
-popularity: 1300
+popularity: 1410
 name: Falkon
 description: Browser web ușor, bazat pe QtWebEngine.
 category: internet
@@ -25,7 +25,7 @@ details:
   telemetry: none
   romanian_language: false
 indicators:
-  popcon_rank:
+  popcon_rank: 12958
   stars: 1132
   stars_url: https://github.com/QupZilla/qupzilla
   latest_release: 2018-03

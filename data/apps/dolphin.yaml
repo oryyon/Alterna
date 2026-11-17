@@ -1,0 +1,39 @@
+# Dolphin — Manager de fișiere al desktopului KDE, cu file-uri.
+id: dolphin
+popularity: 1520
+name: Dolphin
+description: Manager de fișiere al desktopului KDE, cu file-uri.
+category: utilities
+license: foss
+price: free
+developer: KDE
+website: https://apps.kde.org/dolphin/
+platforms:
+- linux
+tags:
+- fisiere
+- kde
+- file-uri
+alternatives:
+- file-roller
+- ark
+details:
+  install_size_mb: 614
+  first_release_year: 2006
+  file_formats: []
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url: https://invent.kde.org/system/dolphin
+  latest_release:
+  in_ubuntu_repos: true
+sources:
+- https://apps.kde.org/dolphin/
+- https://invent.kde.org/system/dolphin
+- https://www.wikidata.org/wiki/Q816725
+confidence:
+  details.first_release_year: auto
+  details.install_size_mb: auto
+logo: logos/dolphin.svg

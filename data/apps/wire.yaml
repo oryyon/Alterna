@@ -1,0 +1,42 @@
+# Wire — Mesagerie criptată, cu apeluri și sync de conturi.
+id: wire
+popularity: 1340
+name: Wire
+description: Mesagerie criptată, cu apeluri și sync de conturi.
+category: communication
+license: foss
+price: free
+developer: Wire Swiss
+website: https://wire.com
+snap: wire
+platforms:
+- linux
+- windows
+- macos
+- android
+tags:
+- mesagerie
+- criptare
+- voip
+alternatives:
+- signal
+- element
+details:
+  install_size_mb: 0
+  first_release_year: 2014
+  file_formats: []
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars: 2556
+  stars_url: https://github.com/wireapp/wire
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://wire.com
+- https://github.com/wireapp/wire
+- https://www.wikidata.org/wiki/Q26934461
+confidence:
+  details.first_release_year: auto
+logo: logos/wire.svg

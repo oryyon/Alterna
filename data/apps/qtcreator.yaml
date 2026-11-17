@@ -1,6 +1,6 @@
 # Qt Creator — Mediu de dezvoltare integrat pentru Qt și C++.
 id: qtcreator
-popularity: 1430
+popularity: 1760
 name: Qt Creator
 description: Mediu de dezvoltare integrat pentru Qt și C++.
 category: development
@@ -26,7 +26,7 @@ details:
   telemetry: none
   romanian_language: false
 indicators:
-  popcon_rank:
+  popcon_rank: 10706
   stars:
   stars_url: https://github.com/qt-creator/qt-creator.git
   latest_release:

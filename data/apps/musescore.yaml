@@ -1,6 +1,6 @@
 # MuseScore — Editor de partituri cu audiție și export în multe formate.
 id: musescore
-popularity: 990
+popularity: 1000
 name: MuseScore
 description: Editor de partituri cu audiție și export în multe formate.
 category: audio-production
@@ -8,6 +8,7 @@ license: foss
 price: free
 developer: Muse Group
 website: https://musescore.org
+snap: musescore
 platforms:
 - linux
 - windows
@@ -29,7 +30,7 @@ details:
   telemetry: none
   romanian_language: false
 indicators:
-  popcon_rank:
+  popcon_rank: 16013
   stars:
   stars_url:
   latest_release:

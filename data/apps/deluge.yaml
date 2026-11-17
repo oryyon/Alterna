@@ -1,0 +1,41 @@
+# Deluge — Client de torrent cu interfață web și plugin-uri.
+id: deluge
+popularity: 1510
+name: Deluge
+description: Client de torrent cu interfață web și plugin-uri.
+category: internet
+license: foss
+price: free
+developer: Deluge Team
+website: https://deluge-torrent.org/
+platforms:
+- linux
+- windows
+- macos
+tags:
+- torrent
+- p2p
+- descarcare
+alternatives:
+- qbittorrent
+- transmission
+details:
+  install_size_mb: 296
+  first_release_year: 2003
+  file_formats: []
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url: https://git.deluge-torrent.org/deluge
+  latest_release:
+  in_ubuntu_repos: true
+sources:
+- https://deluge-torrent.org/
+- https://git.deluge-torrent.org/deluge
+- https://www.wikidata.org/wiki/Q1185023
+confidence:
+  license: auto
+  details.install_size_mb: auto
+logo: logos/deluge.svg

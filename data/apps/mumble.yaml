@@ -1,6 +1,6 @@
 # Mumble — VoIP cu latență mică, pentru jocuri și discuții.
 id: mumble
-popularity: 1200
+popularity: 1250
 name: Mumble
 description: VoIP cu latență mică, pentru jocuri și discuții.
 category: communication
@@ -28,7 +28,7 @@ details:
   telemetry: none
   romanian_language: false
 indicators:
-  popcon_rank:
+  popcon_rank: 14010
   stars: 8424
   stars_url: https://github.com/mumble-voip/mumble
   latest_release: 2026-10

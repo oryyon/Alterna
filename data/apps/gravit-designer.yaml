@@ -1,0 +1,36 @@
+# Gravit Designer — Editor de design vectorial în browser.
+id: gravit-designer
+popularity: 1660
+name: Gravit Designer
+description: Editor de design vectorial în browser.
+category: graphics
+license: foss
+price: paid
+developer: 'Gravit'
+website: https://www.designer.io/
+platforms:
+- web
+tags:
+- design
+- vectorial
+- browser
+alternatives:
+- inkscape
+- photopea
+details:
+  install_size_mb: 0
+  first_release_year: 2015
+  file_formats:
+  - svg
+  - pdf
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://www.designer.io/
+- https://www.wikidata.org/wiki/Q56354069

@@ -1,0 +1,41 @@
+# Jami — Mesagerie și conferințe peer-to-peer, fără server central.
+id: jami
+popularity: 1670
+name: Jami
+description: Mesagerie și conferințe peer-to-peer, fără server central.
+category: communication
+license: foss
+price: free
+developer: Savoir-faire Linux
+website: https://jami.net/
+snap: jami
+platforms:
+- linux
+- windows
+- macos
+- android
+tags:
+- mesagerie
+- p2p
+- voip
+alternatives:
+- element
+- mumble
+details:
+  install_size_mb: 596
+  first_release_year: 2015
+  file_formats: []
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url: https://git.jami.net/
+  latest_release:
+  in_ubuntu_repos: true
+sources:
+- https://jami.net/
+- https://git.jami.net/
+- https://www.wikidata.org/wiki/Q3459508
+confidence:
+  details.install_size_mb: auto

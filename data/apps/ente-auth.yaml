@@ -1,6 +1,6 @@
 # Ente Auth — aplicație 2FA open source cu sincronizare criptată
 id: ente-auth
-popularity: 760
+popularity: 770
 name: Ente Auth
 description: Aplicație 2FA (TOTP) open source, cu sincronizare criptată cap-la-cap.
 category: security

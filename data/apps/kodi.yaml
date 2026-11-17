@@ -30,7 +30,7 @@ details:
   telemetry: none
   romanian_language: false
 indicators:
-  popcon_rank:
+  popcon_rank: 10415
   stars: 21498
   stars_url: https://github.com/xbmc/xbmc
   latest_release: 2026-11

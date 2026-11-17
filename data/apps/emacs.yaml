@@ -1,6 +1,6 @@
 # GNU Emacs — Editor de text extensibil, cu un ecosistem de pachete.
 id: emacs
-popularity: 730
+popularity: 740
 name: GNU Emacs
 description: Editor de text extensibil, cu un ecosistem de pachete.
 category: development
@@ -27,7 +27,7 @@ details:
   telemetry: none
   romanian_language: false
 indicators:
-  popcon_rank:
+  popcon_rank: 5227
   stars:
   stars_url: https://cgit.git.savannah.gnu.org/cgit/emacs.git
   latest_release:

@@ -24,7 +24,7 @@ details:
 
 indicators:
   popcon_rank: 3959
-  stars: 38157
+  stars: 38158
   stars_url: https://github.com/mpv-player/mpv
   latest_release: "2026-11"
   in_ubuntu_repos: true

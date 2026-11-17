@@ -1,6 +1,6 @@
 # SQLiteStudio — Client pentru baze de date SQLite.
 id: sqlitebrowser
-popularity: 1660
+popularity: 2040
 name: SQLiteStudio
 description: Client pentru baze de date SQLite.
 category: utilities
@@ -27,7 +27,7 @@ details:
   telemetry: none
   romanian_language: false
 indicators:
-  popcon_rank:
+  popcon_rank: 7626
   stars:
   stars_url:
   latest_release:

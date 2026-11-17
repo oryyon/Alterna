@@ -1,6 +1,6 @@
 # OpenSCAD — CAD programatic (modele descrise prin cod)
 id: openscad
-popularity: 860
+popularity: 870
 name: OpenSCAD
 description: CAD programatic — modelele 3D sunt descrise prin cod, ideal pentru 3D printing parametric.
 category: 3d-cad
@@ -23,7 +23,7 @@ details:
 
 indicators:
   popcon_rank: 10024
-  stars: 10669
+  stars: 10671
   stars_url: https://github.com/openscad/openscad
   latest_release: "2026-11"
   in_ubuntu_repos: true

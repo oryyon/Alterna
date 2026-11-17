@@ -1,0 +1,41 @@
+# Guvcview — Captură video de la cameră web, cu efecte și înregistrare.
+id: guvcview
+popularity: 1240
+name: Guvcview
+description: Captură video de la cameră web, cu efecte și înregistrare.
+category: streaming
+license: foss
+price: free
+developer: 'Guvcview'
+website: https://guvcview.sourceforge.net/
+platforms:
+- linux
+tags:
+- webcam
+- captura
+- video
+alternatives:
+- kazam
+- obs
+details:
+  install_size_mb: 316
+  first_release_year: 2007
+  file_formats:
+  - avi
+  - mkv
+  - webm
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url: https://sourceforge.net/p/guvcview/git-master/ci/master/tree
+  latest_release:
+  in_ubuntu_repos: true
+sources:
+- https://guvcview.sourceforge.net/
+- https://guvcview.sourceforge.net
+- https://sourceforge.net/p/guvcview/git-master/ci/master/tree
+- https://www.wikidata.org/wiki/Q4039766
+confidence:
+  details.install_size_mb: auto

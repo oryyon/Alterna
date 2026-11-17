@@ -22,7 +22,7 @@ details:
 
 indicators:
   popcon_rank:
-  stars: 34153
+  stars: 34154
   stars_url: https://github.com/VSCodium/vscodium
   latest_release: "2026-10"
   in_ubuntu_repos: false

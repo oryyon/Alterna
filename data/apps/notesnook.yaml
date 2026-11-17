@@ -1,0 +1,45 @@
+# Notesnook — Note personale cu sincronizare între dispozitive.
+id: notesnook
+popularity: 1430
+name: Notesnook
+description: Note personale cu sincronizare între dispozitive.
+category: notes
+license: foss
+price: paid
+developer: 'Notesnook'
+website: https://notesnook.com/
+snap: notesnook
+platforms:
+- linux
+- windows
+- macos
+- android
+- web
+tags:
+- notite
+- sincronizare
+- web
+alternatives:
+- simplenote
+- standard-notes
+details:
+  install_size_mb: 0
+  first_release_year: 2021
+  file_formats:
+  - pdf
+  - md
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars: 14953
+  stars_url: https://github.com/streetwriters/notesnook
+  latest_release: 2026-11
+  in_ubuntu_repos: false
+sources:
+- https://notesnook.com/
+- https://github.com/streetwriters/notesnook
+- https://www.wikidata.org/wiki/Q128944229
+confidence:
+  details.first_release_year: auto
+logo: logos/notesnook.svg

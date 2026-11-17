@@ -1,0 +1,42 @@
+# Transmission — Client de torrent, ușor și fără reclame.
+id: transmission
+popularity: 1320
+name: Transmission
+description: Client de torrent, ușor și fără reclame.
+category: internet
+license: foss
+price: free
+developer: 'Transmission'
+website: https://transmissionbt.com/
+snap: transmission
+platforms:
+- linux
+- windows
+- macos
+tags:
+- torrent
+- p2p
+- descarcare
+alternatives:
+- qbittorrent
+- deluge
+details:
+  install_size_mb: 438
+  first_release_year: 2005
+  file_formats: []
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars: 15429
+  stars_url: https://github.com/transmission/transmission
+  latest_release: 2026-10
+  in_ubuntu_repos: true
+sources:
+- https://transmissionbt.com/
+- https://github.com/transmission/transmission
+- https://www.wikidata.org/wiki/Q875055
+confidence:
+  details.first_release_year: auto
+  details.install_size_mb: auto
+logo: logos/transmission.svg

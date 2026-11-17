@@ -1,0 +1,41 @@
+# Thonny — Mediu simplu pentru Python, ideal pentru începători.
+id: thonny
+popularity: 1820
+name: Thonny
+description: Mediu simplu pentru Python, ideal pentru începători.
+category: development
+license: foss
+price: free
+developer: 'Thonny'
+website: https://thonny.org/
+snap: thonny
+platforms:
+- linux
+- windows
+- macos
+tags:
+- ide
+- python
+- incepatori
+alternatives:
+- bluefish
+- geany
+details:
+  install_size_mb: 233
+  first_release_year: 2014
+  file_formats: []
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars: 4008
+  stars_url: https://github.com/thonny/thonny
+  latest_release: 2026-10
+  in_ubuntu_repos: true
+sources:
+- https://thonny.org/
+- https://github.com/thonny/thonny
+- https://www.wikidata.org/wiki/Q22909401
+confidence:
+  license: auto
+  details.install_size_mb: auto

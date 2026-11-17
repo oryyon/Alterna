@@ -1,6 +1,6 @@
 # Lynx — Browser text pentru terminal, fără interfață grafică.
 id: lynx
-popularity: 1570
+popularity: 1950
 name: Lynx
 description: Browser text pentru terminal, fără interfață grafică.
 category: internet
@@ -24,7 +24,7 @@ details:
   telemetry: none
   romanian_language: false
 indicators:
-  popcon_rank:
+  popcon_rank: 865
   stars:
   stars_url: https://invisible-island.net/archives/lynx/tarballs/
   latest_release:

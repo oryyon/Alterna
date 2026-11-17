@@ -1,0 +1,41 @@
+# AppFlowy — Suită de birou local-first, cu note, tablouri și taskuri.
+id: appflowy
+popularity: 1490
+name: AppFlowy
+description: Suită de birou local-first, cu note, tablouri și taskuri.
+category: notes
+license: foss
+price: paid
+developer: 'AppFlowy'
+website: https://appflowy.com/
+snap: appflowy
+platforms:
+- linux
+- windows
+- macos
+- android
+tags:
+- notite
+- taskuri
+- local-first
+alternatives:
+- anytype
+- notion
+details:
+  install_size_mb: 0
+  first_release_year: 2021
+  file_formats:
+  - md
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://appflowy.com/
+- https://www.wikidata.org/wiki/Q140080835
+confidence:
+  details.first_release_year: auto

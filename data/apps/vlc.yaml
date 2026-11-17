@@ -24,7 +24,7 @@ details:
 
 indicators:
   popcon_rank: 2242
-  stars: 20477
+  stars: 20478
   stars_url: https://github.com/videolan/vlc
   latest_release: "2026-09"
   in_ubuntu_repos: true

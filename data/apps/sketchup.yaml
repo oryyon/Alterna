@@ -1,0 +1,40 @@
+# SketchUp — Modelare 3D pentru arhitectură și design.
+id: sketchup
+popularity: 1560
+name: SketchUp
+description: Modelare 3D pentru arhitectură și design.
+category: 3d-cad
+license: foss
+price: paid
+developer: Trimble
+website: https://www.sketchup.com/
+platforms:
+- web
+- windows
+- macos
+tags:
+- 3d
+- arhitectura
+- design
+alternatives:
+- freecad
+- tinkercad
+details:
+  install_size_mb: 0
+  first_release_year: 2003
+  file_formats:
+  - skp
+  - obj
+  - stl
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://www.sketchup.com/
+- https://www.wikidata.org/wiki/Q79604
+logo: logos/sketchup.svg

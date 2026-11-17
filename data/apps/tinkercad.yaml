@@ -1,0 +1,39 @@
+# Tinkercad — Modelare 3D în browser, cu imprimare 3D.
+id: tinkercad
+popularity: 1440
+name: Tinkercad
+description: Modelare 3D în browser, cu imprimare 3D.
+category: 3d-cad
+license: foss
+price: paid
+developer: 'Autodesk'
+website: https://www.tinkercad.com/
+platforms:
+- web
+tags:
+- 3d
+- browser
+- imprimare
+alternatives:
+- openscad
+- freecad
+details:
+  install_size_mb: 0
+  first_release_year: 2011
+  file_formats:
+  - stl
+  - obj
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://www.tinkercad.com/
+- https://www.wikidata.org/wiki/Q73124059
+confidence:
+  details.first_release_year: auto
+logo: logos/tinkercad.svg

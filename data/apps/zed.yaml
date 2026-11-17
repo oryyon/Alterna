@@ -23,7 +23,7 @@ details:
 
 indicators:
   popcon_rank:
-  stars: 95163
+  stars: 95166
   stars_url: https://github.com/zed-industries/zed
   latest_release: "2026-11"
   in_ubuntu_repos: false

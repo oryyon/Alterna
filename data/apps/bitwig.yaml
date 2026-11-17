@@ -1,0 +1,40 @@
+# Bitwig Studio — Statie audio digitală cu procesare modulară.
+id: bitwig
+popularity: 1640
+name: Bitwig Studio
+description: Statie audio digitală cu procesare modulară.
+category: audio-production
+license: foss
+price: paid
+developer: 'Bitwig'
+website: https://www.bitwig.com
+platforms:
+- linux
+- windows
+- macos
+tags:
+- statie audio
+- live
+- producție
+alternatives:
+- reaper
+- lmms
+details:
+  install_size_mb: 0
+  first_release_year: 2009
+  file_formats:
+  - wav
+  - aiff
+  - mid
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://www.bitwig.com
+- https://www.wikidata.org/wiki/Q21843360
+logo: logos/bitwig.svg

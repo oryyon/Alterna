@@ -1,6 +1,6 @@
 # dconf Editor — Editor grafic pentru setările GNOME.
 id: dconf-editor
-popularity: 1520
+popularity: 1900
 name: dconf Editor
 description: Editor grafic pentru setările GNOME.
 category: utilities
@@ -24,7 +24,7 @@ details:
   telemetry: none
   romanian_language: false
 indicators:
-  popcon_rank:
+  popcon_rank: 6704
   stars:
   stars_url: https://git.gnome.org/browse/dconf-editor
   latest_release:

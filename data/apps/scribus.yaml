@@ -1,6 +1,6 @@
 # Scribus — Editor de pagini pentru tipografie și desktop publishing.
 id: scribus
-popularity: 1450
+popularity: 1800
 name: Scribus
 description: Editor de pagini pentru tipografie și desktop publishing.
 category: office
@@ -29,7 +29,7 @@ details:
   telemetry: none
   romanian_language: false
 indicators:
-  popcon_rank:
+  popcon_rank: 8736
   stars:
   stars_url:
   latest_release:

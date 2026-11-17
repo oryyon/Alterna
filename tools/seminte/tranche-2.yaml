@@ -1,0 +1,455 @@
+# Semințe pentru import — Tranche 2 (extindere 168 → ~208)
+#
+# Aceeași regulă ca în tranche 1: părțile editoriale aici, datele obiective
+# din Wikidata (via `tools/import_apps.py`). `popularity` = poziția editorială
+# în catalog (multiplu de 10; cu cât e mai mică, cu atât e mai prominentă),
+# interpolată pe scara existentă ca noile intrări să se intercaleze.
+
+# --- streaming & captură (8) -------------------------------------------------
+- id: guvcview
+  developer: Guvcview
+  first_release_year: 2007
+  name: Guvcview
+  category: streaming
+  description: Captură video de la cameră web, cu efecte și înregistrare.
+  popularity: 1200
+  platforms: [linux]
+  tags: [webcam, captura, video]
+  alternatives: [kazam, obs]
+  file_formats: [avi, mkv, webm]
+- id: ffmpeg
+  wikidata_qid: Q847465
+  name: FFmpeg
+  category: utilities
+  description: Trusă de instrumente pentru conversie și editare video.
+  popularity: 700
+  platforms: [linux, windows, macos]
+  tags: [video, conversie, linie de comanda]
+  alternatives: [handbrake, avidemux]
+  file_formats: [mp4, mkv, webm]
+
+# --- securitate (9) ---------------------------------------------------------
+- id: enpass
+  developer: Enpass
+  first_release_year: 2013
+  name: Enpass
+  category: security
+  description: Manager de parole cu sincronizare între dispozitive.
+  popularity: 1300
+  price: paid
+  platforms: [windows, macos, linux]
+  tags: [parole, sincronizare]
+  alternatives: [1password, bitwarden]
+  file_formats: []
+- id: aegis
+  developer: Aegis Authenticator
+  first_release_year: 2015
+  name: Aegis Authenticator
+  category: security
+  description: Generator de coduri pentru autentificare în doi factori.
+  popularity: 1400
+  platforms: [android]
+  tags: [2fa, autentificare, coduri]
+  alternatives: [ente-auth, proton-pass]
+  file_formats: []
+
+# --- birou (10) -------------------------------------------------------------
+- id: gnucash
+  name: GnuCash
+  category: office
+  description: Contabilitate pentru persoane fizice și firme mici.
+  popularity: 1200
+  platforms: [linux, windows, macos]
+  tags: [contabilitate, finante, office]
+  alternatives: [homebank, calligra]
+  file_formats: [gnucash, csv, ofx]
+- id: homebank
+  developer: HomeBank
+  name: HomeBank
+  category: office
+  description: Gestionarea bugetului personal, cu import de extrase.
+  popularity: 1350
+  platforms: [linux, windows, macos]
+  tags: [finante, buget, office]
+  alternatives: [gnucash, gnumeric]
+  file_formats: [ofx, qif, csv]
+- id: evolution
+  name: Evolution
+  category: office
+  description: Client de e-mail și calendar din desktopul GNOME.
+  popularity: 1150
+  platforms: [linux]
+  tags: [email, calendar, gnome]
+  alternatives: [thunderbird, simplenote]
+  file_formats: [eml, ics, vcf]
+- id: calibre
+  name: Calibre
+  category: office
+  description: Gestionarea bibliotecii de cărți electronice.
+  popularity: 1050
+  platforms: [linux, windows, macos]
+  tags: [ebooks, biblioteca, office]
+  alternatives: [zotero, cherrytree]
+  file_formats: [epub, mobi, pdf]
+
+# --- 3D & CAD (10) ----------------------------------------------------------
+- id: tinkercad
+  developer: Autodesk
+  name: Tinkercad
+  category: 3d-cad
+  description: Modelare 3D în browser, cu imprimare 3D.
+  popularity: 1300
+  price: paid
+  platforms: [web]
+  tags: [3d, browser, imprimare]
+  alternatives: [openscad, freecad]
+  file_formats: [stl, obj]
+- id: sketchup
+  first_release_year: 2003
+  name: SketchUp
+  category: 3d-cad
+  description: Modelare 3D pentru arhitectură și design.
+  popularity: 1350
+  price: paid
+  platforms: [web, windows, macos]
+  tags: [3d, arhitectura, design]
+  alternatives: [freecad, tinkercad]
+  file_formats: [skp, obj, stl]
+
+# --- video (10) -------------------------------------------------------------
+- id: losslesscut
+  developer: LosslessCut
+  first_release_year: 2016
+  wikidata_qid: Q104771861
+  name: LosslessCut
+  category: video
+  description: Tăiere rapidă a videoclipurilor, fără re-codare.
+  popularity: 1250
+  platforms: [linux, windows, macos]
+  tags: [montaj video, taiere, rapid]
+  alternatives: [avidemux, shotcut]
+  file_formats: [mp4, mkv, mov]
+- id: subtitleedit
+  first_release_year: 2005
+  name: Subtitle Edit
+  category: video
+  description: Editor de subtitrări, cu sincronizare automată.
+  popularity: 1400
+  platforms: [linux, windows]
+  tags: [subtitrari, editare, video]
+  alternatives: [shotcut, kdenlive]
+  file_formats: [srt, sub, vtt]
+
+# --- notițe (12) ------------------------------------------------------------
+- id: trilium
+  developer: Trilium
+  first_release_year: 2017
+  wikidata_qid: Q106880914
+  name: Trilium
+  category: notes
+  description: Note ierarhice, cu totul local și fără limită de adâncime.
+  popularity: 1250
+  platforms: [linux, windows, macos]
+  tags: [notite, ierarhie, local-first]
+  alternatives: [logseq, obsidian]
+  file_formats: [html, md]
+- id: notesnook
+  developer: Notesnook
+  name: Notesnook
+  category: notes
+  description: Note personale cu sincronizare între dispozitive.
+  popularity: 1300
+  price: paid
+  platforms: [linux, windows, macos, android, web]
+  tags: [notite, sincronizare, web]
+  alternatives: [simplenote, standard-notes]
+  file_formats: [pdf, md]
+- id: appflowy
+  developer: AppFlowy
+  name: AppFlowy
+  category: notes
+  description: Suită de birou local-first, cu note, tablouri și taskuri.
+  popularity: 1350
+  price: paid
+  platforms: [linux, windows, macos, android]
+  tags: [notite, taskuri, local-first]
+  alternatives: [anytype, notion]
+  file_formats: [md]
+
+# --- audio & playere (12) ---------------------------------------------------
+- id: quodlibet
+  developer: Quod Libet
+  first_release_year: 2005
+  website: https://quodlibet.readthedocs.io/
+  name: Quod Libet
+  category: audio-players
+  description: Player de muzică cu etichete și filtrare avansată.
+  popularity: 1350
+  platforms: [linux, windows, macos]
+  tags: [player audio, muzica, etichete]
+  alternatives: [clementine, strawberry]
+  file_formats: [mp3, flac, ogg]
+- id: audacious
+  name: Audacious
+  category: audio-players
+  description: Player de muzică ușor, cu skinuri și efecte.
+  popularity: 1400
+  platforms: [linux, windows, macos]
+  tags: [player audio, muzica, usor]
+  alternatives: [cmus, lollypop]
+  file_formats: [mp3, flac, ogg]
+- id: cmus
+  developer: CMus
+  first_release_year: 2003
+  website: https://cmus.sourceforge.net/
+  name: CMus
+  category: audio-players
+  description: Player de muzică pentru terminal, cu navigare prin colecție.
+  popularity: 1450
+  platforms: [linux]
+  tags: [player audio, terminal, muzica]
+  alternatives: [audacious, lollypop]
+  file_formats: [mp3, flac, ogg]
+- id: picard
+  first_release_year: 2006
+  website: https://picard.musicbrainz.org/
+  name: MusicBrainz Picard
+  category: audio-players
+  description: Identifică și etichetează fișierele muzicale automat.
+  popularity: 1400
+  platforms: [linux, windows, macos]
+  tags: [etichete, metadata, muzica]
+  alternatives: [kid3, easytag]
+  file_formats: [mp3, flac, ogg]
+- id: easytag
+  developer: EasyTAG
+  name: EasyTag
+  category: audio-players
+  description: Editor de etichete pentru fișiere muzicale.
+  popularity: 1500
+  platforms: [linux, windows]
+  tags: [etichete, metadata, muzica]
+  alternatives: [kid3, picard]
+  file_formats: [mp3, flac, ogg]
+
+# --- producție audio (12) ---------------------------------------------------
+- id: zrythm
+  wikidata_qid: Q102241944
+  name: Zrythm
+  category: audio-production
+  description: Statie de lucru pentru producție muzicală, cu aranjor.
+  popularity: 1350
+  platforms: [linux]
+  tags: [compozitie, producție, secventa]
+  alternatives: [lmms, rosegarden]
+  file_formats: [wav, mid, ogg]
+- id: bitwig
+  developer: Bitwig
+  first_release_year: 2009
+  wikidata_qid: Q21843360
+  name: Bitwig Studio
+  category: audio-production
+  description: Statie audio digitală cu procesare modulară.
+  popularity: 1400
+  price: paid
+  platforms: [linux, windows, macos]
+  tags: [statie audio, live, producție]
+  alternatives: [reaper, lmms]
+  file_formats: [wav, aiff, mid]
+- id: renoise
+  developer: Renoise
+  wikidata_qid: Q1972611
+  name: Renoise
+  category: audio-production
+  description: Tracker și secuencer pentru producție rapidă.
+  popularity: 1450
+  price: paid
+  platforms: [linux, windows, macos]
+  tags: [tracker, secventa, producție]
+  alternatives: [hydrogen, lmms]
+  file_formats: [wav, ogg, mid]
+
+# --- comunicare (14) --------------------------------------------------------
+- id: wire
+  wikidata_qid: Q26934461
+  name: Wire
+  category: communication
+  description: Mesagerie criptată, cu apeluri și sync de conturi.
+  popularity: 1250
+  platforms: [linux, windows, macos, android]
+  tags: [mesagerie, criptare, voip]
+  alternatives: [signal, element]
+  file_formats: []
+- id: jami
+  first_release_year: 2015
+  name: Jami
+  category: communication
+  description: Mesagerie și conferințe peer-to-peer, fără server central.
+  popularity: 1400
+  platforms: [linux, windows, macos, android]
+  tags: [mesagerie, p2p, voip]
+  alternatives: [element, mumble]
+  file_formats: []
+- id: mailspring
+  developer: Mailspring
+  first_release_year: 2015
+  wikidata_qid: Q47487583
+  name: Mailspring
+  category: communication
+  description: Client de e-mail modern, cu unificarea conturilor.
+  popularity: 1400
+  platforms: [linux, windows, macos]
+  tags: [email, client, productivitate]
+  alternatives: [thunderbird, evolution]
+  file_formats: [eml, mbox]
+
+# --- internet (15) ----------------------------------------------------------
+- id: transmission
+  developer: Transmission
+  wikidata_qid: Q875055
+  name: Transmission
+  category: internet
+  description: Client de torrent, ușor și fără reclame.
+  popularity: 1250
+  platforms: [linux, windows, macos]
+  tags: [torrent, p2p, descarcare]
+  alternatives: [qbittorrent, deluge]
+  file_formats: []
+- id: deluge
+  first_release_year: 2003
+  wikidata_qid: Q1185023
+  name: Deluge
+  category: internet
+  description: Client de torrent cu interfață web și plugin-uri.
+  popularity: 1350
+  platforms: [linux, windows, macos]
+  tags: [torrent, p2p, descarcare]
+  alternatives: [qbittorrent, transmission]
+  file_formats: []
+
+# --- dezvoltare (15) --------------------------------------------------------
+- id: lazarus
+  wikidata_qid: Q258448
+  name: Lazarus
+  category: development
+  description: Mediu de dezvoltare vizual pentru Pascal și Object Pascal.
+  popularity: 1300
+  platforms: [linux, windows, macos]
+  tags: [ide, pascal, rapid]
+  alternatives: [bluefish, qtcreator]
+  file_formats: []
+- id: codeblocks
+  developer: Code::Blocks
+  name: Code::Blocks
+  category: development
+  description: IDE pentru C/C++, cu extensii și debugger.
+  popularity: 1350
+  platforms: [linux, windows, macos]
+  tags: [ide, c++, debugger]
+  alternatives: [qtcreator, eclipse-ide]
+  file_formats: []
+- id: kdevelop
+  developer: KDE
+  first_release_year: 1998
+  wikidata_qid: Q468841
+  name: KDevelop
+  category: development
+  description: IDE pentru C++ și Qt, din desktopul KDE.
+  popularity: 1400
+  platforms: [linux, windows, macos]
+  tags: [ide, c++, kde]
+  alternatives: [qtcreator, kate]
+  file_formats: []
+- id: thonny
+  developer: Thonny
+  first_release_year: 2014
+  wikidata_qid: Q22909401
+  name: Thonny
+  category: development
+  description: Mediu simplu pentru Python, ideal pentru începători.
+  popularity: 1450
+  platforms: [linux, windows, macos]
+  tags: [ide, python, incepatori]
+  alternatives: [bluefish, geany]
+  file_formats: []
+- id: texstudio
+  developer: TeXstudio
+  first_release_year: 2008
+  name: TeXstudio
+  category: development
+  description: Editor pentru documente LaTeX, cu previzualizare.
+  popularity: 1450
+  platforms: [linux, windows, macos]
+  tags: [latex, editor, tipografie]
+  alternatives: [kate, bluefish]
+  file_formats: [tex, pdf]
+
+# --- grafică (16) -----------------------------------------------------------
+- id: digikam
+  developer: digiKam
+  wikidata_qid: Q1050872
+  name: digiKam
+  category: graphics
+  description: Organizator de fotografii cu etichetare și geolocalizare.
+  popularity: 1300
+  platforms: [linux, windows, macos]
+  tags: [foto, galerie, catalog]
+  alternatives: [shotwell, darktable]
+  file_formats: [jpg, raw, tiff]
+- id: gravit-designer
+  developer: Gravit
+  first_release_year: 2015
+  website: https://www.designer.io/
+  name: Gravit Designer
+  category: graphics
+  description: Editor de design vectorial în browser.
+  popularity: 1400
+  price: paid
+  platforms: [web]
+  tags: [design, vectorial, browser]
+  alternatives: [inkscape, photopea]
+  file_formats: [svg, pdf]
+
+# --- utilitare (25) ---------------------------------------------------------
+- id: clonezilla
+  developer: Clonezilla
+  website: https://clonezilla.org/
+  name: Clonezilla
+  category: utilities
+  description: Clonare și restaurare de discuri, cu interfață text.
+  popularity: 1400
+  platforms: [linux]
+  tags: [discuri, backup, clonare]
+  alternatives: [ventoy, gparted]
+  file_formats: []
+- id: czkawka
+  wikidata_qid: Q138339863
+  name: Czkawka
+  category: utilities
+  description: Găsește fișiere duplicate și linkuri rupte.
+  popularity: 1400
+  platforms: [linux, windows, macos]
+  tags: [duplicate, curatare, fisiere]
+  alternatives: [bleachbit, stacer]
+  file_formats: []
+- id: dolphin
+  website: https://apps.kde.org/dolphin/
+  name: Dolphin
+  category: utilities
+  description: Manager de fișiere al desktopului KDE, cu file-uri.
+  popularity: 1350
+  platforms: [linux]
+  tags: [fisiere, kde, file-uri]
+  alternatives: [file-roller, ark]
+  file_formats: []
+- id: thunar
+  first_release_year: 2004
+  website: https://docs.xfce.org/xfce/thunar/start
+  name: Thunar
+  category: utilities
+  description: Manager de fișiere ușor, din desktopul Xfce.
+  popularity: 1400
+  platforms: [linux]
+  tags: [fisiere, xfce, usor]
+  alternatives: [dolphin, file-roller]
+  file_formats: []

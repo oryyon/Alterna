@@ -1,6 +1,6 @@
 # Timeshift — snapshots de sistem pentru restaurare rapidă
 id: timeshift
-popularity: 960
+popularity: 970
 name: Timeshift
 description: Snapshots de sistem (rsync/Btrfs) pentru restaurare rapidă.
 category: utilities

@@ -1,0 +1,38 @@
+# Clonezilla — Clonare și restaurare de discuri, cu interfață text.
+id: clonezilla
+popularity: 1650
+name: Clonezilla
+description: Clonare și restaurare de discuri, cu interfață text.
+category: utilities
+license: foss
+price: free
+developer: 'Clonezilla'
+website: https://clonezilla.org/
+platforms:
+- linux
+tags:
+- discuri
+- backup
+- clonare
+alternatives:
+- ventoy
+- gparted
+details:
+  install_size_mb: 140
+  first_release_year: 2007
+  file_formats: []
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars: 1033
+  stars_url: https://github.com/stevenshiau/clonezilla
+  latest_release: 2026-11
+  in_ubuntu_repos: true
+sources:
+- https://clonezilla.org/
+- https://github.com/stevenshiau/clonezilla
+- https://www.wikidata.org/wiki/Q1102277
+confidence:
+  details.first_release_year: auto
+  details.install_size_mb: auto

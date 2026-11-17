@@ -1,0 +1,41 @@
+# Trilium — Note ierarhice, cu totul local și fără limită de adâncime.
+id: trilium
+popularity: 1330
+name: Trilium
+description: Note ierarhice, cu totul local și fără limită de adâncime.
+category: notes
+license: foss
+price: free
+developer: 'Trilium'
+website: https://triliumnotes.org/
+snap: trilium
+platforms:
+- linux
+- windows
+- macos
+tags:
+- notite
+- ierarhie
+- local-first
+alternatives:
+- logseq
+- obsidian
+details:
+  install_size_mb: 0
+  first_release_year: 2017
+  file_formats:
+  - html
+  - md
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars: 38968
+  stars_url: https://github.com/TriliumNext/Trilium
+  latest_release: 2026-11
+  in_ubuntu_repos: false
+sources:
+- https://triliumnotes.org/
+- https://github.com/TriliumNext/Trilium
+- https://www.wikidata.org/wiki/Q106880914
+logo: logos/trilium.svg

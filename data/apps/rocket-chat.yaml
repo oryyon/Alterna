@@ -1,6 +1,6 @@
 # Rocket.Chat — Platformă de mesagerie și colaborare, auto-găzduită.
 id: rocket-chat
-popularity: 1440
+popularity: 1770
 name: Rocket.Chat
 description: Platformă de mesagerie și colaborare, auto-găzduită.
 category: communication
@@ -29,7 +29,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 46493
+  stars: 46492
   stars_url: https://github.com/RocketChat/Rocket.Chat
   latest_release: 2026-11
   in_ubuntu_repos: false

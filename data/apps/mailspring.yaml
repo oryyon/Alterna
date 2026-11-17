@@ -1,0 +1,40 @@
+# Mailspring — Client de e-mail modern, cu unificarea conturilor.
+id: mailspring
+popularity: 1690
+name: Mailspring
+description: Client de e-mail modern, cu unificarea conturilor.
+category: communication
+license: foss
+price: free
+developer: 'Mailspring'
+website: https://getmailspring.com/
+snap: mailspring
+platforms:
+- linux
+- windows
+- macos
+tags:
+- email
+- client
+- productivitate
+alternatives:
+- thunderbird
+- evolution
+details:
+  install_size_mb: 0
+  first_release_year: 2015
+  file_formats:
+  - eml
+  - mbox
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars: 18010
+  stars_url: https://github.com/Foundry376/Mailspring
+  latest_release: 2026-10
+  in_ubuntu_repos: false
+sources:
+- https://getmailspring.com/
+- https://github.com/Foundry376/Mailspring
+- https://www.wikidata.org/wiki/Q47487583

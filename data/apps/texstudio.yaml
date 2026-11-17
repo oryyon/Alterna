@@ -1,0 +1,41 @@
+# TeXstudio — Editor pentru documente LaTeX, cu previzualizare.
+id: texstudio
+popularity: 1810
+name: TeXstudio
+description: Editor pentru documente LaTeX, cu previzualizare.
+category: development
+license: foss
+price: free
+developer: 'TeXstudio'
+website: https://texstudio.org/
+platforms:
+- linux
+- windows
+- macos
+tags:
+- latex
+- editor
+- tipografie
+alternatives:
+- kate
+- bluefish
+details:
+  install_size_mb: 401
+  first_release_year: 2008
+  file_formats:
+  - tex
+  - pdf
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars: 3709
+  stars_url: https://github.com/texstudio-org/texstudio
+  latest_release: 2026-11
+  in_ubuntu_repos: true
+sources:
+- https://texstudio.org/
+- https://github.com/texstudio-org/texstudio
+- https://www.wikidata.org/wiki/Q2398140
+confidence:
+  details.install_size_mb: auto

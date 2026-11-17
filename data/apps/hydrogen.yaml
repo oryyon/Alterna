@@ -1,6 +1,6 @@
 # Hydrogen — Ritmătoare cu bibliotecă de mostre și secvențe.
 id: hydrogen
-popularity: 1340
+popularity: 1480
 name: Hydrogen
 description: Ritmătoare cu bibliotecă de mostre și secvențe.
 category: audio-production
@@ -28,7 +28,7 @@ details:
   telemetry: none
   romanian_language: false
 indicators:
-  popcon_rank:
+  popcon_rank: 16551
   stars: 1355
   stars_url: https://github.com/hydrogen-music/hydrogen
   latest_release: 2026-10

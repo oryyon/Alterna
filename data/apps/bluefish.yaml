@@ -1,6 +1,6 @@
 # Bluefish — Editor de cod pentru web, cu ajutoare pentru HTML și CSS.
 id: bluefish
-popularity: 1500
+popularity: 1870
 name: Bluefish
 description: Editor de cod pentru web, cu ajutoare pentru HTML și CSS.
 category: development
@@ -26,7 +26,7 @@ details:
   telemetry: none
   romanian_language: false
 indicators:
-  popcon_rank:
+  popcon_rank: 10787
   stars:
   stars_url: https://sf.net/p/bluefish/code/
   latest_release:

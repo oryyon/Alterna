@@ -242,8 +242,6 @@ class TestDetectareInThread:
 
     def test_detectarea_rezultatul_ajunge_in_fereastra(self, catalog, qapp,
                                                        monkeypatch):
-        from PySide6.QtCore import QEventLoop, QTimer
-
         from app import main_window
 
         monkeypatch.setattr(
@@ -251,9 +249,15 @@ class TestDetectareInThread:
             lambda apps: {"gimp": Installed("gimp", "deb", "gimp", "2.10.38")})
         window = main_window.MainWindow(catalog)   # detectare pornită
         try:
-            buclă = QEventLoop()
-            QTimer.singleShot(3000, buclă.quit)
-            buclă.exec()                            # procesează semnalul
+            # Așteptăm rezultatul, nu un timp fix: pe mașini încărcate (suita
+            # completă) 3 secunde nu ajungeau și testul pica fără motiv.
+            import time
+
+            termen = time.monotonic() + 15
+            while ("gimp" not in window.installed
+                   and time.monotonic() < termen):
+                qapp.processEvents()
+                time.sleep(0.02)
             assert "gimp" in window.installed, "rezultatul nu a ajuns în fereastră"
             assert "instalate" in window.installed_label.text()
         finally:
@@ -285,3 +289,47 @@ class TestDetectareInThread:
         window = main_window.MainWindow(catalog)
         window.close()
         assert window._detect_thread is None
+
+
+class TestLinkuriInstalare:
+    """Linkurile directe către magazinele de pachete (apt://, snap://, flathub://)."""
+
+    def test_apt_doar_daca_pachetul_e_in_ubuntu(self):
+        from app.installed import linkuri_instalare
+
+        app = {"id": "kodi", "package": "kodi", "in_ubuntu_repos": True}
+        assert linkuri_instalare(app) == [("APT", "apt://kodi")]
+
+        app = {"id": "kodi", "package": "kodi", "in_ubuntu_repos": False}
+        assert linkuri_instalare(app) == []
+
+    def test_snap_si_flatpak(self):
+        from app.installed import linkuri_instalare
+
+        app = {"id": "vlc", "in_ubuntu_repos": False,
+               "snap": "vlc", "flatpak": "org.videolan.VLC"}
+        assert linkuri_instalare(app) == [
+            ("Snap", "snap://vlc"),
+            ("Flatpak", "flathub://org.videolan.VLC"),
+        ]
+
+    def test_fara_nimic_nu_da_linkuri(self):
+        from app.installed import linkuri_instalare
+
+        assert linkuri_instalare({"id": "x", "in_ubuntu_repos": False}) == []
+
+    def test_toate_schemele_sunt_cunoscute(self):
+        """Niciun link nou nu trebuie să ajungă în interfață nedocumentat."""
+        from app.installed import linkuri_instalare
+
+        app = {"id": "vlc", "in_ubuntu_repos": True, "package": "vlc",
+               "snap": "vlc", "flatpak": "org.videolan.VLC"}
+        scheme_uri = {"apt", "snap", "flathub"}
+        for _, url in linkuri_instalare(app):
+            assert url.split("://", 1)[0] in scheme_uri, url
+
+    def test_pachetul_explicit_are_prioritate(self):
+        from app.installed import linkuri_instalare
+
+        app = {"id": "arduino-ide", "package": "arduino", "in_ubuntu_repos": True}
+        assert linkuri_instalare(app) == [("APT", "apt://arduino")]

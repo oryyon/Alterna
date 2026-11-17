@@ -218,6 +218,29 @@ def surse_disponibile() -> dict[str, bool]:
     return disponibile
 
 
+def linkuri_instalare(app: dict) -> list[tuple[str, str]]:
+    """Linkuri directe către magazinele de pachete: [(etichetă, url)].
+
+    Fiecare link folosește schema standard a magazinului, deci desktopul îl
+    poate deschide cu handlerul lui: ``apt://`` (GNOME Software / apturl),
+    ``snap://`` (Snap Store) şi ``flathub://`` (Flathub).
+
+    Se oferă doar sursele **verificate**: pachetul din Ubuntu (dacă
+    `in_ubuntu_repos`), snap-ul şi aplicația Flatpak confirmate în registre.
+    """
+    linkuri: list[tuple[str, str]] = []
+    pachet = nume_pachet(app)
+    if app.get("in_ubuntu_repos") and pachet:
+        linkuri.append(("APT", f"apt://{pachet}"))
+    snap = app.get("snap")
+    if snap:
+        linkuri.append(("Snap", f"snap://{snap}"))
+    flatpak = app.get("flatpak")
+    if flatpak:
+        linkuri.append(("Flatpak", f"flathub://{flatpak}"))
+    return linkuri
+
+
 def comanda_instalare(app: dict) -> tuple[str, str] | None:
     """Comanda de instalare potrivită: (comandă, descriere).
 

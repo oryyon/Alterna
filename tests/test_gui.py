@@ -109,3 +109,28 @@ class TestNavigare:
     def test_detalii_inexistent(self, window):
         window._open_detail("nu-exista")
         assert window.stack.currentIndex() == 0
+
+
+class TestLinkuriInstalare:
+    """Cardul „Instalează direct” din pagina de detalii."""
+
+    def test_cardul_apare_pentru_o_aplicatie_cu_pachete(self, window):
+        from app.widgets import LinkLabel
+
+        window._open_detail("vlc")
+        linkuri = [w for w in window.detail_view.findChildren(LinkLabel)
+                   if w.url.startswith(("apt://", "snap://", "flathub://"))]
+        assert linkuri, "aplicația vlc are surse de instalare — linkurile trebuie"
+        assert any(w.url.startswith("apt://") for w in linkuri)
+        assert any(w.url.startswith("snap://") for w in linkuri)
+        assert any(w.url.startswith("flathub://") for w in linkuri)
+
+    def test_fara_linkuri_pentru_o_aplicatie_fara_surse(self, window):
+        from app.widgets import LinkLabel
+
+        window._open_detail("kodi")
+        linkuri = [w for w in window.detail_view.findChildren(LinkLabel)
+                   if w.url.startswith(("apt://", "snap://", "flathub://"))]
+        # kodi e în Ubuntu, deci are cel puțin linkul APT
+        assert all(w.url.startswith(("apt://", "snap://", "flathub://"))
+                   for w in linkuri)

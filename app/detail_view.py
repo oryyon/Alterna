@@ -13,7 +13,7 @@ from PySide6.QtWidgets import (QFrame, QGridLayout, QHBoxLayout, QLabel,
 
 from .confidence import ConfidenceBadge, field_label
 from .db import PLATFORM_LABELS
-from .installed import comanda_instalare
+from .installed import comanda_instalare, linkuri_instalare
 from .widgets import (AppCard, IconLabel, LinkLabel, installed_source_label,
                       license_badges, make_badge, source_label)
 
@@ -58,6 +58,33 @@ class DetailView(QScrollArea):
         """Deschide o sursă în browserul implicit (sec. 8)."""
         if url:
             QDesktopServices.openUrl(QUrl(url))
+
+    def _install_links_block(self, linkuri: list[tuple[str, str]]) -> QFrame:
+        """Cardul cu linkuri directe către magazinele de pachete.
+
+        Linkurile folosesc schema standard a magazinului (`apt://`, `snap://`,
+        `flathub://`), deci desktopul le deschide cu handlerul lui — un click
+        și ajunge la pagina de instalare, fără să tastăm comanda.
+        """
+        box = QFrame()
+        box.setObjectName("fact")
+        layout = QVBoxLayout(box)
+        titlu = QLabel("Instalează direct")
+        titlu.setProperty("dim", "true")
+        layout.addWidget(titlu)
+        rand = QHBoxLayout()
+        rand.setSpacing(8)
+        for eticheta, url in linkuri:
+            buton = LinkLabel(eticheta, url)
+            buton.setProperty("installLink", "true")
+            buton.clicked.connect(self.open_url)
+            rand.addWidget(buton)
+        rand.addStretch(1)
+        layout.addLayout(rand)
+        indiciu = QLabel("Linkul deschide magazinul implicit al sistemului.")
+        indiciu.setProperty("dim", "true")
+        layout.addWidget(indiciu)
+        return box
 
     def _sources_block(self, app: dict) -> QFrame:
         """Panoul „Surse": linkuri către sursele citate în fișierul YAML.
@@ -266,8 +293,16 @@ class DetailView(QScrollArea):
             card_layout.addLayout(head_row)
             card_layout.addWidget(v)
             card_layout.addWidget(s)
-            facts.addWidget(card, 0, i)
+            # 5 carduri pe rând (sec. 13); dacă sunt mai multe (ex.
+            # „Pe acest computer"), restul trece pe rândul următor — altfel
+            # cardurile ar depăși lățimea ferestrei.
+            facts.addWidget(card, i // 5, i % 5)
         layout.addLayout(facts)
+
+        # --- Instalează direct: linkuri către magazinele de pachete ----------
+        linkuri = linkuri_instalare(app)
+        if linkuri:
+            layout.addWidget(self._install_links_block(linkuri))
 
         # --- Surse (sec. 8): de unde provin datele aplicației ---------------
         layout.addWidget(self._sources_block(app))

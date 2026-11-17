@@ -46,9 +46,6 @@ def test_pagina_are_toate_aplicatiile(tmp_path, built_db, catalog):
 def test_pagina_are_toate_categoriile(tmp_path, built_db, catalog):
     ieșire = _generează(tmp_path, built_db)
     html = (ieșire / "index.html").read_text(encoding="utf-8")
-    from app.db import Catalog
-
-    catalog = Catalog(ROOT / "catalog.db")
     import html as html_mod
 
     for slug, nume in catalog.categories:

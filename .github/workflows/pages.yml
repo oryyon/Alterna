@@ -1,0 +1,56 @@
+# Alterna — publică pagina web a catalogului pe GitHub Pages.
+#
+# Pagina e generată din `catalog.db` (același sursă ca aplicația desktop),
+# deci nu poate diverge de ea. Deployment-ul folosește `actions/deploy-pages`,
+# care nu are nevoie de tokenuri externe: Pages folosește tokenul propriu al
+# runner-ului.
+name: Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "data/**"
+      - "tools/build_catalog.py"
+      - "tools/build_site.py"
+      - "site/**"
+      - ".github/workflows/pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Dependențe
+        run: pip install -r requirements.txt
+
+      - name: Build catalog + pagină
+        run: |
+          python tools/build_catalog.py
+          python tools/build_site.py
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - id: deployment
+        uses: actions/deploy-pages@v4

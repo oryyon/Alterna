@@ -31,6 +31,8 @@ indicators:
 sources:
 - https://zed.dev
 - https://github.com/zed-industries/zed
+- https://zed.dev/privacy
 logo: logos/zed.png
 confidence:
   alternatives: manual
+  details.telemetry: manual

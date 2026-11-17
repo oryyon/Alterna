@@ -228,16 +228,30 @@ CAI_DESKTOP = (
 )
 
 
-def are_desktop(pachet: str,
-                cai: Iterable[Path] = CAI_DESKTOP) -> bool:
-    """Pachetul are o intrare de meniu? (deci e aplicație, nu bibliotecă)"""
+def desktop_uri(cai: Iterable[Path] = CAI_DESKTOP) -> set[str]:
+    """Mulțimea numelor de pachete cu intrare de meniu.
+
+    Se construiește **o singură dată**: un `stat` pentru fiecare pachet
+    instalat (mii de apeluri) ar ține threadul de detectare ocupat mult prea
+    mult — și fereastra se închidea în timpul lui.
+    """
+    numere: set[str] = set()
     for director in cai:
         try:
-            if (director / f"{pachet}.desktop").exists():
-                return True
+            for intrare in director.glob("*.desktop"):
+                numere.add(intrare.stem)
         except OSError:
             continue
-    return False
+    return numere
+
+
+def are_desktop(pachet: str,
+                cai: Iterable[Path] = CAI_DESKTOP,
+                cunoscute: set[str] | None = None) -> bool:
+    """Pachetul are o intrare de meniu? (deci e aplicație, nu bibliotecă)"""
+    if cunoscute is None:
+        cunoscute = desktop_uri(cai)
+    return pachet in cunoscute
 
 
 def aplicatii_neacoperite(apps: Iterable[dict],
@@ -262,6 +276,7 @@ def aplicatii_neacoperite(apps: Iterable[dict],
             if câmp:
                 cunoscute.add(câmp.lower())
 
+    cu_desktop = desktop_uri(cai_desktop)
     rezultat: list[Installed] = []
     for nume, pachete in surse.items():
         for pachet, versiune in pachete.items():
@@ -269,7 +284,7 @@ def aplicatii_neacoperite(apps: Iterable[dict],
                 continue
             # doar ce are intrare de meniu: bibliotecile și pachetele de
             # sistem nu sunt „aplicații” și ar umple raportul cu zgomot
-            if not are_desktop(pachet, cai_desktop):
+            if pachet not in cu_desktop:
                 continue
             rezultat.append(Installed("", nume, pachet, versiune))
     rezultat.sort(key=lambda i: i.name)

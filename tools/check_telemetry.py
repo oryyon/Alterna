@@ -34,6 +34,38 @@ DATA = ROOT / "data" / "apps"
 
 #: id aplicatie -> (valoare verificata, sursa, citatul care o sustine)
 VERIFICARI: dict[str, tuple[str, str, str]] = {
+    "mixxx": (
+        "none",
+        "https://www.mixxx.org/privacy-policy",
+        "The Mixxx application doesn't require or use any kind of user "
+        "account, nor does it collect any user data when being used",
+    ),
+    "owncast": (
+        "none",
+        "https://owncast.online/privacy",
+        "If you use any Owncast supplied client applications, we have no "
+        "analytics or data collection in them",
+    ),
+    "keepassxc": (
+        "optional",
+        "https://keepassxc.org/privacy",
+        "You can opt out of browser data collection at any time by clicking "
+        "this",
+    ),
+    "zed": (
+        "optional",
+        "https://zed.dev/privacy",
+        "Telemetry is on to help us improve Zed, but turning it off is just "
+        "a toggle away",
+    ),
+    "musescore": (
+        "optional",
+        "https://musescore.org/telemetry",
+        "We are now looking into systems that will allow us to track how "
+        "people interact with Musescore without collecting any personal "
+        "information and we think the most open way to do this is to ask "
+        "permission from users",
+    ),
     "vscode": (
         "optional",
         "https://code.visualstudio.com/docs/configure/telemetry",
@@ -101,11 +133,85 @@ def sursa_viva(url: str) -> tuple[bool, str]:
     return True, "sursa vie"
 
 
+#: Cuvinte care semnaleaza o pagina despre colectarea datelor.
+CUVINTE_TELEMETRIE = ("telemetry", "privacy", "data collection",
+                       "collect data", "usage data", "anonymous data")
+
+#: Cai uzuale ale politicii de confidentialitate, pe site-ul oficial.
+CAI_POLITICA = ("/privacy", "/privacy-policy", "/telemetry",
+                 "/legal/privacy", "/about/privacy")
+
+
+def cauta_politica(site: str, timeout: int = 6) -> list[tuple[str, str]]:
+    """Cauta pagini de politica pe site-ul oficial: [(url, citat)].
+
+    Nu decide valoarea telemetriei — doar **gaseste** pagina si extrage
+    fragmentul care vorbeste despre colectarea datelor. Verdictul il pune
+    omul, cu citatul in tabelul de mai sus.
+    """
+    if not site:
+        return []
+    baza = site.rstrip("/")
+    gasite: list[tuple[str, str]] = []
+    for cale in CAI_POLITICA:
+        url = baza + cale
+        try:
+            proces = subprocess.run(
+                ["curl", "-sL", "-m", str(timeout), "-A", "Mozilla/5.0",
+                 "-o", "-", url],
+                capture_output=True, text=True, timeout=timeout + 5, check=False)
+        except (OSError, subprocess.SubprocessError):
+            continue
+        continut = proces.stdout or ""
+        if len(continut) < 500:
+            continue
+        jos = continut.lower()
+        if not any(c in jos for c in CUVINTE_TELEMETRIE):
+            continue
+        import html
+        import re
+        # blocurile devin randuri separate: altfel meniul si paragraful se
+        # lipesc intr-un singur „propozitie” fara punctuatie
+        bloc = re.sub(r"(?i)</(p|li|div|h[1-6]|tr|section|article)>", "\n",
+                      continut)
+        bloc = re.sub(r"<script.*?</script>|<style.*?</style>", " ", bloc,
+                      flags=re.S)
+        randuri = []
+        for linie in bloc.splitlines():
+            text = html.unescape(re.sub(r"<[^>]+>", " ", linie))
+            text = re.sub(r"\s+", " ", text).strip()
+            if len(text) >= 60:
+                randuri.append(text)
+        text = " \n ".join(randuri)
+        # preferam propozitia care chiar vorbeste despre colectare, nu
+        # titlul paginii sau o linie de navigare
+        for rand in randuri:
+            if len(rand) > 340:
+                continue
+            jos_r = rand.lower()
+            if "skip to" in jos_r or "cookie" in jos_r[:40]:
+                continue
+            if not any(c in jos_r for c in CUVINTE_TELEMETRIE):
+                continue
+            if not any(c in jos_r for c in ("telemetry", "collect", "usage data",
+                                            "anonymous", "do not", "doesn't",
+                                            "does not")):
+                continue
+            gasite.append((url, rand))
+            break
+    return gasite
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--apply", action="store_true",
                         help="scrie valorile verificate in YAML")
+    parser.add_argument("--cautare", action="store_true",
+                        help="cauta pagini de politica pe site-urile oficiale")
     args = parser.parse_args()
+
+    if args.cautare:
+        return cauta()
 
     yaml_rw = YAML()
     yaml_rw.allow_duplicate_keys = False
@@ -145,6 +251,44 @@ def main() -> int:
     print(f"\nOK {aplicate} aplicatii verificate"
           + (f", {erori} probleme" if erori else ""))
     return 1 if erori else 0
+
+
+def cauta() -> int:
+    """Cauta politici de confidentialitate pentru aplicatiile neverificate.
+
+    Paralel: fiecare aplicatie probeaza cateva cai pe site-ul oficial, si
+    reteaua e lenta — cu 8 lucratori, toate cele 200 de aplicatii trec in
+    câteva minute.
+    """
+    from concurrent.futures import ThreadPoolExecutor
+
+    yaml_rd = YAML()
+    yaml_rd.allow_duplicate_keys = False
+    verificate = set(VERIFICARI)
+    aplicatii = []
+    for cale in sorted(DATA.glob("*.yaml")):
+        app = yaml_rd.load(cale.read_text(encoding="utf-8"))
+        app_id = app.get("id")
+        if not app_id or app_id in verificate:
+            continue
+        aplicatii.append((app_id, app.get("website") or ""))
+
+    def unu(item):
+        app_id, website = item
+        return app_id, website, cauta_politica(website)
+
+    gasite = 0
+    with ThreadPoolExecutor(max_workers=8) as executor:
+        for app_id, website, rezultate in executor.map(unu, aplicatii):
+            if not rezultate:
+                continue
+            gasite += 1
+            print(f"  {app_id:16} {website}")
+            for url, citat in rezultate[:2]:
+                print(f"      {url}")
+                print(f"        „{citat[:150]}”")
+    print(f"\nOK {gasite} aplicatii cu pagina de politica gasita")
+    return 0
 
 
 if __name__ == "__main__":

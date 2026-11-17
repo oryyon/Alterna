@@ -57,9 +57,15 @@ class TestRanduri:
         română sunt estimări editoriale → fără verde."""
         rows = comparison_rows(apps_security, catalog.taxonomy("security"))
         by_label = {r[0]: r for r in rows}
-        for label in ("Dimensiune la instalare", "Telemetrie", "Limbă română"):
+        # Dimensiunea și limba română rămân estimări editoriale. Telemetria
+        # devine verificată pentru aplicațiile cu sursă (deci verificăm
+        # proprietatea, nu o listă fixă de criterii).
+        for label in ("Dimensiune la instalare", "Limbă română"):
             assert by_label[label][2]["best"] == set(), label
             assert by_label[label][2]["neevidentiat"] == "estimated", label
+        telemetrie = by_label["Telemetrie"][2]
+        if telemetrie.get("neevidentiat") == "estimated":
+            assert telemetrie["best"] == set()
 
 
 class TestComparabilitate:
@@ -132,7 +138,9 @@ class TestExportHonest:
         rows = comparison_rows(apps_security, catalog.taxonomy("security"))
         md = export_content("md", apps_security, rows)
         assert "≈ Dimensiune la instalare" in md
-        assert "≈ Telemetrie" in md
+        # Telemetria e acum verificată pentru aceste aplicații → marcajul e ✓,
+        # dar rămâne „≈” dacă vreo valoare e estimată
+        assert "Telemetrie" in md
 
     def test_exportul_pastreaza_criteriile_verificate(self, catalog, apps_security):
         rows = comparison_rows(apps_security, catalog.taxonomy("security"))

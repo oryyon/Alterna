@@ -41,12 +41,22 @@ class DetectWorker(QObject):
     def __init__(self, apps: list[dict]):
         super().__init__()
         self._apps = apps
+        #: Cerut de fereastră la închidere — oprit între pași.
+        self._stop = False
+
+    def stop(self) -> None:
+        """Cere oprirea lucrării (fereastra se închide)."""
+        self._stop = True
 
     def run(self) -> None:
         try:
             rezultat = detecteaza(self._apps)
+            if self._stop:
+                return          # fereastra s-a închis — nu mai contăm
             # Maparea inversă: aplicațiile instalate care nu-s în catalog.
             neacoperite = aplicatii_neacoperite(self._apps)
+            if self._stop:
+                return
         except Exception as exc:  # noqa: BLE001 — UI-ul nu trebuie să cadă
             self.failed.emit(str(exc))
         else:
@@ -446,10 +456,18 @@ class MainWindow(QMainWindow):
     def closeEvent(self, event) -> None:  # noqa: N802 — semnătură Qt
         """Oprește thread-ul de detectare înainte de a închide fereastra."""
         thread = self._detect_thread
+        worker = self._detect_worker
         if thread is not None:
+            # `quit()` oprește doar bucla evenimentelor — workerul poate fi
+            # încă în `run()`. Deci îl întrerupem explicit și așteptăm să
+            # se termine, ca fereastra să nu fie distrusă sub el.
+            if worker is not None:
+                worker.stop()
             thread.quit()
-            thread.wait(2000)
+            thread.wait(3000)
             self._detect_thread = None
+            # referința workerului rămâne: altfel garbage collectorul îl
+            # distruge în timp ce threadul mai rulează → segfault
         super().closeEvent(event)
 
     # ------------------------------------------------------------------ comparare

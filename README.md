@@ -35,11 +35,14 @@ Aplicație **desktop nativă pentru Kubuntu 24.04** (KDE Plasma) pentru descoper
 | Detectarea aplicațiilor deja instalate (deb / snap / Flatpak) | [app/installed.py](app/installed.py) |
 | Linkuri directe de instalare (`apt://`, `snap://`, `flathub://`) | [app/detail_view.py](app/detail_view.py) |
 | Capturi de ecran (Wikidata P18 → Wikimedia Commons, cu atribuire) | [tools/fetch_screenshots.py](tools/fetch_screenshots.py) |
+| Pagina web (statică, generată din `catalog.db`) | [tools/build_site.py](tools/build_site.py) |
+| Glosar și convenții de traducere | [TRADUCERE.md](TRADUCERE.md) |
+| Completarea indicatorilor cu AI (AI propune surse, uneltele verifică) | [tools/complete_indicators.py](tools/complete_indicators.py) |
 | Sursele de instalare (snap / Flatpak) verificate în registrele oficiale | [tools/check_installed_sources.py](tools/check_installed_sources.py) |
 | 123 de logo-uri reale (Simple Icons CC0 + Wikimedia Commons) + fallback pe inițiale | [data/logos/](data/logos), [tools/fetch_logos.py](tools/fetch_logos.py) |
 | GitHub Actions: PR săptămânal cu indicatori reîmprospătați | [.github/workflows/refresh.yml](.github/workflows/refresh.yml) |
 | Aplicația desktop (PySide6/Qt Widgets) — cu surse clicabile, certitudine, detectarea instalării și actualizare din rețea | [app/](app) |
-| Suită de teste automate (302 teste: build, validări, interogări, comparație, export, GUI, surse, certitudine, verificări, detectarea instalării, actualizare, AI, licențiere, resurse, packaging, integrare GitHub) | [tests/](tests) |
+| Suită de teste automate (316 teste: build, validări, interogări, comparație, export, GUI, surse, certitudine, verificări, detectarea instalării, actualizare, AI, licențiere, resurse, packaging, integrare GitHub) | [tests/](tests) |
 
 > Indicatorii (popcon, stele, versiuni, „în repo Ubuntu") sunt acum **valori reale**, reîmprospătate automat săptămânal prin PR — aprobarea rămâne la maintainer (sec. 7).
 
@@ -129,7 +132,7 @@ kimi/
 │   ├── taxonomy/        ← taxonomii de funcționalități (pilot: security)
 │   ├── apps/            ← câte un fișier YAML per aplicație (100)
 │   └── logos/           ← logo-uri reale (95 aplicații; restul primesc inițiale)
-├── tests/               ← suita pytest (302 teste)
+├── tests/               ← suita pytest (316 teste)
 ├── tools/
 │   ├── build_catalog.py      ← build YAML → catalog.db (generat, gitignored)
 │   ├── refresh_indicators.py ← reîmprospătare indicatori (popcon/Ubuntu/GitHub)

@@ -95,6 +95,32 @@ sources:
 """
 
 
+INDICATORS_SYSTEM_PROMPT = """\
+Ești un contributor la catalogul Alterna. Pentru o aplicație deja propusă,
+trebuie să găsești **sursele** din care indicatorii ei se pot verifica
+automat — nu valorile.
+
+Reguli STRICTE:
+- Răspunde DOAR cu un singur bloc YAML, fără explicații în afara lui.
+- Pentru fiecare indicator, dă **URL-ul sursei** din care se poate citi
+  valoarea, nu valoarea inventată:
+    github_repo: URL-ul repository-ului (https://github.com/… sau
+      https://gitlab.com/…) din care se citesc stelele și ultima versiune;
+    ubuntu_package: numele pachetului din Ubuntu (dacă aplicația e
+      ambalată acolo);
+    releases_url: pagina de release-uri, dacă e alta decât repository-ul;
+    website: site-ul oficial, dacă indicatorul se poate citi de acolo.
+- Dacă nu ai o sursa sigură pentru un indicator, lasă valoarea vidă.
+- Nu inventa URL-uri și nu inventa numere.
+
+Schema:
+github_repo: https://github.com/exemplu/exemplu
+ubuntu_package: exemplu
+releases_url:
+website: https://exemplu.org
+"""
+
+
 class AiError(Exception):
     """Eroare de la backend-ul AI — mesajul e pregătit pentru UI."""
 
@@ -152,11 +178,12 @@ class OllamaClient:
             raise AiError(f"Răspuns invalid de la Ollama: {exc}") from exc
         return [m.get("name", "") for m in data.get("models") or [] if m.get("name")]
 
-    def generate(self, prompt: str, timeout: int = 120) -> str:
+    def generate(self, prompt: str, timeout: int = 120,
+                 system: str = PROPOSAL_SYSTEM_PROMPT) -> str:
         """Cere o completare modelului."""
         payload = {
             "model": self.model,
-            "prompt": f"{PROPOSAL_SYSTEM_PROMPT}\n\n{user_prompt(prompt)}",
+            "prompt": f"{system}\n\n{user_prompt(prompt)}",
             "stream": False,
             "options": {"temperature": 0.2},
         }
@@ -182,11 +209,12 @@ class ClaudeClient:
     def is_configured(self) -> bool:
         return bool(self.api_key)
 
-    def generate(self, prompt: str, timeout: int = 120) -> str:
+    def generate(self, prompt: str, timeout: int = 120,
+                 system: str = PROPOSAL_SYSTEM_PROMPT) -> str:
         payload = {
             "model": self.model,
             "max_tokens": 2000,
-            "system": PROPOSAL_SYSTEM_PROMPT,
+            "system": system,
             "messages": [{"role": "user", "content": user_prompt(prompt)}],
         }
         headers = {
@@ -207,6 +235,13 @@ def user_prompt(request: str) -> str:
     """Cererea utilizatorului, încadrată ca sarcină de completare."""
     return (f"Propune o intrare de catalog pentru aplicația descrisă mai jos. "
             f"Răspunde strict cu blocul YAML, fără explicații.\n\n"
+            f"{request.strip()}")
+
+
+def indicators_prompt(request: str) -> str:
+    """Cererea de **surse** pentru indicatorii unei aplicații."""
+    return (f"Găsește sursele din care se pot verifica indicatorii aplicației "
+            f"de mai jos. Răspunde strict cu blocul YAML, fără explicații.\n\n"
             f"{request.strip()}")
 
 

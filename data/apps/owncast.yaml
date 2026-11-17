@@ -38,5 +38,7 @@ sources:
 - https://owncast.online/
 - https://github.com/owncast/owncast
 - https://www.wikidata.org/wiki/Q104533790
+- https://owncast.online/privacy
 confidence:
   alternatives: manual
+  details.telemetry: manual

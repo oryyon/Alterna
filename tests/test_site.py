@@ -16,33 +16,35 @@ ROOT = Path(__file__).resolve().parent.parent
 SITE = ROOT / "site"
 
 
-def _generează(tmp: Path) -> Path:
+def _generează(tmp: Path, db: Path) -> Path:
+    """Generează pagina dintr-un catalog dat (nu din rădăcină).
+
+    `catalog.db` nu există neapărat în rădăcina repo-ului (pe runner se
+    construiește într-un fișier temporar), deci îi dăm calea explicită.
+    """
     rezultat = subprocess.run(
         [sys.executable, str(ROOT / "tools" / "build_site.py"),
-         "--out", str(tmp)],
+         "--out", str(tmp), "--db", str(db)],
         capture_output=True, text=True, cwd=str(ROOT), timeout=120)
     assert rezultat.returncode == 0, rezultat.stdout + rezultat.stderr
     return tmp
 
 
-def test_pagina_se_generaza(tmp_path):
-    ieșire = _generează(tmp_path)
+def test_pagina_se_generaza(tmp_path, built_db):
+    ieșire = _generează(tmp_path, built_db)
     for nume in ("index.html", "style.css", "catalog.js", "catalog.json"):
         assert (ieșire / nume).exists(), nume
 
 
-def test_pagina_are_toate_aplicatiile(tmp_path):
-    ieșire = _generează(tmp_path)
+def test_pagina_are_toate_aplicatiile(tmp_path, built_db, catalog):
+    ieșire = _generează(tmp_path, built_db)
     date = json.loads((ieșire / "catalog.json").read_text(encoding="utf-8"))
-    from app.db import Catalog
-
-    catalog = Catalog(ROOT / "catalog.db")
     assert len(date) == catalog.app_count
     assert {a["id"] for a in date} == {a["id"] for a in catalog.search()}
 
 
-def test_pagina_are_toate_categoriile(tmp_path):
-    ieșire = _generează(tmp_path)
+def test_pagina_are_toate_categoriile(tmp_path, built_db, catalog):
+    ieșire = _generează(tmp_path, built_db)
     html = (ieșire / "index.html").read_text(encoding="utf-8")
     from app.db import Catalog
 
@@ -55,16 +57,16 @@ def test_pagina_are_toate_categoriile(tmp_path):
         assert html_mod.escape(nume) in html, nume
 
 
-def test_fiecare_card_are_sursa(tmp_path):
+def test_fiecare_card_are_sursa(tmp_path, built_db):
     """Fiecare aplicație din pagină are linkul către sursa ei."""
-    ieșire = _generează(tmp_path)
+    ieșire = _generează(tmp_path, built_db)
     html = (ieșire / "index.html").read_text(encoding="utf-8")
     assert html.count('rel="noopener"') >= 100
 
 
-def test_textele_sunt_in_romana(tmp_path):
+def test_textele_sunt_in_romana(tmp_path, built_db):
     """Interfața paginii e în română, cu diacritice."""
-    ieșire = _generează(tmp_path)
+    ieșire = _generează(tmp_path, built_db)
     html = (ieșire / "index.html").read_text(encoding="utf-8")
     assert 'lang="ro"' in html
     assert "aplicații" in html

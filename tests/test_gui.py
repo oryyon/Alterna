@@ -134,3 +134,56 @@ class TestLinkuriInstalare:
         # kodi e în Ubuntu, deci are cel puțin linkul APT
         assert all(w.url.startswith(("apt://", "snap://", "flathub://"))
                    for w in linkuri)
+
+
+class TestComboLungime:
+    """Textul din casetele drop-down nu trebuie trunchiat cu „…".
+
+    Raportat de utilizator (cu capturi): în popup, „Doar neinstalate"
+    apărea ca „Doar n...talate", iar „Dimensiune mică → mare" ca
+    „Dimensiune...ică → mare". Cauza: popup-ul primea lățimea cutiei, iar
+    delegatul rezervă loc pentru indicatorul de selecție — textul nu mai
+    încăpea și Qt îl scurtea.
+    """
+
+    COMBO = ["filter_license", "filter_platform", "filter_price",
+             "filter_installed", "sort_select"]
+
+    @pytest.mark.parametrize("nume", COMBO)
+    def test_popupul_arata_textul_complet(self, window, nume, qapp):
+        from PySide6.QtGui import QFontMetrics
+
+        combo = getattr(window, nume)
+        combo.showPopup()
+        qapp.processEvents()
+        view = combo.view()
+        fm = QFontMetrics(view.font())
+        spatiu = view.width() - view.frameWidth() * 2
+        for i in range(combo.count()):
+            text = combo.itemText(i)
+            necesar = fm.horizontalAdvance(text)
+            assert spatiu >= necesar, (
+                f"{nume}: popupul are {spatiu}px pentru „{text}” "
+                f"({necesar}px necesari) — textul se trunchiază")
+        combo.hidePopup()
+
+    @pytest.mark.parametrize("nume", COMBO)
+    def test_cutia_e_lata_cat_textul(self, window, nume, qapp):
+        """Cutia nu e strângată de layout: textul cel mai lung încape.
+
+        Cu `AdjustToContents`, `sizeHint` este exact lățimea necesară
+        (text + săgeată + margini). Dacă layoutul strânge cutia sub
+        `sizeHint`, textul se taie.
+        """
+        from PySide6.QtGui import QFontMetrics
+
+        combo = getattr(window, nume)
+        combo.show()
+        qapp.processEvents()
+        fm = QFontMetrics(combo.font())
+        necesar = max(fm.horizontalAdvance(combo.itemText(i))
+                      for i in range(combo.count()))
+        assert combo.width() >= combo.sizeHint().width(), (
+            f"{nume}: cutia are {combo.width()}px, dar are nevoie de "
+            f"{combo.sizeHint().width()}px pentru textul cel mai lung "
+            f"({necesar}px) — textul e tăiat")

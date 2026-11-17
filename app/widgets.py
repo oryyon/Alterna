@@ -8,8 +8,8 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from PySide6.QtCore import Qt, QPoint, Signal
-from PySide6.QtGui import QColor, QIcon
+from PySide6.QtCore import Qt, QEvent, QPoint, Signal
+from PySide6.QtGui import QColor, QFontMetrics, QIcon
 from PySide6.QtWidgets import (QComboBox, QFrame, QHBoxLayout, QLabel,
                                QVBoxLayout, QWidget)
 
@@ -32,17 +32,79 @@ class ComboBox(QComboBox):
     SUPRAPUS peste casetă (deci popup-ul „urcă" sau „coboară" după selecție).
     Aici îl repoziționăm mereu sub casetă; dacă nu încape pe ecran, îl punem
     deasupra (fallback standard).
+
+    Lățime: textul nu trebuie trunchiat niciodată — nici în cutie, nici în
+    popup. Fără această corecție, popup-ul (care primea lățimea cutiei) tăia
+    literele: „Doar neinstalate" devenea „Doar n...talate" (raportat de
+    utilizator, în toate temele). Delegatul rezervă loc pentru indicatorul de
+    selecție, deci popup-ul trebuie să fie mai lat decât textul.
     """
+
+    #: Spațiu rezervat în popup pentru indicatorul de selecție și margini.
+    SPATIU_INDICATOR = 28
+
+    def __init__(self, parent=None):
+        super().__init__(parent)
+        self.setSizeAdjustPolicy(QComboBox.SizeAdjustPolicy.AdjustToContents)
+
+    def addItem(self, text: str, userData=None) -> None:
+        super().addItem(text, userData)
+        self._ajusteaza_latime()
+
+    def showEvent(self, event) -> None:
+        # Lățimea se recalculează aici: fontul temei (QSS) e aplicat după
+        # creare, deci măsurătoarea de la `addItem` poate fi depășită.
+        super().showEvent(event)
+        self._ajusteaza_latime()
+
+    def changeEvent(self, event) -> None:
+        # La schimbarea temei se schimbă fontul → lățimea trebuie recalculată,
+        # altfel textul cel mai lung ar încăpea într-o cutie prea îngustă.
+        super().changeEvent(event)
+        if event.type() in (QEvent.StyleChange, QEvent.FontChange):
+            self._ajusteaza_latime()
+
+    def _latime_text_maxim(self) -> int:
+        """Lățimea celui mai lung element (doar textul, fără indicator)."""
+        if self.count() == 0:
+            return 0
+        fm = QFontMetrics(self.view().font())
+        return max(fm.horizontalAdvance(self.itemText(i))
+                   for i in range(self.count()))
+
+    def _ajusteaza_latime(self) -> None:
+        """Cutia e cel puțin lată cât textul cel mai lung (+ săgeata).
+
+        `sizeHint` cu `AdjustToContents` include deja săgeata și marginile,
+        deci e măsura corectă — o constantă ar fi o ghicire.
+        """
+        if self.count() == 0:
+            return
+        self.setMinimumWidth(self.sizeHint().width())
 
     def showPopup(self) -> None:
         super().showPopup()
         popup = self.view().window()
+        view = self.view()
+        # Lățimea popup-ului: cel puțin cât textul cel mai lung + indicatorul
+        # de selecție, ca să nu rămână „…" în loc de litere. Se recalculează la
+        # fiecare deschidere — fontul temei poate fi schimbat între timp.
+        necesar = max(self._latime_text_maxim() + self.SPATIU_INDICATOR,
+                      self.width())
+        view.setMinimumWidth(necesar)
+        popup.resize(necesar, popup.height())
         below = self.mapToGlobal(QPoint(0, self.height()))
         screen = self.screen().availableGeometry()
         if below.y() + popup.height() > screen.bottom():
             popup.move(self.mapToGlobal(QPoint(0, -popup.height())))
         else:
             popup.move(below)
+        # Dacă popupul ar ieși din ecran pe lateral, îl mutăm la stânga.
+        x, y = popup.x(), popup.y()
+        if x + popup.width() > screen.right():
+            popup.move(max(screen.left(), screen.right() - popup.width()), y)
+        elif x < screen.left():
+            popup.move(screen.left(), y)
 
 
 def initials(name: str) -> str:

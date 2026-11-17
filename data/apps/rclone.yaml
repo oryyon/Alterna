@@ -38,7 +38,9 @@ sources:
 - https://rclone.org/
 - https://github.com/rclone/rclone
 - https://www.wikidata.org/wiki/Q56795481
+- https://commons.wikimedia.org/wiki/File:Rclone.png
 confidence:
   details.install_size_mb: auto
   alternatives: manual
 logo: logos/rclone.svg
+screenshot: screenshots/rclone.jpg

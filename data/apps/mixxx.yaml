@@ -38,7 +38,9 @@ sources:
 - https://www.mixxx.org/
 - https://github.com/mixxxdj/mixxx
 - https://www.wikidata.org/wiki/Q1576579
+- https://commons.wikimedia.org/wiki/File:Mixxx_2.3.0_screenshot.png
 confidence:
   details.first_release_year: auto
   details.install_size_mb: auto
   alternatives: manual
+screenshot: screenshots/mixxx.jpg

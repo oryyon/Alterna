@@ -38,7 +38,9 @@ sources:
 - https://www.gnucash.org/
 - https://github.com/Gnucash/gnucash.git
 - https://www.wikidata.org/wiki/Q123326
+- https://commons.wikimedia.org/wiki/File:Gnucash_2_screenshot.png
 confidence:
   details.first_release_year: auto
   details.install_size_mb: auto
   alternatives: manual
+screenshot: screenshots/gnucash.jpg

@@ -38,7 +38,9 @@ sources:
 - https://invent.kde.org/utilities/ark
 - https://anongit.kde.org/ark.git
 - https://www.wikidata.org/wiki/Q671759
+- https://commons.wikimedia.org/wiki/File:Ark_mainwindow.png
 confidence:
   details.first_release_year: auto
   details.install_size_mb: auto
   alternatives: manual
+screenshot: screenshots/ark.jpg

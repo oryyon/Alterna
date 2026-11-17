@@ -33,6 +33,8 @@ indicators:
 sources:
 - https://dev.yorhel.nl/ncdu
 - https://www.wikidata.org/wiki/Q19598118
+- https://commons.wikimedia.org/wiki/File:Ncdu_screenshot.png
 confidence:
   details.install_size_mb: auto
   alternatives: manual
+screenshot: screenshots/ncdu.jpg

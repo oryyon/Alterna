@@ -34,7 +34,9 @@ sources:
 - https://www.falkon.org/
 - https://github.com/QupZilla/qupzilla
 - https://www.wikidata.org/wiki/Q404293
+- https://commons.wikimedia.org/wiki/File:Artix_Linux_20240823_Plasma_Runit_Falkon_24.05.2_-_English.png
 confidence:
   details.first_release_year: auto
   details.install_size_mb: auto
   alternatives: manual
+screenshot: screenshots/falkon.jpg

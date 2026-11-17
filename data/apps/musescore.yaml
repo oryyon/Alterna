@@ -39,7 +39,9 @@ indicators:
 sources:
 - https://musescore.org
 - https://www.wikidata.org/wiki/Q240192
+- https://commons.wikimedia.org/wiki/File:MuseScore_4_in_dark_mode.png
 confidence:
   details.first_release_year: auto
   details.install_size_mb: auto
   alternatives: manual
+screenshot: screenshots/musescore.jpg

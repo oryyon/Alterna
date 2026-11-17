@@ -34,6 +34,8 @@ sources:
 - https://apps.kde.org/filelight/
 - https://github.com/KDE/filelight
 - https://www.wikidata.org/wiki/Q3510027
+- https://commons.wikimedia.org/wiki/File:Filelight_21.12.0_screenshot.png
 confidence:
   details.install_size_mb: auto
   alternatives: manual
+screenshot: screenshots/filelight.jpg

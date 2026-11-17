@@ -39,6 +39,7 @@ sources:
 - https://handbrake.fr
 - https://github.com/HandBrake/HandBrake
 - https://www.wikidata.org/wiki/Q607119
+- https://commons.wikimedia.org/wiki/File:HandBrake_Screenshot.png
 confidence:
   details.first_release_year: auto
   details.install_size_mb: auto
@@ -55,3 +56,4 @@ features:
   gpu: free
   export_formate: free
   open_source: free
+screenshot: screenshots/handbrake.jpg

@@ -39,7 +39,9 @@ sources:
 - https://picard.musicbrainz.org/
 - https://github.com/metabrainz/picard
 - https://www.wikidata.org/wiki/Q117725
+- https://commons.wikimedia.org/wiki/File:MusicBrainz_Picard_2.13.3_screenshot.png
 confidence:
   license: auto
   details.install_size_mb: auto
   alternatives: manual
+screenshot: screenshots/picard.jpg

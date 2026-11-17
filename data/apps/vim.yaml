@@ -36,8 +36,10 @@ sources:
 - https://www.vim.org/
 - https://github.com/vim/vim
 - https://www.wikidata.org/wiki/Q131382
+- https://commons.wikimedia.org/wiki/File:Vim-eo.png
 confidence:
   details.first_release_year: auto
   details.install_size_mb: auto
   alternatives: manual
 logo: logos/vim.svg
+screenshot: screenshots/vim.jpg

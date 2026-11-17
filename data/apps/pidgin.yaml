@@ -34,7 +34,9 @@ sources:
 - https://pidgin.im
 - https://keep.imfreedom.org/pidgin/pidgin/
 - https://www.wikidata.org/wiki/Q71380
+- https://commons.wikimedia.org/wiki/File:Pidgin_2.10.9.png
 confidence:
   details.first_release_year: auto
   details.install_size_mb: auto
   alternatives: manual
+screenshot: screenshots/pidgin.jpg

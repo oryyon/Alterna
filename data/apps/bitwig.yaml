@@ -37,6 +37,8 @@ indicators:
 sources:
 - https://www.bitwig.com
 - https://www.wikidata.org/wiki/Q21843360
+- https://commons.wikimedia.org/wiki/File:Bitiwig_interface_demo_song.png
 logo: logos/bitwig.svg
 confidence:
   alternatives: manual
+screenshot: screenshots/bitwig.jpg

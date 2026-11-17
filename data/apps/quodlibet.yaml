@@ -38,7 +38,9 @@ sources:
 - https://quodlibet.readthedocs.io/
 - https://github.com/quodlibet/quodlibet
 - https://www.wikidata.org/wiki/Q1621193
+- https://commons.wikimedia.org/wiki/File:Quodlibet_3.0.png
 confidence:
   license: auto
   details.install_size_mb: auto
   alternatives: manual
+screenshot: screenshots/quodlibet.jpg

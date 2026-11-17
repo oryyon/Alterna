@@ -38,7 +38,9 @@ sources:
 - https://www.rosegardenmusic.com/
 - https://github.com/Rosegarden/rosegarden
 - https://www.wikidata.org/wiki/Q1500106
+- https://commons.wikimedia.org/wiki/File:Rosegarden_10.02.1_screenshot.png
 confidence:
   details.first_release_year: auto
   details.install_size_mb: auto
   alternatives: manual
+screenshot: screenshots/rosegarden.jpg

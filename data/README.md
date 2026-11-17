@@ -54,6 +54,7 @@ data/
 | `editors_choice` | bool | — | Implicit `false`. Max 1–2 per categorie; afișat marcat ca opinie |
 | `popularity` | int | — | Ordinea editorială a catalogului (mic = mai popular); baza sortării „implicite". Multipli de 10, ca să poți insera între |
 | `logo` | path | — | SVG în `data/logos/<id>.svg`, descărcat de `tools/fetch_logos.py`; dacă lipsește, aplicația afișează inițiale |
+| `screenshot` | path | — | captură de ecran în `data/screenshots/<id>.jpg`, descărcată de `tools/fetch_screenshots.py` din Wikimedia Commons (proprietatea P18 din Wikidata); sursa originală apare în `sources`, atribuirea în `data/screenshots/README.md` |
 | `package` | string | — | Numele pachetului Debian/Ubuntu, **doar dacă diferă de `id`** (ex. `sevenzip` → `p7zip-full`, `openshot` → `openshot-qt`); folosit de `tools/refresh_indicators.py` pentru popcon/repo și de detectarea instalării. Verifică-l cu `python tools/check_packages.py` |
 | `snap` | string | — | Numele snap-ului, **doar dacă există și e confirmat** în magazinul oficial (`snapcraft.io`). Detectarea instalării îl folosește ca sursă secundară |
 | `flatpak` | string | — | ID-ul aplicației Flatpak, **doar dacă e confirmat** în API-ul Flathub (`flathub.org`). Detectarea instalării îl folosește ca sursă terțiară |
@@ -138,6 +139,7 @@ python tools/check_ro.py          # limba română: `.mo` din arhivă + traducer
 python tools/check_telemetry.py    # telemetria: verificată din politici oficiale
 python tools/check_installed_sources.py  # snap/Flatpak: confirmate în snapcraft.io și Flathub
 python tools/fetch_logos.py       # logo-urile (Simple Icons + Wikimedia Commons)
+python tools/fetch_screenshots.py # capturile de ecran (Wikidata P18)
 ```
 
 `check_packages.py` verifică, pentru fiecare aplicație, dacă pachetul presupus

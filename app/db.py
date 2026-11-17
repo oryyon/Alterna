@@ -39,7 +39,7 @@ _APP_COLS = """id, name, description, category, license, price, developer, websi
                logo, editors_choice, popularity, install_size_mb, size_basis,
                first_release_year, telemetry, romanian_language, popcon_rank,
                stars, stars_url, latest_release, in_ubuntu_repos,
-               package, snap, flatpak"""
+               package, snap, flatpak, screenshot"""
 
 
 class CatalogError(Exception):

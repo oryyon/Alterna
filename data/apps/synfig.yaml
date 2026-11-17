@@ -38,7 +38,9 @@ sources:
 - https://synfig.org
 - https://github.com/synfig/synfig
 - https://www.wikidata.org/wiki/Q599608
+- https://commons.wikimedia.org/wiki/File:Synfig_Screenshot.png
 confidence:
   details.first_release_year: auto
   details.install_size_mb: auto
   alternatives: manual
+screenshot: screenshots/synfig.jpg

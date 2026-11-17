@@ -36,7 +36,9 @@ sources:
 - https://thonny.org/
 - https://github.com/thonny/thonny
 - https://www.wikidata.org/wiki/Q22909401
+- https://commons.wikimedia.org/wiki/File:Thonny2_0_screenshot_windows_10.png
 confidence:
   license: auto
   details.install_size_mb: auto
   alternatives: manual
+screenshot: screenshots/thonny.jpg

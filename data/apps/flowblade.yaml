@@ -36,6 +36,7 @@ sources:
 - https://jliljebl.github.io/flowblade/
 - https://github.com/jliljebl/flowblade
 - https://www.wikidata.org/wiki/Q28923878
+- https://commons.wikimedia.org/wiki/File:Flowblade_2.0.jpg
 confidence:
   license: auto
   details.install_size_mb: auto
@@ -52,3 +53,4 @@ features:
   gpu: free
   export_formate: free
   open_source: free
+screenshot: screenshots/flowblade.jpg

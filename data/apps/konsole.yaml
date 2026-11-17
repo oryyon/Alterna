@@ -34,6 +34,8 @@ sources:
 - https://konsole.kde.org/
 - https://anongit.kde.org/konsole.git
 - https://www.wikidata.org/wiki/Q257793
+- https://commons.wikimedia.org/wiki/File:Konsole_24.12.0_screenshot.webp
 confidence:
   details.install_size_mb: auto
   alternatives: manual
+screenshot: screenshots/konsole.jpg

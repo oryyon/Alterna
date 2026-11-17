@@ -35,8 +35,10 @@ sources:
 - https://www.lazarus-ide.org
 - https://gitlab.com/freepascal.org/lazarus
 - https://www.wikidata.org/wiki/Q258448
+- https://commons.wikimedia.org/wiki/File:Lazarus_IDE_9-26.png
 confidence:
   details.first_release_year: auto
   details.install_size_mb: auto
   alternatives: manual
 logo: logos/lazarus.svg
+screenshot: screenshots/lazarus.jpg

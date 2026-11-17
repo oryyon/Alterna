@@ -36,7 +36,9 @@ sources:
 - https://www.gnu.org/software/emacs/
 - https://cgit.git.savannah.gnu.org/cgit/emacs.git
 - https://www.wikidata.org/wiki/Q1252773
+- https://commons.wikimedia.org/wiki/File:GNU_Emacs_26.2_screenshot.png
 confidence:
   details.first_release_year: auto
   details.install_size_mb: auto
   alternatives: manual
+screenshot: screenshots/emacs.jpg

@@ -33,6 +33,7 @@ sources:
 - https://wiki.gnome.org/Projects/GnomeKeyring
 - https://gitlab.gnome.org/GNOME/gnome-keyring
 - https://www.wikidata.org/wiki/Q383474
+- https://commons.wikimedia.org/wiki/File:Screenshot-GNOME_Keyring.png
 confidence:
   details.install_size_mb: auto
   alternatives: manual
@@ -55,3 +56,4 @@ features:
   cli_api: free
   ssh_agent: free
   audit_independent: 'no'
+screenshot: screenshots/gnome-keyring.jpg

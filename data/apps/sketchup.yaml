@@ -37,6 +37,8 @@ indicators:
 sources:
 - https://www.sketchup.com/
 - https://www.wikidata.org/wiki/Q79604
+- https://commons.wikimedia.org/wiki/File:C-5_Galaxy_SketchUp_model.png
 logo: logos/sketchup.svg
 confidence:
   alternatives: manual
+screenshot: screenshots/sketchup.jpg

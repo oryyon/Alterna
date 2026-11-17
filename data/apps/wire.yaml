@@ -37,7 +37,9 @@ sources:
 - https://wire.com
 - https://github.com/wireapp/wire
 - https://www.wikidata.org/wiki/Q26934461
+- https://commons.wikimedia.org/wiki/File:Wire_software_screenshot-es.png
 confidence:
   details.first_release_year: auto
   alternatives: manual
 logo: logos/wire.svg
+screenshot: screenshots/wire.jpg

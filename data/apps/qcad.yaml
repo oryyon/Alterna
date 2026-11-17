@@ -37,6 +37,8 @@ sources:
 - https://www.qcad.org/fr/
 - https://github.com/qcad/qcad
 - https://www.wikidata.org/wiki/Q683003
+- https://commons.wikimedia.org/wiki/File:Qcad.png
 confidence:
   details.first_release_year: auto
   alternatives: manual
+screenshot: screenshots/qcad.jpg

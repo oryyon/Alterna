@@ -40,7 +40,9 @@ sources:
 - https://solvespace.com/
 - https://github.com/solvespace/solvespace
 - https://www.wikidata.org/wiki/Q7559005
+- https://commons.wikimedia.org/wiki/File:Solvespace_workspace.jpg
 confidence:
   details.first_release_year: auto
   details.install_size_mb: auto
   alternatives: manual
+screenshot: screenshots/solvespace.jpg

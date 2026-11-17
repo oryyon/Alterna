@@ -31,3 +31,8 @@ def default_catalog_path() -> Path:
 def logos_dir() -> Path:
     """Directorul logo-urilor aplicațiilor."""
     return resource_path("data", "logos")
+
+
+def screenshots_dir() -> Path:
+    """Directorul capturilor de ecran ale aplicațiilor."""
+    return resource_path("data", "screenshots")

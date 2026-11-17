@@ -38,7 +38,9 @@ sources:
 - https://wiki.gnome.org/Apps/Shotwell
 - https://git.gnome.org/browse/shotwell/
 - https://www.wikidata.org/wiki/Q2426283
+- https://commons.wikimedia.org/wiki/File:Shotwell_0.30.4_screenshot.png
 confidence:
   details.first_release_year: auto
   details.install_size_mb: auto
   alternatives: manual
+screenshot: screenshots/shotwell.jpg

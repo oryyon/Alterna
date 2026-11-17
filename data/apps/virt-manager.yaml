@@ -33,7 +33,9 @@ sources:
 - https://virt-manager.org/
 - https://github.com/virt-manager/virt-manager
 - https://www.wikidata.org/wiki/Q3266778
+- https://commons.wikimedia.org/wiki/File:Virt-manager_3.2.0_QEMU_KVM_screenshot.png
 confidence:
   license: auto
   details.install_size_mb: auto
   alternatives: manual
+screenshot: screenshots/virt-manager.jpg

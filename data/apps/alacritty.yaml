@@ -35,8 +35,10 @@ sources:
 - https://alacritty.org/
 - https://github.com/alacritty/alacritty
 - https://www.wikidata.org/wiki/Q94997987
+- https://commons.wikimedia.org/wiki/File:Alacritty-screenshot-with-vim.png
 confidence:
   details.first_release_year: auto
   details.install_size_mb: auto
   alternatives: manual
 logo: logos/alacritty.svg
+screenshot: screenshots/alacritty.jpg

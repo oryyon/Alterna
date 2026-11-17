@@ -37,7 +37,9 @@ sources:
 - https://www.gnumeric.org/
 - https://gitlab.gnome.org/GNOME/gnumeric/
 - https://www.wikidata.org/wiki/Q220993
+- https://commons.wikimedia.org/wiki/File:Gnumeric-1.8.2-FR.png
 confidence:
   details.first_release_year: auto
   details.install_size_mb: auto
   alternatives: manual
+screenshot: screenshots/gnumeric.jpg

@@ -38,6 +38,8 @@ sources:
 - https://brlcad.org
 - https://svn.code.sf.net/p/brlcad/code/brlcad/trunk
 - https://www.wikidata.org/wiki/Q796941
+- https://commons.wikimedia.org/wiki/File:BRL-CAD_screenshot.jpeg
 confidence:
   details.first_release_year: auto
   alternatives: manual
+screenshot: screenshots/brl-cad.jpg

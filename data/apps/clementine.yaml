@@ -44,7 +44,9 @@ sources:
 - https://www.clementine-player.org/
 - https://github.com/clementine-player/Clementine
 - https://www.wikidata.org/wiki/Q1100372
+- https://commons.wikimedia.org/wiki/File:Clementine.png
 confidence:
   details.first_release_year: auto
   details.install_size_mb: auto
   alternatives: manual
+screenshot: screenshots/clementine.jpg

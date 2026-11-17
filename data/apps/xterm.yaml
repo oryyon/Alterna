@@ -33,6 +33,8 @@ sources:
 - https://invisible-island.net/xterm/
 - https://invisible-mirror.net/archives/xterm/
 - https://www.wikidata.org/wiki/Q284297
+- https://commons.wikimedia.org/wiki/File:Xterm.png
 confidence:
   details.install_size_mb: auto
   alternatives: manual
+screenshot: screenshots/xterm.jpg

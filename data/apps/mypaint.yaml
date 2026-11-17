@@ -36,7 +36,9 @@ indicators:
 sources:
 - https://github.com/mypaint/mypaint
 - https://www.wikidata.org/wiki/Q1956333
+- https://commons.wikimedia.org/wiki/File:Mypaint_in_kde.png
 confidence:
   details.first_release_year: auto
   details.install_size_mb: auto
   alternatives: manual
+screenshot: screenshots/mypaint.jpg

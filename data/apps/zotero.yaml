@@ -39,7 +39,9 @@ sources:
 - https://www.zotero.org/
 - https://github.com/zotero/zotero
 - https://www.wikidata.org/wiki/Q226915
+- https://commons.wikimedia.org/wiki/File:Zotero_7_on_macOS.png
 confidence:
   details.first_release_year: auto
   alternatives: manual
 logo: logos/zotero.svg
+screenshot: screenshots/zotero.jpg

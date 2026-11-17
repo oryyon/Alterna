@@ -33,6 +33,8 @@ sources:
 - https://docs.xfce.org/xfce/thunar/start
 - https://gitlab.xfce.org/xfce/thunar
 - https://www.wikidata.org/wiki/Q757834
+- https://commons.wikimedia.org/wiki/File:Xubuntu_24.04_LTS_Thunar_4.18.8_Greybird_theme_-_English.png
 confidence:
   details.install_size_mb: auto
   alternatives: manual
+screenshot: screenshots/thunar.jpg

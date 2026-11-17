@@ -38,6 +38,7 @@ sources:
 - https://www.olivevideoeditor.org/
 - https://github.com/olive-editor/olive
 - https://www.wikidata.org/wiki/Q65218115
+- https://commons.wikimedia.org/wiki/File:Olive_video_editor_Alpha_0.1.0_2019-10_1e3cf533-fr.png
 confidence:
   alternatives: manual
 features:
@@ -52,3 +53,4 @@ features:
   gpu: free
   export_formate: free
   open_source: free
+screenshot: screenshots/olive.jpg

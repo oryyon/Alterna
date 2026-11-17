@@ -38,7 +38,9 @@ sources:
 - https://homebank.free.fr
 - https://code.launchpad.net/~mdoyen/homebank/5.3.x
 - https://www.wikidata.org/wiki/Q3139598
+- https://commons.wikimedia.org/wiki/File:HomeBank_screenshot.png
 confidence:
   details.first_release_year: auto
   details.install_size_mb: auto
   alternatives: manual
+screenshot: screenshots/homebank.jpg

@@ -38,6 +38,8 @@ sources:
 - https://www.rawtherapee.com/
 - https://github.com/RawTherapee/RawTherapee
 - https://www.wikidata.org/wiki/Q568370
+- https://commons.wikimedia.org/wiki/File:Rt_setm_hdr_dng_1.jpg
 confidence:
   details.install_size_mb: auto
   alternatives: manual
+screenshot: screenshots/rawtherapee.jpg

@@ -33,7 +33,9 @@ sources:
 - https://clonezilla.org/
 - https://github.com/stevenshiau/clonezilla
 - https://www.wikidata.org/wiki/Q1102277
+- https://commons.wikimedia.org/wiki/File:Clonezilla.png
 confidence:
   details.first_release_year: auto
   details.install_size_mb: auto
   alternatives: manual
+screenshot: screenshots/clonezilla.jpg

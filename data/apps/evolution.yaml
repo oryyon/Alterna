@@ -37,7 +37,9 @@ sources:
 - https://wiki.gnome.org/Apps/Evolution
 - https://git.gnome.org/browse/evolution/
 - https://www.wikidata.org/wiki/Q336251
+- https://commons.wikimedia.org/wiki/File:Evolution_36_mail.png
 confidence:
   details.first_release_year: auto
   details.install_size_mb: auto
   alternatives: manual
+screenshot: screenshots/evolution.jpg

@@ -37,6 +37,8 @@ sources:
 - https://apps.kde.org/gwenview/
 - https://cgit.kde.org/gwenview.git
 - https://www.wikidata.org/wiki/Q1144917
+- https://commons.wikimedia.org/wiki/File:Gwenview_21.12_opening_JPEG_XL_file_screenshot.png
 confidence:
   details.install_size_mb: auto
   alternatives: manual
+screenshot: screenshots/gwenview.jpg

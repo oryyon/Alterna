@@ -35,7 +35,9 @@ sources:
 - https://dbeaver.io/
 - https://github.com/dbeaver/dbeaver
 - https://www.wikidata.org/wiki/Q28956992
+- https://commons.wikimedia.org/wiki/File:DBeaver_22.0.0_screenshot.png
 confidence:
   details.first_release_year: auto
   alternatives: manual
 logo: logos/dbeaver.svg
+screenshot: screenshots/dbeaver.jpg

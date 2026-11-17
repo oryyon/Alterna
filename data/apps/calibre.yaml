@@ -39,8 +39,10 @@ sources:
 - https://calibre-ebook.com
 - https://github.com/kovidgoyal/calibre
 - https://www.wikidata.org/wiki/Q747793
+- https://commons.wikimedia.org/wiki/File:Calibre-0.9.0-main-fedora.png
 confidence:
   details.first_release_year: auto
   license: auto
   details.install_size_mb: auto
   alternatives: manual
+screenshot: screenshots/calibre.jpg

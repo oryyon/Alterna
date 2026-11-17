@@ -40,8 +40,10 @@ sources:
 - https://kodi.tv/
 - https://github.com/xbmc/xbmc
 - https://www.wikidata.org/wiki/Q919760
+- https://commons.wikimedia.org/wiki/File:Main_Screen_Confluence_14.1.jpg
 confidence:
   details.first_release_year: auto
   details.install_size_mb: auto
   alternatives: manual
 logo: logos/kodi.svg
+screenshot: screenshots/kodi.jpg

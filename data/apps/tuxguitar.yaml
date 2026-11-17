@@ -38,6 +38,8 @@ sources:
 - https://www.tuxguitar.app/
 - https://sourceforge.net/p/tuxguitar/code/HEAD/tree/
 - https://www.wikidata.org/wiki/Q2031313
+- https://commons.wikimedia.org/wiki/File:Tuxguitar_screenshot.png
 confidence:
   details.install_size_mb: auto
   alternatives: manual
+screenshot: screenshots/tuxguitar.jpg

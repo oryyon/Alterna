@@ -76,6 +76,10 @@ def build_qss(theme: str) -> str:
     QLabel[h2="true"] {{ font-size: 15px; font-weight: bold; color: {p['text']}; }}
     QLabel[link="true"] {{ color: {p['accent']}; }}
     QLabel[link="true"]:hover {{ color: {p['text']}; }}
+    /* Captura de ecran: imaginea aplicației, cu colț rotunjit. */
+    QLabel[screenshot="true"] {{ border: 1px solid {p['border']}; border-radius: 6px;
+                                background: {p['bg_view']}; }}
+
     /* Linkurile de instalare arată ca butoane: sunt acțiuni, nu citări. */
     QLabel[installLink="true"] {{ color: {p['bg_view']}; background: {p['accent']};
                                   border: 1px solid {p['accent']}; border-radius: 4px;

@@ -38,6 +38,8 @@ sources:
 - https://fileroller.sourceforge.net/
 - https://git.gnome.org/browse/file-roller/
 - https://www.wikidata.org/wiki/Q1143010
+- https://commons.wikimedia.org/wiki/File:File-roller_3.38.0.png
 confidence:
   details.install_size_mb: auto
   alternatives: manual
+screenshot: screenshots/file-roller.jpg

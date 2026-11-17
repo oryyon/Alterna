@@ -37,6 +37,8 @@ indicators:
 sources:
 - https://www.renoise.com/
 - https://www.wikidata.org/wiki/Q1972611
+- https://commons.wikimedia.org/wiki/File:Renoise_2.6.png
 confidence:
   details.first_release_year: auto
   alternatives: manual
+screenshot: screenshots/renoise.jpg

@@ -36,6 +36,8 @@ sources:
 - https://guvcview.sourceforge.net
 - https://sourceforge.net/p/guvcview/git-master/ci/master/tree
 - https://www.wikidata.org/wiki/Q4039766
+- https://commons.wikimedia.org/wiki/File:Guvcview_1.4.4_ru.png
 confidence:
   details.install_size_mb: auto
   alternatives: manual
+screenshot: screenshots/guvcview.jpg

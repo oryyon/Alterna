@@ -38,6 +38,8 @@ sources:
 - https://www.hydrogen-music.org/
 - https://github.com/hydrogen-music/hydrogen
 - https://www.wikidata.org/wiki/Q1459314
+- https://commons.wikimedia.org/wiki/File:Hydrogen.png
 confidence:
   details.install_size_mb: auto
   alternatives: manual
+screenshot: screenshots/hydrogen.jpg

@@ -37,6 +37,8 @@ sources:
 - https://abisource.com/
 - https://github.com/AbiWord/abiword
 - https://www.wikidata.org/wiki/Q136775
+- https://commons.wikimedia.org/wiki/File:AbiWordScreenshot.png
 confidence:
   details.install_size_mb: auto
   alternatives: manual
+screenshot: screenshots/abiword.jpg

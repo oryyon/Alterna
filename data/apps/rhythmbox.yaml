@@ -36,7 +36,9 @@ sources:
 - https://wiki.gnome.org/Apps/Rhythmbox
 - https://gitlab.gnome.org/GNOME/rhythmbox
 - https://www.wikidata.org/wiki/Q319897
+- https://commons.wikimedia.org/wiki/File:GNOME_Rhythmbox_3.4.4_with_its_preferences.png
 confidence:
   details.first_release_year: auto
   details.install_size_mb: auto
   alternatives: manual
+screenshot: screenshots/rhythmbox.jpg

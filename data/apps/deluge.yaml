@@ -35,8 +35,10 @@ sources:
 - https://deluge-torrent.org/
 - https://git.deluge-torrent.org/deluge
 - https://www.wikidata.org/wiki/Q1185023
+- https://commons.wikimedia.org/wiki/File:Deluge-1.1.3-ubuntu.png
 confidence:
   license: auto
   details.install_size_mb: auto
   alternatives: manual
 logo: logos/deluge.svg
+screenshot: screenshots/deluge.jpg

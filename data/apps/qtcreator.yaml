@@ -39,6 +39,8 @@ sources:
 - https://www.qt.io/product/development-tools
 - https://github.com/qt-creator/qt-creator.git
 - https://www.wikidata.org/wiki/Q2121795
+- https://commons.wikimedia.org/wiki/File:Qt_Creator_6.0.2_based_on_Qt_6.2.2.png
 confidence:
   details.install_size_mb: auto
   alternatives: manual
+screenshot: screenshots/qtcreator.jpg

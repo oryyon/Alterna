@@ -33,7 +33,9 @@ indicators:
 sources:
 - https://apps.kde.org/konqueror/
 - https://www.wikidata.org/wiki/Q178565
+- https://commons.wikimedia.org/wiki/File:Konqueror_20.12.2_showing_Dutch_Wikipedia_homepage_screenshot.png
 confidence:
   details.first_release_year: auto
   details.install_size_mb: auto
   alternatives: manual
+screenshot: screenshots/konqueror.jpg

@@ -41,7 +41,9 @@ sources:
 - https://kid3.kde.org/
 - https://invent.kde.org/kde/kid3.git
 - https://www.wikidata.org/wiki/Q15557540
+- https://commons.wikimedia.org/wiki/File:Kid-screen.jpg
 confidence:
   details.first_release_year: auto
   details.install_size_mb: auto
   alternatives: manual
+screenshot: screenshots/kid3.jpg

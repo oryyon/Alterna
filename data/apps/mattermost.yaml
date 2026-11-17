@@ -37,7 +37,9 @@ sources:
 - https://mattermost.com/
 - https://github.com/mattermost/mattermost
 - https://www.wikidata.org/wiki/Q55478510
+- https://commons.wikimedia.org/wiki/File:Mattermost_UI.png
 confidence:
   details.first_release_year: auto
   alternatives: manual
 logo: logos/mattermost.svg
+screenshot: screenshots/mattermost.jpg

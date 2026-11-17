@@ -36,6 +36,8 @@ sources:
 - https://cmus.sourceforge.net/
 - https://github.com/cmus/cmus
 - https://www.wikidata.org/wiki/Q1940750
+- https://commons.wikimedia.org/wiki/File:Cmus-tree-view.png
 confidence:
   details.install_size_mb: auto
   alternatives: manual
+screenshot: screenshots/cmus.jpg

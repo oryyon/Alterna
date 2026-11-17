@@ -35,7 +35,9 @@ sources:
 - https://hexchat.github.io
 - https://github.com/hexchat/hexchat
 - https://www.wikidata.org/wiki/Q17117379
+- https://commons.wikimedia.org/wiki/File:Hexchat_2.16.0_screenshot.png
 confidence:
   details.first_release_year: auto
   details.install_size_mb: auto
   alternatives: manual
+screenshot: screenshots/hexchat.jpg

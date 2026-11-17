@@ -34,8 +34,10 @@ sources:
 - https://apps.kde.org/dolphin/
 - https://invent.kde.org/system/dolphin
 - https://www.wikidata.org/wiki/Q816725
+- https://commons.wikimedia.org/wiki/File:Dolphin_25.04.0_screenshot_%28light_mode%29.webp
 confidence:
   details.first_release_year: auto
   details.install_size_mb: auto
   alternatives: manual
 logo: logos/dolphin.svg
+screenshot: screenshots/dolphin.jpg

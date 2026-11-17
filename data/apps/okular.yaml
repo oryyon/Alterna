@@ -35,6 +35,8 @@ sources:
 - https://okular.kde.org
 - https://invent.kde.org/graphics/okular
 - https://www.wikidata.org/wiki/Q1165933
+- https://commons.wikimedia.org/wiki/File:Okular_21.12.1_screenshot.png
 confidence:
   details.install_size_mb: auto
   alternatives: manual
+screenshot: screenshots/okular.jpg

@@ -35,7 +35,9 @@ indicators:
 sources:
 - https://www.tinkercad.com/
 - https://www.wikidata.org/wiki/Q73124059
+- https://commons.wikimedia.org/wiki/File:Schuifmaat_bottom_mechaniek.png
 confidence:
   details.first_release_year: auto
   alternatives: manual
 logo: logos/tinkercad.svg
+screenshot: screenshots/tinkercad.jpg

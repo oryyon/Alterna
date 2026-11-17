@@ -36,6 +36,8 @@ sources:
 - https://www.kdevelop.org/
 - https://invent.kde.org/kdevelop/kdevelop
 - https://www.wikidata.org/wiki/Q468841
+- https://commons.wikimedia.org/wiki/File:Kdevelop--breeze_dark_theme.png
 confidence:
   details.install_size_mb: auto
   alternatives: manual
+screenshot: screenshots/kdevelop.jpg

@@ -38,8 +38,10 @@ sources:
 - https://wiki.mumble.info/wiki/Main_Page
 - https://github.com/mumble-voip/mumble
 - https://www.wikidata.org/wiki/Q748932
+- https://commons.wikimedia.org/wiki/File:Mumble-1.3.0-lite.png
 confidence:
   details.first_release_year: auto
   details.install_size_mb: auto
   alternatives: manual
 logo: logos/mumble.svg
+screenshot: screenshots/mumble.jpg

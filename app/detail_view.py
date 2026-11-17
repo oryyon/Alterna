@@ -6,14 +6,17 @@ Lista de alternative e clickabilă (navigare în lanț).
 
 from __future__ import annotations
 
+from pathlib import Path
+
 from PySide6.QtCore import Qt, QUrl, Signal
-from PySide6.QtGui import QDesktopServices
+from PySide6.QtGui import QDesktopServices, QPixmap
 from PySide6.QtWidgets import (QFrame, QGridLayout, QHBoxLayout, QLabel,
                                QScrollArea, QVBoxLayout, QWidget)
 
 from .confidence import ConfidenceBadge, field_label
 from .db import PLATFORM_LABELS
 from .installed import comanda_instalare, linkuri_instalare
+from .paths import screenshots_dir
 from .widgets import (AppCard, IconLabel, LinkLabel, installed_source_label,
                       license_badges, make_badge, source_label)
 
@@ -174,6 +177,27 @@ class DetailView(QScrollArea):
         box_layout.addWidget(legend)
         return box
 
+    def _screenshot_block(self, app: dict) -> QWidget | None:
+        """Captura de ecran a aplicației (din Wikimedia, sursă verificabilă).
+
+        Imaginea e a unui terț: apare cu linkul către fișierul original, ca
+        utilizatorul să poată verifica autorul și licența.
+        """
+        cale = app.get("screenshot")
+        if not cale:
+            return None
+        fișier = screenshots_dir() / Path(cale).name
+        if not fișier.exists():
+            return None
+        pixmap = QPixmap(str(fișier))
+        if pixmap.isNull():
+            return None
+        imagine = QLabel()
+        imagine.setPixmap(pixmap.scaledToWidth(
+            min(520, pixmap.width()), Qt.SmoothTransformation))
+        imagine.setProperty("screenshot", "true")
+        return imagine
+
     def show_app(self, app: dict, show_indicators: dict[str, bool],
                  installed=None) -> None:
         # Reconstruim conținutul la fiecare navigare
@@ -209,6 +233,11 @@ class DetailView(QScrollArea):
         info.addLayout(tags_row)
         header.addLayout(info, 1)
         layout.addLayout(header)
+
+        # --- Captura de ecran (dacă există, cu sursa vizibilă) ---------------
+        captura = self._screenshot_block(app)
+        if captura is not None:
+            layout.addWidget(captura)
 
         # --- Fapte: 5 carduri separate (sec. 13), cu sursa citată (sec. 8) ----
         facts = QGridLayout()

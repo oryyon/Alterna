@@ -39,7 +39,9 @@ sources:
 - https://www.digikam.org/
 - https://projects.kde.org/projects/extragear/graphics/digikam/digikam-software-compilation/repository
 - https://www.wikidata.org/wiki/Q1050872
+- https://commons.wikimedia.org/wiki/File:DigiKam_7.6.0_screenshot.png
 confidence:
   details.first_release_year: auto
   details.install_size_mb: auto
   alternatives: manual
+screenshot: screenshots/digikam.jpg

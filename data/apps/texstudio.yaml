@@ -37,6 +37,8 @@ sources:
 - https://texstudio.org/
 - https://github.com/texstudio-org/texstudio
 - https://www.wikidata.org/wiki/Q2398140
+- https://commons.wikimedia.org/wiki/File:Texstudio_Screenshot.png
 confidence:
   details.install_size_mb: auto
   alternatives: manual
+screenshot: screenshots/texstudio.jpg

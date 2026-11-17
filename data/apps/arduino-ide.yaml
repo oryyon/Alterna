@@ -36,6 +36,8 @@ indicators:
 sources:
 - https://www.arduino.cc/en/Main/Software
 - https://www.wikidata.org/wiki/Q55080330
+- https://commons.wikimedia.org/wiki/File:Ide-2-overview.png
 confidence:
   details.install_size_mb: auto
   alternatives: manual
+screenshot: screenshots/arduino-ide.jpg

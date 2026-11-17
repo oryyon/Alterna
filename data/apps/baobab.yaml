@@ -34,6 +34,8 @@ sources:
 - https://wiki.gnome.org/Apps/Baobab
 - https://gitlab.gnome.org/GNOME/baobab.git
 - https://www.wikidata.org/wiki/Q1792893
+- https://commons.wikimedia.org/wiki/File:GNOME_Disk_Usage_Analyser_47.png
 confidence:
   details.install_size_mb: auto
   alternatives: manual
+screenshot: screenshots/baobab.jpg

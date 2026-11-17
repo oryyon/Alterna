@@ -35,6 +35,8 @@ sources:
 - https://apps.gnome.org/Epiphany
 - https://gitlab.gnome.org/GNOME/epiphany.git
 - https://www.wikidata.org/wiki/Q167784
+- https://commons.wikimedia.org/wiki/File:GNOME_Web_48.png
 confidence:
   details.first_release_year: auto
   alternatives: manual
+screenshot: screenshots/gnome-web.jpg

@@ -35,8 +35,10 @@ sources:
 - https://www.codeblocks.org/
 - https://sf.net/p/codeblocks/code/
 - https://www.wikidata.org/wiki/Q835824
+- https://commons.wikimedia.org/wiki/File:CodeBlocks_8.02.png
 confidence:
   details.first_release_year: auto
   details.install_size_mb: auto
   alternatives: manual
 logo: logos/codeblocks.svg
+screenshot: screenshots/codeblocks.jpg

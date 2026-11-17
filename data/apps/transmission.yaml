@@ -36,8 +36,10 @@ sources:
 - https://transmissionbt.com/
 - https://github.com/transmission/transmission
 - https://www.wikidata.org/wiki/Q875055
+- https://commons.wikimedia.org/wiki/File:Transmission_2.94_on_Fedora_32.png
 confidence:
   details.first_release_year: auto
   details.install_size_mb: auto
   alternatives: manual
 logo: logos/transmission.svg
+screenshot: screenshots/transmission.jpg

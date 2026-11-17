@@ -39,6 +39,7 @@ sources:
 - https://www.mifi.no/losslesscut/
 - https://github.com/mifi/lossless-cut
 - https://www.wikidata.org/wiki/Q104771861
+- https://commons.wikimedia.org/wiki/File:Screenshot_LosslessCut.png
 confidence:
   alternatives: manual
 features:
@@ -53,3 +54,4 @@ features:
   gpu: 'no'
   export_formate: partial
   open_source: free
+screenshot: screenshots/losslesscut.jpg

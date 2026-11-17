@@ -37,7 +37,9 @@ sources:
 - https://wiki.gnome.org/Apps/EasyTAG
 - https://gitlab.gnome.org/GNOME/easytag
 - https://www.wikidata.org/wiki/Q1278359
+- https://commons.wikimedia.org/wiki/File:Easytag_screenshot_2.1.9.png
 confidence:
   details.first_release_year: auto
   details.install_size_mb: auto
   alternatives: manual
+screenshot: screenshots/easytag.jpg

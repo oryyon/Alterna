@@ -38,6 +38,8 @@ sources:
 - https://bluefish.openoffice.nl
 - https://sf.net/p/bluefish/code/
 - https://www.wikidata.org/wiki/Q651027
+- https://commons.wikimedia.org/wiki/File:Bluefish_%28text_editor%29.png
 confidence:
   details.install_size_mb: auto
   alternatives: manual
+screenshot: screenshots/bluefish.jpg

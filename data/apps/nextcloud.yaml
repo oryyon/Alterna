@@ -37,7 +37,9 @@ sources:
 - https://nextcloud.com/
 - https://github.com/nextcloud/server
 - https://www.wikidata.org/wiki/Q25874683
+- https://commons.wikimedia.org/wiki/File:File-Nextcloud_File_Manager_Screenshot.png
 confidence:
   details.first_release_year: auto
   alternatives: manual
 logo: logos/nextcloud.svg
+screenshot: screenshots/nextcloud.jpg

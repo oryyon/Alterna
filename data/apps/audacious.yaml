@@ -39,7 +39,9 @@ sources:
 - https://audacious-media-player.org/
 - https://github.com/audacious-media-player/audacious
 - https://www.wikidata.org/wiki/Q758685
+- https://commons.wikimedia.org/wiki/File:Audacious_4.5_screenshot.webp
 confidence:
   details.first_release_year: auto
   details.install_size_mb: auto
   alternatives: manual
+screenshot: screenshots/audacious.jpg

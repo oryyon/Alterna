@@ -35,6 +35,8 @@ sources:
 - https://www.qemu.org/
 - https://git.qemu.org/qemu.git
 - https://www.wikidata.org/wiki/Q624699
+- https://commons.wikimedia.org/wiki/File:QEMU_6.2_screenshot.png
 logo: logos/qemu.svg
 confidence:
   alternatives: manual
+screenshot: screenshots/qemu.jpg

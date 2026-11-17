@@ -34,6 +34,8 @@ sources:
 - https://www.netsurf-browser.org
 - https://github.com/netsurf/netsurf
 - https://www.wikidata.org/wiki/Q1185648
+- https://commons.wikimedia.org/wiki/File:NetSurf.png
 confidence:
   details.install_size_mb: auto
   alternatives: manual
+screenshot: screenshots/netsurf.jpg

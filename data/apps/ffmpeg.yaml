@@ -39,8 +39,10 @@ sources:
 - https://ffmpeg.org
 - https://git.ffmpeg.org/ffmpeg.git
 - https://www.wikidata.org/wiki/Q847465
+- https://commons.wikimedia.org/wiki/File:FFmpeg_7.1_screenshot.webp
 confidence:
   details.first_release_year: auto
   details.install_size_mb: auto
   alternatives: manual
 logo: logos/ffmpeg.svg
+screenshot: screenshots/ffmpeg.jpg

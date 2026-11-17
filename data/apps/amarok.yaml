@@ -36,6 +36,8 @@ sources:
 - https://amarok.kde.org/
 - https://github.com/KDE/amarok
 - https://www.wikidata.org/wiki/Q185037
+- https://commons.wikimedia.org/wiki/File:KDE4_-_Amarok_2.png
 confidence:
   details.first_release_year: auto
   alternatives: manual
+screenshot: screenshots/amarok.jpg

@@ -35,23 +35,35 @@ class TestVerificareSurse:
         monkeypatch.setattr(ci, "github_json", lambda url, token="": None)
         assert ci.verifica_repo("nope/nope") == {}
 
-    def test_pachet_existent_in_arhiva(self):
+    def test_pachet_existent_in_arhiva(self, tmp_path):
+        """Index injectat — testul nu depinde de listele APT de pe masina."""
         import complete_indicators as ci
 
-        rezultat = ci.verifica_pachet("gimp")
+        index = tmp_path / ("archive.ubuntu.com_ubuntu_dists_noble_"
+                            "main_binary-amd64_Packages")
+        index.write_text("Package: gimp\nVersion: 2.10.38\n\n", encoding="utf-8")
+        rezultat = ci.verifica_pachet("gimp", tmp_path)
         assert rezultat.get("in_ubuntu_repos") is True
 
-    def test_pachet_inexistent(self):
+    def test_pachet_inexistent(self, tmp_path):
         import complete_indicators as ci
 
-        assert ci.verifica_pachet("pachet-inexistent-xyz") == {}
+        index = tmp_path / ("archive.ubuntu.com_ubuntu_dists_noble_"
+                            "main_binary-amd64_Packages")
+        index.write_text("Package: altceva\n", encoding="utf-8")
+        assert ci.verifica_pachet("pachet-inexistent-xyz", tmp_path) == {}
 
-    def test_aplica_scrie_doar_valori_verificate(self, monkeypatch):
+    def test_aplica_scrie_doar_valori_verificate(self, monkeypatch, tmp_path):
         import complete_indicators as ci
 
+        index = tmp_path / ("archive.ubuntu.com_ubuntu_dists_noble_"
+                            "main_binary-amd64_Packages")
+        index.write_text("Package: gimp\n", encoding="utf-8")
         monkeypatch.setattr(ci, "github_json", lambda url, token="": None)
         rezultat = ci.aplica({"sources": []},
-                             {"github_repo": "x/y", "ubuntu_package": "gimp"})
+                             {"github_repo": "x/y", "ubuntu_package": "gimp"},
+                             liste=tmp_path)
+        # sursa inaccesibilă -> nicio valoare; sursa verificabilă -> valoare
         assert "stars" not in rezultat
         assert rezultat.get("in_ubuntu_repos") is True
 

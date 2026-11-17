@@ -62,9 +62,13 @@ def verifica_repo(repo: str, token: str = "") -> dict:
     return rezultat
 
 
-def verifica_pachet(pachet: str) -> dict:
-    """Pachetul exista in arhiva Ubuntu?"""
-    for fișier in Path("/var/lib/apt/lists").glob(
+def verifica_pachet(pachet: str, liste: Path | None = None) -> dict:
+    """Pachetul exista in arhiva Ubuntu?
+
+    `liste` permite injectarea unui index (testele nu depind de masina).
+    """
+    radacina = liste or Path("/var/lib/apt/lists")
+    for fișier in radacina.glob(
             "archive.ubuntu.com_ubuntu_dists_noble_*_binary-amd64_Packages"):
         text = fișier.read_text(encoding="utf-8", errors="replace")
         if re.search(rf"^Package: {re.escape(pachet)}$", text, re.M):
@@ -90,7 +94,8 @@ def surse_din_ai(app: dict, model: str = "") -> dict:
     return {k: v for k, v in date.items() if v}
 
 
-def aplica(app: dict, surse: dict, token: str = "") -> dict:
+def aplica(app: dict, surse: dict, token: str = "",
+           liste: Path | None = None) -> dict:
     """Verifica sursele si intoarce valorile confirmate."""
     rezultat = {}
     repo = str(surse.get("github_repo") or "")
@@ -100,7 +105,7 @@ def aplica(app: dict, surse: dict, token: str = "") -> dict:
             rezultat.update(verifica_repo(repo, token))
     pachet = str(surse.get("ubuntu_package") or "")
     if pachet:
-        rezultat.update(verifica_pachet(pachet))
+        rezultat.update(verifica_pachet(pachet, liste))
     site = str(surse.get("website") or "")
     if site and site not in (app.get("sources") or []):
         rezultat["website"] = site

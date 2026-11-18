@@ -16,7 +16,11 @@ permissions:
 
 jobs:
   appimage:
-    runs-on: ubuntu-latest
+    # Runner FIXAT, nu „ubuntu-latest”: bundle-ul PyInstaller se leagă de
+    # glibc-ul runnerului, iar „latest” a sărit pe ubuntu-26.04 (glibc 2.43),
+    # producând pachete ce nu pornesc pe Ubuntu 24.04 (glibc 2.39).
+    # Construim pe 24.04 → compatibil cu Ubuntu 24.04+, Debian 13, Fedora 40+.
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
 
@@ -63,6 +67,27 @@ jobs:
           dpkg-deb --extract dist/*.deb /tmp/debtest
           QT_QPA_PLATFORM=offscreen /tmp/debtest/opt/alterna/alterna --version
           QT_QPA_PLATFORM=offscreen /tmp/debtest/opt/alterna/alterna --selftest
+
+      - name: Verificare compatibilitate glibc
+        # Bundle-ul PyInstaller se leagă de glibc-ul runnerului. Dacă ar cere
+        # o versiune mai nouă decât ținta (2.39 = Ubuntu 24.04), pachetul nu
+        # ar porni pe sistemele țintă („GLIBC_2.43 not found”) — deci nu
+        # publicăm nimic. Verificarea e aici, nu la utilizator.
+        run: |
+          set -euo pipefail
+          LIB=$(find /tmp/debtest/opt/alterna/_internal -name 'libglib-2.0.so.0' -print -quit)
+          if [ -z "$LIB" ]; then
+            echo "Eroare: libglib-2.0.so.0 nu e in bundle" >&2
+            exit 1
+          fi
+          MAX=$(strings "$LIB" | grep -oE '^GLIBC_2\.[0-9]+$' | sort -V | tail -1)
+          MINOR=$(echo "$MAX" | sed 's/GLIBC_2\.//')
+          echo "bundle-ul cere ${MAX}; tinta e GLIBC_2.39 (Ubuntu 24.04)"
+          if [ "$MINOR" -gt 39 ]; then
+            echo "Eroare: bundle-ul cere ${MAX}, mai nou decat tinta GLIBC_2.39" >&2
+            exit 1
+          fi
+          echo "Compatibilitate glibc: OK (${MAX})"
 
       - name: Verificare consistență versiune
         # Versiunea din metadata pachetului trebuie să coincidă cu cea

@@ -47,6 +47,14 @@
   <update_contact>alterna_AT_github.com</update_contact>
 
   <releases>
+    <release version="0.1.10" date="2026-11-18">
+      <description>
+        <p>Pachetele sunt construite din nou pe Ubuntu 24.04: versiunea
+        0.1.9 cerea glibc 2.43 și nu pornea pe Ubuntu 24.04.</p>
+        <p>Workflow-ul fixează runnerul și verifică, înainte de publicare, că
+        bundle-ul nu cere o versiune de glibc mai nouă decât ținta.</p>
+      </description>
+    </release>
     <release version="0.1.9" date="2026-11-18">
       <description>
         <p>Butonul „Actualizează catalogul acum” funcționează într-o instalare

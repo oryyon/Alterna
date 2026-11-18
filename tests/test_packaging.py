@@ -92,6 +92,23 @@ def test_release_workflow_builds_both_packages():
     assert "*.AppImage" in text
 
 
+def test_release_workflow_fixeaza_runnerul():
+    """Runnerul release-ului trebuie fixat, nu „ubuntu-latest”.
+
+    Bundle-ul PyInstaller se leagă de glibc-ul runnerului. „ubuntu-latest” a
+    sărit pe ubuntu-26.04 (glibc 2.43), iar pachetele construite acolo nu
+    porneau pe Ubuntu 24.04 (glibc 2.39) — „ImportError: GLIBC_2.43 not
+    found”. Construim pe 24.04, ca ținta să rămână compatibilă.
+    """
+    text = (ROOT / ".github" / "workflows" / "release.yml").read_text(encoding="utf-8")
+    assert "runs-on: ubuntu-latest" not in text, (
+        "release-ul nu trebuie construit pe „ubuntu-latest”: bundle-ul se "
+        "leagă de glibc-ul runnerului și ar deveni incompatibil cu sistemele "
+        "mai vechi")
+    assert "runs-on: ubuntu-24.04" in text, (
+        "release-ul trebuie construit pe ubuntu-24.04 (glibc 2.39)")
+
+
 def test_deb_dependencies_exist_on_target_system():
     """Dependențele declarate trebuie să existe în arhiva Ubuntu 24.04.
 

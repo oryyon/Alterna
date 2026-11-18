@@ -240,6 +240,24 @@ def test_appstream_are_istoricul_releaseurilor():
         f"release-ul curent {din_app} nu e în metadata ({versiuni})"
 
 
+def test_appstream_are_un_singur_bloc_releases():
+    """AppStream cere un singur element <releases>.
+
+    Un bloc duplicat (rămas de la o editare) e invalid pentru validatori și
+    poate face ca un release să apară de două ori în istoric.
+    """
+    import xml.etree.ElementTree as ET
+
+    arbore = ET.parse(PACKAGING / "org.alterna.app.appdata.xml").getroot()
+    blocuri = arbore.findall("releases")
+    assert len(blocuri) == 1, (
+        f"metadata-ul are {len(blocuri)} blocuri <releases>; AppStream cere "
+        f"unul singur")
+    versiuni = [r.get("version") for r in blocuri[0].iter("release")]
+    assert len(versiuni) == len(set(versiuni)), \
+        f"istoricul are release-uri duplicate: {versiuni}"
+
+
 def test_deb_control_fields_are_valid():
     """Controlul Debian trebuie să conțină câmpurile obligatorii."""
     text = (PACKAGING / "build_deb.sh").read_text(encoding="utf-8")

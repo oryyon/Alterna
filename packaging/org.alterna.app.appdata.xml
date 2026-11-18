@@ -47,6 +47,20 @@
   <update_contact>alterna_AT_github.com</update_contact>
 
   <releases>
+    <release version="0.1.8" date="2026-11-18">
+      <description>
+        <p>Dialogul de Setări are acum zonă de derulare: pe ecrane mici,
+        rândurile de jos nu se mai taie, iar butonul „Închide” rămâne
+        permanent vizibil.</p>
+        <p>Butonul „Actualizează catalogul acum” funcționează: anterior arunca
+        o excepție și afișa un mesaj tehnic în locul unui mesaj util.</p>
+        <p>Butoanele de instalare (APT, Snap, Flatpak) rămân lizibile la
+        trecerea cursorului — în unele teme textul devenea invizibil, de
+        aceeași culoare ca fundalul.</p>
+        <p>Textul casetelor drop-down nu mai este trunchiat: „Doar
+        neinstalate” apărea ca „Doar n...talate”.</p>
+      </description>
+    </release>
     <release version="0.1.7" date="2026-11-17">
       <description>
         <p>Pagina web a catalogului, publicată pe GitHub Pages: se generează din
@@ -108,13 +122,6 @@
         <p>Dependențe Debian corectate pentru Ubuntu 24.04.</p>
       </description>
     </release>
-    <release version="0.1.0" date="2026-11-14">
-      <description>
-        <p>Prima versiune distribuibilă: 100 de aplicații în catalog.</p>
-      </description>
-    </release>
-  </releases>
-  <releases>
     <release version="0.1.0" date="2026-11-14">
       <description>
         <p>Prima versiune distribuibilă: 100 de aplicații în catalog.</p>

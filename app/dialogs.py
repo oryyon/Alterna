@@ -21,6 +21,7 @@ from . import links
 from .ai import (CLAUDE_DEFAULT_MODEL, OLLAMA_DEFAULT_MODEL, ClaudeClient,
                  OllamaClient, extract_yaml, validate_proposal)
 from .net import clear_threads, run_in_thread
+from .paths import user_catalog_path, user_data_dir
 from .theme import THEMES
 from .widgets import ComboBox
 
@@ -224,23 +225,38 @@ class SettingsDialog(QDialog):
             self.resize(self.width(), disponibil)
 
     def _update_catalog(self) -> None:
-        """Descarcă catalogul nou de la release-ul public și îl aplică."""
-        from .catalog_update import (UpdateError, apply_catalog,
-                                     download_catalog)
+        """Descarcă catalogul nou de la release-ul public și îl aplică.
+
+        Descarcarea merge în directorul de date al utilizatorului: într-o
+        instalare de sistem (`.deb` în `/opt`, AppImage) directorul aplicației
+        e read-only, iar scrierea acolo ar arunca „Permission denied".
+        """
+        from .catalog_update import (UpdateError, download_catalog,
+                                     install_catalog)
 
         self.update_btn.setEnabled(False)
         self.update_status.setText("Se descarcă catalogul…")
 
         def _done(path):
             try:
-                backup = apply_catalog(path, self.catalog.db_path)
+                final, backup = install_catalog(path, self.catalog.db_path,
+                                                user_catalog_path())
             except UpdateError as exc:
                 self.update_status.setText(f"✗ {exc}")
                 self.update_btn.setEnabled(True)
                 return
-            self.update_status.setText(
-                f"✓ Catalog actualizat (backup: {backup.name}). "
-                f"Reia aplicația pentru a vedea datele noi.")
+            if backup is not None:
+                mesaj = (f"✓ Catalog actualizat (backup: {backup.name}). "
+                         f"Reia aplicația pentru a vedea datele noi.")
+            else:
+                mesaj = (f"✓ Catalog actualizat pentru utilizatorul tău "
+                         f"({final}). Reia aplicația pentru a vedea datele noi.")
+            # fisierul descarcat temporar nu mai e necesar
+            try:
+                Path(path).unlink(missing_ok=True)
+            except OSError:
+                pass
+            self.update_status.setText(mesaj)
             self.update_btn.setEnabled(True)
 
         def _failed(message: str) -> None:
@@ -248,8 +264,11 @@ class SettingsDialog(QDialog):
             self.update_btn.setEnabled(True)
 
         def _work():
-            target = Path(self.catalog.db_path).parent / "catalog-nou.db"
-            return download_catalog(target)
+            target_dir = user_data_dir()
+            target_dir.mkdir(parents=True, exist_ok=True)
+            # se descarca sub alt nume: catalogul deja instalat ramane
+            # neatins pana cand verificam amprenta
+            return download_catalog(target_dir, filename="catalog-nou.db")
 
         run_in_thread(self, _work, _done, _failed)
 

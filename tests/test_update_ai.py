@@ -414,8 +414,10 @@ class TestImporturiDialoguri:
         from app import dialogs
 
         assert hasattr(dialogs, "Path"), "Path nu e importat în app/dialogs.py"
-        țintă = dialogs.Path(catalog.db_path).parent / "catalog-nou.db"
-        assert țintă.name == "catalog-nou.db"
+        # Ținta descărcării e directorul de date al utilizatorului: într-o
+        # instalare de sistem, lângă aplicație, scrierea nu e permisă.
+        assert hasattr(dialogs, "user_data_dir")
+        assert hasattr(dialogs, "user_catalog_path")
 
     def test_salvarea_propunerii_are_path_importat(self):
         """Aceeași verificare pentru salvarea propunerii AI."""

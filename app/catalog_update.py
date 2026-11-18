@@ -119,8 +119,14 @@ def check_schema(db_path: Path) -> int:
     return version
 
 
-def download_catalog(dest_dir: Path, timeout: int = 60) -> Path:
-    """Descarcă catalogul + amprenta, verifică amprenta, întoarce calea."""
+def download_catalog(dest_dir: Path, timeout: int = 60,
+                     filename: str | None = None) -> Path:
+    """Descarcă catalogul + amprenta, verifică amprenta, întoarce calea.
+
+    `filename` permite descărcarea sub alt nume (ex. „catalog-nou.db”), ca
+    să nu suprascriem catalogul deja instalat înainte de a-l înlocui.
+    """
+    nume = filename or links.CATALOG_ASSET
     release = latest_release(timeout=timeout)
     if not release["catalog_url"]:
         raise UpdateError(
@@ -132,7 +138,7 @@ def download_catalog(dest_dir: Path, timeout: int = 60) -> Path:
             f"fără ea catalogul nu poate fi verificat, deci nu e descărcat.")
 
     dest_dir.mkdir(parents=True, exist_ok=True)
-    catalog_path = dest_dir / links.CATALOG_ASSET
+    catalog_path = dest_dir / nume
     checksum_path = dest_dir / links.CATALOG_CHECKSUM_ASSET
     try:
         http_download(release["catalog_url"], catalog_path, timeout=timeout)
@@ -149,18 +155,61 @@ def download_catalog(dest_dir: Path, timeout: int = 60) -> Path:
 
 
 def apply_catalog(new_db: Path, current_db: Path) -> Path:
-    """Înlocuiește catalogul local cu cel descărcat, păstrând un backup.
+    """Inlocuieste catalogul local cu cel descarcat, pastrand un backup.
 
-    Returnează calea fișierului de backup.
+    Returneaza calea fisierului de backup.
     """
     if not new_db.exists():
-        raise UpdateError("Catalogul descărcat lipsește.")
+        raise UpdateError("Catalogul descarcat lipseste.")
     backup = current_db.with_suffix(current_db.suffix + BACKUP_SUFFIX)
-    if current_db.exists():
-        shutil.copy2(current_db, backup)
     try:
+        if current_db.exists():
+            shutil.copy2(current_db, backup)
         shutil.copy2(new_db, current_db)
+    except PermissionError as exc:
+        # Catalogul original e salvat in backup; nu l-am stricat.
+        # Mesajul e pentru om: fara tehnicala ("Errno 13"), cu ce s-a
+        # intamplat si ce putem face.
+        raise UpdateError(
+            f"nu ai drept de scriere in {current_db.parent} - catalogul "
+            f"aplicatiei e intr-un director de sistem. Actualizarea se va "
+            f"aplica in directorul tau de date.") from exc
     except OSError as exc:
-        # catalogul original e salvat în backup; nu l-am stricat
         raise UpdateError(f"Catalogul nou n-a putut fi copiat: {exc}") from exc
     return backup
+
+
+def install_catalog(new_db: Path, current_db: Path,
+                    user_db: Path) -> tuple[Path, Path | None]:
+    """Instaleaza catalogul descarcat acolo unde utilizatorul poate scrie.
+
+    Intr-o instalare de sistem (`.deb` in `/opt`, AppImage extras in `/tmp`),
+    catalogul inclus e **read-only** pentru utilizator: atunci actualizarea se
+    aplica in directorul de date al utilizatorului, iar aplicatia il prefera
+    la pornire (vezi `paths.resolve_catalog_path`).
+
+    Returneaza `(calea_finala, backup)`; backupul e `None` cand catalogul a
+    fost instalat in directorul utilizatorului (nu inlocuim nimic).
+    """
+    if not new_db.exists():
+        raise UpdateError("Catalogul descarcat lipseste.")
+    if new_db.resolve() == current_db.resolve():
+        # deja e la destinatie - nu copiem un fisier peste el insusi
+        return current_db, None
+    if new_db.resolve() == user_db.resolve():
+        # descarcat direct in directorul utilizatorului: e deja instalat
+        return user_db, None
+    try:
+        backup = apply_catalog(new_db, current_db)
+    except UpdateError:
+        # directorul curent nu e scrisibil (instalare de sistem): incercam
+        # directorul utilizatorului, unde scrierea e intotdeauna permisa.
+        try:
+            user_db.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(new_db, user_db)
+        except OSError as exc:
+            raise UpdateError(
+                f"Catalogul a fost descarcat, dar nu poate fi instalat: {exc}. "
+                f"Verifica permisiunile in {user_db.parent}.") from exc
+        return user_db, None
+    return current_db, backup

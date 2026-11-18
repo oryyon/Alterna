@@ -19,7 +19,8 @@ from PySide6.QtWidgets import QApplication, QMessageBox
 
 from .db import Catalog, CatalogError
 from .main_window import MainWindow
-from .paths import default_catalog_path, logos_dir, resource_root
+from .paths import (default_catalog_path, logos_dir, resolve_catalog_path,
+                    resource_root, user_catalog_path)
 from .theme import apply_theme
 from .version import APP_NAME, VERSION
 
@@ -32,6 +33,11 @@ def run_selftest(db_path: Path) -> int:
     """
     print(f"resurse: {resource_root()}")
     print(f"catalog: {db_path} (există: {db_path.exists()})")
+    if user_catalog_path().exists():
+        print(f"copie de utilizator: {user_catalog_path()}")
+    else:
+        print(f"director de date: {user_catalog_path().parent} "
+              f"(fără copie locală)")
 
     if not db_path.exists():
         print("REZULTAT: EROARE — catalogul lipseste")
@@ -78,17 +84,20 @@ def run_selftest(db_path: Path) -> int:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Alterna — alternative software, offline")
-    parser.add_argument("--db", type=Path,
-                        default=default_catalog_path(),
-                        help="calea către catalog.db (implicit: catalogul inclus în aplicație)")
+    parser.add_argument("--db", type=Path, default=None,
+                        help="calea către catalog.db (implicit: copia din "
+                             "directorul de date al utilizatorului, sau "
+                             "catalogul inclus în aplicație)")
     parser.add_argument("--selftest", action="store_true",
                         help="verifică resursele incluse și afișează un raport, apoi iese")
     parser.add_argument("--version", action="version",
                         version=f"{APP_NAME} {VERSION}")
     args = parser.parse_args()
 
+    db_path = resolve_catalog_path(args.db)
+
     if args.selftest:
-        return run_selftest(args.db)
+        return run_selftest(db_path)
 
     app = QApplication(sys.argv)
     app.setApplicationName(APP_NAME)
@@ -96,7 +105,7 @@ def main() -> int:
     app.setOrganizationName(APP_NAME)
 
     try:
-        catalog = Catalog(args.db)
+        catalog = Catalog(db_path)
     except CatalogError as exc:
         QMessageBox.critical(None, "Alterna — catalog lipsă", str(exc))
         return 1

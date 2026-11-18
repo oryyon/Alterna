@@ -28,6 +28,44 @@ def test_default_catalog_path_points_to_catalog_db():
     assert path.parent == paths.resource_root()
 
 
+def test_directorul_de_date_respecta_xdg(monkeypatch, tmp_path):
+    """Directorul de date al utilizatorului respectă XDG_DATA_HOME."""
+    monkeypatch.setenv("XDG_DATA_HOME", str(tmp_path))
+    assert paths.user_data_dir() == tmp_path / "Alterna"
+    assert paths.user_catalog_path() == tmp_path / "Alterna" / "catalog.db"
+
+
+def test_directorul_de_date_fara_xdg(monkeypatch, tmp_path):
+    """Fără XDG_DATA_HOME se folosește ~/.local/share."""
+    monkeypatch.delenv("XDG_DATA_HOME", raising=False)
+    monkeypatch.setattr(paths.Path, "home", classmethod(lambda cls: tmp_path))
+    assert paths.user_data_dir() == tmp_path / ".local" / "share" / "Alterna"
+
+
+def test_catalogul_utilizatorului_are_preferenta(monkeypatch, tmp_path):
+    """La pornire, aplicația folosește copia din directorul utilizatorului.
+
+    Astfel o instalare de sistem (read-only în /opt) poate fi actualizată
+    fără privilegii: actualizarea se aplică în directorul de date.
+    """
+    monkeypatch.setenv("XDG_DATA_HOME", str(tmp_path))
+    monkeypatch.setattr(paths, "default_catalog_path",
+                        lambda: tmp_path / "bundled" / "catalog.db")
+    assert paths.resolve_catalog_path() == tmp_path / "bundled" / "catalog.db"
+
+    copie = paths.user_catalog_path()
+    copie.parent.mkdir(parents=True, exist_ok=True)
+    copie.write_text("x", encoding="utf-8")
+    assert paths.resolve_catalog_path() == copie
+
+
+def test_calea_explicita_are_preferenta(monkeypatch, tmp_path):
+    """`--db` explicit câștigă peste tot."""
+    monkeypatch.setenv("XDG_DATA_HOME", str(tmp_path))
+    explicit = tmp_path / "alt.db"
+    assert paths.resolve_catalog_path(explicit) == explicit
+
+
 def test_logos_dir_contains_logos():
     directory = paths.logos_dir()
     assert directory.name == "logos"

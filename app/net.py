@@ -100,6 +100,12 @@ class NetworkTask(QObject):
             result = self._func(*self._args, **self._kwargs)
         except NetworkError as exc:
             self.failed.emit(str(exc))
+        except OSError as exc:
+            # Erorile de sistem (fără permisiuni, disc plin) ajung la om ca
+            # mesaj — nu ca „[Errno 13] Permission denied”, pe care nimeni nu
+            # poate să-l folosească.
+            detaliu = exc.strerror or str(exc)
+            self.failed.emit(f"Eroare de sistem: {detaliu}")
         except Exception as exc:  # noqa: BLE001 — erori neașteptate, dar UI-ul nu trebuie să cadă
             self.failed.emit(f"Eroare neașteptată: {exc}")
         else:

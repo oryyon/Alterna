@@ -8,16 +8,24 @@ Trei bug-uri raportate de utilizator, cu capturi:
 
 from __future__ import annotations
 
+import shutil
+from pathlib import Path
+
 import pytest
 from PySide6.QtCore import QSettings
 from PySide6.QtGui import QColor
 from PySide6.QtWidgets import QPushButton, QScrollArea
 
 
+def _setari(tmp_path) -> QSettings:
+    """Setări izolate (QSettings în fișier temporar)."""
+    return QSettings(str(Path(tmp_path) / "test.ini"), QSettings.IniFormat)
+
+
 @pytest.fixture
 def setari(tmp_path):
     """Setări izolate (QSettings în fișier temporar)."""
-    return QSettings(str(tmp_path / "test.ini"), QSettings.IniFormat)
+    return _setari(tmp_path)
 
 
 @pytest.fixture
@@ -60,32 +68,136 @@ class TestCatalogAtribut:
         """Fără `self.catalog`, butonul de refresh arunca AttributeError."""
         assert dialog.catalog is catalog
 
-    def test_refreshul_afiseaza_eroarea_de_retea_nu_attributeerror(
-            self, dialog, catalog, monkeypatch, qapp):
-        """Butonul de refresh trebuie să ajungă la eroul de rețea, nu la
-        un AttributeError (regula: o excepție reală, mesaj real)."""
-        from app import catalog_update
-
-        def fake_download(dest_dir, timeout=60):
-            raise catalog_update.UpdateError("catalog de test — fără rețea")
-
-        monkeypatch.setattr(catalog_update, "download_catalog", fake_download)
-        dialog.update_btn.click()
-        for _ in range(100):
-            qapp.processEvents()
-            if "✗" in dialog.update_status.text():
-                break
-            qapp.processEvents()
-        assert "✗" in dialog.update_status.text(), (
-            f"statusul nu arată eroarea: {dialog.update_status.text()!r}")
-        assert "attribute" not in dialog.update_status.text().lower(), (
-            "AttributeError — atributul `catalog` lipsește din dialog")
-        assert "catalog de test" in dialog.update_status.text()
-
     def test_propunerea_ai_are_nevoie_de_catalog(self, dialog):
         """„Propune o aplicație cu AI…" folosește tot `self.catalog`."""
         assert dialog.catalog is not None
         assert hasattr(dialog.catalog, "db_path")
+
+
+class TestActualizareCatalog:
+    """„Actualizează catalogul acum” trebuie să meargă într-o instalare de sistem.
+
+    Raportat de utilizator: în pachetul instalat (`/opt/alterna/_internal/`)
+    butonul arunca „[Errno 13] Permission denied: …/catalog-nou.db” — catalogul
+    aplicației e într-un director de sistem, read-only pentru utilizator.
+    """
+
+    @staticmethod
+    def _asteapta(dialog, qapp, semn="✓", treceri=200):
+        for _ in range(treceri):
+            qapp.processEvents()
+            if semn in dialog.update_status.text():
+                return dialog.update_status.text()
+            qapp.processEvents()
+        return dialog.update_status.text()
+
+    def test_descarcarea_merge_in_directorul_utilizatorului(
+            self, dialog, catalog, monkeypatch, tmp_path, qapp):
+        """Ținta descărcării e directorul de date, nu directorul aplicației."""
+        from app import catalog_update
+
+        monkeypatch.setenv("XDG_DATA_HOME", str(tmp_path / "xdg"))
+        captat = {}
+
+        def fake_download(dest_dir, timeout=60, filename=None):
+            captat["dest"] = Path(dest_dir)
+            return Path(dest_dir) / "catalog.db"
+
+        monkeypatch.setattr(catalog_update, "download_catalog", fake_download)
+        dialog.update_btn.click()
+        self._asteapta(dialog, qapp, "✓")
+        assert captat.get("dest") == tmp_path / "xdg" / "Alterna", (
+            f"descărcarea a mers în {captat.get('dest')}, nu în directorul "
+            f"de date al utilizatorului")
+
+    def test_instalare_de_sistem_scrie_in_directorul_utilizatorului(
+            self, catalog, tmp_path, monkeypatch, qapp):
+        """Cu un catalog de sistem read-only, actualizarea merge la utilizator."""
+        import os
+        import shutil
+
+        if os.geteuid() == 0:
+            pytest.skip("rulând ca root, permisiunile nu se aplică")
+
+        from app import catalog_update
+        from app.db import Catalog
+
+        sistem = tmp_path / "opt" / "alterna" / "_internal"
+        sistem.mkdir(parents=True)
+        catalog_sistem = sistem / "catalog.db"
+        shutil.copy2(catalog.db_path, catalog_sistem)
+        os.chmod(sistem, 0o555)
+        monkeypatch.setenv("XDG_DATA_HOME", str(tmp_path / "xdg"))
+
+        descarcat = tmp_path / "descarcare" / "catalog.db"
+        descarcat.parent.mkdir(parents=True)
+        shutil.copy2(catalog.db_path, descarcat)
+
+        utilizator = tmp_path / "xdg" / "Alterna" / "catalog.db"
+        final, backup = catalog_update.install_catalog(
+            descarcat, catalog_sistem, utilizator)
+        os.chmod(sistem, 0o755)
+
+        assert final == utilizator, "actualizarea trebuie să ajungă la utilizator"
+        assert backup is None, "nu înlocuim nimic în directorul de sistem"
+        assert utilizator.exists()
+        assert Catalog(utilizator).app_count == catalog.app_count
+
+    def test_mesajul_nu_are_eroare_tehnica(self, catalog, tmp_path, monkeypatch,
+                                            qapp):
+        """Utilizatorul nu trebuie să vadă „[Errno 13] Permission denied”."""
+        import os
+
+        if os.geteuid() == 0:
+            pytest.skip("rulând ca root, permisiunile nu se aplică")
+
+        from app import catalog_update
+        from app.db import Catalog
+        from app.dialogs import SettingsDialog
+
+        sistem = tmp_path / "opt" / "_internal"
+        sistem.mkdir(parents=True)
+        catalog_sistem = sistem / "catalog.db"
+        shutil.copy2(catalog.db_path, catalog_sistem)
+        os.chmod(sistem, 0o555)
+        monkeypatch.setenv("XDG_DATA_HOME", str(tmp_path / "xdg"))
+
+        cat = Catalog(catalog_sistem)
+        dialog = SettingsDialog(_setari(tmp_path), cat)
+        descarcat = tmp_path / "descarcare" / "catalog.db"
+        descarcat.parent.mkdir(parents=True)
+        shutil.copy2(catalog.db_path, descarcat)
+
+        def fake_download(dest_dir, timeout=60, filename=None):
+            return descarcat
+
+        monkeypatch.setattr(catalog_update, "download_catalog", fake_download)
+        dialog.update_btn.click()
+        mesaj = self._asteapta(dialog, qapp, "✓")
+        os.chmod(sistem, 0o755)
+        cat.close()
+        dialog.close()
+
+        assert "Errno" not in mesaj and "Permission denied" not in mesaj, (
+            f"mesajul conține o eroare tehnică: {mesaj!r}")
+        assert "utilizatorul tău" in mesaj, (
+            f"mesajul nu spune că actualizarea s-a aplicat local: {mesaj!r}")
+
+    def test_eroarea_de_retea_e_prietenenoasa(self, dialog, catalog,
+                                              monkeypatch, qapp):
+        """Eroarea de rețea se arată ca mesaj, nu ca excepție tehnică."""
+        from app import catalog_update
+
+        def fake_download(dest_dir, timeout=60, filename=None):
+            raise catalog_update.UpdateError("catalog de test — fără rețea")
+
+        monkeypatch.setattr(catalog_update, "download_catalog", fake_download)
+        dialog.update_btn.click()
+        mesaj = self._asteapta(dialog, qapp, "✗")
+        assert "✗" in mesaj, f"statusul nu arată eroarea: {mesaj!r}"
+        assert "attribute" not in mesaj.lower(), (
+            "AttributeError — atributul `catalog` lipsește din dialog")
+        assert "catalog de test" in mesaj
 
 
 def _luminozitate(culoare) -> float:

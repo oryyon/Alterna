@@ -47,6 +47,16 @@
   <update_contact>alterna_AT_github.com</update_contact>
 
   <releases>
+    <release version="0.1.9" date="2026-11-18">
+      <description>
+        <p>Butonul „Actualizează catalogul acum” funcționează într-o instalare
+        de sistem: catalogul se aplică în directorul de date al utilizatorului
+        (~/.local/share/Alterna), fără permisiuni de administrator, iar
+        aplicația îl preferă la pornire.</p>
+        <p>Mesajele de eroare sunt pentru om: „Eroare de sistem: …” în loc de
+        „[Errno 13] Permission denied”.</p>
+      </description>
+    </release>
     <release version="0.1.8" date="2026-11-18">
       <description>
         <p>Dialogul de Setări are acum zonă de derulare: pe ecrane mici,

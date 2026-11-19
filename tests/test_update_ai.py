@@ -405,6 +405,20 @@ class TestDialoguri:
 class TestImporturiDialoguri:
     """Dialogurile trebuie să folosească doar nume importate (Pylance)."""
 
+    def test_adresa_implicita_ollama_e_ipv4(self):
+        """Ollama ascultă pe IPv4 — „localhost” poate rezolva la ::1.
+
+        Pe un sistem unde „localhost” rezolvă mai întâi la `::1` (IPv6),
+        conexiunea la Ollama nu e refuzată, ci expiră: utilizatorul vedea
+        „serverul Ollama nu răspunde” deși serverul funcționa. Adresa
+        implicită e deci IP-ul literal, nu numele de gazdă.
+        """
+        from app.ai import OLLAMA_DEFAULT_URL
+
+        assert OLLAMA_DEFAULT_URL.startswith("http://127.0.0.1:"), (
+            f"adresa implicită e {OLLAMA_DEFAULT_URL}; trebuie IPv4 literal")
+        assert "localhost" not in OLLAMA_DEFAULT_URL
+
     def test_actualizarea_catalogului_nu_arunca_name_error(self, catalog):
         """Regresie: `Path` lipsea din importuri — butonul arunca NameError.
 

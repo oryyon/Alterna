@@ -26,7 +26,13 @@ import urllib.request
 from .net import USER_AGENT, NetworkError
 
 #: Adresa implicită a serverului Ollama (local, implicit pe portul 11434).
-OLLAMA_DEFAULT_URL = "http://localhost:11434"
+#:
+#: Folosim **127.0.0.1**, nu „localhost”: Ollama ascultă doar pe IPv4, iar
+#: pe multe sisteme „localhost” rezolvă mai întâi la `::1` (IPv6). Atunci
+#: conexiunea nu e refuzată, ci **expiră** — și utilizatorul vede „serverul
+#: Ollama nu răspunde” deși serverul e perfect funcțional. Adresa rămâne
+#: editabilă în Setări, pentru servere la altă adresă/port.
+OLLAMA_DEFAULT_URL = "http://127.0.0.1:11434"
 
 #: Modelul implicit sugerat pentru Ollama (un model de cod, bun la YAML).
 OLLAMA_DEFAULT_MODEL = "llama3.1"

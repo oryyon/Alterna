@@ -18,8 +18,9 @@ from PySide6.QtWidgets import (QCheckBox, QDialog, QFormLayout, QFrame,
                                QTextEdit, QVBoxLayout, QWidget)
 
 from . import links
-from .ai import (CLAUDE_DEFAULT_MODEL, OLLAMA_DEFAULT_MODEL, ClaudeClient,
-                 OllamaClient, extract_yaml, validate_proposal)
+from .ai import (CLAUDE_DEFAULT_MODEL, OLLAMA_DEFAULT_MODEL,
+                  OLLAMA_DEFAULT_URL, ClaudeClient, OllamaClient,
+                  extract_yaml, validate_proposal)
 from .net import clear_threads, run_in_thread
 from .paths import user_catalog_path, user_data_dir
 from .theme import THEMES
@@ -153,7 +154,7 @@ class SettingsDialog(QDialog):
         # --- Configurarea Ollama (local, fără cheie) --------------------------------
         self.ai_ollama_url = QLineEdit(
             settings.value(AI_OLLAMA_URL_KEY, "", type=str))
-        self.ai_ollama_url.setPlaceholderText("http://localhost:11434")
+        self.ai_ollama_url.setPlaceholderText(OLLAMA_DEFAULT_URL)
         ollama_form = QFormLayout()
         ollama_form.addRow("Adresa serverului", self.ai_ollama_url)
         layout.addLayout(ollama_form)
@@ -279,7 +280,7 @@ class SettingsDialog(QDialog):
         model = self.ai_ollama_model.text().strip() or OLLAMA_DEFAULT_MODEL
         if source == "ollama":
             url = self.ai_ollama_url.text().strip()
-            return OllamaClient(url or "http://localhost:11434", model)
+            return OllamaClient(url or OLLAMA_DEFAULT_URL, model)
         if source == "claude":
             key = self.ai_claude_key.text().strip()
             if not key:

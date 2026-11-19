@@ -124,6 +124,23 @@ def build_qss(theme: str) -> str:
         min-height: 28px;
     }}
     QLineEdit:focus, QComboBox:focus {{ border-color: {p['accent']}; }}
+    /* Editorul de text (propunerea AI): fără regulă, QTextEdit păstra
+       fundalul alb al stilului nativ, iar textul lua culoarea deschisă din
+       paletă → contrast 1.98:1, text ilizibil pe fundalul temei. */
+    QTextEdit, QPlainTextEdit {{
+        background: {p['bg_view']}; color: {p['text']};
+        border: 1px solid {p['border']}; border-radius: 5px;
+        selection-background-color: {p['accent']};
+    }}
+    /* Listele și arborii (lista de fișiere din dialogul „Salvează ca fișier…”):
+       itemele folosesc paleta, nu culoarea QWidget — deci au nevoie de
+       regulă proprie, cu text lizibil. */
+    QAbstractItemView {{ color: {p['text']}; }}
+    QListView, QTreeView, QTableView {{
+        background: {p['bg_view']}; color: {p['text']};
+        border: 1px solid {p['border']}; border-radius: 5px;
+        selection-background-color: {p['accent']};
+    }}
     QComboBox QAbstractItemView {{
         background: {p['bg_panel']}; color: {p['text']};
         border: 1px solid {p['border']}; selection-background-color: {p['accent']};

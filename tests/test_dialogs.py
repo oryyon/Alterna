@@ -392,3 +392,74 @@ class TestLmStudio:
         ):
             modele = LmStudioClient().loaded_models()
         assert modele == ["qwen/qwen3-8b"], modele
+
+
+class TestContrastText:
+    """Textul trebuie să fie lizibil în toate temele (WCAG AA = 4.5:1).
+
+    Raportat de utilizator: în fereastra „Propunere de aplicație (AI)” și în
+    cea de salvare, textul era ilizibil. Cauza: QTextEdit și view-urile nu aveau
+    regulă QSS, deci păstrau fundalul nativ (alb) și luau culoarea textului
+    din paletă (deschisă) → contrast 1.98:1 pe fundalul temei.
+    """
+
+    @staticmethod
+    def _luminozitate(culoare) -> float:
+        canaluri = []
+        for val in (culoare.redF(), culoare.greenF(), culoare.blueF()):
+            canaluri.append(val / 12.92 if val <= 0.03928
+                            else ((val + 0.055) / 1.055) ** 2.4)
+        return (0.2126 * canaluri[0] + 0.7152 * canaluri[1]
+                + 0.0722 * canaluri[2])
+
+    @classmethod
+    def _contrast(cls, c1, c2) -> float:
+        l1, l2 = cls._luminozitate(c1), cls._luminozitate(c2)
+        hi, lo = max(l1, l2), min(l1, l2)
+        return (hi + 0.05) / (lo + 0.05)
+
+    @classmethod
+    def _contrast_renderizat(cls, widget) -> float:
+        """Contrastul dintre fundal și text, măsurat din pixeli."""
+        imagine = widget.grab().toImage()
+        culori = {}
+        for x in range(imagine.width()):
+            for y in range(imagine.height()):
+                c = imagine.pixelColor(x, y)
+                cheie = (c.red(), c.green(), c.blue())
+                culori[cheie] = culori.get(cheie, 0) + 1
+        fundal = max(culori, key=lambda k: culori[k])
+        text = max(culori, key=lambda k: cls._contrast(QColor(*fundal),
+                                                      QColor(*k)))
+        return cls._contrast(QColor(*fundal), QColor(*text))
+
+    @pytest.mark.parametrize("tema", ["dark", "light", "ocean"])
+    def test_textul_din_widgeturi_are_contrast_suficient(self, qapp, tema):
+        from PySide6.QtWidgets import (QDialog, QListWidget, QTextEdit,
+                                       QTreeWidget, QTreeWidgetItem,
+                                       QVBoxLayout)
+        from app.theme import apply_theme
+
+        apply_theme(qapp, tema)
+        dialog = QDialog()
+        layout = QVBoxLayout(dialog)
+        editor = QTextEdit()
+        editor.setPlainText("id: sm-player\nname: SM Player")
+        lista = QListWidget()
+        lista.addItems(["Desktop", "Documents"])
+        arbore = QTreeWidget()
+        arbore.setHeaderLabels(["Name", "Size"])
+        arbore.addTopLevelItem(QTreeWidgetItem(["Documents", "12 aug"]))
+        for w in (editor, lista, arbore):
+            w.resize(320, 90)
+            layout.addWidget(w)
+        dialog.resize(340, 320)
+        dialog.show()
+        qapp.processEvents()
+
+        for w, nume in ((editor, "QTextEdit"), (lista, "QListWidget"),
+                        (arbore, "QTreeWidget")):
+            raport = self._contrast_renderizat(w)
+            assert raport >= 4.5, (
+                f"{tema}: {nume} are contrast {raport:.2f}:1 — text ilizibil")
+        dialog.close()

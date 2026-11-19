@@ -123,3 +123,23 @@ class TestValidari:
                 assert f.read_bytes()[:8].startswith(b"\x89PNG"), f.name
             elif f.suffix == ".jpg":
                 assert f.read_bytes()[:3] == b"\xff\xd8\xff", f.name
+
+    def test_campul_logo_din_yaml_exista_pe_disc(self):
+        """Câmpul `logo:` trebuie să indice un fișier prezent.
+
+        Altfel aplicația cade pe pictograma de rezervă (inițiale) fără să
+        apară niciun motiv în interfață.
+        """
+        from pathlib import Path
+
+        from ruamel.yaml import YAML
+
+        root = Path(__file__).resolve().parent.parent / "data"
+        yaml = YAML()
+        lipsa = []
+        for f in sorted((root / "apps").glob("*.yaml")):
+            app = yaml.load(f.read_text(encoding="utf-8"))
+            logo = app.get("logo")
+            if logo and not (root / logo).exists():
+                lipsa.append(f"{f.name}: {logo}")
+        assert not lipsa, "logo-uri lipsă de pe disc: " + ", ".join(lipsa)

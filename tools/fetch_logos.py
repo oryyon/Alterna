@@ -93,6 +93,8 @@ WIKIMEDIA = {
     "ssr": "Biglinux-Icons \u2013 simplescreenrecorder.svg",
     "vokoscreenng": "Breezeicons-apps-48-vokoscreen.svg",
     "wps": "Deepin Icon Theme \u2013 application-wps-office.wps.svg",
+    # logo-ul oficial al proiectului (GPL, autor: Charles Barcza)
+    "smplayer": "SMPlayer icon.png",
 }
 WIKIMEDIA_URL = "https://commons.wikimedia.org/wiki/Special:FilePath/{}?width=256"
 

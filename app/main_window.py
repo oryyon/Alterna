@@ -23,6 +23,7 @@ from .installed import (Installed, aplicatii_neacoperite,
                        detecteaza)
 from .links import NEW_ISSUE_URL
 from .theme import apply_theme
+from .version import VERSION
 from .widgets import AppCard, ComboBox, LinkLabel, empty_state
 
 MAX_COMPARE = 4  # limita e configurabilă / poate fi extinsă ulterior (sec. 14)
@@ -105,6 +106,12 @@ class MainWindow(QMainWindow):
         tb.setContentsMargins(10, 6, 10, 6)
         name = QLabel("◈ <b>Alterna</b> <span style='color:gray'>— descoperă alternative software</span>")
         tb.addWidget(name)
+        # Versiunea aplicației: vizibilă, dar discretă (nu ocupă loc de
+        # și nu cere un meniu „Despre").
+        versiune = QLabel(f"v{VERSION}")
+        versiune.setProperty("dim", "true")
+        versiune.setToolTip(f"Alterna {VERSION} — versiunea instalată")
+        tb.addWidget(versiune)
         tb.addStretch(1)
         propose = QPushButton("＋ Propune")
         propose.setToolTip("Propune o aplicație (deschide GitHub cu un template precompletat)")
@@ -280,6 +287,10 @@ class MainWindow(QMainWindow):
         right = QLabel("Offline • SQLite local")
         right.setProperty("dim", "true")
         self.status.addPermanentWidget(right)
+        # Versiunea instalată, în colțul din dreapta-al bară de stare.
+        versiune = QLabel(f"v{VERSION}")
+        versiune.setProperty("dim", "true")
+        self.status.addPermanentWidget(versiune)
 
     # ------------------------------------------------------------------ ajutătoare
     def _combo(self, items, on_change) -> ComboBox:

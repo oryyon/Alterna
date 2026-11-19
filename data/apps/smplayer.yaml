@@ -8,6 +8,7 @@ license: foss
 price: free
 developer: SMPlayer Team
 website: https://smplayer.info
+logo: logos/smplayer.png
 
 snap: smplayer
 platforms: [linux, windows, macos]

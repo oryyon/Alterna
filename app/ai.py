@@ -359,6 +359,21 @@ class ClaudeClient:
         return text
 
 
+def descriere_client(client) -> str:
+    """Descrie sursa AI folosită, pentru afișare în interfață.
+
+    De ex.: ``Ollama · model: qwen3:8b`` — utilizatorul vede mereu ce
+    backend și ce model au răspuns, fără să se uite în Setări.
+    """
+    if isinstance(client, OllamaClient):
+        return f"Ollama · model: {client.model}"
+    if isinstance(client, LmStudioClient):
+        return f"LM Studio · model: {client.model}"
+    if isinstance(client, ClaudeClient):
+        return f"Claude API · model: {client.model}"
+    return "sursă AI necunoscută"
+
+
 def user_prompt(request: str) -> str:
     """Cererea utilizatorului, încadrată ca sarcină de completare."""
     return (f"Propune o intrare de catalog pentru aplicația descrisă mai jos. "

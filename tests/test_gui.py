@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import pytest
+from PySide6.QtWidgets import QLabel
 
 from app.main_window import MAX_COMPARE, MainWindow
 
@@ -30,6 +31,26 @@ class TestStructura:
 
     def test_titlu_initial(self, window):
         assert window.list_title.text() == "Aplicații populare"
+
+
+class TestVersiuneVisible:
+    """Versiunea aplicației trebuie să fie vizibilă, fără să ocupe loc."""
+
+    def test_versiunea_apare_in_interfata(self, window):
+        from app.version import VERSION
+
+        etichete = [l.text() for l in window.findChildren(QLabel)]
+        assert any(f"v{VERSION}" in t for t in etichete), (
+            f"versiunea v{VERSION} nu apare în fereastră")
+
+    def test_versiunea_e_discreta(self, window):
+        """Eticheta versiunii e marcată „dim” (nu atrage atenția)."""
+        from app.version import VERSION
+
+        discrete = [l for l in window.findChildren(QLabel)
+                    if l.text() == f"v{VERSION}"
+                    and l.property("dim") == "true"]
+        assert discrete, "eticheta versiunii nu e marcată ca discretă"
 
 
 class TestFiltreCautare:

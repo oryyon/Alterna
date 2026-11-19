@@ -33,3 +33,15 @@ generează automat o pictogramă de rezervă cu inițiale.
 2. preferă o sursă care permite explicit utilizarea în acest context;
 3. documentează originea și atribuirea în commit-ul PR;
 4. nu copia un logo dintr-o sursă ale cărei condiții nu le înțelegi.
+
+## Atribuiri individuale
+
+Pentru logourile cu licență copyleft (nu CC0), atribuirea se face aici:
+
+- `smplayer.png` — logo-ul oficial al proiectului SMPlayer, preluat din
+  [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:SMPlayer_icon.png),
+  sursa originală fiind `src/icons-png/logo.png` din depozitul SMPlayer.
+  Licență: **GPL** (GNU General Public License); autor: **Charles Barcza**.
+  Logo-ul e folosit doar pentru identificare vizuală; drepturile de marcă
+  aparțin autorului.
+

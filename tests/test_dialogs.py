@@ -360,18 +360,18 @@ class TestLmStudio:
         dialog.ai_combo.setCurrentIndex(2)  # „Model local (LM Studio)”
         status = self._asteapta(dialog, qapp, "qwen/qwen3-8b")
         assert "qwen/qwen3-8b" in status, status
-        assert dialog.ai_ollama_model.text() == "qwen/qwen3-8b", (
-            f"câmpul Model arată {dialog.ai_ollama_model.text()!r}")
+        assert dialog.ai_lmstudio_model.text() == "qwen/qwen3-8b", (
+            f"câmpul Model arată {dialog.ai_lmstudio_model.text()!r}")
 
     def test_alegerea_manuala_nu_e_suprascrisa(self, dialog, qapp, monkeypatch):
         from app.ai import LmStudioClient
 
         monkeypatch.setattr(LmStudioClient, "loaded_models",
                             lambda self, timeout=5: ["qwen/qwen3-8b"])
-        dialog.ai_ollama_model.setText("qwen2.5-coder-3b-instruct")
+        dialog.ai_lmstudio_model.setText("qwen2.5-coder-3b-instruct")
         dialog.ai_combo.setCurrentIndex(2)
         self._asteapta(dialog, qapp, "qwen/qwen3-8b")
-        assert dialog.ai_ollama_model.text() == "qwen2.5-coder-3b-instruct", (
+        assert dialog.ai_lmstudio_model.text() == "qwen2.5-coder-3b-instruct", (
             "alegerea manuală a fost suprascrisă")
 
     def test_clientul_lmstudio_citeste_modelele_incarcate(self):
@@ -392,6 +392,118 @@ class TestLmStudio:
         ):
             modele = LmStudioClient().loaded_models()
         assert modele == ["qwen/qwen3-8b"], modele
+
+
+class TestModeleSeparate:
+    """Fiecare backend AI are modelul lui, în câmpul lui.
+
+    Un singur câmp „Model” era ambiguu: modelul Ollama nu e valid pentru
+    Claude, iar alegerea se pierdea la schimbarea sursei.
+    """
+
+    def test_exista_un_camp_pentru_fiecare_backend(self, dialog):
+        for nume in ("ai_ollama_model", "ai_lmstudio_model", "ai_claude_model"):
+            camp = getattr(dialog, nume)
+            assert camp is not None, f"câmpul {nume} lipsește"
+
+    def test_campoarele_sunt_independente(self, dialog):
+        dialog.ai_ollama_model.setText("qwen3:8b")
+        dialog.ai_lmstudio_model.setText("qwen/qwen3-8b")
+        dialog.ai_claude_model.setText("claude-sonnet-4-5")
+        assert dialog.ai_ollama_model.text() == "qwen3:8b"
+        assert dialog.ai_lmstudio_model.text() == "qwen/qwen3-8b"
+        assert dialog.ai_claude_model.text() == "claude-sonnet-4-5"
+
+    def test_se_salveaza_separat(self, dialog, setari):
+        from app.dialogs import (AI_MODEL_CLAUDE_KEY, AI_MODEL_LMSTUDIO_KEY,
+                                  AI_MODEL_OLLAMA_KEY)
+
+        dialog.ai_ollama_model.setText("qwen3:8b")
+        dialog.ai_lmstudio_model.setText("qwen/qwen3-8b")
+        dialog.ai_claude_model.setText("claude-opus-4-1")
+        dialog.accept()
+        assert setari.value(AI_MODEL_OLLAMA_KEY) == "qwen3:8b"
+        assert setari.value(AI_MODEL_LMSTUDIO_KEY) == "qwen/qwen3-8b"
+        assert setari.value(AI_MODEL_CLAUDE_KEY) == "claude-opus-4-1"
+
+    def test_migratie_din_cheia_veche(self, tmp_path, catalog, qapp):
+        """Valoarea din v0.1.13 (un singur câmp) ajunge în backendul potrivit."""
+        from app.dialogs import AI_MODEL_KEY, SettingsDialog
+
+        setari = _setari(tmp_path)
+        setari.setValue(AI_MODEL_KEY, "qwen3:8b")
+        d = SettingsDialog(setari, catalog)
+        try:
+            assert d.ai_ollama_model.text() == "qwen3:8b", (
+                "modelul vechi nu a migrat în câmpul Ollama")
+            assert d.ai_claude_model.text() != "qwen3:8b", (
+                "modelul Ollama a ajuns și în câmpul Claude")
+        finally:
+            d.close()
+            d.deleteLater()
+
+    def test_migratie_model_claude(self, tmp_path, catalog, qapp):
+        """Un model Claude salvat în cheia veche ajunge în câmpul Claude."""
+        from app.dialogs import AI_MODEL_KEY, SettingsDialog
+
+        setari = _setari(tmp_path)
+        setari.setValue(AI_MODEL_KEY, "claude-sonnet-4-5")
+        d = SettingsDialog(setari, catalog)
+        try:
+            assert d.ai_claude_model.text() == "claude-sonnet-4-5"
+            assert d.ai_ollama_model.text() != "claude-sonnet-4-5"
+        finally:
+            d.close()
+            d.deleteLater()
+
+    def test_sursa_claude_nu_foloseste_modelul_ollama(self, dialog):
+        """Alegerea backendului Claude folosește doar modelul Claude."""
+        from app.ai import ClaudeClient
+
+        dialog.ai_combo.setCurrentIndex(3)  # „Claude API — cheie proprie”
+        dialog.ai_claude_key.setText("sk-ant-test")
+        dialog.ai_ollama_model.setText("qwen3:8b")
+        dialog.ai_claude_model.setText("claude-opus-4-1")
+        client = dialog._ai_client()
+        assert isinstance(client, ClaudeClient)
+        assert client.model == "claude-opus-4-1", client.model
+
+    def test_doar_campul_sursei_alese_e_activ(self, dialog):
+        dialog.ai_combo.setCurrentIndex(2)  # LM Studio
+        assert dialog.ai_lmstudio_model.isEnabled()
+        assert not dialog.ai_ollama_model.isEnabled()
+        assert not dialog.ai_claude_model.isEnabled()
+        dialog.ai_combo.setCurrentIndex(3)  # Claude
+        assert dialog.ai_claude_model.isEnabled()
+        assert not dialog.ai_lmstudio_model.isEnabled()
+
+
+class TestSursaVizibilaInPropunere:
+    """Fereastra de propunere arată ce model a răspuns."""
+
+    def test_descrierea_clientului(self):
+        from app.ai import (ClaudeClient, LmStudioClient, OllamaClient,
+                            descriere_client)
+
+        assert descriere_client(OllamaClient(model="qwen3:8b")) == \
+            "Ollama · model: qwen3:8b"
+        assert descriere_client(LmStudioClient(model="qwen/qwen3-8b")) == \
+            "LM Studio · model: qwen/qwen3-8b"
+        assert descriere_client(ClaudeClient("sk-ant-x", "claude-opus-4-1")) == \
+            "Claude API · model: claude-opus-4-1"
+
+    def test_ferestrea_arata_modelul(self, dialog):
+        from app.ai import OllamaClient
+        from app.dialogs import AiProposalDialog
+
+        client = OllamaClient(model="qwen3:8b")
+        fereastra = AiProposalDialog(None, client, dialog.catalog)
+        try:
+            assert "Ollama" in fereastra.source_label.text()
+            assert "qwen3:8b" in fereastra.source_label.text()
+        finally:
+            fereastra.close()
+            fereastra.deleteLater()
 
 
 class TestContrastText:

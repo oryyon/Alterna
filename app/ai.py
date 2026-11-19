@@ -184,6 +184,25 @@ class OllamaClient:
             raise AiError(f"Răspuns invalid de la Ollama: {exc}") from exc
         return [m.get("name", "") for m in data.get("models") or [] if m.get("name")]
 
+    def loaded_models(self, timeout: int = 5) -> list[str]:
+        """Modelele **încărcate în memorie** acum (nu doar descărcate).
+
+        Ollama păstrează modelul în RAM cât timp e activ (keepalive); pot fi
+        mai multe simultan. Utilizatorul vrea ca aplicația să folosească
+        modelul pe care l-a încărcat el, nu unul implicit.
+        """
+        try:
+            request = urllib.request.Request(f"{self.base_url}/api/ps",
+                                             headers={"User-Agent": USER_AGENT})
+            with urllib.request.urlopen(request, timeout=timeout) as response:
+                data = json.loads(response.read().decode("utf-8"))
+        except (urllib.error.URLError, OSError):
+            # serverul nu răspunde: nu e o eroare, doar nu avem model încărcat
+            return []
+        except json.JSONDecodeError as exc:
+            raise AiError(f"Răspuns invalid de la Ollama: {exc}") from exc
+        return [m.get("name", "") for m in data.get("models") or [] if m.get("name")]
+
     def generate(self, prompt: str, timeout: int = 120,
                  system: str = PROPOSAL_SYSTEM_PROMPT) -> str:
         """Cere o completare modelului."""

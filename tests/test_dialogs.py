@@ -275,3 +275,54 @@ class TestButoaneInstalare:
             assert "color:" in linie[0], (
                 f"tema {tema}: regula hover nu declară `color` — "
                 f"textul poate deveni invizibil")
+
+
+class TestModelIncarcatOllama:
+    """Câmpul „Model” trebuie să arate modelul încărcat în Ollama.
+
+    Utilizatorul își alege modelul în Ollama; aplicația nu trebuie să impună
+    unul implicit (llama3.1), ci pe cel pe care l-a încărcat el.
+    """
+
+    @staticmethod
+    def _asteapta(dialog, qapp, semn, treceri=300):
+        for _ in range(treceri):
+            qapp.processEvents()
+            if semn in dialog.ai_status.text():
+                return dialog.ai_status.text()
+            qapp.processEvents()
+        return dialog.ai_status.text()
+
+    def test_campul_model_se_completeaza_cu_modelul_incarcat(
+            self, dialog, qapp, monkeypatch):
+        from app.ai import OllamaClient
+
+        monkeypatch.setattr(OllamaClient, "loaded_models",
+                            lambda self, timeout=5: ["qwen3:8b"])
+        dialog.ai_combo.setCurrentIndex(1)  # „Model local (Ollama)”
+        status = self._asteapta(dialog, qapp, "qwen3:8b")
+        assert "qwen3:8b" in status, status
+        assert dialog.ai_ollama_model.text() == "qwen3:8b", (
+            f"câmpul Model arată {dialog.ai_ollama_model.text()!r}")
+
+    def test_alegerea_manuala_nu_e_suprascrisa(
+            self, dialog, qapp, monkeypatch):
+        """Dacă utilizatorul scrie alt model, îl respectăm."""
+        from app.ai import OllamaClient
+
+        monkeypatch.setattr(OllamaClient, "loaded_models",
+                            lambda self, timeout=5: ["qwen3:8b"])
+        dialog.ai_ollama_model.setText("llama3.1:8b")
+        dialog.ai_combo.setCurrentIndex(1)
+        self._asteapta(dialog, qapp, "qwen3:8b")
+        assert dialog.ai_ollama_model.text() == "llama3.1:8b", (
+            "alegerea manuală a fost suprascrisă")
+
+    def test_fara_model_incarcat_se_explica(self, dialog, qapp, monkeypatch):
+        from app.ai import OllamaClient
+
+        monkeypatch.setattr(OllamaClient, "loaded_models",
+                            lambda self, timeout=5: [])
+        dialog.ai_combo.setCurrentIndex(1)
+        status = self._asteapta(dialog, qapp, "Nu e niciun model")
+        assert "Nu e niciun model încărcat" in status, status

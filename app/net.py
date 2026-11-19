@@ -112,8 +112,43 @@ class NetworkTask(QObject):
             self.finished.emit(result)
 
 
+class _TaskRunner(QObject):
+    """Rulează callback-urile în thread-ul UI (nu în thread-ul worker).
+
+    `task.finished` e emisă din thread-ul worker; un slot Python obișnuit
+    (fără QObject) s-ar executa ACOLO — iar actualizările de interfață
+    făcute din alt thread sunt comportament nedefinit (Qt chiar avertizează
+    „QObject::setParent: Cannot set parent, new parent is in a different
+    thread”). Ca QObject, acest runner trăiește în thread-ul UI, deci
+    conexiunea devine „queued” și callback-ul rulează corect în UI.
+    """
+
+    def __init__(self, parent, task, thread, on_success, on_error):
+        super().__init__(parent)
+        self._task = task
+        self._thread = thread
+        self._on_success = on_success
+        self._on_error = on_error
+
+    def succeeded(self, result) -> None:
+        self._on_success(result)
+        self._cleanup()
+
+    def failed(self, message: str) -> None:
+        self._on_error(message)
+        self._cleanup()
+
+    def _cleanup(self) -> None:
+        self._task.deleteLater()
+        try:
+            getattr(self.parent(), "_net_tasks", []).remove(
+                (self._task, self._thread))
+        except (AttributeError, ValueError):
+            pass
+
+
 def run_in_thread(parent, func, on_success, on_error, *args, **kwargs) -> None:
-    """Rulează `func` într-un thread; apelează on_success / on_error.
+    """Rulează `func` într-un thread; apelează on_success / on_error în UI.
 
     Thread-ul și task-ul sunt păstrate ca atribute pe `parent`, ca să nu
     fie colectate de garbage collector înainte de terminare (capcană clasică
@@ -122,17 +157,18 @@ def run_in_thread(parent, func, on_success, on_error, *args, **kwargs) -> None:
     task = NetworkTask(func, *args, **kwargs)
     thread = QThread()
     task.moveToThread(thread)
-    task.finished.connect(on_success)
-    task.failed.connect(on_error)
+    runner = _TaskRunner(parent, task, thread, on_success, on_error)
     thread.started.connect(task.run)
 
-    def _cleanup() -> None:
+    def _quit() -> None:
+        # `quit()` e thread-safe; `wait()` NU — de aceea nu îl apelăm aici
+        # (altfel Qt avertizează „Thread tried to wait on itself”).
         thread.quit()
-        thread.wait(2000)
 
-    task.finished.connect(_cleanup)
-    task.failed.connect(_cleanup)
-    thread.finished.connect(task.deleteLater)
+    task.finished.connect(runner.succeeded)
+    task.failed.connect(runner.failed)
+    task.finished.connect(_quit)
+    task.failed.connect(_quit)
 
     parent._net_tasks = getattr(parent, "_net_tasks", [])
     parent._net_tasks.append((task, thread))

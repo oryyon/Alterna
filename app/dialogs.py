@@ -161,6 +161,10 @@ class SettingsDialog(QDialog):
 
         self.ai_ollama_model = QLineEdit(
             settings.value(AI_MODEL_KEY, OLLAMA_DEFAULT_MODEL, type=str))
+        #: Ultimul model completat automat din serverul Ollama. Ne spune
+        #: dacă valoarea din câmp e alegerea utilizatorului (o respectăm)
+        #: sau una completată de noi (o re-completăm).
+        self._model_auto = ""
         model_form = QFormLayout()
         model_form.addRow("Model", self.ai_ollama_model)
         layout.addLayout(model_form)
@@ -285,7 +289,11 @@ class SettingsDialog(QDialog):
             key = self.ai_claude_key.text().strip()
             if not key:
                 return None
-            return ClaudeClient(key, model or CLAUDE_DEFAULT_MODEL)
+            # Dacă valoarea din câmp vine de la Ollama, nu e un model Claude.
+            model = self.ai_ollama_model.text().strip()
+            if not model or model in (self._model_auto, OLLAMA_DEFAULT_MODEL):
+                model = CLAUDE_DEFAULT_MODEL
+            return ClaudeClient(key, model)
         return None
 
     def _on_ai_source_changed(self) -> None:
@@ -301,10 +309,61 @@ class SettingsDialog(QDialog):
             self.ai_status.setText(
                 "Asistentul AI e dezactivat. Fără configurație, funcția "
                 "nu apare — nimic nu e trimis în rețea.")
-        elif source == "claude" and not self.ai_claude_key.text().strip():
-            self.ai_status.setText("Introdu cheia ta Claude API pentru a folosi sursa.")
+        elif source == "claude":
+            # Câmpul „Model” e comun; când vine de la Ollama, valoarea nu
+            # are sens pentru Claude (alt backend, alt model).
+            if not self.ai_claude_key.text().strip():
+                self.ai_status.setText(
+                    "Introdu cheia ta Claude API pentru a folosi sursa.")
+            elif self.ai_ollama_model.text().strip() in (
+                    "", self._model_auto, OLLAMA_DEFAULT_MODEL):
+                self.ai_ollama_model.setText(CLAUDE_DEFAULT_MODEL)
+                self.ai_status.setText(
+                    f"Model Claude: {CLAUDE_DEFAULT_MODEL}. Poți să-l schimbi.")
+            else:
+                self.ai_status.setText(
+                    f"Model Claude: {self.ai_ollama_model.text().strip()}.")
+        elif source == "ollama":
+            self.ai_status.setText("Se caută modelul încărcat în Ollama…")
+            self._incarca_modelul_incarcat()
         else:
             self.ai_status.setText("Apasă „Testează conexiunea” ca să verifici sursa.")
+
+    def _incarca_modelul_incarcat(self) -> None:
+        """Completează câmpul „Model” cu modelul încărcat acum în Ollama.
+
+        Utilizatorul își alege modelul în Ollama (îl încarcă din interfața lui
+        sau din Ollama Control); aplicația trebuie să folosească **acel**
+        model, nu unul implicit. Dacă a ales el alt model în câmp, îl
+        respectăm — nu suprascriem alegerea manuală.
+        """
+        client = self._ai_client()
+        if not isinstance(client, OllamaClient):
+            return
+
+        def _work():
+            return client.loaded_models()
+
+        def _done(modele: list[str]) -> None:
+            if not modele:
+                self.ai_status.setText(
+                    "Nu e niciun model încărcat în Ollama. Încarcă unul "
+                    "(ex.: `ollama run llama3.1`) sau alege un model mai jos.")
+                return
+            ales = self.ai_ollama_model.text().strip()
+            if not ales or ales == self._model_auto or ales == OLLAMA_DEFAULT_MODEL:
+                self._model_auto = modele[0]
+                self.ai_ollama_model.setText(modele[0])
+            self.ai_status.setText(
+                f"✓ Model încărcat în Ollama: {modele[0]}"
+                + (f" (și {', '.join(modele[1:3])})" if len(modele) > 1 else "")
+                + f" — se folosește „{self.ai_ollama_model.text().strip()}”.")
+
+        def _failed(message: str) -> None:
+            self.ai_status.setText(
+                f"Nu am putut citi modelele încărcate din Ollama: {message}")
+
+        run_in_thread(self, _work, _done, _failed)
 
     def _test_ai(self) -> None:
         """Verifică dacă sursa AI configurată răspunde."""
@@ -318,9 +377,15 @@ class SettingsDialog(QDialog):
         def _work():
             if isinstance(client, OllamaClient):
                 models = client.list_models()
-                return f"✓ Ollama răspunde. Modele disponibile: {len(models)}" + (
+                incarcate = client.loaded_models()
+                text = f"✓ Ollama răspunde. Modele disponibile: {len(models)}" + (
                     f" ({', '.join(models[:5])})" if models else
                     " — nu ai încă niciun model instalat (ex.: `ollama pull llama3.1`).")
+                if incarcate:
+                    text += f" Încărcat acum: {', '.join(incarcate)}."
+                else:
+                    text += " Niciun model încărcat acum."
+                return text
             return "✓ Cheia Claude e acceptată de client (verificarea reală "
             "are loc la generare)."
 

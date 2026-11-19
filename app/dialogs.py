@@ -18,9 +18,10 @@ from PySide6.QtWidgets import (QCheckBox, QDialog, QFormLayout, QFrame,
                                QTextEdit, QVBoxLayout, QWidget)
 
 from . import links
-from .ai import (CLAUDE_DEFAULT_MODEL, OLLAMA_DEFAULT_MODEL,
-                  OLLAMA_DEFAULT_URL, ClaudeClient, OllamaClient,
-                  extract_yaml, validate_proposal)
+from .ai import (CLAUDE_DEFAULT_MODEL, LMSTUDIO_DEFAULT_MODEL,
+                  LMSTUDIO_DEFAULT_URL, OLLAMA_DEFAULT_MODEL,
+                  OLLAMA_DEFAULT_URL, ClaudeClient, LmStudioClient,
+                  OllamaClient, extract_yaml, validate_proposal)
 from .net import clear_threads, run_in_thread
 from .paths import user_catalog_path, user_data_dir
 from .theme import THEMES
@@ -38,12 +39,14 @@ INDICATOR_OPTIONS = [
 AI_SOURCE_KEY = "ai_source"
 AI_MODEL_KEY = "ai_model"
 AI_OLLAMA_URL_KEY = "ai_ollama_url"
+AI_LMSTUDIO_URL_KEY = "ai_lmstudio_url"
 AI_CLAUDE_KEY_KEY = "ai_claude_key"
 
-#: Surse AI disponibile: "none" | "ollama" | "claude".
+#: Surse AI disponibile: "none" | "ollama" | "lmstudio" | "claude".
 AI_SOURCES = [
     ("none", "Dezactivat (implicit)"),
     ("ollama", "Model local (Ollama)"),
+    ("lmstudio", "Model local (LM Studio)"),
     ("claude", "Claude API — cheie proprie"),
 ]
 
@@ -159,12 +162,22 @@ class SettingsDialog(QDialog):
         ollama_form.addRow("Adresa serverului", self.ai_ollama_url)
         layout.addLayout(ollama_form)
 
+        # --- Configurarea LM Studio (local, fără cheie) -----------------------------
+        self.ai_lmstudio_url = QLineEdit(
+            settings.value(AI_LMSTUDIO_URL_KEY, "", type=str))
+        self.ai_lmstudio_url.setPlaceholderText(LMSTUDIO_DEFAULT_URL)
+        lmstudio_form = QFormLayout()
+        lmstudio_form.addRow("Adresa serverului LM Studio", self.ai_lmstudio_url)
+        layout.addLayout(lmstudio_form)
+
+        # Câmpul „Model” e comun tuturor surselor locale; valoarea pentru
+        # fiecare backend e completată automat din serverul lui.
         self.ai_ollama_model = QLineEdit(
             settings.value(AI_MODEL_KEY, OLLAMA_DEFAULT_MODEL, type=str))
-        #: Ultimul model completat automat din serverul Ollama. Ne spune
-        #: dacă valoarea din câmp e alegerea utilizatorului (o respectăm)
-        #: sau una completată de noi (o re-completăm).
-        self._model_auto = ""
+        #: Modelul completat automat, per backend — ne spune dacă valoarea
+        #: din câmp e alegerea utilizatorului (o respectăm) sau una completată
+        #: de noi (o re-completăm).
+        self._model_auto: dict[str, str] = {}
         model_form = QFormLayout()
         model_form.addRow("Model", self.ai_ollama_model)
         layout.addLayout(model_form)
@@ -285,22 +298,31 @@ class SettingsDialog(QDialog):
         if source == "ollama":
             url = self.ai_ollama_url.text().strip()
             return OllamaClient(url or OLLAMA_DEFAULT_URL, model)
+        if source == "lmstudio":
+            url = self.ai_lmstudio_url.text().strip()
+            return LmStudioClient(url or LMSTUDIO_DEFAULT_URL, model)
         if source == "claude":
             key = self.ai_claude_key.text().strip()
             if not key:
                 return None
-            # Dacă valoarea din câmp vine de la Ollama, nu e un model Claude.
+            # Dacă valoarea din câmp vine de la Ollama/LM Studio, nu e un
+            # model Claude.
             model = self.ai_ollama_model.text().strip()
-            if not model or model in (self._model_auto, OLLAMA_DEFAULT_MODEL):
+            if not model or model in self._model_auto.values():
                 model = CLAUDE_DEFAULT_MODEL
             return ClaudeClient(key, model)
         return None
+
+    def _model_auto_fara_backend(self, valoare: str) -> bool:
+        """Valoarea din câmp provine dintr-o completare automată (nu din user)?"""
+        return bool(valoare) and valoare in self._model_auto.values()
 
     def _on_ai_source_changed(self) -> None:
         """Activează doar ce e folosibil pentru sursa aleasă."""
         source = self.ai_combo.currentData()
         folosibil = source != "none"
         self.ai_ollama_url.setEnabled(source == "ollama")
+        self.ai_lmstudio_url.setEnabled(source == "lmstudio")
         self.ai_ollama_model.setEnabled(folosibil)
         self.ai_claude_key.setEnabled(source == "claude")
         self.ai_test_btn.setEnabled(folosibil)
@@ -310,13 +332,12 @@ class SettingsDialog(QDialog):
                 "Asistentul AI e dezactivat. Fără configurație, funcția "
                 "nu apare — nimic nu e trimis în rețea.")
         elif source == "claude":
-            # Câmpul „Model” e comun; când vine de la Ollama, valoarea nu
-            # are sens pentru Claude (alt backend, alt model).
+            # Câmpul „Model” e comun; când vine de la Ollama/LM Studio,
+            # valoarea nu are sens pentru Claude (alt backend, alt model).
             if not self.ai_claude_key.text().strip():
                 self.ai_status.setText(
                     "Introdu cheia ta Claude API pentru a folosi sursa.")
-            elif self.ai_ollama_model.text().strip() in (
-                    "", self._model_auto, OLLAMA_DEFAULT_MODEL):
+            elif self._model_auto_fara_backend(self.ai_ollama_model.text().strip()):
                 self.ai_ollama_model.setText(CLAUDE_DEFAULT_MODEL)
                 self.ai_status.setText(
                     f"Model Claude: {CLAUDE_DEFAULT_MODEL}. Poți să-l schimbi.")
@@ -325,21 +346,25 @@ class SettingsDialog(QDialog):
                     f"Model Claude: {self.ai_ollama_model.text().strip()}.")
         elif source == "ollama":
             self.ai_status.setText("Se caută modelul încărcat în Ollama…")
-            self._incarca_modelul_incarcat()
+            self._incarca_modelul_incarcat("ollama")
+        elif source == "lmstudio":
+            self.ai_status.setText("Se caută modelul încărcat în LM Studio…")
+            self._incarca_modelul_incarcat("lmstudio")
         else:
             self.ai_status.setText("Apasă „Testează conexiunea” ca să verifici sursa.")
 
-    def _incarca_modelul_incarcat(self) -> None:
-        """Completează câmpul „Model” cu modelul încărcat acum în Ollama.
+    def _incarca_modelul_incarcat(self, backend: str) -> None:
+        """Completează câmpul „Model” cu modelul încărcat acum în server.
 
-        Utilizatorul își alege modelul în Ollama (îl încarcă din interfața lui
-        sau din Ollama Control); aplicația trebuie să folosească **acel**
-        model, nu unul implicit. Dacă a ales el alt model în câmp, îl
-        respectăm — nu suprascriem alegerea manuală.
+        Utilizatorul își alege modelul în Ollama/LM Studio (îl încarcă din
+        interfața lui); aplicația trebuie să folosească **acel** model, nu unul
+        implicit. Dacă a ales el alt model în câmp, îl respectăm — nu
+        suprascriem alegerea manuală.
         """
         client = self._ai_client()
-        if not isinstance(client, OllamaClient):
+        if not isinstance(client, (OllamaClient, LmStudioClient)):
             return
+        nume_backend = "Ollama" if isinstance(client, OllamaClient) else "LM Studio"
 
         def _work():
             return client.loaded_models()
@@ -347,21 +372,23 @@ class SettingsDialog(QDialog):
         def _done(modele: list[str]) -> None:
             if not modele:
                 self.ai_status.setText(
-                    "Nu e niciun model încărcat în Ollama. Încarcă unul "
-                    "(ex.: `ollama run llama3.1`) sau alege un model mai jos.")
+                    f"Nu e niciun model încărcat în {nume_backend}. Încarcă unul "
+                    f"(ex.: `ollama run llama3.1`) sau alege un model mai jos.")
                 return
             ales = self.ai_ollama_model.text().strip()
-            if not ales or ales == self._model_auto or ales == OLLAMA_DEFAULT_MODEL:
-                self._model_auto = modele[0]
+            if (not ales
+                    or self._model_auto_fara_backend(ales)
+                    or ales == OLLAMA_DEFAULT_MODEL):
+                self._model_auto[backend] = modele[0]
                 self.ai_ollama_model.setText(modele[0])
             self.ai_status.setText(
-                f"✓ Model încărcat în Ollama: {modele[0]}"
+                f"✓ Model încărcat în {nume_backend}: {modele[0]}"
                 + (f" (și {', '.join(modele[1:3])})" if len(modele) > 1 else "")
                 + f" — se folosește „{self.ai_ollama_model.text().strip()}”.")
 
         def _failed(message: str) -> None:
             self.ai_status.setText(
-                f"Nu am putut citi modelele încărcate din Ollama: {message}")
+                f"Nu am putut citi modelele încărcate din {nume_backend}: {message}")
 
         run_in_thread(self, _work, _done, _failed)
 
@@ -381,6 +408,17 @@ class SettingsDialog(QDialog):
                 text = f"✓ Ollama răspunde. Modele disponibile: {len(models)}" + (
                     f" ({', '.join(models[:5])})" if models else
                     " — nu ai încă niciun model instalat (ex.: `ollama pull llama3.1`).")
+                if incarcate:
+                    text += f" Încărcat acum: {', '.join(incarcate)}."
+                else:
+                    text += " Niciun model încărcat acum."
+                return text
+            if isinstance(client, LmStudioClient):
+                models = client.list_models()
+                incarcate = client.loaded_models()
+                text = f"✓ LM Studio răspunde. Modele disponibile: {len(models)}" + (
+                    f" ({', '.join(models[:5])})" if models else
+                    " — nu ai niciun model în server.")
                 if incarcate:
                     text += f" Încărcat acum: {', '.join(incarcate)}."
                 else:
@@ -423,6 +461,8 @@ class SettingsDialog(QDialog):
         self.settings.setValue(AI_SOURCE_KEY, self.ai_combo.currentData())
         self.settings.setValue(AI_MODEL_KEY, self.ai_ollama_model.text().strip())
         self.settings.setValue(AI_OLLAMA_URL_KEY, self.ai_ollama_url.text().strip())
+        self.settings.setValue(AI_LMSTUDIO_URL_KEY,
+                               self.ai_lmstudio_url.text().strip())
         self.settings.setValue(AI_CLAUDE_KEY_KEY, self.ai_claude_key.text().strip())
         super().accept()
 

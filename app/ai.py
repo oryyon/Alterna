@@ -147,6 +147,11 @@ def _post_json(url: str, payload: dict, headers: dict[str, str],
         raise AiError(f"Serverul a răspuns {exc.code}: {detail}") from exc
     except urllib.error.URLError as exc:
         raise AiError(f"Nu s-a putut contacta serverul: {exc.reason}") from exc
+    except TimeoutError as exc:
+        # Modelele mari pe CPU pot minute bune; mesajul spune ce s-a întâmplat.
+        raise AiError(
+            "Serverul nu a răspuns în timp — modelul e mare sau CPU-ul e lent. "
+            "Poți încerca un model mai mic.") from exc
     except OSError as exc:
         raise AiError(f"Eroare de rețea: {exc}") from exc
     except json.JSONDecodeError as exc:
@@ -203,7 +208,7 @@ class OllamaClient:
             raise AiError(f"Răspuns invalid de la Ollama: {exc}") from exc
         return [m.get("name", "") for m in data.get("models") or [] if m.get("name")]
 
-    def generate(self, prompt: str, timeout: int = 120,
+    def generate(self, prompt: str, timeout: int = 600,
                  system: str = PROPOSAL_SYSTEM_PROMPT) -> str:
         """Cere o completare modelului."""
         payload = {
@@ -216,6 +221,104 @@ class OllamaClient:
         text = data.get("response")
         if not text:
             raise AiError("Ollama a răspuns fără text.")
+        return text
+
+
+#: Adresa implicită a serverului local LM Studio (portul standard 1234).
+#:
+#: IPv4 literal, ca la Ollama: „localhost” poate rezolva la ::1, iar serverul
+#: LM Studio ascultă pe IPv4.
+LMSTUDIO_DEFAULT_URL = "http://127.0.0.1:1234"
+
+#: Modelul implicit pentru LM Studio (nimic implicit — se completează din
+#: serverul local, ca la Ollama).
+LMSTUDIO_DEFAULT_MODEL = ""
+
+
+class LmStudioClient:
+    """Client pentru serverul local al LM Studio (API compatibil cu OpenAI).
+
+    LM Studio expune două interfețe:
+      - `/v1/...` — compatibilă cu OpenAI (chat completions, listare modele);
+      - `/api/v1/models` — internă, cu `loaded_instances` — de acolo știm
+        care modele sunt **încărcate în RAM** (nu doar descărcate pe disc).
+    """
+
+    def __init__(self, base_url: str = LMSTUDIO_DEFAULT_URL,
+                 model: str = LMSTUDIO_DEFAULT_MODEL):
+        self.base_url = base_url.rstrip("/")
+        self.model = model
+
+    def is_available(self, timeout: int = 3) -> bool:
+        """Serverul LM Studio răspunde?"""
+        try:
+            request = urllib.request.Request(f"{self.base_url}/v1/models",
+                                             headers={"User-Agent": USER_AGENT})
+            with urllib.request.urlopen(request, timeout=timeout) as response:
+                return response.status == 200
+        except (urllib.error.URLError, OSError):
+            return False
+
+    def _get_json(self, url: str, timeout: int = 5) -> dict:
+        """GET JSON de la serverul LM Studio."""
+        try:
+            request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+            with urllib.request.urlopen(request, timeout=timeout) as response:
+                return json.loads(response.read().decode("utf-8"))
+        except urllib.error.HTTPError as exc:
+            detail = exc.read().decode("utf-8", "replace")[:300]
+            raise AiError(f"LM Studio a răspuns {exc.code}: {detail}") from exc
+        except urllib.error.URLError as exc:
+            raise AiError(f"Serverul LM Studio nu răspunde: {exc.reason}") from exc
+        except TimeoutError as exc:
+            raise AiError("Serverul LM Studio nu a răspuns în timp.") from exc
+        except json.JSONDecodeError as exc:
+            raise AiError(f"Răspuns invalid de la LM Studio: {exc}") from exc
+
+    def list_models(self, timeout: int = 5) -> list[str]:
+        """Modelele disponibile în server (descărcate sau încărcate)."""
+        data = self._get_json(f"{self.base_url}/v1/models", timeout)
+        return [m.get("id", "") for m in data.get("data") or [] if m.get("id")]
+
+    def loaded_models(self, timeout: int = 5) -> list[str]:
+        """Modelele **încărcate în RAM** acum.
+
+        API-ul intern (`/api/v1/models`) dă `loaded_instances` gol pentru
+        modelele doar descărcate; `/v1/models` nu distinge încărcat de
+        descărcat.
+        """
+        try:
+            data = self._get_json(f"{self.base_url}/api/v1/models", timeout)
+        except AiError:
+            # serverul nu răspunde: nu e o eroare, doar nu avem model încărcat
+            return []
+        return [m.get("key", "") for m in data.get("models") or []
+                if m.get("loaded_instances") and m.get("key")]
+
+    def generate(self, prompt: str, timeout: int = 600,
+                 system: str = PROPOSAL_SYSTEM_PROMPT) -> str:
+        """Cere o completare modelului (API compatibil cu OpenAI)."""
+        payload = {
+            "model": self.model,
+            "messages": [
+                {"role": "system", "content": system},
+                {"role": "user", "content": user_prompt(prompt)},
+            ],
+            "temperature": 0.2,
+            "stream": False,
+        }
+        data = _post_json(f"{self.base_url}/v1/chat/completions", payload, {},
+                          timeout)
+        choices = data.get("choices") or []
+        if not choices:
+            raise AiError("LM Studio a răspuns fără alegere.")
+        message = choices[0].get("message") or {}
+        text = message.get("content") or ""
+        if not text:
+            # modelele cu „reasoning” pun răspunsul în reasoning_content
+            text = message.get("reasoning_content") or ""
+        if not text:
+            raise AiError("LM Studio a răspuns fără text.")
         return text
 
 

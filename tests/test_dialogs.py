@@ -105,7 +105,12 @@ class TestActualizareCatalog:
 
         monkeypatch.setattr(catalog_update, "download_catalog", fake_download)
         dialog.update_btn.click()
-        self._asteapta(dialog, qapp, "✓")
+        # așteptăm thread-ul (callback-ul rulează în thread-ul UI)
+        for _ in range(200):
+            qapp.processEvents()
+            if "dest" in captat:
+                break
+            qapp.processEvents()
         assert captat.get("dest") == tmp_path / "xdg" / "Alterna", (
             f"descărcarea a mers în {captat.get('dest')}, nu în directorul "
             f"de date al utilizatorului")
@@ -326,3 +331,64 @@ class TestModelIncarcatOllama:
         dialog.ai_combo.setCurrentIndex(1)
         status = self._asteapta(dialog, qapp, "Nu e niciun model")
         assert "Nu e niciun model încărcat" in status, status
+
+
+class TestLmStudio:
+    """Sursa „Model local (LM Studio)” — modelul încărcat apare în câmp."""
+
+    @staticmethod
+    def _asteapta(dialog, qapp, semn, treceri=300):
+        for _ in range(treceri):
+            qapp.processEvents()
+            if semn in dialog.ai_status.text():
+                return dialog.ai_status.text()
+            qapp.processEvents()
+        return dialog.ai_status.text()
+
+    def test_sursa_lmstudio_exista(self, dialog):
+        from app.dialogs import AI_SOURCES
+
+        assert dialog.ai_combo.count() == 4
+        assert dict(AI_SOURCES)["lmstudio"] == "Model local (LM Studio)"
+
+    def test_campul_model_arata_modelul_incarcat_in_lmstudio(
+            self, dialog, qapp, monkeypatch):
+        from app.ai import LmStudioClient
+
+        monkeypatch.setattr(LmStudioClient, "loaded_models",
+                            lambda self, timeout=5: ["qwen/qwen3-8b"])
+        dialog.ai_combo.setCurrentIndex(2)  # „Model local (LM Studio)”
+        status = self._asteapta(dialog, qapp, "qwen/qwen3-8b")
+        assert "qwen/qwen3-8b" in status, status
+        assert dialog.ai_ollama_model.text() == "qwen/qwen3-8b", (
+            f"câmpul Model arată {dialog.ai_ollama_model.text()!r}")
+
+    def test_alegerea_manuala_nu_e_suprascrisa(self, dialog, qapp, monkeypatch):
+        from app.ai import LmStudioClient
+
+        monkeypatch.setattr(LmStudioClient, "loaded_models",
+                            lambda self, timeout=5: ["qwen/qwen3-8b"])
+        dialog.ai_ollama_model.setText("qwen2.5-coder-3b-instruct")
+        dialog.ai_combo.setCurrentIndex(2)
+        self._asteapta(dialog, qapp, "qwen/qwen3-8b")
+        assert dialog.ai_ollama_model.text() == "qwen2.5-coder-3b-instruct", (
+            "alegerea manuală a fost suprascrisă")
+
+    def test_clientul_lmstudio_citeste_modelele_incarcate(self):
+        """`loaded_instances` = model încărcat; `/v1/models` nu distinge."""
+        from unittest.mock import patch
+
+        from app.ai import LmStudioClient
+
+        with patch.object(
+            LmStudioClient,
+            "_get_json",
+            return_value={
+                "models": [
+                    {"key": "qwen/qwen3-8b", "loaded_instances": [{"id": "x"}]},
+                    {"key": "qwen2.5-coder-3b-instruct", "loaded_instances": []},
+                ]
+            },
+        ):
+            modele = LmStudioClient().loaded_models()
+        assert modele == ["qwen/qwen3-8b"], modele

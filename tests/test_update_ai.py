@@ -349,7 +349,7 @@ class TestDialoguri:
         from app.dialogs import SettingsDialog
 
         dialog = SettingsDialog(setari, catalog)
-        assert dialog.ai_combo.count() == 3
+        assert dialog.ai_combo.count() == 4
         assert dialog.ai_combo.isEnabled()
         dialog.close()
 

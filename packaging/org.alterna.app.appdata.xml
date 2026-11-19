@@ -47,6 +47,12 @@
   <update_contact>alterna_AT_github.com</update_contact>
 
   <releases>
+    <release version="0.1.14" date="2026-11-19">
+      <description>
+        <p>SMPlayer a intrat în catalog: 214 aplicații, cu indicatorii
+        verificați (stele, versiune, popcon, pachet Ubuntu).</p>
+      </description>
+    </release>
     <release version="0.1.13" date="2026-11-19">
       <description>
         <p>Textul din fereastra de propunere AI și din dialogul de salvare

@@ -1,6 +1,6 @@
 # CopyQ — manager de clipboard cu istoric
 id: copyq
-popularity: 1070
+popularity: 1080
 name: CopyQ
 description: Manager de clipboard cu istoric, editare și scripturi.
 category: utilities
@@ -13,7 +13,6 @@ platforms: [linux, windows, macos]
 tags: [clipboard, istoric, productivitate]
 alternatives:
 - parcellite
-
 details:
   install_size_mb: 374
   first_release_year: 2009

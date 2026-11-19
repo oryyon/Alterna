@@ -1,6 +1,6 @@
 # VirtualBox — virtualizare desktop
 id: virtualbox
-popularity: 1020
+popularity: 1030
 name: VirtualBox
 description: Virtualizare desktop — rulează alte sisteme de operare în mașini virtuale.
 category: utilities
@@ -14,7 +14,6 @@ tags: [virtualizare, vm, sisteme]
 alternatives:
 - qemu
 - virt-manager
-
 details:
   install_size_mb: 695
   first_release_year: 2007

@@ -1,6 +1,6 @@
 # CherryTree — notițe ierarhice în arbore, stocate local
 id: cherrytree
-popularity: 940
+popularity: 950
 name: CherryTree
 description: Notițe ierarhice în arbore, stocate local (SQLite sau XML).
 category: notes

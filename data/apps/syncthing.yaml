@@ -1,6 +1,6 @@
 # Syncthing — sincronizare de fișiere P2P, fără cloud
 id: syncthing
-popularity: 1010
+popularity: 1020
 name: Syncthing
 description: Sincronizare de fișiere peer-to-peer, criptată, fără cloud.
 category: utilities
@@ -15,7 +15,6 @@ tags: [sincronizare, p2p, fara cloud]
 alternatives:
 - nextcloud
 - rclone
-
 details:
   install_size_mb: 35
   first_release_year: 2013

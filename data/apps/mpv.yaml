@@ -16,7 +16,7 @@ tags: [player, minimalist]
 alternatives:
 - vlc
 - kodi
-
+- smplayer
 details:
   install_size_mb: 482
   first_release_year: 2013

@@ -1,0 +1,43 @@
+# smplayer — player video ușor, cu subtitrare
+id: smplayer
+popularity: 710
+name: SMPlayer
+description: Player video ușor, cu subtitrare și suport pentru multe formate.
+category: audio-players
+license: foss
+price: free
+developer: SMPlayer Team
+website: https://smplayer.info
+
+snap: smplayer
+platforms: [linux, windows, macos]
+tags: [player, video]
+alternatives:
+- vlc
+- mpv
+
+details:
+  install_size_mb: 0
+  first_release_year: 0
+  file_formats: ["orice suportă FFmpeg"]
+  telemetry: none
+  romanian_language: true
+
+indicators:
+  popcon_rank: 5631
+  stars: 1088
+  stars_url: https://github.com/smplayer-dev/smplayer
+  latest_release: 2026-08
+  in_ubuntu_repos: true
+
+sources:
+- https://smplayer.info
+- https://github.com/smplayer-dev/smplayer
+confidence:
+  details.romanian_language: manual
+  alternatives: manual
+  indicators.in_ubuntu_repos: auto
+  indicators.stars: auto
+  indicators.stars_url: auto
+  indicators.latest_release: auto
+package: smplayer

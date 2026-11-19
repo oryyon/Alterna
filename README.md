@@ -14,7 +14,7 @@ Aplicație **desktop nativă pentru Kubuntu 24.04** (KDE Plasma) pentru descoper
 
 ## Stare curentă
 
-🚀 **MVP funcțional cu 213 de aplicații în catalog.** Aplicația desktop pornește, citește `catalog.db` și reproduce macheta: căutare live, filtre, sortare, categorii, pagină de detalii, comparare cu tabel + matrice de funcționalități + export în 5 formate, teme comutabile.
+🚀 **MVP funcțional cu 214 de aplicații în catalog.** Aplicația desktop pornește, citește `catalog.db` și reproduce macheta: căutare live, filtre, sortare, categorii, pagină de detalii, comparare cu tabel + matrice de funcționalități + export în 5 formate, teme comutabile.
 
 **Funcțiile care promit, funcționează:** „Actualizează catalogul acum" descarcă catalogul nou de la release-urile publice și îl verifică cu SHA-256 (vechiul rămâne ca backup); asistentul AI generează propuneri de catalog validate cu validatorul proiectului, cu Ollama local sau Claude API și cheia ta proprie; butoanele de donație deschid pagini reale, centralizate în `app/links.py`. Nimic nu e buton decorativ.
 
@@ -24,7 +24,7 @@ Aplicație **desktop nativă pentru Kubuntu 24.04** (KDE Plasma) pentru descoper
 |---|---|
 | Toate deciziile proiectului (viziune, stack, date, UI, licențe) | [IDEI_PROIECT.md](IDEI_PROIECT.md) |
 | Machetă UI funcțională (referința vizuală agreată) | [mockup-ui/](mockup-ui) |
-| Formatul YAML + **213 aplicații** pe cele 13 categorii | [data/](data) |
+| Formatul YAML + **214 aplicații** pe cele 13 categorii | [data/](data) |
 | Dependențe fixate (limite superioare + lockfile) | [pyproject.toml](pyproject.toml), [requirements-lock.txt](requirements-lock.txt) |
 | Nivelurile de certitudine ale datelor (implicit per câmp) | [data/confidence.yaml](data/confidence.yaml) |
 | Script de build YAML → `catalog.db` (SQLite), cu validări | [tools/build_catalog.py](tools/build_catalog.py) |
@@ -93,7 +93,7 @@ Deschide `mockup-ui/index.html` în orice browser. Este complet funcțională (d
 1. ✅ Formatul YAML pentru fișierele-sursă ale catalogului → [data/README.md](data/README.md)
 2. ✅ Scriptul de build YAML → `catalog.db` (SQLite) → [tools/build_catalog.py](tools/build_catalog.py)
 3. ✅ Scheletul aplicației PySide6 care reproduce macheta → [app/](app)
-4. ✅ Extinderea catalogului de la 8 la 213 aplicații (pragul minim al MVP-ului atins)
+4. ✅ Extinderea catalogului de la 8 la 214 aplicații (pragul minim al MVP-ului atins)
 5. ✅ Automatizarea indicatorilor (script + GitHub Actions cu PR săptămânal) și logo-urile reale
 6. ✅ Licențiere completă: GPLv3 pentru cod, CC BY-SA 4.0 pentru datele originale, `NOTICE` și excepția documentată pentru logo-urile terților.
 7. ✅ Distribuție Linux AppImage: pipeline PyInstaller + AppDir + `appimagetool` verificat prin SHA-256.

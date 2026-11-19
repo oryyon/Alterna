@@ -19,7 +19,7 @@ alternatives:
 - kodi
 - spotify
 - strawberry
-
+- smplayer
 details:
   install_size_mb: 471
   first_release_year: 2001

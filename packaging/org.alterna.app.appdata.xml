@@ -47,6 +47,12 @@
   <update_contact>alterna_AT_github.com</update_contact>
 
   <releases>
+    <release version="0.1.12" date="2026-11-19">
+      <description>
+        <p>Asistentul AI are și sursa „Model local (LM Studio)”: câmpul Model
+        arată modelul încărcat în LM Studio, ca la Ollama.</p>
+      </description>
+    </release>
     <release version="0.1.11" date="2026-11-18">
       <description>
         <p>Câmpul „Model” din Asistentul AI arată acum modelul încărcat de

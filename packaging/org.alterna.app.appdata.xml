@@ -47,6 +47,15 @@
   <update_contact>alterna_AT_github.com</update_contact>
 
   <releases>
+    <release version="0.1.15" date="2026-11-19">
+      <description>
+        <p>Fiecare sursă AI are modelul ei: câmpuri separate pentru Ollama,
+        LM Studio și Claude — alegerea nu se mai pierde la schimbarea sursei.</p>
+        <p>Fereastra de propunere AI arată acum ce model a răspuns, iar
+        versiunea aplicației e vizibilă în interfață.</p>
+        <p>SMPlayer are logo-ul oficial, cu atribuirea documentată.</p>
+      </description>
+    </release>
     <release version="0.1.14" date="2026-11-19">
       <description>
         <p>SMPlayer a intrat în catalog: 214 aplicații, cu indicatorii

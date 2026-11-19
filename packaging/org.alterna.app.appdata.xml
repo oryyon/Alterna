@@ -47,6 +47,14 @@
   <update_contact>alterna_AT_github.com</update_contact>
 
   <releases>
+    <release version="0.1.11" date="2026-11-18">
+      <description>
+        <p>Câmpul „Model” din Asistentul AI arată acum modelul încărcat de
+        tine în Ollama, nu unul implicit.</p>
+        <p>Adresa implicită a serverului Ollama e IPv4 literal, iar
+        actualizarea catalogului funcționează într-o instalare de sistem.</p>
+      </description>
+    </release>
     <release version="0.1.10" date="2026-11-18">
       <description>
         <p>Pachetele sunt construite din nou pe Ubuntu 24.04: versiunea

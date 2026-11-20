@@ -128,7 +128,24 @@ website: https://exemplu.org
 
 
 class AiError(Exception):
-    """Eroare de la backend-ul AI — mesajul e pregătit pentru UI."""
+    """Eroare de la backend-ul AI — mesajul e pregătit pentru UI.
+
+    Marcajul `mesaj_pentru_ui` spune stratului de rețea că textul e deja
+    scris pentru om: nu mai e prefixat cu „Eroare neașteptată” (o eroare
+    explicată, cum e timeout-ul, nu e o surpriză tehnică).
+    """
+
+    mesaj_pentru_ui = True
+
+
+def durata_text(seconds: int) -> str:
+    """Durată în cuvinte: „10 minute”, „1 minut”, „45 de secunde”."""
+    if seconds <= 0:
+        return "fără așteptare"
+    if seconds % 60 == 0:
+        minute = seconds // 60
+        return "1 minut" if minute == 1 else f"{minute} minute"
+    return f"{seconds} de secunde"
 
 
 def _post_json(url: str, payload: dict, headers: dict[str, str],
@@ -148,10 +165,11 @@ def _post_json(url: str, payload: dict, headers: dict[str, str],
     except urllib.error.URLError as exc:
         raise AiError(f"Nu s-a putut contacta serverul: {exc.reason}") from exc
     except TimeoutError as exc:
-        # Modelele mari pe CPU pot minute bune; mesajul spune ce s-a întâmplat.
+        # Modelele mari pe CPU pot minute bune; mesajul spune ce s-a întâmplat
+        # ȘI cât am așteptat, ca omul să știe dacă mai are rost să încerce.
         raise AiError(
-            "Serverul nu a răspuns în timp — modelul e mare sau CPU-ul e lent. "
-            "Poți încerca un model mai mic.") from exc
+            f"Serverul nu a răspuns în timp ({durata_text(timeout)}) — modelul "
+            "e mare sau CPU-ul e lent. Poți încerca un model mai mic.") from exc
     except OSError as exc:
         raise AiError(f"Eroare de rețea: {exc}") from exc
     except json.JSONDecodeError as exc:
@@ -271,7 +289,9 @@ class LmStudioClient:
         except urllib.error.URLError as exc:
             raise AiError(f"Serverul LM Studio nu răspunde: {exc.reason}") from exc
         except TimeoutError as exc:
-            raise AiError("Serverul LM Studio nu a răspuns în timp.") from exc
+            raise AiError(
+                f"Serverul LM Studio nu a răspuns în timp "
+                f"({durata_text(timeout)}).") from exc
         except json.JSONDecodeError as exc:
             raise AiError(f"Răspuns invalid de la LM Studio: {exc}") from exc
 

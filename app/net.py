@@ -107,7 +107,13 @@ class NetworkTask(QObject):
             detaliu = exc.strerror or str(exc)
             self.failed.emit(f"Eroare de sistem: {detaliu}")
         except Exception as exc:  # noqa: BLE001 — erori neașteptate, dar UI-ul nu trebuie să cadă
-            self.failed.emit(f"Eroare neașteptată: {exc}")
+            # Eroare cu mesaj deja scris pentru om (ex.: timeout-ul AI, care
+            # explică deja ce s-a întâmplat) — nu o mai împachetăm în
+            # „Eroare neașteptată”, care ar sugera o defect necunoscut.
+            if getattr(exc, "mesaj_pentru_ui", False):
+                self.failed.emit(str(exc))
+            else:
+                self.failed.emit(f"Eroare neașteptată: {exc}")
         else:
             self.finished.emit(result)
 

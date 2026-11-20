@@ -47,6 +47,13 @@
   <update_contact>alterna_AT_github.com</update_contact>
 
   <releases>
+    <release version="0.1.18" date="2026-11-20">
+      <description>
+        <p>Mesajul de timeout al asistentului AI spune acum cât s-a așteptat
+        (10 minute pentru modelele locale, 2 minute pentru Claude API) și nu mai
+        e împachetat ca „Eroare neașteptată”.</p>
+      </description>
+    </release>
     <release version="0.1.17" date="2026-11-20">
       <description>
         <p>Matricea de comparație acoperă acum toate cele 13 categorii, cu

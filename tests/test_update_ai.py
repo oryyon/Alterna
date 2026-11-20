@@ -439,3 +439,71 @@ class TestImporturiDialoguri:
 
         assert hasattr(dialogs, "Path")
 
+
+
+class TestTimeouturiAI:
+    """Cât așteaptă aplicația înainte de mesajul de timeout.
+
+    Valorile sunt o decizie de produs: un model 8B cu „reasoning” pe CPU
+    are nevoie de minute, deci 120 s (vechea valoare) ar fi picat inutil.
+    Testul le fixează, ca o schimbare accidentală să nu treacă neobservată.
+    """
+
+    def test_timeouturile_implicite(self):
+        import inspect
+
+        from app.ai import (ClaudeClient, LmStudioClient, OllamaClient)
+
+        for clasa, asteptat in ((OllamaClient, 600), (LmStudioClient, 600),
+                                (ClaudeClient, 120)):
+            semnatura = inspect.signature(clasa.generate)
+            valoare = semnatura.parameters["timeout"].default
+            assert valoare == asteptat, (
+                f"{clasa.__name__}.generate: timeout {valoare}s, "
+                f"se aștepta {asteptat}s")
+
+    def test_mesajul_spune_cat_s_a_asteptat(self):
+        """Mesajul de timeout conține durata, ca omul să știe ce a durat."""
+        import socket
+
+        from app.ai import AiError, OllamaClient, durata_text
+
+        def urlopen_cu_timeout(request, timeout=None):
+            raise socket.timeout("timed out")
+
+        import urllib.request
+
+        original = urllib.request.urlopen
+        urllib.request.urlopen = urlopen_cu_timeout
+        try:
+            with pytest.raises(AiError) as exc:
+                OllamaClient().generate("ceva")
+        finally:
+            urllib.request.urlopen = original
+
+        mesaj = str(exc.value)
+        assert "10 minute" in mesaj, mesaj
+        assert "modelul e mare sau CPU-ul e lent" in mesaj, mesaj
+
+    def test_durata_text(self):
+        from app.ai import durata_text
+
+        assert durata_text(600) == "10 minute"
+        assert durata_text(120) == "2 minute"
+        assert durata_text(60) == "1 minut"
+        assert durata_text(45) == "45 de secunde"
+
+    def test_eroarea_ai_nu_e_ambalata_ca_eroare_neasteptata(self):
+        """Eroarea AI are mesaj gata — nu „Eroare neașteptată: …”."""
+        from app.net import NetworkTask
+        from app.ai import AiError
+
+        mesaje: list[str] = []
+        sarcina = NetworkTask(lambda: (_ for _ in ()).throw(
+            AiError("Serverul nu a răspuns în timp (10 minute) — modelul e mare "
+                    "sau CPU-ul e lent.")))
+        sarcina.failed.connect(mesaje.append)
+        sarcina.run()
+        assert mesaje, "nu s-a raportat nicio eroare"
+        assert not mesaje[0].startswith("Eroare neașteptată"), mesaje[0]
+        assert "10 minute" in mesaje[0], mesaje[0]

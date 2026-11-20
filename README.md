@@ -46,6 +46,15 @@ Aplicație **desktop nativă pentru Kubuntu 24.04** (KDE Plasma) pentru descoper
 
 > Indicatorii (popcon, stele, versiuni, „în repo Ubuntu") sunt acum **valori reale**, reîmprospătate automat săptămânal prin PR — aprobarea rămâne la maintainer (sec. 7).
 
+## ♥ Sponsor
+
+[![Sponsor](https://github.com/sponsors/oryyon/badge)](https://github.com/sponsors/oryyon)
+
+Alterna e liberă (GPLv3) și nu are reclame, conturi sau colectare de date. Dacă
+îți e utilă, poți susține întreținerea catalogului și dezvoltarea de funcții noi
+prin [GitHub Sponsors](https://github.com/sponsors/oryyon) — donații recurente,
+fără comisioane.
+
 ## Licențe
 
 - **Codul aplicației:** [GNU GPLv3](LICENSE) — text complet, nemodificat.
@@ -182,7 +191,8 @@ Verificarea sigură: în browser (deconectat ca `oryyon`) apare butonul „Spons
 și poți alege o sumă; sau, prin API, endpointul `repos/{owner}/{repo}/sponsors`
 răspunde 200 (are nevoie de scope `read:user`).
 
-Pașii de configurare în contul GitHub (un singur pas manual, ~10 minute):
+Pașii de configurare în contul GitHub (un singur pas manual, ~10 minute) —
+textul de lipit pentru descriere și niveluri e în **[SPONSORS.md](SPONSORS.md)**:
 
 1. **Settings → Sponsors → „Set up sponsors for myself”**. GitHub cere: cont
    în regulă, 18+ ani, țară cu suport pentru plăți (România e pe listă) și

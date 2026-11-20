@@ -111,7 +111,7 @@ def main() -> int:
             stare, detaliu = sponsors_api(REPO, token)
             if stare == "activ":
                 print(f"  ✓ Sponsors e activ pentru contul de GitHub "
-                      f"(API: {repo}/sponsors)")
+                      f"(API: {REPO}/sponsors)")
                 if isinstance(detaliu, list):
                     print(f"    sponsori publici: {len(detaliu)}")
             elif stare == "inactiv":

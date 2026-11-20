@@ -472,3 +472,23 @@ class TestDocumentatie:
         for facut in ("crearea repo-ului GitHub", "împachetare AppImage"):
             assert facut not in stare, \
                 f"„Stare curentă” promite un pas deja făcut: {facut}"
+
+
+def test_workflowurile_au_timeout_uri():
+    """Un pas blocat nu trebuie să țină jobul ore întregi.
+
+    Pe 20.11.2026, `apt-get` s-a blocat pe runnerul CI: pasul a rămas
+    „in_progress” aproape 3 ore, în timp ce pașii următori (build, teste) se
+    terminau — deci jobul arăta „rulează”, dar nimeni nu știa că testele
+    trecuseră sau nu. Timeout-ul pe pas (și pe job) transformă blocajul în
+    eșec rapid, cu mesaj.
+    """
+    for nume in ("ci.yml", "release.yml", "refresh.yml"):
+        text = (ROOT / ".github" / "workflows" / nume).read_text(encoding="utf-8")
+        assert "timeout-minutes:" in text, f"{nume}: niciun timeout"
+        # timeout pe pasul de dependențe sistem (unde s-a blocat apt-get)
+        dependinte = text.split("apt-get")[0]
+        assert "timeout-minutes:" in dependinte, (
+            f"{nume}: pasul cu apt-get nu are timeout")
+        # timeout pe job
+        assert "  timeout-minutes:" in text, f"{nume}: jobul nu are timeout"

@@ -42,7 +42,7 @@ Aplicație **desktop nativă pentru Kubuntu 24.04** (KDE Plasma) pentru descoper
 | 124 de logo-uri reale (Simple Icons CC0 + Wikimedia Commons) + fallback pe inițiale | [data/logos/](data/logos), [tools/fetch_logos.py](tools/fetch_logos.py) |
 | GitHub Actions: PR săptămânal cu indicatori reîmprospătați | [.github/workflows/refresh.yml](.github/workflows/refresh.yml) |
 | Aplicația desktop (PySide6/Qt Widgets) — cu surse clicabile, certitudine, detectarea instalării și actualizare din rețea | [app/](app) |
-| Suită de teste automate (383 teste: build, validări, interogări, comparație, export, GUI, surse, certitudine, verificări, detectarea instalării, actualizare, AI, dialoguri, drop-down, contrast, licențiere, resurse, packaging, integrare GitHub) | [tests/](tests) |
+| Suită de teste automate (386 teste: build, validări, interogări, comparație, export, GUI, surse, certitudine, verificări, detectarea instalării, actualizare, AI, dialoguri, drop-down, contrast, licențiere, resurse, packaging, integrare GitHub) | [tests/](tests) |
 
 > Indicatorii (popcon, stele, versiuni, „în repo Ubuntu") sunt acum **valori reale**, reîmprospătate automat săptămânal prin PR — aprobarea rămâne la maintainer (sec. 7).
 
@@ -51,9 +51,16 @@ Aplicație **desktop nativă pentru Kubuntu 24.04** (KDE Plasma) pentru descoper
 [![Sponsor](https://github.com/sponsors/oryyon/badge)](https://github.com/sponsors/oryyon)
 
 Alterna e liberă (GPLv3) și nu are reclame, conturi sau colectare de date. Dacă
-îți e utilă, poți susține întreținerea catalogului și dezvoltarea de funcții noi
-prin [GitHub Sponsors](https://github.com/sponsors/oryyon) — donații recurente,
-fără comisioane.
+îți e utilă, poți susține întreținerea catalogului și dezvoltarea de funcții noi:
+
+- **[PayPal.Me](https://www.paypal.me/oryyon)** — donație unică, fără cont
+  (card sau PayPal). Funcționează pentru persoane fizice, fără PFA.
+- **GitHub Sponsors** — donații recurente, fără comisioane; se activează după ce
+  profilul are niveluri și metodă de plată.
+
+Butonul din aplicație (♥ Donează) deschide canalele configurate în
+[`app/links.py`](app/links.py) — și **doar** pe cele care funcționează: un
+buton către o pagină inexistentă ar fi o promisiune falsă.
 
 ## Licențe
 
@@ -141,7 +148,7 @@ kimi/
 │   ├── taxonomy/        ← taxonomii de funcționalități (pilot: security)
 │   ├── apps/            ← câte un fișier YAML per aplicație (100)
 │   └── logos/           ← logo-uri reale (95 aplicații; restul primesc inițiale)
-├── tests/               ← suita pytest (383 teste)
+├── tests/               ← suita pytest (386 teste)
 ├── tools/
 │   ├── build_catalog.py      ← build YAML → catalog.db (generat, gitignored)
 │   ├── refresh_indicators.py ← reîmprospătare indicatori (popcon/Ubuntu/GitHub)

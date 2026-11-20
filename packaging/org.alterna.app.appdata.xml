@@ -47,6 +47,13 @@
   <update_contact>alterna_AT_github.com</update_contact>
 
   <releases>
+    <release version="0.1.19" date="2026-11-20">
+      <description>
+        <p>Canalul de donație e funcțional fără entitate fiscală: PayPal.Me
+        (donație unică). Butoanele arată doar canalele care chiar primesc
+        donații — GitHub Sponsors rămâne ascuns până are metodă de plată.</p>
+      </description>
+    </release>
     <release version="0.1.18" date="2026-11-20">
       <description>
         <p>Mesajul de timeout al asistentului AI spune acum cât s-a așteptat

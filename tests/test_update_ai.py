@@ -507,3 +507,45 @@ class TestTimeouturiAI:
         assert mesaje, "nu s-a raportat nicio eroare"
         assert not mesaje[0].startswith("Eroare neașteptată"), mesaje[0]
         assert "10 minute" in mesaje[0], mesaje[0]
+
+
+class TestCanaleDonatie:
+    """Butoanele de donație: doar canale care chiar funcționează.
+
+    Fără PFA, GitHub Sponsors nu poate primi plata (Stripe cere entitate
+    fiscală), deci butonul lui e **ascuns** până la configurare — altfel
+    aplicația promite ceva ce nu există (regula din sec. 13).
+    """
+
+    def test_exista_un_canal_functionabil(self):
+        from app import links
+
+        tinte = links.donation_targets()
+        assert tinte, "niciun canal de donație activ — butonul ar fi gol"
+        for tinta in tinte:
+            assert tinta["url"].startswith("https://"), tinta
+            assert tinta["label"] and tinta["note"], tinta
+
+    def test_sponsors_e_ascuns_pana_la_configurare(self):
+        """Cât timp profilul nu are metodă de plată, butonul nu apare."""
+        from app import links
+
+        if not links.GITHUB_SPONSORS_URL:
+            chei = [t["key"] for t in links.donation_targets()]
+            assert "github" not in chei, (
+                "GitHub Sponsors e activat, dar nu are metodă de plată")
+
+    def test_dialogul_arata_doar_canalele_active(self, qapp):
+        from PySide6.QtWidgets import QPushButton
+
+        from app import links
+        from app.dialogs import DonateDialog
+
+        dialog = DonateDialog(None)
+        butoane = [b.text() for b in dialog.findChildren(QPushButton)
+                   if b.text().startswith("♥")]
+        asteptate = [f"♥ {t['label']}" for t in links.donation_targets()]
+        assert len(butoane) == len(asteptate), (butoane, asteptate)
+        for text, asteptat in zip(butoane, asteptate):
+            assert asteptat in text, (text, asteptat)
+        dialog.close()

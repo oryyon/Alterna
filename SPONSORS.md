@@ -1,12 +1,40 @@
-# Configurarea profilului GitHub Sponsors (pas manual al maintainerului)
+# Configurarea canalelor de donație (pas manual al maintainerului)
 
-Butonul „♥ Donează” din Alterna deschide `https://github.com/sponsors/oryyon`
-(centralizat în `app/links.py`). Pentru ca pagina să **primească efectiv
-donații**, contul GitHub trebuie să aibă Sponsors activat, cu niveluri și o
-metodă de plată. GitHub face toată treaba din contul tău — de aceea e un pas
-manual, de ~10 minute.
+Fără PFA/SRL, canalul care funcționează pentru persoane fizice e **PayPal.Me**
+(donație unică, cont PayPal personal) sau **Ko-fi**. GitHub Sponsors rămâne
+pentru mai târziu: cere Stripe/PayPal ca metodă de plată, adică o entitate
+fiscală (vezi secțiunea 2-bis).
 
-## 0. Primul pas: activezi profilul
+Butonul „♥ Donează” din Alterna deschide **doar canalele configurate** în
+`app/links.py` — un buton către o pagină inexistentă ar fi o promisiune
+falsă (regula din sec. 13).
+
+| Canal | Constanta | Stare |
+|---|---|---|
+| PayPal.Me (donație unică) | `PAYPAL_ME_URL` | activă |
+| Ko-fi (donație unică) | `KOFI_URL` | de completat (opțional) |
+| GitHub Sponsors (recurent) | `GITHUB_SPONSORS_URL` | se activează după Stripe/PayPal |
+
+## 0-bis. Cum creezi linkul PayPal.Me (2 minute, fără PFA)
+
+1. **paypal.com** → contul tău personal (sau creează unul, gratuit).
+2. **Settings → PayPal.Me → Create link**.
+3. Username: `oryyon` (sau orice handle liber; **același** trebuie pus în
+   `PAYPAL_ME_URL` din `app/links.py`).
+4. Copiază linkul (forma `https://www.paypal.me/<username>`) în constanta
+   `PAYPAL_ME_URL` din `app/links.py` și lansează release-ul.
+5. Verifică: deschide linkul în browser — dacă poți plăti, e real. Dacă
+   PayPal scrie „This link doesn't exist”, username-ul nu e încă creat
+   (pasul 2–3).
+
+Alternativa Ko-fi (tot fără PFA): creează cont pe **ko-fi.com**, alegi
+„Ko-fi" și username `oryyon` → linkul devine `https://ko-fi.com/oryyon` →
+îl pui în `KOFI_URL`.
+
+
+## Pentru GitHub Sponsors (mai târziu)
+
+### Pasul 0: activezi profilul
 
 În contul GitHub: **Settings → Sponsors → „Set up sponsors for myself”**.
 

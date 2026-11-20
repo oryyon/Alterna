@@ -106,6 +106,12 @@ def main() -> int:
             probleme += 1
             continue
         print("  ✓ pagina există (HTTP 200)")
+        if any(domeniu in url for domeniu in ("paypal.me", "ko-fi.com")):
+            # Paginile PayPal.Me și Ko-fi sunt aplicații JavaScript: răspund
+            # 200 și pentru handle inexistente, deci HTTP-ul nu dovedește
+            # nimic. Verificarea e manuală (textul din pagină).
+            print("  ? pagină randată cu JavaScript — verifică manual în "
+                  "browser: dacă poți plăti, linkul e real")
 
         if "github.com/sponsors/" in url:
             stare, detaliu = sponsors_api(REPO, token)

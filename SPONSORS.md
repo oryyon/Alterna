@@ -99,6 +99,38 @@ GitHub permite și sume unice, fără abonament — pentru cei care nu vor o
 recurență: **5 €** (un café ☕), **25 €**, **100 €**. activează opțiunea
 „one-time" din setările profilului de Sponsors.
 
+## 2-bis. Ce aleg la Stripe: „Business type”
+
+Stripe (România) cere **entitatea legală** care primește banii — nu există
+varianta „persoană fizică fără entitate”. Deci alegerea depinde de ce ai deja
+(la pasul „Country: Romania"):
+
+| Ce ai | Ce alegi | Documente cerute de Stripe |
+|---|---|---|
+| **PFA / AF** (CUI, întreprindere individuală) | **Persoană Fizică Autorizată / Întreprinderea individuală** | CUI, certificat de înregistrare fiscală (ANAF), certificat ONRC, cont bancar în numele PFA, CI/pașaport, CAEN |
+| **SRL / societate** (CUI) | **Societate** | CUI, certificat ONRC, act constituire, cont bancar al firmei, CI/pașaport al administratorului |
+| **ONG / fundație / asociație** (CIF) | **Non-profit** | CIF, act de înființare, cont bancar al organizației |
+| **Nimic** | ⚠️ Stripe nu continuă | trebuie mai întâi un PFA (ANAF) — altfel nu se poate încasa |
+
+**Atenție la „Non-profit”:** Alterna e liber (GPLv3) și fără scop lucrativ, dar
+proiectul **nu e o entitate înregistrată** — opțiunea Stripe e pentru organizații
+non-profit cu personalitate juridică (CIF). Nu se alege doar pentru că proiectul
+e FOSS.
+
+**PFA-ul pentru Alterna**: se înregistrează online la ANAF (portalul „Simplifică
+factură"/SPV), cu un CAEN de programare (62101 — „activități de programare
+informatizată” / 6201). Ca denumire poate fi „Alterna” (întreprinderea
+individuală are denumire comercială). Atenție: venitul din Sponsors se declară
+la ANAF și impozitează — pentru sume mici, consultă un contabil ce se aplică
+(activități independente, declarație de venit). Nu e o sumă fără
+consecințe fiscale.
+
+**Dacă nu vrei o entitate fiscală pentru donații ocazionale**, alternativa mai
+simplă e un canal care acceptă persoane fizice (Ko-fi, PayPal.me) — se adaugă
+în `app/links.py` ca a doua țintă, într-o linie. GitHub Sponsors rămâne
+opțional: se activează când vrei, butonul din aplicație poate indica ambele
+canale.
+
 ## 3. Metoda de plată și datele fiscale
 
 În **Settings → Sponsors → Payment details** (sau din pagina Stripe/PayPal):

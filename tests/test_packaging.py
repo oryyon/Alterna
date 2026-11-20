@@ -512,6 +512,6 @@ def test_unelta_de_verificare_sponsors_exista():
     assert ghid.exists(), "lipsește SPONSORS.md (ghidul de configurare)"
     text_ghid = ghid.read_text(encoding="utf-8")
     for pas in ("Set up sponsors for myself", "Manage tiers", "stripe",
-                "read:user"):
+                "read:user", "Persoană Fizică Autorizată", "Non-profit"):
         assert pas.lower() in text_ghid.lower(), (
             f"ghidul nu menționează pasul „{pas}”")

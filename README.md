@@ -42,7 +42,7 @@ Aplicație **desktop nativă pentru Kubuntu 24.04** (KDE Plasma) pentru descoper
 | 124 de logo-uri reale (Simple Icons CC0 + Wikimedia Commons) + fallback pe inițiale | [data/logos/](data/logos), [tools/fetch_logos.py](tools/fetch_logos.py) |
 | GitHub Actions: PR săptămânal cu indicatori reîmprospătați | [.github/workflows/refresh.yml](.github/workflows/refresh.yml) |
 | Aplicația desktop (PySide6/Qt Widgets) — cu surse clicabile, certitudine, detectarea instalării și actualizare din rețea | [app/](app) |
-| Suită de teste automate (382 teste: build, validări, interogări, comparație, export, GUI, surse, certitudine, verificări, detectarea instalării, actualizare, AI, dialoguri, drop-down, contrast, licențiere, resurse, packaging, integrare GitHub) | [tests/](tests) |
+| Suită de teste automate (383 teste: build, validări, interogări, comparație, export, GUI, surse, certitudine, verificări, detectarea instalării, actualizare, AI, dialoguri, drop-down, contrast, licențiere, resurse, packaging, integrare GitHub) | [tests/](tests) |
 
 > Indicatorii (popcon, stele, versiuni, „în repo Ubuntu") sunt acum **valori reale**, reîmprospătate automat săptămânal prin PR — aprobarea rămâne la maintainer (sec. 7).
 
@@ -132,7 +132,7 @@ kimi/
 │   ├── taxonomy/        ← taxonomii de funcționalități (pilot: security)
 │   ├── apps/            ← câte un fișier YAML per aplicație (100)
 │   └── logos/           ← logo-uri reale (95 aplicații; restul primesc inițiale)
-├── tests/               ← suita pytest (382 teste)
+├── tests/               ← suita pytest (383 teste)
 ├── tools/
 │   ├── build_catalog.py      ← build YAML → catalog.db (generat, gitignored)
 │   ├── refresh_indicators.py ← reîmprospătare indicatori (popcon/Ubuntu/GitHub)
@@ -162,3 +162,41 @@ kimi/
     ├── compare_view.py  ← tabelul de comparație + matrice + export (5 formate)
     └── dialogs.py       ← Setări (teme, catalog, indicatori, AI) + Donații
 ```
+
+### ♥ Donează (canalul de donație)
+
+Singurul canal de acum e **GitHub Sponsors** (`https://github.com/sponsors/oryyon`),
+centralizat în `app/links.py` — butonul din aplicație deschide pagina în browser și
+nu atinge niciodată plăți sau date financiare.
+
+Cum verificăm că pagina chiar primește donații (nu doar că există):
+
+```bash
+python tools/check_sponsors.py                        # doar existența paginii
+GITHUB_TOKEN=$(gh auth token) python tools/check_sponsors.py   # + starea Sponsors
+```
+
+Un HTTP 200 **nu dovedește** că Sponsors e configurat: pagina se randează cu
+JavaScript, iar un cont fără niveluri sau fără metodă de plată răspunde tot 200.
+Verificarea sigură: în browser (deconectat ca `oryyon`) apare butonul „Sponsor”
+și poți alege o sumă; sau, prin API, endpointul `repos/{owner}/{repo}/sponsors`
+răspunde 200 (are nevoie de scope `read:user`).
+
+Pașii de configurare în contul GitHub (un singur pas manual, ~10 minute):
+
+1. **Settings → Sponsors → „Set up sponsors for myself”**. GitHub cere: cont
+   în regulă, 18+ ani, țară cu suport pentru plăți (România e pe listă) și
+   profilul completat (avatar + descriere).
+2. **Niveluri (tiers)**: „Manage tiers” → creează cel puțin unul. Un exemplu
+   potrivit pentru un proiect FOSS: *„Suport lunar — 5 €/lună”* (menținere
+   server + catalog) și *„Suport lunar — 15 €/lună”* (dezvoltare susținută).
+   Fiecare nivel are nume, sumă, descriere și câteva avantaje concrete.
+3. **Metodă de plată**: Stripe Connect sau PayPal, completând datele fiscale
+   (persoana fizică sau PFA). GitHub reține 0% comision pentru Sponsors.
+4. **Publică**: pagina devine live la `github.com/sponsors/oryyon`, iar butonul
+   „Sponsor” apare și pe repo-ul Alterna.
+5. **Verifică**: rulează `python tools/check_sponsors.py` sau deschide pagina.
+
+Până când pasul 4 nu e făcut, butonul din aplicație duce într-un loc mort —
+de aceea e trecut în backlog ca „pas manual al maintainerului”, nu ca
+funcționalitate așteptată de utilizator.

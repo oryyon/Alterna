@@ -492,3 +492,18 @@ def test_workflowurile_au_timeout_uri():
             f"{nume}: pasul cu apt-get nu are timeout")
         # timeout pe job
         assert "  timeout-minutes:" in text, f"{nume}: jobul nu are timeout"
+
+
+def test_unelta_de_verificare_sponsors_exista():
+    """Verificarea canalului de donație trebuie să existe în repo.
+
+    Butonul „Donează” duce la o pagină externă: singura apărare e să existe
+    un instrument care verifică dacă pagina chiar primește donații (un HTTP
+    200 nu dovedește asta — pagina e randată cu JavaScript).
+    """
+    unalta = ROOT / "tools" / "check_sponsors.py"
+    assert unalta.exists(), "lipsește tools/check_sponsors.py"
+    text = unalta.read_text(encoding="utf-8")
+    assert "DONATION_TARGETS" in text, "instrumentul nu verifică țintele reale"
+    assert "read:user" in text, (
+        "instrumentul nu poate distinge „inactiv” de „token fără scope”")

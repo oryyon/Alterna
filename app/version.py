@@ -8,7 +8,7 @@ from __future__ import annotations
 
 
 #: Versiunea aplicației, în format semantic (fără sufix Debian).
-VERSION = "0.1.15"
+VERSION = "0.1.16"
 
 #: Numele aplicației, folosit în titluri, metadata și numele pachetului.
 APP_NAME = "Alterna"

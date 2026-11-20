@@ -575,3 +575,74 @@ class TestContrastText:
             assert raport >= 4.5, (
                 f"{tema}: {nume} are contrast {raport:.2f}:1 — text ilizibil")
         dialog.close()
+
+
+class TestCarduriAI:
+    """Câmpurile fiecărui backend sunt încadrate într-un card (chenar).
+
+    Cerință de utilizator (cu captură desenată): când e aleasă o sursă, câmpurile
+    ei trebuie grupate vizual, ca să se vadă dintr-o privire unde trebuie
+    completat. Cardul sursei active e evidențiat (chenar de accent).
+    """
+
+    def test_fiecare_backend_are_card_cu_campurile_sale(self, dialog):
+        campuri = {
+            "ollama": (dialog.ai_ollama_url, dialog.ai_ollama_model),
+            "lmstudio": (dialog.ai_lmstudio_url, dialog.ai_lmstudio_model),
+            "claude": (dialog.ai_claude_key, dialog.ai_claude_model),
+        }
+        for backend, (primul, al_doilea) in campuri.items():
+            card, titlu = dialog._ai_cards[backend]
+            assert card.objectName() == "aiCard"
+            assert titlu.text(), f"cardul lui {backend} nu are titlu"
+            for camp in (primul, al_doilea):
+                assert card.isAncestorOf(camp), (
+                    f"câmpul lui {backend} nu e în cardul lui {backend}")
+
+    def test_cardul_sursei_alese_e_marcat_activ(self, dialog):
+        dialog.ai_combo.setCurrentIndex(1)  # „Model local (Ollama)"
+        assert dialog._ai_cards["ollama"][0].property("active") == "true"
+        for backend in ("lmstudio", "claude"):
+            assert dialog._ai_cards[backend][0].property("active") == "false"
+
+    def test_titlul_cardului_activ_e_marcat(self, dialog):
+        dialog.ai_combo.setCurrentIndex(2)  # LM Studio
+        assert dialog._ai_cards["lmstudio"][1].text().startswith("▸")
+        assert not dialog._ai_cards["ollama"][1].text().startswith("▸")
+        assert not dialog._ai_cards["claude"][1].text().startswith("▸")
+
+    def test_fara_sursa_niciun_card_nu_e_activ(self, dialog):
+        dialog.ai_combo.setCurrentIndex(0)  # „Dezactivat (implicit)"
+        for card, _ in dialog._ai_cards.values():
+            assert card.property("active") == "false"
+
+    def test_chenarul_cardului_activ_are_culoarea_de_accent(self, qapp, dialog):
+        """Chenarul activ e colorat (accent), cel inactive rămâne neutru.
+
+        Verificat pe pixelii randați, nu pe palette — acelea arată corecte și
+        când QSS-ul nu se aplică.
+        """
+        from app.theme import _PALETTES, apply_theme
+
+        apply_theme(qapp, "dark")
+        dialog.ai_combo.setCurrentIndex(3)  # Claude
+        dialog.show()
+        qapp.processEvents()
+
+        def culoare_chenar(card):
+            imagine = card.grab().toImage()
+            return imagine.pixelColor(0, imagine.height() // 2)
+
+        activ = culoare_chenar(dialog._ai_cards["claude"][0])
+        inactiv = culoare_chenar(dialog._ai_cards["ollama"][0])
+        accent = QColor(_PALETTES["dark"]["accent"])
+        assert (abs(activ.red() - accent.red())
+                + abs(activ.green() - accent.green())
+                + abs(activ.blue() - accent.blue())) < 60, (
+            f"chenarul cardului activ nu e colorat cu accentul: {activ.name()}")
+        diferenta = (abs(activ.red() - inactiv.red())
+                     + abs(activ.green() - inactiv.green())
+                     + abs(activ.blue() - inactiv.blue()))
+        assert diferenta > 60, (
+            "cardul activ nu se deosebește vizual de cele inactive")
+        dialog.close()

@@ -47,6 +47,13 @@
   <update_contact>alterna_AT_github.com</update_contact>
 
   <releases>
+    <release version="0.1.16" date="2026-11-20">
+      <description>
+        <p>În Setări, câmpurile fiecărei surse AI sunt încadrate într-un card
+        propriu, iar cardul sursei alese e evidențiat — se vede dintr-o privire
+        unde trebuie completat.</p>
+      </description>
+    </release>
     <release version="0.1.15" date="2026-11-19">
       <description>
         <p>Fiecare sursă AI are modelul ei: câmpuri separate pentru Ollama,

@@ -162,26 +162,18 @@ class SettingsDialog(QDialog):
         ai_form.addRow("Sursă AI", self.ai_combo)
         layout.addLayout(ai_form)
 
-        # --- Configurarea Ollama (local, fără cheie) --------------------------------
-        self.ai_ollama_url = QLineEdit(
-            settings.value(AI_OLLAMA_URL_KEY, "", type=str))
-        self.ai_ollama_url.setPlaceholderText(OLLAMA_DEFAULT_URL)
-        ollama_form = QFormLayout()
-        ollama_form.addRow("Adresa serverului", self.ai_ollama_url)
-        layout.addLayout(ollama_form)
-
-        # --- Configurarea LM Studio (local, fără cheie) -----------------------------
-        self.ai_lmstudio_url = QLineEdit(
-            settings.value(AI_LMSTUDIO_URL_KEY, "", type=str))
-        self.ai_lmstudio_url.setPlaceholderText(LMSTUDIO_DEFAULT_URL)
-        lmstudio_form = QFormLayout()
-        lmstudio_form.addRow("Adresa serverului LM Studio", self.ai_lmstudio_url)
-        layout.addLayout(lmstudio_form)
+        # --- Cardurile per backend ---------------------------------------------------
+        # Fiecare backend (Ollama / LM Studio / Claude) primește un card cu
+        # chenar: gruparea e vizuală, ca să se vadă dintr-o privire unde trebuie
+        # completat pentru sursa aleasă. Cardul sursei active e evidențiat
+        # (chenar de accent + titul marcat), celelalte rămân neutre.
+        self._ai_cards: dict[str, tuple[QFrame, QLabel]] = {}
+        self._ai_card_titles: dict[str, str] = {}
 
         # --- Modelele (unul per backend) ---------------------------------------------
         # Fiecare backend are modelul lui: un model Ollama nu are sens pentru
-        # LM Studio sau Claude. Câmpurile sunt separate, ca să nu se piardă
-        # alegerea când schimbi sursa.
+        # LM Studio sau Claude, și invers. Câmpurile sunt separate, ca să nu se
+        # piardă alegerea când schimbi sursa.
         model_vechi = settings.value(AI_MODEL_KEY, "", type=str)
         # Migrare din v0.1.13 (un singur câmp): un model Claude salvat acolo
         # ajunge în câmpul Claude, orice alt model în câmpul Ollama.
@@ -193,32 +185,47 @@ class SettingsDialog(QDialog):
             else:
                 model_ollama = model_vechi
 
+        # --- Ollama (local, fără cheie) ----------------------------------------------
+        card, form, titlu = self._ai_card("ollama", "Ollama · model local")
+        self.ai_ollama_url = QLineEdit(
+            settings.value(AI_OLLAMA_URL_KEY, "", type=str))
+        self.ai_ollama_url.setPlaceholderText(OLLAMA_DEFAULT_URL)
+        form.addRow("Adresa serverului", self.ai_ollama_url)
         self.ai_ollama_model = QLineEdit(model_ollama or OLLAMA_DEFAULT_MODEL)
         self.ai_ollama_model.setPlaceholderText(OLLAMA_DEFAULT_MODEL)
-        ollama_form.addRow("Model (Ollama)", self.ai_ollama_model)
+        form.addRow("Model (Ollama)", self.ai_ollama_model)
+        layout.addWidget(card)
 
+        # --- LM Studio (local, fără cheie) -------------------------------------------
+        card, form, titlu = self._ai_card("lmstudio", "LM Studio · model local")
+        self.ai_lmstudio_url = QLineEdit(
+            settings.value(AI_LMSTUDIO_URL_KEY, "", type=str))
+        self.ai_lmstudio_url.setPlaceholderText(LMSTUDIO_DEFAULT_URL)
+        form.addRow("Adresa serverului LM Studio", self.ai_lmstudio_url)
         self.ai_lmstudio_model = QLineEdit(
             settings.value(AI_MODEL_LMSTUDIO_KEY, LMSTUDIO_DEFAULT_MODEL, type=str))
         self.ai_lmstudio_model.setPlaceholderText("numele modelului din LM Studio")
-        lmstudio_form.addRow("Model (LM Studio)", self.ai_lmstudio_model)
+        form.addRow("Model (LM Studio)", self.ai_lmstudio_model)
+        layout.addWidget(card)
 
         #: Modelul completat automat, per backend — ne spune dacă valoarea
         #: din câmp e alegerea utilizatorului (o respectăm) sau una completată
         #: de noi (o re-completăm).
         self._model_auto: dict[str, str] = {}
 
+        # --- Claude (cheie proprie) ---------------------------------------------------
+        card, form, titlu = self._ai_card("claude", "Claude API · cheie proprie")
         # Cheia Claude e a utilizatorului: o introduce el, e stocată local
         # în QSettings și nu e inclusă în aplicație (regulă din sec. 13).
         self.ai_claude_key = QLineEdit(
             settings.value(AI_CLAUDE_KEY_KEY, "", type=str))
         self.ai_claude_key.setEchoMode(QLineEdit.Password)
         self.ai_claude_key.setPlaceholderText("sk-ant-…")
+        form.addRow("Cheie Claude API", self.ai_claude_key)
         self.ai_claude_model = QLineEdit(model_claude or CLAUDE_DEFAULT_MODEL)
         self.ai_claude_model.setPlaceholderText(CLAUDE_DEFAULT_MODEL)
-        claude_form = QFormLayout()
-        claude_form.addRow("Cheie Claude API", self.ai_claude_key)
-        claude_form.addRow("Model (Claude)", self.ai_claude_model)
-        layout.addLayout(claude_form)
+        form.addRow("Model (Claude)", self.ai_claude_model)
+        layout.addWidget(card)
 
         self.ai_test_btn = QPushButton("Testează conexiunea")
         self.ai_test_btn.clicked.connect(self._test_ai)
@@ -343,10 +350,56 @@ class SettingsDialog(QDialog):
         return {"ollama": self.ai_ollama_model,
                 "lmstudio": self.ai_lmstudio_model}[backend]
 
+    def _ai_card(self, backend: str, titlu: str):
+        """Cardul (chenarul) unui backend AI: gruparea câmpurilor sale.
+
+        Fiecare backend primește un card cu titlu și un `QFormLayout` în care
+        se pun rândurile (adresă + model). Gruparea e vizuală: utilizatorul
+        vede dintr-o privire unde completează pentru sursa aleasă. Cardul
+        sursei active e evidențiat (chenar de accent, titul marcat) — vezi
+        `_marcheaza_cardul_activ`.
+        """
+        card = QFrame()
+        card.setObjectName("aiCard")
+        card.setProperty("active", "false")
+        # În tema „A sistemului” nu există QSS: chenarul nativ rămâne vizibil.
+        card.setFrameShape(QFrame.StyledPanel)
+        box = QVBoxLayout(card)
+        box.setContentsMargins(12, 10, 12, 12)
+        box.setSpacing(8)
+        cap = QLabel(titlu)
+        cap.setProperty("cardTitle", "true")
+        box.addWidget(cap)
+        form = QFormLayout()
+        form.setContentsMargins(0, 0, 0, 0)
+        form.setSpacing(8)
+        box.addLayout(form)
+        self._ai_cards[backend] = (card, cap)
+        self._ai_card_titles[backend] = titlu
+        return card, form, cap
+
+    def _marcheaza_cardul_activ(self, source: str) -> None:
+        """Evidențiază cardul sursei alese: chenar de accent + „▸” în titul."""
+        for backend, (card, cap) in self._ai_cards.items():
+            activ = backend == source
+            card.setProperty("active", "true" if activ else "false")
+            cap.setProperty("active", "true" if activ else "false")
+            cap.setText(("▸ " if activ else "")
+                        + self._ai_card_titles[backend])
+            # Titlul activ e bold și în tema „A sistemului” (fără QSS).
+            font = cap.font()
+            font.setBold(activ)
+            cap.setFont(font)
+            # proprietățile dinamice cer re-polish, altfel QSS nu se reaplică
+            for widget in (card, cap):
+                widget.style().unpolish(widget)
+                widget.style().polish(widget)
+
     def _on_ai_source_changed(self) -> None:
         """Activează doar ce e folosibil pentru sursa aleasă."""
         source = self.ai_combo.currentData()
         folosibil = source != "none"
+        self._marcheaza_cardul_activ(source)
         self.ai_ollama_url.setEnabled(source == "ollama")
         self.ai_ollama_model.setEnabled(source == "ollama")
         self.ai_lmstudio_url.setEnabled(source == "lmstudio")

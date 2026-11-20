@@ -68,6 +68,14 @@ def build_qss(theme: str) -> str:
     }}
     QFrame#appCard:hover {{ border-color: {p['accent']}; background: {p['bg_hover']}; }}
     QFrame#appCard[selected="true"] {{ border: 2px solid {p['accent']}; }}
+    /* Cardurile setărilor AI: fiecare backend într-un chenar, iar cardul
+       sursei alese e evidențiat (chenar de accent + titul colorat). */
+    QFrame#aiCard {{ background: {p['bg_panel']}; border: 1px solid {p['border']};
+                     border-radius: 8px; }}
+    QFrame#aiCard[active="true"] {{ border: 2px solid {p['accent']}; }}
+    QLabel[cardTitle="true"] {{ color: {p['text_dim']}; }}
+    QLabel[cardTitle="true"][active="true"] {{ color: {p['accent']};
+                                                font-weight: bold; }}
     /* containerele de conținut sunt QWidget pur (nu QFrame) — selector fără clasă: */
     #view {{ background: {p['bg_view']}; border: none; }}
 

@@ -32,7 +32,7 @@ details:
 
 indicators:
   popcon_rank: 7046
-  stars: 13860
+  stars: 13882
   stars_url: https://github.com/mozilla-firefox/firefox
   latest_release: "2026-11"
   in_ubuntu_repos: true
@@ -45,3 +45,15 @@ logo: logos/firefox.svg
 confidence:
   details.telemetry: manual
   alternatives: manual
+features:
+  browsere: free
+  client_torrent: 'no'
+  client_email: 'no'
+  client_ftp: 'no'
+  client_terminal: 'no'
+  descarcare: free
+  ad_block: partial
+  gestionare_ordonator: free
+  vpn: partial
+  motor_rendering: free
+  open_source: free

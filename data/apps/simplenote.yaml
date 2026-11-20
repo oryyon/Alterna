@@ -26,7 +26,7 @@ details:
 
 indicators:
   popcon_rank:
-  stars: 5291
+  stars: 5293
   stars_url: https://github.com/Automattic/simplenote-electron
   latest_release: "2026-07"
   in_ubuntu_repos: false
@@ -34,6 +34,21 @@ indicators:
 sources:
 - https://simplenote.com
 - https://github.com/Automattic/simplenote-electron
+- https://github.com/Automattic/simplenote-electron/blob/HEAD/https%3A//en-blog.files.wordpress.com/2018/09/screenshot-1.png
 logo: logos/simplenote.svg
 confidence:
   alternatives: manual
+screenshot: screenshots/simplenote.jpg
+features:
+  notite_text: free
+  notite_rich: 'no'
+  markdown: 'no'
+  arbore: 'no'
+  wiki: 'no'
+  baza_date: 'no'
+  atasamente: partial
+  offline: partial
+  sincronizare: free
+  export_formate: free
+  scrise_gata: 'no'
+  open_source: 'no'

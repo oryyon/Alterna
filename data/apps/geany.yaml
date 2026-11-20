@@ -28,7 +28,7 @@ details:
 
 indicators:
   popcon_rank: 7145
-  stars: 3758
+  stars: 3760
   stars_url: https://github.com/geany/geany
   latest_release: "2025-07"
   in_ubuntu_repos: true
@@ -41,3 +41,16 @@ confidence:
   details.install_size_mb: auto
   details.romanian_language: manual
   alternatives: manual
+features:
+  completare_cod: 'no'
+  lsp: 'no'
+  refactorizare: 'no'
+  debugger: 'no'
+  linter: 'no'
+  formatare: 'no'
+  git: 'no'
+  compilare: 'no'
+  testare: 'no'
+  terminal: 'no'
+  extensii: partial
+  open_source: free

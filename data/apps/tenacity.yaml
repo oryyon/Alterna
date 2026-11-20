@@ -38,3 +38,16 @@ logo: logos/tenacity.jpg
 confidence:
   details.romanian_language: manual
   alternatives: manual
+features:
+  inregistrare: free
+  editare_audio: free
+  efecte: free
+  midi: 'no'
+  partitura: 'no'
+  instrumente_virtuale: 'no'
+  biblioteaca_sonor: 'no'
+  spectru: free
+  mixaj: 'no'
+  export: free
+  pluginuri: free
+  open_source: free

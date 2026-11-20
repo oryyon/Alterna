@@ -43,3 +43,16 @@ sources:
 logo: logos/obsidian.svg
 confidence:
   alternatives: manual
+features:
+  notite_text: free
+  notite_rich: free
+  markdown: free
+  arbore: free
+  wiki: free
+  baza_date: free
+  atasamente: free
+  offline: free
+  sincronizare: partial
+  export_formate: free
+  scrise_gata: partial
+  open_source: 'no'

@@ -30,7 +30,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 7407
+  stars: 7416
   stars_url: https://github.com/mixxxdj/mixxx
   latest_release: 2026-03
   in_ubuntu_repos: true
@@ -46,3 +46,16 @@ confidence:
   alternatives: manual
   details.telemetry: manual
 screenshot: screenshots/mixxx.jpg
+features:
+  inregistrare: free
+  editare_audio: partial
+  efecte: free
+  midi: free
+  partitura: 'no'
+  instrumente_virtuale: free
+  biblioteaca_sonor: free
+  spectru: free
+  mixaj: free
+  export: free
+  pluginuri: free
+  open_source: free

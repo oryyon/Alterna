@@ -46,3 +46,17 @@ confidence:
   alternatives: manual
 logo: logos/ffmpeg.svg
 screenshot: screenshots/ffmpeg.jpg
+features:
+  terminal: free
+  arhivare: 'no'
+  disc_spatiu: 'no'
+  backup: 'no'
+  sincronizare: 'no'
+  baza_date: 'no'
+  retea: 'no'
+  virtualizare: 'no'
+  captura_ecran: 'no'
+  curatare: 'no'
+  conversie_media: free
+  clipboard: 'no'
+  open_source: free

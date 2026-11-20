@@ -45,3 +45,16 @@ confidence:
   indicators.in_ubuntu_repos: auto
 screenshot: screenshots/bluefish.jpg
 package: bluefish
+features:
+  completare_cod: 'no'
+  lsp: 'no'
+  refactorizare: 'no'
+  debugger: 'no'
+  linter: 'no'
+  formatare: 'no'
+  git: partial
+  compilare: 'no'
+  testare: 'no'
+  terminal: 'no'
+  extensii: partial
+  open_source: free

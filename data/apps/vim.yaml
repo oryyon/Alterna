@@ -28,7 +28,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 41294
+  stars: 41323
   stars_url: https://github.com/vim/vim
   latest_release: 2026-11
   in_ubuntu_repos: true
@@ -43,3 +43,16 @@ confidence:
   alternatives: manual
 logo: logos/vim.svg
 screenshot: screenshots/vim.jpg
+features:
+  completare_cod: 'no'
+  lsp: partial
+  refactorizare: partial
+  debugger: 'no'
+  linter: partial
+  formatare: free
+  git: partial
+  compilare: 'no'
+  testare: 'no'
+  terminal: free
+  extensii: free
+  open_source: free

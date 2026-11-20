@@ -25,7 +25,7 @@ details:
 
 indicators:
   popcon_rank: 11559
-  stars: 5436
+  stars: 5446
   stars_url: https://github.com/Ardour/ardour
   latest_release: "2026-11"
   in_ubuntu_repos: true
@@ -37,3 +37,16 @@ logo: logos/ardour.svg
 confidence:
   details.install_size_mb: auto
   alternatives: manual
+features:
+  inregistrare: free
+  editare_audio: free
+  efecte: free
+  midi: free
+  partitura: 'no'
+  instrumente_virtuale: free
+  biblioteaca_sonor: free
+  spectru: free
+  mixaj: partial
+  export: free
+  pluginuri: free
+  open_source: free

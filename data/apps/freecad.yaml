@@ -32,7 +32,7 @@ details:
 
 indicators:
   popcon_rank:
-  stars: 35518
+  stars: 35629
   stars_url: https://github.com/FreeCAD/FreeCAD
   latest_release: "2026-11"
   in_ubuntu_repos: false
@@ -43,3 +43,14 @@ sources:
 logo: logos/freecad.svg
 confidence:
   alternatives: manual
+features:
+  modelare_3d: free
+  desen_tehnic_2d: partial
+  asamblare: free
+  randare: partial
+  simulare: partial
+  export_3d: free
+  import_dxf: free
+  masuratori: free
+  parametrice: free
+  open_source: free

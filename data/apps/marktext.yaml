@@ -39,3 +39,16 @@ sources:
 - https://github.com/marktext/marktext
 confidence:
   alternatives: manual
+features:
+  notite_text: free
+  notite_rich: free
+  markdown: free
+  arbore: 'no'
+  wiki: partial
+  baza_date: 'no'
+  atasamente: free
+  offline: free
+  sincronizare: 'no'
+  export_formate: free
+  scrise_gata: 'no'
+  open_source: free

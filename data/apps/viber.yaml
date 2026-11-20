@@ -33,3 +33,15 @@ sources:
 logo: logos/viber.svg
 confidence:
   alternatives: manual
+features:
+  chat_texte: free
+  chat_voz: free
+  video_call: free
+  messenger_integrat: 'no'
+  screen_share: partial
+  file_share: free
+  client_multi: 'no'
+  criptare_e2e: 'no'
+  selfhost: 'no'
+  boturi: 'no'
+  open_source: 'no'

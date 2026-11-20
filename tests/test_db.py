@@ -91,4 +91,65 @@ class TestHidratare:
         tax = catalog.taxonomy("security")
         assert len(tax) == 18
         assert tax[0][0] == "offline"
-        assert catalog.taxonomy("graphics") == []
+        # toate categoriile au taxonomie (matricea de comparație, sec. 15)
+        grafica = catalog.taxonomy("graphics")
+        assert grafica, "categoria „Grafică” trebuie să aibă taxonomie"
+        assert grafica[0][0] == "raster_editare"
+
+
+class TestMatriceComparatie:
+    """Matricea de funcționalități (sec. 15): toate categoriile au taxonomie.
+
+    Taxonomia e cea care face comparația utilă: aceleași rânduri pentru toate
+    aplicațiile din categorie, cu valori din vocabularul fix.
+    """
+
+    VALORI = {"free", "paid", "partial", "no", "unknown"}
+
+    @staticmethod
+    def _taxonomii():
+        from pathlib import Path
+
+        from ruamel.yaml import YAML
+
+        yaml = YAML()
+        baza = Path(__file__).resolve().parent.parent / "data" / "taxonomy"
+        rezultat = {}
+        for cale in sorted(baza.glob("*.yaml")):
+            date = yaml.load(cale.read_text(encoding="utf-8"))
+            rezultat[date["category"]] = list((date.get("features") or {}))
+        return rezultat
+
+    def test_fiecare_categorie_are_taxonomie(self, catalog):
+        categorii = {a["category"] for a in catalog.search()}
+        taxo = self._taxonomii()
+        lipsa = sorted(categorii - set(taxo))
+        assert not lipsa, f"categorii fără taxonomie: {lipsa}"
+        assert len(taxo) >= 13, f"doar {len(taxo)} taxonomii"
+
+    def test_fiecare_aplicatie_are_chei_din_taxonomie(self, catalog):
+        taxo = self._taxonomii()
+        greseli = []
+        for app in catalog.search():
+            chei = (app.get("features") or {}).keys()
+            permise = set(taxo.get(app["category"], []))
+            for cheie in chei:
+                if cheie not in permise:
+                    greseli.append(f"{app['id']}.{cheie}")
+        assert not greseli, f"chei necunoscute: {greseli[:5]}"
+
+    def test_valorile_sunt_din_vocabularul_fix(self, catalog):
+        greseli = []
+        for app in catalog.search():
+            for cheie, valoare in (app.get("features") or {}).items():
+                if valoare["value"] not in self.VALORI:
+                    greseli.append(f"{app['id']}.{cheie}={valoare['value']}")
+        assert not greseli, f"valori invalide: {greseli[:5]}"
+
+    def test_matricea_are_randuri_pentru_toate_categoriile(self, catalog):
+        """Fiecare categorie cu taxonomie are cel puțin 8 rânduri."""
+        prea_putine = []
+        for categorie in self._taxonomii():
+            if len(catalog.taxonomy(categorie)) < 8:
+                prea_putine.append(categorie)
+        assert not prea_putine, f"taxonomii prea scurte: {prea_putine}"

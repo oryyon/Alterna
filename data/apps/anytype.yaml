@@ -40,3 +40,16 @@ sources:
 logo: logos/anytype.svg
 confidence:
   alternatives: manual
+features:
+  notite_text: free
+  notite_rich: free
+  markdown: partial
+  arbore: free
+  wiki: free
+  baza_date: free
+  atasamente: free
+  offline: free
+  sincronizare: free
+  export_formate: free
+  scrise_gata: partial
+  open_source: free

@@ -26,7 +26,7 @@ details:
 
 indicators:
   popcon_rank: 8465
-  stars: 15685
+  stars: 15698
   stars_url: https://github.com/xournalpp/xournalpp
   latest_release: "2026-11"
   in_ubuntu_repos: true
@@ -34,8 +34,23 @@ indicators:
 sources:
 - https://xournalpp.github.io
 - https://github.com/xournalpp/xournalpp
+- https://github.com/xournalpp/xournalpp/blob/HEAD/readme/main.png
 logo: logos/xournalpp.png
 confidence:
   details.install_size_mb: auto
   details.romanian_language: manual
   alternatives: manual
+screenshot: screenshots/xournalpp.jpg
+features:
+  notite_text: partial
+  notite_rich: 'no'
+  markdown: 'no'
+  arbore: partial
+  wiki: 'no'
+  baza_date: 'no'
+  atasamente: 'no'
+  offline: free
+  sincronizare: 'no'
+  export_formate: free
+  scrise_gata: 'no'
+  open_source: free

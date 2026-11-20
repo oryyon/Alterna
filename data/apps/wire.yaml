@@ -29,7 +29,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 2556
+  stars: 2557
   stars_url: https://github.com/wireapp/wire
   latest_release:
   in_ubuntu_repos: false
@@ -43,3 +43,15 @@ confidence:
   alternatives: manual
 logo: logos/wire.svg
 screenshot: screenshots/wire.jpg
+features:
+  chat_texte: free
+  chat_voz: free
+  video_call: free
+  messenger_integrat: 'no'
+  screen_share: free
+  file_share: free
+  client_multi: 'no'
+  criptare_e2e: free
+  selfhost: free
+  boturi: 'no'
+  open_source: free

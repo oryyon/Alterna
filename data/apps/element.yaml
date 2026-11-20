@@ -29,7 +29,7 @@ details:
 
 indicators:
   popcon_rank:
-  stars: 13663
+  stars: 13668
   stars_url: https://github.com/element-hq/element-web
   latest_release: "2026-11"
   in_ubuntu_repos: false
@@ -42,3 +42,15 @@ logo: logos/element.svg
 confidence:
   details.telemetry: manual
   alternatives: manual
+features:
+  chat_texte: free
+  chat_voz: free
+  video_call: free
+  messenger_integrat: partial
+  screen_share: free
+  file_share: free
+  client_multi: 'no'
+  criptare_e2e: free
+  selfhost: free
+  boturi: free
+  open_source: free

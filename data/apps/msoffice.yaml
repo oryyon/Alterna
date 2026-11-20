@@ -32,3 +32,17 @@ sources:
 logo: logos/msoffice.png
 confidence:
   alternatives: manual
+features:
+  editare_text: paid
+  tabele: paid
+  prezentari: paid
+  calcul: paid
+  pdf: paid
+  editare_imagine: paid
+  formatare: paid
+  scrise_gata: paid
+  export_formate: paid
+  compatibilitate_ms: free
+  contabilitate: 'no'
+  biblioteaca: 'no'
+  open_source: 'no'

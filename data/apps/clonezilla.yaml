@@ -25,7 +25,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 1033
+  stars: 1035
   stars_url: https://github.com/stevenshiau/clonezilla
   latest_release: 2026-11
   in_ubuntu_repos: true
@@ -39,3 +39,17 @@ confidence:
   details.install_size_mb: auto
   alternatives: manual
 screenshot: screenshots/clonezilla.jpg
+features:
+  terminal: partial
+  arhivare: partial
+  disc_spatiu: free
+  backup: free
+  sincronizare: 'no'
+  baza_date: 'no'
+  retea: partial
+  virtualizare: 'no'
+  captura_ecran: 'no'
+  curatare: 'no'
+  conversie_media: 'no'
+  clipboard: 'no'
+  open_source: free

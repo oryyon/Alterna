@@ -25,7 +25,7 @@ details:
 
 indicators:
   popcon_rank: 20194
-  stars: 3999
+  stars: 4004
   stars_url: https://github.com/giuspen/cherrytree
   latest_release: "2026-11"
   in_ubuntu_repos: true
@@ -33,7 +33,22 @@ indicators:
 sources:
 - https://www.giuspen.net/cherrytree
 - https://github.com/giuspen/cherrytree
+- https://github.com/giuspen/cherrytree/blob/HEAD/docs/cherrytree-main_window_text.png
 confidence:
   details.install_size_mb: auto
   details.romanian_language: manual
   alternatives: manual
+screenshot: screenshots/cherrytree.jpg
+features:
+  notite_text: free
+  notite_rich: free
+  markdown: 'no'
+  arbore: free
+  wiki: free
+  baza_date: 'no'
+  atasamente: free
+  offline: free
+  sincronizare: 'no'
+  export_formate: free
+  scrise_gata: 'no'
+  open_source: free

@@ -42,3 +42,16 @@ confidence:
   details.install_size_mb: auto
   alternatives: manual
 screenshot: screenshots/gwenview.jpg
+features:
+  raster_editare: 'no'
+  vector_editare: 'no'
+  foto_ajustare: partial
+  raw: partial
+  straturi: 'no'
+  filtre: 'no'
+  retusare: 'no'
+  color_management: partial
+  plug_in_uri: 'no'
+  export_formate: partial
+  batch: 'no'
+  open_source: free

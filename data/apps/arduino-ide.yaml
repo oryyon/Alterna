@@ -41,3 +41,16 @@ confidence:
   details.install_size_mb: auto
   alternatives: manual
 screenshot: screenshots/arduino-ide.jpg
+features:
+  completare_cod: partial
+  lsp: 'no'
+  refactorizare: 'no'
+  debugger: partial
+  linter: 'no'
+  formatare: partial
+  git: 'no'
+  compilare: free
+  testare: 'no'
+  terminal: free
+  extensii: partial
+  open_source: free

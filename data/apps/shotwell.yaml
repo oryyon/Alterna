@@ -44,3 +44,16 @@ confidence:
   details.install_size_mb: auto
   alternatives: manual
 screenshot: screenshots/shotwell.jpg
+features:
+  raster_editare: 'no'
+  vector_editare: 'no'
+  foto_ajustare: partial
+  raw: free
+  straturi: 'no'
+  filtre: partial
+  retusare: 'no'
+  color_management: 'no'
+  plug_in_uri: 'no'
+  export_formate: partial
+  batch: 'no'
+  open_source: free

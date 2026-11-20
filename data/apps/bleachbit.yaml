@@ -23,7 +23,7 @@ details:
 
 indicators:
   popcon_rank: 10511
-  stars: 7511
+  stars: 7542
   stars_url: https://github.com/bleachbit/bleachbit
   latest_release: "2026-10"
   in_ubuntu_repos: true
@@ -36,3 +36,17 @@ confidence:
   details.install_size_mb: auto
   details.romanian_language: manual
   alternatives: manual
+features:
+  terminal: 'no'
+  arhivare: 'no'
+  disc_spatiu: partial
+  backup: 'no'
+  sincronizare: 'no'
+  baza_date: 'no'
+  retea: 'no'
+  virtualizare: 'no'
+  captura_ecran: 'no'
+  curatare: free
+  conversie_media: 'no'
+  clipboard: 'no'
+  open_source: free

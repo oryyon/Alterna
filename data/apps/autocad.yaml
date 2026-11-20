@@ -32,3 +32,14 @@ sources:
 logo: logos/autocad.svg
 confidence:
   alternatives: manual
+features:
+  modelare_3d: free
+  desen_tehnic_2d: free
+  asamblare: partial
+  randare: free
+  simulare: partial
+  export_3d: free
+  import_dxf: free
+  masuratori: free
+  parametrice: free
+  open_source: 'no'

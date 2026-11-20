@@ -31,7 +31,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 15969
+  stars: 15997
   stars_url: https://github.com/zotero/zotero
   latest_release: 2026-11
   in_ubuntu_repos: false
@@ -45,3 +45,16 @@ confidence:
   alternatives: manual
 logo: logos/zotero.svg
 screenshot: screenshots/zotero.jpg
+features:
+  notite_text: free
+  notite_rich: partial
+  markdown: 'no'
+  arbore: free
+  wiki: partial
+  baza_date: free
+  atasamente: free
+  offline: free
+  sincronizare: free
+  export_formate: free
+  scrise_gata: 'no'
+  open_source: free

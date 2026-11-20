@@ -42,3 +42,16 @@ confidence:
   details.install_size_mb: auto
   details.romanian_language: manual
   alternatives: manual
+features:
+  raster_editare: free
+  vector_editare: partial
+  foto_ajustare: partial
+  raw: 'no'
+  straturi: free
+  filtre: free
+  retusare: partial
+  color_management: free
+  plug_in_uri: free
+  export_formate: free
+  batch: 'no'
+  open_source: free

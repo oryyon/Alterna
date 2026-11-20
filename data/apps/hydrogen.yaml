@@ -30,7 +30,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 1355
+  stars: 1357
   stars_url: https://github.com/hydrogen-music/hydrogen
   latest_release: 2026-10
   in_ubuntu_repos: true
@@ -43,3 +43,16 @@ confidence:
   details.install_size_mb: auto
   alternatives: manual
 screenshot: screenshots/hydrogen.jpg
+features:
+  inregistrare: free
+  editare_audio: partial
+  efecte: free
+  midi: free
+  partitura: 'no'
+  instrumente_virtuale: free
+  biblioteaca_sonor: free
+  spectru: free
+  mixaj: 'no'
+  export: free
+  pluginuri: 'no'
+  open_source: free

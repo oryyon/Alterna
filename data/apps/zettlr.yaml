@@ -32,7 +32,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 13923
+  stars: 13944
   stars_url: https://github.com/Zettlr/Zettlr
   latest_release: 2026-11
   in_ubuntu_repos: false
@@ -40,6 +40,21 @@ sources:
 - https://www.zettlr.com/
 - https://github.com/Zettlr/Zettlr
 - https://www.wikidata.org/wiki/Q124476915
+- https://github.com/Zettlr/Zettlr/blob/HEAD/resources/screenshots/zettlr_view.png
 logo: logos/zettlr.svg
 confidence:
   alternatives: manual
+screenshot: screenshots/zettlr.jpg
+features:
+  notite_text: free
+  notite_rich: partial
+  markdown: free
+  arbore: free
+  wiki: free
+  baza_date: partial
+  atasamente: free
+  offline: free
+  sincronizare: 'no'
+  export_formate: free
+  scrise_gata: partial
+  open_source: free

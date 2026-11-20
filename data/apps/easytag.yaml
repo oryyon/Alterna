@@ -45,3 +45,16 @@ confidence:
   indicators.in_ubuntu_repos: auto
 screenshot: screenshots/easytag.jpg
 package: easytag
+features:
+  redare_formate: 'no'
+  lista_redare: 'no'
+  equalizator: 'no'
+  vizualizare: 'no'
+  radio_internet: 'no'
+  conversie_tag: free
+  karaoke: 'no'
+  disc_burn: 'no'
+  gpu: 'no'
+  extensii: 'no'
+  subtitrari: 'no'
+  open_source: free

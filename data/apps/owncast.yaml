@@ -30,7 +30,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 11671
+  stars: 11680
   stars_url: https://github.com/owncast/owncast
   latest_release: 2026-09
   in_ubuntu_repos: false
@@ -39,6 +39,18 @@ sources:
 - https://github.com/owncast/owncast
 - https://www.wikidata.org/wiki/Q104533790
 - https://owncast.online/privacy
+- https://github.com/owncast/owncast/blob/HEAD/https%3A//owncast.online/images/owncast-splash.png
 confidence:
   alternatives: manual
   details.telemetry: manual
+screenshot: screenshots/owncast.jpg
+features:
+  captura_ecran: 'no'
+  inregistrare: 'no'
+  streaming_live: free
+  webcam: 'no'
+  audio_capture: 'no'
+  player_video: partial
+  biblioteca_media: partial
+  scene: 'no'
+  open_source: free

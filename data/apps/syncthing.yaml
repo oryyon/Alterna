@@ -24,7 +24,7 @@ details:
 
 indicators:
   popcon_rank: 6286
-  stars: 90503
+  stars: 90621
   stars_url: https://github.com/syncthing/syncthing
   latest_release: "2026-10"
   in_ubuntu_repos: true
@@ -36,3 +36,17 @@ logo: logos/syncthing.svg
 confidence:
   details.install_size_mb: auto
   alternatives: manual
+features:
+  terminal: partial
+  arhivare: 'no'
+  disc_spatiu: 'no'
+  backup: partial
+  sincronizare: free
+  baza_date: 'no'
+  retea: free
+  virtualizare: 'no'
+  captura_ecran: 'no'
+  curatare: 'no'
+  conversie_media: 'no'
+  clipboard: 'no'
+  open_source: free

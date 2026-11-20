@@ -29,7 +29,7 @@ details:
 
 indicators:
   popcon_rank: 2242
-  stars: 20477
+  stars: 20511
   stars_url: https://github.com/videolan/vlc
   latest_release: "2026-09"
   in_ubuntu_repos: true
@@ -42,3 +42,16 @@ confidence:
   details.install_size_mb: auto
   details.romanian_language: manual
   alternatives: manual
+features:
+  redare_formate: free
+  lista_redare: free
+  equalizator: free
+  vizualizare: free
+  radio_internet: free
+  conversie_tag: 'no'
+  karaoke: 'no'
+  disc_burn: 'no'
+  gpu: free
+  extensii: free
+  subtitrari: free
+  open_source: free

@@ -38,3 +38,17 @@ confidence:
   details.install_size_mb: auto
   alternatives: manual
 screenshot: screenshots/thunar.jpg
+features:
+  terminal: 'no'
+  arhivare: partial
+  disc_spatiu: 'no'
+  backup: 'no'
+  sincronizare: 'no'
+  baza_date: 'no'
+  retea: partial
+  virtualizare: 'no'
+  captura_ecran: 'no'
+  curatare: 'no'
+  conversie_media: 'no'
+  clipboard: partial
+  open_source: free

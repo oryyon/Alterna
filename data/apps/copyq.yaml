@@ -22,7 +22,7 @@ details:
 
 indicators:
   popcon_rank: 16396
-  stars: 12646
+  stars: 12675
   stars_url: https://github.com/hluk/CopyQ
   latest_release: "2026-10"
   in_ubuntu_repos: true
@@ -33,3 +33,17 @@ sources:
 confidence:
   details.install_size_mb: auto
   alternatives: manual
+features:
+  terminal: 'no'
+  arhivare: 'no'
+  disc_spatiu: 'no'
+  backup: 'no'
+  sincronizare: 'no'
+  baza_date: 'no'
+  retea: 'no'
+  virtualizare: 'no'
+  captura_ecran: 'no'
+  curatare: 'no'
+  conversie_media: 'no'
+  clipboard: free
+  open_source: free

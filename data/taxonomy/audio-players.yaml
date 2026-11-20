@@ -1,0 +1,20 @@
+# Taxonomia canonică de funcționalități — categoria „Audio & Playere” (sec. 15)
+# Aceeași funcție = același rând, indiferent de denumirea comercială.
+# Cheile de aici sunt singurele permise în câmpul `features` al aplicațiilor cu
+# category: audio-players.
+# Valori posibile: free | paid | partial | no | unknown
+
+category: audio-players
+features:
+  redare_formate:       Redare audio și video
+  lista_redare:         Liste de redare și bibliotecă
+  equalizator:          Egalizator audio
+  vizualizare:          Vizualizare (spectru, cover art)
+  radio_internet:       Radio pe internet (streaming)
+  conversie_tag:        Etichetare și conversie ID3
+  karaoke:              Mod karaoke (eliminare vocal)
+  disc_burn:            Gravare pe disc
+  gpu:                  Accelerare hardware (GPU)
+  extensii:             Extensii și pluginuri
+  subtitrari:           Subtitrări
+  open_source:          Open source

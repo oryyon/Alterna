@@ -25,7 +25,7 @@ details:
 
 indicators:
   popcon_rank: 1969
-  stars: 4529
+  stars: 4556
   stars_url: https://github.com/ip7z/7zip
   latest_release: "2026-11"
   in_ubuntu_repos: true
@@ -37,3 +37,17 @@ logo: logos/sevenzip.svg
 confidence:
   details.install_size_mb: auto
   alternatives: manual
+features:
+  terminal: 'no'
+  arhivare: free
+  disc_spatiu: 'no'
+  backup: 'no'
+  sincronizare: 'no'
+  baza_date: 'no'
+  retea: 'no'
+  virtualizare: 'no'
+  captura_ecran: 'no'
+  curatare: 'no'
+  conversie_media: 'no'
+  clipboard: 'no'
+  open_source: partial

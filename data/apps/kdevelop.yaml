@@ -41,3 +41,16 @@ confidence:
   details.install_size_mb: auto
   alternatives: manual
 screenshot: screenshots/kdevelop.jpg
+features:
+  completare_cod: partial
+  lsp: free
+  refactorizare: free
+  debugger: free
+  linter: free
+  formatare: 'no'
+  git: free
+  compilare: free
+  testare: partial
+  terminal: 'no'
+  extensii: partial
+  open_source: free

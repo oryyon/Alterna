@@ -35,3 +35,17 @@ logo: logos/gparted.png
 confidence:
   details.install_size_mb: auto
   alternatives: manual
+features:
+  terminal: 'no'
+  arhivare: 'no'
+  disc_spatiu: free
+  backup: 'no'
+  sincronizare: 'no'
+  baza_date: 'no'
+  retea: 'no'
+  virtualizare: 'no'
+  captura_ecran: 'no'
+  curatare: 'no'
+  conversie_media: 'no'
+  clipboard: 'no'
+  open_source: free

@@ -26,7 +26,7 @@ details:
 
 indicators:
   popcon_rank: 4810
-  stars: 19088
+  stars: 19114
   stars_url: https://github.com/audacity/audacity
   latest_release: "2026-11"
   in_ubuntu_repos: true
@@ -39,3 +39,16 @@ confidence:
   details.install_size_mb: auto
   details.romanian_language: manual
   alternatives: manual
+features:
+  inregistrare: free
+  editare_audio: free
+  efecte: free
+  midi: partial
+  partitura: 'no'
+  instrumente_virtuale: 'no'
+  biblioteaca_sonor: 'no'
+  spectru: free
+  mixaj: 'no'
+  export: free
+  pluginuri: free
+  open_source: free

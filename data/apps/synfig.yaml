@@ -30,7 +30,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 2437
+  stars: 2457
   stars_url: https://github.com/synfig/synfig
   latest_release: 2026-03
   in_ubuntu_repos: true
@@ -44,3 +44,16 @@ confidence:
   details.install_size_mb: auto
   alternatives: manual
 screenshot: screenshots/synfig.jpg
+features:
+  raster_editare: 'no'
+  vector_editare: free
+  foto_ajustare: 'no'
+  raw: 'no'
+  straturi: free
+  filtre: 'no'
+  retusare: 'no'
+  color_management: 'no'
+  plug_in_uri: partial
+  export_formate: free
+  batch: 'no'
+  open_source: free

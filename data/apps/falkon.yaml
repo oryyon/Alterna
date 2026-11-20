@@ -26,7 +26,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 1132
+  stars: 1131
   stars_url: https://github.com/QupZilla/qupzilla
   latest_release: 2018-03
   in_ubuntu_repos: true
@@ -40,3 +40,15 @@ confidence:
   details.install_size_mb: auto
   alternatives: manual
 screenshot: screenshots/falkon.jpg
+features:
+  browsere: free
+  client_torrent: 'no'
+  client_email: 'no'
+  client_ftp: 'no'
+  client_terminal: 'no'
+  descarcare: free
+  ad_block: free
+  gestionare_ordonator: free
+  vpn: 'no'
+  motor_rendering: free
+  open_source: free

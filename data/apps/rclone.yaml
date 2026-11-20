@@ -30,7 +30,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 61062
+  stars: 61128
   stars_url: https://github.com/rclone/rclone
   latest_release: 2026-11
   in_ubuntu_repos: true
@@ -44,3 +44,17 @@ confidence:
   alternatives: manual
 logo: logos/rclone.svg
 screenshot: screenshots/rclone.jpg
+features:
+  terminal: free
+  arhivare: 'no'
+  disc_spatiu: 'no'
+  backup: free
+  sincronizare: free
+  baza_date: 'no'
+  retea: free
+  virtualizare: 'no'
+  captura_ecran: 'no'
+  curatare: 'no'
+  conversie_media: 'no'
+  clipboard: 'no'
+  open_source: free

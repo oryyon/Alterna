@@ -37,3 +37,13 @@ logo: logos/kazam.png
 confidence:
   details.install_size_mb: auto
   alternatives: manual
+features:
+  captura_ecran: free
+  inregistrare: free
+  streaming_live: 'no'
+  webcam: free
+  audio_capture: free
+  player_video: 'no'
+  biblioteca_media: 'no'
+  scene: 'no'
+  open_source: free

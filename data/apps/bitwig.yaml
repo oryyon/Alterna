@@ -42,3 +42,16 @@ logo: logos/bitwig.svg
 confidence:
   alternatives: manual
 screenshot: screenshots/bitwig.jpg
+features:
+  inregistrare: free
+  editare_audio: free
+  efecte: free
+  midi: free
+  partitura: 'no'
+  instrumente_virtuale: free
+  biblioteaca_sonor: free
+  spectru: free
+  mixaj: partial
+  export: free
+  pluginuri: free
+  open_source: 'no'

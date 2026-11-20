@@ -37,3 +37,16 @@ sources:
 logo: logos/notion.svg
 confidence:
   alternatives: manual
+features:
+  notite_text: free
+  notite_rich: free
+  markdown: partial
+  arbore: free
+  wiki: free
+  baza_date: free
+  atasamente: free
+  offline: partial
+  sincronizare: free
+  export_formate: free
+  scrise_gata: free
+  open_source: 'no'

@@ -33,3 +33,17 @@ sources:
 logo: logos/openoffice.png
 confidence:
   alternatives: manual
+features:
+  editare_text: free
+  tabele: free
+  prezentari: free
+  calcul: free
+  pdf: free
+  editare_imagine: free
+  formatare: free
+  scrise_gata: free
+  export_formate: free
+  compatibilitate_ms: partial
+  contabilitate: 'no'
+  biblioteaca: 'no'
+  open_source: free

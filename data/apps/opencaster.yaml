@@ -36,3 +36,13 @@ sources:
 confidence:
   details.first_release_year: auto
   alternatives: manual
+features:
+  captura_ecran: free
+  inregistrare: free
+  streaming_live: free
+  webcam: 'no'
+  audio_capture: free
+  player_video: 'no'
+  biblioteca_media: 'no'
+  scene: partial
+  open_source: free

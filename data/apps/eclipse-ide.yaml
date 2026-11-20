@@ -40,3 +40,16 @@ logo: logos/eclipse-ide.svg
 confidence:
   details.install_size_mb: auto
   alternatives: manual
+features:
+  completare_cod: free
+  lsp: free
+  refactorizare: free
+  debugger: free
+  linter: free
+  formatare: free
+  git: free
+  compilare: free
+  testare: free
+  terminal: free
+  extensii: free
+  open_source: free

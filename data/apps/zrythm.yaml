@@ -39,3 +39,16 @@ sources:
 confidence:
   details.first_release_year: auto
   alternatives: manual
+features:
+  inregistrare: free
+  editare_audio: free
+  efecte: free
+  midi: free
+  partitura: 'no'
+  instrumente_virtuale: free
+  biblioteaca_sonor: free
+  spectru: free
+  mixaj: 'no'
+  export: free
+  pluginuri: free
+  open_source: free

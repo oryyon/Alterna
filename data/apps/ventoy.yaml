@@ -23,7 +23,7 @@ details:
 
 indicators:
   popcon_rank:
-  stars: 80926
+  stars: 81008
   stars_url: https://github.com/ventoy/Ventoy
   latest_release: "2026-10"
   in_ubuntu_repos: false
@@ -31,6 +31,22 @@ indicators:
 sources:
 - https://www.ventoy.net
 - https://github.com/ventoy/Ventoy
+- https://github.com/ventoy/Ventoy/blob/HEAD/https%3A//www.ventoy.net/static/img/screen/screen_uefi.png
 logo: logos/ventoy.png
 confidence:
   alternatives: manual
+screenshot: screenshots/ventoy.jpg
+features:
+  terminal: 'no'
+  arhivare: 'no'
+  disc_spatiu: partial
+  backup: 'no'
+  sincronizare: 'no'
+  baza_date: 'no'
+  retea: 'no'
+  virtualizare: 'no'
+  captura_ecran: 'no'
+  curatare: 'no'
+  conversie_media: 'no'
+  clipboard: 'no'
+  open_source: free

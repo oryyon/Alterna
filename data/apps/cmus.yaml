@@ -28,7 +28,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 6295
+  stars: 6299
   stars_url: https://github.com/cmus/cmus
   latest_release: 2026-10
   in_ubuntu_repos: true
@@ -41,3 +41,16 @@ confidence:
   details.install_size_mb: auto
   alternatives: manual
 screenshot: screenshots/cmus.jpg
+features:
+  redare_formate: free
+  lista_redare: free
+  equalizator: free
+  vizualizare: 'no'
+  radio_internet: free
+  conversie_tag: 'no'
+  karaoke: 'no'
+  disc_burn: 'no'
+  gpu: 'no'
+  extensii: 'no'
+  subtitrari: 'no'
+  open_source: free

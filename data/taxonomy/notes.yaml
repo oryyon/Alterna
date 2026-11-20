@@ -1,0 +1,20 @@
+# Taxonomia canonică de funcționalități — categoria „Notițe” (sec. 15)
+# Aceeași funcție = același rând, indiferent de denumirea comercială.
+# Cheile de aici sunt singurele permise în câmpul `features` al aplicațiilor cu
+# category: notes.
+# Valori posibile: free | paid | partial | no | unknown
+
+category: notes
+features:
+  notite_text:          Notițe simple (text)
+  notite_rich:          Notițe cu formatare (bogat text)
+  markdown:             Editare în Markdown
+  arbore:               Organizare în arbore / foldere
+  wiki:                 Legături între notițe (wiki / bidirecțional)
+  baza_date:            Bază de date și proprietăți (backlinks, etichete)
+  atasamente:           Atașamente (fișiere, imagini)
+  offline:              Funcționare completă offline
+  sincronizare:         Sincronizare între dispozitive
+  export_formate:       Export (Markdown, PDF, HTML)
+  scrise_gata:          Șabloane, zilnice, liste de sarcini
+  open_source:          Open source

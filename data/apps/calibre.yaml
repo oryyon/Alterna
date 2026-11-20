@@ -31,7 +31,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 26454
+  stars: 26477
   stars_url: https://github.com/kovidgoyal/calibre
   latest_release: 2026-11
   in_ubuntu_repos: true
@@ -46,3 +46,17 @@ confidence:
   details.install_size_mb: auto
   alternatives: manual
 screenshot: screenshots/calibre.jpg
+features:
+  editare_text: 'no'
+  tabele: 'no'
+  prezentari: 'no'
+  calcul: 'no'
+  pdf: partial
+  editare_imagine: 'no'
+  formatare: 'no'
+  scrise_gata: 'no'
+  export_formate: free
+  compatibilitate_ms: partial
+  contabilitate: 'no'
+  biblioteaca: free
+  open_source: free

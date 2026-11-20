@@ -25,9 +25,9 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 3310
+  stars: 3312
   stars_url: https://github.com/virt-manager/virt-manager
-  latest_release: 2025-08
+  latest_release: 2026-01
   in_ubuntu_repos: true
 sources:
 - https://virt-manager.org/
@@ -44,3 +44,17 @@ confidence:
   indicators.in_ubuntu_repos: auto
 screenshot: screenshots/virt-manager.jpg
 package: virt-manager
+features:
+  terminal: partial
+  arhivare: 'no'
+  disc_spatiu: 'no'
+  backup: 'no'
+  sincronizare: 'no'
+  baza_date: 'no'
+  retea: partial
+  virtualizare: free
+  captura_ecran: 'no'
+  curatare: 'no'
+  conversie_media: 'no'
+  clipboard: 'no'
+  open_source: free

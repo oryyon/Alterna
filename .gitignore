@@ -31,3 +31,7 @@ comparatie-alterna.*
 *.swp
 .DS_Store
 
+# Jurnale și fișiere temporare (nu se comite)
+nohup.out
+*.bak
+catalog-nou.db/

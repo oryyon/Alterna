@@ -31,7 +31,7 @@ details:
 
 indicators:
   popcon_rank: 10742
-  stars: 15705
+  stars: 15735
   stars_url: https://github.com/mltframework/shotcut
   latest_release: "2026-11"
   in_ubuntu_repos: true
@@ -39,6 +39,7 @@ indicators:
 sources:
 - https://shotcut.org
 - https://github.com/mltframework/shotcut
+- https://github.com/mltframework/shotcut/blob/HEAD/https%3A//www.shotcut.org/assets/img/screenshots/Shotcut-18.11.18.png
 logo: logos/shotcut.png
 confidence:
   details.install_size_mb: auto
@@ -55,3 +56,4 @@ features:
   gpu: free
   export_formate: free
   open_source: free
+screenshot: screenshots/shotcut.jpg

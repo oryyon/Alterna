@@ -28,7 +28,7 @@ details:
 
 indicators:
   popcon_rank:
-  stars: 16717
+  stars: 16735
   stars_url: https://github.com/signalapp/Signal-Desktop
   latest_release: "2026-11"
   in_ubuntu_repos: false
@@ -39,3 +39,15 @@ sources:
 logo: logos/signal.svg
 confidence:
   alternatives: manual
+features:
+  chat_texte: free
+  chat_voz: free
+  video_call: free
+  messenger_integrat: 'no'
+  screen_share: 'no'
+  file_share: free
+  client_multi: 'no'
+  criptare_e2e: free
+  selfhost: 'no'
+  boturi: 'no'
+  open_source: free

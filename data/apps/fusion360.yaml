@@ -33,3 +33,14 @@ sources:
 logo: logos/fusion360.png
 confidence:
   alternatives: manual
+features:
+  modelare_3d: free
+  desen_tehnic_2d: partial
+  asamblare: free
+  randare: free
+  simulare: free
+  export_3d: free
+  import_dxf: free
+  masuratori: free
+  parametrice: free
+  open_source: 'no'

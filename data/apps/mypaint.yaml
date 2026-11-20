@@ -29,7 +29,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 3002
+  stars: 3003
   stars_url: https://github.com/mypaint/mypaint
   latest_release: 2020-05
   in_ubuntu_repos: true
@@ -42,3 +42,16 @@ confidence:
   details.install_size_mb: auto
   alternatives: manual
 screenshot: screenshots/mypaint.jpg
+features:
+  raster_editare: free
+  vector_editare: 'no'
+  foto_ajustare: partial
+  raw: 'no'
+  straturi: partial
+  filtre: partial
+  retusare: 'no'
+  color_management: 'no'
+  plug_in_uri: 'no'
+  export_formate: free
+  batch: 'no'
+  open_source: free

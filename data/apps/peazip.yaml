@@ -26,7 +26,7 @@ details:
 
 indicators:
   popcon_rank:
-  stars: 8155
+  stars: 8173
   stars_url: https://github.com/peazip/PeaZip
   latest_release: "2026-10"
   in_ubuntu_repos: false
@@ -34,6 +34,22 @@ indicators:
 sources:
 - https://peazip.github.io
 - https://github.com/peazip/PeaZip
+- https://github.com/peazip/PeaZip/blob/HEAD/https%3A//peazip.github.io/linux-dark-mode.png
 logo: logos/peazip.png
 confidence:
   alternatives: manual
+screenshot: screenshots/peazip.jpg
+features:
+  terminal: 'no'
+  arhivare: free
+  disc_spatiu: 'no'
+  backup: 'no'
+  sincronizare: 'no'
+  baza_date: 'no'
+  retea: 'no'
+  virtualizare: 'no'
+  captura_ecran: 'no'
+  curatare: 'no'
+  conversie_media: 'no'
+  clipboard: 'no'
+  open_source: free

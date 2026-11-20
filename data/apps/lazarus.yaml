@@ -42,3 +42,16 @@ confidence:
   alternatives: manual
 logo: logos/lazarus.svg
 screenshot: screenshots/lazarus.jpg
+features:
+  completare_cod: 'no'
+  lsp: partial
+  refactorizare: partial
+  debugger: free
+  linter: 'no'
+  formatare: 'no'
+  git: 'no'
+  compilare: free
+  testare: partial
+  terminal: 'no'
+  extensii: partial
+  open_source: free

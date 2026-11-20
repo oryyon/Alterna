@@ -28,7 +28,7 @@ details:
 
 indicators:
   popcon_rank: 8886
-  stars: 2904
+  stars: 2907
   stars_url: https://github.com/MaartenBaert/ssr
   latest_release: "2021-05"
   in_ubuntu_repos: true
@@ -36,7 +36,19 @@ indicators:
 sources:
 - https://www.maartenbaert.be/simplescreenrecorder
 - https://github.com/MaartenBaert/ssr
+- https://github.com/MaartenBaert/ssr/blob/HEAD/data/screenshots/screenshot01.png
 logo: logos/ssr.png
 confidence:
   details.install_size_mb: auto
   alternatives: manual
+screenshot: screenshots/ssr.jpg
+features:
+  captura_ecran: free
+  inregistrare: free
+  streaming_live: 'no'
+  webcam: partial
+  audio_capture: free
+  player_video: 'no'
+  biblioteca_media: 'no'
+  scene: 'no'
+  open_source: free

@@ -32,7 +32,7 @@ details:
 
 indicators:
   popcon_rank: 13244
-  stars: 10679
+  stars: 10696
   stars_url: https://github.com/LMMS/lmms
   latest_release: "2026-09"
   in_ubuntu_repos: true
@@ -45,3 +45,16 @@ confidence:
   details.install_size_mb: auto
   details.romanian_language: manual
   alternatives: manual
+features:
+  inregistrare: free
+  editare_audio: partial
+  efecte: free
+  midi: free
+  partitura: 'no'
+  instrumente_virtuale: free
+  biblioteaca_sonor: free
+  spectru: free
+  mixaj: 'no'
+  export: free
+  pluginuri: partial
+  open_source: free

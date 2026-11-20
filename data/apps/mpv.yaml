@@ -26,7 +26,7 @@ details:
 
 indicators:
   popcon_rank: 3959
-  stars: 38159
+  stars: 38211
   stars_url: https://github.com/mpv-player/mpv
   latest_release: "2026-11"
   in_ubuntu_repos: true
@@ -38,3 +38,16 @@ logo: logos/mpv.svg
 confidence:
   details.install_size_mb: auto
   alternatives: manual
+features:
+  redare_formate: free
+  lista_redare: partial
+  equalizator: 'no'
+  vizualizare: 'no'
+  radio_internet: free
+  conversie_tag: 'no'
+  karaoke: 'no'
+  disc_burn: 'no'
+  gpu: free
+  extensii: free
+  subtitrari: free
+  open_source: free

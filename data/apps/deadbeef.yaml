@@ -22,7 +22,7 @@ details:
 
 indicators:
   popcon_rank:
-  stars: 1996
+  stars: 1997
   stars_url: https://github.com/DeaDBeeF-Player/deadbeef
   latest_release: "2026-06"
   in_ubuntu_repos: false
@@ -34,3 +34,16 @@ logo: logos/deadbeef.png
 confidence:
   details.romanian_language: manual
   alternatives: manual
+features:
+  redare_formate: free
+  lista_redare: free
+  equalizator: free
+  vizualizare: partial
+  radio_internet: free
+  conversie_tag: partial
+  karaoke: 'no'
+  disc_burn: 'no'
+  gpu: 'no'
+  extensii: free
+  subtitrari: 'no'
+  open_source: free

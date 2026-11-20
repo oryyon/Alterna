@@ -32,7 +32,7 @@ details:
 
 indicators:
   popcon_rank: 4835
-  stars: 4650
+  stars: 4665
   stars_url: https://github.com/LibreOffice/core
   latest_release: "2026-11"
   in_ubuntu_repos: true
@@ -46,3 +46,17 @@ confidence:
   details.install_size_mb: auto
   details.telemetry: manual
   alternatives: manual
+features:
+  editare_text: free
+  tabele: free
+  prezentari: free
+  calcul: free
+  pdf: free
+  editare_imagine: free
+  formatare: free
+  scrise_gata: free
+  export_formate: free
+  compatibilitate_ms: partial
+  contabilitate: 'no'
+  biblioteaca: 'no'
+  open_source: free

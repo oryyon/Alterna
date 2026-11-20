@@ -29,7 +29,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 34725
+  stars: 34747
   stars_url: https://github.com/balena-io/etcher
   latest_release: 2026-10
   in_ubuntu_repos: false
@@ -39,3 +39,17 @@ sources:
 - https://www.wikidata.org/wiki/Q30068972
 confidence:
   alternatives: manual
+features:
+  terminal: 'no'
+  arhivare: 'no'
+  disc_spatiu: partial
+  backup: 'no'
+  sincronizare: 'no'
+  baza_date: 'no'
+  retea: 'no'
+  virtualizare: 'no'
+  captura_ecran: 'no'
+  curatare: 'no'
+  conversie_media: 'no'
+  clipboard: 'no'
+  open_source: free

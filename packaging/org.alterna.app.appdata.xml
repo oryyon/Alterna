@@ -47,6 +47,14 @@
   <update_contact>alterna_AT_github.com</update_contact>
 
   <releases>
+    <release version="0.1.17" date="2026-11-20">
+      <description>
+        <p>Matricea de comparație acoperă acum toate cele 13 categorii, cu
+        156 de rânduri de funcționalități și valori pentru 191 de aplicații.</p>
+        <p>Mai multe capturi de ecran, luate din surse oficiale (Wikimedia și
+        depozitele proiectelor), cu atribuirea documentată.</p>
+      </description>
+    </release>
     <release version="0.1.16" date="2026-11-20">
       <description>
         <p>În Setări, câmpurile fiecărei surse AI sunt încadrate într-un card

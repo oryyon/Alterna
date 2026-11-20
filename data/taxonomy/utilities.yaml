@@ -1,0 +1,21 @@
+# Taxonomia canonică de funcționalități — categoria „Utilitare” (sec. 15)
+# Aceeași funcție = același rând, indiferent de denumirea comercială.
+# Cheile de aici sunt singurele permise în câmpul `features` al aplicațiilor cu
+# category: utilities.
+# Valori posibile: free | paid | partial | no | unknown
+
+category: utilities
+features:
+  terminal:             Terminal (shell interactiv)
+  arhivare:             Arhivare și dezarhivare
+  disc_spatiu:          Analiză și gestionarea discului
+  backup:               Copii de rezervă
+  sincronizare:         Sincronizare între dispozitive
+  baza_date:            Client și editor de baze de date
+  retea:                Transfer de fișiere în rețea
+  virtualizare:         Mașini virtuale și containere
+  captura_ecran:        Captură de ecran
+  curatare:             Curățare a sistemului
+  conversie_media:      Conversie audio/video
+  clipboard:            Istoric și gestionare clipboard
+  open_source:          Open source

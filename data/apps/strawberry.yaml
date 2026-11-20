@@ -32,7 +32,7 @@ details:
 
 indicators:
   popcon_rank: 13915
-  stars: 4085
+  stars: 4088
   stars_url: https://github.com/strawberrymusicplayer/strawberry
   latest_release: "2026-10"
   in_ubuntu_repos: true
@@ -40,6 +40,21 @@ indicators:
 sources:
 - https://www.strawberrymusicplayer.org
 - https://github.com/strawberrymusicplayer/strawberry
+- https://github.com/strawberrymusicplayer/strawberry/blob/HEAD/https%3A//raw.githubusercontent.com/strawberrymusicplayer/strawberry/master/data/screenshot/screenshot.png
 confidence:
   details.install_size_mb: auto
   alternatives: manual
+screenshot: screenshots/strawberry.jpg
+features:
+  redare_formate: free
+  lista_redare: free
+  equalizator: free
+  vizualizare: free
+  radio_internet: free
+  conversie_tag: free
+  karaoke: 'no'
+  disc_burn: 'no'
+  gpu: 'no'
+  extensii: partial
+  subtitrari: 'no'
+  open_source: free

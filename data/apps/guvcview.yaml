@@ -41,3 +41,13 @@ confidence:
   details.install_size_mb: auto
   alternatives: manual
 screenshot: screenshots/guvcview.jpg
+features:
+  captura_ecran: 'no'
+  inregistrare: free
+  streaming_live: free
+  webcam: free
+  audio_capture: free
+  player_video: 'no'
+  biblioteca_media: 'no'
+  scene: 'no'
+  open_source: free

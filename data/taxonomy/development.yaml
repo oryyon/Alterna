@@ -1,0 +1,20 @@
+# Taxonomia canonică de funcționalități — categoria „Dezvoltare” (sec. 15)
+# Aceeași funcție = același rând, indiferent de denumirea comercială.
+# Cheile de aici sunt singurele permise în câmpul `features` al aplicațiilor cu
+# category: development.
+# Valori posibile: free | paid | partial | no | unknown
+
+category: development
+features:
+  completare_cod:       Completare automată a codului
+  lsp:                  Language Server Protocol (LSP)
+  refactorizare:        Refactorizare și navigare în cod
+  debugger:             Debugger integrat
+  linter:              Analiză statică / lint
+  formatare:            Formatare automată a codului
+  git:                  Integrare cu Git
+  compilare:           Compilare / construire de proiecte
+  testare:              Rulare de teste
+  terminal:             Terminal integrat
+  extensii:             Extensii și pluginuri
+  open_source:          Open source

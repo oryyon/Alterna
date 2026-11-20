@@ -34,3 +34,17 @@ logo: logos/virtualbox.svg
 confidence:
   details.install_size_mb: auto
   alternatives: manual
+features:
+  terminal: 'no'
+  arhivare: 'no'
+  disc_spatiu: 'no'
+  backup: 'no'
+  sincronizare: 'no'
+  baza_date: 'no'
+  retea: partial
+  virtualizare: free
+  captura_ecran: 'no'
+  curatare: 'no'
+  conversie_media: 'no'
+  clipboard: 'no'
+  open_source: partial

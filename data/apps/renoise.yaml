@@ -42,3 +42,16 @@ confidence:
   details.first_release_year: auto
   alternatives: manual
 screenshot: screenshots/renoise.jpg
+features:
+  inregistrare: free
+  editare_audio: free
+  efecte: free
+  midi: partial
+  partitura: 'no'
+  instrumente_virtuale: free
+  biblioteaca_sonor: free
+  spectru: free
+  mixaj: 'no'
+  export: free
+  pluginuri: free
+  open_source: 'no'

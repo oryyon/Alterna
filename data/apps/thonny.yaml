@@ -28,7 +28,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 4008
+  stars: 4013
   stars_url: https://github.com/thonny/thonny
   latest_release: 2026-10
   in_ubuntu_repos: true
@@ -42,3 +42,16 @@ confidence:
   details.install_size_mb: auto
   alternatives: manual
 screenshot: screenshots/thonny.jpg
+features:
+  completare_cod: partial
+  lsp: 'no'
+  refactorizare: 'no'
+  debugger: free
+  linter: 'no'
+  formatare: 'no'
+  git: 'no'
+  compilare: 'no'
+  testare: free
+  terminal: free
+  extensii: 'no'
+  open_source: free

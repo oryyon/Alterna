@@ -28,7 +28,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 23899
+  stars: 23911
   stars_url: https://github.com/beekeeper-studio/beekeeper-studio
   latest_release: 2026-11
   in_ubuntu_repos: false
@@ -36,5 +36,21 @@ sources:
 - https://www.beekeeperstudio.io/
 - https://github.com/beekeeper-studio/beekeeper-studio
 - https://www.wikidata.org/wiki/Q93533441
+- https://github.com/beekeeper-studio/beekeeper-studio/blob/HEAD/https%3A//user-images.githubusercontent.com/279769/203650152-4a34af1f-8a38-47cf-a273-d34d1c84feeb.png
 confidence:
   alternatives: manual
+screenshot: screenshots/beekeeper-studio.jpg
+features:
+  terminal: 'no'
+  arhivare: 'no'
+  disc_spatiu: 'no'
+  backup: 'no'
+  sincronizare: 'no'
+  baza_date: free
+  retea: partial
+  virtualizare: 'no'
+  captura_ecran: 'no'
+  curatare: 'no'
+  conversie_media: 'no'
+  clipboard: 'no'
+  open_source: 'no'

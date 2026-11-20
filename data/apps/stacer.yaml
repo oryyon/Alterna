@@ -24,14 +24,30 @@ details:
 
 indicators:
   popcon_rank: 19080
-  stars: 9350
+  stars: 9346
   stars_url: https://github.com/oguzhaninan/Stacer
   latest_release: "2019-05"
   in_ubuntu_repos: true
 
 sources:
 - https://github.com/oguzhaninan/Stacer
+- https://github.com/oguzhaninan/Stacer/blob/HEAD/https%3A//raw.githubusercontent.com/oguzhaninan/Stacer/native/screenshots/Screenshot-1.0.9-1.png
 logo: logos/stacer.png
 confidence:
   details.install_size_mb: auto
   alternatives: manual
+screenshot: screenshots/stacer.jpg
+features:
+  terminal: 'no'
+  arhivare: 'no'
+  disc_spatiu: partial
+  backup: 'no'
+  sincronizare: 'no'
+  baza_date: 'no'
+  retea: 'no'
+  virtualizare: 'no'
+  captura_ecran: 'no'
+  curatare: partial
+  conversie_media: 'no'
+  clipboard: 'no'
+  open_source: free

@@ -39,3 +39,17 @@ confidence:
   details.install_size_mb: auto
   alternatives: manual
 screenshot: screenshots/konsole.jpg
+features:
+  terminal: free
+  arhivare: 'no'
+  disc_spatiu: 'no'
+  backup: 'no'
+  sincronizare: 'no'
+  baza_date: 'no'
+  retea: 'no'
+  virtualizare: 'no'
+  captura_ecran: 'no'
+  curatare: 'no'
+  conversie_media: 'no'
+  clipboard: 'no'
+  open_source: free

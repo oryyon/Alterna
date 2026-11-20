@@ -27,7 +27,7 @@ details:
 
 indicators:
   popcon_rank: 7665
-  stars: 31569
+  stars: 31598
   stars_url: https://github.com/flameshot-org/flameshot
   latest_release: "2026-11"
   in_ubuntu_repos: true
@@ -39,3 +39,17 @@ logo: logos/flameshot.png
 confidence:
   details.install_size_mb: auto
   alternatives: manual
+features:
+  terminal: 'no'
+  arhivare: 'no'
+  disc_spatiu: 'no'
+  backup: 'no'
+  sincronizare: 'no'
+  baza_date: 'no'
+  retea: 'no'
+  virtualizare: 'no'
+  captura_ecran: free
+  curatare: 'no'
+  conversie_media: 'no'
+  clipboard: partial
+  open_source: free

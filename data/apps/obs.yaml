@@ -29,7 +29,7 @@ details:
 
 indicators:
   popcon_rank: 6029
-  stars: 79615
+  stars: 79798
   stars_url: https://github.com/obsproject/obs-studio
   latest_release: "2026-10"
   in_ubuntu_repos: true    # pachetul obs-studio
@@ -40,3 +40,13 @@ logo: logos/obs.svg
 confidence:
   details.install_size_mb: auto
   alternatives: manual
+features:
+  captura_ecran: free
+  inregistrare: free
+  streaming_live: free
+  webcam: free
+  audio_capture: free
+  player_video: 'no'
+  biblioteca_media: 'no'
+  scene: free
+  open_source: free

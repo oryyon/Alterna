@@ -36,3 +36,16 @@ sources:
 - https://www.wikidata.org/wiki/Q56354069
 confidence:
   alternatives: manual
+features:
+  raster_editare: partial
+  vector_editare: free
+  foto_ajustare: 'no'
+  raw: 'no'
+  straturi: partial
+  filtre: 'no'
+  retusare: 'no'
+  color_management: 'no'
+  plug_in_uri: 'no'
+  export_formate: free
+  batch: 'no'
+  open_source: 'no'

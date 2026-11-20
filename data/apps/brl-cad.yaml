@@ -30,7 +30,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 1046
+  stars: 1045
   stars_url: https://github.com/BRL-CAD/brlcad
   latest_release: 2026-11
   in_ubuntu_repos: false
@@ -46,3 +46,14 @@ confidence:
   indicators.stars_url: auto
   indicators.latest_release: auto
 screenshot: screenshots/brl-cad.jpg
+features:
+  modelare_3d: free
+  desen_tehnic_2d: free
+  asamblare: 'no'
+  randare: partial
+  simulare: 'no'
+  export_3d: free
+  import_dxf: free
+  masuratori: free
+  parametrice: 'no'
+  open_source: free

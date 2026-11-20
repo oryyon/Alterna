@@ -42,3 +42,16 @@ confidence:
   alternatives: manual
 logo: logos/codeblocks.svg
 screenshot: screenshots/codeblocks.jpg
+features:
+  completare_cod: 'no'
+  lsp: 'no'
+  refactorizare: partial
+  debugger: free
+  linter: 'no'
+  formatare: 'no'
+  git: 'no'
+  compilare: free
+  testare: 'no'
+  terminal: 'no'
+  extensii: partial
+  open_source: free

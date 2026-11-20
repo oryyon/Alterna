@@ -26,7 +26,7 @@ details:
 
 indicators:
   popcon_rank:
-  stars: 20737
+  stars: 20747
   stars_url: https://github.com/JetBrains/intellij-community
   latest_release: "2026-11"
   in_ubuntu_repos: false
@@ -37,3 +37,16 @@ sources:
 logo: logos/intellij-idea.svg
 confidence:
   alternatives: manual
+features:
+  completare_cod: free
+  lsp: free
+  refactorizare: free
+  debugger: free
+  linter: free
+  formatare: free
+  git: free
+  compilare: free
+  testare: free
+  terminal: free
+  extensii: free
+  open_source: 'no'

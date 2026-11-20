@@ -30,7 +30,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 18010
+  stars: 18020
   stars_url: https://github.com/Foundry376/Mailspring
   latest_release: 2026-10
   in_ubuntu_repos: false
@@ -38,5 +38,19 @@ sources:
 - https://getmailspring.com/
 - https://github.com/Foundry376/Mailspring
 - https://www.wikidata.org/wiki/Q47487583
+- https://github.com/Foundry376/Mailspring/blob/HEAD/https%3A//github.com/Foundry376/Mailspring/raw/master/screenshots/hero_graphic_mac%25402x.png
 confidence:
   alternatives: manual
+screenshot: screenshots/mailspring.jpg
+features:
+  chat_texte: 'no'
+  chat_voz: 'no'
+  video_call: 'no'
+  messenger_integrat: partial
+  screen_share: 'no'
+  file_share: free
+  client_multi: partial
+  criptare_e2e: 'no'
+  selfhost: 'no'
+  boturi: 'no'
+  open_source: 'no'

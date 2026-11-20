@@ -1,0 +1,19 @@
+# Taxonomia canonică de funcționalități — categoria „Comunicare” (sec. 15)
+# Aceeași funcție = același rând, indiferent de denumirea comercială.
+# Cheile de aici sunt singurele permise în câmpul `features` al aplicațiilor cu
+# category: communication.
+# Valori posibile: free | paid | partial | no | unknown
+
+category: communication
+features:
+  chat_texte:           Chat text
+  chat_voz:             Chat vocal
+  video_call:           Apeluri video
+  messenger_integrat:   Client pentru mesagerie (Signal, Telegram, Discord…)
+  screen_share:         Partajarea ecranului
+  file_share:           Transfer de fișiere
+  client_multi:         Mai multe conturi simultan
+  criptare_e2e:         Criptare de la un capăt la altul (E2E)
+  selfhost:             Server propriu (self-hosting)
+  boturi:               Boturi și integrare cu servicii
+  open_source:          Open source

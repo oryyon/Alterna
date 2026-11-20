@@ -40,3 +40,15 @@ confidence:
   details.install_size_mb: auto
   alternatives: manual
 screenshot: screenshots/pidgin.jpg
+features:
+  chat_texte: free
+  chat_voz: partial
+  video_call: 'no'
+  messenger_integrat: free
+  screen_share: 'no'
+  file_share: free
+  client_multi: free
+  criptare_e2e: 'no'
+  selfhost: 'no'
+  boturi: 'no'
+  open_source: free

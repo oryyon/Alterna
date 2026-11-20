@@ -43,3 +43,17 @@ confidence:
   details.install_size_mb: auto
   alternatives: manual
 screenshot: screenshots/file-roller.jpg
+features:
+  terminal: 'no'
+  arhivare: free
+  disc_spatiu: 'no'
+  backup: 'no'
+  sincronizare: 'no'
+  baza_date: 'no'
+  retea: 'no'
+  virtualizare: 'no'
+  captura_ecran: 'no'
+  curatare: 'no'
+  conversie_media: 'no'
+  clipboard: 'no'
+  open_source: free

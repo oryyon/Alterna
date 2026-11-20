@@ -27,7 +27,7 @@ details:
 
 indicators:
   popcon_rank:
-  stars: 4138
+  stars: 4140
   stars_url: https://github.com/PintaProject/Pinta
   latest_release: "2026-04"
   in_ubuntu_repos: false
@@ -39,3 +39,16 @@ logo: logos/pinta.png
 confidence:
   details.romanian_language: manual
   alternatives: manual
+features:
+  raster_editare: free
+  vector_editare: 'no'
+  foto_ajustare: partial
+  raw: 'no'
+  straturi: partial
+  filtre: partial
+  retusare: 'no'
+  color_management: 'no'
+  plug_in_uri: partial
+  export_formate: free
+  batch: 'no'
+  open_source: free

@@ -33,7 +33,7 @@ details:
 
 indicators:
   popcon_rank:
-  stars: 57216
+  stars: 57260
   stars_url: https://github.com/laurent22/joplin
   latest_release: "2026-11"
   in_ubuntu_repos: false
@@ -41,7 +41,22 @@ indicators:
 sources:
 - https://joplinapp.org
 - https://github.com/laurent22/joplin
+- https://github.com/laurent22/joplin/blob/HEAD/https%3A//raw.githubusercontent.com/laurent22/joplin/dev/Assets/WebsiteAssets/images/home-top-img.png
 logo: logos/joplin.svg
 confidence:
   details.romanian_language: manual
   alternatives: manual
+screenshot: screenshots/joplin.jpg
+features:
+  notite_text: free
+  notite_rich: free
+  markdown: free
+  arbore: free
+  wiki: free
+  baza_date: free
+  atasamente: free
+  offline: partial
+  sincronizare: free
+  export_formate: free
+  scrise_gata: free
+  open_source: free

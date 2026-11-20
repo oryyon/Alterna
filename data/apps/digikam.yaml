@@ -45,3 +45,16 @@ confidence:
   details.install_size_mb: auto
   alternatives: manual
 screenshot: screenshots/digikam.jpg
+features:
+  raster_editare: free
+  vector_editare: 'no'
+  foto_ajustare: free
+  raw: free
+  straturi: 'no'
+  filtre: free
+  retusare: partial
+  color_management: free
+  plug_in_uri: partial
+  export_formate: free
+  batch: free
+  open_source: free

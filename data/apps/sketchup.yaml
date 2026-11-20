@@ -42,3 +42,14 @@ logo: logos/sketchup.svg
 confidence:
   alternatives: manual
 screenshot: screenshots/sketchup.jpg
+features:
+  modelare_3d: free
+  desen_tehnic_2d: 'no'
+  asamblare: 'no'
+  randare: 'no'
+  simulare: 'no'
+  export_3d: free
+  import_dxf: free
+  masuratori: free
+  parametrice: 'no'
+  open_source: 'no'

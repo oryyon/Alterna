@@ -35,3 +35,15 @@ sources:
 logo: logos/whatsapp.svg
 confidence:
   alternatives: manual
+features:
+  chat_texte: free
+  chat_voz: free
+  video_call: free
+  messenger_integrat: 'no'
+  screen_share: 'no'
+  file_share: free
+  client_multi: 'no'
+  criptare_e2e: free
+  selfhost: 'no'
+  boturi: 'no'
+  open_source: 'no'

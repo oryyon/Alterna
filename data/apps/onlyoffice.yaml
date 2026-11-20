@@ -28,7 +28,7 @@ details:
 
 indicators:
   popcon_rank:
-  stars: 5744
+  stars: 5761
   stars_url: https://github.com/ONLYOFFICE/DesktopEditors
   latest_release: "2026-10"
   in_ubuntu_repos: false
@@ -36,6 +36,22 @@ indicators:
 sources:
 - https://www.onlyoffice.com
 - https://github.com/ONLYOFFICE
+- https://github.com/ONLYOFFICE/DesktopEditors/blob/HEAD/screenshots/ONLYOFFICE%2520Desktop%2520Editors.png
 logo: logos/onlyoffice.svg
 confidence:
   alternatives: manual
+screenshot: screenshots/onlyoffice.jpg
+features:
+  editare_text: free
+  tabele: free
+  prezentari: free
+  calcul: free
+  pdf: free
+  editare_imagine: free
+  formatare: free
+  scrise_gata: partial
+  export_formate: free
+  compatibilitate_ms: free
+  contabilitate: 'no'
+  biblioteaca: 'no'
+  open_source: free

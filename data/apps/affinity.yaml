@@ -35,3 +35,16 @@ sources:
 logo: logos/affinity.png
 confidence:
   alternatives: manual
+features:
+  raster_editare: free
+  vector_editare: free
+  foto_ajustare: free
+  raw: free
+  straturi: free
+  filtre: free
+  retusare: free
+  color_management: free
+  plug_in_uri: partial
+  export_formate: free
+  batch: partial
+  open_source: 'no'

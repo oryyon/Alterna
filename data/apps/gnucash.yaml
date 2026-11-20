@@ -44,3 +44,17 @@ confidence:
   details.install_size_mb: auto
   alternatives: manual
 screenshot: screenshots/gnucash.jpg
+features:
+  editare_text: 'no'
+  tabele: partial
+  prezentari: 'no'
+  calcul: free
+  pdf: 'no'
+  editare_imagine: 'no'
+  formatare: 'no'
+  scrise_gata: 'no'
+  export_formate: free
+  compatibilitate_ms: 'no'
+  contabilitate: free
+  biblioteaca: 'no'
+  open_source: free

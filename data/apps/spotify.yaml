@@ -34,3 +34,16 @@ sources:
 logo: logos/spotify.svg
 confidence:
   alternatives: manual
+features:
+  redare_formate: partial
+  lista_redare: free
+  equalizator: free
+  vizualizare: free
+  radio_internet: free
+  conversie_tag: 'no'
+  karaoke: 'no'
+  disc_burn: 'no'
+  gpu: 'no'
+  extensii: 'no'
+  subtitrari: 'no'
+  open_source: 'no'

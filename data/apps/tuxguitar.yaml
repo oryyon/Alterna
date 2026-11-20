@@ -43,3 +43,16 @@ confidence:
   details.install_size_mb: auto
   alternatives: manual
 screenshot: screenshots/tuxguitar.jpg
+features:
+  inregistrare: 'no'
+  editare_audio: 'no'
+  efecte: 'no'
+  midi: free
+  partitura: free
+  instrumente_virtuale: partial
+  biblioteaca_sonor: 'no'
+  spectru: 'no'
+  mixaj: 'no'
+  export: free
+  pluginuri: 'no'
+  open_source: free

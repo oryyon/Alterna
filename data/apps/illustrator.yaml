@@ -32,3 +32,16 @@ sources:
 logo: logos/illustrator.png
 confidence:
   alternatives: manual
+features:
+  raster_editare: partial
+  vector_editare: free
+  foto_ajustare: partial
+  raw: 'no'
+  straturi: free
+  filtre: free
+  retusare: partial
+  color_management: free
+  plug_in_uri: free
+  export_formate: free
+  batch: partial
+  open_source: 'no'

@@ -54,6 +54,21 @@ def test_sursa_capturii_e_citata(aplicatii):
                    for s in app.get("sources") or []):
             fara.append(app_id)
     assert not fara, f"capturi fără sursă: {fara[:5]}"
+def test_sursa_capturii_e_citata(aplicatii):
+    """Linkul către fișierul original trebuie să fie în `sources`.
+
+    Sunt două surse acceptate: Wikimedia Commons (proprietatea P18 din
+    Wikidata) și depozitul oficial GitHub al aplicației (README-ul proiectului).
+    """
+    fara = []
+    for app_id, app in aplicatii.items():
+        if not app.get("screenshot"):
+            continue
+        surse = [str(s) for s in app.get("sources") or []]
+        if not any("commons.wikimedia.org" in s or "github.com" in s
+                   for s in surse):
+            fara.append(app_id)
+    assert not fara, f"capturi fără sursă: {fara[:5]}"
 
 
 def test_atribuirea_e_documentata(aplicatii):

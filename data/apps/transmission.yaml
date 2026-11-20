@@ -28,7 +28,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 15429
+  stars: 15441
   stars_url: https://github.com/transmission/transmission
   latest_release: 2026-10
   in_ubuntu_repos: true
@@ -43,3 +43,15 @@ confidence:
   alternatives: manual
 logo: logos/transmission.svg
 screenshot: screenshots/transmission.jpg
+features:
+  browsere: 'no'
+  client_torrent: free
+  client_email: 'no'
+  client_ftp: 'no'
+  client_terminal: 'no'
+  descarcare: free
+  ad_block: 'no'
+  gestionare_ordonator: 'no'
+  vpn: 'no'
+  motor_rendering: 'no'
+  open_source: free

@@ -46,3 +46,17 @@ confidence:
   indicators.in_ubuntu_repos: auto
 screenshot: screenshots/ark.jpg
 package: ark
+features:
+  terminal: 'no'
+  arhivare: free
+  disc_spatiu: 'no'
+  backup: 'no'
+  sincronizare: 'no'
+  baza_date: 'no'
+  retea: 'no'
+  virtualizare: 'no'
+  captura_ecran: 'no'
+  curatare: 'no'
+  conversie_media: 'no'
+  clipboard: 'no'
+  open_source: free

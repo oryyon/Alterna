@@ -33,3 +33,16 @@ sources:
 logo: logos/pycharm.svg
 confidence:
   alternatives: manual
+features:
+  completare_cod: free
+  lsp: free
+  refactorizare: free
+  debugger: free
+  linter: free
+  formatare: free
+  git: free
+  compilare: partial
+  testare: free
+  terminal: free
+  extensii: free
+  open_source: 'no'

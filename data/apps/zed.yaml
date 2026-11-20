@@ -23,7 +23,7 @@ details:
 
 indicators:
   popcon_rank:
-  stars: 95181
+  stars: 95382
   stars_url: https://github.com/zed-industries/zed
   latest_release: "2026-11"
   in_ubuntu_repos: false
@@ -36,3 +36,16 @@ logo: logos/zed.png
 confidence:
   alternatives: manual
   details.telemetry: manual
+features:
+  completare_cod: free
+  lsp: free
+  refactorizare: free
+  debugger: 'no'
+  linter: free
+  formatare: free
+  git: free
+  compilare: partial
+  testare: 'no'
+  terminal: free
+  extensii: free
+  open_source: free

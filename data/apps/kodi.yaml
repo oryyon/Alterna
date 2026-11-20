@@ -32,7 +32,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 21498
+  stars: 21517
   stars_url: https://github.com/xbmc/xbmc
   latest_release: 2026-11
   in_ubuntu_repos: true
@@ -47,3 +47,13 @@ confidence:
   alternatives: manual
 logo: logos/kodi.svg
 screenshot: screenshots/kodi.jpg
+features:
+  captura_ecran: 'no'
+  inregistrare: 'no'
+  streaming_live: partial
+  webcam: 'no'
+  audio_capture: 'no'
+  player_video: free
+  biblioteca_media: free
+  scene: 'no'
+  open_source: free

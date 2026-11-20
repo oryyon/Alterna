@@ -42,3 +42,15 @@ confidence:
   alternatives: manual
 logo: logos/deluge.svg
 screenshot: screenshots/deluge.jpg
+features:
+  browsere: 'no'
+  client_torrent: free
+  client_email: 'no'
+  client_ftp: 'no'
+  client_terminal: 'no'
+  descarcare: free
+  ad_block: 'no'
+  gestionare_ordonator: 'no'
+  vpn: 'no'
+  motor_rendering: 'no'
+  open_source: free

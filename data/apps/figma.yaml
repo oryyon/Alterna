@@ -33,3 +33,16 @@ sources:
 logo: logos/figma.svg
 confidence:
   alternatives: manual
+features:
+  raster_editare: partial
+  vector_editare: free
+  foto_ajustare: partial
+  raw: 'no'
+  straturi: free
+  filtre: partial
+  retusare: 'no'
+  color_management: 'no'
+  plug_in_uri: partial
+  export_formate: free
+  batch: 'no'
+  open_source: 'no'

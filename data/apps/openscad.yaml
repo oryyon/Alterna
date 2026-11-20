@@ -27,7 +27,7 @@ details:
 
 indicators:
   popcon_rank: 10024
-  stars: 10672
+  stars: 10695
   stars_url: https://github.com/openscad/openscad
   latest_release: "2026-11"
   in_ubuntu_repos: true
@@ -39,3 +39,14 @@ logo: logos/openscad.svg
 confidence:
   details.install_size_mb: auto
   alternatives: manual
+features:
+  modelare_3d: free
+  desen_tehnic_2d: 'no'
+  asamblare: free
+  randare: free
+  simulare: 'no'
+  export_3d: free
+  import_dxf: 'no'
+  masuratori: free
+  parametrice: free
+  open_source: free

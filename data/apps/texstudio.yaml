@@ -29,7 +29,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 3709
+  stars: 3711
   stars_url: https://github.com/texstudio-org/texstudio
   latest_release: 2026-11
   in_ubuntu_repos: true
@@ -42,3 +42,16 @@ confidence:
   details.install_size_mb: auto
   alternatives: manual
 screenshot: screenshots/texstudio.jpg
+features:
+  completare_cod: partial
+  lsp: 'no'
+  refactorizare: 'no'
+  debugger: 'no'
+  linter: partial
+  formatare: free
+  git: partial
+  compilare: free
+  testare: 'no'
+  terminal: partial
+  extensii: free
+  open_source: free

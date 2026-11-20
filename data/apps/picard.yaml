@@ -31,7 +31,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 5379
+  stars: 5392
   stars_url: https://github.com/metabrainz/picard
   latest_release: 2026-11
   in_ubuntu_repos: true
@@ -45,3 +45,16 @@ confidence:
   details.install_size_mb: auto
   alternatives: manual
 screenshot: screenshots/picard.jpg
+features:
+  redare_formate: 'no'
+  lista_redare: 'no'
+  equalizator: 'no'
+  vizualizare: 'no'
+  radio_internet: 'no'
+  conversie_tag: free
+  karaoke: 'no'
+  disc_burn: 'no'
+  gpu: 'no'
+  extensii: 'no'
+  subtitrari: 'no'
+  open_source: free

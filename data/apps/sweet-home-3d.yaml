@@ -32,3 +32,14 @@ sources:
 logo: logos/sweet-home-3d.png
 confidence:
   alternatives: manual
+features:
+  modelare_3d: free
+  desen_tehnic_2d: 'no'
+  asamblare: 'no'
+  randare: partial
+  simulare: 'no'
+  export_3d: free
+  import_dxf: partial
+  masuratori: free
+  parametrice: 'no'
+  open_source: free

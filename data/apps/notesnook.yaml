@@ -32,7 +32,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 14954
+  stars: 14951
   stars_url: https://github.com/streetwriters/notesnook
   latest_release: 2026-11
   in_ubuntu_repos: false
@@ -44,3 +44,16 @@ confidence:
   details.first_release_year: auto
   alternatives: manual
 logo: logos/notesnook.svg
+features:
+  notite_text: free
+  notite_rich: free
+  markdown: 'no'
+  arbore: free
+  wiki: partial
+  baza_date: partial
+  atasamente: free
+  offline: partial
+  sincronizare: free
+  export_formate: free
+  scrise_gata: 'no'
+  open_source: 'no'

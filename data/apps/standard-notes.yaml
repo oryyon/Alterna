@@ -26,7 +26,7 @@ details:
 
 indicators:
   popcon_rank:
-  stars: 6722
+  stars: 6728
   stars_url: https://github.com/standardnotes/app
   latest_release: "2026-11"
   in_ubuntu_repos: false
@@ -37,3 +37,16 @@ sources:
 logo: logos/standard-notes.png
 confidence:
   alternatives: manual
+features:
+  notite_text: free
+  notite_rich: 'no'
+  markdown: 'no'
+  arbore: free
+  wiki: 'no'
+  baza_date: 'no'
+  atasamente: 'no'
+  offline: free
+  sincronizare: free
+  export_formate: free
+  scrise_gata: 'no'
+  open_source: free

@@ -46,3 +46,16 @@ confidence:
   details.install_size_mb: auto
   details.romanian_language: manual
   alternatives: manual
+features:
+  completare_cod: 'no'
+  lsp: 'no'
+  refactorizare: 'no'
+  debugger: 'no'
+  linter: 'no'
+  formatare: 'no'
+  git: 'no'
+  compilare: 'no'
+  testare: 'no'
+  terminal: 'no'
+  extensii: free
+  open_source: free

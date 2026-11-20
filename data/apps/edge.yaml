@@ -32,3 +32,15 @@ sources:
 logo: logos/edge.png
 confidence:
   alternatives: manual
+features:
+  browsere: free
+  client_torrent: 'no'
+  client_email: 'no'
+  client_ftp: 'no'
+  client_terminal: 'no'
+  descarcare: free
+  ad_block: 'no'
+  gestionare_ordonator: free
+  vpn: free
+  motor_rendering: free
+  open_source: 'no'

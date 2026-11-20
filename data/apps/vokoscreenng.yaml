@@ -34,8 +34,20 @@ indicators:
 
 sources:
 - https://github.com/vkohaupt/vokoscreenNG
+- https://github.com/vkohaupt/vokoscreenNG/blob/HEAD/https%3A//vokoscreen.volkoh.de/3.0/picture/vokoscreenNG-0.png
 logo: logos/vokoscreenng.png
 confidence:
   details.install_size_mb: auto
   details.romanian_language: manual
   alternatives: manual
+screenshot: screenshots/vokoscreenng.jpg
+features:
+  captura_ecran: free
+  inregistrare: free
+  streaming_live: partial
+  webcam: free
+  audio_capture: free
+  player_video: 'no'
+  biblioteca_media: 'no'
+  scene: 'no'
+  open_source: free

@@ -39,3 +39,15 @@ confidence:
   details.install_size_mb: auto
   alternatives: manual
 screenshot: screenshots/konqueror.jpg
+features:
+  browsere: free
+  client_torrent: 'no'
+  client_email: 'no'
+  client_ftp: 'no'
+  client_terminal: 'no'
+  descarcare: free
+  ad_block: 'no'
+  gestionare_ordonator: partial
+  vpn: 'no'
+  motor_rendering: partial
+  open_source: free

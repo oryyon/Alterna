@@ -30,7 +30,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 4298
+  stars: 4300
   stars_url: https://github.com/RawTherapee/RawTherapee
   latest_release: 2026-07
   in_ubuntu_repos: true
@@ -43,3 +43,16 @@ confidence:
   details.install_size_mb: auto
   alternatives: manual
 screenshot: screenshots/rawtherapee.jpg
+features:
+  raster_editare: free
+  vector_editare: 'no'
+  foto_ajustare: free
+  raw: free
+  straturi: 'no'
+  filtre: free
+  retusare: partial
+  color_management: free
+  plug_in_uri: partial
+  export_formate: free
+  batch: free
+  open_source: free

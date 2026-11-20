@@ -22,7 +22,7 @@ details:
 
 indicators:
   popcon_rank:
-  stars: 62441
+  stars: 62567
   stars_url: https://github.com/penpot/penpot
   latest_release: "2026-11"
   in_ubuntu_repos: false
@@ -30,7 +30,22 @@ indicators:
 sources:
 - https://penpot.app
 - https://github.com/penpot/penpot
+- https://github.com/penpot/penpot/blob/HEAD/https%3A//github.com/user-attachments/assets/da17b160-f289-436f-b140-972083a08602
 logo: logos/penpot.svg
 confidence:
   details.romanian_language: manual
   alternatives: manual
+screenshot: screenshots/penpot.jpg
+features:
+  raster_editare: 'no'
+  vector_editare: free
+  foto_ajustare: 'no'
+  raw: 'no'
+  straturi: free
+  filtre: 'no'
+  retusare: 'no'
+  color_management: 'no'
+  plug_in_uri: 'no'
+  export_formate: free
+  batch: 'no'
+  open_source: free

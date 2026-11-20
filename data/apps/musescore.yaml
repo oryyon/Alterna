@@ -47,3 +47,16 @@ confidence:
   alternatives: manual
   details.telemetry: manual
 screenshot: screenshots/musescore.jpg
+features:
+  inregistrare: partial
+  editare_audio: 'no'
+  efecte: 'no'
+  midi: free
+  partitura: free
+  instrumente_virtuale: partial
+  biblioteaca_sonor: free
+  spectru: 'no'
+  mixaj: 'no'
+  export: free
+  pluginuri: partial
+  open_source: free

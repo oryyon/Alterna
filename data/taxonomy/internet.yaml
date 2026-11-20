@@ -1,0 +1,19 @@
+# Taxonomia canonică de funcționalități — categoria „Internet” (sec. 15)
+# Aceeași funcție = același rând, indiferent de denumirea comercială.
+# Cheile de aici sunt singurele permise în câmpul `features` al aplicațiilor cu
+# category: internet.
+# Valori posibile: free | paid | partial | no | unknown
+
+category: internet
+features:
+  browsere:             Browser web
+  client_torrent:       Client de torrente
+  client_email:         Client de e-mail
+  client_ftp:           Client FTP / SFTP
+  client_terminal:      Client de terminal (SSH, telnet)
+  descarcare:           Gestiunea descărcărilor
+  ad_block:             Blocare reclamelor
+  gestionare_ordonator: Gestiune file/istorice/sincronizare
+  vpn:                  Client VPN integrat
+  motor_rendering:      Motor de randare (Blink, Gecko, WebKit)
+  open_source:          Open source

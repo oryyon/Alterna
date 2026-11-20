@@ -27,7 +27,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 66198
+  stars: 66237
   stars_url: https://github.com/alacritty/alacritty
   latest_release: 2026-04
   in_ubuntu_repos: true
@@ -42,3 +42,17 @@ confidence:
   alternatives: manual
 logo: logos/alacritty.svg
 screenshot: screenshots/alacritty.jpg
+features:
+  terminal: free
+  arhivare: 'no'
+  disc_spatiu: 'no'
+  backup: 'no'
+  sincronizare: 'no'
+  baza_date: 'no'
+  retea: 'no'
+  virtualizare: 'no'
+  captura_ecran: 'no'
+  curatare: 'no'
+  conversie_media: 'no'
+  clipboard: 'no'
+  open_source: free

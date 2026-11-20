@@ -33,3 +33,17 @@ sources:
 logo: logos/wps.png
 confidence:
   alternatives: manual
+features:
+  editare_text: free
+  tabele: free
+  prezentari: free
+  calcul: free
+  pdf: partial
+  editare_imagine: partial
+  formatare: free
+  scrise_gata: partial
+  export_formate: free
+  compatibilitate_ms: free
+  contabilitate: 'no'
+  biblioteaca: 'no'
+  open_source: 'no'

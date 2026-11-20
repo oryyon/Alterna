@@ -32,7 +32,7 @@ details:
 
 indicators:
   popcon_rank: 10766
-  stars: 33586
+  stars: 33621
   stars_url: https://github.com/telegramdesktop/tdesktop
   latest_release: "2026-11"
   in_ubuntu_repos: false   # in Ubuntu 24.04 e snap, nu pachet .deb
@@ -42,3 +42,15 @@ sources:
 logo: logos/telegram.svg
 confidence:
   alternatives: manual
+features:
+  chat_texte: free
+  chat_voz: free
+  video_call: free
+  messenger_integrat: 'no'
+  screen_share: free
+  file_share: free
+  client_multi: free
+  criptare_e2e: free
+  selfhost: 'no'
+  boturi: free
+  open_source: free

@@ -27,7 +27,7 @@ details:
 
 indicators:
   popcon_rank:
-  stars: 45620
+  stars: 45675
   stars_url: https://github.com/logseq/logseq
   latest_release: "2026-11"
   in_ubuntu_repos: false
@@ -35,6 +35,21 @@ indicators:
 sources:
 - https://logseq.com
 - https://github.com/logseq/logseq
+- https://github.com/logseq/logseq/blob/HEAD/https%3A//user-images.githubusercontent.com/25513724/220608753-f33db466-af72-4611-b603-411440c15ed0.png%3Fsanatize%3Dtrue
 logo: logos/logseq.svg
 confidence:
   alternatives: manual
+screenshot: screenshots/logseq.jpg
+features:
+  notite_text: free
+  notite_rich: partial
+  markdown: free
+  arbore: free
+  wiki: free
+  baza_date: partial
+  atasamente: free
+  offline: free
+  sincronizare: free
+  export_formate: free
+  scrise_gata: partial
+  open_source: free

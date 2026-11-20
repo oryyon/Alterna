@@ -1,0 +1,18 @@
+# Taxonomia canonică de funcționalități — categoria „3D & CAD” (sec. 15)
+# Aceeași funcție = același rând, indiferent de denumirea comercială.
+# Cheile de aici sunt singurele permise în câmpul `features` al aplicațiilor cu
+# category: 3d-cad.
+# Valori posibile: free | paid | partial | no | unknown
+
+category: 3d-cad
+features:
+  modelare_3d:          Modelare 3D
+  desen_tehnic_2d:      Desen tehnic 2D (CAD)
+  asamblare:            Asamblare (3D Print, CNC)
+  randare:              Randare (render)
+  simulare:             Simulare (FEA, cinematică)
+  export_3d:            Export 3D (STL, OBJ, STEP)
+  import_dxf:           Import/export DXF, DWG
+  masuratori:           Măsurători și toleranțe
+  parametrice:          Modelare parametrică
+  open_source:          Open source

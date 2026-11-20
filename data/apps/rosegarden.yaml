@@ -44,3 +44,16 @@ confidence:
   details.install_size_mb: auto
   alternatives: manual
 screenshot: screenshots/rosegarden.jpg
+features:
+  inregistrare: free
+  editare_audio: partial
+  efecte: free
+  midi: free
+  partitura: free
+  instrumente_virtuale: free
+  biblioteaca_sonor: free
+  spectru: free
+  mixaj: 'no'
+  export: free
+  pluginuri: 'no'
+  open_source: free

@@ -43,3 +43,17 @@ confidence:
   details.install_size_mb: auto
   alternatives: manual
 screenshot: screenshots/gnumeric.jpg
+features:
+  editare_text: partial
+  tabele: free
+  prezentari: 'no'
+  calcul: free
+  pdf: 'no'
+  editare_imagine: 'no'
+  formatare: free
+  scrise_gata: 'no'
+  export_formate: free
+  compatibilitate_ms: partial
+  contabilitate: 'no'
+  biblioteaca: 'no'
+  open_source: free

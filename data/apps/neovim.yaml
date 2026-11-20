@@ -25,7 +25,7 @@ details:
 
 indicators:
   popcon_rank: 5467
-  stars: 103721
+  stars: 103922
   stars_url: https://github.com/neovim/neovim
   latest_release: "2026-11"
   in_ubuntu_repos: true
@@ -36,3 +36,16 @@ sources:
 logo: logos/neovim.svg
 confidence:
   alternatives: manual
+features:
+  completare_cod: partial
+  lsp: free
+  refactorizare: free
+  debugger: partial
+  linter: free
+  formatare: free
+  git: free
+  compilare: 'no'
+  testare: partial
+  terminal: free
+  extensii: free
+  open_source: free

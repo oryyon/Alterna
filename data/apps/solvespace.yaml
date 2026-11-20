@@ -32,7 +32,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 4251
+  stars: 4256
   stars_url: https://github.com/solvespace/solvespace
   latest_release: 2026-10
   in_ubuntu_repos: true
@@ -46,3 +46,14 @@ confidence:
   details.install_size_mb: auto
   alternatives: manual
 screenshot: screenshots/solvespace.jpg
+features:
+  modelare_3d: free
+  desen_tehnic_2d: partial
+  asamblare: free
+  randare: 'no'
+  simulare: 'no'
+  export_3d: free
+  import_dxf: free
+  masuratori: free
+  parametrice: free
+  open_source: free

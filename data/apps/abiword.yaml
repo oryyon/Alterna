@@ -42,3 +42,17 @@ confidence:
   details.install_size_mb: auto
   alternatives: manual
 screenshot: screenshots/abiword.jpg
+features:
+  editare_text: free
+  tabele: partial
+  prezentari: 'no'
+  calcul: 'no'
+  pdf: partial
+  editare_imagine: partial
+  formatare: partial
+  scrise_gata: partial
+  export_formate: partial
+  compatibilitate_ms: partial
+  contabilitate: 'no'
+  biblioteaca: 'no'
+  open_source: free

@@ -142,3 +142,37 @@ VulcanSphere | GPL |
 | wire | Wire software screenshot-es.png | Diego Sanguinetti | Public domain |
 | xterm | Xterm.png | Vidarlo at English Wikipedia | CC BY-SA 3.0 |
 | zotero | Zotero 7 on macOS.png | Corporation for Digital Scholarship (Zotero) | CC BY-SA 4.0 |
+
+
+## Din README-ul oficial al proiectului (GitHub)
+
+Descărcate de [`tools/fetch_screenshots_github.py`](../tools/fetch_screenshots_github.py) din README-ul depozitului oficial al aplicației.
+
+| Aplicație | Depozit | Imagine | Licență |
+|---|---|---|---|
+| aegis | beemdevelopment/Aegis | https://github.com/beemdevelopment/Aegis/blob/HEAD/metadata/en-US/images/phoneScreenshots/screenshot1.png%3Fraw%3Dtrue | GPL-3.0 |
+| beekeeper-studio | beekeeper-studio/beekeeper-studio | https://github.com/beekeeper-studio/beekeeper-studio/blob/HEAD/https%3A//user-images.githubusercontent.com/279769/203650152-4a34af1f-8a38-47cf-a273-d34d1c84feeb.png | NOASSERTION |
+| blender | blender/blender | https://github.com/blender/blender/blob/HEAD/https%3A//code.blender.org/wp-content/uploads/2018/12/springrg.jpg | NOASSERTION |
+| cherrytree | giuspen/cherrytree | https://github.com/giuspen/cherrytree/blob/HEAD/docs/cherrytree-main_window_text.png | NOASSERTION |
+| darktable | darktable-org/darktable | https://github.com/darktable-org/darktable/blob/HEAD/https%3A//user-images.githubusercontent.com/45535283/148689197-e53dd75f-32f1-4297-9a0f-a9547fd4e7c7.jpg | GPL-3.0 |
+| jitsi-meet | jitsi/jitsi-meet | https://github.com/jitsi/jitsi-meet/blob/HEAD/https%3A//raw.githubusercontent.com/jitsi/jitsi-meet/master/readme-img1.png | Apache-2.0 |
+| joplin | laurent22/joplin | https://github.com/laurent22/joplin/blob/HEAD/https%3A//raw.githubusercontent.com/laurent22/joplin/dev/Assets/WebsiteAssets/images/home-top-img.png | NOASSERTION |
+| logseq | logseq/logseq | https://github.com/logseq/logseq/blob/HEAD/https%3A//user-images.githubusercontent.com/25513724/220608753-f33db466-af72-4611-b603-411440c15ed0.png%3Fsanatize%3Dtrue | AGPL-3.0 |
+| mailspring | Foundry376/Mailspring | https://github.com/Foundry376/Mailspring/blob/HEAD/https%3A//github.com/Foundry376/Mailspring/raw/master/screenshots/hero_graphic_mac%25402x.png | GPL-3.0 |
+| onlyoffice | ONLYOFFICE/DesktopEditors | https://github.com/ONLYOFFICE/DesktopEditors/blob/HEAD/screenshots/ONLYOFFICE%2520Desktop%2520Editors.png | AGPL-3.0 |
+| owncast | owncast/owncast | https://github.com/owncast/owncast/blob/HEAD/https%3A//owncast.online/images/owncast-splash.png | MIT |
+| peazip | peazip/PeaZip | https://github.com/peazip/PeaZip/blob/HEAD/https%3A//peazip.github.io/linux-dark-mode.png | LGPL-3.0 |
+| penpot | penpot/penpot | https://github.com/penpot/penpot/blob/HEAD/https%3A//github.com/user-attachments/assets/da17b160-f289-436f-b140-972083a08602 | MPL-2.0 |
+| rocket-chat | RocketChat/Rocket.Chat | https://github.com/RocketChat/Rocket.Chat/blob/HEAD/https%3A//global-uploads.webflow.com/611a19b9853b7414a0f6b3f6/6319c72bbd8af5c8c22efab6_heroImage.webp | NOASSERTION |
+| shotcut | mltframework/shotcut | https://github.com/mltframework/shotcut/blob/HEAD/https%3A//www.shotcut.org/assets/img/screenshots/Shotcut-18.11.18.png | GPL-3.0 |
+| simplenote | Automattic/simplenote-electron | https://github.com/Automattic/simplenote-electron/blob/HEAD/https%3A//en-blog.files.wordpress.com/2018/09/screenshot-1.png | GPL-2.0 |
+| ssr | MaartenBaert/ssr | https://github.com/MaartenBaert/ssr/blob/HEAD/data/screenshots/screenshot01.png | GPL-3.0 |
+| stacer | oguzhaninan/Stacer | https://github.com/oguzhaninan/Stacer/blob/HEAD/https%3A//raw.githubusercontent.com/oguzhaninan/Stacer/native/screenshots/Screenshot-1.0.9-1.png | GPL-3.0 |
+| strawberry | strawberrymusicplayer/strawberry | https://github.com/strawberrymusicplayer/strawberry/blob/HEAD/https%3A//raw.githubusercontent.com/strawberrymusicplayer/strawberry/master/data/screenshot/screenshot.png | GPL-3.0 |
+| timeshift | linuxmint/timeshift | https://github.com/linuxmint/timeshift/blob/HEAD/images/main_window.png | — |
+| trilium | TriliumNext/Trilium | https://github.com/TriliumNext/Trilium/blob/HEAD/docs/app.png | AGPL-3.0 |
+| ventoy | ventoy/Ventoy | https://github.com/ventoy/Ventoy/blob/HEAD/https%3A//www.ventoy.net/static/img/screen/screen_uefi.png | GPL-3.0 |
+| vokoscreenng | vkohaupt/vokoscreenNG | https://github.com/vkohaupt/vokoscreenNG/blob/HEAD/https%3A//vokoscreen.volkoh.de/3.0/picture/vokoscreenNG-0.png | GPL-2.0 |
+| vscode | microsoft/vscode | https://github.com/microsoft/vscode/blob/HEAD/https%3A//github.com/user-attachments/assets/56af271c-949d-454c-a3ea-16188c063414 | MIT |
+| xournalpp | xournalpp/xournalpp | https://github.com/xournalpp/xournalpp/blob/HEAD/readme/main.png | GPL-2.0 |
+| zettlr | Zettlr/Zettlr | https://github.com/Zettlr/Zettlr/blob/HEAD/resources/screenshots/zettlr_view.png | GPL-3.0 |

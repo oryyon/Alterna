@@ -44,3 +44,17 @@ confidence:
   details.install_size_mb: auto
   alternatives: manual
 screenshot: screenshots/scribus.jpg
+features:
+  editare_text: partial
+  tabele: 'no'
+  prezentari: 'no'
+  calcul: 'no'
+  pdf: partial
+  editare_imagine: free
+  formatare: free
+  scrise_gata: partial
+  export_formate: free
+  compatibilitate_ms: 'no'
+  contabilitate: 'no'
+  biblioteaca: 'no'
+  open_source: free

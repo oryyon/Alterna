@@ -22,15 +22,31 @@ details:
 
 indicators:
   popcon_rank: 8604
-  stars: 4338
+  stars: 4341
   stars_url: https://github.com/linuxmint/timeshift
   latest_release: "2026-11"
   in_ubuntu_repos: true
 
 sources:
 - https://github.com/linuxmint/timeshift
+- https://github.com/linuxmint/timeshift/blob/HEAD/images/main_window.png
 logo: logos/timeshift.png
 confidence:
   details.install_size_mb: auto
   details.romanian_language: manual
   alternatives: manual
+screenshot: screenshots/timeshift.jpg
+features:
+  terminal: partial
+  arhivare: partial
+  disc_spatiu: partial
+  backup: free
+  sincronizare: 'no'
+  baza_date: 'no'
+  retea: 'no'
+  virtualizare: 'no'
+  captura_ecran: 'no'
+  curatare: 'no'
+  conversie_media: 'no'
+  clipboard: 'no'
+  open_source: free

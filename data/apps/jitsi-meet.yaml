@@ -24,7 +24,7 @@ details:
 
 indicators:
   popcon_rank:
-  stars: 30245
+  stars: 30276
   stars_url: https://github.com/jitsi/jitsi-meet
   latest_release: "2026-11"
   in_ubuntu_repos: false
@@ -32,6 +32,20 @@ indicators:
 sources:
 - https://meet.jit.si
 - https://github.com/jitsi/jitsi-meet
+- https://github.com/jitsi/jitsi-meet/blob/HEAD/https%3A//raw.githubusercontent.com/jitsi/jitsi-meet/master/readme-img1.png
 logo: logos/jitsi-meet.svg
 confidence:
   alternatives: manual
+screenshot: screenshots/jitsi-meet.jpg
+features:
+  chat_texte: free
+  chat_voz: free
+  video_call: free
+  messenger_integrat: 'no'
+  screen_share: free
+  file_share: partial
+  client_multi: 'no'
+  criptare_e2e: partial
+  selfhost: free
+  boturi: 'no'
+  open_source: free

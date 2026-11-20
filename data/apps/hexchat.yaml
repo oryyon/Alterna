@@ -41,3 +41,15 @@ confidence:
   details.install_size_mb: auto
   alternatives: manual
 screenshot: screenshots/hexchat.jpg
+features:
+  chat_texte: free
+  chat_voz: 'no'
+  video_call: 'no'
+  messenger_integrat: 'no'
+  screen_share: 'no'
+  file_share: 'no'
+  client_multi: partial
+  criptare_e2e: 'no'
+  selfhost: 'no'
+  boturi: free
+  open_source: free

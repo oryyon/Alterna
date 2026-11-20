@@ -28,7 +28,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 216
+  stars: 217
   stars_url: https://github.com/KDE/amarok
   latest_release: 2026-06
   in_ubuntu_repos: false
@@ -41,3 +41,16 @@ confidence:
   details.first_release_year: auto
   alternatives: manual
 screenshot: screenshots/amarok.jpg
+features:
+  redare_formate: free
+  lista_redare: free
+  equalizator: free
+  vizualizare: free
+  radio_internet: free
+  conversie_tag: partial
+  karaoke: 'no'
+  disc_burn: 'no'
+  gpu: 'no'
+  extensii: free
+  subtitrari: 'no'
+  open_source: free

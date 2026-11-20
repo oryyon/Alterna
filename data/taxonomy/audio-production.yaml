@@ -1,0 +1,20 @@
+# Taxonomia canonică de funcționalități — categoria „Producție audio” (sec. 15)
+# Aceeași funcție = același rând, indiferent de denumirea comercială.
+# Cheile de aici sunt singurele permise în câmpul `features` al aplicațiilor cu
+# category: audio-production.
+# Valori posibile: free | paid | partial | no | unknown
+
+category: audio-production
+features:
+  inregistrare:         Înregistrare audio
+  editare_audio:        Editare audio multipist
+  efecte:               Efecte (reverb, compresor, EQ)
+  midi:                 MIDI (note, tastatură, control)
+  partitura:            Partituri și notare muzicală
+  instrumente_virtuale: Instrumente virtuale (sintetizator, sampler)
+  biblioteaca_sonor:    Bibliotecă de mostre/eșantioane
+  spectru:              Analiză spectrală
+  mixaj:                Mixaj automat (ducking, normalizare)
+  export:               Export audio
+  pluginuri:            Pluginuri (VST, LV2, AU)
+  open_source:          Open source

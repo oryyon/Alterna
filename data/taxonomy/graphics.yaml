@@ -1,0 +1,20 @@
+# Taxonomia canonică de funcționalități — categoria „Grafică” (sec. 15)
+# Aceeași funcție = același rând, indiferent de denumirea comercială.
+# Cheile de aici sunt singurele permise în câmpul `features` al aplicațiilor cu
+# category: graphics.
+# Valori posibile: free | paid | partial | no | unknown
+
+category: graphics
+features:
+  raster_editare:      Editare de imagini raster (pixeli)
+  vector_editare:      Editare vectorială (SVG, AI, Inkscape)
+  foto_ajustare:       Ajustări foto (luminozitate, culori, curățare)
+  raw:                 Citirea/edarea fișierelor RAW ale aparatului
+  straturi:            Straturi și măști (layers)
+  filtre:              Filtre și efecte (creștere, estompare, HDR)
+  retusare:            Retușare (eliminare obiecte, clone, heal)
+  color_management:    Gestionarea profilelor de culoare (ICC)
+  plug_in_uri:         Pluginuri și extensii (PSD, RAW, etc.)
+  export_formate:      Export în multe formate (PNG, JPG, WEBP, PDF)
+  batch:               Prelucrare în lot (batch)
+  open_source:         Open source

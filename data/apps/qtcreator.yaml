@@ -44,3 +44,16 @@ confidence:
   details.install_size_mb: auto
   alternatives: manual
 screenshot: screenshots/qtcreator.jpg
+features:
+  completare_cod: free
+  lsp: free
+  refactorizare: free
+  debugger: free
+  linter: free
+  formatare: free
+  git: free
+  compilare: free
+  testare: partial
+  terminal: free
+  extensii: partial
+  open_source: free

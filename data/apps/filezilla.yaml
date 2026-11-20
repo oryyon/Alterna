@@ -34,3 +34,15 @@ logo: logos/filezilla.svg
 confidence:
   details.install_size_mb: auto
   alternatives: manual
+features:
+  browsere: 'no'
+  client_torrent: 'no'
+  client_email: 'no'
+  client_ftp: free
+  client_terminal: 'no'
+  descarcare: free
+  ad_block: 'no'
+  gestionare_ordonator: 'no'
+  vpn: 'no'
+  motor_rendering: 'no'
+  open_source: free

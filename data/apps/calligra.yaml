@@ -40,3 +40,17 @@ confidence:
   details.install_size_mb: auto
   details.romanian_language: manual
   alternatives: manual
+features:
+  editare_text: free
+  tabele: free
+  prezentari: partial
+  calcul: partial
+  pdf: partial
+  editare_imagine: partial
+  formatare: free
+  scrise_gata: partial
+  export_formate: free
+  compatibilitate_ms: partial
+  contabilitate: 'no'
+  biblioteaca: 'no'
+  open_source: free

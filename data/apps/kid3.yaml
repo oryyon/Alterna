@@ -47,3 +47,16 @@ confidence:
   details.install_size_mb: auto
   alternatives: manual
 screenshot: screenshots/kid3.jpg
+features:
+  redare_formate: 'no'
+  lista_redare: 'no'
+  equalizator: 'no'
+  vizualizare: 'no'
+  radio_internet: 'no'
+  conversie_tag: free
+  karaoke: 'no'
+  disc_burn: 'no'
+  gpu: 'no'
+  extensii: 'no'
+  subtitrari: 'no'
+  open_source: free

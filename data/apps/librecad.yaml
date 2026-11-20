@@ -27,7 +27,7 @@ details:
 
 indicators:
   popcon_rank: 8573
-  stars: 6606
+  stars: 6614
   stars_url: https://github.com/LibreCAD/LibreCAD
   latest_release: "2026-11"
   in_ubuntu_repos: true
@@ -39,3 +39,14 @@ logo: logos/librecad.png
 confidence:
   details.install_size_mb: auto
   alternatives: manual
+features:
+  modelare_3d: 'no'
+  desen_tehnic_2d: free
+  asamblare: 'no'
+  randare: 'no'
+  simulare: 'no'
+  export_3d: partial
+  import_dxf: free
+  masuratori: free
+  parametrice: 'no'
+  open_source: free

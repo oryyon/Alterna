@@ -32,3 +32,16 @@ sources:
 logo: logos/photoshop.png
 confidence:
   alternatives: manual
+features:
+  raster_editare: free
+  vector_editare: partial
+  foto_ajustare: free
+  raw: free
+  straturi: free
+  filtre: free
+  retusare: free
+  color_management: free
+  plug_in_uri: free
+  export_formate: free
+  batch: free
+  open_source: 'no'

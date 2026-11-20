@@ -37,3 +37,16 @@ sources:
 - https://www.photopea.com
 confidence:
   alternatives: manual
+features:
+  raster_editare: free
+  vector_editare: free
+  foto_ajustare: partial
+  raw: partial
+  straturi: free
+  filtre: free
+  retusare: partial
+  color_management: partial
+  plug_in_uri: free
+  export_formate: free
+  batch: 'no'
+  open_source: 'no'

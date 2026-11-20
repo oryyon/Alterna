@@ -30,7 +30,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 8424
+  stars: 8428
   stars_url: https://github.com/mumble-voip/mumble
   latest_release: 2026-10
   in_ubuntu_repos: true
@@ -45,3 +45,15 @@ confidence:
   alternatives: manual
 logo: logos/mumble.svg
 screenshot: screenshots/mumble.jpg
+features:
+  chat_texte: free
+  chat_voz: free
+  video_call: 'no'
+  messenger_integrat: 'no'
+  screen_share: 'no'
+  file_share: 'no'
+  client_multi: 'no'
+  criptare_e2e: 'no'
+  selfhost: free
+  boturi: 'no'
+  open_source: free

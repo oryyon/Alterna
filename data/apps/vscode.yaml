@@ -32,7 +32,7 @@ details:
 
 indicators:
   popcon_rank:
-  stars: 195511
+  stars: 195693
   stars_url: https://github.com/microsoft/vscode
   latest_release: "2026-11"
   in_ubuntu_repos: false
@@ -41,7 +41,22 @@ sources:
 - https://code.visualstudio.com
 - https://github.com/microsoft/vscode
 - https://code.visualstudio.com/docs/configure/telemetry
+- https://github.com/microsoft/vscode/blob/HEAD/https%3A//github.com/user-attachments/assets/56af271c-949d-454c-a3ea-16188c063414
 logo: logos/vscode.png
 confidence:
   details.telemetry: manual
   alternatives: manual
+screenshot: screenshots/vscode.jpg
+features:
+  completare_cod: free
+  lsp: free
+  refactorizare: free
+  debugger: free
+  linter: free
+  formatare: free
+  git: free
+  compilare: partial
+  testare: free
+  terminal: free
+  extensii: free
+  open_source: 'no'

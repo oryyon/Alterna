@@ -30,7 +30,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 1770
+  stars: 1769
   stars_url: https://github.com/quodlibet/quodlibet
   latest_release: 2025-05
   in_ubuntu_repos: true
@@ -44,3 +44,16 @@ confidence:
   details.install_size_mb: auto
   alternatives: manual
 screenshot: screenshots/quodlibet.jpg
+features:
+  redare_formate: free
+  lista_redare: free
+  equalizator: free
+  vizualizare: free
+  radio_internet: 'no'
+  conversie_tag: partial
+  karaoke: 'no'
+  disc_burn: 'no'
+  gpu: 'no'
+  extensii: free
+  subtitrari: 'no'
+  open_source: free

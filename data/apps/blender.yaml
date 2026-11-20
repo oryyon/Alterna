@@ -26,7 +26,7 @@ details:
 
 indicators:
   popcon_rank: 7244
-  stars: 22122
+  stars: 22257
   stars_url: https://github.com/blender/blender
   latest_release: "2026-11"
   in_ubuntu_repos: true
@@ -34,8 +34,21 @@ indicators:
 sources:
 - https://www.blender.org
 - https://github.com/blender/blender
+- https://github.com/blender/blender/blob/HEAD/https%3A//code.blender.org/wp-content/uploads/2018/12/springrg.jpg
 logo: logos/blender.svg
 confidence:
   details.install_size_mb: auto
   details.romanian_language: manual
   alternatives: manual
+screenshot: screenshots/blender.jpg
+features:
+  modelare_3d: free
+  desen_tehnic_2d: 'no'
+  asamblare: free
+  randare: free
+  simulare: free
+  export_3d: free
+  import_dxf: partial
+  masuratori: free
+  parametrice: 'no'
+  open_source: free

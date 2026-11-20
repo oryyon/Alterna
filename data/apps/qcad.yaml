@@ -42,3 +42,14 @@ confidence:
   details.first_release_year: auto
   alternatives: manual
 screenshot: screenshots/qcad.jpg
+features:
+  modelare_3d: 'no'
+  desen_tehnic_2d: free
+  asamblare: 'no'
+  randare: 'no'
+  simulare: 'no'
+  export_3d: 'no'
+  import_dxf: free
+  masuratori: free
+  parametrice: 'no'
+  open_source: free

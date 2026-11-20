@@ -42,3 +42,13 @@ sources:
 logo: logos/plex.svg
 confidence:
   alternatives: manual
+features:
+  captura_ecran: 'no'
+  inregistrare: 'no'
+  streaming_live: 'no'
+  webcam: 'no'
+  audio_capture: 'no'
+  player_video: free
+  biblioteca_media: free
+  scene: 'no'
+  open_source: 'no'

@@ -43,3 +43,16 @@ confidence:
   license: auto
   details.install_size_mb: auto
   alternatives: manual
+features:
+  redare_formate: free
+  lista_redare: free
+  equalizator: partial
+  vizualizare: free
+  radio_internet: free
+  conversie_tag: partial
+  karaoke: 'no'
+  disc_burn: 'no'
+  gpu: 'no'
+  extensii: free
+  subtitrari: 'no'
+  open_source: free

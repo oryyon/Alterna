@@ -40,3 +40,17 @@ logo: logos/qemu.svg
 confidence:
   alternatives: manual
 screenshot: screenshots/qemu.jpg
+features:
+  terminal: free
+  arhivare: 'no'
+  disc_spatiu: 'no'
+  backup: 'no'
+  sincronizare: 'no'
+  baza_date: 'no'
+  retea: partial
+  virtualizare: free
+  captura_ecran: 'no'
+  curatare: 'no'
+  conversie_media: 'no'
+  clipboard: 'no'
+  open_source: free

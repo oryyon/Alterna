@@ -1,0 +1,17 @@
+# Taxonomia canonică de funcționalități — categoria „Streaming & Captură” (sec. 15)
+# Aceeași funcție = același rând, indiferent de denumirea comercială.
+# Cheile de aici sunt singurele permise în câmpul `features` al aplicațiilor cu
+# category: streaming.
+# Valori posibile: free | paid | partial | no | unknown
+
+category: streaming
+features:
+  captura_ecran:        Captură de ecran
+  inregistrare:         Înregistrare video
+  streaming_live:       Streaming live
+  webcam:               Captură de la webcam
+  audio_capture:        Captură de sunet
+  player_video:         Player video cu bibliotecă
+  biblioteca_media:     Gestionarea bibliotecii media
+  scene:                Scene și surse în OBS
+  open_source:          Open source

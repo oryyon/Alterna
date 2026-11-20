@@ -33,3 +33,16 @@ sources:
 logo: logos/sublime-text.svg
 confidence:
   alternatives: manual
+features:
+  completare_cod: partial
+  lsp: partial
+  refactorizare: partial
+  debugger: 'no'
+  linter: partial
+  formatare: free
+  git: partial
+  compilare: 'no'
+  testare: 'no'
+  terminal: partial
+  extensii: free
+  open_source: 'no'

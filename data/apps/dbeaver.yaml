@@ -27,7 +27,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 52451
+  stars: 52494
   stars_url: https://github.com/dbeaver/dbeaver
   latest_release: 2026-11
   in_ubuntu_repos: false
@@ -41,3 +41,17 @@ confidence:
   alternatives: manual
 logo: logos/dbeaver.svg
 screenshot: screenshots/dbeaver.jpg
+features:
+  terminal: 'no'
+  arhivare: 'no'
+  disc_spatiu: 'no'
+  backup: 'no'
+  sincronizare: 'no'
+  baza_date: free
+  retea: partial
+  virtualizare: 'no'
+  captura_ecran: 'no'
+  curatare: 'no'
+  conversie_media: 'no'
+  clipboard: 'no'
+  open_source: free

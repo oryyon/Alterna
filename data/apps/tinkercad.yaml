@@ -41,3 +41,14 @@ confidence:
   alternatives: manual
 logo: logos/tinkercad.svg
 screenshot: screenshots/tinkercad.jpg
+features:
+  modelare_3d: free
+  desen_tehnic_2d: 'no'
+  asamblare: free
+  randare: free
+  simulare: 'no'
+  export_3d: free
+  import_dxf: 'no'
+  masuratori: free
+  parametrice: 'no'
+  open_source: 'no'

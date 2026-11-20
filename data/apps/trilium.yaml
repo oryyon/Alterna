@@ -30,7 +30,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 38969
+  stars: 39022
   stars_url: https://github.com/TriliumNext/Trilium
   latest_release: 2026-11
   in_ubuntu_repos: false
@@ -38,6 +38,21 @@ sources:
 - https://triliumnotes.org/
 - https://github.com/TriliumNext/Trilium
 - https://www.wikidata.org/wiki/Q106880914
+- https://github.com/TriliumNext/Trilium/blob/HEAD/docs/app.png
 logo: logos/trilium.svg
 confidence:
   alternatives: manual
+screenshot: screenshots/trilium.jpg
+features:
+  notite_text: free
+  notite_rich: free
+  markdown: 'no'
+  arbore: free
+  wiki: free
+  baza_date: free
+  atasamente: free
+  offline: free
+  sincronizare: free
+  export_formate: free
+  scrise_gata: partial
+  open_source: free

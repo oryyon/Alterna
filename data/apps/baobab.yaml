@@ -41,3 +41,17 @@ confidence:
   indicators.in_ubuntu_repos: auto
 screenshot: screenshots/baobab.jpg
 package: baobab
+features:
+  terminal: 'no'
+  arhivare: 'no'
+  disc_spatiu: free
+  backup: 'no'
+  sincronizare: 'no'
+  baza_date: 'no'
+  retea: 'no'
+  virtualizare: 'no'
+  captura_ecran: 'no'
+  curatare: 'no'
+  conversie_media: 'no'
+  clipboard: 'no'
+  open_source: free

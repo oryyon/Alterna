@@ -1,0 +1,21 @@
+# Taxonomia canonică de funcționalități — categoria „Birou” (sec. 15)
+# Aceeași funcție = același rând, indiferent de denumirea comercială.
+# Cheile de aici sunt singurele permise în câmpul `features` al aplicațiilor cu
+# category: office.
+# Valori posibile: free | paid | partial | no | unknown
+
+category: office
+features:
+  editare_text:        Editare de documente text
+  tabele:              Foi de calcul
+  prezentari:          Prezentări (slides)
+  calcul:              Formule și recalculare
+  pdf:                 Citire și editare PDF
+  editare_imagine:     Inserare și editare de imagini în documente
+  formatare:           Formatare cu stiluri și automate
+  scrise_gata:         Șabloane și modele de documente
+  export_formate:      Export (PDF, HTML, ODT, DOCX)
+  compatibilitate_ms:  Compatibilitate cu formatele Microsoft
+  contabilitate:       Contabilitate și facturare
+  biblioteaca:         Gestionare de bibliotecă și ebooks
+  open_source:         Open source

@@ -78,5 +78,69 @@ setTimeout(() => {
     console.error("FAIL: niciun avantaj evidențiat (criteriile verificate trebuie marcate)");
     process.exit(1);
   }
+
+  /* Matricea de funcționalități: fiecare rând trebuie să aibă ETICHETA
+     taxonomiei în prima celulă și VALORILE funcționalității în celulele
+     aplicațiilor. Bugul prins aici: apelul `rand()` cu argumentele
+     deplasate punea valorile în coloana etichetei și indicii (0, 1, 2…)
+     în celule — tabelul arăa „corect” ca formă, dar cu conținut mutat. */
+  const etichete = catalog.taxonomie[grafice[0].category].map((i) => i.label);
+  for (const eticheta of etichete) {
+    if (!html.includes(`<th>${eticheta}</th>`)) {
+      console.error("FAIL: eticheta lipseste din matrice: " + eticheta);
+      process.exit(1);
+    }
+  }
+  const randuri = html.split("</tr>");
+  for (const rand of randuri) {
+    const celule = [...rand.matchAll(/<td[^>]*>(.*?)<\/td>/g)].map((m) => m[1]);
+    for (const celula of celule) {
+      if (/^[0-9]+$/.test(celula.trim())) {
+        console.error("FAIL: celula contine un index, nu o valoare: " + celula);
+        process.exit(1);
+      }
+    }
+  }
+  /* nicio eticheta de functionalitate nu trebuie sa arate ca valoare */
+  if (/<th>[^<]*✓ (gratuit|parțial|nu)/.test(html)) {
+    console.error("FAIL: valorile de functionalitati au ajuns in coloana etichetei");
+    process.exit(1);
+  }
+  /* Cazul raportat de utilizator: 4 aplicații din Securitate, cu notele
+     de pe funcționalități. Nota trebuie randată ca text în interiorul
+     <div class="nota"> — nu ca marcaj afișat brut, nici ca entități
+     HTML vizibile, și nici cu majuscule (stilul `th` din CSS). */
+  const securitate = catalog.aplicatii
+    .filter((a) => a.category === "security").slice(0, 4);
+  globalThis.__punte.alege(securitate.map((a) => a.id));
+  globalThis.__punte.listeaza();
+  globalThis.__punte.deseneaza();
+  const htmlSec = document.getElementById("tbody").innerHTML;
+  if (!htmlSec.includes("FUNCȚIONALITĂȚI — Securitate")) {
+    console.error("FAIL: antetul grupei nu arata numele categoriei (Securitate)");
+    process.exit(1);
+  }
+  if (!/<div class="nota">Citire offline;/.test(htmlSec)) {
+    console.error("FAIL: nota functionalitatii nu este randata corect");
+    process.exit(1);
+  }
+  if (/&lt;div class=&quot;nota&quot;&gt;/.test(htmlSec)
+      || /<div class="nota">&lt;/.test(htmlSec)) {
+    console.error("FAIL: nota apare ca marcaj HTML brut");
+    process.exit(1);
+  }
+  if (/<th>[^<]*<div class="nota">/.test(htmlSec)) {
+    console.error("FAIL: functionalitatile au ajuns in coloana etichetei");
+    process.exit(1);
+  }
+
+  const linii = html.split("<tr");
   console.log("OK: tabel comparativ desenat, matricea prezentă, avantajele marcate");
+  if (process.env.DUMP) {
+    console.log("--- randuri cu note (Securitate) ---");
+    console.log(htmlSec.split("</tr>").filter((r) => r.includes("nota"))
+      .slice(0, 3).join("</tr>").slice(0, 1400));
+    console.log("--- primele randuri din matricea de functionalitati ---");
+    console.log(linii.slice(14, 18).join("<tr").slice(0, 1200));
+  }
 }, 50);

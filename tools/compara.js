@@ -38,6 +38,13 @@ function verificat(camp, apps) {
 
 /* rând: etichetă, valori, câștigătorii (indici), câmpul de certitudine */
 function rand(apps, label, valori, castigatori, camp) {
+  /* Gard: un apel cu argumentele deplasate (ca cel pentru matricea de
+     funcționalități) ar desena valori în coloana etichetei și indici în
+     celule — fără nicio eroare vizibilă. Aici devine explicit. */
+  if (!Array.isArray(apps) || typeof label !== "string" || !Array.isArray(valori)) {
+    throw new Error("rand(): argumente invalide (etichetă: "
+      + typeof label + ", valori: " + Array.isArray(valori) + ")");
+  }
   const ok = verificat(camp, apps);
   const td = valori.map((v, i) => {
     const cls = (ok && castigatori.includes(i)) ? " class=\"avantaj\"" : "";
@@ -90,7 +97,9 @@ function deseneaza() {
   if (categorii.length === 1) {
     const randuri = (DATE.taxonomie[categorii[0]] || []);
     if (randuri.length) {
-      r.push(`<tr class="grupa"><th colspan="${apps.length + 1}">FUNCȚIONALITĂȚI — ${esc(categorii[0])}</th></tr>`);
+      const numeCategorie = (DATE.categorii.find((c) => c.slug === categorii[0]) || {}).name
+        || categorii[0];
+      r.push(`<tr class="grupa"><th colspan="${apps.length + 1}">FUNCȚIONALITĂȚI — ${esc(numeCategorie)}</th></tr>`);
       for (const item of randuri) {
         const valori = apps.map((a) => {
           const f = (a.features || {})[item.key];
@@ -99,7 +108,7 @@ function deseneaza() {
           return `${FEAT[valoare] || valoare}${nota}`;
         });
         const castig = valori.map((v, i) => v.startsWith("✓") ? i : -1).filter((i) => i >= 0);
-        r.push(rand(item.label, valori, castig));
+        r.push(rand(apps, item.label, valori, castig, "features"));
       }
     }
   }
@@ -134,7 +143,14 @@ function listeaza() {
         alese = alese.filter((x) => x !== id);
       }
       listeaza();
-      deseneaza();
+      try {
+        deseneaza();
+      } catch (e) {
+        /* o excepție nu trebuie să dispară: mesajul apare în pagină */
+        console.error(e);
+        el("tbody").innerHTML =
+          `<tr><td class="gol">Eroare la desenarea tabelului: ${esc(e.message)}</td></tr>`;
+      }
     });
   }
 }

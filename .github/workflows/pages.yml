@@ -53,5 +53,10 @@ jobs:
       - uses: actions/upload-pages-artifact@v4
         with:
           path: site
+      # Pauză între încărcare și deployment: artefactul se încarcă cu
+      # succes, dar reapare în API câteva secunde mai târziu — fără pauză,
+      # deploy-ul pornește imediat și zice „Found 0 artifact(s)”.
+      - name: Așteptare (artefactul devine vizibil în API)
+        run: sleep 25
       - id: deployment
         uses: actions/deploy-pages@v4

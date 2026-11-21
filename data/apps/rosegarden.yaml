@@ -1,6 +1,6 @@
 # Rosegarden — Stație de lucru pentru compoziție și editare audio.
 id: rosegarden
-popularity: 2100
+popularity: 2160
 name: Rosegarden
 description: Stație de lucru pentru compoziție și editare audio.
 category: audio-production
@@ -29,7 +29,7 @@ details:
   telemetry: none
   romanian_language: false
 indicators:
-  popcon_rank:
+  popcon_rank: 17581
   stars:
   stars_url: https://github.com/Rosegarden/rosegarden
   latest_release:

@@ -1,0 +1,52 @@
+# Cheese — Aplicare pentru foto și înregistrare video cu camera web.
+id: cheese
+popularity: 2020
+name: Cheese
+description: Aplicare pentru foto și înregistrare video cu camera web.
+category: streaming
+license: foss
+price: free
+developer: GNOME Project
+website: https://apps.gnome.org/Cheese/
+snap: cheese
+platforms:
+- linux
+tags:
+- webcam
+- captura
+- gnome
+alternatives:
+- guvcview
+- kazam
+details:
+  install_size_mb: 0
+  first_release_year: 2008
+  file_formats:
+  - jpg
+  - png
+  - webm
+  - ogv
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url: https://git.gnome.org/GNOME/cheese/
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://apps.gnome.org/Cheese/
+- https://git.gnome.org/GNOME/cheese/
+- https://www.wikidata.org/wiki/Q673698
+confidence:
+  alternatives: manual
+features:
+  captura_ecran: 'no'
+  inregistrare: free
+  streaming_live: partial
+  webcam: free
+  audio_capture: free
+  player_video: 'no'
+  biblioteca_media: 'no'
+  scene: 'no'
+  open_source: free

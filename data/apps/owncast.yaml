@@ -1,6 +1,6 @@
 # Owncast — Server de streaming video și chat, cu interfață web.
 id: owncast
-popularity: 2080
+popularity: 2100
 name: Owncast
 description: Server de streaming video și chat, cu interfață web.
 category: streaming
@@ -20,6 +20,8 @@ tags:
 alternatives:
 - opencaster
 - plex
+- mediamtx
+- peertube
 details:
   install_size_mb: 0
   first_release_year: 2020

@@ -1,0 +1,52 @@
+# Stremio — Hub media care caută și reunește surse de streaming într-un singur loc.
+id: stremio
+popularity: 2480
+name: Stremio
+description: Hub media care caută și reunește surse de streaming într-un singur loc.
+category: streaming
+license: freemium
+price: free
+developer: Stremio
+website: https://www.stremio.com/
+platforms:
+- linux
+- windows
+- macos
+- android
+- web
+tags:
+- video
+- streaming
+- catalog
+alternatives:
+- plex
+- jellyfin
+details:
+  install_size_mb: 0
+  first_release_year: 2015
+  file_formats:
+  - mp4
+  - mkv
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://www.stremio.com/
+confidence:
+  alternatives: manual
+features:
+  captura_ecran: 'no'
+  inregistrare: 'no'
+  streaming_live: free
+  webcam: 'no'
+  audio_capture: 'no'
+  player_video: free
+  biblioteca_media: free
+  scene: 'no'
+  open_source: 'no'
+logo: logos/stremio.svg

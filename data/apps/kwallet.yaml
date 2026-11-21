@@ -19,6 +19,7 @@ alternatives:
 - keepassxc
 - gnome-keyring
 - dconf-editor
+- seahorse
 details:
   install_size_mb: 486
   first_release_year: 2007

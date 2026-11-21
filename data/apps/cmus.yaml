@@ -27,7 +27,7 @@ details:
   telemetry: none
   romanian_language: false
 indicators:
-  popcon_rank:
+  popcon_rank: 15524
   stars: 6301
   stars_url: https://github.com/cmus/cmus
   latest_release: 2026-10

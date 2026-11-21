@@ -24,8 +24,8 @@ details:
   romanian_language: true
 
 indicators:
-  popcon_rank: 1969
-  stars: 4564
+  popcon_rank: 1974
+  stars: 4565
   stars_url: https://github.com/ip7z/7zip
   latest_release: "2026-11"
   in_ubuntu_repos: true

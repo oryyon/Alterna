@@ -1,0 +1,55 @@
+# MeshLab — Prelucrare de rețele 3D: curățare, reparare, decimare și export.
+id: meshlab
+popularity: 1900
+name: MeshLab
+description: "Prelucrare de rețele 3D: curățare, reparare, decimare și export."
+category: 3d-cad
+license: foss
+price: free
+developer: Visual Computing Lab
+website: https://www.meshlab.net/
+platforms:
+- linux
+- windows
+- macos
+tags:
+- 3d
+- mesh
+- modelare
+alternatives:
+- blender
+- freecad
+- gmsh
+details:
+  install_size_mb: 0
+  first_release_year: 2006
+  file_formats:
+  - stl
+  - obj
+  - ply
+  - off
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars: 5929
+  stars_url: https://github.com/cnr-isti-vclab/meshlab
+  latest_release: 2025-09
+  in_ubuntu_repos: false
+sources:
+- https://www.meshlab.net/
+- https://github.com/cnr-isti-vclab/meshlab
+- https://www.wikidata.org/wiki/Q3306840
+confidence:
+  alternatives: manual
+features:
+  modelare_3d: free
+  desen_tehnic_2d: 'no'
+  asamblare: 'no'
+  randare: partial
+  simulare: 'no'
+  export_3d: free
+  import_dxf: 'no'
+  masuratori: partial
+  parametrice: 'no'
+  open_source: free

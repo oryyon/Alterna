@@ -24,7 +24,7 @@ details:
   telemetry: none
   romanian_language: false
 indicators:
-  popcon_rank:
+  popcon_rank: 15724
   stars: 1036
   stars_url: https://github.com/stevenshiau/clonezilla
   latest_release: 2026-11

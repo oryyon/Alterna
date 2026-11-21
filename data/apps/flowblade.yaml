@@ -27,7 +27,7 @@ details:
   telemetry: none
   romanian_language: false
 indicators:
-  popcon_rank:
+  popcon_rank: 18140
   stars: 3109
   stars_url: https://github.com/jliljebl/flowblade
   latest_release: 2026-05

@@ -26,8 +26,8 @@ details:
   romanian_language: true
 
 indicators:
-  popcon_rank: 7665
-  stars: 31630
+  popcon_rank: 7661
+  stars: 31633
   stars_url: https://github.com/flameshot-org/flameshot
   latest_release: "2026-11"
   in_ubuntu_repos: true

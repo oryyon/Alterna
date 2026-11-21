@@ -25,7 +25,7 @@ details:
   telemetry: none
   romanian_language: false
 indicators:
-  popcon_rank:
+  popcon_rank: 2762
   stars:
   stars_url: https://invent.kde.org/system/dolphin
   latest_release:

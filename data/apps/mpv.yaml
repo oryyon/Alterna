@@ -17,6 +17,8 @@ alternatives:
 - vlc
 - kodi
 - smplayer
+- celluloid
+- totem
 details:
   install_size_mb: 482
   first_release_year: 2013
@@ -25,8 +27,8 @@ details:
   romanian_language: false
 
 indicators:
-  popcon_rank: 3959
-  stars: 38234
+  popcon_rank: 3971
+  stars: 38236
   stars_url: https://github.com/mpv-player/mpv
   latest_release: "2026-11"
   in_ubuntu_repos: true

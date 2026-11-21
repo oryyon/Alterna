@@ -1,6 +1,6 @@
 # Virt Manager — Interfață grafică pentru mașini virtuale KVM/QEMU.
 id: virt-manager
-popularity: 1920
+popularity: 2540
 name: Virt Manager
 description: Interfață grafică pentru mașini virtuale KVM/QEMU.
 category: utilities
@@ -24,8 +24,8 @@ details:
   telemetry: none
   romanian_language: false
 indicators:
-  popcon_rank:
-  stars: 3313
+  popcon_rank: 4967
+  stars: 3312
   stars_url: https://github.com/virt-manager/virt-manager
   latest_release: 2026-01
   in_ubuntu_repos: true

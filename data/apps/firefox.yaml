@@ -31,7 +31,7 @@ details:
   romanian_language: true
 
 indicators:
-  popcon_rank: 7046
+  popcon_rank: 7041
   stars: 13896
   stars_url: https://github.com/mozilla-firefox/firefox
   latest_release: "2026-11"

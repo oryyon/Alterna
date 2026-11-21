@@ -28,7 +28,7 @@ details:
   telemetry: none
   romanian_language: false
 indicators:
-  popcon_rank:
+  popcon_rank: 10786
   stars: 15
   stars_url: https://gitlab.gnome.org/GNOME/easytag
   latest_release:

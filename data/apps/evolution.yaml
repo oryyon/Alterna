@@ -28,7 +28,7 @@ details:
   telemetry: none
   romanian_language: false
 indicators:
-  popcon_rank:
+  popcon_rank: 1748
   stars:
   stars_url: https://git.gnome.org/browse/evolution/
   latest_release:

@@ -28,7 +28,7 @@ details:
   telemetry: none
   romanian_language: false
 indicators:
-  popcon_rank:
+  popcon_rank: 9581
   stars: 16
   stars_url: https://gitlab.gnome.org/GNOME/gnumeric
   latest_release:

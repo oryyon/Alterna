@@ -27,7 +27,7 @@ details:
   telemetry: none
   romanian_language: false
 indicators:
-  popcon_rank:
+  popcon_rank: 5230
   stars:
   stars_url: https://cgit.git.savannah.gnu.org/cgit/emacs.git
   latest_release:

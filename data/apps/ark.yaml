@@ -8,7 +8,6 @@ license: foss
 price: free
 developer: KDE
 website: https://invent.kde.org/utilities/ark
-snap: ark
 platforms:
 - linux
 tags:
@@ -29,7 +28,7 @@ details:
   telemetry: none
   romanian_language: false
 indicators:
-  popcon_rank:
+  popcon_rank: 2900
   stars:
   stars_url: https://anongit.kde.org/ark.git
   latest_release:
@@ -46,6 +45,7 @@ confidence:
   indicators.in_ubuntu_repos: auto
 screenshot: screenshots/ark.jpg
 package: ark
+snap: ark
 features:
   terminal: 'no'
   arhivare: free

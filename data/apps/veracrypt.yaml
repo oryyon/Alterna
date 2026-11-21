@@ -1,0 +1,59 @@
+# Veracrypt — Criptare de discuri și volume, cu coduri open source.
+id: veracrypt
+popularity: 2440
+name: Veracrypt
+description: Criptare de discuri și volume, cu coduri open source.
+category: security
+license: foss
+price: free
+developer: IDRIX
+website: https://veracrypt.io/
+platforms:
+- linux
+- windows
+- macos
+tags:
+- criptare
+- discuri
+- securitate
+alternatives:
+- gnupg
+- keepassxc
+details:
+  install_size_mb: 0
+  first_release_year: 2013
+  file_formats: []
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url: https://github.com/VeraCrypt
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://veracrypt.io/
+- https://github.com/VeraCrypt
+- https://www.wikidata.org/wiki/Q19911889
+confidence:
+  details.first_release_year: auto
+  alternatives: manual
+features:
+  offline: free
+  parole: 'no'
+  autofill: 'no'
+  totp: 'no'
+  passkeys: 'no'
+  bio: 'no'
+  partajare: 'no'
+  audit: 'no'
+  import_export: 'no'
+  selfhost: 'no'
+  extensii_browser: 'no'
+  atasamente: free
+  acces_urgenta: 'no'
+  chei_hardware: partial
+  monitorizare_brese: 'no'
+  cli_api: free
+  ssh_agent: 'no'
+  audit_independent: 'no'

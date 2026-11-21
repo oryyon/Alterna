@@ -1,0 +1,58 @@
+# tcpdump — Captură și analiză de trafic de rețea din linia de comandă.
+id: tcpdump
+popularity: 2460
+name: tcpdump
+description: Captură și analiză de trafic de rețea din linia de comandă.
+category: security
+license: foss
+price: free
+developer: The Tcpdump Group
+website: https://www.tcpdump.org/
+snap: tcpdump
+platforms:
+- linux
+- windows
+- macos
+tags:
+- retea
+- cli
+- capturare
+alternatives:
+- wireshark
+- nmap
+details:
+  install_size_mb: 0
+  first_release_year: 1999
+  file_formats:
+  - pcap
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://www.tcpdump.org/
+confidence:
+  alternatives: manual
+features:
+  offline: free
+  parole: 'no'
+  autofill: 'no'
+  totp: 'no'
+  passkeys: 'no'
+  bio: 'no'
+  partajare: 'no'
+  audit: 'no'
+  import_export: partial
+  selfhost: 'no'
+  extensii_browser: 'no'
+  atasamente: 'no'
+  acces_urgenta: 'no'
+  chei_hardware: 'no'
+  monitorizare_brese: 'no'
+  cli_api: partial
+  ssh_agent: 'no'
+  audit_independent: 'no'

@@ -17,6 +17,7 @@ tags:
 alternatives:
 - kazam
 - obs
+- cheese
 details:
   install_size_mb: 316
   first_release_year: 2007
@@ -31,7 +32,7 @@ indicators:
   stars:
   stars_url: https://sourceforge.net/p/guvcview/git-master/ci/master/tree
   latest_release:
-  in_ubuntu_repos: true
+  in_ubuntu_repos: false
 sources:
 - https://guvcview.sourceforge.net
 - https://sourceforge.net/p/guvcview/git-master/ci/master/tree

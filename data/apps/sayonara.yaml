@@ -1,6 +1,6 @@
 # Sayonara — Player de muzică ușor, orientat pe colecții mari.
 id: sayonara
-popularity: 2110
+popularity: 2200
 name: Sayonara
 description: Player de muzică ușor, orientat pe colecții mari.
 category: audio-players
@@ -27,7 +27,7 @@ details:
   telemetry: none
   romanian_language: false
 indicators:
-  popcon_rank:
+  popcon_rank: 26691
   stars:
   stars_url:
   latest_release:

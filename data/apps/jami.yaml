@@ -28,7 +28,7 @@ details:
   telemetry: none
   romanian_language: false
 indicators:
-  popcon_rank:
+  popcon_rank: 26712
   stars:
   stars_url: https://git.jami.net/
   latest_release:

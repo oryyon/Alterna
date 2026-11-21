@@ -79,3 +79,22 @@ def test_imaginile_sunt_rezonabil_de_mici():
     mari = [p.name for p in IESIRI.glob("*")
             if p.suffix in (".png", ".jpg") and p.stat().st_size > 600_000]
     assert not mari, f"imagini prea mari: {mari[:5]}"
+
+
+def test_atribuirea_acopera_toate_capturile():
+    """Fiecare aplicație cu captură trebuie să aibă rând în tabel.
+
+    Tabelul se generează din catalog (`tools/build_screenshots_attribution.py`);
+    dacă un instrument de descărcare l-ar suprascrie, rândurile celorlalte
+    surse ar dispărea — exact ce s-a întâmplat (51 de aplicații fără
+    atribuire, prins de acest test).
+    """
+    text = (IESIRI / "README.md").read_text(encoding="utf-8")
+    lipsa = []
+    for cale in sorted((ROOT / "data" / "apps").glob("*.yaml")):
+        from ruamel.yaml import YAML
+
+        app = YAML().load(cale.read_text(encoding="utf-8"))
+        if app.get("screenshot") and app["id"] not in text:
+            lipsa.append(app["id"])
+    assert not lipsa, f"capturi fără atribuire: {lipsa[:8]}"

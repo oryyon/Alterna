@@ -1,0 +1,52 @@
+# MediaMTX — Server de streaming video (RTSP, RTMP, HLS, WebRTC), pentru camere și supraveghere.
+id: mediamtx
+popularity: 1710
+name: MediaMTX
+description: Server de streaming video (RTSP, RTMP, HLS, WebRTC), pentru camere și supraveghere.
+category: streaming
+license: foss
+price: free
+developer: Bluesky Software
+website: https://mediamtx.org/
+snap: mediamtx
+platforms:
+- linux
+- windows
+- macos
+tags:
+- streaming
+- server
+- video
+- supraveghere
+alternatives:
+- owncast
+- kodi
+details:
+  install_size_mb: 0
+  first_release_year: 2020
+  file_formats:
+  - mp4
+  - hls
+  - mpegts
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://mediamtx.org/
+confidence:
+  alternatives: manual
+features:
+  captura_ecran: 'no'
+  inregistrare: free
+  streaming_live: free
+  webcam: free
+  audio_capture: free
+  player_video: 'no'
+  biblioteca_media: 'no'
+  scene: partial
+  open_source: 'free'

@@ -1,6 +1,6 @@
 # MarkText — Editor Markdown cu previzualizare în timp real.
 id: marktext
-popularity: 1250
+popularity: 1260
 name: MarkText
 description: Editor Markdown cu previzualizare în timp real.
 category: notes
@@ -31,7 +31,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 64241
+  stars: 64242
   stars_url: https://github.com/marktext/marktext
   latest_release: 2026-11
   in_ubuntu_repos: false

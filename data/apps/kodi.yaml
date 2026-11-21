@@ -21,6 +21,9 @@ alternatives:
 - vlc
 - mpv
 - plex
+- jellyfin
+- mediamtx
+- minidlna
 details:
   install_size_mb: 648
   first_release_year: 2002
@@ -31,7 +34,7 @@ details:
   telemetry: none
   romanian_language: false
 indicators:
-  popcon_rank:
+  popcon_rank: 10416
   stars: 21523
   stars_url: https://github.com/xbmc/xbmc
   latest_release: 2026-11

@@ -140,3 +140,38 @@ class TestPaginiDetaliu:
         assert "graphics" in date["taxonomie"]
         cu_functii = [a for a in date["aplicatii"] if a.get("features")]
         assert cu_functii, "nicio aplicație cu valori de funcționalitate"
+
+
+class TestComparatie:
+    """Tabelul comparativ de pe site (aceleași criterii ca în aplicație)."""
+
+    def test_paginile_comparatie_exista(self, tmp_path, built_db):
+        ieșire = _generează(tmp_path, built_db)
+        assert (ieșire / "compara.html").exists()
+        assert (ieșire / "compara.js").exists()
+        html = (ieșire / "compara.html").read_text(encoding="utf-8")
+        assert 'src="compara.js"' in html
+        assert 'href="catalog.json"' not in html  # datele vin prin fetch()
+        assert "catalog.json" in (ieșire / "compara.js").read_text(encoding="utf-8")
+
+    def test_js_aplica_regula_avantajului_objectiv(self, tmp_path, built_db):
+        """Avantajul se evidențiază doar pe criterii verificate."""
+        ieșire = _generează(tmp_path, built_db)
+        js = (ieșire / "compara.js").read_text(encoding="utf-8")
+        assert "avantaj" in js
+        # certitudinea e citită din catalog (⟳/✓) — nu se inventează
+        assert "confidence" in js
+        assert "auto" in js and "manual" in js
+
+    def test_matricea_este_inclusa_pentru_aceeasi_categorie(self, tmp_path,
+                                                            built_db):
+        ieșire = _generează(tmp_path, built_db)
+        js = (ieșire / "compara.js").read_text(encoding="utf-8")
+        assert "taxonomie" in js
+        assert "FUNCȚIONALITĂȚI" in js
+        assert "free" in js and "partial" in js and "unknown" in js
+
+    def test_export_csv_si_markdown(self, tmp_path, built_db):
+        ieșire = _generează(tmp_path, built_db)
+        js = (ieșire / "compara.js").read_text(encoding="utf-8")
+        assert "text/csv" in js and "text/markdown" in js

@@ -1,0 +1,58 @@
+# PeerTube — Platformă video federativă și liberă, cu instance-uri independente.
+id: peertube
+popularity: 1310
+name: PeerTube
+description: Platformă video federativă și liberă, cu instance-uri independente.
+category: streaming
+license: foss
+price: free
+developer: Framasoft
+website: https://joinpeertube.org/
+platforms:
+- linux
+- windows
+- macos
+- web
+- android
+tags:
+- video
+- platforma
+- federat
+alternatives:
+- owncast
+- jellyfin
+details:
+  install_size_mb: 0
+  first_release_year: 2015
+  file_formats:
+  - mp4
+  - webm
+  - m3u8
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars: 15420
+  stars_url: https://github.com/Chocobozzz/PeerTube
+  latest_release: 2026-11
+  in_ubuntu_repos: false
+sources:
+- https://joinpeertube.org/
+- https://github.com/Chocobozzz/PeerTube
+- https://www.wikidata.org/wiki/Q50938515
+- https://joinpeertube.org/img/card-opengraph.jpg
+confidence:
+  details.first_release_year: auto
+  alternatives: manual
+features:
+  captura_ecran: 'no'
+  inregistrare: free
+  streaming_live: free
+  webcam: free
+  audio_capture: free
+  player_video: free
+  biblioteca_media: free
+  scene: 'no'
+  open_source: 'free'
+logo: logos/peertube.svg
+screenshot: screenshots/peertube.jpg

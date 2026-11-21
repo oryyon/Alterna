@@ -25,7 +25,7 @@ details:
   telemetry: none
   romanian_language: false
 indicators:
-  popcon_rank:
+  popcon_rank: 12944
   stars: 1132
   stars_url: https://github.com/QupZilla/qupzilla
   latest_release: 2018-03

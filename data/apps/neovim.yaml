@@ -24,8 +24,8 @@ details:
   romanian_language: false
 
 indicators:
-  popcon_rank: 5467
-  stars: 103936
+  popcon_rank: 5454
+  stars: 103938
   stars_url: https://github.com/neovim/neovim
   latest_release: "2026-11"
   in_ubuntu_repos: true

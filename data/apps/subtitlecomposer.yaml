@@ -1,0 +1,54 @@
+# Subtitle Composer — Editor de subtitrări cu sincronizare automată și stiluri.
+id: subtitlecomposer
+popularity: 2210
+name: Subtitle Composer
+description: Editor de subtitrări cu sincronizare automată și stiluri.
+category: video
+license: foss
+price: free
+developer: Matthias Carsten
+website: https://www.kaidan.org/subtitlecomposer/
+platforms:
+- linux
+- windows
+tags:
+- subtitriri
+- editare
+- stiluri
+alternatives:
+- subtitleedit
+- aegisub
+details:
+  install_size_mb: 0
+  first_release_year: 2008
+  file_formats:
+  - srt
+  - ssa
+  - ass
+  - sub
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url: https://invent.kde.org/multimedia/subtitlecomposer
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://www.kaidan.org/subtitlecomposer/
+- https://invent.kde.org/multimedia/subtitlecomposer
+- https://www.wikidata.org/wiki/Q111080058
+confidence:
+  alternatives: manual
+features:
+  timeline: 'no'
+  cut_trim: 'no'
+  keyframes: 'no'
+  tranzitii: 'no'
+  filtre: 'no'
+  subtitrari: free
+  stabilizare: 'no'
+  audio_avansat: 'no'
+  gpu: 'no'
+  export_formate: partial
+  open_source: free

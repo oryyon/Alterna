@@ -14,7 +14,7 @@ Aplicație **desktop nativă pentru Kubuntu 24.04** (KDE Plasma) pentru descoper
 
 ## Stare curentă
 
-🚀 **MVP funcțional cu 214 de aplicații în catalog.** Aplicația desktop pornește, citește `catalog.db` și reproduce macheta: căutare live, filtre, sortare, categorii, pagină de detalii, comparare cu tabel + matrice de funcționalități + export în 5 formate, teme comutabile.
+🚀 **MVP funcțional cu 262 de aplicații în catalog.** Aplicația desktop pornește, citește `catalog.db` și reproduce macheta: căutare live, filtre, sortare, categorii, pagină de detalii, comparare cu tabel + matrice de funcționalități + export în 5 formate, teme comutabile.
 
 **Site-ul public** ([oryyon.github.io/Alterna](https://oryyon.github.io/Alterna)) e generat din același `catalog.db` ca aplicația: listă cu căutare, **pagina de detaliu pentru fiecare aplicație** (fapte, surse clicabile, butoni de instalare, captură, mini-matricea de funcționalități) și pagina de atribuire a imaginilor.
 
@@ -26,7 +26,7 @@ Aplicație **desktop nativă pentru Kubuntu 24.04** (KDE Plasma) pentru descoper
 |---|---|
 | Toate deciziile proiectului (viziune, stack, date, UI, licențe) | [IDEI_PROIECT.md](IDEI_PROIECT.md) |
 | Machetă UI funcțională (referința vizuală agreată) | [mockup-ui/](mockup-ui) |
-| Formatul YAML + **214 aplicații** pe cele 13 categorii | [data/](data) |
+| Formatul YAML + **262 aplicații** pe cele 13 categorii | [data/](data) |
 | Dependențe fixate (limite superioare + lockfile) | [pyproject.toml](pyproject.toml), [requirements-lock.txt](requirements-lock.txt) |
 | Nivelurile de certitudine ale datelor (implicit per câmp) | [data/confidence.yaml](data/confidence.yaml) |
 | Script de build YAML → `catalog.db` (SQLite), cu validări | [tools/build_catalog.py](tools/build_catalog.py) |
@@ -41,10 +41,10 @@ Aplicație **desktop nativă pentru Kubuntu 24.04** (KDE Plasma) pentru descoper
 | Glosar și convenții de traducere | [TRADUCERE.md](TRADUCERE.md) |
 | Completarea indicatorilor cu AI (AI propune surse, uneltele verifică) | [tools/complete_indicators.py](tools/complete_indicators.py) |
 | Sursele de instalare (snap / Flatpak) verificate în registrele oficiale | [tools/check_installed_sources.py](tools/check_installed_sources.py) |
-| 124 de logo-uri reale (Simple Icons CC0 + Wikimedia Commons) + fallback pe inițiale | [data/logos/](data/logos), [tools/fetch_logos.py](tools/fetch_logos.py) |
+| 135 de logo-uri reale (Simple Icons CC0 + Wikimedia Commons) + fallback pe inițiale | [data/logos/](data/logos), [tools/fetch_logos.py](tools/fetch_logos.py) |
 | GitHub Actions: PR săptămânal cu indicatori reîmprospătați | [.github/workflows/refresh.yml](.github/workflows/refresh.yml) |
 | Aplicația desktop (PySide6/Qt Widgets) — cu surse clicabile, certitudine, detectarea instalării și actualizare din rețea | [app/](app) |
-| Suită de teste automate (406 teste: build, validări, interogări, comparație, export, GUI, surse, certitudine, verificări, detectarea instalării, actualizare, AI, dialoguri, drop-down, contrast, licențiere, resurse, packaging, integrare GitHub) | [tests/](tests) |
+| Suită de teste automate (411 teste: build, validări, interogări, comparație, export, GUI, surse, certitudine, verificări, detectarea instalării, actualizare, AI, dialoguri, drop-down, contrast, licențiere, resurse, packaging, integrare GitHub) | [tests/](tests) |
 
 > Indicatorii (popcon, stele, versiuni, „în repo Ubuntu") sunt acum **valori reale**, reîmprospătate automat săptămânal prin PR — aprobarea rămâne la maintainer (sec. 7).
 
@@ -111,7 +111,7 @@ Deschide `mockup-ui/index.html` în orice browser. Este complet funcțională (d
 1. ✅ Formatul YAML pentru fișierele-sursă ale catalogului → [data/README.md](data/README.md)
 2. ✅ Scriptul de build YAML → `catalog.db` (SQLite) → [tools/build_catalog.py](tools/build_catalog.py)
 3. ✅ Scheletul aplicației PySide6 care reproduce macheta → [app/](app)
-4. ✅ Extinderea catalogului de la 8 la 214 aplicații (pragul minim al MVP-ului atins)
+4. ✅ Extinderea catalogului de la 8 la 262 aplicații (pragul minim al MVP-ului atins)
 5. ✅ Automatizarea indicatorilor (script + GitHub Actions cu PR săptămânal) și logo-urile reale
 6. ✅ Licențiere completă: GPLv3 pentru cod, CC BY-SA 4.0 pentru datele originale, `NOTICE` și excepția documentată pentru logo-urile terților.
 7. ✅ Distribuție Linux AppImage: pipeline PyInstaller + AppDir + `appimagetool` verificat prin SHA-256.
@@ -119,11 +119,11 @@ Deschide `mockup-ui/index.html` în orice browser. Este complet funcțională (d
 9. ✅ Pachet Debian (`.deb`) pentru integrare APT, cu pictograme la 9 dimensiuni, metadata AppStream și documentație.
 10. ✅ Verificabilitate: sursele clicabile în interfață, marcajul de certitudine pe fiecare valoare, „avantaj obiectiv" în loc de „cea mai bună valoare".
 11. ✅ Funcții puse la punct: actualizarea catalogului din release (cu verificare SHA-256), asistent AI (Ollama local / Claude API cu cheia ta), butoane de donație care deschid pagini reale.
-12. ✅ Dependențe fixate (`pyproject.toml` + lockfile), pachete Ubuntu verificate, 124 de logo-uri reale.
+12. ✅ Dependențe fixate (`pyproject.toml` + lockfile), pachete Ubuntu verificate, 135 de logo-uri reale.
 13. ✅ Detectarea aplicațiilor deja instalate: marcajul „✓ instalat” pe card, filtru „Doar instalate”, comanda de instalare în pagina de detalii. Sursele (deb / snap / Flatpak) sunt verificate în snapcraft.io și Flathub.
 14. ✅ Linkuri directe către pachete: în pagina de detalii, butoanele APT / Snap / Flatpak deschid magazinul implicit al sistemului (`apt://`, `snap://`, `flathub://`) — se oferă doar sursele verificate (pachet confirmat în arhiva Ubuntu, snap și Flatpak confirmate în registre).
 15. ✅ Relațiile de alternative verificate: toate sunt simetrice (dacă A e alternativa lui B, și B e a lui A), cele între categorii diferite sunt justificate explicit, iar câmpul poartă marcajul de certitudine „verificat”. Verificarea rulează în CI.
-14. Următorii pași (de agreat): extinderea catalogului spre 200–300 și roadmap-ul post-MVP din IDEI_PROIECT.md.
+16. Următorii pași (de agreat): extinderea catalogului spre 300 și roadmap-ul post-MVP din IDEI_PROIECT.md.
 
 ## Structura proiectului
 
@@ -150,7 +150,7 @@ kimi/
 │   ├── taxonomy/        ← taxonomii de funcționalități (pilot: security)
 │   ├── apps/            ← câte un fișier YAML per aplicație (100)
 │   └── logos/           ← logo-uri reale (95 aplicații; restul primesc inițiale)
-├── tests/               ← suita pytest (406 teste)
+├── tests/               ← suita pytest (411 teste)
 ├── tools/
 │   ├── build_catalog.py      ← build YAML → catalog.db (generat, gitignored)
 │   ├── refresh_indicators.py ← reîmprospătare indicatori (popcon/Ubuntu/GitHub)

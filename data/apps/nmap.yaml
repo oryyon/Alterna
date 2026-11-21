@@ -1,0 +1,64 @@
+# Nmap — Scanner de rețea pentru descoperirea gazdelor, porturilor și serviciilor.
+id: nmap
+popularity: 1340
+name: Nmap
+description: Scanner de rețea pentru descoperirea gazdelor, porturilor și serviciilor.
+category: security
+license: foss
+price: free
+developer: Insecure.org
+website: https://nmap.org/
+snap: nmap
+platforms:
+- linux
+- windows
+- macos
+tags:
+- retea
+- scanner
+- securitate
+alternatives:
+- wireshark
+- tcpdump
+- burpsuite
+details:
+  install_size_mb: 0
+  first_release_year: 1997
+  file_formats:
+  - nmap
+  - xml
+  - gre
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars: 14049
+  stars_url: https://github.com/nmap/nmap
+  latest_release: 2026-10
+  in_ubuntu_repos: false
+sources:
+- https://nmap.org/
+- https://github.com/nmap/nmap
+- https://www.wikidata.org/wiki/Q623332
+confidence:
+  details.first_release_year: auto
+  alternatives: manual
+features:
+  offline: free
+  parole: 'no'
+  autofill: 'no'
+  totp: 'no'
+  passkeys: 'no'
+  bio: 'no'
+  partajare: 'no'
+  audit: 'no'
+  import_export: free
+  selfhost: 'no'
+  extensii_browser: 'no'
+  atasamente: 'no'
+  acces_urgenta: 'no'
+  chei_hardware: 'no'
+  monitorizare_brese: 'no'
+  cli_api: free
+  ssh_agent: 'no'
+  audit_independent: 'no'

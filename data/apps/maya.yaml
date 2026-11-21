@@ -1,0 +1,53 @@
+# Autodesk Maya — Pachet de animație 3D din studio-urile de film și jocuri.
+id: maya
+popularity: 2240
+name: Autodesk Maya
+description: Pachet de animație 3D din studio-urile de film și jocuri.
+category: 3d-cad
+license: commercial
+price: paid
+developer: Autodesk
+website: https://www.autodesk.com/products/maya/
+platforms:
+- linux
+- windows
+- macos
+tags:
+- 3d
+- animatie
+- vfx
+alternatives:
+- blender
+- fusion
+details:
+  install_size_mb: 0
+  first_release_year: 1998
+  file_formats:
+  - ma
+  - mb
+  - fbx
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://www.autodesk.com/products/maya/
+- https://www.wikidata.org/wiki/Q272597
+confidence:
+  details.first_release_year: auto
+  alternatives: manual
+features:
+  modelare_3d: free
+  desen_tehnic_2d: 'no'
+  asamblare: free
+  randare: free
+  simulare: free
+  export_3d: free
+  import_dxf: 'no'
+  masuratori: free
+  parametrice: free
+  open_source: 'no'

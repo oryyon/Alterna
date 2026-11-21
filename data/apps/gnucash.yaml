@@ -19,6 +19,9 @@ tags:
 alternatives:
 - homebank
 - calligra
+- kmymoney
+- ledger
+- money-manager-ex
 details:
   install_size_mb: 834
   first_release_year: 1997
@@ -29,7 +32,7 @@ details:
   telemetry: none
   romanian_language: false
 indicators:
-  popcon_rank:
+  popcon_rank: 11399
   stars:
   stars_url: https://github.com/Gnucash/gnucash.git
   latest_release:

@@ -18,6 +18,7 @@ tags:
 alternatives:
 - calligra
 - libreoffice
+- pandoc
 details:
   install_size_mb: 294
   first_release_year: 1998
@@ -28,7 +29,7 @@ details:
   telemetry: none
   romanian_language: false
 indicators:
-  popcon_rank:
+  popcon_rank: 13413
   stars: 181
   stars_url: https://github.com/AbiWord/abiword
   latest_release: 2019-11

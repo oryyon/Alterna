@@ -32,7 +32,7 @@ details:
   romanian_language: true
 
 indicators:
-  popcon_rank: 2779
+  popcon_rank: 2772
   stars: 1500
   stars_url: https://invent.kde.org/utilities/kate
   latest_release: "2026-10"

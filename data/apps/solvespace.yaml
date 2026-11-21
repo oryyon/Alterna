@@ -1,6 +1,6 @@
 # SolveSpace — Modelator 3D parametric, cu restricții geometrice.
 id: solvespace
-popularity: 1820
+popularity: 2470
 name: SolveSpace
 description: Modelator 3D parametric, cu restricții geometrice.
 category: 3d-cad
@@ -21,6 +21,7 @@ alternatives:
 - openscad
 - librecad
 - qcad
+- wings3d
 details:
   install_size_mb: 309
   first_release_year: 2008
@@ -31,7 +32,7 @@ details:
   telemetry: none
   romanian_language: false
 indicators:
-  popcon_rank:
+  popcon_rank: 16692
   stars: 4262
   stars_url: https://github.com/solvespace/solvespace
   latest_release: 2026-10

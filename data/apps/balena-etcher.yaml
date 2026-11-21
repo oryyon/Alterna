@@ -29,7 +29,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 34751
+  stars: 34750
   stars_url: https://github.com/balena-io/etcher
   latest_release: 2026-10
   in_ubuntu_repos: false

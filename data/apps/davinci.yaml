@@ -15,7 +15,9 @@ alternatives:
 - kdenlive
 - premiere
 - shotcut
-
+- fusion
+- natron
+- nuke
 details:
   install_size_mb: 3000
   first_release_year: 2004

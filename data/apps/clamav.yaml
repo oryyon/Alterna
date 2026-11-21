@@ -1,0 +1,56 @@
+# ClamAV — Antivirus liber, cu scanare la comandă și actualizări zilnice.
+id: clamav
+popularity: 2150
+name: ClamAV
+description: Antivirus liber, cu scanare la comandă și actualizări zilnice.
+category: security
+license: foss
+price: free
+developer: Cisco
+website: https://www.clamav.org/
+platforms:
+- linux
+- windows
+- macos
+tags:
+- antivirus
+- securitate
+- scanare
+alternatives:
+- lynis
+- rkhunter
+details:
+  install_size_mb: 0
+  first_release_year: 1994
+  file_formats: []
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://www.clamav.org/
+confidence:
+  alternatives: manual
+features:
+  offline: free
+  parole: 'no'
+  autofill: 'no'
+  totp: 'no'
+  passkeys: 'no'
+  bio: 'no'
+  partajare: 'no'
+  audit: 'no'
+  import_export: partial
+  selfhost: 'no'
+  extensii_browser: 'no'
+  atasamente: 'no'
+  acces_urgenta: 'no'
+  chei_hardware: 'no'
+  monitorizare_brese: 'no'
+  cli_api: free
+  ssh_agent: 'no'
+  audit_independent: 'no'

@@ -1,0 +1,59 @@
+# Pandoc — Convertor de documente: Markdown, docx, ODT, HTML, LaTeX și PDF.
+id: pandoc
+popularity: 2250
+name: Pandoc
+description: "Convertor de documente: Markdown, docx, ODT, HTML, LaTeX și PDF."
+category: office
+license: foss
+price: free
+developer: John MacFarlane
+website: https://pandoc.org/
+platforms:
+- linux
+- windows
+- macos
+- web
+tags:
+- documente
+- conversie
+- markdown
+alternatives:
+- abiword
+- calligra
+details:
+  install_size_mb: 0
+  first_release_year: 2006
+  file_formats:
+  - md
+  - docx
+  - odt
+  - html
+  - pdf
+  - tex
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://pandoc.org/
+confidence:
+  alternatives: manual
+features:
+  editare_text: 'no'
+  tabele: partial
+  prezentari: 'no'
+  calcul: 'no'
+  pdf: partial
+  editare_imagine: 'no'
+  formatare: partial
+  scrise_gata: 'no'
+  export_formate: free
+  compatibilitate_ms: partial
+  contabilitate: 'no'
+  biblioteaca: 'no'
+  open_source: free
+logo: logos/pandoc.svg

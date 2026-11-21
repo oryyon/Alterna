@@ -1,0 +1,60 @@
+# Jellyfin — Server media liber, cu aplicații pentru telefon, tabletă și TV.
+id: jellyfin
+popularity: 2230
+name: Jellyfin
+description: Server media liber, cu aplicații pentru telefon, tabletă și TV.
+category: streaming
+license: foss
+price: free
+developer: Jellyfin Project
+website: https://jellyfin.org/
+platforms:
+- linux
+- windows
+- macos
+- android
+- web
+tags:
+- server media
+- video
+- muzica
+- streaming
+alternatives:
+- plex
+- kodi
+- emby
+- peertube
+- stremio
+- minidlna
+details:
+  install_size_mb: 0
+  first_release_year: 2014
+  file_formats:
+  - mp4
+  - mkv
+  - avi
+  - mp3
+  - flac
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://jellyfin.org/
+confidence:
+  alternatives: manual
+features:
+  captura_ecran: 'no'
+  inregistrare: 'no'
+  streaming_live: free
+  webcam: 'no'
+  audio_capture: 'no'
+  player_video: free
+  biblioteca_media: free
+  scene: 'no'
+  open_source: 'free'
+logo: logos/jellyfin.svg

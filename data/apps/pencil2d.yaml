@@ -1,0 +1,54 @@
+# Pencil2D — Animare 2D pe hârtie — cu cretă, fără costuri.
+id: pencil2d
+popularity: 2270
+name: Pencil2D
+description: Animare 2D pe hârtie — cu cretă, fără costuri.
+category: 3d-cad
+license: foss
+price: free
+developer: Pencil2D contributors
+website: https://www.pencil2d.org/
+platforms:
+- linux
+- windows
+- macos
+tags:
+- animatie 2d
+- desen
+- storyboard
+alternatives:
+- synfig
+- krita
+details:
+  install_size_mb: 0
+  first_release_year: 2008
+  file_formats:
+  - pcl
+  - psd
+  - svg
+  - mp4
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars: 1916
+  stars_url: https://github.com/pencil2d/pencil
+  latest_release: 2026-04
+  in_ubuntu_repos: false
+sources:
+- https://www.pencil2d.org/
+- https://github.com/pencil2d/pencil
+- https://www.wikidata.org/wiki/Q2398265
+confidence:
+  alternatives: manual
+features:
+  modelare_3d: 'no'
+  desen_tehnic_2d: 'no'
+  asamblare: 'no'
+  randare: partial
+  simulare: 'no'
+  export_3d: free
+  import_dxf: 'no'
+  masuratori: 'no'
+  parametrice: 'no'
+  open_source: free

@@ -1,0 +1,50 @@
+# Celluloid — Player video minimalist pentru GNOME, construit peste mpv.
+id: celluloid
+popularity: 1880
+name: Celluloid
+description: Player video minimalist pentru GNOME, construit peste mpv.
+category: streaming
+license: foss
+price: free
+developer: GNOME Project
+website: https://github.com/GNOME/celluloid
+snap: celluloid
+platforms:
+- linux
+tags:
+- player video
+- mpv
+- gnome
+alternatives:
+- mpv
+- smplayer
+details:
+  install_size_mb: 0
+  first_release_year: 2016
+  file_formats:
+  - mp4
+  - mkv
+  - avi
+  - webm
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url: https://github.com/GNOME/celluloid
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://github.com/GNOME/celluloid
+confidence:
+  alternatives: manual
+features:
+  captura_ecran: 'no'
+  inregistrare: 'no'
+  streaming_live: 'no'
+  webcam: 'no'
+  audio_capture: 'no'
+  player_video: free
+  biblioteca_media: 'no'
+  scene: 'no'
+  open_source: 'free'

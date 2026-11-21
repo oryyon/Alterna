@@ -29,7 +29,7 @@ details:
   telemetry: none
   romanian_language: false
 indicators:
-  popcon_rank:
+  popcon_rank: 10751
   stars:
   stars_url: https://sf.net/p/bluefish/code/
   latest_release:

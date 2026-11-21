@@ -11,7 +11,9 @@ website: https://www.passwordstore.org
 
 platforms: [linux, macos]
 tags: [parole, terminal, gpg]
-alternatives: [keepassxc]
+alternatives:
+- keepassxc
+- gnupg
 
 details:
   install_size_mb: 31
@@ -21,7 +23,7 @@ details:
   romanian_language: false
 
 indicators:
-  popcon_rank: 7804
+  popcon_rank: 7808
   stars:
   stars_url:
   latest_release: "2024-06"

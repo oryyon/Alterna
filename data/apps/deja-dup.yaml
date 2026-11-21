@@ -24,7 +24,7 @@ details:
   telemetry: none
   romanian_language: false
 indicators:
-  popcon_rank:
+  popcon_rank: 5249
   stars: 53
   stars_url: https://gitlab.gnome.org/World/deja-dup
   latest_release:

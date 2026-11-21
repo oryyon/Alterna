@@ -16,7 +16,9 @@ alternatives:
 - obs
 - flameshot
 - guvcview
-
+- cheese
+- gtk-recordmydesktop
+- screenkey
 details:
   install_size_mb: 451
   first_release_year: 2010
@@ -25,7 +27,7 @@ details:
   romanian_language: false
 
 indicators:
-  popcon_rank: 11883
+  popcon_rank: 11917
   stars:
   stars_url:
   latest_release: "2023-07"

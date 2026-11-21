@@ -27,7 +27,7 @@ details:
   telemetry: none
   romanian_language: false
 indicators:
-  popcon_rank:
+  popcon_rank: 11931
   stars:
   stars_url: https://invent.kde.org/kdevelop/kdevelop
   latest_release:

@@ -1,6 +1,6 @@
 # Vaultwarden — Server pentru manager de parole Bitwarden, găzduit de tine.
 id: vaultwarden
-popularity: 1860
+popularity: 2520
 name: Vaultwarden
 description: Server pentru manager de parole Bitwarden, găzduit de tine.
 category: security
@@ -29,7 +29,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 71116
+  stars: 71117
   stars_url: https://github.com/dani-garcia/vaultwarden
   latest_release: 2026-11
   in_ubuntu_repos: false

@@ -27,7 +27,7 @@ details:
   romanian_language: true
 
 indicators:
-  popcon_rank: 7145
+  popcon_rank: 7148
   stars: 3761
   stars_url: https://github.com/geany/geany
   latest_release: "2025-07"

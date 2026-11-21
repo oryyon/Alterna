@@ -22,6 +22,7 @@ from __future__ import annotations
 import argparse
 import json
 import re
+import subprocess
 import sys
 import urllib.parse
 import urllib.request
@@ -187,23 +188,11 @@ def main() -> int:
         print(f"  + {app_id:16} {fisier[:44]}")
 
     if atribuiri:
-        cu = IESIRI / "README.md"
-        linii = ["# Capturi de ecran",
-                 "",
-                 "Imagini ale unor terți, descărcate de "
-                 "[`tools/fetch_screenshots.py`](../tools/fetch_screenshots.py) "
-                 "din Wikimedia Commons (proprietatea P18 din Wikidata).",
-                 "",
-                 "Nu fac parte din pachetul aplicației; sunt afișate în "
-                 "aplicație cu atribuirea sursei (linkul apare în pagina de "
-                 "detalii, la „Surse”).",
-                 "",
-                 "| Aplicație | Fișier original | Autor | Licență |",
-                 "|---|---|---|---|"]
-        for app_id, fisier, autor, licenta in atribuiri:
-            linii.append(f"| {app_id} | {fisier} | {autor or '—'} "
-                         f"| {licenta or '—'} |")
-        cu.write_text("\n".join(linii) + "\n", encoding="utf-8")
+        # Tabelul de atribuire se GENEREAZĂ din catalog (nu se ține manual) —
+        # altfel, o rulare ștergea rândurile descărcate de altă dată.
+        subprocess.run([sys.executable,
+                        str(ROOT / "tools" / "build_screenshots_attribution.py")],
+                       check=False)
 
     print(f"OK {descarcate} capturi descarcate, {sarite} deja existente, "
           f"{fara} fara imagine oficiala")

@@ -1,0 +1,54 @@
+# Money Manager Ex — Contabilitate personală cu bugete, rapoarte și import de tranzacții.
+id: money-manager-ex
+popularity: 2260
+name: Money Manager Ex
+description: Contabilitate personală cu bugete, rapoarte și import de tranzacții.
+category: office
+license: foss
+price: free
+developer: Money Manager Ex developers
+website: https://www.moneymanagerex.org/
+platforms:
+- linux
+- windows
+- macos
+tags:
+- finante
+- bugete
+- personal
+alternatives:
+- homebank
+- gnucash
+details:
+  install_size_mb: 0
+  first_release_year: 2005
+  file_formats:
+  - mmdb
+  - csv
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://www.moneymanagerex.org/
+- https://www.wikidata.org/wiki/Q138332745
+confidence:
+  alternatives: manual
+features:
+  editare_text: 'no'
+  tabele: partial
+  prezentari: 'no'
+  calcul: partial
+  pdf: partial
+  editare_imagine: 'no'
+  formatare: 'no'
+  scrise_gata: 'no'
+  export_formate: free
+  compatibilitate_ms: 'no'
+  contabilitate: free
+  biblioteaca: 'no'
+  open_source: free

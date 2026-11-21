@@ -1,0 +1,57 @@
+# Aegisub — Editor de subtitrări cu sincronizare audio (ASS/SSA).
+id: aegisub
+popularity: 1720
+name: Aegisub
+description: Editor de subtitrări cu sincronizare audio (ASS/SSA).
+category: video
+license: foss
+price: free
+developer: Aegisub Project
+website: https://aegisub.org/
+platforms:
+- linux
+- windows
+- macos
+tags:
+- subtitriri
+- editare
+- sincronizare
+alternatives:
+- subtitleedit
+- gaupol
+- subtitlecomposer
+details:
+  install_size_mb: 0
+  first_release_year: 2005
+  file_formats:
+  - srt
+  - ass
+  - ssa
+  - vtt
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars: 3381
+  stars_url: https://github.com/Aegisub/Aegisub
+  latest_release: 2025-01
+  in_ubuntu_repos: false
+sources:
+- https://aegisub.org/
+- https://github.com/Aegisub/Aegisub
+- https://www.wikidata.org/wiki/Q654529
+confidence:
+  details.first_release_year: auto
+  alternatives: manual
+features:
+  timeline: 'no'
+  cut_trim: 'no'
+  keyframes: 'no'
+  tranzitii: 'no'
+  filtre: 'no'
+  subtitrari: free
+  stabilizare: 'no'
+  audio_avansat: 'no'
+  gpu: 'no'
+  export_formate: partial
+  open_source: free

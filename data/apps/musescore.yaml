@@ -31,7 +31,7 @@ details:
   telemetry: optional
   romanian_language: false
 indicators:
-  popcon_rank:
+  popcon_rank: 16141
   stars:
   stars_url:
   latest_release:

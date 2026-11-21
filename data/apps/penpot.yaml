@@ -22,7 +22,7 @@ details:
 
 indicators:
   popcon_rank:
-  stars: 62610
+  stars: 62612
   stars_url: https://github.com/penpot/penpot
   latest_release: "2026-11"
   in_ubuntu_repos: false

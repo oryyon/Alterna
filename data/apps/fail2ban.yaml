@@ -1,0 +1,60 @@
+# Fail2ban — Blochează adrese IP după încercări repetate de autentificare eșuate.
+id: fail2ban
+popularity: 1480
+name: Fail2ban
+description: Blochează adrese IP după încercări repetate de autentificare eșuate.
+category: security
+license: foss
+price: free
+developer: Fail2ban contributors
+website: https://www.fail2ban.org/
+platforms:
+- linux
+tags:
+- securitate
+- ssh
+- blocare
+alternatives:
+- lynis
+- rkhunter
+details:
+  install_size_mb: 0
+  first_release_year: 2004
+  file_formats: []
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars: 19078
+  stars_url: https://github.com/fail2ban/fail2ban
+  latest_release: 2026-08
+  in_ubuntu_repos: false
+sources:
+- https://www.fail2ban.org/
+- https://github.com/fail2ban/fail2ban
+- https://www.wikidata.org/wiki/Q736080
+- https://opengraph.githubassets.com/709e26796e64e64603721167d9daec8965be715886f07527948fb19d627eb632/fail2ban/fail2ban
+confidence:
+  details.first_release_year: auto
+  license: auto
+  alternatives: manual
+features:
+  offline: free
+  parole: 'no'
+  autofill: 'no'
+  totp: 'no'
+  passkeys: 'no'
+  bio: 'no'
+  partajare: 'no'
+  audit: partial
+  import_export: partial
+  selfhost: 'no'
+  extensii_browser: 'no'
+  atasamente: 'no'
+  acces_urgenta: 'no'
+  chei_hardware: 'no'
+  monitorizare_brese: partial
+  cli_api: free
+  ssh_agent: 'no'
+  audit_independent: 'no'
+screenshot: screenshots/fail2ban.jpg

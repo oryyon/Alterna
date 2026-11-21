@@ -1,6 +1,6 @@
 # NetSurf — Browser web ușor, cu consum redus de resurse.
 id: netsurf
-popularity: 2060
+popularity: 2080
 name: NetSurf
 description: Browser web ușor, cu consum redus de resurse.
 category: internet
@@ -25,7 +25,7 @@ details:
   telemetry: none
   romanian_language: false
 indicators:
-  popcon_rank: 22449
+  popcon_rank: 22342
   stars:
   stars_url: https://github.com/netsurf/netsurf
   latest_release:

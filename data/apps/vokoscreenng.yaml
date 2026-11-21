@@ -17,7 +17,8 @@ alternatives:
 - obs
 - ssr
 - flameshot
-
+- gtk-recordmydesktop
+- screenkey
 details:
   install_size_mb: 414
   first_release_year: 2019
@@ -26,7 +27,7 @@ details:
   romanian_language: true
 
 indicators:
-  popcon_rank: 15053
+  popcon_rank: 15034
   stars: 1528
   stars_url: https://github.com/vkohaupt/vokoscreenNG
   latest_release: "2026-10"

@@ -27,6 +27,13 @@ def _instrument():
     return modul
 
 
+#: Căi de proiect care nu mai există pe forja lor (API-ul dă 404) — de aceea
+#: indicatorul „stele” rămâne gol, în loc de o valoare inventată.
+PROIECTE_INEXISTENTE = {
+    "lazarus",  # gitlab.com/freepascal.org/lazarus → 404 (proiect mutat/renumat)
+}
+
+
 @pytest.fixture(scope="module")
 def unealta():
     return _instrument()
@@ -92,7 +99,14 @@ class TestAplicațiiCuStele:
                         break
                 if forja:
                     break
-            if forja and "freepascal.org/lazarus" not in " ".join(surse):
-                # grup GitLab, nu proiect — API-ul dă 404
-                fara.append(app["id"])
+            if not forja:
+                continue
+            # grup GitLab (ex.: kicad, freepascal.org/lazarus) — nu e proiect,
+            # deci API-ul dă 404
+            cale = " ".join(s for s in surse if forja in s).split(forja)[-1].strip("/")
+            if cale.count("/") < 1:
+                continue  # grup, nu proiect
+            if app["id"] in PROIECTE_INEXISTENTE:
+                continue  # calea nu mai există pe forjă (404)
+            fara.append(app["id"])
         assert not fara, f"repo GitLab/Codeberg, dar fără stele: {fara[:8]}"

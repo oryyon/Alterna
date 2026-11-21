@@ -23,6 +23,7 @@ alternatives:
 - pass
 - proton-pass
 - vaultwarden
+- veracrypt
 editors_choice: true
 
 details:
@@ -33,7 +34,7 @@ details:
   romanian_language: true
 
 indicators:
-  popcon_rank: 5811
+  popcon_rank: 5813
   stars: 30093
   stars_url: https://github.com/keepassxreboot/keepassxc
   latest_release: "2026-11"

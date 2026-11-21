@@ -20,6 +20,7 @@ alternatives:
 - spotify
 - strawberry
 - smplayer
+- totem
 details:
   install_size_mb: 471
   first_release_year: 2001
@@ -28,8 +29,8 @@ details:
   romanian_language: true
 
 indicators:
-  popcon_rank: 2242
-  stars: 20536
+  popcon_rank: 2248
+  stars: 20537
   stars_url: https://github.com/videolan/vlc
   latest_release: "2026-09"
   in_ubuntu_repos: true

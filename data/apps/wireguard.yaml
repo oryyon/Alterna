@@ -1,0 +1,61 @@
+# WireGuard — Tunel VPN modern, rapid, cu cod de nucleu încapsulat.
+id: wireguard
+popularity: 2310
+name: WireGuard
+description: Tunel VPN modern, rapid, cu cod de nucleu încapsulat.
+category: security
+license: foss
+price: free
+developer: Jason A. Donenfeld
+website: https://www.wireguard.com/
+platforms:
+- linux
+- windows
+- macos
+- android
+tags:
+- vpn
+- retea
+- kernel
+alternatives:
+- openvpn
+- tor
+details:
+  install_size_mb: 0
+  first_release_year: 2015
+  file_formats: []
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url: https://git.zx2c4.com/WireGuard
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://www.wireguard.com/
+- https://git.zx2c4.com/WireGuard
+- https://www.wikidata.org/wiki/Q28975568
+confidence:
+  details.first_release_year: auto
+  alternatives: manual
+features:
+  offline: free
+  parole: 'no'
+  autofill: 'no'
+  totp: 'no'
+  passkeys: 'no'
+  bio: 'no'
+  partajare: 'no'
+  audit: 'no'
+  import_export: free
+  selfhost: free
+  extensii_browser: 'no'
+  atasamente: 'no'
+  acces_urgenta: 'no'
+  chei_hardware: 'no'
+  monitorizare_brese: 'no'
+  cli_api: free
+  ssh_agent: 'no'
+  audit_independent: 'no'
+logo: logos/wireguard.svg

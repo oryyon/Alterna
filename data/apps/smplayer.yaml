@@ -10,13 +10,12 @@ developer: SMPlayer Team
 website: https://smplayer.info
 logo: logos/smplayer.png
 
-snap: smplayer
 platforms: [linux, windows, macos]
 tags: [player, video]
 alternatives:
 - vlc
 - mpv
-
+- celluloid
 details:
   install_size_mb: 0
   first_release_year: 0
@@ -25,7 +24,7 @@ details:
   romanian_language: true
 
 indicators:
-  popcon_rank: 5631
+  popcon_rank: 5635
   stars: 1089
   stars_url: https://github.com/smplayer-dev/smplayer
   latest_release: 2026-11
@@ -42,6 +41,7 @@ confidence:
   indicators.stars_url: auto
   indicators.latest_release: auto
 package: smplayer
+snap: smplayer
 features:
   redare_formate: free
   lista_redare: free

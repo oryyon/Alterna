@@ -1,0 +1,55 @@
+# Seahorse — Manager de certificate și chei din GNOME (seif, OpenPGP, parole).
+id: seahorse
+popularity: 1860
+name: Seahorse
+description: Manager de certificate și chei din GNOME (seif, OpenPGP, parole).
+category: security
+license: foss
+price: free
+developer: GNOME Project
+website: https://apps.gnome.org/Seahorse/
+platforms:
+- linux
+tags:
+- certificate
+- chei
+- gnome
+alternatives:
+- gnome-keyring
+- kwallet
+details:
+  install_size_mb: 0
+  first_release_year: 2007
+  file_formats: []
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://apps.gnome.org/Seahorse/
+- https://www.wikidata.org/wiki/Q2314628
+confidence:
+  alternatives: manual
+features:
+  offline: free
+  parole: partial
+  autofill: 'no'
+  totp: 'no'
+  passkeys: 'no'
+  bio: 'no'
+  partajare: 'no'
+  audit: 'no'
+  import_export: free
+  selfhost: 'no'
+  extensii_browser: 'no'
+  atasamente: 'no'
+  acces_urgenta: 'no'
+  chei_hardware: 'no'
+  monitorizare_brese: 'no'
+  cli_api: 'no'
+  ssh_agent: partial
+  audit_independent: 'no'

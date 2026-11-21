@@ -1,0 +1,51 @@
+# Gaupol — Editor de subtitrări simplu, cu verificare și sincronizare.
+id: gaupol
+popularity: 2010
+name: Gaupol
+description: Editor de subtitrări simplu, cu verificare și sincronizare.
+category: video
+license: foss
+price: free
+developer: Gaupol contributors
+website: https://gaupol.sourceforge.net/
+platforms:
+- linux
+- windows
+- macos
+tags:
+- subtitriri
+- editare
+alternatives:
+- subtitleedit
+- aegisub
+details:
+  install_size_mb: 0
+  first_release_year: 2006
+  file_formats:
+  - srt
+  - ssa
+  - ass
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://gaupol.sourceforge.net/
+confidence:
+  alternatives: manual
+features:
+  timeline: 'no'
+  cut_trim: 'no'
+  keyframes: 'no'
+  tranzitii: 'no'
+  filtre: 'no'
+  subtitrari: free
+  stabilizare: 'no'
+  audio_avansat: 'no'
+  gpu: 'no'
+  export_formate: partial
+  open_source: free

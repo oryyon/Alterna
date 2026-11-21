@@ -1,6 +1,6 @@
 # TeXstudio — Editor pentru documente LaTeX, cu previzualizare.
 id: texstudio
-popularity: 1900
+popularity: 2500
 name: TeXstudio
 description: Editor pentru documente LaTeX, cu previzualizare.
 category: development
@@ -28,7 +28,7 @@ details:
   telemetry: none
   romanian_language: false
 indicators:
-  popcon_rank:
+  popcon_rank: 9031
   stars: 3711
   stars_url: https://github.com/texstudio-org/texstudio
   latest_release: 2026-11

@@ -1,0 +1,53 @@
+# Wings 3D — Modelator 3D ușor, cu randare realistă, pentru scenografii.
+id: wings3d
+popularity: 2560
+name: Wings 3D
+description: Modelator 3D ușor, cu randare realistă, pentru scenografii.
+category: 3d-cad
+license: foss
+price: free
+developer: Jens Halm
+website: https://wings3d.eu/
+platforms:
+- linux
+- windows
+- macos
+tags:
+- 3d
+- modelare
+- randare
+alternatives:
+- blender
+- solvespace
+details:
+  install_size_mb: 0
+  first_release_year: 2001
+  file_formats:
+  - obj
+  - 3ds
+  - lwo
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url: https://git.code.sf.net/p/wings/code
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://wings3d.eu/
+- https://git.code.sf.net/p/wings/code
+- https://www.wikidata.org/wiki/Q617006
+confidence:
+  alternatives: manual
+features:
+  modelare_3d: free
+  desen_tehnic_2d: 'no'
+  asamblare: 'no'
+  randare: free
+  simulare: 'no'
+  export_3d: free
+  import_dxf: 'no'
+  masuratori: 'no'
+  parametrice: 'no'
+  open_source: free

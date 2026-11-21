@@ -33,7 +33,7 @@ indicators:
   stars: 1359
   stars_url: https://github.com/hydrogen-music/hydrogen
   latest_release: 2026-10
-  in_ubuntu_repos: true
+  in_ubuntu_repos: false
 sources:
 - https://www.hydrogen-music.org/
 - https://github.com/hydrogen-music/hydrogen

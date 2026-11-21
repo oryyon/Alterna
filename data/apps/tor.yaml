@@ -1,0 +1,57 @@
+# Tor — Rețea anonimă: traficul trece prin noduri multiple, fără identitate.
+id: tor
+popularity: 2580
+name: Tor
+description: "Rețea anonimă: traficul trece prin noduri multiple, fără identitate."
+category: security
+license: foss
+price: free
+developer: The Tor Project
+website: https://www.torproject.org/
+platforms:
+- linux
+- windows
+- macos
+- android
+tags:
+- anonim
+- retea
+- privatate
+alternatives:
+- openvpn
+- wireguard
+details:
+  install_size_mb: 0
+  first_release_year: 2002
+  file_formats: []
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://www.torproject.org/
+confidence:
+  alternatives: manual
+features:
+  offline: free
+  parole: 'no'
+  autofill: 'no'
+  totp: 'no'
+  passkeys: 'no'
+  bio: 'no'
+  partajare: 'no'
+  audit: 'no'
+  import_export: partial
+  selfhost: free
+  extensii_browser: partial
+  atasamente: 'no'
+  acces_urgenta: 'no'
+  chei_hardware: 'no'
+  monitorizare_brese: 'no'
+  cli_api: partial
+  ssh_agent: 'no'
+  audit_independent: 'no'

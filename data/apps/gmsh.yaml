@@ -1,0 +1,54 @@
+# Gmsh — Generator de rețele de calcul (mesh) pentru simulare numerică.
+id: gmsh
+popularity: 2290
+name: Gmsh
+description: Generator de rețele de calcul (mesh) pentru simulare numerică.
+category: 3d-cad
+license: foss
+price: free
+developer: CENAERO
+website: https://gmsh.info/
+platforms:
+- linux
+- windows
+- macos
+tags:
+- mesh
+- simulare
+- inginerie
+alternatives:
+- freecad
+- meshlab
+- salome
+details:
+  install_size_mb: 0
+  first_release_year: 1997
+  file_formats:
+  - msh
+  - mesh
+  - stl
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://gmsh.info/
+- https://gmsh.info/gallery/thumbnail.png
+confidence:
+  alternatives: manual
+features:
+  modelare_3d: partial
+  desen_tehnic_2d: 'no'
+  asamblare: 'no'
+  randare: 'no'
+  simulare: free
+  export_3d: free
+  import_dxf: 'no'
+  masuratori: free
+  parametrice: partial
+  open_source: free
+screenshot: screenshots/gmsh.jpg

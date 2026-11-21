@@ -1,0 +1,47 @@
+# GNOME Screen Recorder — Înregistrare simplă a ecranului din GNOME, cu sunet și cursor.
+id: gtk-recordmydesktop
+popularity: 2060
+name: GNOME Screen Recorder
+description: Înregistrare simplă a ecranului din GNOME, cu sunet și cursor.
+category: streaming
+license: foss
+price: free
+developer: GNOME Project
+website: https://apps.gnome.org/RecordMyDesktop/
+platforms:
+- linux
+tags:
+- captura ecran
+- inregistrare
+- gnome
+alternatives:
+- kazam
+- vokoscreenng
+details:
+  install_size_mb: 0
+  first_release_year: 2007
+  file_formats:
+  - webm
+  - ogv
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://apps.gnome.org/RecordMyDesktop/
+confidence:
+  alternatives: manual
+features:
+  captura_ecran: free
+  inregistrare: free
+  streaming_live: 'no'
+  webcam: partial
+  audio_capture: free
+  player_video: 'no'
+  biblioteca_media: 'no'
+  scene: 'no'
+  open_source: free

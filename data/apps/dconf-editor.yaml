@@ -24,7 +24,7 @@ details:
   telemetry: none
   romanian_language: false
 indicators:
-  popcon_rank:
+  popcon_rank: 6685
   stars: 12
   stars_url: https://gitlab.gnome.org/GNOME/dconf-editor
   latest_release:

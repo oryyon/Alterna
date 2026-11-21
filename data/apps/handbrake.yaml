@@ -30,7 +30,7 @@ details:
   telemetry: none
   romanian_language: false
 indicators:
-  popcon_rank:
+  popcon_rank: 7377
   stars: 25083
   stars_url: https://github.com/HandBrake/HandBrake
   latest_release: 2026-06

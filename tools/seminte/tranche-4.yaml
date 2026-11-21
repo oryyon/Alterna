@@ -1,0 +1,655 @@
+# Semințe pentru import — Tranche 4 (golurile din categoriile mici)
+#
+# Focusul: categoriile cu mai puțin de 15 aplicații (Streaming 9, Securitate 11,
+# 3D & CAD 12, Video 12, Birou 14). După acest tranche: Streaming 20,
+# Securitate 25, 3D & CAD 20, Video 18, Birou 23.
+#
+# Ca la tranche-urile anterioare: aici sunt părțile EDITORIALE (descriere în
+# română, categorie, alternative, etichete, preț, formate, popularitate);
+# datele obiective (licență, site, dezvoltator, anul primei versiuni, repo)
+# vin din Wikidata prin `tools/import_apps.py`, cu sursa citată.
+#
+# `popularity` = poziția editorială (multiplu de 10).
+
+# --- streaming & captură (era 9) -------------------------------------------
+- id: jellyfin
+  name: Jellyfin
+  developer: Jellyfin Project
+  category: streaming
+  description: Server media liber, cu aplicații pentru telefon, tabletă și TV.
+  popularity: 1080
+  platforms: [linux, windows, macos, android, web]
+  tags: [server media, video, muzica, streaming]
+  alternatives: [plex, kodi, minidlna]
+  file_formats: [mp4, mkv, avi, mp3, flac]
+  first_release_year: 2014
+  website: https://jellyfin.org/
+
+- id: emby
+  name: Emby
+  developer: Emby LLC
+  category: streaming
+  license: commercial
+  price: paid
+  description: Server media cu interfață web și aplicații pentru dispozitive.
+  popularity: 1420
+  platforms: [linux, windows, macos, android, web]
+  tags: [server media, video, streaming]
+  alternatives: [plex, jellyfin]
+  file_formats: [mp4, mkv, avi, mp3]
+  first_release_year: 2013
+  website: https://emby.media/
+
+- id: mediamtx
+  name: MediaMTX
+  developer: Bluesky Software
+  category: streaming
+  description: Server de streaming video (RTSP, RTMP, HLS, WebRTC), pentru camere și supraveghere.
+  popularity: 1680
+  platforms: [linux, windows, macos]
+  tags: [streaming, server, video, supraveghere]
+  alternatives: [owncast, kodi]
+  file_formats: [mp4, hls, mpegts]
+  first_release_year: 2020
+  website: https://mediamtx.org/
+
+- id: minidlna
+  name: MiniDLNA
+  developer: Justin Magurn
+  category: streaming
+  description: Server DLNA/UPnP simplu, pentru a servi fișiere media către TV și telefoane.
+  popularity: 1840
+  platforms: [linux]
+  tags: [server media, dlna, upnp]
+  alternatives: [plex, kodi]
+  file_formats: [mp4, mkv, mp3, flac]
+  first_release_year: 2006
+  website: https://minidlna.info/
+
+- id: peertube
+  name: PeerTube
+  developer: Framasoft
+  category: streaming
+  description: Platformă video federativă și liberă, cu instance-uri independente.
+  popularity: 1240
+  platforms: [linux, windows, macos, web]
+  tags: [video, platforma, federat]
+  alternatives: [owncast, jellyfin]
+  file_formats: [mp4, webm, m3u8]
+  first_release_year: 2018
+  website: https://joinpeertube.org/
+
+- id: stremio
+  name: Stremio
+  developer: Stremio
+  category: streaming
+  license: freemium
+  price: free
+  description: Hub media care caută și reunește surse de streaming într-un singur loc.
+  popularity: 1760
+  platforms: [linux, windows, macos, android, web]
+  tags: [video, streaming, catalog]
+  alternatives: [plex, jellyfin]
+  file_formats: [mp4, mkv]
+  first_release_year: 2015
+  website: https://www.stremio.com/
+
+- id: celluloid
+  name: Celluloid
+  developer: GNOME Project
+  category: streaming
+  description: Player video minimalist pentru GNOME, construit peste mpv.
+  popularity: 1880
+  platforms: [linux]
+  tags: [player video, mpv, gnome]
+  alternatives: [mpv, smplayer]
+  file_formats: [mp4, mkv, avi, webm]
+  first_release_year: 2016
+  website: https://github.com/GNOME/celluloid
+
+- id: totem
+  name: Totem
+  developer: GNOME Project
+  category: streaming
+  description: Player video și audio din GNOME, cu suport pentru DVD și subtitrări.
+  popularity: 1960
+  platforms: [linux]
+  tags: [player video, gnome, dvd]
+  alternatives: [mpv, vlc]
+  file_formats: [mp4, mkv, avi, ogg]
+  first_release_year: 2005
+  website: https://apps.gnome.org/Totem/
+
+- id: cheese
+  name: Cheese
+  developer: GNOME Project
+  category: streaming
+  description: Aplicare pentru foto și înregistrare video cu camera web.
+  popularity: 2020
+  platforms: [linux]
+  tags: [webcam, captura, gnome]
+  alternatives: [guvcview, kazam]
+  file_formats: [jpg, png, webm, ogv]
+  first_release_year: 2008
+  website: https://apps.gnome.org/Cheese/
+
+- id: screenkey
+  name: Screenkey
+  developer: Renato Stehle
+  category: streaming
+  description: Înregistrare a ecranului cu efecte (tastatură, mouse, sunet).
+  popularity: 1920
+  platforms: [linux]
+  tags: [captura ecran, inregistrare]
+  alternatives: [kazam, vokoscreenng]
+  file_formats: [webm, mp4, ogv]
+  first_release_year: 2012
+  website: https://www.screenkey.org/
+
+- id: gtk-recordmydesktop
+  name: GNOME Screen Recorder
+  developer: GNOME Project
+  category: streaming
+  description: Înregistrare simplă a ecranului din GNOME, cu sunet și cursor.
+  popularity: 2060
+  platforms: [linux]
+  tags: [captura ecran, inregistrare, gnome]
+  alternatives: [kazam, vokoscreenng]
+  file_formats: [webm, ogv]
+  first_release_year: 2007
+  website: https://apps.gnome.org/RecordMyDesktop/
+
+# --- securitate (era 11) ---------------------------------------------------
+- id: veracrypt
+  name: Veracrypt
+  developer: IDRIX
+  category: security
+  description: Criptare de discuri și volume, cu coduri open source.
+  popularity: 1320
+  platforms: [linux, windows, macos]
+  tags: [criptare, discuri, securitate]
+  alternatives: [gnupg, keepassxc]
+  file_formats: []
+  first_release_year: 2013
+  website: https://veracrypt.io/
+
+- id: gnupg
+  name: GnuPG
+  developer: Free Software Foundation
+  category: security
+  description: Criptare și semnătură open source (OpenPGP), cu utilitarul gpg.
+  popularity: 1160
+  platforms: [linux, windows, macos]
+  tags: [criptare, semnatura, openpgp]
+  alternatives: [veracrypt, pass]
+  file_formats: []
+  first_release_year: 1999
+  website: https://gnupg.org/
+
+- id: seahorse
+  name: Seahorse
+  developer: GNOME Project
+  category: security
+  description: Manager de certificate și chei din GNOME (seif, OpenPGP, parole).
+  popularity: 1860
+  platforms: [linux]
+  tags: [certificate, chei, gnome]
+  alternatives: [gnome-keyring, kwallet]
+  file_formats: []
+  first_release_year: 2007
+  website: https://apps.gnome.org/Seahorse/
+
+- id: wireshark
+  name: Wireshark
+  developer: Wireshark Foundation
+  category: security
+  description: Analizor de trafic de rețea, cu captură live și decodare protocoale.
+  popularity: 1280
+  platforms: [linux, windows, macos]
+  tags: [retea, analizator, depanare]
+  alternatives: [tcpdump, nmap]
+  file_formats: [pcap, pcapng]
+  first_release_year: 1998
+  website: https://www.wireshark.org/
+
+- id: tcpdump
+  name: tcpdump
+  developer: The Tcpdump Group
+  category: security
+  description: Captură și analiză de trafic de rețea din linia de comandă.
+  popularity: 1620
+  platforms: [linux, windows, macos]
+  tags: [retea, cli, capturare]
+  alternatives: [wireshark, nmap]
+  file_formats: [pcap]
+  first_release_year: 1999
+  website: https://www.tcpdump.org/
+
+- id: nmap
+  name: Nmap
+  developer: Insecure.org
+  category: security
+  description: Scanner de rețea pentru descoperirea gazdelor, porturilor și serviciilor.
+  popularity: 1340
+  platforms: [linux, windows, macos]
+  tags: [retea, scanner, securitate]
+  alternatives: [wireshark, tcpdump]
+  file_formats: [nmap, xml, gre]
+  first_release_year: 1997
+  website: https://nmap.org/
+
+- id: burpsuite
+  name: Burp Suite
+  developer: PortSwigger
+  category: security
+  license: commercial
+  price: free
+  description: Platformă de testare a securității aplicațiilor web (proxy, scanner).
+  popularity: 1700
+  platforms: [linux, windows, macos, web]
+  tags: [web, securitate, teste]
+  alternatives: [nmap, wireshark]
+  file_formats: []
+  first_release_year: 2006
+  website: https://portswigger.net/burp
+
+- id: fail2ban
+  name: Fail2ban
+  developer: Fail2ban contributors
+  category: security
+  description: Blochează adrese IP după încercări repetate de autentificare eșuate.
+  popularity: 1480
+  platforms: [linux]
+  tags: [securitate, ssh, blocare]
+  alternatives: [lynis, rkhunter]
+  file_formats: []
+  first_release_year: 2004
+  website: https://www.fail2ban.org/
+
+- id: rkhunter
+  name: rkhunter
+  developer: Michael Boelen
+  category: security
+  description: Caută rootkits și urme de intruziune pe sistemul local.
+  popularity: 1980
+  platforms: [linux]
+  tags: [securitate, audit, rootkit]
+  alternatives: [lynis, fail2ban]
+  file_formats: []
+  first_release_year: 2003
+  website: https://rkhunter.org/
+
+- id: lynis
+  name: Lynis
+  developer: Michael Boelen
+  category: security
+  description: Audit de securitate și întărire a sistemului, cu raport detaliat.
+  popularity: 1940
+  platforms: [linux]
+  tags: [securitate, audit, hardening]
+  alternatives: [rkhunter, fail2ban]
+  file_formats: []
+  first_release_year: 2009
+  website: https://lynis.io/
+
+- id: clamav
+  name: ClamAV
+  developer: Cisco
+  category: security
+  description: Antivirus liber, cu scanare la comandă și actualizări zilnice.
+  popularity: 1520
+  platforms: [linux, windows, macos]
+  tags: [antivirus, securitate, scanare]
+  alternatives: [lynis, rkhunter]
+  file_formats: []
+  first_release_year: 1994
+  website: https://www.clamav.org/
+
+- id: openvpn
+  name: OpenVPN
+  developer: OpenVPN Inc.
+  category: security
+  description: Client și server VPN matur, cu suport larg pentru configurații.
+  popularity: 1200
+  platforms: [linux, windows, macos, android, ios]
+  tags: [vpn, retea, privatate]
+  alternatives: [wireguard, tor]
+  file_formats: []
+  first_release_year: 2001
+  website: https://openvpn.net/
+
+- id: wireguard
+  name: WireGuard
+  developer: Jason A. Donenfeld
+  category: security
+  description: Tunel VPN modern, rapid, cu cod de nucleu încapsulat.
+  popularity: 1120
+  platforms: [linux, windows, macos, android, ios]
+  tags: [vpn, retea, kernel]
+  alternatives: [openvpn, tor]
+  file_formats: []
+  first_release_year: 2015
+  website: https://www.wireguard.com/
+
+- id: tor
+  name: Tor
+  developer: The Tor Project
+  category: security
+  description: "Rețea anonimă: traficul trece prin noduri multiple, fără identitate."
+  popularity: 1100
+  platforms: [linux, windows, macos, android, ios]
+  tags: [anonim, retea, privatate]
+  alternatives: [openvpn, wireguard]
+  file_formats: []
+  first_release_year: 2002
+  website: https://www.torproject.org/
+
+# --- 3D & CAD (era 12) -----------------------------------------------------
+- id: meshlab
+  name: MeshLab
+  developer: Visual Computing Lab
+  category: 3d-cad
+  description: "Prelucrare de rețele 3D: curățare, reparare, decimare și export."
+  popularity: 1900
+  platforms: [linux, windows, macos]
+  tags: [3d, mesh, modelare]
+  alternatives: [blender, freecad]
+  file_formats: [stl, obj, ply, off]
+  first_release_year: 2006
+  website: https://www.meshlab.net/
+
+- id: natron
+  name: Natron
+  developer: Natron GitHub community
+  category: 3d-cad
+  description: Compozitor de efecte vizuale cu noduri, pentru film și animație.
+  popularity: 1740
+  platforms: [linux, windows, macos]
+  tags: [vfx, compozitie, animatie]
+  alternatives: [blender, davinci]
+  file_formats: [exr, dpx, mov, avi]
+  first_release_year: 2013
+  website: https://natrongithub.github.io/
+
+- id: pencil2d
+  name: Pencil2D
+  developer: Pencil2D contributors
+  category: 3d-cad
+  description: Animare 2D pe hârtie — cu cretă, fără costuri.
+  popularity: 1980
+  platforms: [linux, windows, macos]
+  tags: [animatie 2d, desen, storyboard]
+  alternatives: [synfig, krita]
+  file_formats: [pcl, psd, svg, mp4]
+  first_release_year: 2008
+  website: https://www.pencil2d.org/
+
+- id: kicad
+  name: KiCad
+  developer: KiCad Project
+  category: 3d-cad
+  description: Suite pentru proiectarea plăcilor electronice (schematic + PCB).
+  popularity: 1220
+  platforms: [linux, windows, macos]
+  tags: [electronica, pcb, schematic]
+  alternatives: [freecad, librecad]
+  file_formats: [kicad_pcb, kicad_sch, gerber]
+  first_release_year: 1992
+  website: https://www.kicad.org/
+
+- id: gmsh
+  name: Gmsh
+  developer: CENAERO
+  category: 3d-cad
+  description: Generator de rețele de calcul (mesh) pentru simulare numerică.
+  popularity: 1940
+  platforms: [linux, windows, macos]
+  tags: [mesh, simulare, inginerie]
+  alternatives: [freecad, meshlab]
+  file_formats: [msh, mesh, stl]
+  first_release_year: 1997
+  website: https://gmsh.info/
+
+- id: salome
+  name: Salome
+  developer: CEA, EDF, OpenCascade
+  category: 3d-cad
+  description: Platformă CAD pentru geometrie și mesh, cu module de simulare.
+  popularity: 2040
+  platforms: [linux, windows]
+  tags: [cad, mesh, simulare]
+  alternatives: [freecad, gmsh]
+  file_formats: [brep, step, stl]
+  first_release_year: 2005
+  website: https://www.salome-platform.org/
+
+- id: wings3d
+  name: Wings 3D
+  developer: Jens Halm
+  category: 3d-cad
+  description: Modelator 3D ușor, cu randare realistă, pentru scenografii.
+  popularity: 2000
+  platforms: [linux, windows, macos]
+  tags: [3d, modelare, randare]
+  alternatives: [blender, solvespace]
+  file_formats: [obj, 3ds, lwo]
+  first_release_year: 2001
+  website: https://wings3d.eu/
+
+- id: maya
+  name: Autodesk Maya
+  developer: Autodesk
+  category: 3d-cad
+  license: commercial
+  price: paid
+  description: Pachet de animație 3D din studio-urile de film și jocuri.
+  popularity: 1080
+  platforms: [linux, windows, macos]
+  tags: [3d, animatie, vfx]
+  alternatives: [blender, fusion]
+  file_formats: [ma, mb, fbx]
+  first_release_year: 1998
+  website: https://www.autodesk.com/products/maya/
+
+# --- video (era 12) --------------------------------------------------------
+- id: aegisub
+  name: Aegisub
+  developer: Aegisub Project
+  category: video
+  description: Editor de subtitrări cu sincronizare audio (ASS/SSA).
+  popularity: 1720
+  platforms: [linux, windows, macos]
+  tags: [subtitriri, editare, sincronizare]
+  alternatives: [subtitleedit, gaupol]
+  file_formats: [srt, ass, ssa, vtt]
+  first_release_year: 2004
+  website: https://aegisub.org/
+
+- id: gaupol
+  name: Gaupol
+  developer: Gaupol contributors
+  category: video
+  description: Editor de subtitrări simplu, cu verificare și sincronizare.
+  popularity: 2000
+  platforms: [linux, windows, macos]
+  tags: [subtitriri, editare]
+  alternatives: [subtitleedit, aegisub]
+  file_formats: [srt, ssa, ass]
+  first_release_year: 2006
+  website: https://gaupol.sourceforge.net/
+
+- id: subtitlecomposer
+  name: Subtitle Composer
+  developer: Matthias Carsten
+  category: video
+  description: Editor de subtitrări cu sincronizare automată și stiluri.
+  popularity: 2060
+  platforms: [linux, windows]
+  tags: [subtitriri, editare, stiluri]
+  alternatives: [subtitleedit, aegisub]
+  file_formats: [srt, ssa, ass, sub]
+  first_release_year: 2008
+  website: https://www.kaidan.org/subtitlecomposer/
+
+- id: fusion
+  name: Fusion
+  developer: Blackmagic Design
+  category: video
+  license: commercial
+  price: paid
+  description: Compozitor de efecte vizuale cu noduri, din suita Blackmagic.
+  popularity: 1560
+  platforms: [linux, windows, macos]
+  tags: [vfx, compozitie, color]
+  alternatives: [davinci, natron]
+  file_formats: [mov, exr, dpx, aep]
+  first_release_year: 1996
+  website: https://www.blackmagicdesign.com/products/fusion
+
+- id: nuke
+  name: Nuke
+  developer: The Foundry
+  category: video
+  license: commercial
+  price: paid
+  description: Compozitor de efecte vizuale cu noduri, folosit în filme și seriale.
+  popularity: 1840
+  platforms: [linux, windows, macos]
+  tags: [vfx, compozitie, studio]
+  alternatives: [fusion, davinci]
+  file_formats: [nk, exr, dpx, mov]
+  first_release_year: 1996
+  website: https://www.foundry.com/products/nuke-family
+
+- id: vidcutter
+  name: VidCutter
+  developer: Blackmagic Design
+  category: video
+  license: commercial
+  price: paid
+  description: Montaj video rapid, cu tăiere pe taste și export pe placă.
+  popularity: 2020
+  platforms: [linux, windows, macos]
+  tags: [montaj, editare, cut]
+  alternatives: [losslesscut, shotcut]
+  file_formats: [mov, mp4, braw]
+  first_release_year: 2018
+  website: https://www.blackmagicdesign.com/products/vidcutter
+
+# --- birou (era 14) --------------------------------------------------------
+- id: pandoc
+  name: Pandoc
+  developer: John MacFarlane
+  category: office
+  description: "Convertor de documente: Markdown, docx, ODT, HTML, LaTeX și PDF."
+  popularity: 1180
+  platforms: [linux, windows, macos, web]
+  tags: [documente, conversie, markdown]
+  alternatives: [abiword, calligra]
+  file_formats: [md, docx, odt, html, pdf, tex]
+  first_release_year: 2006
+  website: https://pandoc.org/
+
+- id: kmymoney
+  name: KMyMoney
+  developer: KMyMoney contributors
+  category: office
+  description: Contabilitate personală și de familie, cu import bancar.
+  popularity: 1920
+  platforms: [linux, windows, macos]
+  tags: [finante, contabilitate, personal]
+  alternatives: [gnucash, homebank]
+  file_formats: [kmy]
+  first_release_year: 1998
+  website: https://www.kde.org/apps/kmymoney/
+
+- id: money-manager-ex
+  name: Money Manager Ex
+  developer: Money Manager Ex developers
+  category: office
+  description: Contabilitate personală cu bugete, rapoarte și import de tranzacții.
+  popularity: 1980
+  platforms: [linux, windows, macos]
+  tags: [finante, bugete, personal]
+  alternatives: [homebank, gnucash]
+  file_formats: [mmdb, csv]
+  first_release_year: 2005
+  website: https://www.moneymanagerex.org/
+
+- id: ledger
+  name: Ledger
+  developer: John MacFarlane
+  category: office
+  description: Contabilitate în text simplu, din linia de comandă, cu rapoarte.
+  popularity: 2060
+  platforms: [linux, windows, macos]
+  tags: [finante, cli, contabilitate]
+  alternatives: [gnucash, kmymoney]
+  file_formats: [ledger, csv, journal]
+  first_release_year: 2003
+  website: https://ledger-cli.org/
+
+- id: evince
+  name: Evince
+  developer: GNOME Project
+  category: office
+  description: Vizualizator de PDF din GNOME, cu adnotări și semnături.
+  popularity: 1800
+  platforms: [linux]
+  tags: [pdf, citire, gnome]
+  alternatives: [okular, atril]
+  file_formats: [pdf, ps, dvi, djvu]
+  first_release_year: 2005
+  website: https://apps.gnome.org/Evince/
+
+- id: atril
+  name: Atril
+  developer: MATE Project
+  category: office
+  description: Vizualizator de documente (PDF, DjVu, EPUB) din MATE.
+  popularity: 2040
+  platforms: [linux]
+  tags: [pdf, citire, mate]
+  alternatives: [okular, evince]
+  file_formats: [pdf, djvu, epub, ps]
+  first_release_year: 2009
+  website: https://www.mate-desktop.org/
+
+- id: papers
+  name: Papers
+  developer: GNOME Project
+  category: office
+  description: Cititor de documente nou din GNOME, cu adnotări și bibliotecă.
+  popularity: 2080
+  platforms: [linux]
+  tags: [pdf, citire, gnome]
+  alternatives: [evince, atril]
+  file_formats: [pdf, epub]
+  first_release_year: 2014
+  website: https://apps.gnome.org/Papers/
+
+- id: qpdfview
+  name: qpdfview
+  developer: Laurent Noé
+  category: office
+  description: Vizualizator de PDF bazat pe Qt, ușor și rapid.
+  popularity: 2100
+  platforms: [linux, windows]
+  tags: [pdf, citire, qt]
+  alternatives: [evince, okular]
+  file_formats: [pdf]
+  first_release_year: 2007
+  website: https://qpdfview.sourceforge.io/
+
+- id: qpdf
+  name: qpdf
+  developer: Qpdf Project
+  category: office
+  description: "Unelte pentru PDF: liniarizare, separare pagini, reparare fișiere."
+  popularity: 2120
+  platforms: [linux, windows, macos]
+  tags: [pdf, cli, prelucrare]
+  alternatives: [qpdfview, evince]
+  file_formats: [pdf]
+  first_release_year: 2005
+  website: https://qpdf.sourceforge.io/

@@ -1,0 +1,55 @@
+# Fusion — Compozitor de efecte vizuale cu noduri, din suita Blackmagic.
+id: fusion
+popularity: 2180
+name: Fusion
+description: Compozitor de efecte vizuale cu noduri, din suita Blackmagic.
+category: video
+license: commercial
+price: paid
+developer: Blackmagic Design
+website: https://www.blackmagicdesign.com/products/fusion
+platforms:
+- linux
+- windows
+- macos
+tags:
+- vfx
+- compozitie
+- color
+alternatives:
+- davinci
+- natron
+- maya
+- nuke
+details:
+  install_size_mb: 0
+  first_release_year: 1996
+  file_formats:
+  - mov
+  - exr
+  - dpx
+  - aep
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://www.blackmagicdesign.com/products/fusion
+confidence:
+  alternatives: manual
+features:
+  timeline: free
+  cut_trim: free
+  keyframes: free
+  tranzitii: free
+  filtre: free
+  subtitrari: free
+  stabilizare: partial
+  audio_avansat: free
+  gpu: free
+  export_formate: free
+  open_source: 'no'

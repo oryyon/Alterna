@@ -27,7 +27,7 @@ details:
   romanian_language: false
 
 indicators:
-  popcon_rank: 8886
+  popcon_rank: 8871
   stars: 2907
   stars_url: https://github.com/MaartenBaert/ssr
   latest_release: "2021-05"

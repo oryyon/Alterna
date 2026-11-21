@@ -1,0 +1,53 @@
+# VidCutter — Montaj video rapid, cu tăiere pe taste și export pe placă.
+id: vidcutter
+popularity: 2610
+name: VidCutter
+description: Montaj video rapid, cu tăiere pe taste și export pe placă.
+category: video
+license: commercial
+price: paid
+developer: Blackmagic Design
+website: https://www.blackmagicdesign.com/products/vidcutter
+snap: vidcutter
+platforms:
+- linux
+- windows
+- macos
+tags:
+- montaj
+- editare
+- cut
+alternatives:
+- losslesscut
+- shotcut
+details:
+  install_size_mb: 0
+  first_release_year: 2018
+  file_formats:
+  - mov
+  - mp4
+  - braw
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://www.blackmagicdesign.com/products/vidcutter
+confidence:
+  alternatives: manual
+features:
+  timeline: partial
+  cut_trim: free
+  keyframes: 'no'
+  tranzitii: 'no'
+  filtre: 'no'
+  subtitrari: 'no'
+  stabilizare: 'no'
+  audio_avansat: partial
+  gpu: free
+  export_formate: free
+  open_source: 'no'

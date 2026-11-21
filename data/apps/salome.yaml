@@ -1,0 +1,50 @@
+# Salome — Platformă CAD pentru geometrie și mesh, cu module de simulare.
+id: salome
+popularity: 2190
+name: Salome
+description: Platformă CAD pentru geometrie și mesh, cu module de simulare.
+category: 3d-cad
+license: foss
+price: free
+developer: CEA, EDF, OpenCascade
+website: https://www.salome-platform.org/
+platforms:
+- linux
+- windows
+tags:
+- cad
+- mesh
+- simulare
+alternatives:
+- freecad
+- gmsh
+details:
+  install_size_mb: 0
+  first_release_year: 2005
+  file_formats:
+  - brep
+  - step
+  - stl
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://www.salome-platform.org/
+confidence:
+  alternatives: manual
+features:
+  modelare_3d: free
+  desen_tehnic_2d: partial
+  asamblare: 'no'
+  randare: partial
+  simulare: free
+  export_3d: free
+  import_dxf: 'no'
+  masuratori: free
+  parametrice: partial
+  open_source: free

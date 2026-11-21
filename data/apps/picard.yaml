@@ -1,6 +1,6 @@
 # MusicBrainz Picard — Identifică și etichetează fișierele muzicale automat.
 id: picard
-popularity: 1740
+popularity: 1760
 name: MusicBrainz Picard
 description: Identifică și etichetează fișierele muzicale automat.
 category: audio-players
@@ -30,7 +30,7 @@ details:
   telemetry: none
   romanian_language: false
 indicators:
-  popcon_rank:
+  popcon_rank: 11447
   stars: 5395
   stars_url: https://github.com/metabrainz/picard
   latest_release: 2026-11

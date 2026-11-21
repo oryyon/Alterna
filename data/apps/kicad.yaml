@@ -1,0 +1,56 @@
+# KiCad — Suite pentru proiectarea plăcilor electronice (schematic + PCB).
+id: kicad
+popularity: 1240
+name: KiCad
+description: Suite pentru proiectarea plăcilor electronice (schematic + PCB).
+category: 3d-cad
+license: foss
+price: free
+developer: KiCad Project
+website: https://www.kicad.org/
+snap: kicad
+platforms:
+- linux
+- windows
+- macos
+tags:
+- electronica
+- pcb
+- schematic
+alternatives:
+- freecad
+- librecad
+details:
+  install_size_mb: 0
+  first_release_year: 1992
+  file_formats:
+  - kicad_pcb
+  - kicad_sch
+  - gerber
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url: https://gitlab.com/kicad
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://www.kicad.org/
+- https://gitlab.com/kicad
+- https://www.wikidata.org/wiki/Q942363
+confidence:
+  details.first_release_year: auto
+  alternatives: manual
+features:
+  modelare_3d: free
+  desen_tehnic_2d: free
+  asamblare: partial
+  randare: free
+  simulare: free
+  export_3d: free
+  import_dxf: free
+  masuratori: free
+  parametrice: free
+  open_source: free
+logo: logos/kicad.svg

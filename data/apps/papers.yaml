@@ -1,0 +1,51 @@
+# Papers — Cititor de documente nou din GNOME, cu adnotări și bibliotecă.
+id: papers
+popularity: 2110
+name: Papers
+description: Cititor de documente nou din GNOME, cu adnotări și bibliotecă.
+category: office
+license: foss
+price: free
+developer: GNOME Project
+website: https://apps.gnome.org/Papers/
+platforms:
+- linux
+tags:
+- pdf
+- citire
+- gnome
+alternatives:
+- evince
+- atril
+details:
+  install_size_mb: 0
+  first_release_year: 2014
+  file_formats:
+  - pdf
+  - epub
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://apps.gnome.org/Papers/
+confidence:
+  alternatives: manual
+features:
+  editare_text: 'no'
+  tabele: 'no'
+  prezentari: 'no'
+  calcul: 'no'
+  pdf: free
+  editare_imagine: 'no'
+  formatare: 'no'
+  scrise_gata: 'no'
+  export_formate: partial
+  compatibilitate_ms: 'no'
+  contabilitate: 'no'
+  biblioteaca: 'no'
+  open_source: free

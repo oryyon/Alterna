@@ -1,0 +1,62 @@
+# Wireshark — Analizor de trafic de rețea, cu captură live și decodare protocoale.
+id: wireshark
+popularity: 2410
+name: Wireshark
+description: Analizor de trafic de rețea, cu captură live și decodare protocoale.
+category: security
+license: foss
+price: free
+developer: Wireshark Foundation
+website: https://www.wireshark.org/
+platforms:
+- linux
+- windows
+- macos
+tags:
+- retea
+- analizator
+- depanare
+alternatives:
+- tcpdump
+- nmap
+- burpsuite
+details:
+  install_size_mb: 0
+  first_release_year: 1998
+  file_formats:
+  - pcap
+  - pcapng
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://www.wireshark.org/
+- https://www.wireshark.org/assets/img/og-image.png
+confidence:
+  alternatives: manual
+features:
+  offline: free
+  parole: 'no'
+  autofill: 'no'
+  totp: 'no'
+  passkeys: 'no'
+  bio: 'no'
+  partajare: 'no'
+  audit: 'no'
+  import_export: free
+  selfhost: 'no'
+  extensii_browser: 'no'
+  atasamente: 'no'
+  acces_urgenta: 'no'
+  chei_hardware: 'no'
+  monitorizare_brese: 'no'
+  cli_api: 'no'
+  ssh_agent: 'no'
+  audit_independent: 'no'
+logo: logos/wireshark.svg
+screenshot: screenshots/wireshark.jpg

@@ -1,0 +1,52 @@
+# qpdfview — Vizualizator de PDF bazat pe Qt, ușor și rapid.
+id: qpdfview
+popularity: 2140
+name: qpdfview
+description: Vizualizator de PDF bazat pe Qt, ușor și rapid.
+category: office
+license: foss
+price: free
+developer: Laurent Noé
+website: https://qpdfview.sourceforge.io/
+platforms:
+- linux
+- windows
+tags:
+- pdf
+- citire
+- qt
+alternatives:
+- evince
+- okular
+- qpdf
+details:
+  install_size_mb: 0
+  first_release_year: 2007
+  file_formats:
+  - pdf
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://qpdfview.sourceforge.io/
+confidence:
+  alternatives: manual
+features:
+  editare_text: 'no'
+  tabele: 'no'
+  prezentari: 'no'
+  calcul: 'no'
+  pdf: free
+  editare_imagine: 'no'
+  formatare: 'no'
+  scrise_gata: 'no'
+  export_formate: partial
+  compatibilitate_ms: 'no'
+  contabilitate: 'no'
+  biblioteaca: 'no'
+  open_source: free

@@ -1,0 +1,63 @@
+# OpenVPN — Client și server VPN matur, cu suport larg pentru configurații.
+id: openvpn
+popularity: 1300
+name: OpenVPN
+description: Client și server VPN matur, cu suport larg pentru configurații.
+category: security
+license: foss
+price: free
+developer: OpenVPN Inc.
+website: https://openvpn.net/
+platforms:
+- linux
+- windows
+- macos
+- android
+tags:
+- vpn
+- retea
+- privatate
+alternatives:
+- wireguard
+- tor
+details:
+  install_size_mb: 0
+  first_release_year: 2002
+  file_formats: []
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url: https://github.com/OpenVPN
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://openvpn.net/
+- https://github.com/OpenVPN
+- https://www.wikidata.org/wiki/Q509075
+- https://openvpn.net/og-image.png
+confidence:
+  details.first_release_year: auto
+  alternatives: manual
+features:
+  offline: free
+  parole: 'no'
+  autofill: 'no'
+  totp: 'no'
+  passkeys: 'no'
+  bio: 'no'
+  partajare: 'no'
+  audit: 'no'
+  import_export: free
+  selfhost: free
+  extensii_browser: 'no'
+  atasamente: 'no'
+  acces_urgenta: 'no'
+  chei_hardware: 'no'
+  monitorizare_brese: 'no'
+  cli_api: free
+  ssh_agent: 'no'
+  audit_independent: 'no'
+logo: logos/openvpn.svg
+screenshot: screenshots/openvpn.jpg

@@ -1,0 +1,57 @@
+# rkhunter — Caută rootkits și urme de intruziune pe sistemul local.
+id: rkhunter
+popularity: 2280
+name: rkhunter
+description: Caută rootkits și urme de intruziune pe sistemul local.
+category: security
+license: foss
+price: free
+developer: Michael Boelen
+website: https://rkhunter.org/
+platforms:
+- linux
+tags:
+- securitate
+- audit
+- rootkit
+alternatives:
+- lynis
+- fail2ban
+- clamav
+details:
+  install_size_mb: 0
+  first_release_year: 2003
+  file_formats: []
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url: https://git.code.sf.net/p/rkhunter/rkh_code
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://rkhunter.org/
+- https://git.code.sf.net/p/rkhunter/rkh_code
+- https://www.wikidata.org/wiki/Q2710876
+confidence:
+  alternatives: manual
+features:
+  offline: free
+  parole: 'no'
+  autofill: 'no'
+  totp: 'no'
+  passkeys: 'no'
+  bio: 'no'
+  partajare: 'no'
+  audit: free
+  import_export: partial
+  selfhost: 'no'
+  extensii_browser: 'no'
+  atasamente: 'no'
+  acces_urgenta: 'no'
+  chei_hardware: 'no'
+  monitorizare_brese: partial
+  cli_api: free
+  ssh_agent: 'no'
+  audit_independent: 'no'

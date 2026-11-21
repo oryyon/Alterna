@@ -56,6 +56,8 @@ EXCEPTII_CATEGORIE = {
     ("notes", "utilities"): "note vs. unealtă de sincronizare",
     ("utilities", "streaming"): "captura de ecran (flameshot) vs. inregistrare (kazam)",
     ("internet", "utilities"): "client de transfer de fisiere (filezilla) vs. sincronizare (rclone)",
+    ("video", "3d-cad"): "compozitor de efecte vizuale (fusion, nuke) vs. modelator 3D",
+    ("3d-cad", "graphics"): "modelator 3D vs. desen vectorial — ambele creează imagini",
 }
 
 #: Relații curate pentru aplicațiile care nu aveau alternative, dar au

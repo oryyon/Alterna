@@ -22,7 +22,7 @@ details:
   romanian_language: true
 
 indicators:
-  popcon_rank: 10511
+  popcon_rank: 10515
   stars: 7551
   stars_url: https://github.com/bleachbit/bleachbit
   latest_release: "2026-10"

@@ -1,0 +1,55 @@
+# qpdf — Unelte pentru PDF: liniarizare, separare pagini, reparare fișiere.
+id: qpdf
+popularity: 2130
+name: qpdf
+description: "Unelte pentru PDF: liniarizare, separare pagini, reparare fișiere."
+category: office
+license: foss
+price: free
+developer: Qpdf Project
+website: https://qpdf.sourceforge.io/
+platforms:
+- linux
+- windows
+- macos
+tags:
+- pdf
+- cli
+- prelucrare
+alternatives:
+- qpdfview
+- evince
+details:
+  install_size_mb: 0
+  first_release_year: 2005
+  file_formats:
+  - pdf
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars: 5606
+  stars_url: https://github.com/qpdf/qpdf
+  latest_release: 2026-09
+  in_ubuntu_repos: false
+sources:
+- https://qpdf.sourceforge.io/
+- https://github.com/qpdf/qpdf
+- https://www.wikidata.org/wiki/Q7265508
+confidence:
+  details.first_release_year: auto
+  alternatives: manual
+features:
+  editare_text: 'no'
+  tabele: 'no'
+  prezentari: 'no'
+  calcul: 'no'
+  pdf: free
+  editare_imagine: 'no'
+  formatare: 'no'
+  scrise_gata: 'no'
+  export_formate: free
+  compatibilitate_ms: 'no'
+  contabilitate: 'no'
+  biblioteaca: 'no'
+  open_source: free

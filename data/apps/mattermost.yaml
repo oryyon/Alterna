@@ -1,6 +1,6 @@
 # Mattermost — Platformă de mesagerie pentru echipe, găzduită de tine.
 id: mattermost
-popularity: 1260
+popularity: 1270
 name: Mattermost
 description: Platformă de mesagerie pentru echipe, găzduită de tine.
 category: communication
@@ -29,7 +29,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 39684
+  stars: 39685
   stars_url: https://github.com/mattermost/mattermost
   latest_release: 2026-11
   in_ubuntu_repos: false

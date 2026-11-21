@@ -17,7 +17,7 @@ alternatives:
 - abiword
 - gnucash
 - gnumeric
-
+- pandoc
 details:
   install_size_mb: 750
   first_release_year: 2000
@@ -26,7 +26,7 @@ details:
   romanian_language: true
 
 indicators:
-  popcon_rank: 20899
+  popcon_rank: 20982
   stars:
   stars_url: https://invent.kde.org/office/calligra
   latest_release: "2026-04"

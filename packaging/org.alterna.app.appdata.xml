@@ -47,6 +47,15 @@
   <update_contact>alterna_AT_github.com</update_contact>
 
   <releases>
+    <release version="0.1.23" date="2026-11-21">
+      <description>
+        <p>Catalogul ajunge la 262 de aplicații: categoriile mici au fost
+        completate (Streaming 20, Securitate 25, 3D &amp; CAD 20, Video 18,
+        Birou 23).</p>
+        <p>Pe site-ul public apare tabelul comparativ complet, cu export în
+        CSV și Markdown.</p>
+      </description>
+    </release>
     <release version="0.1.22" date="2026-11-21">
       <description>
         <p>Indicatorul „stele” e completat și pentru aplicațiile cu repo pe

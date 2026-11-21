@@ -17,7 +17,7 @@ alternatives:
 - autocad
 - qcad
 - solvespace
-
+- kicad
 details:
   install_size_mb: 435
   first_release_year: 2011
@@ -26,7 +26,7 @@ details:
   romanian_language: true
 
 indicators:
-  popcon_rank: 8573
+  popcon_rank: 8562
   stars: 6625
   stars_url: https://github.com/LibreCAD/LibreCAD
   latest_release: "2026-11"

@@ -1,0 +1,56 @@
+# Emby — Server media cu interfață web și aplicații pentru dispozitive.
+id: emby
+popularity: 2220
+name: Emby
+description: Server media cu interfață web și aplicații pentru dispozitive.
+category: streaming
+license: commercial
+price: paid
+developer: Emby LLC
+website: https://emby.media/
+platforms:
+- linux
+- windows
+- macos
+- android
+- web
+tags:
+- server media
+- video
+- streaming
+alternatives:
+- plex
+- jellyfin
+details:
+  install_size_mb: 0
+  first_release_year: 2013
+  file_formats:
+  - mp4
+  - mkv
+  - avi
+  - mp3
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars: 5028
+  stars_url: https://github.com/MediaBrowser/Emby
+  latest_release: 2018-08
+  in_ubuntu_repos: false
+sources:
+- https://emby.media/
+- https://github.com/MediaBrowser/Emby
+- https://www.wikidata.org/wiki/Q28956428
+confidence:
+  alternatives: manual
+features:
+  captura_ecran: 'no'
+  inregistrare: 'no'
+  streaming_live: free
+  webcam: 'no'
+  audio_capture: 'no'
+  player_video: free
+  biblioteca_media: free
+  scene: 'no'
+  open_source: 'no'
+logo: logos/emby.svg

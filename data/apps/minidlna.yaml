@@ -1,0 +1,50 @@
+# MiniDLNA — Server DLNA/UPnP simplu, pentru a servi fișiere media către TV și telefoane.
+id: minidlna
+popularity: 1840
+name: MiniDLNA
+description: Server DLNA/UPnP simplu, pentru a servi fișiere media către TV și telefoane.
+category: streaming
+license: foss
+price: free
+developer: Justin Magurn
+website: https://minidlna.info/
+platforms:
+- linux
+tags:
+- server media
+- dlna
+- upnp
+alternatives:
+- plex
+- kodi
+- jellyfin
+details:
+  install_size_mb: 0
+  first_release_year: 2006
+  file_formats:
+  - mp4
+  - mkv
+  - mp3
+  - flac
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://minidlna.info/
+confidence:
+  alternatives: manual
+features:
+  captura_ecran: 'no'
+  inregistrare: 'no'
+  streaming_live: free
+  webcam: 'no'
+  audio_capture: 'no'
+  player_video: partial
+  biblioteca_media: free
+  scene: 'no'
+  open_source: 'free'

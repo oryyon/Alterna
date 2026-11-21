@@ -1,6 +1,6 @@
 # Subtitle Edit — Editor de subtitrări, cu sincronizare automată.
 id: subtitleedit
-popularity: 1830
+popularity: 1910
 name: Subtitle Edit
 description: Editor de subtitrări, cu sincronizare automată.
 category: video
@@ -18,6 +18,9 @@ tags:
 alternatives:
 - shotcut
 - kdenlive
+- aegisub
+- gaupol
+- subtitlecomposer
 details:
   install_size_mb: 0
   first_release_year: 2005
@@ -29,7 +32,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 15090
+  stars: 15091
   stars_url: https://github.com/SubtitleEdit/subtitleedit
   latest_release: 2026-11
   in_ubuntu_repos: false

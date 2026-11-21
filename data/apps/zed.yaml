@@ -9,6 +9,7 @@ price: free
 developer: Zed Industries
 website: https://zed.dev
 
+snap: zed
 flatpak: dev.zed.Zed
 platforms: [linux, macos]
 tags: [editor, cod, rust]
@@ -23,7 +24,7 @@ details:
 
 indicators:
   popcon_rank:
-  stars: 95470
+  stars: 95474
   stars_url: https://github.com/zed-industries/zed
   latest_release: "2026-11"
   in_ubuntu_repos: false

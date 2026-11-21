@@ -1,6 +1,6 @@
 # Okular — Cititor de PDF cu adnotări și suport pentru formulare.
 id: okular
-popularity: 1280
+popularity: 1290
 name: Okular
 description: Cititor de PDF cu adnotări și suport pentru formulare.
 category: office
@@ -18,6 +18,9 @@ tags:
 alternatives:
 - xournalpp
 - scribus
+- atril
+- evince
+- qpdfview
 details:
   install_size_mb: 668
   first_release_year: 2007
@@ -26,7 +29,7 @@ details:
   telemetry: none
   romanian_language: false
 indicators:
-  popcon_rank:
+  popcon_rank: 2627
   stars:
   stars_url: https://invent.kde.org/graphics/okular
   latest_release:

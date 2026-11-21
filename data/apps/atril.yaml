@@ -1,0 +1,57 @@
+# Atril — Vizualizator de documente (PDF, DjVu, EPUB) din MATE.
+id: atril
+popularity: 2040
+name: Atril
+description: Vizualizator de documente (PDF, DjVu, EPUB) din MATE.
+category: office
+license: foss
+price: free
+developer: MATE Project
+website: https://www.mate-desktop.org/
+platforms:
+- linux
+tags:
+- pdf
+- citire
+- mate
+alternatives:
+- okular
+- evince
+- papers
+details:
+  install_size_mb: 0
+  first_release_year: 2011
+  file_formats:
+  - pdf
+  - djvu
+  - epub
+  - ps
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars: 251
+  stars_url: https://github.com/mate-desktop/atril/tree/master
+  latest_release: 2026-08
+  in_ubuntu_repos: false
+sources:
+- https://www.mate-desktop.org/
+- https://github.com/mate-desktop/atril/tree/master
+- https://www.wikidata.org/wiki/Q131382357
+confidence:
+  details.first_release_year: auto
+  alternatives: manual
+features:
+  editare_text: 'no'
+  tabele: 'no'
+  prezentari: 'no'
+  calcul: 'no'
+  pdf: free
+  editare_imagine: 'no'
+  formatare: 'no'
+  scrise_gata: 'no'
+  export_formate: partial
+  compatibilitate_ms: 'no'
+  contabilitate: 'no'
+  biblioteaca: 'no'
+  open_source: free

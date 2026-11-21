@@ -1,6 +1,6 @@
 # MyPaint — Program de pictură cu pensule, pentru desen digital.
 id: mypaint
-popularity: 2040
+popularity: 2320
 name: MyPaint
 description: Program de pictură cu pensule, pentru desen digital.
 category: graphics
@@ -28,7 +28,7 @@ details:
   telemetry: none
   romanian_language: false
 indicators:
-  popcon_rank:
+  popcon_rank: 16671
   stars: 3004
   stars_url: https://github.com/mypaint/mypaint
   latest_release: 2020-05

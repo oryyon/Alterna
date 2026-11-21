@@ -1,0 +1,49 @@
+# Totem — Player video și audio din GNOME, cu suport pentru DVD și subtitrări.
+id: totem
+popularity: 2590
+name: Totem
+description: Player video și audio din GNOME, cu suport pentru DVD și subtitrări.
+category: streaming
+license: foss
+price: free
+developer: GNOME Project
+website: https://apps.gnome.org/Totem/
+platforms:
+- linux
+tags:
+- player video
+- gnome
+- dvd
+alternatives:
+- mpv
+- vlc
+details:
+  install_size_mb: 0
+  first_release_year: 2005
+  file_formats:
+  - mp4
+  - mkv
+  - avi
+  - ogg
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://apps.gnome.org/Totem/
+confidence:
+  alternatives: manual
+features:
+  captura_ecran: 'no'
+  inregistrare: 'no'
+  streaming_live: 'no'
+  webcam: 'no'
+  audio_capture: 'no'
+  player_video: free
+  biblioteca_media: 'no'
+  scene: 'no'
+  open_source: free

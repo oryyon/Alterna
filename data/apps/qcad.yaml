@@ -1,6 +1,6 @@
 # QCAD — Editor de desene tehnice 2D, cu librărie de piese.
 id: qcad
-popularity: 2090
+popularity: 2120
 name: QCAD
 description: Editor de desene tehnice 2D, cu librărie de piese.
 category: 3d-cad
@@ -29,7 +29,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 1938
+  stars: 1939
   stars_url: https://github.com/qcad/qcad
   latest_release: 2026-11
   in_ubuntu_repos: false

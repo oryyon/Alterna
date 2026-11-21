@@ -1,0 +1,59 @@
+# Burp Suite — Platformă de testare a securității aplicațiilor web (proxy, scanner).
+id: burpsuite
+popularity: 1700
+name: Burp Suite
+description: Platformă de testare a securității aplicațiilor web (proxy, scanner).
+category: security
+license: commercial
+price: free
+developer: PortSwigger
+website: https://portswigger.net/burp
+platforms:
+- linux
+- windows
+- macos
+- web
+tags:
+- web
+- securitate
+- teste
+alternatives:
+- nmap
+- wireshark
+details:
+  install_size_mb: 0
+  first_release_year: 2006
+  file_formats: []
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://portswigger.net/burp
+- https://www.wikidata.org/wiki/Q2324584
+confidence:
+  alternatives: manual
+features:
+  offline: partial
+  parole: 'no'
+  autofill: 'no'
+  totp: 'no'
+  passkeys: 'no'
+  bio: 'no'
+  partajare: 'no'
+  audit: partial
+  import_export: free
+  selfhost: 'no'
+  extensii_browser: 'no'
+  atasamente: 'no'
+  acces_urgenta: 'no'
+  chei_hardware: 'no'
+  monitorizare_brese: 'no'
+  cli_api: partial
+  ssh_agent: 'no'
+  audit_independent: 'no'
+logo: logos/burpsuite.svg

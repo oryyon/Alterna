@@ -1,6 +1,6 @@
 # Transmission — Client de torrent, ușor și fără reclame.
 id: transmission
-popularity: 1330
+popularity: 1350
 name: Transmission
 description: Client de torrent, ușor și fără reclame.
 category: internet
@@ -27,7 +27,7 @@ details:
   telemetry: none
   romanian_language: false
 indicators:
-  popcon_rank:
+  popcon_rank: 8802
   stars: 15446
   stars_url: https://github.com/transmission/transmission
   latest_release: 2026-10

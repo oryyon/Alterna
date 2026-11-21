@@ -1,6 +1,6 @@
 # HexChat — Client de chat IRC, cu suport pentru plug-in-uri.
 id: hexchat
-popularity: 2010
+popularity: 2390
 name: HexChat
 description: Client de chat IRC, cu suport pentru plug-in-uri.
 category: communication
@@ -30,7 +30,7 @@ indicators:
   stars: 3224
   stars_url: https://github.com/hexchat/hexchat
   latest_release: 2024-02
-  in_ubuntu_repos: true
+  in_ubuntu_repos: false
 sources:
 - https://hexchat.github.io
 - https://github.com/hexchat/hexchat

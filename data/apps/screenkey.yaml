@@ -1,0 +1,48 @@
+# Screenkey — Înregistrare a ecranului cu efecte (tastatură, mouse, sunet).
+id: screenkey
+popularity: 2360
+name: Screenkey
+description: Înregistrare a ecranului cu efecte (tastatură, mouse, sunet).
+category: streaming
+license: foss
+price: free
+developer: Renato Stehle
+website: https://www.screenkey.org/
+snap: screenkey
+platforms:
+- linux
+tags:
+- captura ecran
+- inregistrare
+alternatives:
+- kazam
+- vokoscreenng
+details:
+  install_size_mb: 0
+  first_release_year: 2012
+  file_formats:
+  - webm
+  - mp4
+  - ogv
+  telemetry: none
+  romanian_language: false
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://www.screenkey.org/
+confidence:
+  alternatives: manual
+features:
+  captura_ecran: free
+  inregistrare: free
+  streaming_live: 'no'
+  webcam: partial
+  audio_capture: free
+  player_video: 'no'
+  biblioteca_media: 'no'
+  scene: 'no'
+  open_source: free

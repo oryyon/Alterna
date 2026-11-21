@@ -20,7 +20,7 @@ alternatives:
 - photopea
 - darktable
 - synfig
-
+- pencil2d
 details:
   install_size_mb: 867
   first_release_year: 2005
@@ -29,7 +29,7 @@ details:
   romanian_language: true
 
 indicators:
-  popcon_rank: 7325
+  popcon_rank: 7334
   stars: 8200
   stars_url: https://invent.kde.org/graphics/krita
   latest_release: "2026-09"

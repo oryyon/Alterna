@@ -175,3 +175,31 @@ class TestComparatie:
         ieșire = _generează(tmp_path, built_db)
         js = (ieșire / "compara.js").read_text(encoding="utf-8")
         assert "text/csv" in js and "text/markdown" in js
+
+
+class TestComparatieJs:
+    """Logica tabelului comparativ, rulată de fapt (node + DOM minimal).
+
+    Bug raportat de utilizator: se puteau bifa aplicațiile, dar tabelul nu
+    apărea — `rand()` referința o variabilă inexistentă, iar `ReferenceError`
+    era înghițit în callback. Testul execută JS-ul și verifică desenarea.
+    """
+
+    def test_js_deseneaza_tabelul(self, tmp_path, built_db):
+        import shutil
+        import subprocess
+
+        node = shutil.which("node") or shutil.which("nodejs")
+        if not node:
+            import pytest
+
+            pytest.skip("node nu e instalat — testul JS nu poate rula")
+
+        ieșire = _generează(tmp_path, built_db)
+        rezultat = subprocess.run(
+            [node, str(ROOT / "tools" / "test_compara_node.js"),
+             str(ieșire / "catalog.json")],
+            capture_output=True, text=True, cwd=str(ROOT), timeout=120)
+        assert rezultat.returncode == 0, (
+            rezultat.stdout + rezultat.stderr)
+        assert "OK" in rezultat.stdout, rezultat.stdout

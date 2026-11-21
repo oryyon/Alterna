@@ -49,7 +49,9 @@ jobs:
           python tools/build_site.py
 
       - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
+      # v4, nu v3: versiunea veche e deprecated și artefactul nu mai e
+      # găsit de deploy-pages („Found 0 artifact(s)”).
+      - uses: actions/upload-pages-artifact@v4
         with:
           path: site
       - id: deployment

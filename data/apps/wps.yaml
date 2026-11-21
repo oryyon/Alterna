@@ -30,6 +30,7 @@ indicators:
 
 sources:
 - https://www.wps.com
+- https://ds.cache.wpscdn.com/website/wps_office_og_image.jpg
 logo: logos/wps.png
 confidence:
   alternatives: manual
@@ -47,3 +48,4 @@ features:
   contabilitate: 'no'
   biblioteaca: 'no'
   open_source: 'no'
+screenshot: screenshots/wps.jpg

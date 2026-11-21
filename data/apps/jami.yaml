@@ -37,6 +37,7 @@ sources:
 - https://jami.net/
 - https://git.jami.net/
 - https://www.wikidata.org/wiki/Q3459508
+- https://jami.net/content/images/2026/11/Screenshot-2026-11-17-at-14-24-21-The-World-Wide-Web-project.png
 confidence:
   details.install_size_mb: auto
   alternatives: manual
@@ -52,3 +53,4 @@ features:
   selfhost: free
   boturi: 'no'
   open_source: free
+screenshot: screenshots/jami.jpg

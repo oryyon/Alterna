@@ -34,6 +34,7 @@ indicators:
 sources:
 - https://mpv.io
 - https://github.com/mpv-player/mpv
+- https://mpv.io/images/mpv-screenshot-0935decb.png
 logo: logos/mpv.svg
 confidence:
   details.install_size_mb: auto
@@ -51,3 +52,4 @@ features:
   extensii: free
   subtitrari: free
   open_source: free
+screenshot: screenshots/mpv.jpg

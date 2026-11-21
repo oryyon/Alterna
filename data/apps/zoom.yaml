@@ -30,6 +30,7 @@ indicators:
 
 sources:
 - https://zoom.us
+- https://st1.zoom.us/homepage/20261118-1151/primary/dist/assets/zoommedia/web.jpg
 logo: logos/zoom.svg
 confidence:
   alternatives: manual
@@ -45,3 +46,4 @@ features:
   selfhost: 'no'
   boturi: 'no'
   open_source: 'no'
+screenshot: screenshots/zoom.jpg

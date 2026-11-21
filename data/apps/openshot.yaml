@@ -35,6 +35,7 @@ indicators:
 sources:
 - https://www.openshot.org
 - https://github.com/OpenShot/openshot-qt
+- https://cdn.openshot.org/images/hero/openshot-screenshot-poster.jpg
 logo: logos/openshot.png
 confidence:
   details.install_size_mb: auto
@@ -51,3 +52,4 @@ features:
   gpu: free
   export_formate: free
   open_source: free
+screenshot: screenshots/openshot.jpg

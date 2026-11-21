@@ -12,9 +12,9 @@ import shutil
 from pathlib import Path
 
 import pytest
-from PySide6.QtCore import QSettings
+from PySide6.QtCore import QSettings, Qt
 from PySide6.QtGui import QColor
-from PySide6.QtWidgets import QPushButton, QScrollArea
+from PySide6.QtWidgets import QLineEdit, QPushButton, QScrollArea
 
 
 def _setari(tmp_path) -> QSettings:
@@ -646,3 +646,86 @@ class TestCarduriAI:
         assert diferenta > 60, (
             "cardul activ nu se deosebește vizual de cele inactive")
         dialog.close()
+
+
+# -*- coding: utf-8 -*-
+"""Test de regresie: meniul contextual (click dreapta) trebuie să fie lizibil.
+
+Raportat de utilizator, cu captură: meniul avea fundalul ALB nativ (popup-ul
+QMenu nu era stilat) și textul deschis din paletă → text alb pe alb.
+"""
+
+
+class TestMeniuContextual:
+    """Meniul contextual: fundal și text din tema aplicației."""
+
+    @staticmethod
+    def _luminozitate(culoare) -> float:
+        canale = []
+        for val in (culoare.redF(), culoare.greenF(), culoare.blueF()):
+            canale.append(val / 12.92 if val <= 0.03928
+                          else ((val + 0.055) / 1.055) ** 2.4)
+        return (0.2126 * canale[0] + 0.7152 * canale[1]
+                + 0.0722 * canale[2])
+
+    @classmethod
+    def _contrast(cls, c1, c2) -> float:
+        l1, l2 = cls._luminozitate(c1), cls._luminozitate(c2)
+        hi, lo = max(l1, l2), min(l1, l2)
+        return (hi + 0.05) / (lo + 0.05)
+
+    @pytest.mark.parametrize("tema", ["dark", "light", "ocean"])
+    def test_meniul_are_contrast_suficient(self, qapp, tema):
+        from PySide6.QtGui import QColor
+        from PySide6.QtWidgets import QMenu
+
+        from app.theme import apply_theme
+
+        apply_theme(qapp, tema)
+        camp = QLineEdit("text")
+        camp.setContextMenuPolicy(Qt.DefaultContextMenu)
+        meniu = camp.createStandardContextMenu()
+        meniu.show()
+        qapp.processEvents()
+        imagine = meniu.grab().toImage()
+
+        # culorile distincte din meniu: fundalul (cel mai des) și textul
+        culori = {}
+        for x in range(imagine.width()):
+            for y in range(imagine.height()):
+                c = imagine.pixelColor(x, y)
+                cheie = (c.red(), c.green(), c.blue())
+                culori[cheie] = culori.get(cheie, 0) + 1
+
+        fundal = QColor(*max(culori, key=lambda k: culori[k]))
+        # textul: cea mai mare diferență de contrast față de fundal
+        text = max(culori, key=lambda k: self._contrast(fundal, QColor(*k)))
+        raport = self._contrast(fundal, QColor(*text))
+        meniu.close()
+
+        assert raport >= 4.5, (
+            f"{tema}: meniul contextual are contrast {raport:.2f}:1 "
+            f"(fundal {fundal.name()}, text {QColor(*text).name()}) — "
+            f"text ilizibil")
+
+    @pytest.mark.parametrize("tema", ["dark", "ocean"])
+    def test_meniul_nu_e_alb_in_temele_inchise(self, qapp, tema):
+        """În temele închise, meniul nu mai poate avea fundalul alb nativ."""
+        from PySide6.QtGui import QColor
+        from PySide6.QtWidgets import QMenu
+
+        from app.theme import apply_theme
+
+        apply_theme(qapp, tema)
+        camp = QLineEdit("text")
+        meniu = camp.createStandardContextMenu()
+        meniu.show()
+        qapp.processEvents()
+        imagine = meniu.grab().toImage()
+        meniu.close()
+
+        fundal = imagine.pixelColor(imagine.width() // 2,
+                                    imagine.height() - 3)
+        assert fundal.lightness() < 200, (
+            f"{tema}: fundalul meniului e {fundal.name()} — e fundalul nativ, "
+            f"nu cel al temei")

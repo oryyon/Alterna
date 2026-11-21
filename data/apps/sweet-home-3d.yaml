@@ -29,6 +29,7 @@ indicators:
 
 sources:
 - https://www.sweethome3d.com
+- https://www.sweethome3d.com/wp-content/uploads/2025/11/8ef8216d2de04bd14661d01cbc2a76e15d2c50a5-1024x642.jpg
 logo: logos/sweet-home-3d.png
 confidence:
   alternatives: manual
@@ -43,3 +44,4 @@ features:
   masuratori: free
   parametrice: 'no'
   open_source: free
+screenshot: screenshots/sweet-home-3d.jpg

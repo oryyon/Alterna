@@ -35,6 +35,7 @@ indicators:
   in_ubuntu_repos: false
 sources:
 - https://github.com/dani-garcia/vaultwarden
+- https://opengraph.githubassets.com/6387d5232f50436f624e871ef4111a2e4441b8daff0f0a479b206ab3b1045a4b/dani-garcia/vaultwarden
 logo: logos/vaultwarden.svg
 confidence:
   alternatives: manual
@@ -57,3 +58,4 @@ features:
   cli_api: free
   ssh_agent: 'no'
   audit_independent: 'no'
+screenshot: screenshots/vaultwarden.jpg

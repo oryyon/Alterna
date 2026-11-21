@@ -34,6 +34,7 @@ indicators:
 sources:
 - https://www.enpass.io
 - https://www.wikidata.org/wiki/Q22095973
+- https://www.enpass.io/wp-content/uploads/2025/03/iso-27001-2022.png
 logo: logos/enpass.svg
 confidence:
   alternatives: manual
@@ -56,3 +57,4 @@ features:
   cli_api: 'no'
   ssh_agent: 'no'
   audit_independent: 'no'
+screenshot: screenshots/enpass.jpg

@@ -176,3 +176,61 @@ Descărcate de [`tools/fetch_screenshots_github.py`](../tools/fetch_screenshots_
 | vscode | microsoft/vscode | https://github.com/microsoft/vscode/blob/HEAD/https%3A//github.com/user-attachments/assets/56af271c-949d-454c-a3ea-16188c063414 | MIT |
 | xournalpp | xournalpp/xournalpp | https://github.com/xournalpp/xournalpp/blob/HEAD/readme/main.png | GPL-2.0 |
 | zettlr | Zettlr/Zettlr | https://github.com/Zettlr/Zettlr/blob/HEAD/resources/screenshots/zettlr_view.png | GPL-3.0 |
+
+## De pe site-ul oficial al aplicației
+
+Descărcate de [`tools/fetch_screenshots_og.py`](../tools/fetch_screenshots_og.py) din imaginea oficială de prezentare (metadatele OpenGraph) a site-ului oficial al aplicației.
+
+| Aplicație | Site oficial | Imagine |
+|---|---|---|
+| 1password | https://1password.com | https://images.ctfassets.net/2h488pz7kgfv/4YXoxMAEHcmqarZJ6ibIjp/9bc1909cd2ea00448bdcd8bee6643e59/Screenshot_2026-01-29_at_3.28.02â__PM.png |
+| affinity | https://affinity.serif.com | https://static.canva.com/static/images/fb_cover-1.jpg |
+| anytype | https://anytype.io/ | https://anytype.io/ogimage.jpg |
+| appflowy | https://appflowy.com/ | https://appflowy.com/_next/static/media/og-image.838814e7.png |
+| ardour | https://ardour.org | https://ardour.org/images/ardour-og.png |
+| audacity | https://www.audacityteam.org | https://www.audacityteam.org/og-image.png |
+| balena-etcher | https://etcher.io/ | https://uploads-ssl.webflow.com/636ab6ba0e1bd250e3aaedaf/65ef146b4576693f0c5d825b_OG%20image.png |
+| bitwarden | https://bitwarden.com | https://bitwarden.com/assets/7fzQJmr0qt5ggGZp3t66Y/7bf59a6a2379d49fc580ff49e8510efb/bitwarden.com_og_image.png |
+| brave | https://brave.com | https://brave.com/home-assets/images/brave-home-og.png |
+| chrome | https://www.google.com/chrome | https://www.google.com/chrome/static/images/homepage/homepage-v2.png |
+| deadbeef | https://deadbeef.sourceforge.io | https://deadbeef.sourceforge.io/title_screenshot.png |
+| discord | https://discord.com | https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/665643dd8c7ac752237b5cef_Discord-OG-1200x630.jpg |
+| eclipse-ide | https://www.eclipse.org | https://www.eclipse.org/images/og-image-template_hu_3045f06c069388a8.png |
+| element | https://element.io | https://static.element.io/images/open-graph-large.png |
+| elisa | https://apps.kde.org/elisa | https://cdn.kde.org/screenshots/elisa/elisa.png |
+| enpass | https://www.enpass.io | https://www.enpass.io/wp-content/uploads/2025/03/iso-27001-2022.png |
+| ente-auth | https://ente.io/auth | https://ente.io/assets/auth-home-screen.-wNXFaS7_FhVxb.webp |
+| figma | https://www.figma.com | https://cdn.sanity.io/images/599r6htc/regionalized/b08d37520f7d5ad8d6562975b5932dd2d9a862bb-1200x630.gif?w=1200&amp;q=70&amp;fit=max&amp;auto=format |
+| firefox | https://www.mozilla.org/firefox | https://www.firefox.com/media/img/firefox/flare/og.4d50d9b1674b.png |
+| fl-studio | https://www.image-line.com | https://www.image-line.com/static/assets/fl-studio-og-image.ace8e42.jpg |
+| flameshot | https://flameshot.org | https://flameshot.org/img/in-app-screenshot-editing.jpg |
+| geany | https://www.geany.org | https://www.geany.org/media/uploads/screenshots/homepage/.thumbnails/geany_dark_2019-05-20.png/geany_dark_2019-05-20-500x0.png |
+| illustrator | https://www.adobe.com/products/illustrator.html | https://www.adobe.com/products/media_19762a181d8f7cdad7fa491acc9917bdedbcba01a.jpg?width=1200&#x26;format=pjpg&#x26;optimize=medium |
+| inkscape | https://inkscape.org | https://media.inkscape.org/static/images/inkscape-og-front.svg |
+| intellij-idea | https://www.jetbrains.com/idea | https://resources.jetbrains.com/storage/products/intellij-idea/img/meta/preview.png |
+| jami | https://jami.net/ | https://jami.net/content/images/2026/11/Screenshot-2026-11-17-at-14-24-21-The-World-Wide-Web-project.png |
+| librecad | https://librecad.org | https://librecad.org/img/welcome.png |
+| libreoffice | https://www.libreoffice.org | https://www.libreoffice.org/media/screenshot_writer_hero.png |
+| lollypop | https://wiki.gnome.org/Apps/Lollypop | https://gitlab.gnome.org/gnumdk/lollypop-help/raw/master/screenshots/lollypop.jpg |
+| mpv | https://mpv.io | https://mpv.io/images/mpv-screenshot-0935decb.png |
+| notesnook | https://notesnook.com/ | https://notesnook.com/assets/static/hero-image-dark-6.BhduKGdh.png |
+| notion | https://www.notion.so | https://www.notion.com/front-static/meta/teams-and-agents.jpg |
+| obsidian | https://obsidian.md | https://obsidian.md/images/banner.png |
+| openscad | https://openscad.org | https://openscad.org/assets/img/screenshot.png |
+| openshot | https://www.openshot.org | https://cdn.openshot.org/images/hero/openshot-screenshot-poster.jpg |
+| opera | https://www.opera.com | https://cdn-production-opera-website.operacdn.com/staticfiles/assets/images/og/og-opera-lp-home.7e5e3f2570b5.jpg |
+| pinta | https://www.pinta-project.com | https://pinta-project.com/img/pinta-og.png |
+| pycharm | https://www.jetbrains.com/pycharm | https://resources.jetbrains.com/storage/products/pycharm/img/meta/preview.png |
+| signal | https://signal.org | https://signal.org/assets/images/features/signal-iphone.png |
+| slack | https://slack.com | https://a.slack-edge.com/73a2348/marketing/img/homepage/revamped-24/unfurl/hp-revamp-unfurl.jpg |
+| spotify | https://www.spotify.com | https://open.spotifycdn.com/cdn/images/download-page-image-mac.fec937cc.png |
+| sublime-text | https://www.sublimetext.com | https://www.sublimetext.com/images/og-full.jpg |
+| sweet-home-3d | https://www.sweethome3d.com | https://www.sweethome3d.com/wp-content/uploads/2025/11/8ef8216d2de04bd14661d01cbc2a76e15d2c50a5-1024x642.jpg |
+| tenacity | https://tenacityaudio.org | https://tenacityaudio.org/images/screenshots/tenacity-screenshot-light-3840x2160.png |
+| vaultwarden | https://github.com/dani-garcia/vaultwarden | https://opengraph.githubassets.com/6387d5232f50436f624e871ef4111a2e4441b8daff0f0a479b206ab3b1045a4b/dani-garcia/vaultwarden |
+| vlc | https://www.videolan.org | https://images.videolan.org/vlc/screenshots/3.0.0/3.0.17-windows11-fitted.jpg |
+| vscodium | https://vscodium.com | https://vscodium.com/img/vscodium.png |
+| wps | https://www.wps.com | https://ds.cache.wpscdn.com/website/wps_office_og_image.jpg |
+| zed | https://zed.dev | https://zed.dev/img/home/og.webp |
+| zoom | https://zoom.us | https://st1.zoom.us/homepage/20261118-1151/primary/dist/assets/zoommedia/web.jpg |
+| zrythm | https://www.zrythm.org | https://www.zrythm.org/static/images/screenshots/screenshot-20240208.png |

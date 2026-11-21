@@ -30,6 +30,7 @@ indicators:
 sources:
 - https://deadbeef.sourceforge.io
 - https://github.com/DeaDBeeF-Player/deadbeef
+- https://deadbeef.sourceforge.io/title_screenshot.png
 logo: logos/deadbeef.png
 confidence:
   details.romanian_language: manual
@@ -47,3 +48,4 @@ features:
   extensii: free
   subtitrari: 'no'
   open_source: free
+screenshot: screenshots/deadbeef.jpg

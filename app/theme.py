@@ -23,19 +23,22 @@ _PALETTES = {
     "dark": {
         "bg_window": "#232629", "bg_panel": "#2a2e32", "bg_view": "#1b1e20",
         "bg_hover": "#31363b", "bg_active": "#223d65ff",
-        "accent": "#3daee9", "text": "#eff0f1", "text_dim": "#9aa0a6",
+        "accent": "#3daee9", "on_accent": "#1b1e20",
+        "text": "#eff0f1", "text_dim": "#9aa0a6",
         "border": "#3a3f44",
     },
     "light": {
         "bg_window": "#f5f6f7", "bg_panel": "#ffffff", "bg_view": "#eef1f4",
         "bg_hover": "#e3e9ef", "bg_active": "#221d6fc4",
-        "accent": "#1d6fc4", "text": "#232629", "text_dim": "#5c6166",
+        "accent": "#1d6fc4", "on_accent": "#ffffff",
+        "text": "#232629", "text_dim": "#5c6166",
         "border": "#cfd5db",
     },
     "ocean": {
         "bg_window": "#0f1b26", "bg_panel": "#14232f", "bg_view": "#0b151d",
         "bg_hover": "#1b2f3f", "bg_active": "#2200b8d4",
-        "accent": "#00b8d4", "text": "#e0f2f7", "text_dim": "#7fa3b0",
+        "accent": "#00b8d4", "on_accent": "#0b151d",
+        "text": "#e0f2f7", "text_dim": "#7fa3b0",
         "border": "#23404f",
     },
 }
@@ -153,6 +156,18 @@ def build_qss(theme: str) -> str:
         background: {p['bg_panel']}; color: {p['text']};
         border: 1px solid {p['border']}; selection-background-color: {p['accent']};
     }}
+
+    /* Meniul contextual (click dreapta într-un câmp): fără regulă, popup-ul
+       păstra fundalul ALB nativ, iar textul lua culoarea deschisă din paletă
+       → text alb pe alb, ilizibil (raportat de utilizator, cu captură). */
+    QMenu {{
+        background: {p['bg_panel']}; color: {p['text']};
+        border: 1px solid {p['border']}; padding: 4px;
+    }}
+    QMenu::item {{ padding: 5px 26px 5px 22px; border-radius: 4px; }}
+    QMenu::item:selected {{ background: {p['accent']}; color: {p['on_accent']}; }}
+    QMenu::item:disabled {{ color: {p['text_dim']}; }}
+    QMenu::separator {{ height: 1px; background: {p['border']}; margin: 4px 8px; }}
 
     QPushButton {{
         background: {p['bg_panel']}; color: {p['text']};

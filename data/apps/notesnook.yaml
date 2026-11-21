@@ -40,6 +40,7 @@ sources:
 - https://notesnook.com/
 - https://github.com/streetwriters/notesnook
 - https://www.wikidata.org/wiki/Q128944229
+- https://notesnook.com/assets/static/hero-image-dark-6.BhduKGdh.png
 confidence:
   details.first_release_year: auto
   alternatives: manual
@@ -57,3 +58,4 @@ features:
   export_formate: free
   scrise_gata: 'no'
   open_source: 'no'
+screenshot: screenshots/notesnook.jpg

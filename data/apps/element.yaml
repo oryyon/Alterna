@@ -38,6 +38,7 @@ sources:
 - https://element.io
 - https://github.com/element-hq/element-web
 - https://element.io/privacy
+- https://static.element.io/images/open-graph-large.png
 logo: logos/element.svg
 confidence:
   details.telemetry: manual
@@ -54,3 +55,4 @@ features:
   selfhost: free
   boturi: free
   open_source: free
+screenshot: screenshots/element.jpg

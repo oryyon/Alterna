@@ -7,6 +7,7 @@ imaginea (sec. 8 — „totul e verificabil”).
 
 from __future__ import annotations
 
+import urllib.parse
 from pathlib import Path
 
 import pytest
@@ -45,28 +46,20 @@ def test_fiecare_captura_exista_pe_disc(aplicatii):
 
 
 def test_sursa_capturii_e_citata(aplicatii):
-    """Linkul către fișierul original trebuie să fie în `sources`."""
-    fara = []
-    for app_id, app in aplicatii.items():
-        if not app.get("screenshot"):
-            continue
-        if not any("commons.wikimedia.org" in str(s)
-                   for s in app.get("sources") or []):
-            fara.append(app_id)
-    assert not fara, f"capturi fără sursă: {fara[:5]}"
-def test_sursa_capturii_e_citata(aplicatii):
     """Linkul către fișierul original trebuie să fie în `sources`.
 
-    Sunt două surse acceptate: Wikimedia Commons (proprietatea P18 din
-    Wikidata) și depozitul oficial GitHub al aplicației (README-ul proiectului).
+    Sunt trei surse acceptate: Wikimedia Commons (proprietatea P18 din
+    Wikidata), depozitul oficial GitHub al aplicației (README-ul proiectului)
+    și site-ul oficial al aplicației (imaginea de prezentare, og:image).
     """
     fara = []
     for app_id, app in aplicatii.items():
         if not app.get("screenshot"):
             continue
         surse = [str(s) for s in app.get("sources") or []]
+        domeniu = urllib.parse.urlparse(app.get("website") or "").netloc
         if not any("commons.wikimedia.org" in s or "github.com" in s
-                   for s in surse):
+                   or (domeniu and domeniu in s) for s in surse):
             fara.append(app_id)
     assert not fara, f"capturi fără sursă: {fara[:5]}"
 

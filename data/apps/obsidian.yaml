@@ -40,6 +40,7 @@ indicators:
 
 sources:
 - https://obsidian.md
+- https://obsidian.md/images/banner.png
 logo: logos/obsidian.svg
 confidence:
   alternatives: manual
@@ -56,3 +57,4 @@ features:
   export_formate: free
   scrise_gata: partial
   open_source: 'no'
+screenshot: screenshots/obsidian.jpg

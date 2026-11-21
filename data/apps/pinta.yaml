@@ -35,6 +35,7 @@ indicators:
 sources:
 - https://www.pinta-project.com
 - https://github.com/PintaProject/Pinta
+- https://pinta-project.com/img/pinta-og.png
 logo: logos/pinta.png
 confidence:
   details.romanian_language: manual
@@ -52,3 +53,4 @@ features:
   export_formate: free
   batch: 'no'
   open_source: free
+screenshot: screenshots/pinta.jpg

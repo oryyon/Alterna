@@ -30,6 +30,7 @@ indicators:
 
 sources:
 - https://www.jetbrains.com/pycharm
+- https://resources.jetbrains.com/storage/products/pycharm/img/meta/preview.png
 logo: logos/pycharm.svg
 confidence:
   alternatives: manual
@@ -46,3 +47,4 @@ features:
   terminal: free
   extensii: free
   open_source: 'no'
+screenshot: screenshots/pycharm.jpg

@@ -36,6 +36,7 @@ indicators:
 sources:
 - https://www.eclipse.org
 - https://github.com/eclipse-platform
+- https://www.eclipse.org/images/og-image-template_hu_3045f06c069388a8.png
 logo: logos/eclipse-ide.svg
 confidence:
   details.install_size_mb: auto
@@ -53,3 +54,4 @@ features:
   terminal: free
   extensii: free
   open_source: free
+screenshot: screenshots/eclipse-ide.jpg

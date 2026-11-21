@@ -33,6 +33,7 @@ indicators:
 sources:
 - https://ardour.org
 - https://github.com/Ardour/ardour
+- https://ardour.org/images/ardour-og.png
 logo: logos/ardour.svg
 confidence:
   details.install_size_mb: auto
@@ -50,3 +51,4 @@ features:
   export: free
   pluginuri: free
   open_source: free
+screenshot: screenshots/ardour.jpg

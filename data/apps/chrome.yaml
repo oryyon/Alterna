@@ -34,6 +34,7 @@ indicators:
 
 sources:
 - https://www.google.com/chrome
+- https://www.google.com/chrome/static/images/homepage/homepage-v2.png
 logo: logos/chrome.svg
 confidence:
   alternatives: manual
@@ -49,3 +50,4 @@ features:
   vpn: 'no'
   motor_rendering: free
   open_source: 'no'
+screenshot: screenshots/chrome.jpg

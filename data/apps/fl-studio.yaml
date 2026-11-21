@@ -29,6 +29,7 @@ indicators:
 
 sources:
 - https://www.image-line.com
+- https://www.image-line.com/static/assets/fl-studio-og-image.ace8e42.jpg
 logo: logos/fl-studio.png
 confidence:
   alternatives: manual
@@ -45,3 +46,4 @@ features:
   export: free
   pluginuri: free
   open_source: 'no'
+screenshot: screenshots/fl-studio.jpg

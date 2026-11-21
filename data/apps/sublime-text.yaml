@@ -30,6 +30,7 @@ indicators:
 
 sources:
 - https://www.sublimetext.com
+- https://www.sublimetext.com/images/og-full.jpg
 logo: logos/sublime-text.svg
 confidence:
   alternatives: manual
@@ -46,3 +47,4 @@ features:
   terminal: partial
   extensii: free
   open_source: 'no'
+screenshot: screenshots/sublime-text.jpg

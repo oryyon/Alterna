@@ -38,6 +38,7 @@ indicators:
 sources:
 - https://slack.com
 - https://www.wikidata.org/wiki/Q17130715
+- https://a.slack-edge.com/73a2348/marketing/img/homepage/revamped-24/unfurl/hp-revamp-unfurl.jpg
 confidence:
   details.first_release_year: auto
   alternatives: manual
@@ -53,3 +54,4 @@ features:
   selfhost: 'no'
   boturi: free
   open_source: 'no'
+screenshot: screenshots/slack.jpg

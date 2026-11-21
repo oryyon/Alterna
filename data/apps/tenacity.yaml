@@ -34,6 +34,7 @@ indicators:
 sources:
 - https://tenacityaudio.org
 - https://github.com/tenacityteam/tenacity
+- https://tenacityaudio.org/images/screenshots/tenacity-screenshot-light-3840x2160.png
 logo: logos/tenacity.jpg
 confidence:
   details.romanian_language: manual
@@ -51,3 +52,4 @@ features:
   export: free
   pluginuri: free
   open_source: free
+screenshot: screenshots/tenacity.jpg

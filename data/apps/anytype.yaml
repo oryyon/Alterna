@@ -37,6 +37,7 @@ sources:
 - https://anytype.io/
 - https://github.com/anyproto
 - https://www.wikidata.org/wiki/Q125872917
+- https://anytype.io/ogimage.jpg
 logo: logos/anytype.svg
 confidence:
   alternatives: manual
@@ -53,3 +54,4 @@ features:
   export_formate: free
   scrise_gata: partial
   open_source: free
+screenshot: screenshots/anytype.jpg

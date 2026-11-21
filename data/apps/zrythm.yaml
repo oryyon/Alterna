@@ -36,6 +36,7 @@ sources:
 - https://www.zrythm.org
 - https://git.sr.ht/~alextee/zrythm
 - https://www.wikidata.org/wiki/Q102241944
+- https://www.zrythm.org/static/images/screenshots/screenshot-20240208.png
 confidence:
   details.first_release_year: auto
   alternatives: manual
@@ -52,3 +53,4 @@ features:
   export: free
   pluginuri: free
   open_source: free
+screenshot: screenshots/zrythm.jpg

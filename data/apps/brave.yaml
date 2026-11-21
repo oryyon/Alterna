@@ -36,6 +36,7 @@ indicators:
 sources:
 - https://brave.com
 - https://github.com/brave/brave-browser
+- https://brave.com/home-assets/images/brave-home-og.png
 logo: logos/brave.svg
 confidence:
   alternatives: manual
@@ -51,3 +52,4 @@ features:
   vpn: free
   motor_rendering: partial
   open_source: free
+screenshot: screenshots/brave.jpg

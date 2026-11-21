@@ -34,6 +34,7 @@ indicators:
 sources:
 - https://www.audacityteam.org
 - https://github.com/audacity/audacity
+- https://www.audacityteam.org/og-image.png
 logo: logos/audacity.svg
 confidence:
   details.install_size_mb: auto
@@ -52,3 +53,4 @@ features:
   export: free
   pluginuri: free
   open_source: free
+screenshot: screenshots/audacity.jpg

@@ -38,6 +38,7 @@ indicators:
 sources:
 - https://inkscape.org
 - https://gitlab.com/inkscape/inkscape
+- https://media.inkscape.org/static/images/inkscape-og-front.svg
 logo: logos/inkscape.svg
 confidence:
   details.install_size_mb: auto
@@ -56,3 +57,4 @@ features:
   export_formate: free
   batch: partial
   open_source: free
+screenshot: screenshots/inkscape.jpg

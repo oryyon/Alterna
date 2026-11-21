@@ -34,6 +34,7 @@ indicators:
 sources:
 - https://www.jetbrains.com/idea
 - https://github.com/JetBrains/intellij-community
+- https://resources.jetbrains.com/storage/products/intellij-idea/img/meta/preview.png
 logo: logos/intellij-idea.svg
 confidence:
   alternatives: manual
@@ -50,3 +51,4 @@ features:
   terminal: free
   extensii: free
   open_source: 'no'
+screenshot: screenshots/intellij-idea.jpg

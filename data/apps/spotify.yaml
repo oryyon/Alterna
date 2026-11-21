@@ -31,6 +31,7 @@ indicators:
 
 sources:
 - https://www.spotify.com
+- https://open.spotifycdn.com/cdn/images/download-page-image-mac.fec937cc.png
 logo: logos/spotify.svg
 confidence:
   alternatives: manual
@@ -47,3 +48,4 @@ features:
   extensii: 'no'
   subtitrari: 'no'
   open_source: 'no'
+screenshot: screenshots/spotify.jpg

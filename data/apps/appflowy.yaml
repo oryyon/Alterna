@@ -37,6 +37,7 @@ indicators:
 sources:
 - https://appflowy.com/
 - https://www.wikidata.org/wiki/Q140080835
+- https://appflowy.com/_next/static/media/og-image.838814e7.png
 confidence:
   details.first_release_year: auto
   alternatives: manual
@@ -53,3 +54,4 @@ features:
   export_formate: free
   scrise_gata: partial
   open_source: free
+screenshot: screenshots/appflowy.jpg

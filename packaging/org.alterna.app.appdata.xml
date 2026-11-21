@@ -47,6 +47,14 @@
   <update_contact>alterna_AT_github.com</update_contact>
 
   <releases>
+    <release version="0.1.20" date="2026-11-21">
+      <description>
+        <p>Meniul contextual (click dreapta) e acum în tema aplicației, cu text
+        lizibil în locul fundalului alb nativ.</p>
+        <p>Mai multe capturi de ecran: 161 de aplicații au imagine oficială,
+        luată și de pe site-urile oficiale.</p>
+      </description>
+    </release>
     <release version="0.1.19" date="2026-11-20">
       <description>
         <p>Canalul de donație e funcțional fără entitate fiscală: PayPal.Me

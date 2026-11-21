@@ -39,6 +39,7 @@ sources:
 - https://wiki.gnome.org/Apps/Lollypop
 - https://gitlab.gnome.org/World/lollypop
 - https://www.wikidata.org/wiki/Q47103661
+- https://gitlab.gnome.org/gnumdk/lollypop-help/raw/master/screenshots/lollypop.jpg
 confidence:
   license: auto
   details.install_size_mb: auto
@@ -56,3 +57,4 @@ features:
   extensii: free
   subtitrari: 'no'
   open_source: free
+screenshot: screenshots/lollypop.jpg

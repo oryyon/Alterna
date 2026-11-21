@@ -35,6 +35,7 @@ indicators:
 sources:
 - https://flameshot.org
 - https://github.com/flameshot-org/flameshot
+- https://flameshot.org/img/in-app-screenshot-editing.jpg
 logo: logos/flameshot.png
 confidence:
   details.install_size_mb: auto
@@ -53,3 +54,4 @@ features:
   conversie_media: 'no'
   clipboard: partial
   open_source: free
+screenshot: screenshots/flameshot.jpg

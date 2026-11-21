@@ -41,6 +41,7 @@ sources:
 - https://www.libreoffice.org
 - https://github.com/LibreOffice/core
 - https://www.libreoffice.org/about-us/privacy/
+- https://www.libreoffice.org/media/screenshot_writer_hero.png
 logo: logos/libreoffice.svg
 confidence:
   details.install_size_mb: auto
@@ -60,3 +61,4 @@ features:
   contabilitate: 'no'
   biblioteaca: 'no'
   open_source: free
+screenshot: screenshots/libreoffice.jpg

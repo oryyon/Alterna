@@ -32,6 +32,7 @@ indicators:
 
 sources:
 - https://affinity.serif.com
+- https://static.canva.com/static/images/fb_cover-1.jpg
 logo: logos/affinity.png
 confidence:
   alternatives: manual
@@ -48,3 +49,4 @@ features:
   export_formate: free
   batch: partial
   open_source: 'no'
+screenshot: screenshots/affinity.jpg

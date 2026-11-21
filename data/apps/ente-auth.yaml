@@ -34,6 +34,7 @@ sources:
 - https://ente.io/auth
 - https://github.com/ente-io/ente
 - https://ente.io/privacy
+- https://ente.io/assets/auth-home-screen.-wNXFaS7_FhVxb.webp
 logo: logos/ente-auth.svg
 confidence:
   details.telemetry: manual
@@ -57,3 +58,4 @@ features:
   cli_api: 'no'
   ssh_agent: 'no'
   audit_independent: 'no'
+screenshot: screenshots/ente-auth.jpg

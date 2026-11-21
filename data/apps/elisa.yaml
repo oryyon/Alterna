@@ -32,6 +32,7 @@ indicators:
 sources:
 - https://apps.kde.org/elisa
 - https://invent.kde.org/multimedia/elisa
+- https://cdn.kde.org/screenshots/elisa/elisa.png
 logo: logos/elisa.png
 confidence:
   details.install_size_mb: auto
@@ -50,3 +51,4 @@ features:
   extensii: 'no'
   subtitrari: 'no'
   open_source: free
+screenshot: screenshots/elisa.jpg

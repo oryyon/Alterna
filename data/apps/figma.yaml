@@ -30,6 +30,7 @@ indicators:
 
 sources:
 - https://www.figma.com
+- https://cdn.sanity.io/images/599r6htc/regionalized/b08d37520f7d5ad8d6562975b5932dd2d9a862bb-1200x630.gif?w=1200&amp;q=70&amp;fit=max&amp;auto=format
 logo: logos/figma.svg
 confidence:
   alternatives: manual
@@ -46,3 +47,4 @@ features:
   export_formate: free
   batch: 'no'
   open_source: 'no'
+screenshot: screenshots/figma.jpg

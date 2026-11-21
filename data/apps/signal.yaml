@@ -36,6 +36,7 @@ indicators:
 sources:
 - https://signal.org
 - https://github.com/signalapp/Signal-Desktop
+- https://signal.org/assets/images/features/signal-iphone.png
 logo: logos/signal.svg
 confidence:
   alternatives: manual
@@ -51,3 +52,4 @@ features:
   selfhost: 'no'
   boturi: 'no'
   open_source: free
+screenshot: screenshots/signal.jpg

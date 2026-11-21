@@ -17,14 +17,14 @@
   "telemetry": "optional",
   "romanian_language": 1,
   "popcon_rank": 7046,
-  "stars": 13860,
+  "stars": 13882,
   "stars_url": "https://github.com/mozilla-firefox/firefox",
   "latest_release": "2026-11",
   "in_ubuntu_repos": 1,
   "package": "firefox",
   "snap": "firefox",
   "flatpak": "org.mozilla.firefox",
-  "screenshot": null,
+  "screenshot": "screenshots/firefox.jpg",
   "platforms": [
    "android",
    "linux",
@@ -48,6 +48,7 @@
   ],
   "sources": [
    "https://github.com/mozilla-firefox/firefox",
+   "https://www.firefox.com/media/img/firefox/flare/og.4d50d9b1674b.png",
    "https://www.mozilla.org/en-US/privacy/firefox/",
    "https://www.mozilla.org/firefox"
   ]
@@ -77,7 +78,7 @@
   "package": "chrome",
   "snap": null,
   "flatpak": null,
-  "screenshot": null,
+  "screenshot": "screenshots/chrome.jpg",
   "platforms": [
    "android",
    "linux",
@@ -96,7 +97,8 @@
    "opera"
   ],
   "sources": [
-   "https://www.google.com/chrome"
+   "https://www.google.com/chrome",
+   "https://www.google.com/chrome/static/images/homepage/homepage-v2.png"
   ]
  },
  {
@@ -117,14 +119,14 @@
   "telemetry": "none",
   "romanian_language": 1,
   "popcon_rank": 2242,
-  "stars": 20477,
+  "stars": 20511,
   "stars_url": "https://github.com/videolan/vlc",
   "latest_release": "2026-09",
   "in_ubuntu_repos": 1,
   "package": "vlc",
   "snap": "vlc",
   "flatpak": "org.videolan.VLC",
-  "screenshot": null,
+  "screenshot": "screenshots/vlc.jpg",
   "platforms": [
    "android",
    "linux",
@@ -146,6 +148,7 @@
   ],
   "sources": [
    "https://github.com/videolan/vlc",
+   "https://images.videolan.org/vlc/screenshots/3.0.0/3.0.17-windows11-fitted.jpg",
    "https://www.videolan.org"
   ]
  },
@@ -167,7 +170,7 @@
   "telemetry": "none",
   "romanian_language": 1,
   "popcon_rank": 1865,
-  "stars": 6592,
+  "stars": 6604,
   "stars_url": "https://github.com/GNOME/gimp",
   "latest_release": "2026-11",
   "in_ubuntu_repos": 1,
@@ -219,14 +222,14 @@
   "telemetry": "optional",
   "romanian_language": 1,
   "popcon_rank": 4835,
-  "stars": 4650,
+  "stars": 4665,
   "stars_url": "https://github.com/LibreOffice/core",
   "latest_release": "2026-11",
   "in_ubuntu_repos": 1,
   "package": "libreoffice",
   "snap": "libreoffice",
   "flatpak": null,
-  "screenshot": null,
+  "screenshot": "screenshots/libreoffice.jpg",
   "platforms": [
    "linux",
    "macos",
@@ -250,7 +253,8 @@
   "sources": [
    "https://github.com/LibreOffice/core",
    "https://www.libreoffice.org",
-   "https://www.libreoffice.org/about-us/privacy/"
+   "https://www.libreoffice.org/about-us/privacy/",
+   "https://www.libreoffice.org/media/screenshot_writer_hero.png"
   ]
  },
  {
@@ -271,14 +275,14 @@
   "telemetry": "optional",
   "romanian_language": 1,
   "popcon_rank": null,
-  "stars": 195511,
+  "stars": 195693,
   "stars_url": "https://github.com/microsoft/vscode",
   "latest_release": "2026-11",
   "in_ubuntu_repos": 0,
   "package": "vscode",
   "snap": "code",
   "flatpak": null,
-  "screenshot": null,
+  "screenshot": "screenshots/vscode.jpg",
   "platforms": [
    "linux",
    "macos",
@@ -303,7 +307,8 @@
   "sources": [
    "https://code.visualstudio.com",
    "https://code.visualstudio.com/docs/configure/telemetry",
-   "https://github.com/microsoft/vscode"
+   "https://github.com/microsoft/vscode",
+   "https://github.com/microsoft/vscode/blob/HEAD/https%3A//github.com/user-attachments/assets/56af271c-949d-454c-a3ea-16188c063414"
   ]
  },
  {
@@ -324,7 +329,7 @@
   "telemetry": "none",
   "romanian_language": 1,
   "popcon_rank": 10766,
-  "stars": 33586,
+  "stars": 33621,
   "stars_url": "https://github.com/telegramdesktop/tdesktop",
   "latest_release": "2026-11",
   "in_ubuntu_repos": 0,
@@ -373,14 +378,14 @@
   "telemetry": "none",
   "romanian_language": 1,
   "popcon_rank": null,
-  "stars": 16717,
+  "stars": 16735,
   "stars_url": "https://github.com/signalapp/Signal-Desktop",
   "latest_release": "2026-11",
   "in_ubuntu_repos": 0,
   "package": "signal",
   "snap": "signal-desktop",
   "flatpak": "org.signal.Signal",
-  "screenshot": null,
+  "screenshot": "screenshots/signal.jpg",
   "platforms": [
    "android",
    "linux",
@@ -400,7 +405,8 @@
   ],
   "sources": [
    "https://github.com/signalapp/Signal-Desktop",
-   "https://signal.org"
+   "https://signal.org",
+   "https://signal.org/assets/images/features/signal-iphone.png"
   ]
  },
  {
@@ -473,7 +479,7 @@
   "package": "discord",
   "snap": "discord",
   "flatpak": "com.discordapp.Discord",
-  "screenshot": null,
+  "screenshot": "screenshots/discord.jpg",
   "platforms": [
    "android",
    "linux",
@@ -493,6 +499,7 @@
    "telegram"
   ],
   "sources": [
+   "https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/665643dd8c7ac752237b5cef_Discord-OG-1200x630.jpg",
    "https://discord.com"
   ]
  },
@@ -521,7 +528,7 @@
   "package": "spotify",
   "snap": "spotify",
   "flatpak": "com.spotify.Client",
-  "screenshot": null,
+  "screenshot": "screenshots/spotify.jpg",
   "platforms": [
    "android",
    "linux",
@@ -539,6 +546,7 @@
    "vlc"
   ],
   "sources": [
+   "https://open.spotifycdn.com/cdn/images/download-page-image-mac.fec937cc.png",
    "https://www.spotify.com"
   ]
  },
@@ -560,14 +568,14 @@
   "telemetry": "optional",
   "romanian_language": 1,
   "popcon_rank": 7244,
-  "stars": 22122,
+  "stars": 22257,
   "stars_url": "https://github.com/blender/blender",
   "latest_release": "2026-11",
   "in_ubuntu_repos": 1,
   "package": "blender",
   "snap": "blender",
   "flatpak": "org.blender.Blender",
-  "screenshot": null,
+  "screenshot": "screenshots/blender.jpg",
   "platforms": [
    "linux",
    "macos",
@@ -585,6 +593,7 @@
   ],
   "sources": [
    "https://github.com/blender/blender",
+   "https://github.com/blender/blender/blob/HEAD/https%3A//code.blender.org/wp-content/uploads/2018/12/springrg.jpg",
    "https://www.blender.org"
   ]
  },
@@ -742,7 +751,7 @@
   "telemetry": "optional",
   "romanian_language": 1,
   "popcon_rank": 33639,
-  "stars": 25366,
+  "stars": 25391,
   "stars_url": "https://github.com/chromium/chromium",
   "latest_release": "2026-11",
   "in_ubuntu_repos": 1,
@@ -789,14 +798,14 @@
   "telemetry": "optional",
   "romanian_language": 1,
   "popcon_rank": null,
-  "stars": 24237,
+  "stars": 24262,
   "stars_url": "https://github.com/brave/brave-browser",
   "latest_release": "2026-11",
   "in_ubuntu_repos": 0,
   "package": "brave",
   "snap": "brave",
   "flatpak": null,
-  "screenshot": null,
+  "screenshot": "screenshots/brave.jpg",
   "platforms": [
    "android",
    "linux",
@@ -817,6 +826,7 @@
   ],
   "sources": [
    "https://brave.com",
+   "https://brave.com/home-assets/images/brave-home-og.png",
    "https://github.com/brave/brave-browser"
   ]
  },
@@ -845,7 +855,7 @@
   "package": "opera",
   "snap": "opera",
   "flatpak": null,
-  "screenshot": null,
+  "screenshot": "screenshots/opera.jpg",
   "platforms": [
    "linux",
    "macos",
@@ -861,6 +871,7 @@
    "firefox"
   ],
   "sources": [
+   "https://cdn-production-opera-website.operacdn.com/staticfiles/assets/images/og/og-opera-lp-home.7e5e3f2570b5.jpg",
    "https://www.opera.com"
   ]
  },
@@ -889,7 +900,7 @@
   "package": "zoom",
   "snap": "zoom-client",
   "flatpak": null,
-  "screenshot": null,
+  "screenshot": "screenshots/zoom.jpg",
   "platforms": [
    "android",
    "linux",
@@ -906,6 +917,7 @@
    "jitsi-meet"
   ],
   "sources": [
+   "https://st1.zoom.us/homepage/20261118-1151/primary/dist/assets/zoommedia/web.jpg",
    "https://zoom.us"
   ]
  },
@@ -927,7 +939,7 @@
   "telemetry": "none",
   "romanian_language": 1,
   "popcon_rank": 6029,
-  "stars": 79615,
+  "stars": 79798,
   "stars_url": "https://github.com/obsproject/obs-studio",
   "latest_release": "2026-10",
   "in_ubuntu_repos": 1,
@@ -974,7 +986,7 @@
   "telemetry": "none",
   "romanian_language": 0,
   "popcon_rank": null,
-  "stars": 41294,
+  "stars": 41323,
   "stars_url": "https://github.com/vim/vim",
   "latest_release": "2026-11",
   "in_ubuntu_repos": 1,
@@ -1159,14 +1171,14 @@
   "telemetry": "optional",
   "romanian_language": 1,
   "popcon_rank": 4810,
-  "stars": 19088,
+  "stars": 19114,
   "stars_url": "https://github.com/audacity/audacity",
   "latest_release": "2026-11",
   "in_ubuntu_repos": 1,
   "package": "audacity",
   "snap": "audacity",
   "flatpak": null,
-  "screenshot": null,
+  "screenshot": "screenshots/audacity.jpg",
   "platforms": [
    "linux",
    "macos",
@@ -1184,7 +1196,8 @@
   ],
   "sources": [
    "https://github.com/audacity/audacity",
-   "https://www.audacityteam.org"
+   "https://www.audacityteam.org",
+   "https://www.audacityteam.org/og-image.png"
   ]
  },
  {
@@ -1205,14 +1218,14 @@
   "telemetry": "none",
   "romanian_language": 1,
   "popcon_rank": null,
-  "stars": 57216,
+  "stars": 57260,
   "stars_url": "https://github.com/laurent22/joplin",
   "latest_release": "2026-11",
   "in_ubuntu_repos": 0,
   "package": "joplin",
   "snap": "joplin-desktop",
   "flatpak": "net.cozic.joplin_desktop",
-  "screenshot": null,
+  "screenshot": "screenshots/joplin.jpg",
   "platforms": [
    "android",
    "linux",
@@ -1236,6 +1249,7 @@
   ],
   "sources": [
    "https://github.com/laurent22/joplin",
+   "https://github.com/laurent22/joplin/blob/HEAD/https%3A//raw.githubusercontent.com/laurent22/joplin/dev/Assets/WebsiteAssets/images/home-top-img.png",
    "https://joplinapp.org"
   ]
  },
@@ -1264,7 +1278,7 @@
   "package": "obsidian",
   "snap": "obsidian",
   "flatpak": "md.obsidian.Obsidian",
-  "screenshot": null,
+  "screenshot": "screenshots/obsidian.jpg",
   "platforms": [
    "android",
    "linux",
@@ -1288,7 +1302,8 @@
    "zettlr"
   ],
   "sources": [
-   "https://obsidian.md"
+   "https://obsidian.md",
+   "https://obsidian.md/images/banner.png"
   ]
  },
  {
@@ -1316,7 +1331,7 @@
   "package": "notion",
   "snap": "notion-desktop",
   "flatpak": null,
-  "screenshot": null,
+  "screenshot": "screenshots/notion.jpg",
   "platforms": [
    "android",
    "macos",
@@ -1336,6 +1351,7 @@
    "obsidian"
   ],
   "sources": [
+   "https://www.notion.com/front-static/meta/teams-and-agents.jpg",
    "https://www.notion.so"
   ]
  },
@@ -1357,7 +1373,7 @@
   "telemetry": "optional",
   "romanian_language": 1,
   "popcon_rank": 5811,
-  "stars": 30024,
+  "stars": 30068,
   "stars_url": "https://github.com/keepassxreboot/keepassxc",
   "latest_release": "2026-11",
   "in_ubuntu_repos": 1,
@@ -1417,7 +1433,7 @@
   "package": "bitwarden",
   "snap": "bitwarden",
   "flatpak": "com.bitwarden.desktop",
-  "screenshot": null,
+  "screenshot": "screenshots/bitwarden.jpg",
   "platforms": [
    "android",
    "linux",
@@ -1440,6 +1456,7 @@
   ],
   "sources": [
    "https://bitwarden.com",
+   "https://bitwarden.com/assets/7fzQJmr0qt5ggGZp3t66Y/7bf59a6a2379d49fc580ff49e8510efb/bitwarden.com_og_image.png",
    "https://bitwarden.com/privacy/",
    "https://github.com/bitwarden"
   ]
@@ -1469,7 +1486,7 @@
   "package": "1password",
   "snap": "1password",
   "flatpak": null,
-  "screenshot": null,
+  "screenshot": "screenshots/1password.jpg",
   "platforms": [
    "android",
    "linux",
@@ -1490,7 +1507,8 @@
   ],
   "sources": [
    "https://1password.com",
-   "https://1password.com/privacy"
+   "https://1password.com/privacy",
+   "https://images.ctfassets.net/2h488pz7kgfv/4YXoxMAEHcmqarZJ6ibIjp/9bc1909cd2ea00448bdcd8bee6643e59/Screenshot_2026-01-29_at_3.28.02â__PM.png"
   ]
  },
  {
@@ -1558,7 +1576,7 @@
   "telemetry": "none",
   "romanian_language": 1,
   "popcon_rank": 1969,
-  "stars": 4529,
+  "stars": 4556,
   "stars_url": "https://github.com/ip7z/7zip",
   "latest_release": "2026-11",
   "in_ubuntu_repos": 1,
@@ -1644,14 +1662,14 @@
   "telemetry": "none",
   "romanian_language": 1,
   "popcon_rank": null,
-  "stars": 8155,
+  "stars": 8173,
   "stars_url": "https://github.com/peazip/PeaZip",
   "latest_release": "2026-10",
   "in_ubuntu_repos": 0,
   "package": "peazip",
   "snap": null,
   "flatpak": null,
-  "screenshot": null,
+  "screenshot": "screenshots/peazip.jpg",
   "platforms": [
    "linux",
    "windows"
@@ -1669,6 +1687,7 @@
   ],
   "sources": [
    "https://github.com/peazip/PeaZip",
+   "https://github.com/peazip/PeaZip/blob/HEAD/https%3A//peazip.github.io/linux-dark-mode.png",
    "https://peazip.github.io"
   ]
  },
@@ -1690,14 +1709,14 @@
   "telemetry": "none",
   "romanian_language": 0,
   "popcon_rank": 3959,
-  "stars": 38159,
+  "stars": 38211,
   "stars_url": "https://github.com/mpv-player/mpv",
   "latest_release": "2026-11",
   "in_ubuntu_repos": 1,
   "package": "mpv",
   "snap": "mpv",
   "flatpak": "io.mpv.Mpv",
-  "screenshot": null,
+  "screenshot": "screenshots/mpv.jpg",
   "platforms": [
    "linux",
    "macos",
@@ -1714,7 +1733,8 @@
   ],
   "sources": [
    "https://github.com/mpv-player/mpv",
-   "https://mpv.io"
+   "https://mpv.io",
+   "https://mpv.io/images/mpv-screenshot-0935decb.png"
   ]
  },
  {
@@ -1786,14 +1806,14 @@
   "telemetry": "none",
   "romanian_language": 1,
   "popcon_rank": null,
-  "stars": 34153,
+  "stars": 34194,
   "stars_url": "https://github.com/VSCodium/vscodium",
   "latest_release": "2026-10",
   "in_ubuntu_repos": 0,
   "package": "vscodium",
   "snap": null,
   "flatpak": null,
-  "screenshot": null,
+  "screenshot": "screenshots/vscodium.jpg",
   "platforms": [
    "linux",
    "macos",
@@ -1812,7 +1832,8 @@
   ],
   "sources": [
    "https://github.com/VSCodium/vscodium",
-   "https://vscodium.com"
+   "https://vscodium.com",
+   "https://vscodium.com/img/vscodium.png"
   ]
  },
  {
@@ -1833,7 +1854,7 @@
   "telemetry": "none",
   "romanian_language": 0,
   "popcon_rank": 5467,
-  "stars": 103721,
+  "stars": 103922,
   "stars_url": "https://github.com/neovim/neovim",
   "latest_release": "2026-11",
   "in_ubuntu_repos": 1,
@@ -1879,14 +1900,14 @@
   "telemetry": "optional",
   "romanian_language": 0,
   "popcon_rank": null,
-  "stars": 95181,
+  "stars": 95382,
   "stars_url": "https://github.com/zed-industries/zed",
   "latest_release": "2026-11",
   "in_ubuntu_repos": 0,
   "package": "zed",
   "snap": null,
   "flatpak": "dev.zed.Zed",
-  "screenshot": null,
+  "screenshot": "screenshots/zed.jpg",
   "platforms": [
    "linux",
    "macos"
@@ -1903,6 +1924,7 @@
   "sources": [
    "https://github.com/zed-industries/zed",
    "https://zed.dev",
+   "https://zed.dev/img/home/og.webp",
    "https://zed.dev/privacy"
   ]
  },
@@ -1931,7 +1953,7 @@
   "package": "sublime-text",
   "snap": "sublime-text",
   "flatpak": null,
-  "screenshot": null,
+  "screenshot": "screenshots/sublime-text.jpg",
   "platforms": [
    "linux",
    "macos",
@@ -1946,7 +1968,8 @@
    "vscode"
   ],
   "sources": [
-   "https://www.sublimetext.com"
+   "https://www.sublimetext.com",
+   "https://www.sublimetext.com/images/og-full.jpg"
   ]
  },
  {
@@ -1974,7 +1997,7 @@
   "package": "pycharm",
   "snap": "pycharm-community",
   "flatpak": null,
-  "screenshot": null,
+  "screenshot": "screenshots/pycharm.jpg",
   "platforms": [
    "linux",
    "macos",
@@ -1990,6 +2013,7 @@
    "vscodium"
   ],
   "sources": [
+   "https://resources.jetbrains.com/storage/products/pycharm/img/meta/preview.png",
    "https://www.jetbrains.com/pycharm"
   ]
  },
@@ -2011,14 +2035,14 @@
   "telemetry": "optional",
   "romanian_language": 0,
   "popcon_rank": null,
-  "stars": 20737,
+  "stars": 20747,
   "stars_url": "https://github.com/JetBrains/intellij-community",
   "latest_release": "2026-11",
   "in_ubuntu_repos": 0,
   "package": "intellij-idea",
   "snap": "intellij-idea-community",
   "flatpak": null,
-  "screenshot": null,
+  "screenshot": "screenshots/intellij-idea.jpg",
   "platforms": [
    "linux",
    "macos",
@@ -2036,6 +2060,7 @@
   ],
   "sources": [
    "https://github.com/JetBrains/intellij-community",
+   "https://resources.jetbrains.com/storage/products/intellij-idea/img/meta/preview.png",
    "https://www.jetbrains.com/idea"
   ]
  },
@@ -2064,7 +2089,7 @@
   "package": "eclipse-titan",
   "snap": "eclipse",
   "flatpak": null,
-  "screenshot": null,
+  "screenshot": "screenshots/eclipse-ide.jpg",
   "platforms": [
    "linux",
    "macos",
@@ -2082,7 +2107,8 @@
   ],
   "sources": [
    "https://github.com/eclipse-platform",
-   "https://www.eclipse.org"
+   "https://www.eclipse.org",
+   "https://www.eclipse.org/images/og-image-template_hu_3045f06c069388a8.png"
   ]
  },
  {
@@ -2103,14 +2129,14 @@
   "telemetry": "none",
   "romanian_language": 1,
   "popcon_rank": 7145,
-  "stars": 3758,
+  "stars": 3760,
   "stars_url": "https://github.com/geany/geany",
   "latest_release": "2025-07",
   "in_ubuntu_repos": 1,
   "package": "geany",
   "snap": null,
   "flatpak": null,
-  "screenshot": null,
+  "screenshot": "screenshots/geany.jpg",
   "platforms": [
    "linux",
    "macos",
@@ -2131,7 +2157,8 @@
   ],
   "sources": [
    "https://github.com/geany/geany",
-   "https://www.geany.org"
+   "https://www.geany.org",
+   "https://www.geany.org/media/uploads/screenshots/homepage/.thumbnails/geany_dark_2019-05-20.png/geany_dark_2019-05-20-500x0.png"
   ]
  },
  {
@@ -2152,7 +2179,7 @@
   "telemetry": "none",
   "romanian_language": 0,
   "popcon_rank": null,
-  "stars": 21498,
+  "stars": 21517,
   "stars_url": "https://github.com/xbmc/xbmc",
   "latest_release": "2026-11",
   "in_ubuntu_repos": 1,
@@ -2208,7 +2235,7 @@
   "package": "slack",
   "snap": "slack",
   "flatpak": null,
-  "screenshot": null,
+  "screenshot": "screenshots/slack.jpg",
   "platforms": [
    "android",
    "linux",
@@ -2227,6 +2254,7 @@
    "rocket-chat"
   ],
   "sources": [
+   "https://a.slack-edge.com/73a2348/marketing/img/homepage/revamped-24/unfurl/hp-revamp-unfurl.jpg",
    "https://slack.com",
    "https://www.wikidata.org/wiki/Q17130715"
   ]
@@ -2305,7 +2333,7 @@
   "package": "inkscape",
   "snap": "inkscape",
   "flatpak": "org.inkscape.Inkscape",
-  "screenshot": null,
+  "screenshot": "screenshots/inkscape.jpg",
   "platforms": [
    "linux",
    "macos",
@@ -2326,7 +2354,8 @@
   ],
   "sources": [
    "https://gitlab.com/inkscape/inkscape",
-   "https://inkscape.org"
+   "https://inkscape.org",
+   "https://media.inkscape.org/static/images/inkscape-og-front.svg"
   ]
  },
  {
@@ -2347,14 +2376,14 @@
   "telemetry": "none",
   "romanian_language": 1,
   "popcon_rank": 9353,
-  "stars": 13461,
+  "stars": 13477,
   "stars_url": "https://github.com/darktable-org/darktable",
   "latest_release": "2026-11",
   "in_ubuntu_repos": 1,
   "package": "darktable",
   "snap": "darktable",
   "flatpak": "org.darktable.Darktable",
-  "screenshot": null,
+  "screenshot": "screenshots/darktable.jpg",
   "platforms": [
    "linux",
    "macos",
@@ -2374,6 +2403,7 @@
   ],
   "sources": [
    "https://github.com/darktable-org/darktable",
+   "https://github.com/darktable-org/darktable/blob/HEAD/https%3A//user-images.githubusercontent.com/45535283/148689197-e53dd75f-32f1-4297-9a0f-a9547fd4e7c7.jpg",
    "https://www.darktable.org"
   ]
  },
@@ -2447,7 +2477,7 @@
   "package": "figma",
   "snap": "figma-linux",
   "flatpak": null,
-  "screenshot": null,
+  "screenshot": "screenshots/figma.jpg",
   "platforms": [
    "macos",
    "web",
@@ -2463,6 +2493,7 @@
    "penpot"
   ],
   "sources": [
+   "https://cdn.sanity.io/images/599r6htc/regionalized/b08d37520f7d5ad8d6562975b5932dd2d9a862bb-1200x630.gif?w=1200&amp;q=70&amp;fit=max&amp;auto=format",
    "https://www.figma.com"
   ]
  },
@@ -2484,14 +2515,14 @@
   "telemetry": "optional",
   "romanian_language": 1,
   "popcon_rank": null,
-  "stars": 62441,
+  "stars": 62567,
   "stars_url": "https://github.com/penpot/penpot",
   "latest_release": "2026-11",
   "in_ubuntu_repos": 0,
   "package": "penpot",
   "snap": null,
   "flatpak": null,
-  "screenshot": null,
+  "screenshot": "screenshots/penpot.jpg",
   "platforms": [
    "web"
   ],
@@ -2507,6 +2538,7 @@
   ],
   "sources": [
    "https://github.com/penpot/penpot",
+   "https://github.com/penpot/penpot/blob/HEAD/https%3A//github.com/user-attachments/assets/da17b160-f289-436f-b140-972083a08602",
    "https://penpot.app"
   ]
  },
@@ -2535,7 +2567,7 @@
   "package": "affinity",
   "snap": null,
   "flatpak": null,
-  "screenshot": null,
+  "screenshot": "screenshots/affinity.jpg",
   "platforms": [
    "macos",
    "windows"
@@ -2551,7 +2583,8 @@
    "photoshop"
   ],
   "sources": [
-   "https://affinity.serif.com"
+   "https://affinity.serif.com",
+   "https://static.canva.com/static/images/fb_cover-1.jpg"
   ]
  },
  {
@@ -2579,7 +2612,7 @@
   "package": "illustrator",
   "snap": null,
   "flatpak": null,
-  "screenshot": null,
+  "screenshot": "screenshots/illustrator.jpg",
   "platforms": [
    "macos",
    "windows"
@@ -2594,7 +2627,8 @@
    "inkscape"
   ],
   "sources": [
-   "https://www.adobe.com/products/illustrator.html"
+   "https://www.adobe.com/products/illustrator.html",
+   "https://www.adobe.com/products/media_19762a181d8f7cdad7fa491acc9917bdedbcba01a.jpg?width=1200&#x26;format=pjpg&#x26;optimize=medium"
   ]
  },
  {
@@ -2615,14 +2649,14 @@
   "telemetry": "none",
   "romanian_language": 1,
   "popcon_rank": null,
-  "stars": 4138,
+  "stars": 4140,
   "stars_url": "https://github.com/PintaProject/Pinta",
   "latest_release": "2026-04",
   "in_ubuntu_repos": 0,
   "package": "pinta",
   "snap": "pinta",
   "flatpak": "com.github.PintaProject.Pinta",
-  "screenshot": null,
+  "screenshot": "screenshots/pinta.jpg",
   "platforms": [
    "linux",
    "macos",
@@ -2639,6 +2673,7 @@
   ],
   "sources": [
    "https://github.com/PintaProject/Pinta",
+   "https://pinta-project.com/img/pinta-og.png",
    "https://www.pinta-project.com"
   ]
  },
@@ -2660,14 +2695,14 @@
   "telemetry": "optional",
   "romanian_language": 1,
   "popcon_rank": null,
-  "stars": 5744,
+  "stars": 5761,
   "stars_url": "https://github.com/ONLYOFFICE/DesktopEditors",
   "latest_release": "2026-10",
   "in_ubuntu_repos": 0,
   "package": "onlyoffice",
   "snap": "onlyoffice-desktopeditors",
   "flatpak": "org.onlyoffice.desktopeditors",
-  "screenshot": null,
+  "screenshot": "screenshots/onlyoffice.jpg",
   "platforms": [
    "linux",
    "macos",
@@ -2686,6 +2721,7 @@
   ],
   "sources": [
    "https://github.com/ONLYOFFICE",
+   "https://github.com/ONLYOFFICE/DesktopEditors/blob/HEAD/screenshots/ONLYOFFICE%2520Desktop%2520Editors.png",
    "https://www.onlyoffice.com"
   ]
  },
@@ -2714,7 +2750,7 @@
   "package": "wps",
   "snap": "wps-office",
   "flatpak": null,
-  "screenshot": null,
+  "screenshot": "screenshots/wps.jpg",
   "platforms": [
    "android",
    "linux",
@@ -2730,6 +2766,7 @@
    "msoffice"
   ],
   "sources": [
+   "https://ds.cache.wpscdn.com/website/wps_office_og_image.jpg",
    "https://www.wps.com"
   ]
  },
@@ -2839,14 +2876,14 @@
   "telemetry": "none",
   "romanian_language": 1,
   "popcon_rank": 10742,
-  "stars": 15705,
+  "stars": 15735,
   "stars_url": "https://github.com/mltframework/shotcut",
   "latest_release": "2026-11",
   "in_ubuntu_repos": 1,
   "package": "shotcut",
   "snap": "shotcut",
   "flatpak": null,
-  "screenshot": null,
+  "screenshot": "screenshots/shotcut.jpg",
   "platforms": [
    "linux",
    "macos",
@@ -2868,6 +2905,7 @@
   ],
   "sources": [
    "https://github.com/mltframework/shotcut",
+   "https://github.com/mltframework/shotcut/blob/HEAD/https%3A//www.shotcut.org/assets/img/screenshots/Shotcut-18.11.18.png",
    "https://shotcut.org"
   ]
  },
@@ -2889,14 +2927,14 @@
   "telemetry": "optional",
   "romanian_language": 1,
   "popcon_rank": 10323,
-  "stars": 6799,
+  "stars": 6815,
   "stars_url": "https://github.com/OpenShot/openshot-qt",
   "latest_release": "2026-11",
   "in_ubuntu_repos": 1,
   "package": "openshot-qt",
   "snap": null,
   "flatpak": null,
-  "screenshot": null,
+  "screenshot": "screenshots/openshot.jpg",
   "platforms": [
    "linux",
    "macos",
@@ -2913,6 +2951,7 @@
    "shotcut"
   ],
   "sources": [
+   "https://cdn.openshot.org/images/hero/openshot-screenshot-poster.jpg",
    "https://github.com/OpenShot/openshot-qt",
    "https://www.openshot.org"
   ]
@@ -2982,14 +3021,14 @@
   "telemetry": "none",
   "romanian_language": 1,
   "popcon_rank": 13915,
-  "stars": 4085,
+  "stars": 4088,
   "stars_url": "https://github.com/strawberrymusicplayer/strawberry",
   "latest_release": "2026-10",
   "in_ubuntu_repos": 1,
   "package": "strawberry",
   "snap": null,
   "flatpak": "org.strawberrymusicplayer.strawberry",
-  "screenshot": null,
+  "screenshot": "screenshots/strawberry.jpg",
   "platforms": [
    "linux",
    "macos",
@@ -3013,6 +3052,7 @@
   ],
   "sources": [
    "https://github.com/strawberrymusicplayer/strawberry",
+   "https://github.com/strawberrymusicplayer/strawberry/blob/HEAD/https%3A//raw.githubusercontent.com/strawberrymusicplayer/strawberry/master/data/screenshot/screenshot.png",
    "https://www.strawberrymusicplayer.org"
   ]
  },
@@ -3041,7 +3081,7 @@
   "package": "elisa",
   "snap": "elisa",
   "flatpak": "org.kde.elisa",
-  "screenshot": null,
+  "screenshot": "screenshots/elisa.jpg",
   "platforms": [
    "linux",
    "windows"
@@ -3057,6 +3097,7 @@
   ],
   "sources": [
    "https://apps.kde.org/elisa",
+   "https://cdn.kde.org/screenshots/elisa/elisa.png",
    "https://invent.kde.org/multimedia/elisa"
   ]
  },
@@ -3078,14 +3119,14 @@
   "telemetry": "none",
   "romanian_language": 1,
   "popcon_rank": null,
-  "stars": 1996,
+  "stars": 1997,
   "stars_url": "https://github.com/DeaDBeeF-Player/deadbeef",
   "latest_release": "2026-06",
   "in_ubuntu_repos": 0,
   "package": "deadbeef",
   "snap": null,
   "flatpak": null,
-  "screenshot": null,
+  "screenshot": "screenshots/deadbeef.jpg",
   "platforms": [
    "linux"
   ],
@@ -3099,6 +3140,7 @@
   ],
   "sources": [
    "https://deadbeef.sourceforge.io",
+   "https://deadbeef.sourceforge.io/title_screenshot.png",
    "https://github.com/DeaDBeeF-Player/deadbeef"
   ]
  },
@@ -3301,9 +3343,9 @@
   "telemetry": "none",
   "romanian_language": 1,
   "popcon_rank": 5631,
-  "stars": 1088,
+  "stars": 1087,
   "stars_url": "https://github.com/smplayer-dev/smplayer",
-  "latest_release": "2026-08",
+  "latest_release": "2026-11",
   "in_ubuntu_repos": 1,
   "package": "smplayer",
   "snap": "smplayer",
@@ -3392,7 +3434,7 @@
   "telemetry": "none",
   "romanian_language": 1,
   "popcon_rank": 6759,
-  "stars": 41689,
+  "stars": 41756,
   "stars_url": "https://github.com/qbittorrent/qBittorrent",
   "latest_release": "2026-10",
   "in_ubuntu_repos": 1,
@@ -3437,14 +3479,14 @@
   "telemetry": "optional",
   "romanian_language": 1,
   "popcon_rank": null,
-  "stars": 13663,
+  "stars": 13668,
   "stars_url": "https://github.com/element-hq/element-web",
   "latest_release": "2026-11",
   "in_ubuntu_repos": 0,
   "package": "element",
   "snap": "element-desktop",
   "flatpak": "im.riot.Riot",
-  "screenshot": null,
+  "screenshot": "screenshots/element.jpg",
   "platforms": [
    "android",
    "linux",
@@ -3467,7 +3509,8 @@
   "sources": [
    "https://element.io",
    "https://element.io/privacy",
-   "https://github.com/element-hq/element-web"
+   "https://github.com/element-hq/element-web",
+   "https://static.element.io/images/open-graph-large.png"
   ]
  },
  {
@@ -3532,14 +3575,14 @@
   "telemetry": "none",
   "romanian_language": 1,
   "popcon_rank": null,
-  "stars": 30245,
+  "stars": 30276,
   "stars_url": "https://github.com/jitsi/jitsi-meet",
   "latest_release": "2026-11",
   "in_ubuntu_repos": 0,
   "package": "jitsi-meet",
   "snap": null,
   "flatpak": null,
-  "screenshot": null,
+  "screenshot": "screenshots/jitsi-meet.jpg",
   "platforms": [
    "android",
    "web"
@@ -3555,6 +3598,7 @@
   ],
   "sources": [
    "https://github.com/jitsi/jitsi-meet",
+   "https://github.com/jitsi/jitsi-meet/blob/HEAD/https%3A//raw.githubusercontent.com/jitsi/jitsi-meet/master/readme-img1.png",
    "https://meet.jit.si"
   ]
  },
@@ -3618,14 +3662,14 @@
   "telemetry": "none",
   "romanian_language": 0,
   "popcon_rank": null,
-  "stars": 30220,
+  "stars": 30299,
   "stars_url": "https://github.com/ente-io/ente",
   "latest_release": "2026-11",
   "in_ubuntu_repos": 0,
   "package": "ente-auth",
   "snap": null,
   "flatpak": null,
-  "screenshot": null,
+  "screenshot": "screenshots/ente-auth.jpg",
   "platforms": [
    "android",
    "linux",
@@ -3644,6 +3688,7 @@
    "keepassxc"
   ],
   "sources": [
+   "https://ente.io/assets/auth-home-screen.-wNXFaS7_FhVxb.webp",
    "https://ente.io/auth",
    "https://ente.io/privacy",
    "https://github.com/ente-io/ente"
@@ -3667,14 +3712,14 @@
   "telemetry": "none",
   "romanian_language": 0,
   "popcon_rank": 8886,
-  "stars": 2904,
+  "stars": 2907,
   "stars_url": "https://github.com/MaartenBaert/ssr",
   "latest_release": "2021-05",
   "in_ubuntu_repos": 1,
   "package": "simplescreenrecorder",
   "snap": "simplescreenrecorder",
   "flatpak": null,
-  "screenshot": null,
+  "screenshot": "screenshots/ssr.jpg",
   "platforms": [
    "linux"
   ],
@@ -3690,6 +3735,7 @@
   ],
   "sources": [
    "https://github.com/MaartenBaert/ssr",
+   "https://github.com/MaartenBaert/ssr/blob/HEAD/data/screenshots/screenshot01.png",
    "https://www.maartenbaert.be/simplescreenrecorder"
   ]
  },
@@ -3761,7 +3807,7 @@
   "package": "vokoscreen-ng",
   "snap": "vokoscreen-ng",
   "flatpak": null,
-  "screenshot": null,
+  "screenshot": "screenshots/vokoscreenng.jpg",
   "platforms": [
    "linux",
    "windows"
@@ -3776,7 +3822,8 @@
    "ssr"
   ],
   "sources": [
-   "https://github.com/vkohaupt/vokoscreenNG"
+   "https://github.com/vkohaupt/vokoscreenNG",
+   "https://github.com/vkohaupt/vokoscreenNG/blob/HEAD/https%3A//vokoscreen.volkoh.de/3.0/picture/vokoscreenNG-0.png"
   ]
  },
  {
@@ -3804,7 +3851,7 @@
   "package": "tenacity",
   "snap": null,
   "flatpak": "org.tenacityaudio.Tenacity",
-  "screenshot": null,
+  "screenshot": "screenshots/tenacity.jpg",
   "platforms": [
    "linux",
    "macos",
@@ -3822,7 +3869,8 @@
   ],
   "sources": [
    "https://github.com/tenacityteam/tenacity",
-   "https://tenacityaudio.org"
+   "https://tenacityaudio.org",
+   "https://tenacityaudio.org/images/screenshots/tenacity-screenshot-light-3840x2160.png"
   ]
  },
  {
@@ -3843,14 +3891,14 @@
   "telemetry": "none",
   "romanian_language": 0,
   "popcon_rank": 11559,
-  "stars": 5436,
+  "stars": 5446,
   "stars_url": "https://github.com/Ardour/ardour",
   "latest_release": "2026-11",
   "in_ubuntu_repos": 1,
   "package": "ardour",
   "snap": null,
   "flatpak": null,
-  "screenshot": null,
+  "screenshot": "screenshots/ardour.jpg",
   "platforms": [
    "linux",
    "macos",
@@ -3868,6 +3916,7 @@
   ],
   "sources": [
    "https://ardour.org",
+   "https://ardour.org/images/ardour-og.png",
    "https://github.com/Ardour/ardour"
   ]
  },
@@ -3889,7 +3938,7 @@
   "telemetry": "none",
   "romanian_language": 1,
   "popcon_rank": 13244,
-  "stars": 10679,
+  "stars": 10696,
   "stars_url": "https://github.com/LMMS/lmms",
   "latest_release": "2026-09",
   "in_ubuntu_repos": 1,
@@ -3993,7 +4042,7 @@
   "package": "fl-studio",
   "snap": null,
   "flatpak": null,
-  "screenshot": null,
+  "screenshot": "screenshots/fl-studio.jpg",
   "platforms": [
    "macos",
    "windows"
@@ -4008,7 +4057,8 @@
    "lmms"
   ],
   "sources": [
-   "https://www.image-line.com"
+   "https://www.image-line.com",
+   "https://www.image-line.com/static/assets/fl-studio-og-image.ace8e42.jpg"
   ]
  },
  {
@@ -4029,7 +4079,7 @@
   "telemetry": "none",
   "romanian_language": 0,
   "popcon_rank": null,
-  "stars": 35518,
+  "stars": 35629,
   "stars_url": "https://github.com/FreeCAD/FreeCAD",
   "latest_release": "2026-11",
   "in_ubuntu_repos": 0,
@@ -4082,14 +4132,14 @@
   "telemetry": "none",
   "romanian_language": 0,
   "popcon_rank": 10024,
-  "stars": 10672,
+  "stars": 10695,
   "stars_url": "https://github.com/openscad/openscad",
   "latest_release": "2026-11",
   "in_ubuntu_repos": 1,
   "package": "openscad",
   "snap": "openscad",
   "flatpak": null,
-  "screenshot": null,
+  "screenshot": "screenshots/openscad.jpg",
   "platforms": [
    "linux",
    "macos",
@@ -4109,7 +4159,8 @@
   ],
   "sources": [
    "https://github.com/openscad/openscad",
-   "https://openscad.org"
+   "https://openscad.org",
+   "https://openscad.org/assets/img/screenshot.png"
   ]
  },
  {
@@ -4130,14 +4181,14 @@
   "telemetry": "none",
   "romanian_language": 1,
   "popcon_rank": 8573,
-  "stars": 6606,
+  "stars": 6614,
   "stars_url": "https://github.com/LibreCAD/LibreCAD",
   "latest_release": "2026-11",
   "in_ubuntu_repos": 1,
   "package": "librecad",
   "snap": "librecad",
   "flatpak": null,
-  "screenshot": null,
+  "screenshot": "screenshots/librecad.jpg",
   "platforms": [
    "linux",
    "macos",
@@ -4156,7 +4207,8 @@
   ],
   "sources": [
    "https://github.com/LibreCAD/LibreCAD",
-   "https://librecad.org"
+   "https://librecad.org",
+   "https://librecad.org/img/welcome.png"
   ]
  },
  {
@@ -4270,7 +4322,7 @@
   "package": "sweet-home-3d",
   "snap": null,
   "flatpak": null,
-  "screenshot": null,
+  "screenshot": "screenshots/sweet-home-3d.jpg",
   "platforms": [
    "linux",
    "macos",
@@ -4286,7 +4338,8 @@
    "freecad"
   ],
   "sources": [
-   "https://www.sweethome3d.com"
+   "https://www.sweethome3d.com",
+   "https://www.sweethome3d.com/wp-content/uploads/2025/11/8ef8216d2de04bd14661d01cbc2a76e15d2c50a5-1024x642.jpg"
   ]
  },
  {
@@ -4307,14 +4360,14 @@
   "telemetry": "optional",
   "romanian_language": 0,
   "popcon_rank": null,
-  "stars": 45620,
+  "stars": 45675,
   "stars_url": "https://github.com/logseq/logseq",
   "latest_release": "2026-11",
   "in_ubuntu_repos": 0,
   "package": "logseq",
   "snap": "logseq",
   "flatpak": null,
-  "screenshot": null,
+  "screenshot": "screenshots/logseq.jpg",
   "platforms": [
    "android",
    "linux",
@@ -4334,6 +4387,7 @@
   ],
   "sources": [
    "https://github.com/logseq/logseq",
+   "https://github.com/logseq/logseq/blob/HEAD/https%3A//user-images.githubusercontent.com/25513724/220608753-f33db466-af72-4611-b603-411440c15ed0.png%3Fsanatize%3Dtrue",
    "https://logseq.com"
   ]
  },
@@ -4355,7 +4409,7 @@
   "telemetry": "none",
   "romanian_language": 0,
   "popcon_rank": null,
-  "stars": 6722,
+  "stars": 6728,
   "stars_url": "https://github.com/standardnotes/app",
   "latest_release": "2026-11",
   "in_ubuntu_repos": 0,
@@ -4403,14 +4457,14 @@
   "telemetry": "none",
   "romanian_language": 1,
   "popcon_rank": 20194,
-  "stars": 3999,
+  "stars": 4004,
   "stars_url": "https://github.com/giuspen/cherrytree",
   "latest_release": "2026-11",
   "in_ubuntu_repos": 1,
   "package": "cherrytree",
   "snap": "cherrytree",
   "flatpak": null,
-  "screenshot": null,
+  "screenshot": "screenshots/cherrytree.jpg",
   "platforms": [
    "linux",
    "macos",
@@ -4427,6 +4481,7 @@
   ],
   "sources": [
    "https://github.com/giuspen/cherrytree",
+   "https://github.com/giuspen/cherrytree/blob/HEAD/docs/cherrytree-main_window_text.png",
    "https://www.giuspen.net/cherrytree"
   ]
  },
@@ -4543,7 +4598,7 @@
   "telemetry": "none",
   "romanian_language": 0,
   "popcon_rank": null,
-  "stars": 4298,
+  "stars": 4300,
   "stars_url": "https://github.com/RawTherapee/RawTherapee",
   "latest_release": "2026-07",
   "in_ubuntu_repos": 1,
@@ -4590,14 +4645,14 @@
   "telemetry": "none",
   "romanian_language": 1,
   "popcon_rank": 8465,
-  "stars": 15685,
+  "stars": 15698,
   "stars_url": "https://github.com/xournalpp/xournalpp",
   "latest_release": "2026-11",
   "in_ubuntu_repos": 1,
   "package": "xournalpp",
   "snap": "xournalpp",
   "flatpak": null,
-  "screenshot": null,
+  "screenshot": "screenshots/xournalpp.jpg",
   "platforms": [
    "linux",
    "macos",
@@ -4615,6 +4670,7 @@
   ],
   "sources": [
    "https://github.com/xournalpp/xournalpp",
+   "https://github.com/xournalpp/xournalpp/blob/HEAD/readme/main.png",
    "https://xournalpp.github.io"
   ]
  },
@@ -4636,14 +4692,14 @@
   "telemetry": "none",
   "romanian_language": 0,
   "popcon_rank": null,
-  "stars": 5291,
+  "stars": 5293,
   "stars_url": "https://github.com/Automattic/simplenote-electron",
   "latest_release": "2026-07",
   "in_ubuntu_repos": 0,
   "package": "simplenote",
   "snap": "simplenote",
   "flatpak": null,
-  "screenshot": null,
+  "screenshot": "screenshots/simplenote.jpg",
   "platforms": [
    "android",
    "linux",
@@ -4663,6 +4719,7 @@
   ],
   "sources": [
    "https://github.com/Automattic/simplenote-electron",
+   "https://github.com/Automattic/simplenote-electron/blob/HEAD/https%3A//en-blog.files.wordpress.com/2018/09/screenshot-1.png",
    "https://simplenote.com"
   ]
  },
@@ -4684,14 +4741,14 @@
   "telemetry": "none",
   "romanian_language": 1,
   "popcon_rank": 8604,
-  "stars": 4338,
+  "stars": 4341,
   "stars_url": "https://github.com/linuxmint/timeshift",
   "latest_release": "2026-11",
   "in_ubuntu_repos": 1,
   "package": "timeshift",
   "snap": null,
   "flatpak": null,
-  "screenshot": null,
+  "screenshot": "screenshots/timeshift.jpg",
   "platforms": [
    "linux"
   ],
@@ -4704,7 +4761,8 @@
    "deja-dup"
   ],
   "sources": [
-   "https://github.com/linuxmint/timeshift"
+   "https://github.com/linuxmint/timeshift",
+   "https://github.com/linuxmint/timeshift/blob/HEAD/images/main_window.png"
   ]
  },
  {
@@ -4725,7 +4783,7 @@
   "telemetry": "none",
   "romanian_language": 0,
   "popcon_rank": 6286,
-  "stars": 90503,
+  "stars": 90621,
   "stars_url": "https://github.com/syncthing/syncthing",
   "latest_release": "2026-10",
   "in_ubuntu_repos": 1,
@@ -4815,14 +4873,14 @@
   "telemetry": "none",
   "romanian_language": 0,
   "popcon_rank": 19080,
-  "stars": 9350,
+  "stars": 9346,
   "stars_url": "https://github.com/oguzhaninan/Stacer",
   "latest_release": "2019-05",
   "in_ubuntu_repos": 1,
   "package": "stacer",
   "snap": null,
   "flatpak": null,
-  "screenshot": null,
+  "screenshot": "screenshots/stacer.jpg",
   "platforms": [
    "linux"
   ],
@@ -4836,7 +4894,8 @@
    "dconf-editor"
   ],
   "sources": [
-   "https://github.com/oguzhaninan/Stacer"
+   "https://github.com/oguzhaninan/Stacer",
+   "https://github.com/oguzhaninan/Stacer/blob/HEAD/https%3A//raw.githubusercontent.com/oguzhaninan/Stacer/native/screenshots/Screenshot-1.0.9-1.png"
   ]
  },
  {
@@ -4857,14 +4916,14 @@
   "telemetry": "none",
   "romanian_language": 1,
   "popcon_rank": 7665,
-  "stars": 31569,
+  "stars": 31598,
   "stars_url": "https://github.com/flameshot-org/flameshot",
   "latest_release": "2026-11",
   "in_ubuntu_repos": 1,
   "package": "flameshot",
   "snap": "flameshot",
   "flatpak": "org.flameshot.Flameshot",
-  "screenshot": null,
+  "screenshot": "screenshots/flameshot.jpg",
   "platforms": [
    "linux",
    "macos",
@@ -4883,6 +4942,7 @@
   ],
   "sources": [
    "https://flameshot.org",
+   "https://flameshot.org/img/in-app-screenshot-editing.jpg",
    "https://github.com/flameshot-org/flameshot"
   ]
  },
@@ -4904,7 +4964,7 @@
   "telemetry": "none",
   "romanian_language": 0,
   "popcon_rank": null,
-  "stars": 26454,
+  "stars": 26477,
   "stars_url": "https://github.com/kovidgoyal/calibre",
   "latest_release": "2026-11",
   "in_ubuntu_repos": 1,
@@ -4994,7 +5054,7 @@
   "telemetry": "none",
   "romanian_language": 1,
   "popcon_rank": 16396,
-  "stars": 12646,
+  "stars": 12675,
   "stars_url": "https://github.com/hluk/CopyQ",
   "latest_release": "2026-10",
   "in_ubuntu_repos": 1,
@@ -5038,14 +5098,14 @@
   "telemetry": "none",
   "romanian_language": 0,
   "popcon_rank": null,
-  "stars": 80926,
+  "stars": 81008,
   "stars_url": "https://github.com/ventoy/Ventoy",
   "latest_release": "2026-10",
   "in_ubuntu_repos": 0,
   "package": "ventoy",
   "snap": null,
   "flatpak": null,
-  "screenshot": null,
+  "screenshot": "screenshots/ventoy.jpg",
   "platforms": [
    "linux",
    "windows"
@@ -5061,6 +5121,7 @@
   ],
   "sources": [
    "https://github.com/ventoy/Ventoy",
+   "https://github.com/ventoy/Ventoy/blob/HEAD/https%3A//www.ventoy.net/static/img/screen/screen_uefi.png",
    "https://www.ventoy.net"
   ]
  },
@@ -5082,7 +5143,7 @@
   "telemetry": "none",
   "romanian_language": 1,
   "popcon_rank": 10511,
-  "stars": 7511,
+  "stars": 7542,
   "stars_url": "https://github.com/bleachbit/bleachbit",
   "latest_release": "2026-10",
   "in_ubuntu_repos": 1,
@@ -5171,7 +5232,7 @@
   "telemetry": "none",
   "romanian_language": 0,
   "popcon_rank": null,
-  "stars": 37542,
+  "stars": 37573,
   "stars_url": "https://github.com/nextcloud/server",
   "latest_release": "2026-11",
   "in_ubuntu_repos": 0,
@@ -5219,7 +5280,7 @@
   "telemetry": "none",
   "romanian_language": 0,
   "popcon_rank": null,
-  "stars": 66198,
+  "stars": 66237,
   "stars_url": "https://github.com/alacritty/alacritty",
   "latest_release": "2026-04",
   "in_ubuntu_repos": 1,
@@ -5272,7 +5333,7 @@
   "package": "anytype",
   "snap": null,
   "flatpak": null,
-  "screenshot": null,
+  "screenshot": "screenshots/anytype.jpg",
   "platforms": [
    "android",
    "linux",
@@ -5291,6 +5352,7 @@
   ],
   "sources": [
    "https://anytype.io/",
+   "https://anytype.io/ogimage.jpg",
    "https://github.com/anyproto",
    "https://www.wikidata.org/wiki/Q125872917"
   ]
@@ -5359,14 +5421,14 @@
   "telemetry": "none",
   "romanian_language": 0,
   "popcon_rank": null,
-  "stars": 34725,
+  "stars": 34747,
   "stars_url": "https://github.com/balena-io/etcher",
   "latest_release": "2026-10",
   "in_ubuntu_repos": 0,
   "package": "balena-etcher",
   "snap": null,
   "flatpak": null,
-  "screenshot": null,
+  "screenshot": "screenshots/balena-etcher.jpg",
   "platforms": [
    "linux",
    "macos",
@@ -5384,6 +5446,7 @@
   "sources": [
    "https://etcher.io/",
    "https://github.com/balena-io/etcher",
+   "https://uploads-ssl.webflow.com/636ab6ba0e1bd250e3aaedaf/65ef146b4576693f0c5d825b_OG%20image.png",
    "https://www.wikidata.org/wiki/Q30068972"
   ]
  },
@@ -5405,7 +5468,7 @@
   "telemetry": "none",
   "romanian_language": 0,
   "popcon_rank": null,
-  "stars": 4279,
+  "stars": 4278,
   "stars_url": "https://github.com/clementine-player/Clementine",
   "latest_release": "2026-11",
   "in_ubuntu_repos": 1,
@@ -5457,7 +5520,7 @@
   "telemetry": "none",
   "romanian_language": 0,
   "popcon_rank": null,
-  "stars": 52451,
+  "stars": 52494,
   "stars_url": "https://github.com/dbeaver/dbeaver",
   "latest_release": "2026-11",
   "in_ubuntu_repos": 0,
@@ -5689,7 +5752,7 @@
   "telemetry": "none",
   "romanian_language": 0,
   "popcon_rank": null,
-  "stars": 25026,
+  "stars": 25065,
   "stars_url": "https://github.com/HandBrake/HandBrake",
   "latest_release": "2026-06",
   "in_ubuntu_repos": 1,
@@ -5826,7 +5889,7 @@
   "telemetry": "none",
   "romanian_language": 0,
   "popcon_rank": null,
-  "stars": 39632,
+  "stars": 39678,
   "stars_url": "https://github.com/mattermost/mattermost",
   "latest_release": "2026-11",
   "in_ubuntu_repos": 0,
@@ -5875,7 +5938,7 @@
   "telemetry": "none",
   "romanian_language": 0,
   "popcon_rank": null,
-  "stars": 8424,
+  "stars": 8428,
   "stars_url": "https://github.com/mumble-voip/mumble",
   "latest_release": "2026-10",
   "in_ubuntu_repos": 1,
@@ -6014,14 +6077,14 @@
   "telemetry": "none",
   "romanian_language": 0,
   "popcon_rank": null,
-  "stars": 13923,
+  "stars": 13944,
   "stars_url": "https://github.com/Zettlr/Zettlr",
   "latest_release": "2026-11",
   "in_ubuntu_repos": 0,
   "package": "zettlr",
   "snap": "zettlr",
   "flatpak": null,
-  "screenshot": null,
+  "screenshot": "screenshots/zettlr.jpg",
   "platforms": [
    "linux",
    "macos",
@@ -6039,6 +6102,7 @@
   ],
   "sources": [
    "https://github.com/Zettlr/Zettlr",
+   "https://github.com/Zettlr/Zettlr/blob/HEAD/resources/screenshots/zettlr_view.png",
    "https://www.wikidata.org/wiki/Q124476915",
    "https://www.zettlr.com/"
   ]
@@ -6061,7 +6125,7 @@
   "telemetry": "none",
   "romanian_language": 0,
   "popcon_rank": null,
-  "stars": 15969,
+  "stars": 15997,
   "stars_url": "https://github.com/zotero/zotero",
   "latest_release": "2026-11",
   "in_ubuntu_repos": 0,
@@ -6109,7 +6173,7 @@
   "telemetry": "none",
   "romanian_language": 0,
   "popcon_rank": null,
-  "stars": 46103,
+  "stars": 46225,
   "stars_url": "https://github.com/mifi/lossless-cut",
   "latest_release": "2026-10",
   "in_ubuntu_repos": 0,
@@ -6156,7 +6220,7 @@
   "telemetry": "none",
   "romanian_language": 0,
   "popcon_rank": null,
-  "stars": 15429,
+  "stars": 15441,
   "stars_url": "https://github.com/transmission/transmission",
   "latest_release": "2026-10",
   "in_ubuntu_repos": 1,
@@ -6203,14 +6267,14 @@
   "telemetry": "none",
   "romanian_language": 0,
   "popcon_rank": null,
-  "stars": 38969,
+  "stars": 39022,
   "stars_url": "https://github.com/TriliumNext/Trilium",
   "latest_release": "2026-11",
   "in_ubuntu_repos": 0,
   "package": "trilium",
   "snap": "trilium",
   "flatpak": null,
-  "screenshot": null,
+  "screenshot": "screenshots/trilium.jpg",
   "platforms": [
    "linux",
    "macos",
@@ -6227,6 +6291,7 @@
   ],
   "sources": [
    "https://github.com/TriliumNext/Trilium",
+   "https://github.com/TriliumNext/Trilium/blob/HEAD/docs/app.png",
    "https://triliumnotes.org/",
    "https://www.wikidata.org/wiki/Q106880914"
   ]
@@ -6249,7 +6314,7 @@
   "telemetry": "none",
   "romanian_language": 0,
   "popcon_rank": null,
-  "stars": 2556,
+  "stars": 2557,
   "stars_url": "https://github.com/wireapp/wire",
   "latest_release": null,
   "in_ubuntu_repos": 0,
@@ -6351,7 +6416,7 @@
   "package": "enpass",
   "snap": "enpass",
   "flatpak": null,
-  "screenshot": null,
+  "screenshot": "screenshots/enpass.jpg",
   "platforms": [
    "linux",
    "macos",
@@ -6367,6 +6432,7 @@
   ],
   "sources": [
    "https://www.enpass.io",
+   "https://www.enpass.io/wp-content/uploads/2025/03/iso-27001-2022.png",
    "https://www.wikidata.org/wiki/Q22095973"
   ]
  },
@@ -6435,14 +6501,14 @@
   "telemetry": "none",
   "romanian_language": 0,
   "popcon_rank": null,
-  "stars": 14954,
+  "stars": 14951,
   "stars_url": "https://github.com/streetwriters/notesnook",
   "latest_release": "2026-11",
   "in_ubuntu_repos": 0,
   "package": "notesnook",
   "snap": "notesnook",
   "flatpak": null,
-  "screenshot": null,
+  "screenshot": "screenshots/notesnook.jpg",
   "platforms": [
    "android",
    "linux",
@@ -6462,6 +6528,7 @@
   "sources": [
    "https://github.com/streetwriters/notesnook",
    "https://notesnook.com/",
+   "https://notesnook.com/assets/static/hero-image-dark-6.BhduKGdh.png",
    "https://www.wikidata.org/wiki/Q128944229"
   ]
  },
@@ -6535,7 +6602,7 @@
   "package": "appflowy",
   "snap": "appflowy",
   "flatpak": null,
-  "screenshot": null,
+  "screenshot": "screenshots/appflowy.jpg",
   "platforms": [
    "android",
    "linux",
@@ -6553,6 +6620,7 @@
   ],
   "sources": [
    "https://appflowy.com/",
+   "https://appflowy.com/_next/static/media/og-image.838814e7.png",
    "https://www.wikidata.org/wiki/Q140080835"
   ]
  },
@@ -6761,7 +6829,7 @@
   "telemetry": "none",
   "romanian_language": 0,
   "popcon_rank": null,
-  "stars": 1770,
+  "stars": 1769,
   "stars_url": "https://github.com/quodlibet/quodlibet",
   "latest_release": "2025-05",
   "in_ubuntu_repos": 1,
@@ -6808,7 +6876,7 @@
   "telemetry": "none",
   "romanian_language": 0,
   "popcon_rank": null,
-  "stars": 61062,
+  "stars": 61128,
   "stars_url": "https://github.com/rclone/rclone",
   "latest_release": "2026-11",
   "in_ubuntu_repos": 1,
@@ -6910,7 +6978,7 @@
   "package": "zrythm",
   "snap": null,
   "flatpak": null,
-  "screenshot": null,
+  "screenshot": "screenshots/zrythm.jpg",
   "platforms": [
    "linux"
   ],
@@ -6926,7 +6994,8 @@
   "sources": [
    "https://git.sr.ht/~alextee/zrythm",
    "https://www.wikidata.org/wiki/Q102241944",
-   "https://www.zrythm.org"
+   "https://www.zrythm.org",
+   "https://www.zrythm.org/static/images/screenshots/screenshot-20240208.png"
   ]
  },
  {
@@ -6993,14 +7062,14 @@
   "telemetry": "none",
   "romanian_language": 0,
   "popcon_rank": null,
-  "stars": 13562,
+  "stars": 13589,
   "stars_url": "https://github.com/beemdevelopment/Aegis",
   "latest_release": "2026-09",
   "in_ubuntu_repos": 0,
   "package": "aegis",
   "snap": null,
   "flatpak": null,
-  "screenshot": null,
+  "screenshot": "screenshots/aegis.jpg",
   "platforms": [
    "android"
   ],
@@ -7016,6 +7085,7 @@
   "sources": [
    "https://getaegis.app/",
    "https://github.com/beemdevelopment/Aegis",
+   "https://github.com/beemdevelopment/Aegis/blob/HEAD/metadata/en-US/images/phoneScreenshots/screenshot1.png%3Fraw%3Dtrue",
    "https://www.wikidata.org/wiki/Q83424257"
   ]
  },
@@ -7037,7 +7107,7 @@
   "telemetry": "none",
   "romanian_language": 0,
   "popcon_rank": null,
-  "stars": 216,
+  "stars": 217,
   "stars_url": "https://github.com/KDE/amarok",
   "latest_release": "2026-06",
   "in_ubuntu_repos": 0,
@@ -7128,7 +7198,7 @@
   "telemetry": "none",
   "romanian_language": 0,
   "popcon_rank": null,
-  "stars": 1306,
+  "stars": 1308,
   "stars_url": "https://github.com/audacious-media-player/audacious",
   "latest_release": "2026-10",
   "in_ubuntu_repos": 1,
@@ -7221,14 +7291,14 @@
   "telemetry": "none",
   "romanian_language": 0,
   "popcon_rank": null,
-  "stars": 23899,
+  "stars": 23911,
   "stars_url": "https://github.com/beekeeper-studio/beekeeper-studio",
   "latest_release": "2026-11",
   "in_ubuntu_repos": 0,
   "package": "beekeeper-studio",
   "snap": "beekeeper-studio",
   "flatpak": null,
-  "screenshot": null,
+  "screenshot": "screenshots/beekeeper-studio.jpg",
   "platforms": [
    "linux",
    "macos",
@@ -7245,6 +7315,7 @@
   ],
   "sources": [
    "https://github.com/beekeeper-studio/beekeeper-studio",
+   "https://github.com/beekeeper-studio/beekeeper-studio/blob/HEAD/https%3A//user-images.githubusercontent.com/279769/203650152-4a34af1f-8a38-47cf-a273-d34d1c84feeb.png",
    "https://www.beekeeperstudio.io/",
    "https://www.wikidata.org/wiki/Q93533441"
   ]
@@ -7313,7 +7384,7 @@
   "telemetry": "none",
   "romanian_language": 0,
   "popcon_rank": null,
-  "stars": 1033,
+  "stars": 1035,
   "stars_url": "https://github.com/stevenshiau/clonezilla",
   "latest_release": "2026-11",
   "in_ubuntu_repos": 1,
@@ -7358,7 +7429,7 @@
   "telemetry": "none",
   "romanian_language": 0,
   "popcon_rank": null,
-  "stars": 1132,
+  "stars": 1131,
   "stars_url": "https://github.com/QupZilla/qupzilla",
   "latest_release": "2018-03",
   "in_ubuntu_repos": 1,
@@ -7583,7 +7654,7 @@
   "telemetry": "none",
   "romanian_language": 0,
   "popcon_rank": null,
-  "stars": 1355,
+  "stars": 1357,
   "stars_url": "https://github.com/hydrogen-music/hydrogen",
   "latest_release": "2026-10",
   "in_ubuntu_repos": 1,
@@ -7638,7 +7709,7 @@
   "package": "jami",
   "snap": "jami",
   "flatpak": null,
-  "screenshot": null,
+  "screenshot": "screenshots/jami.jpg",
   "platforms": [
    "android",
    "linux",
@@ -7657,6 +7728,7 @@
   "sources": [
    "https://git.jami.net/",
    "https://jami.net/",
+   "https://jami.net/content/images/2026/11/Screenshot-2026-11-17-at-14-24-21-The-World-Wide-Web-project.png",
    "https://www.wikidata.org/wiki/Q3459508"
   ]
  },
@@ -7821,7 +7893,7 @@
   "package": "lollypop",
   "snap": null,
   "flatpak": null,
-  "screenshot": null,
+  "screenshot": "screenshots/lollypop.jpg",
   "platforms": [
    "linux"
   ],
@@ -7839,6 +7911,7 @@
   ],
   "sources": [
    "https://gitlab.gnome.org/World/lollypop",
+   "https://gitlab.gnome.org/gnumdk/lollypop-help/raw/master/screenshots/lollypop.jpg",
    "https://wiki.gnome.org/Apps/Lollypop",
    "https://www.wikidata.org/wiki/Q47103661"
   ]
@@ -7861,14 +7934,14 @@
   "telemetry": "none",
   "romanian_language": 0,
   "popcon_rank": null,
-  "stars": 18010,
+  "stars": 18020,
   "stars_url": "https://github.com/Foundry376/Mailspring",
   "latest_release": "2026-10",
   "in_ubuntu_repos": 0,
   "package": "mailspring",
   "snap": "mailspring",
   "flatpak": null,
-  "screenshot": null,
+  "screenshot": "screenshots/mailspring.jpg",
   "platforms": [
    "linux",
    "macos",
@@ -7886,6 +7959,7 @@
   "sources": [
    "https://getmailspring.com/",
    "https://github.com/Foundry376/Mailspring",
+   "https://github.com/Foundry376/Mailspring/blob/HEAD/https%3A//github.com/Foundry376/Mailspring/raw/master/screenshots/hero_graphic_mac%25402x.png",
    "https://www.wikidata.org/wiki/Q47487583"
   ]
  },
@@ -7907,7 +7981,7 @@
   "telemetry": "none",
   "romanian_language": 0,
   "popcon_rank": null,
-  "stars": 7407,
+  "stars": 7416,
   "stars_url": "https://github.com/mixxxdj/mixxx",
   "latest_release": "2026-03",
   "in_ubuntu_repos": 1,
@@ -7999,7 +8073,7 @@
   "telemetry": "none",
   "romanian_language": 0,
   "popcon_rank": null,
-  "stars": 9160,
+  "stars": 9161,
   "stars_url": "https://github.com/olive-editor/olive",
   "latest_release": "2024-12",
   "in_ubuntu_repos": 0,
@@ -8046,7 +8120,7 @@
   "telemetry": "none",
   "romanian_language": 0,
   "popcon_rank": null,
-  "stars": 5379,
+  "stars": 5392,
   "stars_url": "https://github.com/metabrainz/picard",
   "latest_release": "2026-11",
   "in_ubuntu_repos": 1,
@@ -8282,14 +8356,14 @@
   "telemetry": "none",
   "romanian_language": 0,
   "popcon_rank": null,
-  "stars": 46493,
+  "stars": 46510,
   "stars_url": "https://github.com/RocketChat/Rocket.Chat",
   "latest_release": "2026-11",
   "in_ubuntu_repos": 0,
   "package": "rocket-chat",
   "snap": null,
   "flatpak": null,
-  "screenshot": null,
+  "screenshot": "screenshots/rocket-chat.jpg",
   "platforms": [
    "android",
    "linux",
@@ -8308,6 +8382,7 @@
   ],
   "sources": [
    "https://github.com/RocketChat/Rocket.Chat",
+   "https://github.com/RocketChat/Rocket.Chat/blob/HEAD/https%3A//global-uploads.webflow.com/611a19b9853b7414a0f6b3f6/6319c72bbd8af5c8c22efab6_heroImage.webp",
    "https://rocket.chat/",
    "https://www.wikidata.org/wiki/Q24050001"
   ]
@@ -8423,7 +8498,7 @@
   "telemetry": "none",
   "romanian_language": 0,
   "popcon_rank": null,
-  "stars": 4251,
+  "stars": 4256,
   "stars_url": "https://github.com/solvespace/solvespace",
   "latest_release": "2026-10",
   "in_ubuntu_repos": 1,
@@ -8471,7 +8546,7 @@
   "telemetry": "none",
   "romanian_language": 0,
   "popcon_rank": null,
-  "stars": 15025,
+  "stars": 15071,
   "stars_url": "https://github.com/SubtitleEdit/subtitleedit",
   "latest_release": "2026-11",
   "in_ubuntu_repos": 0,
@@ -8516,7 +8591,7 @@
   "telemetry": "none",
   "romanian_language": 0,
   "popcon_rank": null,
-  "stars": 2437,
+  "stars": 2457,
   "stars_url": "https://github.com/synfig/synfig",
   "latest_release": "2026-03",
   "in_ubuntu_repos": 1,
@@ -8615,7 +8690,7 @@
   "package": "vaultwarden",
   "snap": "vaultwarden",
   "flatpak": null,
-  "screenshot": null,
+  "screenshot": "screenshots/vaultwarden.jpg",
   "platforms": [
    "linux",
    "macos",
@@ -8631,7 +8706,8 @@
    "keepassxc"
   ],
   "sources": [
-   "https://github.com/dani-garcia/vaultwarden"
+   "https://github.com/dani-garcia/vaultwarden",
+   "https://opengraph.githubassets.com/6387d5232f50436f624e871ef4111a2e4441b8daff0f0a479b206ab3b1045a4b/dani-garcia/vaultwarden"
   ]
  },
  {
@@ -8652,7 +8728,7 @@
   "telemetry": "none",
   "romanian_language": 0,
   "popcon_rank": null,
-  "stars": 6295,
+  "stars": 6299,
   "stars_url": "https://github.com/cmus/cmus",
   "latest_release": "2026-10",
   "in_ubuntu_repos": 1,
@@ -8785,7 +8861,7 @@
   "telemetry": "none",
   "romanian_language": 0,
   "popcon_rank": null,
-  "stars": 3709,
+  "stars": 3711,
   "stars_url": "https://github.com/texstudio-org/texstudio",
   "latest_release": "2026-11",
   "in_ubuntu_repos": 1,
@@ -8832,7 +8908,7 @@
   "telemetry": "none",
   "romanian_language": 0,
   "popcon_rank": null,
-  "stars": 4008,
+  "stars": 4013,
   "stars_url": "https://github.com/thonny/thonny",
   "latest_release": "2026-10",
   "in_ubuntu_repos": 1,
@@ -8879,9 +8955,9 @@
   "telemetry": "none",
   "romanian_language": 0,
   "popcon_rank": null,
-  "stars": 3310,
+  "stars": 3312,
   "stars_url": "https://github.com/virt-manager/virt-manager",
-  "latest_release": "2025-08",
+  "latest_release": "2026-01",
   "in_ubuntu_repos": 1,
   "package": "virt-manager",
   "snap": null,
@@ -9108,7 +9184,7 @@
   "telemetry": "none",
   "romanian_language": 0,
   "popcon_rank": null,
-  "stars": 1046,
+  "stars": 1045,
   "stars_url": "https://github.com/BRL-CAD/brlcad",
   "latest_release": "2026-11",
   "in_ubuntu_repos": 0,
@@ -9430,7 +9506,7 @@
   "telemetry": "none",
   "romanian_language": 0,
   "popcon_rank": null,
-  "stars": 3002,
+  "stars": 3003,
   "stars_url": "https://github.com/mypaint/mypaint",
   "latest_release": "2020-05",
   "in_ubuntu_repos": 1,
@@ -9606,14 +9682,14 @@
   "telemetry": "none",
   "romanian_language": 0,
   "popcon_rank": null,
-  "stars": 11671,
+  "stars": 11680,
   "stars_url": "https://github.com/owncast/owncast",
   "latest_release": "2026-09",
   "in_ubuntu_repos": 0,
   "package": "owncast",
   "snap": "owncast",
   "flatpak": null,
-  "screenshot": null,
+  "screenshot": "screenshots/owncast.jpg",
   "platforms": [
    "linux",
    "macos",
@@ -9630,6 +9706,7 @@
   ],
   "sources": [
    "https://github.com/owncast/owncast",
+   "https://github.com/owncast/owncast/blob/HEAD/https%3A//owncast.online/images/owncast-splash.png",
    "https://owncast.online/",
    "https://owncast.online/privacy",
    "https://www.wikidata.org/wiki/Q104533790"

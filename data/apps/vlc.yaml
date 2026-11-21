@@ -37,6 +37,7 @@ indicators:
 sources:
 - https://www.videolan.org
 - https://github.com/videolan/vlc
+- https://images.videolan.org/vlc/screenshots/3.0.0/3.0.17-windows11-fitted.jpg
 logo: logos/vlc.png
 confidence:
   details.install_size_mb: auto
@@ -55,3 +56,4 @@ features:
   extensii: free
   subtitrari: free
   open_source: free
+screenshot: screenshots/vlc.jpg

@@ -37,6 +37,7 @@ sources:
 - https://etcher.io/
 - https://github.com/balena-io/etcher
 - https://www.wikidata.org/wiki/Q30068972
+- https://uploads-ssl.webflow.com/636ab6ba0e1bd250e3aaedaf/65ef146b4576693f0c5d825b_OG%20image.png
 confidence:
   alternatives: manual
 features:
@@ -53,3 +54,4 @@ features:
   conversie_media: 'no'
   clipboard: 'no'
   open_source: free
+screenshot: screenshots/balena-etcher.jpg

@@ -64,6 +64,8 @@ sources:
 - https://bitwarden.com
 - https://github.com/bitwarden
 - https://bitwarden.com/privacy/
+- https://bitwarden.com/assets/7fzQJmr0qt5ggGZp3t66Y/7bf59a6a2379d49fc580ff49e8510efb/bitwarden.com_og_image.png
 confidence:
   details.telemetry: manual
   alternatives: manual
+screenshot: screenshots/bitwarden.jpg

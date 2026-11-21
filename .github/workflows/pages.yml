@@ -11,8 +11,9 @@ on:
     branches: [main]
     paths:
       - "data/**"
-      - "tools/build_catalog.py"
-      - "tools/build_site.py"
+      # orice schimbare în tools/ poate influența site-ul (inclusiv
+      # tools/compara.js — fără el, site-ul rămâne cu JS-ul vechi)
+      - "tools/**"
       - ".github/workflows/pages.yml"
   workflow_dispatch:
 

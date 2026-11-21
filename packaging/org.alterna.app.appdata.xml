@@ -47,6 +47,13 @@
   <update_contact>alterna_AT_github.com</update_contact>
 
   <releases>
+    <release version="0.1.21" date="2026-11-21">
+      <description>
+        <p>Site-ul public are acum pagină de detaliu pentru fiecare aplicație:
+        faptele cu sursele citate, butoanele de instalare, captura de ecran și
+        mini-matricea de funcționalități.</p>
+      </description>
+    </release>
     <release version="0.1.20" date="2026-11-21">
       <description>
         <p>Meniul contextual (click dreapta) e acum în tema aplicației, cu text

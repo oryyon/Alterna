@@ -13,7 +13,6 @@ on:
       - "data/**"
       - "tools/build_catalog.py"
       - "tools/build_site.py"
-      - "site/**"
       - ".github/workflows/pages.yml"
   workflow_dispatch:
 

@@ -35,3 +35,8 @@ comparatie-alterna.*
 nohup.out
 *.bak
 catalog-nou.db/
+
+# Site-ul public e GENERAT integral din catalog.db (la fel ca catalog.db) —
+# 214 pagini de detaliu + capturi ≈ 20 MB; îl construiește CI-ul (workflow
+# Pages), nu trebuie urmărit în git.
+site/

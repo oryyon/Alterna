@@ -31,7 +31,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 1308
+  stars: 1310
   stars_url: https://github.com/audacious-media-player/audacious
   latest_release: 2026-10
   in_ubuntu_repos: true

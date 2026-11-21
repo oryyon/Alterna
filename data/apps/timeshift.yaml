@@ -22,7 +22,7 @@ details:
 
 indicators:
   popcon_rank: 8604
-  stars: 4341
+  stars: 4342
   stars_url: https://github.com/linuxmint/timeshift
   latest_release: "2026-11"
   in_ubuntu_repos: true

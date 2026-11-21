@@ -30,7 +30,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 11680
+  stars: 11684
   stars_url: https://github.com/owncast/owncast
   latest_release: 2026-09
   in_ubuntu_repos: false

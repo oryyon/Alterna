@@ -25,7 +25,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 3312
+  stars: 3313
   stars_url: https://github.com/virt-manager/virt-manager
   latest_release: 2026-01
   in_ubuntu_repos: true

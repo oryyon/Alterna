@@ -35,7 +35,7 @@ details:
 
 indicators:
   popcon_rank: 1865
-  stars: 6604
+  stars: 6610
   stars_url: https://github.com/GNOME/gimp
   latest_release: "2026-11"
   in_ubuntu_repos: true

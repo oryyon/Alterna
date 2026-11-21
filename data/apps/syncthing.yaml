@@ -24,7 +24,7 @@ details:
 
 indicators:
   popcon_rank: 6286
-  stars: 90621
+  stars: 90667
   stars_url: https://github.com/syncthing/syncthing
   latest_release: "2026-10"
   in_ubuntu_repos: true

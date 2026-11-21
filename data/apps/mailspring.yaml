@@ -32,7 +32,7 @@ indicators:
   popcon_rank:
   stars: 18020
   stars_url: https://github.com/Foundry376/Mailspring
-  latest_release: 2026-10
+  latest_release: 2026-11
   in_ubuntu_repos: false
 sources:
 - https://getmailspring.com/

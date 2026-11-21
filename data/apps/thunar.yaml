@@ -25,7 +25,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars:
+  stars: 105
   stars_url: https://gitlab.xfce.org/xfce/thunar
   latest_release:
   in_ubuntu_repos: true

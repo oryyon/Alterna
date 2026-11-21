@@ -36,7 +36,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 4278
+  stars: 4279
   stars_url: https://github.com/clementine-player/Clementine
   latest_release: 2026-11
   in_ubuntu_repos: true

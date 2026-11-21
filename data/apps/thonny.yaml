@@ -28,7 +28,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 4013
+  stars: 4014
   stars_url: https://github.com/thonny/thonny
   latest_release: 2026-10
   in_ubuntu_repos: true

@@ -25,7 +25,7 @@ details:
 indicators:
   popcon_rank: 9125
   stars:
-  stars_url:
+  stars_url: https://invent.kde.org/multimedia/elisa
   latest_release: "2026-10"
   in_ubuntu_repos: true
 

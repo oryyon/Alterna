@@ -30,7 +30,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 9161
+  stars: 9162
   stars_url: https://github.com/olive-editor/olive
   latest_release: 2024-12
   in_ubuntu_repos: false

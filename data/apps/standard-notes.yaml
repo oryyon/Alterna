@@ -26,7 +26,7 @@ details:
 
 indicators:
   popcon_rank:
-  stars: 6728
+  stars: 6729
   stars_url: https://github.com/standardnotes/app
   latest_release: "2026-11"
   in_ubuntu_repos: false

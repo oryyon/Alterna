@@ -29,9 +29,9 @@ details:
 
 indicators:
   popcon_rank: 6029
-  stars: 79798
+  stars: 79865
   stars_url: https://github.com/obsproject/obs-studio
-  latest_release: "2026-10"
+  latest_release: "2026-11"
   in_ubuntu_repos: true    # pachetul obs-studio
 sources:
 - https://obsproject.com

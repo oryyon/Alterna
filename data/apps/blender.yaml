@@ -26,7 +26,7 @@ details:
 
 indicators:
   popcon_rank: 7244
-  stars: 22257
+  stars: 22300
   stars_url: https://github.com/blender/blender
   latest_release: "2026-11"
   in_ubuntu_repos: true

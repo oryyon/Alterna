@@ -32,7 +32,7 @@ details:
 
 indicators:
   popcon_rank: 7046
-  stars: 13882
+  stars: 13896
   stars_url: https://github.com/mozilla-firefox/firefox
   latest_release: "2026-11"
   in_ubuntu_repos: true

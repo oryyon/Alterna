@@ -29,9 +29,9 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars:
-  stars_url:
-  latest_release:
+  stars: 71116
+  stars_url: https://github.com/dani-garcia/vaultwarden
+  latest_release: 2026-11
   in_ubuntu_repos: false
 sources:
 - https://github.com/dani-garcia/vaultwarden

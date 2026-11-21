@@ -27,7 +27,7 @@ details:
 
 indicators:
   popcon_rank:
-  stars: 45675
+  stars: 45683
   stars_url: https://github.com/logseq/logseq
   latest_release: "2026-11"
   in_ubuntu_repos: false

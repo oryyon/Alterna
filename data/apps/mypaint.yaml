@@ -29,7 +29,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 3003
+  stars: 3004
   stars_url: https://github.com/mypaint/mypaint
   latest_release: 2020-05
   in_ubuntu_repos: true

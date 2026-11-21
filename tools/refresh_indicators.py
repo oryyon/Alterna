@@ -27,6 +27,7 @@ import json
 import os
 import re
 import sys
+import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
 from pathlib import Path
@@ -105,6 +106,64 @@ def github_latest_release(repo: str) -> str | None:
     return None
 
 
+# ------------------------------------------------------------------ forje diverse
+#: Forjele care au API public pentru numarul de stele. GitLab ascunde
+#: proiectele la proiecte cu slash, deci drumul se codifică.
+FORJE = [
+    # GitHub e detectat aici doar ca să fie găsit în `sources` când
+    # `stars_url` lipsește; stelele lui se citesc prin API-ul GitHub.
+    ("github.com", "github", ""),
+    ("codeberg.org", "gitea", "https://codeberg.org/api/v1/repos/{}"),
+    ("invent.kde.org", "gitea", "https://invent.kde.org/api/v1/repos/{}"),
+    ("gitlab.com", "gitlab", "https://gitlab.com/api/v4/projects/{}"),
+    ("gitlab.torproject.org", "gitlab",
+     "https://gitlab.torproject.org/api/v4/projects/{}"),
+    ("gitlab.gnome.org", "gitlab",
+     "https://gitlab.gnome.org/api/v4/projects/{}"),
+    ("gitlab.xfce.org", "gitlab",
+     "https://gitlab.xfce.org/api/v4/projects/{}"),
+]
+
+
+def repo_din_sursa(url: str) -> tuple[str, str, str] | None:
+    """Adresa unui repo din `sources`: (domeniu, tip, cale).
+
+    De exemplu „https://invent.kde.org/office/calligra” → („invent.kde.org”,
+    „gitea”, „office/calligra”).
+    """
+    m = re.match(r"https?://([^/]+)/([^/?#]+(?:/[^/?#]+)*)", url or "")
+    if not m:
+        return None
+    domeniu = m.group(1).lower()
+    cale = m.group(2).rstrip("/")
+    if cale.endswith(".git"):        # „…/GNOME/baobab.git” → proiectul e
+        cale = cale[:-4]              # „GNOME/baobab”
+    for host, tip, api in FORJE:
+        if domeniu == host:
+            return domeniu, tip, cale
+    return None
+
+
+def stele_forja(domeniu: str, tip: str, cale: str) -> int | None:
+    """Numarul de stele de la o forja non-GitHub (Gitea / GitLab)."""
+    for host, tip_forja, api in FORJE:
+        if host != domeniu or tip_forja != tip:
+            continue
+        if tip == "gitea":
+            url = api.format(cale)
+            camp = "stars_count"
+        else:
+            url = api.format(urllib.parse.quote(cale, safe=""))
+            camp = "star_count"
+        try:
+            date = json.loads(fetch(url))
+            valoare = date.get(camp)
+            return int(valoare) if valoare is not None else None
+        except Exception:
+            return None
+    return None
+
+
 # ------------------------------------------------------------------------ main
 def main() -> int:
     root = Path(__file__).resolve().parent.parent
@@ -112,7 +171,7 @@ def main() -> int:
     parser.add_argument("--data", type=Path, default=root / "data" / "apps")
     parser.add_argument("--dry-run", action="store_true",
                         help="afișează schimbările fără a scrie fișierele")
-    parser.add_argument("--only", choices=["github", "popcon", "ubuntu"])
+    parser.add_argument("--only", choices=["github", "forge", "popcon", "ubuntu"])
     args = parser.parse_args()
 
     token = os.environ.get("GITHUB_TOKEN")
@@ -166,17 +225,50 @@ def main() -> int:
                                f"{('#' + str(rank)) if rank else 'null'}")
                 ind["popcon_rank"] = rank
 
-        if args.only in (None, "github"):
-            repo = github_repo(str(ind.get("stars_url") or ""))
-            if repo:
-                stars = github_stars(repo, token)
-                if stars is not None and ind.get("stars") != stars:
-                    changes.append(f"stars {ind.get('stars')} → {stars}")
-                    ind["stars"] = stars
-                release = github_latest_release(repo)
-                if release and ind.get("latest_release") != release:
-                    changes.append(f"latest_release {ind.get('latest_release')} → {release}")
-                    ind["latest_release"] = release
+        # --- Stelele: GitHub sau alta forja (Gitea/Codeberg, GitLab) ---
+        # Candidati: `stars_url` (dacă există) și apoi sursele — unele
+        # aplicații au în `stars_url` o adresă fără API (oglindă cgit, grup
+        # GitLab), dar au o oglindă pe o forjă cu API în `sources`.
+        candidati = []
+        if ind.get("stars_url"):
+            candidati.append(str(ind["stars_url"]))
+        for sursa in app.get("sources") or []:
+            if str(sursa) not in candidati:
+                candidati.append(str(sursa))
+
+        if args.only in (None, "github", "forge"):
+            for url_repo in candidati:
+                repo = github_repo(url_repo)
+                if repo:
+                    if args.only in (None, "github"):
+                        stars = github_stars(repo, token)
+                        if stars is not None and ind.get("stars") != stars:
+                            changes.append(f"stars {ind.get('stars')} → {stars}")
+                            ind["stars"] = stars
+                        release = github_latest_release(repo)
+                        if release and ind.get("latest_release") != release:
+                            changes.append(
+                                f"latest_release {ind.get('latest_release')} → {release}")
+                            ind["latest_release"] = release
+                    if ind.get("stars_url") != url_repo:
+                        changes.append(f"stars_url → {url_repo}")
+                        ind["stars_url"] = url_repo
+                    break
+                gasit = repo_din_sursa(url_repo)
+                if not gasit:
+                    continue
+                domeniu, tip, cale = gasit
+                stele = stele_forja(domeniu, tip, cale)
+                if stele is None:
+                    continue
+                if ind.get("stars") != stele:
+                    changes.append(f"stars {ind.get('stars')} → {stele}")
+                    ind["stars"] = stele
+                adresa = f"https://{domeniu}/{cale}"
+                if ind.get("stars_url") != adresa:
+                    changes.append(f"stars_url → {adresa}")
+                    ind["stars_url"] = adresa
+                break
 
         if changes:
             changed_files += 1

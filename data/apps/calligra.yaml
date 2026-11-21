@@ -28,7 +28,7 @@ details:
 indicators:
   popcon_rank: 20899
   stars:
-  stars_url:
+  stars_url: https://invent.kde.org/office/calligra
   latest_release: "2026-04"
   in_ubuntu_repos: true
 

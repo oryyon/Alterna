@@ -29,7 +29,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars:
+  stars: 15
   stars_url: https://gitlab.gnome.org/GNOME/easytag
   latest_release:
   in_ubuntu_repos: true

@@ -27,7 +27,7 @@ details:
 
 indicators:
   popcon_rank: 10024
-  stars: 10695
+  stars: 10707
   stars_url: https://github.com/openscad/openscad
   latest_release: "2026-11"
   in_ubuntu_repos: true

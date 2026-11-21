@@ -27,7 +27,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 52494
+  stars: 52502
   stars_url: https://github.com/dbeaver/dbeaver
   latest_release: 2026-11
   in_ubuntu_repos: false

@@ -27,8 +27,8 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars:
-  stars_url: https://gitlab.gnome.org/GNOME/epiphany.git
+  stars: 168
+  stars_url: https://gitlab.gnome.org/GNOME/epiphany
   latest_release:
   in_ubuntu_repos: false
 sources:

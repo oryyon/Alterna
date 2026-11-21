@@ -27,7 +27,7 @@ details:
 
 indicators:
   popcon_rank:
-  stars: 991
+  stars: 992
   stars_url: https://github.com/mean00/avidemux2
   latest_release: "2022-09"
   in_ubuntu_repos: false

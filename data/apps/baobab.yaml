@@ -26,8 +26,8 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars:
-  stars_url: https://gitlab.gnome.org/GNOME/baobab.git
+  stars: 32
+  stars_url: https://gitlab.gnome.org/GNOME/baobab
   latest_release:
   in_ubuntu_repos: true
 sources:

@@ -30,7 +30,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 8428
+  stars: 8430
   stars_url: https://github.com/mumble-voip/mumble
   latest_release: 2026-10
   in_ubuntu_repos: true

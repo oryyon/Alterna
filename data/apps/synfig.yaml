@@ -30,7 +30,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 2457
+  stars: 2463
   stars_url: https://github.com/synfig/synfig
   latest_release: 2026-03
   in_ubuntu_repos: true

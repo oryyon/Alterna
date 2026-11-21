@@ -32,7 +32,7 @@ details:
 
 indicators:
   popcon_rank: 13244
-  stars: 10696
+  stars: 10700
   stars_url: https://github.com/LMMS/lmms
   latest_release: "2026-09"
   in_ubuntu_repos: true

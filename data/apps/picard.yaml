@@ -31,7 +31,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 5392
+  stars: 5395
   stars_url: https://github.com/metabrainz/picard
   latest_release: 2026-11
   in_ubuntu_repos: true

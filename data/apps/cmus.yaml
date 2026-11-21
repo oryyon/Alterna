@@ -28,7 +28,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 6299
+  stars: 6301
   stars_url: https://github.com/cmus/cmus
   latest_release: 2026-10
   in_ubuntu_repos: true

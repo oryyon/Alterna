@@ -30,7 +30,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 4300
+  stars: 4301
   stars_url: https://github.com/RawTherapee/RawTherapee
   latest_release: 2026-07
   in_ubuntu_repos: true

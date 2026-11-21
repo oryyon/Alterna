@@ -25,7 +25,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 13589
+  stars: 13596
   stars_url: https://github.com/beemdevelopment/Aegis
   latest_release: 2026-09
   in_ubuntu_repos: false

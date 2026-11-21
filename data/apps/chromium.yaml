@@ -30,7 +30,7 @@ details:
 
 indicators:
   popcon_rank: 33639
-  stars: 25391
+  stars: 25400
   stars_url: https://github.com/chromium/chromium
   latest_release: "2026-11"
   in_ubuntu_repos: true

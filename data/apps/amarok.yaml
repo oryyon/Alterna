@@ -28,7 +28,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 217
+  stars: 216
   stars_url: https://github.com/KDE/amarok
   latest_release: 2026-06
   in_ubuntu_repos: false

@@ -28,7 +28,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 41323
+  stars: 41328
   stars_url: https://github.com/vim/vim
   latest_release: 2026-11
   in_ubuntu_repos: true

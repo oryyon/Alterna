@@ -25,7 +25,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars:
+  stars: 17
   stars_url: https://gitlab.gnome.org/GNOME/gnome-keyring
   latest_release:
   in_ubuntu_repos: true

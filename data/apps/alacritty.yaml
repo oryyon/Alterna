@@ -27,7 +27,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 66237
+  stars: 66250
   stars_url: https://github.com/alacritty/alacritty
   latest_release: 2026-04
   in_ubuntu_repos: true

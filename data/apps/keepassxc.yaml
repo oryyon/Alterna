@@ -34,7 +34,7 @@ details:
 
 indicators:
   popcon_rank: 5811
-  stars: 30068
+  stars: 30093
   stars_url: https://github.com/keepassxreboot/keepassxc
   latest_release: "2026-11"
   in_ubuntu_repos: true

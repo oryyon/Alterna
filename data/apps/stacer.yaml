@@ -24,7 +24,7 @@ details:
 
 indicators:
   popcon_rank: 19080
-  stars: 9346
+  stars: 9347
   stars_url: https://github.com/oguzhaninan/Stacer
   latest_release: "2019-05"
   in_ubuntu_repos: true

@@ -31,7 +31,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 25065
+  stars: 25083
   stars_url: https://github.com/HandBrake/HandBrake
   latest_release: 2026-06
   in_ubuntu_repos: true

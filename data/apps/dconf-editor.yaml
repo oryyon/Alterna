@@ -25,8 +25,8 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars:
-  stars_url: https://git.gnome.org/browse/dconf-editor
+  stars: 12
+  stars_url: https://gitlab.gnome.org/GNOME/dconf-editor
   latest_release:
   in_ubuntu_repos: true
 sources:

@@ -32,7 +32,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 21517
+  stars: 21523
   stars_url: https://github.com/xbmc/xbmc
   latest_release: 2026-11
   in_ubuntu_repos: true

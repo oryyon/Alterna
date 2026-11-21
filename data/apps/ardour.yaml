@@ -25,7 +25,7 @@ details:
 
 indicators:
   popcon_rank: 11559
-  stars: 5446
+  stars: 5451
   stars_url: https://github.com/Ardour/ardour
   latest_release: "2026-11"
   in_ubuntu_repos: true

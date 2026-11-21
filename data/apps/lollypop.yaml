@@ -31,7 +31,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars:
+  stars: 148
   stars_url: https://gitlab.gnome.org/World/lollypop
   latest_release:
   in_ubuntu_repos: true

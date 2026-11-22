@@ -31,7 +31,7 @@ details:
   - odt
   - docx
   telemetry: none
-  romanian_language: false
+  romanian_language: true
 indicators:
   popcon_rank:
   stars: 13953
@@ -46,6 +46,7 @@ sources:
 logo: logos/zettlr.svg
 confidence:
   alternatives: manual
+  details.romanian_language: manual
 screenshot: screenshots/zettlr.jpg
 features:
   notite_text: free

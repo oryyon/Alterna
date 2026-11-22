@@ -15,12 +15,120 @@ Testele verifică:
 from __future__ import annotations
 
 import io
+import sys
+from pathlib import Path
 
 import pytest
 
 from tools.check_ro import (EXCLUDERI, extrage_ro, mo_al_aplicatiei,
                             nume_inrudit)
 from tools.check_telemetry import VERIFICARI
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "tools"))
+
+
+class TestVerificareaCitatului:
+    """`check_telemetry.py` trebuie să verifice și citatul, nu doar pagina.
+
+    Altfel o adresă vie ar „dovedi” orice — inclusiv după ce pagina își
+    schimbă textul.
+    """
+
+    def test_citatul_normalizat_se_cauta_in_textul_plain(self):
+        from check_telemetry import _re_quote, _text_plain
+
+        pagina = "<p>We collect usage data\n  for analytics.</p>"
+        text = _text_plain(pagina)
+        assert _re_quote("We collect usage data for analytics.") in text
+
+    def test_citatul_absent_nu_e_acceptat(self, monkeypatch):
+        import check_telemetry
+
+        class _Proces:
+            stdout = ("<html><body><p>We collect usage data for "
+                      "analytics and measurement.</p></body></html>")
+            returncode = 0
+
+        monkeypatch.setattr(check_telemetry.subprocess, "run",
+                            lambda *a, **k: _Proces())
+        vie, motiv = check_telemetry.sursa_viva(
+            "https://exemplu.ro/privacy",
+            "un citat care nu apare deloc in pagina")
+        assert not vie
+        assert "citatul" in motiv
+
+    def test_valoarea_yes_se_scrie_cu_ghilimele(self):
+        """`yes` fără ghilimele ar deveni boolean în YAML 1.1."""
+        from ruamel.yaml.scalarstring import SingleQuotedScalarString
+
+        import check_telemetry
+
+        assert isinstance(check_telemetry.SingleQuotedScalarString("yes"),
+                          SingleQuotedScalarString)
+
+
+class TestSurseLogo:
+    """Pictogramele prea mici nu sunt acceptate (ar arăta pixelate)."""
+
+    def test_dimensiunile_png(self):
+        from fetch_logos import dimensiuni_png
+
+        png = (b"\x89PNG\r\n\x1a\n" + b"\x00" * 8
+               + (2).to_bytes(4, "big") + (2).to_bytes(4, "big"))
+        assert dimensiuni_png(png) == (2, 2)
+
+    def test_pictograma_mica_e_respinsa(self):
+        from fetch_logos import destul_de_mare
+
+        mic = (b"\x89PNG\r\n\x1a\n" + b"\x00" * 8
+               + (16).to_bytes(4, "big") + (16).to_bytes(4, "big"))
+        assert not destul_de_mare(mic)
+
+    def test_pictograma_mare_e_acceptata(self):
+        from fetch_logos import destul_de_mare
+
+        mare = (b"\x89PNG\r\n\x1a\n" + b"\x00" * 8
+                + (256).to_bytes(4, "big") + (256).to_bytes(4, "big"))
+        assert destul_de_mare(mare)
+
+    def test_svg_e_acceptat_indiferent_de_dimensiune(self):
+        from fetch_logos import destul_de_mare
+
+        assert destul_de_mare(b"<svg xmlns='http://www.w3.org/2000/svg'></svg>")
+
+
+class TestSurseRomaneste:
+    """Proiectele GNOME/KDE stau pe GitLab — instrumentul trebuie să le caute."""
+
+    def test_non_gitlab_e_ignorat(self):
+        from check_ro import traducere_in_gitlab
+
+        assert traducere_in_gitlab("https://github.com/GNOME/gimp") == ""
+
+    def test_api_gitlab_e_interogat(self, monkeypatch):
+        import check_ro
+
+        apelate = {}
+
+        class _Raspuns:
+            def read(self):
+                return b'[{"type": "blob", "path": "po/ro.po"}]'
+
+            def __enter__(self):
+                return self
+
+            def __exit__(self, *a):
+                return False
+
+        def fals(request, timeout=0):
+            apelate["url"] = getattr(request, "full_url", str(request))
+            return _Raspuns()
+
+        monkeypatch.setattr(check_ro.urllib.request, "urlopen", fals)
+        gasit = check_ro.traducere_in_gitlab("https://gitlab.gnome.org/GNOME/gnote")
+        assert gasit == "po/ro.po"
+        assert "gitlab.gnome.org" in apelate["url"]
+        assert "GNOME%2Fgnote" in apelate["url"]
 
 
 class TestRegulaNume:

@@ -28,7 +28,7 @@ details:
   - flac
   - ogg
   telemetry: none
-  romanian_language: false
+  romanian_language: true
 indicators:
   popcon_rank: 11447
   stars: 5395
@@ -45,6 +45,7 @@ confidence:
   license: auto
   details.install_size_mb: auto
   alternatives: manual
+  details.romanian_language: manual
 screenshot: screenshots/picard.jpg
 features:
   redare_formate: 'no'

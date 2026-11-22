@@ -41,6 +41,7 @@ logo: logos/openshot.png
 confidence:
   details.install_size_mb: auto
   alternatives: manual
+  details.romanian_language: manual
 features:
   timeline: free
   cut_trim: free

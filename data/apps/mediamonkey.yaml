@@ -27,7 +27,7 @@ details:
   - wav
   - ogg
   - wma
-  telemetry: none
+  telemetry: optional
   romanian_language: false
 features:
   redare_formate: free
@@ -51,5 +51,7 @@ indicators:
 sources:
 - https://www.mediamonkey.com/
 - https://www.wikidata.org/wiki/Q1463867
+- https://www.mediamonkey.com/privacy
 confidence:
   alternatives: manual
+  details.telemetry: manual

@@ -36,6 +36,7 @@ sources:
 logo: logos/jitsi-meet.svg
 confidence:
   alternatives: manual
+  details.romanian_language: manual
 screenshot: screenshots/jitsi-meet.jpg
 features:
   chat_texte: free

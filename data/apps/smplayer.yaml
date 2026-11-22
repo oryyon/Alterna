@@ -33,6 +33,7 @@ indicators:
 sources:
 - https://smplayer.info
 - https://github.com/smplayer-dev/smplayer
+- https://commons.wikimedia.org/wiki/File:SMPlayer_icon.png
 confidence:
   details.romanian_language: manual
   alternatives: manual

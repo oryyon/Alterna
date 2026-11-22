@@ -1,0 +1,42 @@
+{
+ "aegis": {
+  "tip": "site",
+  "adresa": "https://getaegis.app/assets/static/icon.zQelnL_w.png"
+ },
+ "arduino-ide": {
+  "tip": "site",
+  "adresa": "https://www.arduino.cc/wiki/icons/icon-48x48.png?v=23330209a9e4870226e34963941206b6"
+ },
+ "beekeeper-studio": {
+  "tip": "site",
+  "adresa": "https://www.beekeeperstudio.io/static/favicon/apple-icon-57x57.png"
+ },
+ "losslesscut": {
+  "tip": "site",
+  "adresa": "https://www.mifi.no/apple-touch-icon.png"
+ },
+ "marktext": {
+  "tip": "site",
+  "adresa": "https://github.githubassets.com/assets/pinned-octocat-093da3e6fa40.svg"
+ },
+ "musicbee": {
+  "tip": "site",
+  "adresa": "https://getmusicbee.com/img/mb_icon_touch.png?1.9.5"
+ },
+ "qcad": {
+  "tip": "site",
+  "adresa": "https://www.qcad.org/favicon.svg"
+ },
+ "sonic-pi": {
+  "tip": "site",
+  "adresa": "https://sonic-pi.net/data/icon-256.png"
+ },
+ "strawberry": {
+  "tip": "flathub",
+  "adresa": "https://dl.flathub.org/media/org/strawberrymusicplayer/strawberry/89842dfbeda78c0ef4513ed8c232bac3/icons/128x128/org.strawberrymusicplayer.strawberry.png"
+ },
+ "waterfox": {
+  "tip": "site",
+  "adresa": "https://www.waterfox.net/favicons/apple-touch-icon.png"
+ }
+}

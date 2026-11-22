@@ -25,7 +25,7 @@ details:
   first_release_year: 2006
   file_formats: []
   telemetry: none
-  romanian_language: false
+  romanian_language: true
 features:
   browsere: 'no'
   client_torrent: free
@@ -50,3 +50,4 @@ sources:
 - https://www.wikidata.org/wiki/Q654196
 confidence:
   alternatives: manual
+  details.romanian_language: manual

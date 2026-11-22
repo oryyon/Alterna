@@ -32,6 +32,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from ruamel.yaml import YAML  # noqa: E402
+from ruamel.yaml.scalarstring import SingleQuotedScalarString  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data" / "apps"
@@ -76,27 +77,28 @@ VERIFICARI: dict[str, tuple[str, str, str]] = {
     "vscode": (
         "optional",
         "https://code.visualstudio.com/docs/configure/telemetry",
-        "Visual Studio Code collects telemetry data, which is used to help "
-        "understand how to improve the product... you can disable telemetry "
-        "reporting",
+        "Making it easier to opt out of telemetry collection by placing a "
+        "notification in product for all existing and new users",
     ),
     "firefox": (
         "optional",
         "https://www.mozilla.org/en-US/privacy/firefox/",
         "We do process limited technical data (such as the client version, "
-        "connection status, and device type)",
+        "connection status, and device type/operating system) to provide, "
+        "maintain, and ensure the performance and stability of the service",
     ),
     "thunderbird": (
         "optional",
         "https://www.mozilla.org/en-US/privacy/thunderbird/",
         "Thunderbird sends telemetry about your interactions with Thunderbird "
-        "to us... to learn how to opt-out of this data collection",
+        "to us",
     ),
     "element": (
         "optional",
         "https://element.io/privacy",
-        "We track usage data for Element hosting services... Our analytics are "
-        "powered by the Free and Open Source analytics platform Matomo",
+        "We track usage data for Element hosting services. When you are "
+        "signed in to your account we may track your usage of the site and "
+        "associate that information with your account details",
     ),
     "ente-auth": (
         "none",
@@ -108,13 +110,62 @@ VERIFICARI: dict[str, tuple[str, str, str]] = {
         "optional",
         "https://www.libreoffice.org/about-us/privacy/",
         "Bei jedem Absturz von LibreOffice wird automatisiert ein Absturzbericht "
-        "erzeugt. Dem Nutzer steht es frei, diesen Absturzbericht zu senden",
+        "(crash report) erzeugt. Dem Nutzer steht es frei, diesen Absturzbericht "
+        "(crash report) zu senden",
     ),
     "bitwarden": (
         "optional",
         "https://bitwarden.com/privacy/",
-        "Analytics Data: We use data for analytics and measurement to "
-        "understand how the Site and Bitwarden Service are used",
+        "We use data for analytics and measurement to understand how the "
+        "Site and Bitwarden Service are used",
+    ),
+    # --- tranche 5: aplicatiile comerciale nou-introduse ------------------
+    # Verdictul e cel mai slab pe care il permite citatul: „optional” doar
+    # daca politica spune explicit ca se poate renunta, altfel „yes”.
+    "evernote": (
+        "optional",
+        "https://evernote.com/legal/privacy.php",
+        "Where permitted by applicable law, we treat certain first-party "
+        "analytics technologies as technical trackers that do not require "
+        "consent. You can still opt out of further processing of the data "
+        "that's been collected via these trackers at any time by contacting us",
+    ),
+    "onenote": (
+        "optional",
+        "https://privacy.microsoft.com/en-us/privacystatement",
+        "When a customer interacts with a Microsoft support professional, we "
+        "collect device and usage data or error reports to diagnose and "
+        "resolve problems",
+    ),
+    "microsoft-teams": (
+        "optional",
+        "https://privacy.microsoft.com/en-us/privacystatement",
+        "When a customer interacts with a Microsoft support professional, we "
+        "collect device and usage data or error reports to diagnose and "
+        "resolve problems",
+    ),
+    "google-keep": (
+        "yes",
+        "https://policies.google.com/privacy",
+        "The information we collect includes unique identifiers , browser "
+        "type and settings, device type and settings, operating system, "
+        "mobile network information including carrier name and phone number, "
+        "and application version number",
+    ),
+    "wechat": (
+        "yes",
+        "https://www.wechat.com/en/privacy_policy.html",
+        "When you use the WeChat mobile app, desktop app, or the websites "
+        "www.wechat.com or help.wechat.com (together, \"WeChat\" ), certain of "
+        "your Personal Information (defined below) will be collected and "
+        "processed by us",
+    ),
+    "mediamonkey": (
+        "optional",
+        "https://www.mediamonkey.com/privacy",
+        "This notice describes the types of personal information we receive "
+        "and collect when you use MediaMonkey or visit mediamonkey.com, and "
+        "how we safeguard your information",
     ),
 }
 
@@ -124,8 +175,23 @@ CUVINTE = (
 )
 
 
-def sursa_viva(url: str) -> tuple[bool, str]:
-    """Verifica daca pagina sursa e accesibila si vorbeste despre telemetrie."""
+def _text_plain(continut: str) -> str:
+    """Continutul paginii, fara marcaj, cu spatii normalizate."""
+    import html as _html
+    import re as _re
+
+    bloc = _re.sub(r"(?i)</(p|li|div|h[1-6]|tr|section|article)>", " ", continut)
+    bloc = _re.sub(r"<script.*?</script>|<style.*?</style>", " ", bloc, flags=_re.S)
+    text = _html.unescape(_re.sub(r"<[^>]+>", " ", bloc))
+    return _re.sub(r"\s+", " ", text).lower()
+
+
+def sursa_viva(url: str, citat: str = "") -> tuple[bool, str]:
+    """Verifica daca pagina sursa e accesibila si vorbeste despre telemetrie.
+
+    Daca se da si citatul, el trebuie sa se regaseasca in pagina: altfel
+    verificarea s-ar baza doar pe o adresa, iar dovezza n-ar mai fi citabila.
+    """
     try:
         proces = subprocess.run(
             ["curl", "-sL", "-m", "25", "-A", "Mozilla/5.0 (X11; Linux x86_64)", url],
@@ -137,7 +203,18 @@ def sursa_viva(url: str) -> tuple[bool, str]:
         return False, "sursa goala"
     if not any(cuvant in continut for cuvant in CUVINTE):
         return False, "sursa nu mai vorbeste despre colectarea datelor"
+    if citat:
+        text = _text_plain(proces.stdout or "")
+        if _re_quote(citat) not in text:
+            return False, "citatul nu se regaseste in pagina"
     return True, "sursa vie"
+
+
+def _re_quote(citat: str) -> str:
+    """Citatul, normalizat la fel ca textul paginii (spatii, minuscule)."""
+    import re as _re
+
+    return _re.sub(r"\s+", " ", citat).strip().lower()
 
 
 #: Cuvinte care semnaleaza o pagina despre colectarea datelor.
@@ -166,7 +243,8 @@ def cauta_politica(site: str, timeout: int = 6) -> list[tuple[str, str]]:
             proces = subprocess.run(
                 ["curl", "-sL", "-m", str(timeout), "-A", "Mozilla/5.0",
                  "-o", "-", url],
-                capture_output=True, text=True, timeout=timeout + 5, check=False)
+                capture_output=True, text=True, errors="replace",
+                timeout=timeout + 5, check=False)
         except (OSError, subprocess.SubprocessError):
             continue
         continut = proces.stdout or ""
@@ -193,7 +271,7 @@ def cauta_politica(site: str, timeout: int = 6) -> list[tuple[str, str]]:
         # preferam propozitia care chiar vorbeste despre colectare, nu
         # titlul paginii sau o linie de navigare
         for rand in randuri:
-            if len(rand) > 340:
+            if len(rand) > 340 or len(rand) < 80:
                 continue
             jos_r = rand.lower()
             if "skip to" in jos_r or "cookie" in jos_r[:40]:
@@ -203,6 +281,10 @@ def cauta_politica(site: str, timeout: int = 6) -> list[tuple[str, str]]:
             if not any(c in jos_r for c in ("telemetry", "collect", "usage data",
                                             "anonymous", "do not", "doesn't",
                                             "does not")):
+                continue
+            # propozitie intreaga: altfel citatul e un fragment taiat si nu
+            # dovedeste nimic (verificarea de mai jos cauta textul exact)
+            if rand[-1] not in ".!?:":
                 continue
             gasite.append((url, rand))
             break
@@ -234,7 +316,7 @@ def main() -> int:
             print(f"  ! {app_id}: fisier lipsa")
             erori += 1
             continue
-        vie, motiv = sursa_viva(url)
+        vie, motiv = sursa_viva(url, citat)
         app = yaml_rw.load(cale.read_text(encoding="utf-8"))
         det = app.setdefault("details", {})
         vechi = det.get("telemetry")
@@ -248,7 +330,9 @@ def main() -> int:
             continue
         if not args.apply:
             continue
-        det["telemetry"] = valoare
+        # valoarea se scrie cu ghilimele: in YAML 1.1, `yes` fara ghilimele
+        # ar fi interpretat ca boolean (capcana prinsa de build)
+        det["telemetry"] = SingleQuotedScalarString(valoare)
         app.setdefault("confidence", {})["details.telemetry"] = "manual"
         surse = app.setdefault("sources", [])
         if url not in surse:
@@ -282,7 +366,6 @@ def cauta_in_readme(repo: str, timeout: int = 20) -> list[tuple[str, str]]:
             date = json.loads(răspuns.read().decode("utf-8", "replace"))
     except Exception:  # noqa: BLE001 — rețeaua e best-effort
         return []
-    import base64
     import html
     import re
     continut = base64.b64decode(date.get("content") or "").decode(

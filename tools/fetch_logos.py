@@ -25,6 +25,8 @@ import json
 import sys
 import urllib.parse
 import urllib.request
+from html import unescape as html_unescape
+from urllib.parse import urljoin
 from pathlib import Path
 
 from ruamel.yaml import YAML
@@ -175,6 +177,155 @@ def citește_json(url: str, timeout: int = 20) -> dict | None:
         return None
 
 
+#: User-Agent de browser — unele site-uri (snapcraft.io) refuză agenții
+#: identici cu un bot.
+UA_BROWSER = {
+    "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
+                  "(KHTML, like Gecko) Chrome/120 Safari/537.36",
+}
+UA_SNAP = {**UA_BROWSER, "Snap-Device-Series": "16"}
+
+
+def dimensiuni_png(data: bytes) -> tuple[int, int] | None:
+    """Dimensiunile unei PNG (IHDR), dacă e PNG."""
+    if not data.startswith(b"\x89PNG") or len(data) < 24:
+        return None
+    lățime = int.from_bytes(data[16:20], "big")
+    înălțime = int.from_bytes(data[20:24], "big")
+    return (lățime, înălțime)
+
+
+def dimensiuni_ico(data: bytes) -> tuple[int, int] | None:
+    """Dimensiunile maxime dintr-un ICO (care poate conține mai multe)."""
+    if len(data) < 6 or data[:4] not in (b"\x00\x00\x01\x00", b"\x00\x00\x02\x00"):
+        return None
+    număr = int.from_bytes(data[4:6], "little")
+    maxim = (0, 0)
+    for i in range(număr):
+        start = 6 + i * 16
+        if start + 16 > len(data):
+            break
+        lățime = data[start] or 256
+        înălțime = data[start + 1] or 256
+        maxim = (max(maxim[0], lățime), max(maxim[1], înălțime))
+    return maxim
+
+
+def destul_de_mare(data: bytes, minim: int = 48) -> bool:
+    """Pictograma e destul de mare? (o faviconă de 16 px ar arăta pixelată)"""
+    if b"<svg" in data[:500]:
+        return True
+    dimensiuni = dimensiuni_png(data) or dimensiuni_ico(data)
+    if dimensiuni is None:
+        return True      # JPEG sau alt format: acceptat
+    return max(dimensiuni) >= minim
+
+
+def logo_din_site(site: str) -> tuple[bytes, str] | None:
+    """Pictograma oficială de pe site: apple-touch-icon, icon, mask-icon, favicon.
+
+    Se alege cea mai mare variantă — o faviconă de 16×16 ar arăta pixelată
+    în listă și pe pagina de detaliu.
+    """
+    import re
+
+    if not site:
+        return None
+    părinte = site.rstrip("/") + "/"
+    html = None
+    for url in (site, părinte):
+        try:
+            req = urllib.request.Request(url, headers=UA_BROWSER)
+            with urllib.request.urlopen(req, timeout=20) as răspuns:
+                html = răspuns.read(400_000).decode("utf-8", "replace")
+                break
+        except Exception:
+            continue
+    if not html:
+        return None
+
+    candidați: list[tuple[int, str]] = []
+    for eticheta, href in re.findall(
+            r'<link[^>]+rel="([^"]*icon[^"]*)"[^>]+href="([^"]+)"', html, re.I):
+        href = html_unescape(href.strip())
+        if not href or href.startswith("data:"):
+            continue
+        scor = 0
+        rel = eticheta.lower()
+        if "apple-touch" in rel:
+            scor = 100          # de obicei 180×180 PNG
+        elif "mask" in rel:
+            scor = 80           # SVG (mask-icon)
+        elif "shortcut" in rel:
+            scor = 60
+        else:
+            scor = 40
+        if re.search(r"sizes=\"?(\d+)", eticheta + href):
+            scor += 1
+        candidați.append((scor, urljoin(părinte, href)))
+    # și favicon.ico implicit
+    candidați.append((50, urljoin(părinte, "/favicon.ico")))
+
+    for _, url in sorted(candidați, key=lambda t: -t[0]):
+        try:
+            req = urllib.request.Request(url, headers=UA_BROWSER)
+            with urllib.request.urlopen(req, timeout=20) as răspuns:
+                data = răspuns.read()
+        except Exception:
+            continue
+        if data and extensie(data) and destul_de_mare(data):
+            return (data, url)
+    return None
+
+
+def logo_din_snap(nume: str) -> tuple[bytes, str] | None:
+    """Pictograma snap-ului, din API-ul snapcraft.io."""
+    if not nume:
+        return None
+    url = f"https://api.snapcraft.io/v2/snaps/info/{urllib.parse.quote(nume)}"
+    try:
+        req = urllib.request.Request(url, headers=UA_SNAP)
+        with urllib.request.urlopen(req, timeout=20) as răspuns:
+            date = json.loads(răspuns.read().decode("utf-8", "replace"))
+    except Exception:
+        return None
+    for media in date.get("media") or []:
+        if media.get("type") == "icon" and media.get("url"):
+            adresa = media["url"]
+            try:
+                req = urllib.request.Request(adresa, headers=UA_BROWSER)
+                with urllib.request.urlopen(req, timeout=20) as răspuns:
+                    data = răspuns.read()
+            except Exception:
+                continue
+            if data and extensie(data) and destul_de_mare(data):
+                return (data, adresa)
+    return None
+
+
+def logo_din_flatpak(identificator: str) -> tuple[bytes, str] | None:
+    """Pictograma aplicației Flathub, din API-ul Flathub."""
+    if not identificator:
+        return None
+    url = ("https://flathub.org/api/v2/appstream/"
+           + urllib.parse.quote(identificator, safe=""))
+    date = citește_json(url)
+    icoane = (date or {}).get("icons") or []
+    for icoana in sorted(icoane, key=lambda i: -(i.get("width") or 0)):
+        adresa = icoana.get("url")
+        if not adresa:
+            continue
+        try:
+            req = urllib.request.Request(adresa, headers=UA_BROWSER)
+            with urllib.request.urlopen(req, timeout=20) as răspuns:
+                data = răspuns.read()
+        except Exception:
+            continue
+        if data and extensie(data) and destul_de_mare(data):
+            return (data, adresa)
+    return None
+
+
 def main() -> int:
     root = Path(__file__).resolve().parent.parent
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
@@ -190,6 +341,16 @@ def main() -> int:
     yaml.allow_duplicate_keys = False
     yaml.preserve_quotes = True
     yaml.width = 4096
+
+    # provenienta logo-urilor (site oficial / snap / Flathub) — pentru tabelul
+    # de atribuire; sursa Commons e deja in lista `sources` a aplicatiei
+    fisier_atribuire = logos_dir / "ATRIBUIRE.json"
+    atribuiri: dict = {}
+    if fisier_atribuire.exists():
+        try:
+            atribuiri = json.loads(fisier_atribuire.read_text(encoding="utf-8"))
+        except ValueError:
+            atribuiri = {}
 
     ok, missing = [], []
     for path in sorted(apps_dir.glob("*.yaml")):
@@ -223,6 +384,27 @@ def main() -> int:
                     if d and extensie(d):
                         data, ext = d, extensie(d)
 
+        # 4-6. surse noi: site-ul oficial, snap, Flathub
+        proveniență = None
+        if data is None and app.get("website"):
+            găsit = logo_din_site(str(app["website"]))
+            if găsit:
+                data, adresa = găsit
+                ext = extensie(data)
+                proveniență = ("site", adresa)
+        if data is None and app.get("snap"):
+            găsit = logo_din_snap(str(app["snap"]))
+            if găsit:
+                data, adresa = găsit
+                ext = extensie(data)
+                proveniență = ("snap", adresa)
+        if data is None and app.get("flatpak"):
+            găsit = logo_din_flatpak(str(app["flatpak"]))
+            if găsit:
+                data, adresa = găsit
+                ext = extensie(data)
+                proveniență = ("flathub", adresa)
+
         if data is None:
             missing.append(app_id)
             # curățăm un câmp logo rămas spre un fișier inexistent
@@ -245,10 +427,15 @@ def main() -> int:
         if pagina_commons and pagina_commons not in (app.get("sources") or []):
             app.setdefault("sources", []).append(pagina_commons)
             schimbat = True
+        if proveniență:
+            atribuiri[app_id] = {"tip": proveniență[0], "adresa": proveniență[1]}
         if schimbat:
             with path.open("w", encoding="utf-8") as fh:
                 yaml.dump(app, fh)
 
+    if not args.dry_run:
+        fisier_atribuire.write_text(
+            json.dumps(atribuiri, ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"✔ logo-uri descărcate: {len(ok)}")
     print(f"— fără pictogramă în Simple Icons ({len(missing)}), rămân inițialele: "
           + ", ".join(missing))

@@ -41,6 +41,7 @@ logo: logos/librecad.png
 confidence:
   details.install_size_mb: auto
   alternatives: manual
+  details.romanian_language: manual
 features:
   modelare_3d: 'no'
   desen_tehnic_2d: free

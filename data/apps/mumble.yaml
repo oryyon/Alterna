@@ -27,7 +27,7 @@ details:
   first_release_year: 2005
   file_formats: []
   telemetry: none
-  romanian_language: false
+  romanian_language: true
 indicators:
   popcon_rank: 14045
   stars: 8430
@@ -43,6 +43,7 @@ confidence:
   details.first_release_year: auto
   details.install_size_mb: auto
   alternatives: manual
+  details.romanian_language: manual
 logo: logos/mumble.svg
 screenshot: screenshots/mumble.jpg
 features:

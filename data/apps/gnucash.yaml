@@ -30,7 +30,7 @@ details:
   - csv
   - ofx
   telemetry: none
-  romanian_language: false
+  romanian_language: true
 indicators:
   popcon_rank: 11399
   stars:
@@ -47,6 +47,7 @@ confidence:
   details.first_release_year: auto
   details.install_size_mb: auto
   alternatives: manual
+  details.romanian_language: manual
 screenshot: screenshots/gnucash.jpg
 features:
   editare_text: 'no'

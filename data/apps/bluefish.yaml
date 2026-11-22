@@ -27,7 +27,7 @@ details:
   first_release_year: 2003
   file_formats: []
   telemetry: none
-  romanian_language: false
+  romanian_language: true
 indicators:
   popcon_rank: 10751
   stars:
@@ -44,6 +44,7 @@ confidence:
   details.install_size_mb: auto
   alternatives: manual
   indicators.in_ubuntu_repos: auto
+  details.romanian_language: manual
 screenshot: screenshots/bluefish.jpg
 package: bluefish
 features:

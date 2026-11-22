@@ -27,7 +27,7 @@ details:
   - html
   - md
   telemetry: none
-  romanian_language: false
+  romanian_language: true
 indicators:
   popcon_rank:
   stars: 39045
@@ -42,6 +42,7 @@ sources:
 logo: logos/trilium.svg
 confidence:
   alternatives: manual
+  details.romanian_language: manual
 screenshot: screenshots/trilium.jpg
 features:
   notite_text: free

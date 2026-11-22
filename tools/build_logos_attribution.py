@@ -80,6 +80,17 @@ def main() -> int:
 
     commons_rows: list[tuple[str, str, str, str]] = []
     simple_rows: list[tuple[str, str]] = []
+    externe_rows: list[tuple[str, str, str]] = []
+
+    # proveniența logo-urilor venite de pe site-ul oficial / snap / Flathub
+    # (scrisă de `tools/fetch_logos.py` în ATRIBUIRE.json)
+    fișier_atribuire = IESIRI / "ATRIBUIRE.json"
+    proveniență: dict = {}
+    if fișier_atribuire.exists():
+        try:
+            proveniență = json.loads(fișier_atribuire.read_text(encoding="utf-8"))
+        except ValueError:
+            proveniență = {}
 
     for cale in sorted(DATA.glob("*.yaml")):
         app = yaml.load(cale.read_text(encoding="utf-8"))
@@ -90,6 +101,10 @@ def main() -> int:
         if commons_url:
             fisier, autor, licenta = commons(atribuiri, commons_url)
             commons_rows.append((app["id"], fisier, autor, licenta))
+        elif app["id"] in proveniență:
+            info = proveniență[app["id"]]
+            externe_rows.append((app["id"], info.get("tip", "site"),
+                                 info.get("adresa", "")))
         else:
             simple_rows.append((app["id"], app.get("website") or ""))
 
@@ -149,6 +164,13 @@ def main() -> int:
             linii.append(f"| {app_id} | {site or '—'} |")
         linii.append("")
 
+    if externe_rows:
+        linii += ["### De pe site-ul oficial, din snap sau din Flathub", "",
+                  "| Aplicație | Sursă | Adresă |", "|---|---|---|"]
+        for app_id, tip, adresa in externe_rows:
+            linii.append(f"| {app_id} | {tip} | {adresa or '—'} |")
+        linii.append("")
+
     if commons_rows:
         linii += ["### Din Wikimedia Commons", "",
                   "| Aplicație | Fișier original | Autor | Licență |",
@@ -159,7 +181,8 @@ def main() -> int:
 
     (IESIRI / "README.md").write_text("\n".join(linii), encoding="utf-8")
     print(f"atribuire logo-uri: {len(commons_rows)} din Commons, "
-          f"{len(simple_rows)} din Simple Icons / site-uri oficiale")
+          f"{len(externe_rows)} de pe site-uri/snap/Flathub, "
+          f"{len(simple_rows)} din Simple Icons")
     return 0
 
 

@@ -27,7 +27,7 @@ details:
   - docx
   - rtf
   telemetry: none
-  romanian_language: false
+  romanian_language: true
 indicators:
   popcon_rank: 13413
   stars: 181
@@ -43,6 +43,7 @@ sources:
 confidence:
   details.install_size_mb: auto
   alternatives: manual
+  details.romanian_language: manual
 screenshot: screenshots/abiword.jpg
 features:
   editare_text: free

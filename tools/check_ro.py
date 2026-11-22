@@ -36,6 +36,7 @@ import argparse
 import gzip
 import io
 import json
+import os
 import re
 import sys
 import urllib.error
@@ -71,6 +72,15 @@ CANDIDATE_REPO = (
     "po-ro.po",
     "i18n/ro.json",
     "src/po/ro.po",
+    # aplicatii Electron (Joplin, Standard Notes, Bitwarden…)
+    "locales/ro.json",
+    "app/i18n/ro.json",
+    "src/i18n/ro.json",
+    "i18n/ro/ro.json",
+    "translations/ro.json",
+    # aplicatii Chromium (Vivaldi, Signal…)
+    "chrome/app/i18n/ro.pak",
+    "app/chrome/i18n/ro.pak",
 )
 
 #: Repository-uri care nu sunt pe GitHub, dar au oglinda acolo.
@@ -79,6 +89,11 @@ OGLINDIRI = {
     "https://invent.kde.org/multimedia/kdenlive": "KDE/kdenlive",
     "https://invent.kde.org/graphics/krita": "KDE/krita",
 }
+
+#: Gazde GitLab unde stau aplicatiile GNOME si KDE (mutate de pe GitHub).
+#: API-ul GitLab e public si fara chei.
+GAZDE_GITLAB = ("gitlab.gnome.org", "invent.kde.org", "gitlab.freedesktop.org",
+                "gitlab.archlinux.org", "invent.kde.org")
 
 #: Cai de traducere romanesti specifice unei aplicatii, gasite in arborele
 #: repository-ului. Sunt pastrate aici ca dovada sa nu depinda de limita de
@@ -108,6 +123,39 @@ RE_ARBORE = re.compile(
 #: Directoare cu fisiere de exemplu sau documentatie: nu sunt traducerea
 #: interfetei, chiar daca se numesc `ro`.
 EXCLUSE = ("/doc/", "/docs/", "/example", "/sample", "/test/", "/demo/")
+
+
+def traducere_in_gitlab(url_repo: str, timeout: int = 12) -> str:
+    """Cauta fisiere de traducere romana intr-un repository GitLab.
+
+    GNOME si KDE au mutat proiectele de pe GitHub pe GitLab (gitlab.gnome.org,
+    invent.kde.org), iar API-ul GitLab e public, fara chei.
+    """
+    if not url_repo or not any(gazdă in url_repo for gazdă in GAZDE_GITLAB):
+        return ""
+    match = re.match(r"https?://([^/]+)/(.+?)(?:\.git)?/?$", url_repo.rstrip("/"))
+    if not match:
+        return ""
+    gazdă, drum = match.group(1), match.group(2)
+    proiect = urllib.parse.quote(drum, safe="")
+    api = (f"https://{gazdă}/api/v4/projects/{proiect}/repository/tree"
+           "?recursive=true&per_page=100")
+    try:
+        request = urllib.request.Request(api, headers=UA)
+        with urllib.request.urlopen(request, timeout=timeout) as raspuns:
+            date = json.loads(raspuns.read().decode("utf-8", "replace"))
+    except (urllib.error.URLError, OSError, ValueError):
+        return ""
+    if not isinstance(date, list):
+        return ""
+    for intrare in date:
+        cale = intrare.get("path", "")
+        if intrare.get("type") != "blob" or not RE_ARBORE.search(cale):
+            continue
+        if any(excl in cale.lower() for excl in EXCLUSE):
+            continue
+        return cale
+    return ""
 
 
 # --------------------------------------------------------------------------
@@ -267,9 +315,12 @@ def traducere_in_arbore(repo: str, timeout: int = 12) -> str:
                 return linie
         return ""
     url = f"https://api.github.com/repos/{repo}/git/trees/HEAD?recursive=1"
+    antet = {"User-Agent": UA["User-Agent"], "Accept": "application/vnd.github+json"}
+    token = os.environ.get("GITHUB_TOKEN", "").strip()
+    if token:
+        antet["Authorization"] = f"Bearer {token}"
     try:
-        request = urllib.request.Request(url, headers={
-            "User-Agent": UA["User-Agent"], "Accept": "application/vnd.github+json"})
+        request = urllib.request.Request(url, headers=antet)
         with urllib.request.urlopen(request, timeout=timeout) as raspuns:
             date = json.loads(raspuns.read().decode("utf-8", "replace"))
     except (urllib.error.URLError, OSError, ValueError):
@@ -334,6 +385,12 @@ def main() -> int:
                 gasit = traducere_in_arbore(repo)
                 if gasit:
                     dovedire = f"{repo}/{gasit}"
+        if not dovedire:
+            # proiectele GNOME/KDE stau pe GitLab, nu pe GitHub
+            url_repo = (app.get("indicators") or {}).get("stars_url") or ""
+            gasit = traducere_in_gitlab(url_repo)
+            if gasit:
+                dovedire = f"{url_repo.rstrip('/')}/{gasit}"
 
         if dovedire:
             confirmate.append((app_id, dovedire))

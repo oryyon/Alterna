@@ -41,6 +41,7 @@ logo: logos/flameshot.png
 confidence:
   details.install_size_mb: auto
   alternatives: manual
+  details.romanian_language: manual
 features:
   terminal: 'no'
   arhivare: 'no'

@@ -28,7 +28,7 @@ details:
   - ogg
   - flac
   telemetry: none
-  romanian_language: false
+  romanian_language: true
 features:
   inregistrare: free
   editare_audio: partial
@@ -56,3 +56,5 @@ confidence:
   details.first_release_year: auto
   license: auto
   alternatives: manual
+  details.romanian_language: manual
+logo: logos/sonic-pi.png

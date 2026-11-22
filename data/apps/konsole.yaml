@@ -23,7 +23,7 @@ details:
   first_release_year: 1997
   file_formats: []
   telemetry: none
-  romanian_language: false
+  romanian_language: true
 indicators:
   popcon_rank: 2771
   stars:
@@ -39,6 +39,7 @@ sources:
 confidence:
   details.install_size_mb: auto
   alternatives: manual
+  details.romanian_language: manual
 screenshot: screenshots/konsole.jpg
 features:
   terminal: free

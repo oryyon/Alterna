@@ -47,6 +47,12 @@
   <update_contact>alterna_AT_github.com</update_contact>
 
   <releases>
+    <release version="0.1.27" date="2026-11-22">
+      <description>
+        <p>Logo-uri din surse noi, limba română confirmată din traduceri și
+        telemetrie verificată cu citat pentru 18 aplicații.</p>
+      </description>
+    </release>
     <release version="0.1.26" date="2026-11-21">
       <description>
         <p>Catalogul ajunge la 300 de aplicații; pe site, fișă generată pentru

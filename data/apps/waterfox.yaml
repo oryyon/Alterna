@@ -52,6 +52,8 @@ sources:
 - https://github.com/BrowserWorks/Waterfox
 - https://www.wikidata.org/wiki/Q10834367
 - https://www.waterfox.com/_astro/index._G9F3Z8d.png
+- https://commons.wikimedia.org/wiki/File:Waterfox_Logo_%28redesigned_2015%29.png
 confidence:
   alternatives: manual
 screenshot: screenshots/waterfox.jpg
+logo: logos/waterfox.png

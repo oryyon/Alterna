@@ -35,7 +35,7 @@ details:
   - flac
   - ogg
   telemetry: none
-  romanian_language: false
+  romanian_language: true
 indicators:
   popcon_rank: 10790
   stars: 4281
@@ -52,6 +52,7 @@ confidence:
   details.first_release_year: auto
   details.install_size_mb: auto
   alternatives: manual
+  details.romanian_language: manual
 screenshot: screenshots/clementine.jpg
 features:
   redare_formate: free

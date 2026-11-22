@@ -22,7 +22,7 @@ details:
   first_release_year: 2004
   file_formats: []
   telemetry: none
-  romanian_language: false
+  romanian_language: true
 indicators:
   popcon_rank: 2748
   stars: 105
@@ -38,6 +38,7 @@ sources:
 confidence:
   details.install_size_mb: auto
   alternatives: manual
+  details.romanian_language: manual
 screenshot: screenshots/thunar.jpg
 features:
   terminal: 'no'

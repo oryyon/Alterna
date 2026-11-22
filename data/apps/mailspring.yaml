@@ -27,7 +27,7 @@ details:
   - eml
   - mbox
   telemetry: none
-  romanian_language: false
+  romanian_language: true
 indicators:
   popcon_rank:
   stars: 18019
@@ -41,6 +41,7 @@ sources:
 - https://github.com/Foundry376/Mailspring/blob/HEAD/https%3A//github.com/Foundry376/Mailspring/raw/master/screenshots/hero_graphic_mac%25402x.png
 confidence:
   alternatives: manual
+  details.romanian_language: manual
 screenshot: screenshots/mailspring.jpg
 features:
   chat_texte: 'no'

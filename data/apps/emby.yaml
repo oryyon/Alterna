@@ -30,7 +30,7 @@ details:
   - avi
   - mp3
   telemetry: none
-  romanian_language: false
+  romanian_language: true
 indicators:
   popcon_rank:
   stars: 5028
@@ -43,6 +43,7 @@ sources:
 - https://www.wikidata.org/wiki/Q28956428
 confidence:
   alternatives: manual
+  details.romanian_language: manual
 features:
   captura_ecran: 'no'
   inregistrare: 'no'

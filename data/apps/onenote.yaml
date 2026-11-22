@@ -29,7 +29,7 @@ details:
   - onepkg
   - pdf
   - html
-  telemetry: none
+  telemetry: optional
   romanian_language: false
 features:
   notite_text: free
@@ -55,8 +55,10 @@ sources:
 - https://www.wikidata.org/wiki/Q706480
 - https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/79900_m365_vertical%20accordian-01-option2-800x513?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=1664&hei=1062&qlt=100&fmt=png-alpha&fit=constrain
 - https://commons.wikimedia.org/wiki/File:Microsoft_OneNote_Icon_%282025_-_present%29.svg
+- https://privacy.microsoft.com/en-us/privacystatement
 confidence:
   details.first_release_year: auto
   alternatives: manual
+  details.telemetry: manual
 screenshot: screenshots/onenote.jpg
 logo: logos/onenote.png

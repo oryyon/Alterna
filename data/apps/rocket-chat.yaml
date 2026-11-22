@@ -27,7 +27,7 @@ details:
   first_release_year: 2013
   file_formats: []
   telemetry: none
-  romanian_language: false
+  romanian_language: true
 indicators:
   popcon_rank:
   stars: 46512
@@ -42,6 +42,7 @@ sources:
 - https://commons.wikimedia.org/wiki/File:RocketChat_Logo_1024x1024.png
 confidence:
   alternatives: manual
+  details.romanian_language: manual
 screenshot: screenshots/rocket-chat.jpg
 features:
   chat_texte: free

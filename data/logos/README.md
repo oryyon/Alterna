@@ -95,7 +95,6 @@ Tabelul se **generează din catalog** cu [`tools/build_logos_attribution.py`](..
 | sevenzip | https://www.7-zip.org |
 | signal | https://signal.org |
 | simplenote | https://simplenote.com |
-| smplayer | https://smplayer.info |
 | spotify | https://www.spotify.com |
 | stremio | https://www.stremio.com/ |
 | sublime-text | https://www.sublimetext.com |
@@ -119,6 +118,17 @@ Tabelul se **generează din catalog** cu [`tools/build_logos_attribution.py`](..
 | zoom | https://zoom.us |
 | zulip | https://zulip.com/ |
 
+### De pe site-ul oficial, din snap sau din Flathub
+
+| Aplicație | Sursă | Adresă |
+|---|---|---|
+| aegis | site | https://getaegis.app/assets/static/icon.zQelnL_w.png |
+| beekeeper-studio | site | https://www.beekeeperstudio.io/static/favicon/apple-icon-57x57.png |
+| marktext | site | https://github.githubassets.com/assets/pinned-octocat-093da3e6fa40.svg |
+| musicbee | site | https://getmusicbee.com/img/mb_icon_touch.png?1.9.5 |
+| sonic-pi | site | https://sonic-pi.net/data/icon-256.png |
+| strawberry | flathub | https://dl.flathub.org/media/org/strawberrymusicplayer/strawberry/89842dfbeda78c0ef4513ed8c232bac3/icons/128x128/org.strawberrymusicplayer.strawberry.png |
+
 ### Din Wikimedia Commons
 
 | Aplicație | Fișier original | Autor | Licență |
@@ -129,6 +139,7 @@ Tabelul se **generează din catalog** cu [`tools/build_logos_attribution.py`](..
 | affinity | Affinity_Photo_icon.png | Serif Europe | Public domain |
 | alacritty | Alacritty-screenshot-with-vim.png | Joe Wilm | Apache License 2.0 |
 | amarok | KDE4_-_Amarok_2.png | The Amarok Team | GPL |
+| arduino-ide | Ide-2-overview.png | Karl Söderby &amp; Jacob Hylén | CC BY-SA 3.0 |
 | ark | Ark_mainwindow.png | KDE | GPL |
 | atril | Atril_logo.svg | Jakub Steiner, Leandro Vital | Public domain |
 | audacious | Audacious_4.5_screenshot.webp | Software: Audacious developersScreenshot: VulcanSphere | BSD |
@@ -223,6 +234,7 @@ VulcanSphere | Public domain |
 | lazarus | Lazarus_IDE_9-26.png | http://sourceforge.net/projects/lazarus/ | CC BY-SA 3.0 |
 | librecad | LibreCAD-Logo.png | LibreCAD | Public domain |
 | lightworks | Lightworks_Logo.svg | Lightworks | Public domain |
+| losslesscut | Screenshot_LosslessCut.png | — | CC0 |
 | mattermost | Mattermost_UI.png | SacredWKnight | Apache License 2.0 |
 | maya | Autodesk_Maya_logo.svg | Autodesk | Public domain |
 | meshlab | MeshLab_logo_left_eye.png | MeshLab (Paolo Cignoni, Alessandro Muntoni, Visual Computing Lab, ISTI-CNR) | CC BY-SA 4.0 |
@@ -260,6 +272,7 @@ VulcanSphere | Public domain |
 | pitivi | GNOME_Pitivi_%28version_2021.01%29.png | — | — |
 | premiere | Adobe_Premiere_Pro_CC_icon.svg | Adobe Inc. | Public domain |
 | pro-tools | PT2019.svg | Avid | CC BY 4.0 |
+| qcad | Qcad.png | Autoshade~commonswiki | GPL |
 | qemu | QEMU_6.2_screenshot.png | Software:
 The OpenIndiana Project, KDE developers, MATE developers, htop developers, and QEMU team
 Wallpaper:
@@ -286,6 +299,7 @@ Screenshot:
 VulcanSphere | CC BY 4.0 |
 | sketchup | C-5_Galaxy_SketchUp_model.png | Wikideas1 | CC0 |
 | slack | Slack_CMYK.svg | Slack Technologies | Public domain |
+| smplayer | SMPlayer_icon.png | Charles Barcza | GPL |
 | ssr | Biglinux-Icons_%E2%80%93_simplescreenrecorder.svg | — | — |
 | stacer | Biglinux-Icons_%E2%80%93_stacer_1.svg | — | — |
 | standard-notes | Standard_Notes_-_Icon.png | Standard Notes Ltd. | Public domain |
@@ -307,6 +321,7 @@ VulcanSphere | CC BY 4.0 |
 | vlc | VLC_Icon.svg | Richard C. G. Øiestad | GPL |
 | vokoscreenng | Breezeicons-apps-48-vokoscreen.svg | Andreas Kainz &lt;kainz.a@gmail.com&gt;, Uri Herrera &lt;uri_herrera@nitrux.in&gt;, Andrew Lake &lt;jamboarder@gmail.com&gt;, Marco Martin &lt;notmart@gmail.com&gt;, Harald Sitter &lt;sitter@kde.org&gt;, Jonathan Riddell &lt;jr@jriddell.org&gt;, Ken Vermette &lt;vermette@gmail.com&gt;, Aleix Pol &lt;aleixpol@kde.org&gt;, David Faure &lt;faure@kde.org&gt;, Albert Vaca &lt;albertvaka@gmail.com&gt;, Luca Beltrame &lt;lbeltrame@kde.org&gt;, Gleb Popov &lt;6yearold@gmail.com&gt;, Nuno Pinheiro &lt;nuno.pinheiro@kdab.com&gt;, Alex Richardson &lt;arichardson.kde@gmail.com&gt;,  Jan Grulich &lt;jgrulich@redhat.com&gt;, Bernhard Landauer &lt;oberon@manjaro.org&gt;, Heiko Becker &lt;heirecka@exherbo.org&gt;, Volker Krause &lt;vkrause@kde.org&gt;, David Rosca &lt;nowrep@gmail.com&gt;, Phil Schaf &lt;flying-sheep@web.de&gt; | LGPL |
 | vscode | Visual_Studio_Code_1.35_icon.svg | Microsoft | Public domain |
+| waterfox | Waterfox_Logo_%28redesigned_2015%29.png | — | — |
 | wings3d | Wings3d.png | gordo | Public domain |
 | winrar | WinRAR_icon.svg | RARLAB | Public domain |
 | wire | Wire_software_screenshot-es.png | Diego Sanguinetti | Public domain |

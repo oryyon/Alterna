@@ -27,7 +27,7 @@ details:
   file_formats:
   - pdf
   telemetry: none
-  romanian_language: false
+  romanian_language: true
 indicators:
   popcon_rank: 2627
   stars:
@@ -43,6 +43,7 @@ sources:
 confidence:
   details.install_size_mb: auto
   alternatives: manual
+  details.romanian_language: manual
 screenshot: screenshots/okular.jpg
 features:
   editare_text: 'no'

@@ -24,7 +24,7 @@ details:
   first_release_year: 2011
   file_formats: []
   telemetry: none
-  romanian_language: false
+  romanian_language: true
 indicators:
   popcon_rank:
   stars: 52508
@@ -39,6 +39,7 @@ sources:
 confidence:
   details.first_release_year: auto
   alternatives: manual
+  details.romanian_language: manual
 logo: logos/dbeaver.svg
 screenshot: screenshots/dbeaver.jpg
 features:

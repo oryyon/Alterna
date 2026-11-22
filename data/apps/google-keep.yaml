@@ -25,7 +25,7 @@ details:
   file_formats:
   - html
   - json
-  telemetry: none
+  telemetry: 'yes'
   romanian_language: false
 features:
   notite_text: free
@@ -51,7 +51,9 @@ sources:
 - https://github.com/googleworkspace
 - https://www.wikidata.org/wiki/Q7854718
 - https://commons.wikimedia.org/wiki/File:Google_Keep_Logo_05.2026.svg
+- https://policies.google.com/privacy
 confidence:
   details.first_release_year: auto
   alternatives: manual
+  details.telemetry: manual
 logo: logos/google-keep.png

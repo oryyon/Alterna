@@ -28,7 +28,7 @@ details:
   - jpeg
   - bmp
   telemetry: none
-  romanian_language: false
+  romanian_language: true
 indicators:
   popcon_rank: 16671
   stars: 3004
@@ -44,6 +44,7 @@ confidence:
   details.first_release_year: auto
   details.install_size_mb: auto
   alternatives: manual
+  details.romanian_language: manual
 screenshot: screenshots/mypaint.jpg
 features:
   raster_editare: free

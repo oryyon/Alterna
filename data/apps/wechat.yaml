@@ -28,7 +28,7 @@ details:
   install_size_mb: 0
   first_release_year: 2011
   file_formats: []
-  telemetry: none
+  telemetry: 'yes'
   romanian_language: false
 features:
   chat_texte: free
@@ -51,7 +51,9 @@ indicators:
 sources:
 - https://www.wechat.com/
 - https://www.wikidata.org/wiki/Q283233
+- https://www.wechat.com/en/privacy_policy.html
 confidence:
   details.first_release_year: auto
   alternatives: manual
+  details.telemetry: manual
 logo: logos/wechat.svg

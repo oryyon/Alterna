@@ -72,3 +72,4 @@ confidence:
   details.install_size_mb: auto
   alternatives: manual
   details.telemetry: manual
+  details.romanian_language: manual

@@ -20,7 +20,7 @@ details:
   first_release_year: 2017
   file_formats: []
   telemetry: none
-  romanian_language: false
+  romanian_language: true
 
 indicators:
   popcon_rank: 19144
@@ -37,6 +37,7 @@ logo: logos/stacer.png
 confidence:
   details.install_size_mb: auto
   alternatives: manual
+  details.romanian_language: manual
 screenshot: screenshots/stacer.jpg
 features:
   terminal: 'no'

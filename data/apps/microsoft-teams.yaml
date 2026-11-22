@@ -28,7 +28,7 @@ details:
   install_size_mb: 0
   first_release_year: 2016
   file_formats: []
-  telemetry: none
+  telemetry: optional
   romanian_language: false
 features:
   chat_texte: free
@@ -53,8 +53,10 @@ sources:
 - https://www.wikidata.org/wiki/Q28406404
 - https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/68450-Featured-News-Crad-01-416x179?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=2000&hei=858&qlt=85&fit=constrain
 - https://commons.wikimedia.org/wiki/File:Microsoft_Office_Teams_%282019%E2%80%932025%29.svg
+- https://privacy.microsoft.com/en-us/privacystatement
 confidence:
   details.first_release_year: auto
   alternatives: manual
+  details.telemetry: manual
 screenshot: screenshots/microsoft-teams.jpg
 logo: logos/microsoft-teams.png

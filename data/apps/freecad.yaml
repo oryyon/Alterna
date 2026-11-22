@@ -31,7 +31,7 @@ details:
   first_release_year: 2002
   file_formats: [FCStd, STEP, STL, IGES]
   telemetry: none
-  romanian_language: false
+  romanian_language: true
 
 indicators:
   popcon_rank:
@@ -46,6 +46,7 @@ sources:
 logo: logos/freecad.svg
 confidence:
   alternatives: manual
+  details.romanian_language: manual
 features:
   modelare_3d: free
   desen_tehnic_2d: partial

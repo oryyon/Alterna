@@ -24,7 +24,7 @@ details:
   first_release_year: 1999
   file_formats: []
   telemetry: none
-  romanian_language: false
+  romanian_language: true
 indicators:
   popcon_rank:
   stars:
@@ -35,6 +35,7 @@ sources:
 - https://gnupg.org/
 confidence:
   alternatives: manual
+  details.romanian_language: manual
 features:
   offline: free
   parole: 'no'

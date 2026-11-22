@@ -25,7 +25,7 @@ details:
   - txt
   - xml
   telemetry: none
-  romanian_language: false
+  romanian_language: true
 features:
   notite_text: free
   notite_rich: 'no'
@@ -52,3 +52,4 @@ sources:
 confidence:
   details.first_release_year: auto
   alternatives: manual
+  details.romanian_language: manual

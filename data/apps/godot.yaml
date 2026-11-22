@@ -33,7 +33,7 @@ details:
   - obj
   - png
   telemetry: none
-  romanian_language: false
+  romanian_language: true
 features:
   completare_cod: free
   lsp: 'no'
@@ -62,5 +62,6 @@ sources:
 confidence:
   details.first_release_year: auto
   alternatives: manual
+  details.romanian_language: manual
 screenshot: screenshots/godot.jpg
 logo: logos/godot.png

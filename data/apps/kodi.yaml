@@ -32,7 +32,7 @@ details:
   - mp4
   - avi
   telemetry: none
-  romanian_language: false
+  romanian_language: true
 indicators:
   popcon_rank: 10416
   stars: 21526
@@ -48,6 +48,7 @@ confidence:
   details.first_release_year: auto
   details.install_size_mb: auto
   alternatives: manual
+  details.romanian_language: manual
 logo: logos/kodi.svg
 screenshot: screenshots/kodi.jpg
 features:

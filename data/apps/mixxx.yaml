@@ -27,7 +27,7 @@ details:
   - mp3
   - ogg
   telemetry: none
-  romanian_language: false
+  romanian_language: true
 indicators:
   popcon_rank: 16130
   stars: 7422
@@ -46,6 +46,7 @@ confidence:
   details.install_size_mb: auto
   alternatives: manual
   details.telemetry: manual
+  details.romanian_language: manual
 screenshot: screenshots/mixxx.jpg
 features:
   inregistrare: free

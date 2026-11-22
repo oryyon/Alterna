@@ -27,7 +27,7 @@ details:
   file_formats:
   - kmy
   telemetry: none
-  romanian_language: false
+  romanian_language: true
 indicators:
   popcon_rank:
   stars:
@@ -43,6 +43,7 @@ sources:
 confidence:
   details.first_release_year: auto
   alternatives: manual
+  details.romanian_language: manual
 features:
   editare_text: 'no'
   tabele: partial

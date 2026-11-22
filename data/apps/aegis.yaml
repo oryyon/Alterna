@@ -56,3 +56,4 @@ features:
   ssh_agent: 'no'
   audit_independent: 'no'
 screenshot: screenshots/aegis.jpg
+logo: logos/aegis.png

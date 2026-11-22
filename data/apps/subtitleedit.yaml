@@ -29,7 +29,7 @@ details:
   - sub
   - vtt
   telemetry: none
-  romanian_language: false
+  romanian_language: true
 indicators:
   popcon_rank:
   stars: 15091
@@ -43,6 +43,7 @@ sources:
 logo: logos/subtitleedit.svg
 confidence:
   alternatives: manual
+  details.romanian_language: manual
 features:
   timeline: 'no'
   cut_trim: 'no'

@@ -30,7 +30,7 @@ details:
   - mkv
   - mov
   telemetry: none
-  romanian_language: false
+  romanian_language: true
 indicators:
   popcon_rank:
   stars: 46310
@@ -44,6 +44,7 @@ sources:
 - https://commons.wikimedia.org/wiki/File:Screenshot_LosslessCut.png
 confidence:
   alternatives: manual
+  details.romanian_language: manual
 features:
   timeline: 'no'
   cut_trim: free
@@ -57,3 +58,4 @@ features:
   export_formate: partial
   open_source: free
 screenshot: screenshots/losslesscut.jpg
+logo: logos/losslesscut.png

@@ -22,6 +22,9 @@ alternatives:
 - openshot
 - shotcut
 - subtitleedit
+- lightworks
+- vegas-pro
+- virtualdub
 editors_choice: true
 
 details:

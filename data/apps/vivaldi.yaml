@@ -1,0 +1,60 @@
+# Vivaldi — Browser web cu filă de taburi, blocare de reclame și sincronizare între dispozitive.
+id: vivaldi
+popularity: 830
+name: Vivaldi
+description: Browser web cu filă de taburi, blocare de reclame și sincronizare între dispozitive.
+category: internet
+license: commercial
+price: free
+developer: Vivaldi Technologies
+website: https://vivaldi.com/
+snap: vivaldi
+platforms:
+- linux
+- windows
+- macos
+- android
+tags:
+- browser
+- filete
+- sincronizare
+alternatives:
+- chrome
+- firefox
+- opera
+- brave
+- waterfox
+details:
+  install_size_mb: 0
+  first_release_year: 2015
+  file_formats: []
+  telemetry: none
+  romanian_language: false
+features:
+  browsere: free
+  client_torrent: 'no'
+  client_email: partial
+  client_ftp: 'no'
+  client_terminal: 'no'
+  descarcare: free
+  ad_block: free
+  gestionare_ordonator: free
+  vpn: 'no'
+  motor_rendering: free
+  open_source: 'no'
+indicators:
+  popcon_rank:
+  stars:
+  stars_url: https://vivaldi.com/source
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://vivaldi.com/
+- https://vivaldi.com/source
+- https://www.wikidata.org/wiki/Q18913176
+- https://vivaldi.com/wp-content/uploads/vivaldi_8_og.png
+confidence:
+  details.first_release_year: auto
+  alternatives: manual
+logo: logos/vivaldi.svg
+screenshot: screenshots/vivaldi.jpg

@@ -18,7 +18,7 @@ alternatives:
 - chrome
 - opera
 - tor-browser
-
+- vivaldi
 details:
   install_size_mb: 300
   first_release_year: 2016
@@ -28,7 +28,7 @@ details:
 
 indicators:
   popcon_rank:
-  stars: 24268
+  stars: 24279
   stars_url: https://github.com/brave/brave-browser
   latest_release: "2026-11"
   in_ubuntu_repos: false

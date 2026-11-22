@@ -1,6 +1,6 @@
 # BleachBit — curățare de sistem
 id: bleachbit
-popularity: 1100
+popularity: 1260
 name: BleachBit
 description: Curățare de sistem — cache, istorice, fișiere temporare.
 category: utilities
@@ -23,7 +23,7 @@ details:
 
 indicators:
   popcon_rank: 10515
-  stars: 7551
+  stars: 7559
   stars_url: https://github.com/bleachbit/bleachbit
   latest_release: "2026-10"
   in_ubuntu_repos: true
@@ -31,6 +31,7 @@ indicators:
 sources:
 - https://www.bleachbit.org
 - https://github.com/bleachbit/bleachbit
+- https://commons.wikimedia.org/wiki/File:Bleachbit_logo.svg
 logo: logos/bleachbit.png
 confidence:
   details.install_size_mb: auto

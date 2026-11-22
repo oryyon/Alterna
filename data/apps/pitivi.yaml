@@ -1,6 +1,6 @@
 # Pitivi — Editor video nelinear bazat pe Python, cu efecte.
 id: pitivi
-popularity: 1780
+popularity: 2100
 name: Pitivi
 description: Editor video nelinear bazat pe Python, cu efecte.
 category: video
@@ -37,6 +37,7 @@ sources:
 - https://github.com/GNOME/pitivi
 - https://www.wikidata.org/wiki/Q387021
 - https://commons.wikimedia.org/wiki/File:GNOME_Pitivi_%28version_2021.01%29.png
+- https://commons.wikimedia.org/wiki/File:GNOME_Pitivi_icon_2019.svg
 confidence:
   details.first_release_year: auto
   license: auto
@@ -55,3 +56,4 @@ features:
   export_formate: free
   open_source: free
 screenshot: screenshots/pitivi.jpg
+logo: logos/pitivi.png

@@ -176,6 +176,50 @@ class TestComparatie:
         js = (ieșire / "compara.js").read_text(encoding="utf-8")
         assert "text/csv" in js and "text/markdown" in js
 
+    def test_site_ofera_cele_cinci_formate_de_export(self, tmp_path, built_db):
+        """Siteul exporta in aceleasi 5 formate ca aplicatia desktop."""
+        ieșire = _generează(tmp_path, built_db)
+        html = (ieșire / "compara.html").read_text(encoding="utf-8")
+        js = (ieșire / "compara.js").read_text(encoding="utf-8")
+        for buton in ("csv", "md", "html", "txt", "json"):
+            assert f'id="{buton}"' in html, buton
+        for tip in ("text/csv", "text/markdown", "text/html", "text/plain",
+                    "application/json"):
+            assert tip in js, tip
+        # exportul pastreaza marcajul de certitudine si avantajul obiectiv
+        assert "avantaj_objectiv" in js
+        assert "certitudine" in js
+
+
+class TestFisaGenerata:
+    """Aplicatiile fara captura de ecran primesc o fisa generata.
+
+    Nu se inventeaza o imagine: fisa arata doar date din catalog si spune
+    explicit ca e generata automat.
+    """
+
+    def test_paginile_fara_captura_au_fisa(self, tmp_path, built_db):
+        ieșire = _generează(tmp_path, built_db)
+        date = json.loads((ieșire / "catalog.json").read_text(encoding="utf-8"))
+        fara = [a["id"] for a in date["aplicatii"] if not a.get("screenshot")]
+        assert fara, "nu exista aplicatii fara captura — testul ar fi inutil"
+        for app_id in fara:
+            html = (ieșire / "app" / f"{app_id}.html").read_text(encoding="utf-8")
+            assert 'class="fisa"' in html, app_id
+            assert "fișa e generată automat" in html, app_id
+            # fisa nu se preface ca captura de ecran
+            assert 'class="captura"' not in html, app_id
+
+    def test_paginile_cu_captura_nu_au_fisa(self, tmp_path, built_db):
+        ieșire = _generează(tmp_path, built_db)
+        date = json.loads((ieșire / "catalog.json").read_text(encoding="utf-8"))
+        cu = [a["id"] for a in date["aplicatii"] if a.get("screenshot")]
+        assert cu, "nu exista aplicatii cu captura"
+        for app_id in cu[:20]:
+            html = (ieșire / "app" / f"{app_id}.html").read_text(encoding="utf-8")
+            assert 'class="captura"' in html, app_id
+            assert 'class="fisa"' not in html, app_id
+
 
 class TestComparatieJs:
     """Logica tabelului comparativ, rulată de fapt (node + DOM minimal).

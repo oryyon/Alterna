@@ -18,6 +18,9 @@ alternatives:
 - fusion
 - natron
 - nuke
+- final-cut-pro
+- lightworks
+- vegas-pro
 details:
   install_size_mb: 3000
   first_release_year: 2004

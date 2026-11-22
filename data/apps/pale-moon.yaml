@@ -1,0 +1,53 @@
+# Pale Moon — Browser web independent, orientat pe rapiditate și consum redus de resurse.
+id: pale-moon
+popularity: 2270
+name: Pale Moon
+description: Browser web independent, orientat pe rapiditate și consum redus de resurse.
+category: internet
+license: foss
+price: free
+developer: Moonchild Productions
+website: https://palemoon.org/
+platforms:
+- linux
+- windows
+tags:
+- browser
+- rapid
+- usor
+alternatives:
+- firefox
+- waterfox
+- konqueror
+- lynx
+details:
+  install_size_mb: 0
+  first_release_year: 2009
+  file_formats: []
+  telemetry: none
+  romanian_language: false
+features:
+  browsere: free
+  client_torrent: 'no'
+  client_email: 'no'
+  client_ftp: 'no'
+  client_terminal: 'no'
+  descarcare: free
+  ad_block: 'no'
+  gestionare_ordonator: free
+  vpn: 'no'
+  motor_rendering: free
+  open_source: free
+indicators:
+  popcon_rank:
+  stars:
+  stars_url: https://repo.palemoon.org/MoonchildProductions/Pale-Moon
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://palemoon.org/
+- https://repo.palemoon.org/MoonchildProductions/Pale-Moon
+- https://www.wikidata.org/wiki/Q4046338
+confidence:
+  details.first_release_year: auto
+  alternatives: manual

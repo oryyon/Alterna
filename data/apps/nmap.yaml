@@ -1,6 +1,6 @@
 # Nmap — Scanner de rețea pentru descoperirea gazdelor, porturilor și serviciilor.
 id: nmap
-popularity: 1340
+popularity: 1590
 name: Nmap
 description: Scanner de rețea pentru descoperirea gazdelor, porturilor și serviciilor.
 category: security
@@ -40,6 +40,7 @@ sources:
 - https://nmap.org/
 - https://github.com/nmap/nmap
 - https://www.wikidata.org/wiki/Q623332
+- https://commons.wikimedia.org/wiki/File:Logo_nmap.png
 confidence:
   details.first_release_year: auto
   alternatives: manual
@@ -62,3 +63,4 @@ features:
   cli_api: free
   ssh_agent: 'no'
   audit_independent: 'no'
+logo: logos/nmap.png

@@ -1,6 +1,6 @@
 # balenaEtcher — Scrie imagini pe carduri SD și USB-uri.
 id: balena-etcher
-popularity: 1160
+popularity: 1340
 name: balenaEtcher
 description: Scrie imagini pe carduri SD și USB-uri.
 category: utilities
@@ -29,7 +29,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 34750
+  stars: 34752
   stars_url: https://github.com/balena-io/etcher
   latest_release: 2026-10
   in_ubuntu_repos: false
@@ -38,6 +38,7 @@ sources:
 - https://github.com/balena-io/etcher
 - https://www.wikidata.org/wiki/Q30068972
 - https://uploads-ssl.webflow.com/636ab6ba0e1bd250e3aaedaf/65ef146b4576693f0c5d825b_OG%20image.png
+- https://commons.wikimedia.org/wiki/File:Etcher_%28software%29_logo.svg
 confidence:
   alternatives: manual
 features:
@@ -55,3 +56,4 @@ features:
   clipboard: 'no'
   open_source: free
 screenshot: screenshots/balena-etcher.jpg
+logo: logos/balena-etcher.png

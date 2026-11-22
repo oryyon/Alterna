@@ -30,6 +30,7 @@ indicators:
 
 sources:
 - https://www.rarlab.com
+- https://commons.wikimedia.org/wiki/File:WinRAR_icon.svg
 logo: logos/winrar.png
 confidence:
   alternatives: manual

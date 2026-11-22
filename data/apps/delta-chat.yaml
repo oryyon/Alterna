@@ -1,0 +1,57 @@
+# Delta Chat — Client de mesagerie care trimite mesaje pe e-mail, cu criptare end-to-end.
+id: delta-chat
+popularity: 1450
+name: Delta Chat
+description: Client de mesagerie care trimite mesaje pe e-mail, cu criptare end-to-end.
+category: communication
+license: foss
+price: free
+developer: Delta Chat e.V.
+website: https://delta.chat/
+platforms:
+- linux
+- windows
+- macos
+- android
+tags:
+- mesagerie
+- email
+- criptare
+alternatives:
+- signal
+- telegram
+- element
+- whatsapp
+details:
+  install_size_mb: 0
+  first_release_year: 2016
+  file_formats: []
+  telemetry: none
+  romanian_language: false
+features:
+  chat_texte: free
+  chat_voz: 'no'
+  video_call: 'no'
+  messenger_integrat: free
+  screen_share: 'no'
+  file_share: free
+  client_multi: 'no'
+  criptare_e2e: free
+  selfhost: 'no'
+  boturi: 'no'
+  open_source: free
+indicators:
+  popcon_rank:
+  stars:
+  stars_url: https://github.com/deltachat/
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://delta.chat/
+- https://github.com/deltachat/
+- https://www.wikidata.org/wiki/Q93623226
+- https://commons.wikimedia.org/wiki/File:Delta_chat_%28Instant_Messenger%29_logo.svg
+confidence:
+  details.first_release_year: auto
+  alternatives: manual
+logo: logos/delta-chat.png

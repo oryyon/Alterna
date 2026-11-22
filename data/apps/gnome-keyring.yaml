@@ -1,6 +1,6 @@
 # GNOME Keyring — Depozit de secrete al desktopului GNOME, integrat cu sistemul.
 id: gnome-keyring
-popularity: 1610
+popularity: 1890
 name: GNOME Keyring
 description: Depozit de secrete al desktopului GNOME, integrat cu sistemul.
 category: security
@@ -35,6 +35,7 @@ sources:
 - https://gitlab.gnome.org/GNOME/gnome-keyring
 - https://www.wikidata.org/wiki/Q383474
 - https://commons.wikimedia.org/wiki/File:Screenshot-GNOME_Keyring.png
+- https://commons.wikimedia.org/wiki/File:Seahorse_icon_hicolor.svg
 confidence:
   details.install_size_mb: auto
   alternatives: manual
@@ -58,3 +59,4 @@ features:
   ssh_agent: free
   audit_independent: 'no'
 screenshot: screenshots/gnome-keyring.jpg
+logo: logos/gnome-keyring.png

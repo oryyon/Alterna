@@ -1,6 +1,6 @@
 # Calligra — suita de birou a proiectului KDE
 id: calligra
-popularity: 600
+popularity: 610
 name: Calligra
 description: Suita de birou a proiectului KDE — Words, Sheets, Stage.
 category: office
@@ -35,6 +35,7 @@ indicators:
 sources:
 - https://calligra.org
 - https://invent.kde.org/office/calligra
+- https://commons.wikimedia.org/wiki/File:Calligra-logo.svg
 logo: logos/calligra.png
 confidence:
   details.install_size_mb: auto

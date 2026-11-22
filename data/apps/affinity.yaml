@@ -15,7 +15,7 @@ alternatives:
 - gimp
 - illustrator
 - inkscape
-
+- coreldraw
 details:
   install_size_mb: 700
   first_release_year: 2015
@@ -33,6 +33,7 @@ indicators:
 sources:
 - https://affinity.serif.com
 - https://static.canva.com/static/images/fb_cover-1.jpg
+- https://commons.wikimedia.org/wiki/File:Affinity_Photo_icon.png
 logo: logos/affinity.png
 confidence:
   alternatives: manual

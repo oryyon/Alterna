@@ -1,6 +1,6 @@
 # Veracrypt — Criptare de discuri și volume, cu coduri open source.
 id: veracrypt
-popularity: 2440
+popularity: 2820
 name: Veracrypt
 description: Criptare de discuri și volume, cu coduri open source.
 category: security
@@ -35,6 +35,7 @@ sources:
 - https://veracrypt.io/
 - https://github.com/VeraCrypt
 - https://www.wikidata.org/wiki/Q19911889
+- https://commons.wikimedia.org/wiki/File:VeraCrypt_Logo.svg
 confidence:
   details.first_release_year: auto
   alternatives: manual
@@ -57,3 +58,4 @@ features:
   cli_api: free
   ssh_agent: 'no'
   audit_independent: 'no'
+logo: logos/veracrypt.png

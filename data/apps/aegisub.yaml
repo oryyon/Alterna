@@ -1,6 +1,6 @@
 # Aegisub — Editor de subtitrări cu sincronizare audio (ASS/SSA).
 id: aegisub
-popularity: 1720
+popularity: 2020
 name: Aegisub
 description: Editor de subtitrări cu sincronizare audio (ASS/SSA).
 category: video
@@ -40,6 +40,7 @@ sources:
 - https://aegisub.org/
 - https://github.com/Aegisub/Aegisub
 - https://www.wikidata.org/wiki/Q654529
+- https://commons.wikimedia.org/wiki/File:Aegisub-logo.svg
 confidence:
   details.first_release_year: auto
   alternatives: manual
@@ -55,3 +56,4 @@ features:
   gpu: 'no'
   export_formate: partial
   open_source: free
+logo: logos/aegisub.png

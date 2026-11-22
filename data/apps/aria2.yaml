@@ -1,0 +1,52 @@
+# aria2 — Manager de descărcări din linia de comandă, cu HTTP, FTP, BitTorrent și Metalink.
+id: aria2
+popularity: 2210
+name: aria2
+description: Manager de descărcări din linia de comandă, cu HTTP, FTP, BitTorrent și Metalink.
+category: internet
+license: foss
+price: free
+developer: Tatsuhiro Tsujikawa
+website: https://aria2.github.io/
+platforms:
+- linux
+- windows
+- macos
+tags:
+- descărcare
+- cli
+- torrent
+alternatives:
+- transmission
+- deluge
+- qbittorrent
+details:
+  install_size_mb: 0
+  first_release_year: 2006
+  file_formats: []
+  telemetry: none
+  romanian_language: false
+features:
+  browsere: 'no'
+  client_torrent: free
+  client_email: 'no'
+  client_ftp: free
+  client_terminal: 'no'
+  descarcare: free
+  ad_block: 'no'
+  gestionare_ordonator: partial
+  vpn: 'no'
+  motor_rendering: 'no'
+  open_source: free
+indicators:
+  popcon_rank:
+  stars: 43591
+  stars_url: https://github.com/aria2/aria2
+  latest_release: 2023-11
+  in_ubuntu_repos: false
+sources:
+- https://aria2.github.io/
+- https://github.com/aria2/aria2
+- https://www.wikidata.org/wiki/Q654196
+confidence:
+  alternatives: manual

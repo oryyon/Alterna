@@ -1,0 +1,58 @@
+# HedgeDoc — Editor de notițe Markdown în timp real, cu editare colaborativă, pentru server propriu.
+id: hedgedoc
+popularity: 1840
+name: HedgeDoc
+description: Editor de notițe Markdown în timp real, cu editare colaborativă, pentru server propriu.
+category: notes
+license: foss
+price: free
+developer: Comunitatea HedgeDoc
+website: https://hedgedoc.org/
+platforms:
+- web
+- linux
+tags:
+- notite
+- markdown
+- colaborare
+- wiki
+alternatives:
+- joplin
+- marktext
+- zettlr
+- obsidian
+details:
+  install_size_mb: 0
+  first_release_year: 2015
+  file_formats:
+  - md
+  - html
+  - pdf
+  telemetry: none
+  romanian_language: false
+features:
+  notite_text: free
+  notite_rich: free
+  markdown: free
+  arbore: free
+  wiki: free
+  baza_date: partial
+  atasamente: free
+  offline: partial
+  sincronizare: free
+  export_formate: free
+  scrise_gata: partial
+  open_source: free
+indicators:
+  popcon_rank:
+  stars: 7518
+  stars_url: https://github.com/hedgedoc/hedgedoc
+  latest_release: 2026-11
+  in_ubuntu_repos: false
+sources:
+- https://hedgedoc.org/
+- https://github.com/hedgedoc/hedgedoc
+- https://www.wikidata.org/wiki/Q98731953
+confidence:
+  alternatives: manual
+logo: logos/hedgedoc.svg

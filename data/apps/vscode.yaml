@@ -22,7 +22,8 @@ alternatives:
 - pycharm
 - sublime-text
 - zed
-
+- monodevelop
+- notepad-plus-plus
 details:
   install_size_mb: 350
   first_release_year: 2015
@@ -42,6 +43,7 @@ sources:
 - https://github.com/microsoft/vscode
 - https://code.visualstudio.com/docs/configure/telemetry
 - https://github.com/microsoft/vscode/blob/HEAD/https%3A//github.com/user-attachments/assets/56af271c-949d-454c-a3ea-16188c063414
+- https://commons.wikimedia.org/wiki/File:Visual_Studio_Code_1.35_icon.svg
 logo: logos/vscode.png
 confidence:
   details.telemetry: manual

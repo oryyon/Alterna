@@ -1,6 +1,6 @@
 # Seahorse — Manager de certificate și chei din GNOME (seif, OpenPGP, parole).
 id: seahorse
-popularity: 1860
+popularity: 2190
 name: Seahorse
 description: Manager de certificate și chei din GNOME (seif, OpenPGP, parole).
 category: security
@@ -32,6 +32,7 @@ indicators:
 sources:
 - https://apps.gnome.org/Seahorse/
 - https://www.wikidata.org/wiki/Q2314628
+- https://commons.wikimedia.org/wiki/File:Seahorse_icon_hicolor.svg
 confidence:
   alternatives: manual
 features:
@@ -53,3 +54,4 @@ features:
   cli_api: 'no'
   ssh_agent: partial
   audit_independent: 'no'
+logo: logos/seahorse.png

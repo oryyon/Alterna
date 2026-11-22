@@ -1,6 +1,6 @@
 # File Roller — Manager de arhive al desktopului GNOME.
 id: file-roller
-popularity: 1600
+popularity: 1880
 name: File Roller
 description: Manager de arhive al desktopului GNOME.
 category: utilities
@@ -39,6 +39,7 @@ sources:
 - https://git.gnome.org/browse/file-roller/
 - https://www.wikidata.org/wiki/Q1143010
 - https://commons.wikimedia.org/wiki/File:File-roller_3.38.0.png
+- https://commons.wikimedia.org/wiki/File:File-roller.svg
 confidence:
   details.install_size_mb: auto
   alternatives: manual
@@ -57,3 +58,4 @@ features:
   conversie_media: 'no'
   clipboard: 'no'
   open_source: free
+logo: logos/file-roller.png

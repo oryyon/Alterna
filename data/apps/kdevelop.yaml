@@ -1,6 +1,6 @@
 # KDevelop — IDE pentru C++ și Qt, din desktopul KDE.
 id: kdevelop
-popularity: 1660
+popularity: 1950
 name: KDevelop
 description: IDE pentru C++ și Qt, din desktopul KDE.
 category: development
@@ -20,6 +20,8 @@ tags:
 alternatives:
 - qtcreator
 - kate
+- godot
+- monodevelop
 details:
   install_size_mb: 940
   first_release_year: 1998
@@ -37,6 +39,7 @@ sources:
 - https://invent.kde.org/kdevelop/kdevelop
 - https://www.wikidata.org/wiki/Q468841
 - https://commons.wikimedia.org/wiki/File:Kdevelop--breeze_dark_theme.png
+- https://commons.wikimedia.org/wiki/File:Breezeicons-apps-48-kdevelop.svg
 confidence:
   details.install_size_mb: auto
   alternatives: manual
@@ -54,3 +57,4 @@ features:
   terminal: 'no'
   extensii: partial
   open_source: free
+logo: logos/kdevelop.png

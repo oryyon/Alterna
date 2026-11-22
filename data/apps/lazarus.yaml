@@ -1,6 +1,6 @@
 # Lazarus — Mediu de dezvoltare vizual pentru Pascal și Object Pascal.
 id: lazarus
-popularity: 1380
+popularity: 1640
 name: Lazarus
 description: Mediu de dezvoltare vizual pentru Pascal și Object Pascal.
 category: development
@@ -19,6 +19,7 @@ tags:
 alternatives:
 - bluefish
 - qtcreator
+- monodevelop
 details:
   install_size_mb: 1699
   first_release_year: 2001

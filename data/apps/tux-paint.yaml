@@ -1,0 +1,63 @@
+# Tux Paint — Program de desen pentru copii, cu pensule, forme și efecte simple.
+id: tux-paint
+popularity: 1960
+name: Tux Paint
+description: Program de desen pentru copii, cu pensule, forme și efecte simple.
+category: graphics
+license: foss
+price: free
+developer: Bill Kendrick și comunitatea Tux Paint
+website: https://tux4kids.org/
+snap: tux-paint
+platforms:
+- linux
+- windows
+- macos
+- android
+tags:
+- desen
+- copii
+- educational
+alternatives:
+- pinta
+- mypaint
+- paint-net
+- gwenview
+details:
+  install_size_mb: 0
+  first_release_year: 2002
+  file_formats:
+  - png
+  - jpg
+  - bmp
+  - tiff
+  telemetry: none
+  romanian_language: false
+features:
+  raster_editare: free
+  vector_editare: 'no'
+  foto_ajustare: 'no'
+  raw: 'no'
+  straturi: 'no'
+  filtre: free
+  retusare: 'no'
+  color_management: 'no'
+  plug_in_uri: 'no'
+  export_formate: free
+  batch: 'no'
+  open_source: free
+indicators:
+  popcon_rank:
+  stars:
+  stars_url: https://sourceforge.net/p/tuxpaint/_list/git
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://tux4kids.org/
+- https://sourceforge.net/p/tuxpaint/_list/git
+- https://www.wikidata.org/wiki/Q390406
+- https://commons.wikimedia.org/wiki/File:Tux_paint_logo.svg
+confidence:
+  details.first_release_year: auto
+  alternatives: manual
+logo: logos/tux-paint.png

@@ -1,6 +1,6 @@
 # qpdf — Unelte pentru PDF: liniarizare, separare pagini, reparare fișiere.
 id: qpdf
-popularity: 2130
+popularity: 2500
 name: qpdf
 description: "Unelte pentru PDF: liniarizare, separare pagini, reparare fișiere."
 category: office
@@ -36,6 +36,7 @@ sources:
 - https://qpdf.sourceforge.io/
 - https://github.com/qpdf/qpdf
 - https://www.wikidata.org/wiki/Q7265508
+- https://commons.wikimedia.org/wiki/File:QPDF.svg
 confidence:
   details.first_release_year: auto
   alternatives: manual
@@ -53,3 +54,4 @@ features:
   contabilitate: 'no'
   biblioteaca: 'no'
   open_source: free
+logo: logos/qpdf.png

@@ -1,6 +1,6 @@
 # Clementine — Player de muzică cu suport pentru colecții și transcodare.
 id: clementine
-popularity: 1170
+popularity: 1360
 name: Clementine
 description: Player de muzică cu suport pentru colecții și transcodare.
 category: audio-players
@@ -25,6 +25,8 @@ alternatives:
 - quodlibet
 - rhythmbox
 - sayonara
+- foobar2000
+- musicbee
 details:
   install_size_mb: 430
   first_release_year: 2010
@@ -36,7 +38,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank: 10790
-  stars: 4280
+  stars: 4281
   stars_url: https://github.com/clementine-player/Clementine
   latest_release: 2026-11
   in_ubuntu_repos: true
@@ -45,6 +47,7 @@ sources:
 - https://github.com/clementine-player/Clementine
 - https://www.wikidata.org/wiki/Q1100372
 - https://commons.wikimedia.org/wiki/File:Clementine.png
+- https://commons.wikimedia.org/wiki/File:Clementine_logo.svg
 confidence:
   details.first_release_year: auto
   details.install_size_mb: auto
@@ -63,3 +66,4 @@ features:
   extensii: free
   subtitrari: 'no'
   open_source: free
+logo: logos/clementine.png

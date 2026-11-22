@@ -34,6 +34,7 @@ sources:
 - https://github.com/zed-industries/zed
 - https://zed.dev/privacy
 - https://zed.dev/img/home/og.webp
+- https://commons.wikimedia.org/wiki/File:Zed_Editor_Logo.png
 logo: logos/zed.png
 confidence:
   alternatives: manual

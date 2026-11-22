@@ -22,7 +22,8 @@ alternatives:
 - pidgin
 - viber
 - whatsapp
-
+- delta-chat
+- wechat
 details:
   install_size_mb: 150
   first_release_year: 2013

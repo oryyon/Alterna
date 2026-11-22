@@ -1,0 +1,60 @@
+# Microsoft Teams — Platformă de colaborare cu chat, apeluri video, canale și integrare cu Microsoft 365.
+id: microsoft-teams
+popularity: 660
+name: Microsoft Teams
+description: Platformă de colaborare cu chat, apeluri video, canale și integrare cu Microsoft 365.
+category: communication
+license: freemium
+price: free
+developer: Microsoft
+website: https://www.microsoft.com/microsoft-teams/
+platforms:
+- windows
+- macos
+- linux
+- web
+- android
+tags:
+- colaborare
+- video
+- birou
+alternatives:
+- slack
+- zoom
+- discord
+- mattermost
+- zulip
+details:
+  install_size_mb: 0
+  first_release_year: 2016
+  file_formats: []
+  telemetry: none
+  romanian_language: false
+features:
+  chat_texte: free
+  chat_voz: free
+  video_call: free
+  messenger_integrat: free
+  screen_share: free
+  file_share: free
+  client_multi: free
+  criptare_e2e: 'no'
+  selfhost: 'no'
+  boturi: free
+  open_source: 'no'
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://www.microsoft.com/microsoft-teams/
+- https://www.wikidata.org/wiki/Q28406404
+- https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/68450-Featured-News-Crad-01-416x179?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=2000&hei=858&qlt=85&fit=constrain
+- https://commons.wikimedia.org/wiki/File:Microsoft_Office_Teams_%282019%E2%80%932025%29.svg
+confidence:
+  details.first_release_year: auto
+  alternatives: manual
+screenshot: screenshots/microsoft-teams.jpg
+logo: logos/microsoft-teams.png

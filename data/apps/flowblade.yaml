@@ -1,6 +1,6 @@
 # Flowblade — Editor video nelinear pentru Linux, cu interfață simplă.
 id: flowblade
-popularity: 2000
+popularity: 2360
 name: Flowblade
 description: Editor video nelinear pentru Linux, cu interfață simplă.
 category: video
@@ -37,6 +37,7 @@ sources:
 - https://github.com/jliljebl/flowblade
 - https://www.wikidata.org/wiki/Q28923878
 - https://commons.wikimedia.org/wiki/File:Flowblade_2.0.jpg
+- https://commons.wikimedia.org/wiki/File:Flowblade-logonev.png
 confidence:
   license: auto
   details.install_size_mb: auto
@@ -54,3 +55,4 @@ features:
   export_formate: free
   open_source: free
 screenshot: screenshots/flowblade.jpg
+logo: logos/flowblade.png

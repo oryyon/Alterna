@@ -21,6 +21,7 @@ alternatives:
 - strawberry
 - smplayer
 - totem
+- foobar2000
 details:
   install_size_mb: 471
   first_release_year: 2001
@@ -39,6 +40,7 @@ sources:
 - https://www.videolan.org
 - https://github.com/videolan/vlc
 - https://images.videolan.org/vlc/screenshots/3.0.0/3.0.17-windows11-fitted.jpg
+- https://commons.wikimedia.org/wiki/File:VLC_Icon.svg
 logo: logos/vlc.png
 confidence:
   details.install_size_mb: auto

@@ -23,7 +23,9 @@ alternatives:
 - trilium
 - xournalpp
 - zettlr
-
+- evernote
+- hedgedoc
+- onenote
 details:
   install_size_mb: 200
   first_release_year: 2020

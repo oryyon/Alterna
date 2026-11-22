@@ -1,6 +1,6 @@
 # Ardour — DAW complet pentru înregistrare și mixaj
 id: ardour
-popularity: 830
+popularity: 920
 name: Ardour
 description: Stație de lucru audio digitală (DAW) completă, pentru înregistrare și mixaj.
 category: audio-production
@@ -25,7 +25,7 @@ details:
 
 indicators:
   popcon_rank: 11618
-  stars: 5451
+  stars: 5453
   stars_url: https://github.com/Ardour/ardour
   latest_release: "2026-11"
   in_ubuntu_repos: true

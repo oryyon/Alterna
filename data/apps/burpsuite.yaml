@@ -1,6 +1,6 @@
 # Burp Suite — Platformă de testare a securității aplicațiilor web (proxy, scanner).
 id: burpsuite
-popularity: 1700
+popularity: 2000
 name: Burp Suite
 description: Platformă de testare a securității aplicațiilor web (proxy, scanner).
 category: security

@@ -1,6 +1,6 @@
 # Beekeeper Studio — Client de baze de date SQL, rapid și modern.
 id: beekeeper-studio
-popularity: 1560
+popularity: 1830
 name: Beekeeper Studio
 description: Client de baze de date SQL, rapid și modern.
 category: utilities
@@ -28,7 +28,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 23916
+  stars: 23919
   stars_url: https://github.com/beekeeper-studio/beekeeper-studio
   latest_release: 2026-11
   in_ubuntu_repos: false

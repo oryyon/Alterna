@@ -1,0 +1,58 @@
+# Sonic Pi — Mediu de programare muzicală: scrii cod Ruby care generează muzică în timp real.
+id: sonic-pi
+popularity: 1520
+name: Sonic Pi
+description: "Mediu de programare muzicală: scrii cod Ruby care generează muzică în timp real."
+category: audio-production
+license: foss
+price: free
+developer: Sam Aaron
+website: https://sonic-pi.net/
+platforms:
+- linux
+- windows
+- macos
+tags:
+- muzica
+- programare
+- educatie
+alternatives:
+- lmms
+- audacity
+- musescore
+details:
+  install_size_mb: 0
+  first_release_year: 2012
+  file_formats:
+  - wav
+  - ogg
+  - flac
+  telemetry: none
+  romanian_language: false
+features:
+  inregistrare: free
+  editare_audio: partial
+  efecte: free
+  midi: free
+  partitura: 'no'
+  instrumente_virtuale: free
+  biblioteaca_sonor: free
+  spectru: free
+  mixaj: partial
+  export: free
+  pluginuri: partial
+  open_source: free
+indicators:
+  popcon_rank:
+  stars:
+  stars_url: https://github.com/sonic-pi-net/sonic-pi
+  latest_release: 2026-08
+  in_ubuntu_repos: false
+sources:
+- https://sonic-pi.net/
+- https://github.com/sonic-pi-net/sonic-pi
+- https://www.wikidata.org/wiki/Q21592138
+confidence:
+  details.first_release_year: auto
+  license: auto
+  alternatives: manual

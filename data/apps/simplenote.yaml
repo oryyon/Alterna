@@ -1,6 +1,6 @@
 # Simplenote — notițe minimaliste cu sincronizare
 id: simplenote
-popularity: 1000
+popularity: 1150
 name: Simplenote
 description: Notițe minimaliste cu sincronizare instantă, de la Automattic.
 category: notes
@@ -16,7 +16,9 @@ alternatives:
 - joplin
 - evolution
 - notesnook
-
+- evernote
+- gnote
+- google-keep
 details:
   install_size_mb: 150
   first_release_year: 2008

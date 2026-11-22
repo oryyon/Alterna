@@ -12,7 +12,9 @@ website: https://zoom.us
 snap: zoom-client
 platforms: [linux, windows, macos, android, web]
 tags: [video, conferinte, meetings]
-alternatives: [jitsi-meet]
+alternatives:
+- jitsi-meet
+- microsoft-teams
 
 details:
   install_size_mb: 500

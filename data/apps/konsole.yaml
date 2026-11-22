@@ -1,6 +1,6 @@
 # Konsole — Emulator de terminal al desktopului KDE.
 id: konsole
-popularity: 1250
+popularity: 1470
 name: Konsole
 description: Emulator de terminal al desktopului KDE.
 category: utilities
@@ -35,6 +35,7 @@ sources:
 - https://anongit.kde.org/konsole.git
 - https://www.wikidata.org/wiki/Q257793
 - https://commons.wikimedia.org/wiki/File:Konsole_24.12.0_screenshot.webp
+- https://commons.wikimedia.org/wiki/File:Breezeicons-apps-48-utilities-terminal.svg
 confidence:
   details.install_size_mb: auto
   alternatives: manual
@@ -53,3 +54,4 @@ features:
   conversie_media: 'no'
   clipboard: 'no'
   open_source: free
+logo: logos/konsole.png

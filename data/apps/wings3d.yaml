@@ -1,6 +1,6 @@
 # Wings 3D — Modelator 3D ușor, cu randare realistă, pentru scenografii.
 id: wings3d
-popularity: 2560
+popularity: 2940
 name: Wings 3D
 description: Modelator 3D ușor, cu randare realistă, pentru scenografii.
 category: 3d-cad
@@ -38,6 +38,7 @@ sources:
 - https://wings3d.eu/
 - https://git.code.sf.net/p/wings/code
 - https://www.wikidata.org/wiki/Q617006
+- https://commons.wikimedia.org/wiki/File:Wings3d.png
 confidence:
   alternatives: manual
 features:
@@ -51,3 +52,4 @@ features:
   masuratori: 'no'
   parametrice: 'no'
   open_source: free
+logo: logos/wings3d.png

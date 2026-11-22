@@ -1,6 +1,6 @@
 # Viber — mesagerie cu apeluri, populară în Europa de Est
 id: viber
-popularity: 750
+popularity: 810
 name: Viber
 description: Mesagerie cu apeluri, populară în Europa de Est.
 category: communication
@@ -12,7 +12,10 @@ website: https://www.viber.com
 snap: viber
 platforms: [linux, windows, macos, android]
 tags: [mesagerie, apeluri]
-alternatives: [telegram, whatsapp]
+alternatives:
+- telegram
+- whatsapp
+- wechat
 
 details:
   install_size_mb: 400

@@ -1,6 +1,6 @@
 # Flameshot — capturi de ecran cu adnotare instantă
 id: flameshot
-popularity: 1050
+popularity: 1200
 name: Flameshot
 description: Capturi de ecran cu adnotare instantă, foarte configurabil.
 category: utilities
@@ -27,7 +27,7 @@ details:
 
 indicators:
   popcon_rank: 7661
-  stars: 31633
+  stars: 31662
   stars_url: https://github.com/flameshot-org/flameshot
   latest_release: "2026-11"
   in_ubuntu_repos: true
@@ -36,6 +36,7 @@ sources:
 - https://flameshot.org
 - https://github.com/flameshot-org/flameshot
 - https://flameshot.org/img/in-app-screenshot-editing.jpg
+- https://commons.wikimedia.org/wiki/File:Flameshot.svg
 logo: logos/flameshot.png
 confidence:
   details.install_size_mb: auto

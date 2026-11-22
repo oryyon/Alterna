@@ -1,6 +1,6 @@
 # digiKam — Organizator de fotografii cu etichetare și geolocalizare.
 id: digikam
-popularity: 1360
+popularity: 1620
 name: digiKam
 description: Organizator de fotografii cu etichetare și geolocalizare.
 category: graphics
@@ -40,6 +40,7 @@ sources:
 - https://projects.kde.org/projects/extragear/graphics/digikam/digikam-software-compilation/repository
 - https://www.wikidata.org/wiki/Q1050872
 - https://commons.wikimedia.org/wiki/File:DigiKam_7.6.0_screenshot.png
+- https://commons.wikimedia.org/wiki/File:Breezeicons-apps-48-digikam.svg
 confidence:
   details.first_release_year: auto
   details.install_size_mb: auto
@@ -58,3 +59,4 @@ features:
   export_formate: free
   batch: free
   open_source: free
+logo: logos/digikam.png

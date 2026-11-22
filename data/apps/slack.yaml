@@ -23,6 +23,8 @@ alternatives:
 - discord
 - mattermost
 - rocket-chat
+- microsoft-teams
+- zulip
 details:
   install_size_mb: 0
   first_release_year: 2013
@@ -39,6 +41,7 @@ sources:
 - https://slack.com
 - https://www.wikidata.org/wiki/Q17130715
 - https://a.slack-edge.com/73a2348/marketing/img/homepage/revamped-24/unfurl/hp-revamp-unfurl.jpg
+- https://commons.wikimedia.org/wiki/File:Slack_CMYK.svg
 confidence:
   details.first_release_year: auto
   alternatives: manual
@@ -55,3 +58,4 @@ features:
   boturi: free
   open_source: 'no'
 screenshot: screenshots/slack.jpg
+logo: logos/slack.png

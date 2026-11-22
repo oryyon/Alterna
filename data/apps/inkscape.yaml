@@ -20,7 +20,7 @@ alternatives:
 - gravit-designer
 - penpot
 - synfig
-
+- coreldraw
 details:
   install_size_mb: 401
   first_release_year: 2003

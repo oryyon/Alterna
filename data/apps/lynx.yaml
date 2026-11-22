@@ -1,6 +1,6 @@
 # Lynx — Browser text pentru terminal, fără interfață grafică.
 id: lynx
-popularity: 2030
+popularity: 2390
 name: Lynx
 description: Browser text pentru terminal, fără interfață grafică.
 category: internet
@@ -17,6 +17,8 @@ tags:
 alternatives:
 - netsurf
 - gnome-web
+- pale-moon
+- seamonkey
 details:
   install_size_mb: 21
   first_release_year: 1992

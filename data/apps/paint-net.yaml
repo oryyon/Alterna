@@ -1,0 +1,61 @@
+# Paint.NET — Editor de imagini raster pentru Windows, cu extensii și strat transparent.
+id: paint-net
+popularity: 1350
+name: Paint.NET
+description: Editor de imagini raster pentru Windows, cu extensii și strat transparent.
+category: graphics
+license: commercial
+price: paid
+developer: dotPDN
+website: https://www.getpaint.net/
+platforms:
+- windows
+tags:
+- raster
+- editare
+- extensii
+alternatives:
+- gimp
+- pinta
+- mypaint
+- krita
+- tux-paint
+details:
+  install_size_mb: 0
+  first_release_year: 2004
+  file_formats:
+  - png
+  - jpg
+  - bmp
+  - tiff
+  telemetry: none
+  romanian_language: false
+features:
+  raster_editare: free
+  vector_editare: 'no'
+  foto_ajustare: free
+  raw: partial
+  straturi: free
+  filtre: free
+  retusare: partial
+  color_management: 'no'
+  plug_in_uri: free
+  export_formate: free
+  batch: 'no'
+  open_source: 'no'
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://www.getpaint.net/
+- https://www.wikidata.org/wiki/Q827328
+- https://www.getpaint.net/screenshots/pdn513_thumb.jpg
+- https://commons.wikimedia.org/wiki/File:Paint.NET_logo.png
+confidence:
+  details.first_release_year: auto
+  alternatives: manual
+screenshot: screenshots/paint-net.jpg
+logo: logos/paint-net.png

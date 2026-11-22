@@ -1,6 +1,6 @@
 # Aegis Authenticator — Generator de coduri pentru autentificare în doi factori.
 id: aegis
-popularity: 1510
+popularity: 1780
 name: Aegis Authenticator
 description: Generator de coduri pentru autentificare în doi factori.
 category: security
@@ -25,7 +25,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 13597
+  stars: 13602
   stars_url: https://github.com/beemdevelopment/Aegis
   latest_release: 2026-09
   in_ubuntu_repos: false

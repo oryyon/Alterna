@@ -11,7 +11,10 @@ website: https://www.adobe.com/products/illustrator.html
 
 platforms: [windows, macos]
 tags: [vectorial, ilustratie, design]
-alternatives: [inkscape, affinity]
+alternatives:
+- inkscape
+- affinity
+- coreldraw
 
 details:
   install_size_mb: 3500
@@ -30,6 +33,7 @@ indicators:
 sources:
 - https://www.adobe.com/products/illustrator.html
 - https://www.adobe.com/products/media_19762a181d8f7cdad7fa491acc9917bdedbcba01a.jpg?width=1200&#x26;format=pjpg&#x26;optimize=medium
+- https://commons.wikimedia.org/wiki/File:Adobe_Illustrator_CC_icon.svg
 logo: logos/illustrator.png
 confidence:
   alternatives: manual

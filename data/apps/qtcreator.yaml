@@ -1,6 +1,6 @@
 # Qt Creator — Mediu de dezvoltare integrat pentru Qt și C++.
 id: qtcreator
-popularity: 1810
+popularity: 2130
 name: Qt Creator
 description: Mediu de dezvoltare integrat pentru Qt și C++.
 category: development
@@ -23,6 +23,7 @@ alternatives:
 - codeblocks
 - kdevelop
 - lazarus
+- monodevelop
 details:
   install_size_mb: 710
   first_release_year: 2009
@@ -40,6 +41,7 @@ sources:
 - https://github.com/qt-creator/qt-creator.git
 - https://www.wikidata.org/wiki/Q2121795
 - https://commons.wikimedia.org/wiki/File:Qt_Creator_6.0.2_based_on_Qt_6.2.2.png
+- https://commons.wikimedia.org/wiki/File:Qt_logo_2016.svg
 confidence:
   details.install_size_mb: auto
   alternatives: manual
@@ -57,3 +59,4 @@ features:
   terminal: free
   extensii: partial
   open_source: free
+logo: logos/qtcreator.png

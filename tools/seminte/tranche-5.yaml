@@ -1,0 +1,1055 @@
+# Semințe pentru import — Tranche 5 (catalogul 262 → 300)
+#
+# Focusul: cele mai subțiri categorii după tranche-4 — Notițe 15, Producție
+# audio 15, Internet 17, Comunicare 17, Grafică 18, Video 18, Audio & Playere
+# 18, Dezvoltare 20. După acest tranche: Notițe 22, Producție audio 22,
+# Internet 22, Comunicare 22, Grafică 22, Video 22, Audio & Playere 21,
+# Dezvoltare 23 — toate peste 20.
+#
+# Ca la tranche-urile anterioare: aici sunt părțile EDITORIALE (descriere în
+# română, categorie, alternative, etichete, preț, formate, popularitate) și
+# matricea de FUNCȚIONALITĂȚI (cheile din `data/taxonomy/<categorie>.yaml`);
+# datele obiective (licență, site, dezvoltator, anul primei versiuni, repo)
+# vin din Wikidata prin `tools/import_apps.py`, cu sursa citată.
+#
+# `popularity` = poziția editorială (multiplu de 10).
+# `wikidata_qid` = entitatea fixată manual, ca importul să nu se lovească de
+# omonime (ex. „Vivaldi” = un cognome, „Reason” = nuvela lui Asimov).
+# Valorile `features` sunt `free | paid | partial | 'no' | unknown`.
+# ATENȚIE YAML: `no`/`yes` se scriu cu ghilimele ('no'), altfel devin booleeni.
+
+# --- notițe (era 15) -------------------------------------------------------
+
+# --- notițe (era 15) -------------------------------------------------
+- id: evernote
+  name: Evernote
+  developer: Evernote Inc.
+  category: notes
+  license: freemium
+  price: free
+  description: Aplicație de notițe și gestionare a sarcinilor, cu sincronizare între dispozitive.
+  popularity: 780
+  platforms: [linux, windows, macos, android, web]
+  tags: [notite, sarcini, sincronizare]
+  alternatives: [notion, obsidian, joplin, simplenote, google-keep, onenote]
+  file_formats: [enex, html, pdf]
+  first_release_year: 2008
+  website: https://evernote.com/
+  wikidata_qid: Q430526
+  features:
+    notite_text: free
+    notite_rich: free
+    markdown: paid
+    arbore: free
+    wiki: 'no'
+    baza_date: paid
+    atasamente: free
+    offline: paid
+    sincronizare: free
+    export_formate: paid
+    scrise_gata: paid
+    open_source: 'no'
+- id: onenote
+  name: Microsoft OneNote
+  developer: Microsoft
+  category: notes
+  license: freemium
+  price: free
+  description: Notițe Microsoft cu organizare în caiete și pagini, pentru birou și școală.
+  popularity: 920
+  platforms: [windows, macos, android, web]
+  tags: [notite, birou, caiete]
+  alternatives: [evernote, notion, obsidian, google-keep]
+  file_formats: [onepkg, pdf, html]
+  first_release_year: 2003
+  website: https://www.microsoft.com/microsoft-365/onenote/digital-note-taking-app
+  wikidata_qid: Q706480
+  features:
+    notite_text: free
+    notite_rich: free
+    markdown: 'no'
+    arbore: free
+    wiki: 'no'
+    baza_date: free
+    atasamente: free
+    offline: free
+    sincronizare: free
+    export_formate: free
+    scrise_gata: free
+    open_source: 'no'
+- id: google-keep
+  name: Google Keep
+  developer: Google
+  category: notes
+  license: commercial
+  price: free
+  description: Notițe rapide cu culori și liste de sarcini, sincronizate cu contul Google.
+  popularity: 850
+  platforms: [android, web]
+  tags: [notite, sarcini, google]
+  alternatives: [simplenote, evernote, onenote]
+  file_formats: [html, json]
+  first_release_year: 2013
+  website: https://keep.google.com/
+  wikidata_qid: Q7854718
+  features:
+    notite_text: free
+    notite_rich: partial
+    markdown: 'no'
+    arbore: free
+    wiki: 'no'
+    baza_date: 'no'
+    atasamente: free
+    offline: free
+    sincronizare: free
+    export_formate: partial
+    scrise_gata: free
+    open_source: 'no'
+- id: hedgedoc
+  name: HedgeDoc
+  developer: Comunitatea HedgeDoc
+  category: notes
+  description: Editor de notițe Markdown în timp real, cu editare colaborativă, pentru server propriu.
+  popularity: 1560
+  platforms: [web, linux]
+  tags: [notite, markdown, colaborare, wiki]
+  alternatives: [joplin, marktext, zettlr, obsidian]
+  file_formats: [md, html, pdf]
+  first_release_year: 2015
+  website: https://hedgedoc.org/
+  wikidata_qid: Q98731953
+  features:
+    notite_text: free
+    notite_rich: free
+    markdown: free
+    arbore: free
+    wiki: free
+    baza_date: partial
+    atasamente: free
+    offline: partial
+    sincronizare: free
+    export_formate: free
+    scrise_gata: partial
+    open_source: free
+- id: gnote
+  name: Gnote
+  developer: Comunitatea GNOME
+  category: notes
+  description: Notițe pentru desktopul GNOME, cu etichete, scurtături și liste de sarcini.
+  popularity: 2140
+  platforms: [linux]
+  tags: [notite, gnome, etichete]
+  alternatives: [cherrytree, simplenote, joplin]
+  file_formats: [txt, xml]
+  first_release_year: 2008
+  website: https://wiki.gnome.org/Projects/Gnote
+  wikidata_qid: Q2547971
+  features:
+    notite_text: free
+    notite_rich: 'no'
+    markdown: 'no'
+    arbore: free
+    wiki: 'no'
+    baza_date: 'no'
+    atasamente: free
+    offline: free
+    sincronizare: 'no'
+    export_formate: free
+    scrise_gata: partial
+    open_source: free
+- id: mendeley
+  name: Mendeley
+  developer: Elsevier
+  category: notes
+  license: freemium
+  price: free
+  description: Manager de referințe pentru cercetare, cu bibliotecă sincronizată și citări.
+  popularity: 1180
+  platforms: [windows, macos, web]
+  tags: [referinte, cercetare, bibliografie]
+  alternatives: [zotero, zettlr, endnote]
+  file_formats: [ris, bib, enw]
+  first_release_year: 2010
+  website: https://www.mendeley.com/
+  wikidata_qid: Q1580044
+  features:
+    notite_text: free
+    notite_rich: partial
+    markdown: 'no'
+    arbore: free
+    wiki: 'no'
+    baza_date: partial
+    atasamente: free
+    offline: free
+    sincronizare: free
+    export_formate: free
+    scrise_gata: 'no'
+    open_source: 'no'
+- id: endnote
+  name: EndNote
+  developer: Clarivate Analytics
+  category: notes
+  license: commercial
+  price: paid
+  description: Manager de referințe comercial, cu biblioteci partajate și stiluri de citare.
+  popularity: 1620
+  platforms: [windows, macos]
+  tags: [referinte, cercetare, citari]
+  alternatives: [zotero, mendeley]
+  file_formats: [ris, bib, enw]
+  first_release_year: 1994
+  website: https://endnote.com/
+  wikidata_qid: Q1340244
+  features:
+    notite_text: free
+    notite_rich: partial
+    markdown: 'no'
+    arbore: free
+    wiki: 'no'
+    baza_date: partial
+    atasamente: free
+    offline: free
+    sincronizare: free
+    export_formate: free
+    scrise_gata: 'no'
+    open_source: 'no'
+
+# --- producție audio (era 15) ---------------------------------------------
+# --- producție audio (era 15) ----------------------------------------
+- id: ableton-live
+  name: Ableton Live
+  developer: Ableton
+  category: audio-production
+  license: commercial
+  price: paid
+  description: Platformă de producție muzicală cu sesiuni, dispozitive și editare audio.
+  popularity: 690
+  platforms: [windows, macos]
+  tags: [daw, muzica, live]
+  alternatives: [fl-studio, lmms, reason, pro-tools]
+  file_formats: [wav, flac, aiff, mp3]
+  first_release_year: 2001
+  website: https://www.ableton.com/en/live/
+  wikidata_qid: Q322400
+  features:
+    inregistrare: free
+    editare_audio: free
+    efecte: free
+    midi: free
+    partitura: 'no'
+    instrumente_virtuale: paid
+    biblioteaca_sonor: paid
+    spectru: free
+    mixaj: paid
+    export: free
+    pluginuri: paid
+    open_source: 'no'
+- id: reason
+  name: Reason
+  developer: Reason Studios
+  category: audio-production
+  license: commercial
+  price: paid
+  description: Platformă de producție muzicală cu instrumente virtuale conectate prin cabluri.
+  popularity: 1120
+  platforms: [windows, macos]
+  tags: [daw, muzica, instrumentatie]
+  alternatives: [ableton-live, lmms, fl-studio]
+  file_formats: [wav, flac, aiff, mp3]
+  first_release_year: 1997
+  website: https://www.reasonstudios.com/
+  wikidata_qid: Q1333703
+  features:
+    inregistrare: free
+    editare_audio: free
+    efecte: free
+    midi: free
+    partitura: partial
+    instrumente_virtuale: paid
+    biblioteaca_sonor: paid
+    spectru: free
+    mixaj: paid
+    export: free
+    pluginuri: paid
+    open_source: 'no'
+- id: garageband
+  name: GarageBand
+  developer: Apple
+  category: audio-production
+  license: commercial
+  price: free
+  description: Studio de înregistrare pentru Mac și iPhone, cu bucle și instrumente virtuale.
+  popularity: 860
+  platforms: [macos, android]
+  tags: [daw, muzica, incepator]
+  alternatives: [lmms, audacity, reaper]
+  file_formats: [aiff, wav, mp3, m4a]
+  first_release_year: 1999
+  website: https://www.apple.com/music/garageband/
+  wikidata_qid: Q9539
+  features:
+    inregistrare: free
+    editare_audio: free
+    efecte: free
+    midi: free
+    partitura: 'no'
+    instrumente_virtuale: free
+    biblioteaca_sonor: free
+    spectru: free
+    mixaj: partial
+    export: free
+    pluginuri: paid
+    open_source: 'no'
+- id: cakewalk-sonar
+  name: Cakewalk Sonar
+  developer: BandLab Technologies
+  category: audio-production
+  license: commercial
+  price: paid
+  description: Platformă de producție muzicală cu editare MIDI, instrumente virtuale și mixer detaliat.
+  popularity: 1340
+  platforms: [windows]
+  tags: [daw, muzica, midi]
+  alternatives: [reaper, ableton-live, pro-tools]
+  file_formats: [wav, mp3, mid]
+  first_release_year: 1987
+  website: https://www.bandlab.com/products/sonar
+  wikidata_qid: Q1350502
+  features:
+    inregistrare: free
+    editare_audio: free
+    efecte: free
+    midi: free
+    partitura: partial
+    instrumente_virtuale: paid
+    biblioteaca_sonor: paid
+    spectru: free
+    mixaj: free
+    export: free
+    pluginuri: free
+    open_source: 'no'
+- id: pro-tools
+  name: Pro Tools
+  developer: Avid Technology
+  category: audio-production
+  license: commercial
+  price: paid
+  description: Standardul profesional de înregistrare și mixaj în studiouri de sunet.
+  popularity: 970
+  platforms: [windows, macos]
+  tags: [daw, studio, mixaj]
+  alternatives: [ableton-live, reaper, cakewalk-sonar]
+  file_formats: [wav, aiff, mp3]
+  first_release_year: 1991
+  website: https://www.avid.com/pro-tools
+  wikidata_qid: Q247670
+  features:
+    inregistrare: free
+    editare_audio: free
+    efecte: free
+    midi: partial
+    partitura: 'no'
+    instrumente_virtuale: paid
+    biblioteaca_sonor: paid
+    spectru: free
+    mixaj: free
+    export: free
+    pluginuri: paid
+    open_source: 'no'
+- id: sonic-pi
+  name: Sonic Pi
+  developer: Sam Aaron
+  category: audio-production
+  description: "Mediu de programare muzicală: scrii cod Ruby care generează muzică în timp real."
+  popularity: 1280
+  platforms: [linux, windows, macos]
+  tags: [muzica, programare, educatie]
+  alternatives: [lmms, audacity, musescore]
+  file_formats: [wav, ogg, flac]
+  first_release_year: 2012
+  website: https://sonic-pi.net/
+  wikidata_qid: Q21592138
+  features:
+    inregistrare: free
+    editare_audio: partial
+    efecte: free
+    midi: free
+    partitura: 'no'
+    instrumente_virtuale: free
+    biblioteaca_sonor: free
+    spectru: free
+    mixaj: partial
+    export: free
+    pluginuri: partial
+    open_source: free
+
+
+# --- internet (era 17) -----------------------------------------------------
+- id: sound-forge
+  name: Sound Forge
+  developer: Sony
+  category: audio-production
+  license: commercial
+  price: paid
+  description: Editor audio profesional pentru înregistrare, tăiere, restaurare și masterizare.
+  popularity: 1980
+  platforms: [windows]
+  tags: [editor audio, inregistrare, masterizare]
+  alternatives: [audacity, reaper, ocenaudio]
+  file_formats: [wav, mp3, flac, ogg]
+  first_release_year: 1993
+  website: https://www.sony.com/en/SonyInfo/CreativeSoftware/Products/SoundForge
+  wikidata_qid: Q2510947
+  features:
+    inregistrare: free
+    editare_audio: free
+    efecte: free
+    midi: 'no'
+    partitura: 'no'
+    instrumente_virtuale: 'no'
+    biblioteaca_sonor: 'no'
+    spectru: free
+    mixaj: partial
+    export: free
+    pluginuri: free
+    open_source: 'no'
+# --- internet (era 17) -----------------------------------------------
+- id: vivaldi
+  name: Vivaldi
+  developer: Vivaldi Technologies
+  category: internet
+  license: commercial
+  price: free
+  description: Browser web cu filă de taburi, blocare de reclame și sincronizare între dispozitive.
+  popularity: 760
+  platforms: [linux, windows, macos, android]
+  tags: [browser, filete, sincronizare]
+  alternatives: [chrome, firefox, opera, brave, waterfox]
+  file_formats: []
+  first_release_year: 2015
+  website: https://vivaldi.com/
+  wikidata_qid: Q18913176
+  features:
+    browsere: free
+    client_torrent: 'no'
+    client_email: partial
+    client_ftp: 'no'
+    client_terminal: 'no'
+    descarcare: free
+    ad_block: free
+    gestionare_ordonator: free
+    vpn: 'no'
+    motor_rendering: free
+    open_source: 'no'
+- id: waterfox
+  name: Waterfox
+  developer: Waterfox
+  category: internet
+  description: Browser web bazat pe Firefox, concentrat pe confidențialitate și personalizare.
+  popularity: 1420
+  platforms: [linux, windows, macos, android]
+  tags: [browser, confidentialitate, personalizare]
+  alternatives: [firefox, chromium, pale-moon, seamonkey]
+  file_formats: []
+  first_release_year: 2011
+  website: https://www.waterfox.net/
+  wikidata_qid: Q10834367
+  features:
+    browsere: free
+    client_torrent: 'no'
+    client_email: 'no'
+    client_ftp: 'no'
+    client_terminal: 'no'
+    descarcare: free
+    ad_block: partial
+    gestionare_ordonator: free
+    vpn: 'no'
+    motor_rendering: free
+    open_source: free
+- id: seamonkey
+  name: SeaMonkey
+  developer: Mozilla
+  category: internet
+  description: Suită internet cu browser, client de e-mail, editor HTML și client IRC.
+  popularity: 1760
+  platforms: [linux, windows, macos]
+  tags: [browser, email, irc, suită]
+  alternatives: [firefox, netsurf, lynx, waterfox]
+  file_formats: []
+  first_release_year: 2012
+  website: https://www.seamonkey-project.org/
+  wikidata_qid: Q156197
+  features:
+    browsere: free
+    client_torrent: 'no'
+    client_email: free
+    client_ftp: 'no'
+    client_terminal: 'no'
+    descarcare: free
+    ad_block: partial
+    gestionare_ordonator: free
+    vpn: 'no'
+    motor_rendering: free
+    open_source: free
+- id: pale-moon
+  name: Pale Moon
+  developer: Moonchild Productions
+  category: internet
+  description: Browser web independent, orientat pe rapiditate și consum redus de resurse.
+  popularity: 1920
+  platforms: [linux, windows]
+  tags: [browser, rapid, usor]
+  alternatives: [firefox, waterfox, konqueror, lynx]
+  file_formats: []
+  first_release_year: 2009
+  website: https://palemoon.org/
+
+# --- comunicare (era 17) ---------------------------------------------------
+  wikidata_qid: Q4046338
+  features:
+    browsere: free
+    client_torrent: 'no'
+    client_email: 'no'
+    client_ftp: 'no'
+    client_terminal: 'no'
+    descarcare: free
+    ad_block: 'no'
+    gestionare_ordonator: free
+    vpn: 'no'
+    motor_rendering: free
+    open_source: free
+- id: aria2
+  name: aria2
+  developer: Tatsuhiro Tsujikawa
+  category: internet
+  description: Manager de descărcări din linia de comandă, cu HTTP, FTP, BitTorrent și Metalink.
+  popularity: 1880
+  platforms: [linux, windows, macos]
+  tags: [descărcare, cli, torrent]
+  alternatives: [transmission, deluge, qbittorrent]
+  file_formats: []
+  first_release_year: 2006
+  website: https://aria2.github.io/
+  wikidata_qid: Q654196
+  features:
+    browsere: 'no'
+    client_torrent: free
+    client_email: 'no'
+    client_ftp: free
+    client_terminal: 'no'
+    descarcare: free
+    ad_block: 'no'
+    gestionare_ordonator: partial
+    vpn: 'no'
+    motor_rendering: 'no'
+    open_source: free
+# --- comunicare (era 17) ---------------------------------------------
+- id: delta-chat
+  name: Delta Chat
+  developer: Delta Chat e.V.
+  category: communication
+  description: Client de mesagerie care trimite mesaje pe e-mail, cu criptare end-to-end.
+  popularity: 1240
+  platforms: [linux, windows, macos, android]
+  tags: [mesagerie, email, criptare]
+  alternatives: [signal, telegram, element, whatsapp]
+  file_formats: []
+  first_release_year: 2018
+  website: https://delta.chat/
+  wikidata_qid: Q93623226
+  features:
+    chat_texte: free
+    chat_voz: 'no'
+    video_call: 'no'
+    messenger_integrat: free
+    screen_share: 'no'
+    file_share: free
+    client_multi: 'no'
+    criptare_e2e: free
+    selfhost: 'no'
+    boturi: 'no'
+    open_source: free
+- id: gajim
+  name: Gajim
+  developer: Comunitatea Gajim
+  category: communication
+  description: Client de chat pentru protocolul XMPP, cu sală, criptare și transfer de fișiere.
+  popularity: 2060
+  platforms: [linux, windows, macos]
+  tags: [xmpp, chat, openxmpp]
+  alternatives: [pidgin, hexchat, element, signal]
+  file_formats: []
+  first_release_year: 2003
+  website: https://gajim.org/
+  wikidata_qid: Q58105
+  features:
+    chat_texte: free
+    chat_voz: free
+    video_call: free
+    messenger_integrat: free
+    screen_share: 'no'
+    file_share: free
+    client_multi: free
+    criptare_e2e: free
+    selfhost: free
+    boturi: free
+    open_source: free
+- id: zulip
+  name: Zulip
+  developer: Zulip, Inc.
+  category: communication
+  description: Chat de echipă cu subiecte, fire de discuție și instalare pe server propriu.
+  popularity: 1100
+  platforms: [linux, windows, macos, web, android]
+  tags: [chat, echipa, selfhost, subiecte]
+  alternatives: [slack, mattermost, rocket-chat, discord]
+  file_formats: []
+  first_release_year: 2011
+  website: https://zulip.com/
+  wikidata_qid: Q23680052
+  features:
+    chat_texte: free
+    chat_voz: 'no'
+    video_call: partial
+    messenger_integrat: free
+    screen_share: free
+    file_share: free
+    client_multi: free
+    criptare_e2e: 'no'
+    selfhost: free
+    boturi: free
+    open_source: free
+- id: microsoft-teams
+  name: Microsoft Teams
+  developer: Microsoft
+  category: communication
+  license: freemium
+  price: free
+  description: Platformă de colaborare cu chat, apeluri video, canale și integrare cu Microsoft 365.
+  popularity: 640
+  platforms: [windows, macos, linux, web, android]
+  tags: [colaborare, video, birou]
+  alternatives: [slack, zoom, discord, mattermost, zulip]
+  file_formats: []
+  first_release_year: 2017
+  website: https://www.microsoft.com/microsoft-teams/
+  wikidata_qid: Q28406404
+  features:
+    chat_texte: free
+    chat_voz: free
+    video_call: free
+    messenger_integrat: free
+    screen_share: free
+    file_share: free
+    client_multi: free
+    criptare_e2e: 'no'
+    selfhost: 'no'
+    boturi: free
+    open_source: 'no'
+- id: wechat
+  name: WeChat
+  developer: Tencent
+  category: communication
+  license: commercial
+  price: free
+  description: Aplicație de mesagerie cu chat, apeluri, mini-programele și plăți integrate.
+  popularity: 580
+  platforms: [windows, macos, linux, android, web]
+  tags: [mesagerie, asia, plati]
+  alternatives: [telegram, signal, whatsapp, viber]
+  file_formats: []
+  first_release_year: 2011
+  website: https://www.wechat.com/
+  wikidata_qid: Q283233
+  features:
+    chat_texte: free
+    chat_voz: free
+    video_call: free
+    messenger_integrat: free
+    screen_share: free
+    file_share: free
+    client_multi: free
+    criptare_e2e: 'no'
+    selfhost: 'no'
+    boturi: free
+    open_source: 'no'
+# --- grafică (era 18) ------------------------------------------------
+- id: coreldraw
+  name: CorelDRAW
+  developer: Corel
+  category: graphics
+  license: commercial
+  price: paid
+  description: Suita grafică vectorială pentru ilustrație, layout și tipografie profesională.
+  popularity: 820
+  platforms: [windows, macos]
+  tags: [vectorial, design, ilustratie]
+  alternatives: [inkscape, illustrator, affinity, gimp]
+  file_formats: [svg, ai, cdr, pdf, eps]
+  first_release_year: 1989
+  website: https://www.corel.com/
+  wikidata_qid: Q142371
+  features:
+    raster_editare: partial
+    vector_editare: free
+    foto_ajustare: 'no'
+    raw: 'no'
+    straturi: free
+    filtre: free
+    retusare: 'no'
+    color_management: free
+    plug_in_uri: paid
+    export_formate: free
+    batch: partial
+    open_source: 'no'
+- id: paint-net
+  name: Paint.NET
+  developer: dotPDN
+  category: graphics
+  license: commercial
+  price: paid
+  description: Editor de imagini raster pentru Windows, cu extensii și strat transparent.
+  popularity: 1160
+  platforms: [windows]
+  tags: [raster, editare, extensii]
+  alternatives: [gimp, pinta, mypaint, krita]
+  file_formats: [png, jpg, bmp, tiff]
+  first_release_year: 2004
+  website: https://www.getpaint.net/
+  wikidata_qid: Q827328
+  features:
+    raster_editare: free
+    vector_editare: 'no'
+    foto_ajustare: free
+    raw: partial
+    straturi: free
+    filtre: free
+    retusare: partial
+    color_management: 'no'
+    plug_in_uri: free
+    export_formate: free
+    batch: 'no'
+    open_source: 'no'
+- id: opentoonz
+  name: OpenToonz
+  developer: Cloud Innovation Institute
+  category: graphics
+  description: Studio de animație 2D folosit la Ghibli, cu desen, tuș și compoziție.
+  popularity: 1340
+  platforms: [linux, windows, macos]
+  tags: [animatie, desenez, studio]
+  alternatives: [synfig, krita, gimp]
+  file_formats: [png, tiff, svg, otl]
+  first_release_year: 2015
+  website: https://opentoonz.github.io/e/
+  wikidata_qid: Q7824189
+  features:
+    raster_editare: free
+    vector_editare: free
+    foto_ajustare: 'no'
+    raw: 'no'
+    straturi: free
+    filtre: free
+    retusare: 'no'
+    color_management: partial
+    plug_in_uri: 'no'
+    export_formate: free
+    batch: 'no'
+    open_source: free
+- id: tux-paint
+  name: Tux Paint
+  developer: Bill Kendrick și comunitatea Tux Paint
+  category: graphics
+  description: Program de desen pentru copii, cu pensule, forme și efecte simple.
+  popularity: 1660
+  platforms: [linux, windows, macos, android]
+  tags: [desen, copii, educational]
+  alternatives: [pinta, mypaint, paint-net, gwenview]
+  file_formats: [png, jpg, bmp, tiff]
+  first_release_year: 2002
+  website: https://tux4kids.org/
+  wikidata_qid: Q390406
+  features:
+    raster_editare: free
+    vector_editare: 'no'
+    foto_ajustare: 'no'
+    raw: 'no'
+    straturi: 'no'
+    filtre: free
+    retusare: 'no'
+    color_management: 'no'
+    plug_in_uri: 'no'
+    export_formate: free
+    batch: 'no'
+    open_source: free
+# --- video (era 18) --------------------------------------------------
+- id: lightworks
+  name: Lightworks
+  developer: Lightworks
+  category: video
+  license: freemium
+  price: free
+  description: Editor video profesional cu editare rapidă, tăiere pe roluri și export pe hardware.
+  popularity: 880
+  platforms: [windows, macos, linux]
+  tags: [video, editare, profesional]
+  alternatives: [kdenlive, davinci, shotcut, openshot]
+  file_formats: [mp4, mov, mkv, mxf]
+  first_release_year: 1998
+  website: https://www.lightworks.com/
+  wikidata_qid: Q1029201
+  features:
+    timeline: free
+    cut_trim: free
+    keyframes: free
+    tranzitii: free
+    filtre: free
+    subtitrari: paid
+    stabilizare: free
+    audio_avansat: free
+    gpu: free
+    export_formate: free
+    open_source: 'no'
+- id: vegas-pro
+  name: Vegas Pro
+  developer: Sony
+  category: video
+  license: commercial
+  price: paid
+  description: Editor video pentru producție audiovizuală, cu piste multiple și editare proxy.
+  popularity: 720
+  platforms: [windows]
+  tags: [video, editare, post-productie]
+  alternatives: [davinci, premiere, lightworks, kdenlive]
+  file_formats: [mp4, mov, mkv, avchd]
+  first_release_year: 2007
+  website: https://www.vegaspost.com/
+  wikidata_qid: Q28969703
+  features:
+    timeline: free
+    cut_trim: free
+    keyframes: free
+    tranzitii: free
+    filtre: free
+    subtitrari: free
+    stabilizare: free
+    audio_avansat: free
+    gpu: free
+    export_formate: free
+    open_source: 'no'
+- id: final-cut-pro
+  name: Final Cut Pro
+  developer: Apple
+  category: video
+  license: commercial
+  price: paid
+  description: Editor video pentru Mac, cu timeline magnetic, magnetic timeline și efecte.
+  popularity: 700
+  platforms: [macos]
+  tags: [video, editare, macos]
+  alternatives: [davinci, premiere, vegas-pro, lightworks]
+  file_formats: [mp4, mov, mxf]
+  first_release_year: 1999
+  website: https://www.apple.com/final-cut-pro/
+  wikidata_qid: Q9587
+  features:
+    timeline: free
+    cut_trim: free
+    keyframes: free
+    tranzitii: free
+    filtre: free
+    subtitrari: free
+    stabilizare: free
+    audio_avansat: free
+    gpu: free
+    export_formate: free
+    open_source: 'no'
+- id: virtualdub
+  name: VirtualDub
+  developer: Avery Lee
+  category: video
+  description: "Utilitar clasic de captură și prelucrare video: tăiere, conversie și filtrare."
+  popularity: 1720
+  platforms: [windows]
+  tags: [video, utilitar, captura]
+  alternatives: [avidemux, kdenlive, losslesscut]
+  file_formats: [avi, mkv, mp4]
+  first_release_year: 1995
+  website: https://www.virtualdub.org/
+  wikidata_qid: Q960874
+  features:
+    timeline: 'no'
+    cut_trim: free
+    keyframes: 'no'
+    tranzitii: 'no'
+    filtre: free
+    subtitrari: 'no'
+    stabilizare: 'no'
+    audio_avansat: 'no'
+    gpu: 'no'
+    export_formate: partial
+    open_source: free
+# --- audio & playere (era 18) ----------------------------------------
+- id: foobar2000
+  name: foobar2000
+  developer: Marcin Ryl
+  category: audio-players
+  license: commercial
+  price: free
+  description: Player audio foarte configurabil, cu bibliotecă extinsă și suport pentru multe formate.
+  popularity: 960
+  platforms: [windows]
+  tags: [player, audio, extensii]
+  alternatives: [mpv, vlc, audacious, clementine, mediamonkey]
+  file_formats: [mp3, flac, wav, opus, aac]
+  first_release_year: 2001
+  website: https://www.foobar2000.org/
+  wikidata_qid: Q300915
+  features:
+    redare_formate: free
+    lista_redare: free
+    equalizator: free
+    vizualizare: free
+    radio_internet: free
+    conversie_tag: free
+    karaoke: partial
+    disc_burn: 'no'
+    gpu: 'no'
+    extensii: free
+    subtitrari: 'no'
+    open_source: 'no'
+- id: musicbee
+  name: MusicBee
+  developer: Jon Carter
+  category: audio-players
+  license: commercial
+  price: free
+  description: Player și bibliotecă muzicală pentru Windows, cu etichetare și scrobbling.
+  popularity: 1280
+  platforms: [windows]
+  tags: [player, biblioteca, muzica]
+  alternatives: [foobar2000, clementine, strawberry, mediamonkey]
+  file_formats: [mp3, flac, wav, ogg, aac]
+  first_release_year: 2007
+  website: https://getmusicbee.com/
+  wikidata_qid: Q2336742
+  features:
+    redare_formate: free
+    lista_redare: free
+    equalizator: free
+    vizualizare: free
+    radio_internet: free
+    conversie_tag: free
+    karaoke: 'no'
+    disc_burn: 'no'
+    gpu: 'no'
+    extensii: partial
+    subtitrari: 'no'
+    open_source: 'no'
+- id: mediamonkey
+  name: MediaMonkey
+  developer: Don Allman
+  category: audio-players
+  license: commercial
+  price: free
+  description: Player și manager de muzică cu bibliotecă mare, etichetare și conversie automate.
+  popularity: 1180
+  platforms: [windows]
+  tags: [player, biblioteca, conversie]
+  alternatives: [foobar2000, musicbee, audacious]
+  file_formats: [mp3, flac, wav, ogg, wma]
+  first_release_year: 2001
+  website: https://www.mediamonkey.com/
+  wikidata_qid: Q1463867
+  features:
+    redare_formate: free
+    lista_redare: free
+    equalizator: free
+    vizualizare: free
+    radio_internet: free
+    conversie_tag: free
+    karaoke: 'no'
+    disc_burn: partial
+    gpu: 'no'
+    extensii: free
+    subtitrari: 'no'
+    open_source: 'no'
+# --- dezvoltare (era 20) ---------------------------------------------
+- id: notepad-plus-plus
+  name: Notepad++
+  developer: Don Ho
+  category: development
+  description: Editor de text și cod pentru Windows, cu substituire regex și istoric nelimitat.
+  popularity: 1080
+  platforms: [windows]
+  tags: [editor, cod, windows]
+  alternatives: [vscode, vscodium, sublime-text, kate]
+  file_formats: []
+  first_release_year: 2003
+  website: https://notepad-plus-plus.org/
+  wikidata_qid: Q2033
+  features:
+    completare_cod: partial
+    lsp: 'no'
+    refactorizare: 'no'
+    debugger: 'no'
+    linter: 'no'
+    formatare: 'no'
+    git: 'no'
+    compilare: 'no'
+    testare: 'no'
+    terminal: 'no'
+    extensii: free
+    open_source: free
+- id: godot
+  name: Godot
+  developer: Godot Engine contributors
+  category: development
+  description: Motor de joc open source, cu editor 2D și 3D și export pe zeci de platforme.
+  popularity: 620
+  platforms: [linux, windows, macos, web, android]
+  tags: [motor joc, gamedev, 2d, 3d]
+  alternatives: [blender, sublime-text, kdevelop]
+  file_formats: [godot, glb, obj, png]
+  first_release_year: 2014
+  website: https://godotengine.org/
+  wikidata_qid: Q16972633
+  features:
+    completare_cod: free
+    lsp: 'no'
+    refactorizare: partial
+    debugger: free
+    linter: 'no'
+    formatare: 'no'
+    git: partial
+    compilare: free
+    testare: partial
+    terminal: free
+    extensii: free
+    open_source: free
+- id: monodevelop
+  name: MonoDevelop
+  developer: Xamarin
+  category: development
+  description: Mediu de dezvoltare pentru C# și .NET, cu depanare, teste și suport Xamarin.
+  popularity: 1860
+  platforms: [linux, windows, macos]
+  tags: [ide, csharp, dotnet]
+  alternatives: [vscode, kdevelop, qtcreator, lazarus]
+  file_formats: []
+  first_release_year: 2004
+  website: https://www.monodevelop.com/
+  wikidata_qid: Q764454
+  features:
+    completare_cod: free
+    lsp: 'no'
+    refactorizare: free
+    debugger: free
+    linter: free
+    formatare: free
+    git: free
+    compilare: free
+    testare: free
+    terminal: 'no'
+    extensii: free
+    open_source: free

@@ -1,0 +1,61 @@
+# Ableton Live — Platformă de producție muzicală cu sesiuni, dispozitive și editare audio.
+id: ableton-live
+popularity: 720
+name: Ableton Live
+description: Platformă de producție muzicală cu sesiuni, dispozitive și editare audio.
+category: audio-production
+license: commercial
+price: paid
+developer: Ableton
+website: https://www.ableton.com/en/live/
+platforms:
+- windows
+- macos
+tags:
+- daw
+- muzica
+- live
+alternatives:
+- fl-studio
+- lmms
+- reason
+- pro-tools
+- cakewalk-sonar
+details:
+  install_size_mb: 0
+  first_release_year: 2001
+  file_formats:
+  - wav
+  - flac
+  - aiff
+  - mp3
+  telemetry: none
+  romanian_language: false
+features:
+  inregistrare: free
+  editare_audio: free
+  efecte: free
+  midi: free
+  partitura: 'no'
+  instrumente_virtuale: paid
+  biblioteaca_sonor: paid
+  spectru: free
+  mixaj: paid
+  export: free
+  pluginuri: paid
+  open_source: 'no'
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://www.ableton.com/en/live/
+- https://www.wikidata.org/wiki/Q322400
+- https://beta-ableton.imgix.net/media/fe1omm2e/live-13-1200x630-4.jpg
+- https://commons.wikimedia.org/wiki/File:Ableton_Live_Logo.svg
+confidence:
+  alternatives: manual
+screenshot: screenshots/ableton-live.jpg
+logo: logos/ableton-live.png

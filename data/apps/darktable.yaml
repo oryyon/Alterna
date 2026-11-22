@@ -29,7 +29,7 @@ details:
 
 indicators:
   popcon_rank: 9392
-  stars: 13486
+  stars: 13489
   stars_url: https://github.com/darktable-org/darktable
   latest_release: "2026-11"
   in_ubuntu_repos: true
@@ -38,6 +38,7 @@ sources:
 - https://www.darktable.org
 - https://github.com/darktable-org/darktable
 - https://github.com/darktable-org/darktable/blob/HEAD/https%3A//user-images.githubusercontent.com/45535283/148689197-e53dd75f-32f1-4297-9a0f-a9547fd4e7c7.jpg
+- https://commons.wikimedia.org/wiki/File:Darktable_icon.svg
 logo: logos/darktable.png
 confidence:
   details.install_size_mb: auto

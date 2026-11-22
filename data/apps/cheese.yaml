@@ -1,6 +1,6 @@
 # Cheese — Aplicare pentru foto și înregistrare video cu camera web.
 id: cheese
-popularity: 2020
+popularity: 2380
 name: Cheese
 description: Aplicare pentru foto și înregistrare video cu camera web.
 category: streaming
@@ -38,6 +38,7 @@ sources:
 - https://apps.gnome.org/Cheese/
 - https://git.gnome.org/GNOME/cheese/
 - https://www.wikidata.org/wiki/Q673698
+- https://commons.wikimedia.org/wiki/File:Cheese_%28Gnome%29.svg
 confidence:
   alternatives: manual
 features:
@@ -50,3 +51,4 @@ features:
   biblioteca_media: 'no'
   scene: 'no'
   open_source: free
+logo: logos/cheese.png

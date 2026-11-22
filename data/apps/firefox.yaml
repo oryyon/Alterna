@@ -22,7 +22,10 @@ alternatives:
 - konqueror
 - opera
 - tor-browser
-
+- pale-moon
+- seamonkey
+- vivaldi
+- waterfox
 details:
   install_size_mb: 250
   first_release_year: 2004
@@ -32,7 +35,7 @@ details:
 
 indicators:
   popcon_rank: 7041
-  stars: 13896
+  stars: 13895
   stars_url: https://github.com/mozilla-firefox/firefox
   latest_release: "2026-11"
   in_ubuntu_repos: true

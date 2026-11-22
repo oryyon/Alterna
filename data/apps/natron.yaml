@@ -1,6 +1,6 @@
 # Natron — Compozitor de efecte vizuale cu noduri, pentru film și animație.
 id: natron
-popularity: 1740
+popularity: 2050
 name: Natron
 description: Compozitor de efecte vizuale cu noduri, pentru film și animație.
 category: 3d-cad
@@ -8,6 +8,7 @@ license: foss
 price: free
 developer: Natron GitHub community
 website: https://natrongithub.github.io/
+snap: natron
 platforms:
 - linux
 - windows
@@ -41,6 +42,7 @@ sources:
 - https://github.com/NatronGitHub/Natron
 - https://www.wikidata.org/wiki/Q20707858
 - https://natrongithub.github.io/img/natron-screenshot.png
+- https://commons.wikimedia.org/wiki/File:Natron_icon.svg
 confidence:
   license: auto
   alternatives: manual
@@ -56,3 +58,4 @@ features:
   parametrice: 'no'
   open_source: free
 screenshot: screenshots/natron.jpg
+logo: logos/natron.png

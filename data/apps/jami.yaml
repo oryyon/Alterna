@@ -1,6 +1,6 @@
 # Jami — Mesagerie și conferințe peer-to-peer, fără server central.
 id: jami
-popularity: 1650
+popularity: 1940
 name: Jami
 description: Mesagerie și conferințe peer-to-peer, fără server central.
 category: communication
@@ -38,6 +38,7 @@ sources:
 - https://git.jami.net/
 - https://www.wikidata.org/wiki/Q3459508
 - https://jami.net/content/images/2026/11/Screenshot-2026-11-17-at-14-24-21-The-World-Wide-Web-project.png
+- https://commons.wikimedia.org/wiki/File:Jami-logo-gnu-package.svg
 confidence:
   details.install_size_mb: auto
   alternatives: manual
@@ -54,3 +55,4 @@ features:
   boturi: 'no'
   open_source: free
 screenshot: screenshots/jami.jpg
+logo: logos/jami.png

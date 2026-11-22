@@ -21,6 +21,8 @@ alternatives:
 - darktable
 - synfig
 - pencil2d
+- opentoonz
+- paint-net
 details:
   install_size_mb: 867
   first_release_year: 2005

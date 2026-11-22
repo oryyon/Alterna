@@ -1,6 +1,6 @@
 # Standard Notes — notițe criptate cap-la-cap
 id: standard-notes
-popularity: 940
+popularity: 1070
 name: Standard Notes
 description: Notițe criptate cap-la-cap, sincronizate, open source.
 category: notes
@@ -34,6 +34,7 @@ indicators:
 sources:
 - https://standardnotes.com
 - https://github.com/standardnotes/app
+- https://commons.wikimedia.org/wiki/File:Standard_Notes_-_Icon.png
 logo: logos/standard-notes.png
 confidence:
   alternatives: manual

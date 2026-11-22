@@ -1,6 +1,6 @@
 # Audacious — Player de muzică ușor, cu skinuri și efecte.
 id: audacious
-popularity: 1540
+popularity: 1810
 name: Audacious
 description: Player de muzică ușor, cu skinuri și efecte.
 category: audio-players
@@ -20,6 +20,8 @@ tags:
 alternatives:
 - cmus
 - lollypop
+- foobar2000
+- mediamonkey
 details:
   install_size_mb: 504
   first_release_year: 2005
@@ -31,7 +33,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank: 6503
-  stars: 1311
+  stars: 1313
   stars_url: https://github.com/audacious-media-player/audacious
   latest_release: 2026-10
   in_ubuntu_repos: true
@@ -40,6 +42,7 @@ sources:
 - https://github.com/audacious-media-player/audacious
 - https://www.wikidata.org/wiki/Q758685
 - https://commons.wikimedia.org/wiki/File:Audacious_4.5_screenshot.webp
+- https://commons.wikimedia.org/wiki/File:Audacious-2.4-logo.svg
 confidence:
   details.first_release_year: auto
   details.install_size_mb: auto
@@ -58,3 +61,4 @@ features:
   extensii: free
   subtitrari: 'no'
   open_source: free
+logo: logos/audacious.png

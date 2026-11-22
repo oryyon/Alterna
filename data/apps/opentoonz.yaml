@@ -1,0 +1,63 @@
+# OpenToonz — Studio de animație 2D folosit la Ghibli, cu desen, tuș și compoziție.
+id: opentoonz
+popularity: 1600
+name: OpenToonz
+description: Studio de animație 2D folosit la Ghibli, cu desen, tuș și compoziție.
+category: graphics
+license: foss
+price: free
+developer: Cloud Innovation Institute
+website: https://opentoonz.github.io/e/
+snap: opentoonz
+platforms:
+- linux
+- windows
+- macos
+tags:
+- animatie
+- desenez
+- studio
+alternatives:
+- synfig
+- krita
+- gimp
+details:
+  install_size_mb: 0
+  first_release_year: 2016
+  file_formats:
+  - png
+  - tiff
+  - svg
+  - otl
+  telemetry: none
+  romanian_language: false
+features:
+  raster_editare: free
+  vector_editare: free
+  foto_ajustare: 'no'
+  raw: 'no'
+  straturi: free
+  filtre: free
+  retusare: 'no'
+  color_management: partial
+  plug_in_uri: 'no'
+  export_formate: free
+  batch: 'no'
+  open_source: free
+indicators:
+  popcon_rank:
+  stars:
+  stars_url: https://github.com/opentoonz/opentoonz
+  latest_release: 2026-11
+  in_ubuntu_repos: false
+sources:
+- https://opentoonz.github.io/e/
+- https://github.com/opentoonz/opentoonz
+- https://www.wikidata.org/wiki/Q7824189
+- https://opentoonz.github.io/e/img/ogp_e.jpg
+- https://commons.wikimedia.org/wiki/File:OpenToonz_logo.svg
+confidence:
+  details.first_release_year: auto
+  alternatives: manual
+screenshot: screenshots/opentoonz.jpg
+logo: logos/opentoonz.png

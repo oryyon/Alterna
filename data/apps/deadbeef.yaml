@@ -1,6 +1,6 @@
 # DeaDBeeF — player audio modular, foarte ușor
 id: deadbeef
-popularity: 660
+popularity: 690
 name: DeaDBeeF
 description: Player audio modular și foarte ușor, pentru melomani.
 category: audio-players
@@ -31,6 +31,7 @@ sources:
 - https://deadbeef.sourceforge.io
 - https://github.com/DeaDBeeF-Player/deadbeef
 - https://deadbeef.sourceforge.io/title_screenshot.png
+- https://commons.wikimedia.org/wiki/File:DeadbeefLOGO.png
 logo: logos/deadbeef.png
 confidence:
   details.romanian_language: manual

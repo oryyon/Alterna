@@ -1,6 +1,6 @@
 # Thonny — Mediu simplu pentru Python, ideal pentru începători.
 id: thonny
-popularity: 2530
+popularity: 2910
 name: Thonny
 description: Mediu simplu pentru Python, ideal pentru începători.
 category: development
@@ -37,6 +37,7 @@ sources:
 - https://github.com/thonny/thonny
 - https://www.wikidata.org/wiki/Q22909401
 - https://commons.wikimedia.org/wiki/File:Thonny2_0_screenshot_windows_10.png
+- https://commons.wikimedia.org/wiki/File:Thonny_logo.png
 confidence:
   license: auto
   details.install_size_mb: auto
@@ -55,3 +56,4 @@ features:
   terminal: free
   extensii: 'no'
   open_source: free
+logo: logos/thonny.png

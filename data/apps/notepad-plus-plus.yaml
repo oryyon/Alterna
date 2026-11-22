@@ -1,0 +1,56 @@
+# Notepad++ — Editor de text și cod pentru Windows, cu substituire regex și istoric nelimitat.
+id: notepad-plus-plus
+popularity: 1240
+name: Notepad++
+description: Editor de text și cod pentru Windows, cu substituire regex și istoric nelimitat.
+category: development
+license: foss
+price: free
+developer: Don Ho
+website: https://notepad-plus-plus.org/
+snap: notepad-plus-plus
+platforms:
+- windows
+tags:
+- editor
+- cod
+- windows
+alternatives:
+- vscode
+- vscodium
+- sublime-text
+- kate
+details:
+  install_size_mb: 0
+  first_release_year: 2003
+  file_formats: []
+  telemetry: none
+  romanian_language: false
+features:
+  completare_cod: partial
+  lsp: 'no'
+  refactorizare: 'no'
+  debugger: 'no'
+  linter: 'no'
+  formatare: 'no'
+  git: 'no'
+  compilare: 'no'
+  testare: 'no'
+  terminal: 'no'
+  extensii: free
+  open_source: free
+indicators:
+  popcon_rank:
+  stars:
+  stars_url: https://github.com/notepad-plus-plus/notepad-plus-plus
+  latest_release: 2026-11
+  in_ubuntu_repos: false
+sources:
+- https://notepad-plus-plus.org/
+- https://github.com/notepad-plus-plus/notepad-plus-plus
+- https://www.wikidata.org/wiki/Q2033
+- https://commons.wikimedia.org/wiki/File:Notepad%2B%2B_Logo.svg
+confidence:
+  details.first_release_year: auto
+  alternatives: manual
+logo: logos/notepad-plus-plus.png

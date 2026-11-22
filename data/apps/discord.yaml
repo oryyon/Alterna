@@ -18,7 +18,8 @@ alternatives:
 - telegram
 - mumble
 - slack
-
+- microsoft-teams
+- zulip
 details:
   install_size_mb: 400
   first_release_year: 2015

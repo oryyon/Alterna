@@ -1,0 +1,61 @@
+# Zulip — Chat de echipă cu subiecte, fire de discuție și instalare pe server propriu.
+id: zulip
+popularity: 1270
+name: Zulip
+description: Chat de echipă cu subiecte, fire de discuție și instalare pe server propriu.
+category: communication
+license: foss
+price: free
+developer: Zulip, Inc.
+website: https://zulip.com/
+snap: zulip
+platforms:
+- linux
+- windows
+- macos
+- web
+- android
+tags:
+- chat
+- echipa
+- selfhost
+- subiecte
+alternatives:
+- slack
+- mattermost
+- rocket-chat
+- discord
+- microsoft-teams
+details:
+  install_size_mb: 0
+  first_release_year: 2012
+  file_formats: []
+  telemetry: none
+  romanian_language: false
+features:
+  chat_texte: free
+  chat_voz: 'no'
+  video_call: partial
+  messenger_integrat: free
+  screen_share: free
+  file_share: free
+  client_multi: free
+  criptare_e2e: 'no'
+  selfhost: free
+  boturi: free
+  open_source: free
+indicators:
+  popcon_rank:
+  stars:
+  stars_url: https://github.com/zulip/zulip
+  latest_release: 2026-11
+  in_ubuntu_repos: false
+sources:
+- https://zulip.com/
+- https://github.com/zulip/zulip
+- https://www.wikidata.org/wiki/Q23680052
+confidence:
+  details.first_release_year: auto
+  license: auto
+  alternatives: manual
+logo: logos/zulip.svg

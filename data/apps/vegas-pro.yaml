@@ -1,0 +1,58 @@
+# Vegas Pro — Editor video pentru producție audiovizuală, cu piste multiple și editare proxy.
+id: vegas-pro
+popularity: 780
+name: Vegas Pro
+description: Editor video pentru producție audiovizuală, cu piste multiple și editare proxy.
+category: video
+license: commercial
+price: paid
+developer: Sony
+website: https://www.vegaspost.com/
+platforms:
+- windows
+tags:
+- video
+- editare
+- post-productie
+alternatives:
+- davinci
+- premiere
+- lightworks
+- kdenlive
+- final-cut-pro
+details:
+  install_size_mb: 0
+  first_release_year: 1999
+  file_formats:
+  - mp4
+  - mov
+  - mkv
+  - avchd
+  telemetry: none
+  romanian_language: false
+features:
+  timeline: free
+  cut_trim: free
+  keyframes: free
+  tranzitii: free
+  filtre: free
+  subtitrari: free
+  stabilizare: free
+  audio_avansat: free
+  gpu: free
+  export_formate: free
+  open_source: 'no'
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://www.vegaspost.com/
+- https://www.wikidata.org/wiki/Q28969703
+- https://commons.wikimedia.org/wiki/File:Logo_Vegas_Pro.svg
+confidence:
+  details.first_release_year: auto
+  alternatives: manual
+logo: logos/vegas-pro.png

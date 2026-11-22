@@ -1,0 +1,59 @@
+# Reason — Platformă de producție muzicală cu instrumente virtuale conectate prin cabluri.
+id: reason
+popularity: 1300
+name: Reason
+description: Platformă de producție muzicală cu instrumente virtuale conectate prin cabluri.
+category: audio-production
+license: commercial
+price: paid
+developer: Reason Studios
+website: https://www.reasonstudios.com/
+platforms:
+- windows
+- macos
+tags:
+- daw
+- muzica
+- instrumentatie
+alternatives:
+- ableton-live
+- lmms
+- fl-studio
+details:
+  install_size_mb: 0
+  first_release_year: 1994
+  file_formats:
+  - wav
+  - flac
+  - aiff
+  - mp3
+  telemetry: none
+  romanian_language: false
+features:
+  inregistrare: free
+  editare_audio: free
+  efecte: free
+  midi: free
+  partitura: partial
+  instrumente_virtuale: paid
+  biblioteaca_sonor: paid
+  spectru: free
+  mixaj: paid
+  export: free
+  pluginuri: paid
+  open_source: 'no'
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://www.reasonstudios.com/
+- https://www.wikidata.org/wiki/Q1333703
+- https://www.reasonstudios.com/images/new-in-14/og-Reason-14-hero.png
+confidence:
+  details.first_release_year: auto
+  alternatives: manual
+logo: logos/reason.svg
+screenshot: screenshots/reason.jpg

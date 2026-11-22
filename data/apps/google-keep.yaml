@@ -1,0 +1,57 @@
+# Google Keep — Notițe rapide cu culori și liste de sarcini, sincronizate cu contul Google.
+id: google-keep
+popularity: 940
+name: Google Keep
+description: Notițe rapide cu culori și liste de sarcini, sincronizate cu contul Google.
+category: notes
+license: commercial
+price: free
+developer: Google
+website: https://keep.google.com/
+platforms:
+- android
+- web
+tags:
+- notite
+- sarcini
+- google
+alternatives:
+- simplenote
+- evernote
+- onenote
+details:
+  install_size_mb: 0
+  first_release_year: 2013
+  file_formats:
+  - html
+  - json
+  telemetry: none
+  romanian_language: false
+features:
+  notite_text: free
+  notite_rich: partial
+  markdown: 'no'
+  arbore: free
+  wiki: 'no'
+  baza_date: 'no'
+  atasamente: free
+  offline: free
+  sincronizare: free
+  export_formate: partial
+  scrise_gata: free
+  open_source: 'no'
+indicators:
+  popcon_rank:
+  stars:
+  stars_url: https://github.com/googleworkspace
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://keep.google.com/
+- https://github.com/googleworkspace
+- https://www.wikidata.org/wiki/Q7854718
+- https://commons.wikimedia.org/wiki/File:Google_Keep_Logo_05.2026.svg
+confidence:
+  details.first_release_year: auto
+  alternatives: manual
+logo: logos/google-keep.png

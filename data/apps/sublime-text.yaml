@@ -12,7 +12,11 @@ website: https://www.sublimetext.com
 snap: sublime-text
 platforms: [linux, windows, macos]
 tags: [editor, cod]
-alternatives: [vscode, kate]
+alternatives:
+- vscode
+- kate
+- godot
+- notepad-plus-plus
 
 details:
   install_size_mb: 100

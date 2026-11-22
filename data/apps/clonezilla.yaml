@@ -1,6 +1,6 @@
 # Clonezilla — Clonare și restaurare de discuri, cu interfață text.
 id: clonezilla
-popularity: 1580
+popularity: 1860
 name: Clonezilla
 description: Clonare și restaurare de discuri, cu interfață text.
 category: utilities
@@ -25,7 +25,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank: 15724
-  stars: 1036
+  stars: 1037
   stars_url: https://github.com/stevenshiau/clonezilla
   latest_release: 2026-11
   in_ubuntu_repos: true
@@ -34,6 +34,7 @@ sources:
 - https://github.com/stevenshiau/clonezilla
 - https://www.wikidata.org/wiki/Q1102277
 - https://commons.wikimedia.org/wiki/File:Clonezilla.png
+- https://commons.wikimedia.org/wiki/File:Clonezilla.svg
 confidence:
   details.first_release_year: auto
   details.install_size_mb: auto
@@ -53,3 +54,4 @@ features:
   conversie_media: 'no'
   clipboard: 'no'
   open_source: free
+logo: logos/clonezilla.png

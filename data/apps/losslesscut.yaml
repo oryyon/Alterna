@@ -1,6 +1,6 @@
 # LosslessCut — Tăiere rapidă a videoclipurilor, fără re-codare.
 id: losslesscut
-popularity: 1320
+popularity: 1560
 name: LosslessCut
 description: Tăiere rapidă a videoclipurilor, fără re-codare.
 category: video
@@ -21,6 +21,7 @@ alternatives:
 - avidemux
 - shotcut
 - vidcutter
+- virtualdub
 details:
   install_size_mb: 0
   first_release_year: 2016
@@ -32,7 +33,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 46293
+  stars: 46310
   stars_url: https://github.com/mifi/lossless-cut
   latest_release: 2026-10
   in_ubuntu_repos: false

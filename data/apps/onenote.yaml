@@ -1,0 +1,62 @@
+# Microsoft OneNote — Notițe Microsoft cu organizare în caiete și pagini, pentru birou și școală.
+id: onenote
+popularity: 1040
+name: Microsoft OneNote
+description: Notițe Microsoft cu organizare în caiete și pagini, pentru birou și școală.
+category: notes
+license: freemium
+price: free
+developer: Microsoft
+website: https://www.microsoft.com/microsoft-365/onenote/digital-note-taking-app
+platforms:
+- windows
+- macos
+- android
+- web
+tags:
+- notite
+- birou
+- caiete
+alternatives:
+- evernote
+- notion
+- obsidian
+- google-keep
+details:
+  install_size_mb: 0
+  first_release_year: 2003
+  file_formats:
+  - onepkg
+  - pdf
+  - html
+  telemetry: none
+  romanian_language: false
+features:
+  notite_text: free
+  notite_rich: free
+  markdown: 'no'
+  arbore: free
+  wiki: 'no'
+  baza_date: free
+  atasamente: free
+  offline: free
+  sincronizare: free
+  export_formate: free
+  scrise_gata: free
+  open_source: 'no'
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://www.microsoft.com/microsoft-365/onenote/digital-note-taking-app
+- https://www.wikidata.org/wiki/Q706480
+- https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/79900_m365_vertical%20accordian-01-option2-800x513?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=1664&hei=1062&qlt=100&fmt=png-alpha&fit=constrain
+- https://commons.wikimedia.org/wiki/File:Microsoft_OneNote_Icon_%282025_-_present%29.svg
+confidence:
+  details.first_release_year: auto
+  alternatives: manual
+screenshot: screenshots/onenote.jpg
+logo: logos/onenote.png

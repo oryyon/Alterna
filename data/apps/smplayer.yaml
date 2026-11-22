@@ -1,6 +1,6 @@
 # smplayer — player video ușor, cu subtitrare
 id: smplayer
-popularity: 710
+popularity: 760
 name: SMPlayer
 description: Player video ușor, cu subtitrare și suport pentru multe formate.
 category: audio-players
@@ -17,7 +17,7 @@ alternatives:
 - mpv
 - celluloid
 details:
-  install_size_mb: 0
+  install_size_mb: 555
   first_release_year: 0
   file_formats: ["orice suportă FFmpeg"]
   telemetry: none
@@ -40,6 +40,7 @@ confidence:
   indicators.stars: auto
   indicators.stars_url: auto
   indicators.latest_release: auto
+  details.install_size_mb: auto
 package: smplayer
 snap: smplayer
 features:

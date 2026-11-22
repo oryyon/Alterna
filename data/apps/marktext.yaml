@@ -1,6 +1,6 @@
 # MarkText — Editor Markdown cu previzualizare în timp real.
 id: marktext
-popularity: 1260
+popularity: 1480
 name: MarkText
 description: Editor Markdown cu previzualizare în timp real.
 category: notes
@@ -20,6 +20,7 @@ tags:
 alternatives:
 - zettlr
 - obsidian
+- hedgedoc
 details:
   install_size_mb: 0
   first_release_year: 2015

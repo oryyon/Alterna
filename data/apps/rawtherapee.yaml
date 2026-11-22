@@ -1,6 +1,6 @@
 # RawTherapee — Dezvoltator de imagini RAW, cu procesare non-distructivă.
 id: rawtherapee
-popularity: 980
+popularity: 1130
 name: RawTherapee
 description: Dezvoltator de imagini RAW, cu procesare non-distructivă.
 category: graphics
@@ -39,6 +39,7 @@ sources:
 - https://github.com/RawTherapee/RawTherapee
 - https://www.wikidata.org/wiki/Q568370
 - https://commons.wikimedia.org/wiki/File:Rt_setm_hdr_dng_1.jpg
+- https://commons.wikimedia.org/wiki/File:RawTherapee_logo-text-black.svg
 confidence:
   details.install_size_mb: auto
   alternatives: manual
@@ -56,3 +57,4 @@ features:
   export_formate: free
   batch: free
   open_source: free
+logo: logos/rawtherapee.png

@@ -1,0 +1,66 @@
+# Godot — Motor de joc open source, cu editor 2D și 3D și export pe zeci de platforme.
+id: godot
+popularity: 630
+name: Godot
+description: Motor de joc open source, cu editor 2D și 3D și export pe zeci de platforme.
+category: development
+license: foss
+price: free
+developer: Godot Engine contributors
+website: https://godotengine.org/
+snap: godot
+platforms:
+- linux
+- windows
+- macos
+- web
+- android
+tags:
+- motor joc
+- gamedev
+- 2d
+- 3d
+alternatives:
+- blender
+- sublime-text
+- kdevelop
+details:
+  install_size_mb: 0
+  first_release_year: 2007
+  file_formats:
+  - godot
+  - glb
+  - obj
+  - png
+  telemetry: none
+  romanian_language: false
+features:
+  completare_cod: free
+  lsp: 'no'
+  refactorizare: partial
+  debugger: free
+  linter: 'no'
+  formatare: 'no'
+  git: partial
+  compilare: free
+  testare: partial
+  terminal: free
+  extensii: free
+  open_source: free
+indicators:
+  popcon_rank:
+  stars: 120572
+  stars_url: https://github.com/godotengine/godot
+  latest_release: 2026-08
+  in_ubuntu_repos: false
+sources:
+- https://godotengine.org/
+- https://github.com/godotengine/godot
+- https://www.wikidata.org/wiki/Q16972633
+- https://godotengine.org/assets/home/features/3d.webp
+- https://commons.wikimedia.org/wiki/File:Godot_logo.svg
+confidence:
+  details.first_release_year: auto
+  alternatives: manual
+screenshot: screenshots/godot.jpg
+logo: logos/godot.png

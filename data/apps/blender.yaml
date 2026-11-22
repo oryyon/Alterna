@@ -20,6 +20,7 @@ alternatives:
 - meshlab
 - natron
 - wings3d
+- godot
 details:
   install_size_mb: 938
   first_release_year: 1998
@@ -29,7 +30,7 @@ details:
 
 indicators:
   popcon_rank: 7240
-  stars: 22300
+  stars: 22322
   stars_url: https://github.com/blender/blender
   latest_release: "2026-11"
   in_ubuntu_repos: true

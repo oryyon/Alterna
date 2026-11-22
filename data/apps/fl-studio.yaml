@@ -1,6 +1,6 @@
 # FL Studio — DAW popular pentru producție electronică
 id: fl-studio
-popularity: 860
+popularity: 960
 name: FL Studio
 description: DAW popular pentru producție electronică, cu actualizări pe viață la achiziție.
 category: audio-production
@@ -11,7 +11,11 @@ website: https://www.image-line.com
 
 platforms: [windows, macos]
 tags: [daw, beatmaking, productie]
-alternatives: [lmms, ardour]
+alternatives:
+- lmms
+- ardour
+- ableton-live
+- reason
 
 details:
   install_size_mb: 1000
@@ -30,6 +34,7 @@ indicators:
 sources:
 - https://www.image-line.com
 - https://www.image-line.com/static/assets/fl-studio-og-image.ace8e42.jpg
+- https://commons.wikimedia.org/wiki/File:FL_Studio_Logo_Wordmark.svg
 logo: logos/fl-studio.png
 confidence:
   alternatives: manual

@@ -19,6 +19,7 @@ alternatives:
 - smplayer
 - celluloid
 - totem
+- foobar2000
 details:
   install_size_mb: 482
   first_release_year: 2013

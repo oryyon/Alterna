@@ -1,0 +1,57 @@
+# SeaMonkey — Suită internet cu browser, client de e-mail, editor HTML și client IRC.
+id: seamonkey
+popularity: 2080
+name: SeaMonkey
+description: Suită internet cu browser, client de e-mail, editor HTML și client IRC.
+category: internet
+license: foss
+price: free
+developer: Mozilla
+website: https://www.seamonkey-project.org/
+platforms:
+- linux
+- windows
+- macos
+tags:
+- browser
+- email
+- irc
+- suită
+alternatives:
+- firefox
+- netsurf
+- lynx
+- waterfox
+details:
+  install_size_mb: 0
+  first_release_year: 2006
+  file_formats: []
+  telemetry: none
+  romanian_language: false
+features:
+  browsere: free
+  client_torrent: 'no'
+  client_email: free
+  client_ftp: 'no'
+  client_terminal: 'no'
+  descarcare: free
+  ad_block: partial
+  gestionare_ordonator: free
+  vpn: 'no'
+  motor_rendering: free
+  open_source: free
+indicators:
+  popcon_rank:
+  stars:
+  stars_url: https://hg.mozilla.org/comm-central/
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://www.seamonkey-project.org/
+- https://hg.mozilla.org/comm-central/
+- https://www.wikidata.org/wiki/Q156197
+- https://commons.wikimedia.org/wiki/File:Seamonkey_Suite_Logo.png
+confidence:
+  details.first_release_year: auto
+  alternatives: manual
+logo: logos/seamonkey.png

@@ -18,7 +18,8 @@ alternatives:
 - logseq
 - anytype
 - appflowy
-
+- evernote
+- onenote
 details:
   install_size_mb: 400
   first_release_year: 2016

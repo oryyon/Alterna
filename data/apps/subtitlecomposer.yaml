@@ -1,6 +1,6 @@
 # Subtitle Composer — Editor de subtitrări cu sincronizare automată și stiluri.
 id: subtitlecomposer
-popularity: 2210
+popularity: 2590
 name: Subtitle Composer
 description: Editor de subtitrări cu sincronizare automată și stiluri.
 category: video
@@ -38,6 +38,7 @@ sources:
 - https://www.kaidan.org/subtitlecomposer/
 - https://invent.kde.org/multimedia/subtitlecomposer
 - https://www.wikidata.org/wiki/Q111080058
+- https://commons.wikimedia.org/wiki/File:Breezeicons-apps-48-subtitlecomposer.svg
 confidence:
   alternatives: manual
 features:
@@ -52,3 +53,4 @@ features:
   gpu: 'no'
   export_formate: partial
   open_source: free
+logo: logos/subtitlecomposer.png

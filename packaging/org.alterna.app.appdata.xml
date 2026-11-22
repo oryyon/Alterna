@@ -47,6 +47,12 @@
   <update_contact>alterna_AT_github.com</update_contact>
 
   <releases>
+    <release version="0.1.26" date="2026-11-21">
+      <description>
+        <p>Catalogul ajunge la 300 de aplicații; pe site, fișă generată pentru
+        aplicațiile fără captură și export în 5 formate.</p>
+      </description>
+    </release>
     <release version="0.1.25" date="2026-11-21">
       <description>
         <p>Reparat: matricea de funcționalități din tabelul comparativ de pe

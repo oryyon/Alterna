@@ -1,6 +1,6 @@
 # Scribus — Editor de pagini pentru tipografie și desktop publishing.
 id: scribus
-popularity: 2370
+popularity: 2750
 name: Scribus
 description: Editor de pagini pentru tipografie și desktop publishing.
 category: office
@@ -39,6 +39,7 @@ sources:
 - https://www.scribus.net/
 - https://www.wikidata.org/wiki/Q8295
 - https://commons.wikimedia.org/wiki/File:Scribus-1.3-Linux.png
+- https://commons.wikimedia.org/wiki/File:Scribus_logo.svg
 confidence:
   details.first_release_year: auto
   details.install_size_mb: auto
@@ -58,3 +59,4 @@ features:
   contabilitate: 'no'
   biblioteaca: 'no'
   open_source: free
+logo: logos/scribus.png

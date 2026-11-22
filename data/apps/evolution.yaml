@@ -1,6 +1,6 @@
 # Evolution — Client de e-mail și calendar din desktopul GNOME.
 id: evolution
-popularity: 1110
+popularity: 1280
 name: Evolution
 description: Client de e-mail și calendar din desktopul GNOME.
 category: office
@@ -38,6 +38,7 @@ sources:
 - https://git.gnome.org/browse/evolution/
 - https://www.wikidata.org/wiki/Q336251
 - https://commons.wikimedia.org/wiki/File:Evolution_36_mail.png
+- https://commons.wikimedia.org/wiki/File:Evolution_icon_Tango_48px.svg
 confidence:
   details.first_release_year: auto
   details.install_size_mb: auto
@@ -57,3 +58,4 @@ features:
   contabilitate: 'no'
   biblioteaca: 'no'
   open_source: free
+logo: logos/evolution.png

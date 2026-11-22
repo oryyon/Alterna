@@ -1,0 +1,53 @@
+# Cakewalk Sonar — Platformă de producție muzicală cu editare MIDI, instrumente virtuale și mixer detaliat.
+id: cakewalk-sonar
+popularity: 1580
+name: Cakewalk Sonar
+description: Platformă de producție muzicală cu editare MIDI, instrumente virtuale și mixer detaliat.
+category: audio-production
+license: commercial
+price: paid
+developer: BandLab Technologies
+website: https://www.bandlab.com/products/sonar
+platforms:
+- windows
+tags:
+- daw
+- muzica
+- midi
+alternatives:
+- reaper
+- ableton-live
+- pro-tools
+details:
+  install_size_mb: 0
+  first_release_year: 1987
+  file_formats:
+  - wav
+  - mp3
+  - mid
+  telemetry: none
+  romanian_language: false
+features:
+  inregistrare: free
+  editare_audio: free
+  efecte: free
+  midi: free
+  partitura: partial
+  instrumente_virtuale: paid
+  biblioteaca_sonor: paid
+  spectru: free
+  mixaj: free
+  export: free
+  pluginuri: free
+  open_source: 'no'
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://www.bandlab.com/products/sonar
+- https://www.wikidata.org/wiki/Q1350502
+confidence:
+  alternatives: manual

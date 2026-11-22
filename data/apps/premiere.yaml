@@ -11,7 +11,11 @@ website: https://www.adobe.com/products/premiere.html
 
 platforms: [windows, macos]
 tags: [editare video, montaj]
-alternatives: [kdenlive, davinci]
+alternatives:
+- kdenlive
+- davinci
+- final-cut-pro
+- vegas-pro
 
 details:
   install_size_mb: 8000
@@ -29,6 +33,7 @@ indicators:
 
 sources:
 - https://www.adobe.com/products/premiere.html
+- https://commons.wikimedia.org/wiki/File:Adobe_Premiere_Pro_CC_icon.svg
 logo: logos/premiere.png
 confidence:
   alternatives: manual

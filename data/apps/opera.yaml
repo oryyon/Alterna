@@ -12,7 +12,11 @@ website: https://www.opera.com
 snap: opera
 platforms: [linux, windows, macos]
 tags: [browser, vpn]
-alternatives: [chrome, firefox, brave]
+alternatives:
+- chrome
+- firefox
+- brave
+- vivaldi
 
 details:
   install_size_mb: 250

@@ -1,6 +1,6 @@
 # Kazam — înregistrare de ecran simplistă pentru Linux
 id: kazam
-popularity: 800
+popularity: 880
 name: Kazam
 description: Înregistrare de ecran simplistă pentru Linux.
 category: streaming
@@ -35,6 +35,7 @@ indicators:
 
 sources:
 - https://launchpad.net/kazam
+- https://commons.wikimedia.org/wiki/File:KAZAM_Logo.svg
 logo: logos/kazam.png
 confidence:
   details.install_size_mb: auto

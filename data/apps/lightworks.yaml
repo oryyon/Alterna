@@ -1,0 +1,63 @@
+# Lightworks — Editor video profesional cu editare rapidă, tăiere pe roluri și export pe hardware.
+id: lightworks
+popularity: 990
+name: Lightworks
+description: Editor video profesional cu editare rapidă, tăiere pe roluri și export pe hardware.
+category: video
+license: freemium
+price: free
+developer: Lightworks
+website: https://www.lightworks.com/
+platforms:
+- windows
+- macos
+- linux
+tags:
+- video
+- editare
+- profesional
+alternatives:
+- kdenlive
+- davinci
+- shotcut
+- openshot
+- final-cut-pro
+- vegas-pro
+details:
+  install_size_mb: 0
+  first_release_year: 1989
+  file_formats:
+  - mp4
+  - mov
+  - mkv
+  - mxf
+  telemetry: none
+  romanian_language: false
+features:
+  timeline: free
+  cut_trim: free
+  keyframes: free
+  tranzitii: free
+  filtre: free
+  subtitrari: paid
+  stabilizare: free
+  audio_avansat: free
+  gpu: free
+  export_formate: free
+  open_source: 'no'
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://www.lightworks.com/
+- https://www.wikidata.org/wiki/Q1029201
+- https://www.sota.com/images/json_og/home.png
+- https://commons.wikimedia.org/wiki/File:Lightworks_Logo.svg
+confidence:
+  details.first_release_year: auto
+  alternatives: manual
+screenshot: screenshots/lightworks.jpg
+logo: logos/lightworks.png

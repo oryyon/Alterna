@@ -1,6 +1,6 @@
 # EasyTag — Editor de etichete pentru fișiere muzicale.
 id: easytag
-popularity: 1940
+popularity: 2290
 name: EasyTag
 description: Editor de etichete pentru fișiere muzicale.
 category: audio-players
@@ -38,6 +38,7 @@ sources:
 - https://gitlab.gnome.org/GNOME/easytag
 - https://www.wikidata.org/wiki/Q1278359
 - https://commons.wikimedia.org/wiki/File:Easytag_screenshot_2.1.9.png
+- https://commons.wikimedia.org/wiki/File:Easytag_logo_2.1.8.svg
 confidence:
   details.first_release_year: auto
   details.install_size_mb: auto
@@ -58,3 +59,4 @@ features:
   extensii: 'no'
   subtitrari: 'no'
   open_source: free
+logo: logos/easytag.png

@@ -1,6 +1,6 @@
 # REAPER — DAW comercial cu licență accesibilă
 id: reaper
-popularity: 850
+popularity: 950
 name: REAPER
 description: DAW comercial cu licență accesibilă și evaluare completă de 60 de zile.
 category: audio-production
@@ -15,7 +15,10 @@ tags: [daw, inregistrare, mixaj]
 alternatives:
 - ardour
 - bitwig
-
+- cakewalk-sonar
+- garageband
+- pro-tools
+- sound-forge
 details:
   install_size_mb: 30
   first_release_year: 2005

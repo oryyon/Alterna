@@ -24,6 +24,9 @@ alternatives:
 - mypaint
 - pinta
 - rawtherapee
+- coreldraw
+- opentoonz
+- paint-net
 editors_choice: true
 
 details:
@@ -35,7 +38,7 @@ details:
 
 indicators:
   popcon_rank: 1867
-  stars: 6611
+  stars: 6614
   stars_url: https://github.com/GNOME/gimp
   latest_release: "2026-11"
   in_ubuntu_repos: true

@@ -1,6 +1,6 @@
 # Quod Libet — Player de muzică cu etichete și filtrare avansată.
 id: quodlibet
-popularity: 1460
+popularity: 1730
 name: Quod Libet
 description: Player de muzică cu etichete și filtrare avansată.
 category: audio-players
@@ -39,6 +39,7 @@ sources:
 - https://github.com/quodlibet/quodlibet
 - https://www.wikidata.org/wiki/Q1621193
 - https://commons.wikimedia.org/wiki/File:Quodlibet_3.0.png
+- https://commons.wikimedia.org/wiki/File:Quodlibet_logo.svg
 confidence:
   license: auto
   details.install_size_mb: auto
@@ -57,3 +58,4 @@ features:
   extensii: free
   subtitrari: 'no'
   open_source: free
+logo: logos/quodlibet.png

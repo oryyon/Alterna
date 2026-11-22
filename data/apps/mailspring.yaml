@@ -1,6 +1,6 @@
 # Mailspring — Client de e-mail modern, cu unificarea conturilor.
 id: mailspring
-popularity: 2330
+popularity: 2710
 name: Mailspring
 description: Client de e-mail modern, cu unificarea conturilor.
 category: communication
@@ -30,7 +30,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 18020
+  stars: 18019
   stars_url: https://github.com/Foundry376/Mailspring
   latest_release: 2026-11
   in_ubuntu_repos: false

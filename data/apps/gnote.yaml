@@ -1,0 +1,54 @@
+# Gnote — Notițe pentru desktopul GNOME, cu etichete, scurtături și liste de sarcini.
+id: gnote
+popularity: 2510
+name: Gnote
+description: Notițe pentru desktopul GNOME, cu etichete, scurtături și liste de sarcini.
+category: notes
+license: foss
+price: free
+developer: Comunitatea GNOME
+website: https://wiki.gnome.org/Projects/Gnote
+platforms:
+- linux
+tags:
+- notite
+- gnome
+- etichete
+alternatives:
+- cherrytree
+- simplenote
+- joplin
+details:
+  install_size_mb: 0
+  first_release_year: 2009
+  file_formats:
+  - txt
+  - xml
+  telemetry: none
+  romanian_language: false
+features:
+  notite_text: free
+  notite_rich: 'no'
+  markdown: 'no'
+  arbore: free
+  wiki: 'no'
+  baza_date: 'no'
+  atasamente: free
+  offline: free
+  sincronizare: 'no'
+  export_formate: free
+  scrise_gata: partial
+  open_source: free
+indicators:
+  popcon_rank:
+  stars:
+  stars_url: https://git.gnome.org/browse/gnote/
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://wiki.gnome.org/Projects/Gnote
+- https://git.gnome.org/browse/gnote/
+- https://www.wikidata.org/wiki/Q2547971
+confidence:
+  details.first_release_year: auto
+  alternatives: manual

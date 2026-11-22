@@ -1,6 +1,6 @@
 # Deluge — Client de torrent cu interfață web și plugin-uri.
 id: deluge
-popularity: 1430
+popularity: 1700
 name: Deluge
 description: Client de torrent cu interfață web și plugin-uri.
 category: internet
@@ -19,6 +19,7 @@ tags:
 alternatives:
 - qbittorrent
 - transmission
+- aria2
 details:
   install_size_mb: 296
   first_release_year: 2003

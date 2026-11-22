@@ -267,6 +267,22 @@ def construiește_app(seed: dict, ent: dict, etichete: dict) -> dict:
     detalii["romanian_language"] = bool(seed.get("romanian_language", False))
     app["details"] = detalii
 
+    # --- funcționalități (matricea de comparație) -------------------------
+    # Cheile vin din `data/taxonomy/<categorie>.yaml`; validarea le verifică
+    # la build. Valoarea simplă se scrie scalar, iar cu notă se scrie în mapă
+    # (`value` + `note`), exact ca în fișierele existente.
+    features = seed.get("features") or {}
+    if features:
+        app["features"] = {}
+        for cheie, valoare in features.items():
+            if isinstance(valoare, dict):
+                app["features"][cheie] = {
+                    "value": valoare.get("value"),
+                    "note": valoare.get("note"),
+                }
+            else:
+                app["features"][cheie] = valoare
+
     repo = seed.get("repo") or primul(ent, P_REPO) if ent else None
     if isinstance(repo, str) and not repo.startswith("https://"):
         # sursele non-HTTPS nu intră în catalog (linkul apare în interfață)

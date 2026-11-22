@@ -1,6 +1,6 @@
 # Pidgin — Client de chat pentru mai multe rețele, într-o singură fereastră.
 id: pidgin
-popularity: 1770
+popularity: 2090
 name: Pidgin
 description: Client de chat pentru mai multe rețele, într-o singură fereastră.
 category: communication
@@ -18,6 +18,7 @@ tags:
 alternatives:
 - hexchat
 - telegram
+- gajim
 details:
   install_size_mb: 355
   first_release_year: 1998
@@ -35,6 +36,7 @@ sources:
 - https://keep.imfreedom.org/pidgin/pidgin/
 - https://www.wikidata.org/wiki/Q71380
 - https://commons.wikimedia.org/wiki/File:Pidgin_2.10.9.png
+- https://commons.wikimedia.org/wiki/File:Pidgin_Logo.svg
 confidence:
   details.first_release_year: auto
   details.install_size_mb: auto
@@ -52,3 +54,4 @@ features:
   selfhost: 'no'
   boturi: 'no'
   open_source: free
+logo: logos/pidgin.png

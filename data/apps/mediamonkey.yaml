@@ -1,0 +1,55 @@
+# MediaMonkey — Player și manager de muzică cu bibliotecă mare, etichetare și conversie automate.
+id: mediamonkey
+popularity: 1380
+name: MediaMonkey
+description: Player și manager de muzică cu bibliotecă mare, etichetare și conversie automate.
+category: audio-players
+license: commercial
+price: free
+developer: Don Allman
+website: https://www.mediamonkey.com/
+platforms:
+- windows
+tags:
+- player
+- biblioteca
+- conversie
+alternatives:
+- foobar2000
+- musicbee
+- audacious
+details:
+  install_size_mb: 0
+  first_release_year: 2001
+  file_formats:
+  - mp3
+  - flac
+  - wav
+  - ogg
+  - wma
+  telemetry: none
+  romanian_language: false
+features:
+  redare_formate: free
+  lista_redare: free
+  equalizator: free
+  vizualizare: free
+  radio_internet: free
+  conversie_tag: free
+  karaoke: 'no'
+  disc_burn: partial
+  gpu: 'no'
+  extensii: free
+  subtitrari: 'no'
+  open_source: 'no'
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://www.mediamonkey.com/
+- https://www.wikidata.org/wiki/Q1463867
+confidence:
+  alternatives: manual

@@ -1,6 +1,6 @@
 # Rhythmbox — Player de muzică și radio, cu sincronizare pe dispozitive.
 id: rhythmbox
-popularity: 1330
+popularity: 1570
 name: Rhythmbox
 description: Player de muzică și radio, cu sincronizare pe dispozitive.
 category: audio-players
@@ -37,6 +37,7 @@ sources:
 - https://gitlab.gnome.org/GNOME/rhythmbox
 - https://www.wikidata.org/wiki/Q319897
 - https://commons.wikimedia.org/wiki/File:GNOME_Rhythmbox_3.4.4_with_its_preferences.png
+- https://commons.wikimedia.org/wiki/File:Rhythmbox_logo_3.4.4.svg
 confidence:
   details.first_release_year: auto
   details.install_size_mb: auto
@@ -55,3 +56,4 @@ features:
   extensii: partial
   subtitrari: 'no'
   open_source: free
+logo: logos/rhythmbox.png

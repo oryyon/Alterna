@@ -1,6 +1,6 @@
 # HandBrake — Transcodor video pentru conversie între formate.
 id: handbrake
-popularity: 1230
+popularity: 1440
 name: HandBrake
 description: Transcodor video pentru conversie între formate.
 category: video
@@ -31,7 +31,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank: 7377
-  stars: 25083
+  stars: 25091
   stars_url: https://github.com/HandBrake/HandBrake
   latest_release: 2026-06
   in_ubuntu_repos: true
@@ -40,6 +40,7 @@ sources:
 - https://github.com/HandBrake/HandBrake
 - https://www.wikidata.org/wiki/Q607119
 - https://commons.wikimedia.org/wiki/File:HandBrake_Screenshot.png
+- https://commons.wikimedia.org/wiki/File:HandBrake_Icon.png
 confidence:
   details.first_release_year: auto
   details.install_size_mb: auto
@@ -57,3 +58,4 @@ features:
   export_formate: free
   open_source: free
 screenshot: screenshots/handbrake.jpg
+logo: logos/handbrake.png

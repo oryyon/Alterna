@@ -1,0 +1,57 @@
+# Waterfox — Browser web bazat pe Firefox, concentrat pe confidențialitate și personalizare.
+id: waterfox
+popularity: 1690
+name: Waterfox
+description: Browser web bazat pe Firefox, concentrat pe confidențialitate și personalizare.
+category: internet
+license: foss
+price: free
+developer: Waterfox
+website: https://www.waterfox.net/
+platforms:
+- linux
+- windows
+- macos
+- android
+tags:
+- browser
+- confidentialitate
+- personalizare
+alternatives:
+- firefox
+- chromium
+- pale-moon
+- seamonkey
+- vivaldi
+details:
+  install_size_mb: 0
+  first_release_year: 2011
+  file_formats: []
+  telemetry: none
+  romanian_language: false
+features:
+  browsere: free
+  client_torrent: 'no'
+  client_email: 'no'
+  client_ftp: 'no'
+  client_terminal: 'no'
+  descarcare: free
+  ad_block: partial
+  gestionare_ordonator: free
+  vpn: 'no'
+  motor_rendering: free
+  open_source: free
+indicators:
+  popcon_rank:
+  stars:
+  stars_url: https://github.com/BrowserWorks/Waterfox
+  latest_release: 2026-11
+  in_ubuntu_repos: false
+sources:
+- https://www.waterfox.net/
+- https://github.com/BrowserWorks/Waterfox
+- https://www.wikidata.org/wiki/Q10834367
+- https://www.waterfox.com/_astro/index._G9F3Z8d.png
+confidence:
+  alternatives: manual
+screenshot: screenshots/waterfox.jpg

@@ -1,6 +1,6 @@
 # Alacritty — Emulator de terminal rapid, bazat pe OpenGL.
 id: alacritty
-popularity: 1130
+popularity: 1310
 name: Alacritty
 description: Emulator de terminal rapid, bazat pe OpenGL.
 category: utilities
@@ -27,7 +27,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank: 9618
-  stars: 66251
+  stars: 66259
   stars_url: https://github.com/alacritty/alacritty
   latest_release: 2026-04
   in_ubuntu_repos: true

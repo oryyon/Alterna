@@ -22,6 +22,9 @@ alternatives:
 - standard-notes
 - xournalpp
 - zotero
+- evernote
+- gnote
+- hedgedoc
 editors_choice: true
 
 details:
@@ -33,7 +36,7 @@ details:
 
 indicators:
   popcon_rank:
-  stars: 57281
+  stars: 57296
   stars_url: https://github.com/laurent22/joplin
   latest_release: "2026-11"
   in_ubuntu_repos: false

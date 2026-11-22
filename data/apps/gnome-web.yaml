@@ -1,6 +1,6 @@
 # GNOME Web (Epiphany) — Browser web ușor, cu integrare în desktopul GNOME.
 id: gnome-web
-popularity: 1190
+popularity: 1400
 name: GNOME Web (Epiphany)
 description: Browser web ușor, cu integrare în desktopul GNOME.
 category: internet
@@ -36,6 +36,7 @@ sources:
 - https://gitlab.gnome.org/GNOME/epiphany.git
 - https://www.wikidata.org/wiki/Q167784
 - https://commons.wikimedia.org/wiki/File:GNOME_Web_48.png
+- https://commons.wikimedia.org/wiki/File:GNOME_Web_logo_%282021-03%29.svg
 confidence:
   details.first_release_year: auto
   alternatives: manual
@@ -52,3 +53,4 @@ features:
   vpn: 'no'
   motor_rendering: partial
   open_source: free
+logo: logos/gnome-web.png

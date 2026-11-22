@@ -1,0 +1,55 @@
+# VirtualDub — Utilitar clasic de captură și prelucrare video: tăiere, conversie și filtrare.
+id: virtualdub
+popularity: 2030
+name: VirtualDub
+description: "Utilitar clasic de captură și prelucrare video: tăiere, conversie și filtrare."
+category: video
+license: foss
+price: free
+developer: Avery Lee
+website: https://www.virtualdub.org/
+platforms:
+- windows
+tags:
+- video
+- utilitar
+- captura
+alternatives:
+- avidemux
+- kdenlive
+- losslesscut
+details:
+  install_size_mb: 0
+  first_release_year: 1995
+  file_formats:
+  - avi
+  - mkv
+  - mp4
+  telemetry: none
+  romanian_language: false
+features:
+  timeline: 'no'
+  cut_trim: free
+  keyframes: 'no'
+  tranzitii: 'no'
+  filtre: free
+  subtitrari: 'no'
+  stabilizare: 'no'
+  audio_avansat: 'no'
+  gpu: 'no'
+  export_formate: partial
+  open_source: free
+indicators:
+  popcon_rank:
+  stars:
+  stars_url: https://sourceforge.net/projects/virtualdub/files/
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://www.virtualdub.org/
+- https://sourceforge.net/projects/virtualdub/files/
+- https://www.wikidata.org/wiki/Q960874
+- https://commons.wikimedia.org/wiki/File:VirtualDub_Logo.svg
+confidence:
+  alternatives: manual
+logo: logos/virtualdub.png

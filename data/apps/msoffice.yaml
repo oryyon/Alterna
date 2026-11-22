@@ -29,6 +29,7 @@ indicators:
 
 sources:
 - https://www.microsoft.com/microsoft-365
+- https://commons.wikimedia.org/wiki/File:Microsoft_Office_2013_logo.svg
 logo: logos/msoffice.png
 confidence:
   alternatives: manual

@@ -1,6 +1,6 @@
 # Atril — Vizualizator de documente (PDF, DjVu, EPUB) din MATE.
 id: atril
-popularity: 2040
+popularity: 2400
 name: Atril
 description: Vizualizator de documente (PDF, DjVu, EPUB) din MATE.
 category: office
@@ -38,6 +38,7 @@ sources:
 - https://www.mate-desktop.org/
 - https://github.com/mate-desktop/atril/tree/master
 - https://www.wikidata.org/wiki/Q131382357
+- https://commons.wikimedia.org/wiki/File:Atril_logo.svg
 confidence:
   details.first_release_year: auto
   alternatives: manual
@@ -55,3 +56,4 @@ features:
   contabilitate: 'no'
   biblioteaca: 'no'
   open_source: free
+logo: logos/atril.png

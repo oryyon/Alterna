@@ -1,6 +1,6 @@
 # Zotero — Manager de referințe cu biblioteci și stiluri citare.
 id: zotero
-popularity: 2430
+popularity: 2810
 name: Zotero
 description: Manager de referințe cu biblioteci și stiluri citare.
 category: notes
@@ -20,6 +20,8 @@ alternatives:
 - zettlr
 - joplin
 - calibre
+- endnote
+- mendeley
 details:
   install_size_mb: 0
   first_release_year: 2006

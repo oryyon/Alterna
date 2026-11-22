@@ -1,6 +1,6 @@
 # Evince — Vizualizator de PDF din GNOME, cu adnotări și semnături.
 id: evince
-popularity: 1800
+popularity: 2120
 name: Evince
 description: Vizualizator de PDF din GNOME, cu adnotări și semnături.
 category: office
@@ -41,6 +41,7 @@ sources:
 - https://apps.gnome.org/Evince/
 - https://gitlab.gnome.org/GNOME/evince.git
 - https://www.wikidata.org/wiki/Q737139
+- https://commons.wikimedia.org/wiki/File:Evince_logo_2011.svg
 confidence:
   details.first_release_year: auto
   alternatives: manual
@@ -58,3 +59,4 @@ features:
   contabilitate: 'no'
   biblioteaca: 'no'
   open_source: free
+logo: logos/evince.png

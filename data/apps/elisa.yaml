@@ -1,6 +1,6 @@
 # Elisa — player muzical simplu de la KDE
 id: elisa
-popularity: 650
+popularity: 680
 name: Elisa
 description: Player muzical simplu și elegant, parte din proiectul KDE.
 category: audio-players
@@ -33,6 +33,7 @@ sources:
 - https://apps.kde.org/elisa
 - https://invent.kde.org/multimedia/elisa
 - https://cdn.kde.org/screenshots/elisa/elisa.png
+- https://commons.wikimedia.org/wiki/File:Elisa_logo_2000.svg
 logo: logos/elisa.png
 confidence:
   details.install_size_mb: auto

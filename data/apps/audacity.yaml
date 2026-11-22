@@ -16,7 +16,9 @@ alternatives:
 - tenacity
 - kid3
 - ocenaudio
-
+- garageband
+- sonic-pi
+- sound-forge
 details:
   install_size_mb: 289
   first_release_year: 2000
@@ -26,7 +28,7 @@ details:
 
 indicators:
   popcon_rank: 4811
-  stars: 19127
+  stars: 19138
   stars_url: https://github.com/audacity/audacity
   latest_release: "2026-11"
   in_ubuntu_repos: true

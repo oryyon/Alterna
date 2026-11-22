@@ -1,6 +1,6 @@
 # vokoscreenNG — înregistrare de ecran modernă, rescriere Qt
 id: vokoscreenng
-popularity: 810
+popularity: 890
 name: vokoscreenNG
 package: vokoscreen-ng
 snap: vokoscreen-ng
@@ -36,6 +36,7 @@ indicators:
 sources:
 - https://github.com/vkohaupt/vokoscreenNG
 - https://github.com/vkohaupt/vokoscreenNG/blob/HEAD/https%3A//vokoscreen.volkoh.de/3.0/picture/vokoscreenNG-0.png
+- https://commons.wikimedia.org/wiki/File:Breezeicons-apps-48-vokoscreen.svg
 logo: logos/vokoscreenng.png
 confidence:
   details.install_size_mb: auto

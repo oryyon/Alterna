@@ -1,6 +1,6 @@
 # AbiWord — Procesor de text ușor, cu format ODF.
 id: abiword
-popularity: 1500
+popularity: 1770
 name: AbiWord
 description: Procesor de text ușor, cu format ODF.
 category: office
@@ -39,6 +39,7 @@ sources:
 - https://github.com/AbiWord/abiword
 - https://www.wikidata.org/wiki/Q136775
 - https://commons.wikimedia.org/wiki/File:AbiWordScreenshot.png
+- https://commons.wikimedia.org/wiki/File:AbiWord_icon.svg
 confidence:
   details.install_size_mb: auto
   alternatives: manual
@@ -57,3 +58,4 @@ features:
   contabilitate: 'no'
   biblioteaca: 'no'
   open_source: free
+logo: logos/abiword.png

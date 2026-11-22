@@ -29,6 +29,7 @@ indicators:
 sources:
 - https://www.adobe.com/products/photoshop.html
 - https://www.adobe.com/privacy.html
+- https://commons.wikimedia.org/wiki/File:Adobe_Photoshop_CC_icon.svg
 logo: logos/photoshop.png
 confidence:
   alternatives: manual

@@ -17,7 +17,8 @@ alternatives:
 - gimp
 - photopea
 - mypaint
-
+- paint-net
+- tux-paint
 details:
   install_size_mb: 50
   first_release_year: 2010
@@ -36,6 +37,7 @@ sources:
 - https://www.pinta-project.com
 - https://github.com/PintaProject/Pinta
 - https://pinta-project.com/img/pinta-og.png
+- https://commons.wikimedia.org/wiki/File:Pinta.png
 logo: logos/pinta.png
 confidence:
   details.romanian_language: manual

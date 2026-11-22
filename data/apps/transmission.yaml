@@ -1,6 +1,6 @@
 # Transmission — Client de torrent, ușor și fără reclame.
 id: transmission
-popularity: 1350
+popularity: 1610
 name: Transmission
 description: Client de torrent, ușor și fără reclame.
 category: internet
@@ -20,6 +20,7 @@ tags:
 alternatives:
 - qbittorrent
 - deluge
+- aria2
 details:
   install_size_mb: 438
   first_release_year: 2005

@@ -35,6 +35,7 @@ sources:
 - https://peazip.github.io
 - https://github.com/peazip/PeaZip
 - https://github.com/peazip/PeaZip/blob/HEAD/https%3A//peazip.github.io/linux-dark-mode.png
+- https://commons.wikimedia.org/wiki/File:Peazip_ico.svg
 logo: logos/peazip.png
 confidence:
   alternatives: manual

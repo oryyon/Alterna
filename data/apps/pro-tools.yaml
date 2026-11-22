@@ -1,0 +1,59 @@
+# Pro Tools — Standardul profesional de înregistrare și mixaj în studiouri de sunet.
+id: pro-tools
+popularity: 1120
+name: Pro Tools
+description: Standardul profesional de înregistrare și mixaj în studiouri de sunet.
+category: audio-production
+license: commercial
+price: paid
+developer: Avid Technology
+website: https://www.avid.com/pro-tools
+platforms:
+- windows
+- macos
+tags:
+- daw
+- studio
+- mixaj
+alternatives:
+- ableton-live
+- reaper
+- cakewalk-sonar
+details:
+  install_size_mb: 0
+  first_release_year: 1989
+  file_formats:
+  - wav
+  - aiff
+  - mp3
+  telemetry: none
+  romanian_language: false
+features:
+  inregistrare: free
+  editare_audio: free
+  efecte: free
+  midi: partial
+  partitura: 'no'
+  instrumente_virtuale: paid
+  biblioteaca_sonor: paid
+  spectru: free
+  mixaj: free
+  export: free
+  pluginuri: paid
+  open_source: 'no'
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://www.avid.com/pro-tools
+- https://www.wikidata.org/wiki/Q247670
+- https://edge.sitecorecloud.io/avidtech-d6a2e9a9/media/images/all-products-page-images/pt_1000x750.jpg?h=750&amp;iar=0&amp;w=1000
+- https://commons.wikimedia.org/wiki/File:PT2019.svg
+confidence:
+  details.first_release_year: auto
+  alternatives: manual
+screenshot: screenshots/pro-tools.jpg
+logo: logos/pro-tools.png

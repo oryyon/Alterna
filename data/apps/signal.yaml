@@ -18,7 +18,9 @@ alternatives:
 - element
 - whatsapp
 - wire
-
+- delta-chat
+- gajim
+- wechat
 details:
   install_size_mb: 200
   first_release_year: 2014

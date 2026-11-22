@@ -1,6 +1,6 @@
 # OpenShot — editare video pentru începători
 id: openshot
-popularity: 620
+popularity: 640
 name: OpenShot
 description: Editor video simplu, orientat spre începători.
 category: video
@@ -17,7 +17,7 @@ alternatives:
 - shotcut
 - flowblade
 - pitivi
-
+- lightworks
 details:
   install_size_mb: 747
   first_release_year: 2008
@@ -36,6 +36,7 @@ sources:
 - https://www.openshot.org
 - https://github.com/OpenShot/openshot-qt
 - https://cdn.openshot.org/images/hero/openshot-screenshot-poster.jpg
+- https://commons.wikimedia.org/wiki/File:OpenShot_logo.svg
 logo: logos/openshot.png
 confidence:
   details.install_size_mb: auto

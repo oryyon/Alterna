@@ -1,0 +1,58 @@
+# CorelDRAW — Suita grafică vectorială pentru ilustrație, layout și tipografie profesională.
+id: coreldraw
+popularity: 900
+name: CorelDRAW
+description: Suita grafică vectorială pentru ilustrație, layout și tipografie profesională.
+category: graphics
+license: commercial
+price: paid
+developer: Corel
+website: https://www.corel.com/
+platforms:
+- windows
+- macos
+tags:
+- vectorial
+- design
+- ilustratie
+alternatives:
+- inkscape
+- illustrator
+- affinity
+- gimp
+details:
+  install_size_mb: 0
+  first_release_year: 1989
+  file_formats:
+  - svg
+  - ai
+  - cdr
+  - pdf
+  - eps
+  telemetry: none
+  romanian_language: false
+features:
+  raster_editare: partial
+  vector_editare: free
+  foto_ajustare: 'no'
+  raw: 'no'
+  straturi: free
+  filtre: free
+  retusare: 'no'
+  color_management: free
+  plug_in_uri: paid
+  export_formate: free
+  batch: partial
+  open_source: 'no'
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://www.corel.com/
+- https://www.wikidata.org/wiki/Q142371
+confidence:
+  alternatives: manual
+logo: logos/coreldraw.svg

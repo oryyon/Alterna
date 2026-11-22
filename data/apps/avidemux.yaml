@@ -1,6 +1,6 @@
 # Avidemux — tăieri și conversii video rapide
 id: avidemux
-popularity: 630
+popularity: 650
 name: Avidemux
 description: Editor video minimalist pentru tăieri și conversii rapide.
 category: video
@@ -17,7 +17,7 @@ alternatives:
 - ffmpeg
 - handbrake
 - losslesscut
-
+- virtualdub
 details:
   install_size_mb: 50
   first_release_year: 2002
@@ -27,7 +27,7 @@ details:
 
 indicators:
   popcon_rank:
-  stars: 992
+  stars: 993
   stars_url: https://github.com/mean00/avidemux2
   latest_release: "2022-09"
   in_ubuntu_repos: false
@@ -35,6 +35,7 @@ indicators:
 sources:
 - https://avidemux.sourceforge.net
 - https://github.com/mean00/avidemux2
+- https://commons.wikimedia.org/wiki/File:Avidemux-logo.png
 logo: logos/avidemux.png
 confidence:
   alternatives: manual

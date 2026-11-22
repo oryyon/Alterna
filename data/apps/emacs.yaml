@@ -1,6 +1,6 @@
 # GNU Emacs — Editor de text extensibil, cu un ecosistem de pachete.
 id: emacs
-popularity: 700
+popularity: 740
 name: GNU Emacs
 description: Editor de text extensibil, cu un ecosistem de pachete.
 category: development
@@ -37,6 +37,7 @@ sources:
 - https://cgit.git.savannah.gnu.org/cgit/emacs.git
 - https://www.wikidata.org/wiki/Q1252773
 - https://commons.wikimedia.org/wiki/File:GNU_Emacs_26.2_screenshot.png
+- https://commons.wikimedia.org/wiki/File:Emacs-logo.svg
 confidence:
   details.first_release_year: auto
   details.install_size_mb: auto
@@ -55,3 +56,4 @@ features:
   terminal: free
   extensii: free
   open_source: free
+logo: logos/emacs.png

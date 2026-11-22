@@ -1,0 +1,58 @@
+# EndNote — Manager de referințe comercial, cu biblioteci partajate și stiluri de citare.
+id: endnote
+popularity: 1900
+name: EndNote
+description: Manager de referințe comercial, cu biblioteci partajate și stiluri de citare.
+category: notes
+license: commercial
+price: paid
+developer: Clarivate Analytics
+website: https://endnote.com/
+platforms:
+- windows
+- macos
+tags:
+- referinte
+- cercetare
+- citari
+alternatives:
+- zotero
+- mendeley
+details:
+  install_size_mb: 0
+  first_release_year: 1988
+  file_formats:
+  - ris
+  - bib
+  - enw
+  telemetry: none
+  romanian_language: false
+features:
+  notite_text: free
+  notite_rich: partial
+  markdown: 'no'
+  arbore: free
+  wiki: 'no'
+  baza_date: partial
+  atasamente: free
+  offline: free
+  sincronizare: free
+  export_formate: free
+  scrise_gata: 'no'
+  open_source: 'no'
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://endnote.com/
+- https://www.wikidata.org/wiki/Q1340244
+- https://endnote.com/wp-content/uploads/2026/09/ENF-Screenshot-Library-2.png
+- https://commons.wikimedia.org/wiki/File:EndNote.png
+confidence:
+  details.first_release_year: auto
+  alternatives: manual
+screenshot: screenshots/endnote.jpg
+logo: logos/endnote.png

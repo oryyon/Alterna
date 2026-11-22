@@ -1,6 +1,6 @@
 # Calibre — Gestionarea bibliotecii de cărți electronice.
 id: calibre
-popularity: 1060
+popularity: 1210
 name: Calibre
 description: Gestionarea bibliotecii de cărți electronice.
 category: office
@@ -31,7 +31,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank: 6658
-  stars: 26487
+  stars: 26488
   stars_url: https://github.com/kovidgoyal/calibre
   latest_release: 2026-11
   in_ubuntu_repos: true
@@ -40,6 +40,7 @@ sources:
 - https://github.com/kovidgoyal/calibre
 - https://www.wikidata.org/wiki/Q747793
 - https://commons.wikimedia.org/wiki/File:Calibre-0.9.0-main-fedora.png
+- https://commons.wikimedia.org/wiki/File:Calibre_logo_3.png
 confidence:
   details.first_release_year: auto
   license: auto
@@ -60,3 +61,4 @@ features:
   contabilitate: 'no'
   biblioteaca: free
   open_source: free
+logo: logos/calibre.png

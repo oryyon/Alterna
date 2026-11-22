@@ -1,0 +1,59 @@
+# Gajim — Client de chat pentru protocolul XMPP, cu sală, criptare și transfer de fișiere.
+id: gajim
+popularity: 2420
+name: Gajim
+description: Client de chat pentru protocolul XMPP, cu sală, criptare și transfer de fișiere.
+category: communication
+license: foss
+price: free
+developer: Comunitatea Gajim
+website: https://gajim.org/
+platforms:
+- linux
+- windows
+- macos
+tags:
+- xmpp
+- chat
+- openxmpp
+alternatives:
+- pidgin
+- hexchat
+- element
+- signal
+details:
+  install_size_mb: 0
+  first_release_year: 2004
+  file_formats: []
+  telemetry: none
+  romanian_language: false
+features:
+  chat_texte: free
+  chat_voz: free
+  video_call: free
+  messenger_integrat: free
+  screen_share: 'no'
+  file_share: free
+  client_multi: free
+  criptare_e2e: free
+  selfhost: free
+  boturi: free
+  open_source: free
+indicators:
+  popcon_rank:
+  stars:
+  stars_url: https://dev.gajim.org/gajim/gajim.git
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://gajim.org/
+- https://dev.gajim.org/gajim/gajim.git
+- https://www.wikidata.org/wiki/Q58105
+- https://gajim.org/img/screenshots/main-window.png
+- https://commons.wikimedia.org/wiki/File:Gajim.svg
+confidence:
+  details.first_release_year: auto
+  license: auto
+  alternatives: manual
+screenshot: screenshots/gajim.jpg
+logo: logos/gajim.png

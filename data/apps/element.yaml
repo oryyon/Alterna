@@ -1,6 +1,6 @@
 # Element — client Matrix pentru chat descentralizat
 id: element
-popularity: 740
+popularity: 800
 name: Element
 description: Client Matrix cu criptare cap-la-cap, pentru chat descentralizat.
 category: communication
@@ -19,7 +19,8 @@ alternatives:
 - discord
 - jami
 - wire
-
+- delta-chat
+- gajim
 details:
   install_size_mb: 300
   first_release_year: 2016

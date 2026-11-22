@@ -1,6 +1,6 @@
 # NetSurf — Browser web ușor, cu consum redus de resurse.
 id: netsurf
-popularity: 2080
+popularity: 2450
 name: NetSurf
 description: Browser web ușor, cu consum redus de resurse.
 category: internet
@@ -18,6 +18,7 @@ tags:
 alternatives:
 - lynx
 - gnome-web
+- seamonkey
 details:
   install_size_mb: 250
   first_release_year: 1994
@@ -35,6 +36,7 @@ sources:
 - https://github.com/netsurf/netsurf
 - https://www.wikidata.org/wiki/Q1185648
 - https://commons.wikimedia.org/wiki/File:NetSurf.png
+- https://commons.wikimedia.org/wiki/File:NetSurf-logo.svg
 confidence:
   details.install_size_mb: auto
   alternatives: manual
@@ -51,3 +53,4 @@ features:
   vpn: 'no'
   motor_rendering: partial
   open_source: free
+logo: logos/netsurf.png

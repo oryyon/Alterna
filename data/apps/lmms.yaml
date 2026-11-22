@@ -1,6 +1,6 @@
 # LMMS — DAW liber pentru producție electronică
 id: lmms
-popularity: 840
+popularity: 930
 name: LMMS
 description: DAW liber orientat pe producție electronică și beatmaking.
 category: audio-production
@@ -22,7 +22,10 @@ alternatives:
 - rosegarden
 - tuxguitar
 - zrythm
-
+- ableton-live
+- garageband
+- reason
+- sonic-pi
 details:
   install_size_mb: 423
   first_release_year: 2004
@@ -32,7 +35,7 @@ details:
 
 indicators:
   popcon_rank: 13347
-  stars: 10702
+  stars: 10707
   stars_url: https://github.com/LMMS/lmms
   latest_release: "2026-09"
   in_ubuntu_repos: true

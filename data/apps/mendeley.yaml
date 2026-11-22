@@ -1,0 +1,57 @@
+# Mendeley — Manager de referințe pentru cercetare, cu bibliotecă sincronizată și citări.
+id: mendeley
+popularity: 1390
+name: Mendeley
+description: Manager de referințe pentru cercetare, cu bibliotecă sincronizată și citări.
+category: notes
+license: freemium
+price: free
+developer: Elsevier
+website: https://www.mendeley.com/
+platforms:
+- windows
+- macos
+- web
+tags:
+- referinte
+- cercetare
+- bibliografie
+alternatives:
+- zotero
+- zettlr
+- endnote
+details:
+  install_size_mb: 0
+  first_release_year: 2007
+  file_formats:
+  - ris
+  - bib
+  - enw
+  telemetry: none
+  romanian_language: false
+features:
+  notite_text: free
+  notite_rich: partial
+  markdown: 'no'
+  arbore: free
+  wiki: 'no'
+  baza_date: partial
+  atasamente: free
+  offline: free
+  sincronizare: free
+  export_formate: free
+  scrise_gata: 'no'
+  open_source: 'no'
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://www.mendeley.com/
+- https://www.wikidata.org/wiki/Q1580044
+confidence:
+  details.first_release_year: auto
+  alternatives: manual
+logo: logos/mendeley.svg

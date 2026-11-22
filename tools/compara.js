@@ -155,40 +155,154 @@ function listeaza() {
   }
 }
 
-function csv() {
-  const apps = alese.map((id) => DATE.aplicatii.find((a) => a.id === id)).filter(Boolean);
-  if (apps.length < 2) return;
-  const linii = [["Criteriu", ...apps.map((a) => a.name)]];
-  const tabel = el("tbody").querySelectorAll("tr");
-  for (const tr of tabel) {
-    const celule = [...tr.children].map((c) => c.textContent.trim());
-    if (celule.length) linii.push(celule);
+/* --- export: aceleași 5 formate ca în aplicația desktop ----------------
+   (CSV, Markdown, HTML, Text, JSON). Marcajul de certitudine și
+   evidențierea avantajului obiectiv ajung și în export: o comparație
+   trimisă altcuva trebuie să fie la fel de onestă ca cea afișată. */
+
+function tabelDate() {
+  /* Randurile tabelului afișat, ca structură: etichetă + celule cu
+     text, marcaj de certitudine și dacă e avantaj obiectiv. */
+  const randuri = [];
+  for (const tr of el("tbody").querySelectorAll("tr")) {
+    const celule = [...tr.children];
+    if (!celule.length) continue;
+    if (tr.classList.contains("grupa")) {
+      randuri.push({ grup: true, eticheta: celule[0].textContent.trim(), valori: [] });
+      continue;
+    }
+    randuri.push({
+      grup: false,
+      eticheta: celule[0].textContent.trim(),
+      valori: celule.slice(1).map((c) => ({
+        text: c.textContent.trim(),
+        avantaj: c.classList.contains("avantaj"),
+        certitudine: (c.querySelector(".cert") || {}).textContent || "",
+      })),
+    });
   }
-  const continut = linii.map((l) => l.map((c) => `"${c.replace(/"/g, '""')}"`).join(",")).join("\n");
-  const url = URL.createObjectURL(new Blob([continut], { type: "text/csv;charset=utf-8" }));
+  return randuri;
+}
+
+function numeAplicatii() {
+  return alese.map((id) => (DATE.aplicatii.find((a) => a.id === id) || {}).name || id);
+}
+
+function descarcă(nume, continut, tip) {
+  const url = URL.createObjectURL(new Blob([continut], { type: tip }));
   const a = document.createElement("a");
   a.href = url;
-  a.download = "alterna-comparatie.csv";
+  a.download = nume;
   a.click();
   URL.revokeObjectURL(url);
 }
 
-function markdown() {
-  const apps = alese.map((id) => DATE.aplicatii.find((a) => a.id === id)).filter(Boolean);
-  if (apps.length < 2) return;
-  const out = [`# Comparație — ${apps.map((a) => a.name).join(" vs ")}`, ""];
-  const tabel = el("tbody").querySelectorAll("tr");
-  for (const tr of tabel) {
-    const celule = [...tr.children].map((c) => c.textContent.trim().replace(/\|/g, "\\|"));
-    out.push("| " + celule.join(" | ") + " |");
-    if (tr.classList.contains("grupa")) out.push("|" + "---|".repeat(celule.length));
+function areTabel() {
+  if (numeAplicatii().length < 2) return false;
+  return el("tbody").querySelectorAll("tr").length > 0;
+}
+
+function csv() {
+  if (!areTabel()) return;
+  const randuri = tabelDate();
+  const linii = [["Criteriu", ...numeAplicatii()]];
+  for (const r of randuri) {
+    if (r.grup) continue;
+    linii.push([r.eticheta, ...r.valori.map((v) => v.text)]);
   }
-  const url = URL.createObjectURL(new Blob([out.join("\n")], { type: "text/markdown" }));
-  const a = document.createElement("a");
-  a.href = url;
-  a.download = "alterna-comparatie.md";
-  a.click();
-  URL.revokeObjectURL(url);
+  const continut = linii.map((l) => l.map((c) => `"${c.replace(/"/g, '""')}"`).join(",")).join("\n");
+  descarcă("alterna-comparatie.csv", continut, "text/csv;charset=utf-8");
+}
+
+function markdown() {
+  if (!areTabel()) return;
+  const out = [`# Comparație — ${numeAplicatii().join(" vs ")}`, ""];
+  for (const r of tabelDate()) {
+    if (r.grup) {
+      out.push(`## ${r.eticheta}`, "");
+      continue;
+    }
+    const celule = [r.eticheta, ...r.valori.map((v) => v.text.replace(/\|/g, "\\|"))];
+    out.push("| " + celule.join(" | ") + " |");
+    out.push("|" + "---|".repeat(celule.length));
+  }
+  descarcă("alterna-comparatie.md", out.join("\n"), "text/markdown");
+}
+
+function html() {
+  if (!areTabel()) return;
+  const nume = numeAplicatii();
+  const randuri = tabelDate().map((r) => {
+    if (r.grup) {
+      return `<tr class="grupa"><th colspan="${nume.length + 1}">${esc(r.eticheta)}</th></tr>`;
+    }
+    const celule = r.valori.map((v) =>
+      `<td${v.avantaj ? ' class="avantaj"' : ""}>${esc(v.text)}</td>`).join("");
+    return `<tr><th scope="row">${esc(r.eticheta)}</th>${celule}</tr>`;
+  }).join("\n");
+  const continut = `<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<title>Comparație — ${esc(nume.join(" vs "))}</title>
+<style>
+body{font-family:sans-serif;margin:2em;background:#111;color:#eee}
+h1{font-size:1.4em}
+table{border-collapse:collapse;width:100%}
+th,td{border:1px solid #444;padding:6px 10px;text-align:left;vertical-align:top}
+th{background:#222;color:#bbb}
+tr.grupa th{color:#7fb3ff;text-transform:uppercase;letter-spacing:.04em}
+td.avantaj{background:rgba(39,174,96,.22)}
+p.meta{color:#999}
+</style>
+</head>
+<body>
+<h1>Comparație: ${esc(nume.join(" vs "))}</h1>
+<p class="meta">Generat cu Alterna — site-ul catalogului FOSS</p>
+<table>
+<tr><th>Criteriu</th>${nume.map((n) => `<th>${esc(n)}</th>`).join("")}</tr>
+${randuri}
+</table>
+</body>
+</html>`;
+  descarcă("alterna-comparatie.html", continut, "text/html;charset=utf-8");
+}
+
+function text() {
+  if (!areTabel()) return;
+  const randuri = tabelDate();
+  const lățime = Math.max(...randuri.map((r) => r.eticheta.length), 8);
+  const out = [`COMPARAȚIE: ${numeAplicatii().join(" vs ")}`,
+               "Generat cu Alterna — site-ul catalogului FOSS",
+               "=".repeat(60), ""];
+  for (const r of randuri) {
+    if (r.grup) {
+      out.push("", r.eticheta, "-".repeat(60));
+      continue;
+    }
+    out.push(r.eticheta.padEnd(lățime) + "  " +
+             r.valori.map((v) => v.text).join("  |  "));
+  }
+  descarcă("alterna-comparatie.txt", out.join("\n"), "text/plain;charset=utf-8");
+}
+
+function json() {
+  if (!areTabel()) return;
+  const continut = JSON.stringify({
+    generat: new Date().toISOString().slice(0, 10),
+    de: "Alterna — site-ul catalogului FOSS",
+    aplicatii: numeAplicatii(),
+    criterii: tabelDate().map((r) => ({
+      criteriu: r.eticheta,
+      grup: r.grup,
+      valori: r.valori.map((v) => ({
+        valoare: v.text,
+        avantaj_objectiv: v.avantaj,
+        certitudine: v.certitudine,
+      })),
+    })),
+  }, null, 2);
+  descarcă("alterna-comparatie.json", continut, "application/json");
 }
 
 async function porneste() {
@@ -199,6 +313,9 @@ async function porneste() {
   el("caut").addEventListener("input", listeaza);
   el("csv").addEventListener("click", csv);
   el("md").addEventListener("click", markdown);
+  el("html").addEventListener("click", html);
+  el("txt").addEventListener("click", text);
+  el("json").addEventListener("click", json);
   listeaza();
   deseneaza();
 }

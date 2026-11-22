@@ -1,6 +1,6 @@
 # GnuCash — Contabilitate pentru persoane fizice și firme mici.
 id: gnucash
-popularity: 1200
+popularity: 1410
 name: GnuCash
 description: Contabilitate pentru persoane fizice și firme mici.
 category: office
@@ -42,6 +42,7 @@ sources:
 - https://github.com/Gnucash/gnucash.git
 - https://www.wikidata.org/wiki/Q123326
 - https://commons.wikimedia.org/wiki/File:Gnucash_2_screenshot.png
+- https://commons.wikimedia.org/wiki/File:GnuCash_logo.svg
 confidence:
   details.first_release_year: auto
   details.install_size_mb: auto
@@ -61,3 +62,4 @@ features:
   contabilitate: free
   biblioteaca: 'no'
   open_source: free
+logo: logos/gnucash.png

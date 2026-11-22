@@ -1,6 +1,6 @@
 # FreeCAD — CAD parametric 3D
 id: freecad
-popularity: 870
+popularity: 980
 name: FreeCAD
 description: CAD parametric 3D pentru inginerie și design de produs.
 category: 3d-cad
@@ -35,7 +35,7 @@ details:
 
 indicators:
   popcon_rank:
-  stars: 35661
+  stars: 35682
   stars_url: https://github.com/FreeCAD/FreeCAD
   latest_release: "2026-11"
   in_ubuntu_repos: false

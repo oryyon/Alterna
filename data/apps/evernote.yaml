@@ -1,0 +1,62 @@
+# Evernote — Aplicație de notițe și gestionare a sarcinilor, cu sincronizare între dispozitive.
+id: evernote
+popularity: 860
+name: Evernote
+description: Aplicație de notițe și gestionare a sarcinilor, cu sincronizare între dispozitive.
+category: notes
+license: freemium
+price: free
+developer: Evernote Inc.
+website: https://evernote.com/
+platforms:
+- linux
+- windows
+- macos
+- android
+- web
+tags:
+- notite
+- sarcini
+- sincronizare
+alternatives:
+- notion
+- obsidian
+- joplin
+- simplenote
+- google-keep
+- onenote
+details:
+  install_size_mb: 0
+  first_release_year: 2008
+  file_formats:
+  - enex
+  - html
+  - pdf
+  telemetry: none
+  romanian_language: false
+features:
+  notite_text: free
+  notite_rich: free
+  markdown: paid
+  arbore: free
+  wiki: 'no'
+  baza_date: paid
+  atasamente: free
+  offline: paid
+  sincronizare: free
+  export_formate: paid
+  scrise_gata: paid
+  open_source: 'no'
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://evernote.com/
+- https://www.wikidata.org/wiki/Q430526
+confidence:
+  details.first_release_year: auto
+  alternatives: manual
+logo: logos/evernote.svg

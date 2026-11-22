@@ -1,6 +1,6 @@
 # Autodesk Maya — Pachet de animație 3D din studio-urile de film și jocuri.
 id: maya
-popularity: 2240
+popularity: 2620
 name: Autodesk Maya
 description: Pachet de animație 3D din studio-urile de film și jocuri.
 category: 3d-cad
@@ -37,6 +37,7 @@ indicators:
 sources:
 - https://www.autodesk.com/products/maya/
 - https://www.wikidata.org/wiki/Q272597
+- https://commons.wikimedia.org/wiki/File:Autodesk_Maya_logo.svg
 confidence:
   details.first_release_year: auto
   alternatives: manual
@@ -51,3 +52,4 @@ features:
   masuratori: free
   parametrice: free
   open_source: 'no'
+logo: logos/maya.png

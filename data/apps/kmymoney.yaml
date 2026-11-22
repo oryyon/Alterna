@@ -1,6 +1,6 @@
 # KMyMoney — Contabilitate personală și de familie, cu import bancar.
 id: kmymoney
-popularity: 1920
+popularity: 2260
 name: KMyMoney
 description: Contabilitate personală și de familie, cu import bancar.
 category: office
@@ -39,6 +39,7 @@ sources:
 - https://cgit.kde.org/kmymoney.git
 - https://www.wikidata.org/wiki/Q1029531
 - https://cdn.kde.org/screenshots/kmymoney/kmymoney.png
+- https://commons.wikimedia.org/wiki/File:Breezeicons-apps-48-kmymoney.svg
 confidence:
   details.first_release_year: auto
   alternatives: manual
@@ -57,3 +58,4 @@ features:
   biblioteaca: 'no'
   open_source: free
 screenshot: screenshots/kmymoney.jpg
+logo: logos/kmymoney.png

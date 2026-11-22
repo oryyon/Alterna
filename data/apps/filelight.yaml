@@ -1,6 +1,6 @@
 # Filelight — Analyzer al spațiului ocupat pe disc, din desktopul KDE.
 id: filelight
-popularity: 1990
+popularity: 2350
 name: Filelight
 description: Analyzer al spațiului ocupat pe disc, din desktopul KDE.
 category: utilities
@@ -26,7 +26,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank: 7874
-  stars: 302
+  stars: 303
   stars_url: https://github.com/KDE/filelight
   latest_release: 2026-11
   in_ubuntu_repos: true
@@ -35,6 +35,7 @@ sources:
 - https://github.com/KDE/filelight
 - https://www.wikidata.org/wiki/Q3510027
 - https://commons.wikimedia.org/wiki/File:Filelight_21.12.0_screenshot.png
+- https://commons.wikimedia.org/wiki/File:KDE_Partition_Manager_logo.svg
 confidence:
   details.install_size_mb: auto
   alternatives: manual
@@ -53,3 +54,4 @@ features:
   conversie_media: 'no'
   clipboard: 'no'
   open_source: free
+logo: logos/filelight.png

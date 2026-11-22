@@ -1,0 +1,55 @@
+# Final Cut Pro — Editor video pentru Mac, cu timeline magnetic, magnetic timeline și efecte.
+id: final-cut-pro
+popularity: 750
+name: Final Cut Pro
+description: Editor video pentru Mac, cu timeline magnetic, magnetic timeline și efecte.
+category: video
+license: commercial
+price: paid
+developer: Apple
+website: https://www.apple.com/final-cut-pro/
+platforms:
+- macos
+tags:
+- video
+- editare
+- macos
+alternatives:
+- davinci
+- premiere
+- vegas-pro
+- lightworks
+details:
+  install_size_mb: 0
+  first_release_year: 1999
+  file_formats:
+  - mp4
+  - mov
+  - mxf
+  telemetry: none
+  romanian_language: false
+features:
+  timeline: free
+  cut_trim: free
+  keyframes: free
+  tranzitii: free
+  filtre: free
+  subtitrari: free
+  stabilizare: free
+  audio_avansat: free
+  gpu: free
+  export_formate: free
+  open_source: 'no'
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://www.apple.com/final-cut-pro/
+- https://www.wikidata.org/wiki/Q9587
+- https://www.apple.com/v/final-cut-pro/w/images/meta/final_cut__cumj84xteas2_og.png?202603241546
+confidence:
+  alternatives: manual
+screenshot: screenshots/final-cut-pro.jpg

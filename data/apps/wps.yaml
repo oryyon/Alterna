@@ -1,6 +1,6 @@
 # WPS Office — interfață similară MS Office, cu reclame în varianta gratuită
 id: wps
-popularity: 580
+popularity: 590
 name: WPS Office
 description: Suită de birou cu interfață similară MS Office; versiune gratuită cu reclame.
 category: office
@@ -31,6 +31,7 @@ indicators:
 sources:
 - https://www.wps.com
 - https://ds.cache.wpscdn.com/website/wps_office_og_image.jpg
+- https://commons.wikimedia.org/wiki/File:Deepin_Icon_Theme_%E2%80%93_application-wps-office.wps.svg
 logo: logos/wps.png
 confidence:
   alternatives: manual

@@ -58,6 +58,7 @@ EXCEPTII_CATEGORIE = {
     ("internet", "utilities"): "client de transfer de fisiere (filezilla) vs. sincronizare (rclone)",
     ("video", "3d-cad"): "compozitor de efecte vizuale (fusion, nuke) vs. modelator 3D",
     ("3d-cad", "graphics"): "modelator 3D vs. desen vectorial — ambele creează imagini",
+    ("3d-cad", "development"): "motor de joc (godot) vs. modelator 3D — ambele construiesc proiecte",
 }
 
 #: Relații curate pentru aplicațiile care nu aveau alternative, dar au

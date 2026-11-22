@@ -97,6 +97,25 @@ code { background: #1f2733; border-radius: 4px; padding: 1px 5px; }
 .captura img { width: 100%; max-width: 720px; border-radius: 8px;
   border: 1px solid var(--border); display: block; }
 .captura figcaption { color: var(--dim); font-size: 13px; margin-top: 6px; }
+/* fișa generată pentru aplicațiile fără captură de ecran */
+.fisa { display: flex; gap: 18px; align-items: flex-start;
+  background: var(--panel); border: 1px solid var(--border);
+  border-radius: 10px; padding: 16px 18px; margin: 0 0 20px; }
+.fisa-logo { flex: 0 0 72px; width: 72px; height: 72px; border-radius: 12px;
+  background: var(--bg); border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 26px; font-weight: 700; color: var(--accent); overflow: hidden; }
+.fisa-logo img { max-width: 100%; max-height: 100%; }
+.fisa-corpus { flex: 1; min-width: 0; }
+.fisa-corpus h2 { margin: 0 0 2px; font-size: 16px; text-transform: none;
+  letter-spacing: 0; color: var(--text); }
+.fisa-cat { color: var(--dim); font-size: 13px; margin: 0 0 10px; }
+.fisa-date { display: grid; gap: 4px 16px; margin: 0;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); }
+.fisa-date div { font-size: 13px; color: var(--text); }
+.fisa-date span { color: var(--dim); }
+.fisa-nota { color: var(--dim); font-size: 12px; margin: 12px 0 0;
+  border-top: 1px solid var(--border); padding-top: 10px; }
 .facts { display: grid; gap: 12px;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
 .fact { background: var(--panel); border: 1px solid var(--border);
@@ -199,6 +218,9 @@ PAGINA_COMPARATIE = """<!doctype html>
       <div class="butoane">
         <button id="csv">Descarcă CSV</button>
         <button id="md">Descarcă Markdown</button>
+        <button id="html">Descarcă HTML</button>
+        <button id="txt">Descarcă Text</button>
+        <button id="json">Descarcă JSON</button>
         <span id="rez" class="legenda"></span>
       </div>
       <table class="compara-t">
@@ -396,6 +418,44 @@ def randare_fapte(app: dict, confidence: dict, alternative: dict) -> str:
     return "\n".join(corp)
 
 
+def fisa_generata(app: dict, nume_categorii: dict[str, str]) -> str:
+    """Fișă generată pentru aplicațiile fără captură de ecran.
+
+    Nu se inventează o imagine: fișa arată doar ce e sigur (logo, categorie,
+    licență, preț, platforme, prima versiune) și spune explicit că e generată
+    automat, ca vizitatorul să nu o confunde cu o captură reală.
+    """
+    categorie = esc(nume_categorii.get(app["category"], app["category"]))
+    logo = app.get("logo")
+    if logo:
+        sigla = (f'<div class="fisa-logo"><img src="../{esc(Path(logo).as_posix())}" '
+                 f'alt="Logo {esc(app["name"])}"></div>')
+    else:
+        initiale = "".join(c for c in app["name"] if c.isalnum())[:2].upper()
+        sigla = f'<div class="fisa-logo">{esc(initiale)}</div>'
+
+    rânduri = [
+        ("Dezvoltator", app.get("developer")),
+        ("Licență", LICENSE_LABELS.get(app.get("license"), app.get("license"))),
+        ("Preț", "gratuit" if app.get("price") == "free" else "cu plată"),
+        ("Platforme", ", ".join(PLATFORM_LABELS.get(p, p) for p in app.get("platforms") or [])),
+        ("Prima versiune", app.get("first_release_year")),
+        ("Ultima versiune", app.get("latest_release")),
+        ("Limbă română", {True: "da", False: "nu"}.get(app.get("romanian_language"))),
+        ("Telemetrie", TELEMETRY_LABELS.get(app.get("telemetry"))),
+    ]
+    date = "".join(f"<div><span>{esc(eticheta)}:</span> {esc(str(valoare))}</div>"
+                   for eticheta, valoare in rânduri if valoare)
+    return (f'    <aside class="fisa">\n{sigla}\n'
+            f'      <div class="fisa-corpus">\n'
+            f'        <h2>{esc(app["name"])}</h2>\n'
+            f'        <p class="fisa-cat">{categorie}</p>\n'
+            f'        <div class="fisa-date">{date}</div>\n'
+            f'        <p class="fisa-nota">Fără captură de ecran în catalog — '
+            f'fișa e generată automat din datele verificate ale aplicației.</p>\n'
+            f'      </div>\n    </aside>\n')
+
+
 def pagina_detaliu(app: dict, nume_categorii: dict[str, str],
                    taxonomie: dict[str, list[tuple[str, str]]],
                    alternative: dict[str, dict], sursa_captura: str) -> str:
@@ -421,6 +481,9 @@ def pagina_detaliu(app: dict, nume_categorii: dict[str, str],
                    f'<a href="{esc(sursa_captura)}" rel="noopener">sursa</a> · '
                    f'<a href="../credite.html">atribuirea imaginilor</a></figcaption>\n'
                    f'    </figure>\n')
+    else:
+        # fără captură: fișă generată din datele catalogului (nimic inventat)
+        captura = fisa_generata(app, nume_categorii)
 
     matrice = randare_matrice(app, taxonomie)
     sectiune_matrice = (f'  <h2>Funcționalități (matricea categoriei „{categorie}")</h2>\n'

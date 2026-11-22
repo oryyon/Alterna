@@ -1,0 +1,57 @@
+# WeChat — Aplicație de mesagerie cu chat, apeluri, mini-programele și plăți integrate.
+id: wechat
+popularity: 580
+name: WeChat
+description: Aplicație de mesagerie cu chat, apeluri, mini-programele și plăți integrate.
+category: communication
+license: commercial
+price: free
+developer: Tencent
+website: https://www.wechat.com/
+snap: wechat
+platforms:
+- windows
+- macos
+- linux
+- android
+- web
+tags:
+- mesagerie
+- asia
+- plati
+alternatives:
+- telegram
+- signal
+- whatsapp
+- viber
+details:
+  install_size_mb: 0
+  first_release_year: 2011
+  file_formats: []
+  telemetry: none
+  romanian_language: false
+features:
+  chat_texte: free
+  chat_voz: free
+  video_call: free
+  messenger_integrat: free
+  screen_share: free
+  file_share: free
+  client_multi: free
+  criptare_e2e: 'no'
+  selfhost: 'no'
+  boturi: free
+  open_source: 'no'
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://www.wechat.com/
+- https://www.wikidata.org/wiki/Q283233
+confidence:
+  details.first_release_year: auto
+  alternatives: manual
+logo: logos/wechat.svg

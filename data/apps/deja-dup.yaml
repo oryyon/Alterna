@@ -1,6 +1,6 @@
 # Déjà Dup — Copii de rezervă simple, cu interfață grafică.
 id: deja-dup
-popularity: 1930
+popularity: 2280
 name: Déjà Dup
 description: Copii de rezervă simple, cu interfață grafică.
 category: utilities
@@ -34,6 +34,7 @@ sources:
 - https://gitlab.gnome.org/World/deja-dup
 - https://www.wikidata.org/wiki/Q130555797
 - https://commons.wikimedia.org/wiki/File:D%C3%A9j%C3%A0_Dup_49.0_screenshot.png
+- https://commons.wikimedia.org/wiki/File:D%C3%A9j%C3%A0_Dup_Logo.svg
 confidence:
   details.first_release_year: auto
   details.install_size_mb: auto
@@ -53,3 +54,4 @@ features:
   conversie_media: 'no'
   clipboard: 'no'
   open_source: free
+logo: logos/deja-dup.png

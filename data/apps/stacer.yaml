@@ -1,6 +1,6 @@
 # Stacer — optimizator și monitor de sistem pentru Linux
 id: stacer
-popularity: 1040
+popularity: 1190
 name: Stacer
 description: Optimizator și monitor de sistem pentru Linux, cu interfață modernă.
 category: utilities
@@ -32,6 +32,7 @@ indicators:
 sources:
 - https://github.com/oguzhaninan/Stacer
 - https://github.com/oguzhaninan/Stacer/blob/HEAD/https%3A//raw.githubusercontent.com/oguzhaninan/Stacer/native/screenshots/Screenshot-1.0.9-1.png
+- https://commons.wikimedia.org/wiki/File:Biglinux-Icons_%E2%80%93_stacer_1.svg
 logo: logos/stacer.png
 confidence:
   details.install_size_mb: auto

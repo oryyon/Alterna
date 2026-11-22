@@ -1,6 +1,6 @@
 # Strawberry — player pentru colecții muzicale locale
 id: strawberry
-popularity: 640
+popularity: 670
 name: Strawberry
 description: Player muzical pentru colecții locale, fork modernizat al Clementine.
 category: audio-players
@@ -22,7 +22,7 @@ alternatives:
 - quodlibet
 - rhythmbox
 - spotify
-
+- musicbee
 details:
   install_size_mb: 428
   first_release_year: 2018

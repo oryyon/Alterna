@@ -1,0 +1,58 @@
+# MonoDevelop — Mediu de dezvoltare pentru C# și .NET, cu depanare, teste și suport Xamarin.
+id: monodevelop
+popularity: 2180
+name: MonoDevelop
+description: Mediu de dezvoltare pentru C# și .NET, cu depanare, teste și suport Xamarin.
+category: development
+license: foss
+price: free
+developer: Xamarin
+website: https://www.monodevelop.com/
+platforms:
+- linux
+- windows
+- macos
+tags:
+- ide
+- csharp
+- dotnet
+alternatives:
+- vscode
+- kdevelop
+- qtcreator
+- lazarus
+details:
+  install_size_mb: 0
+  first_release_year: 2004
+  file_formats: []
+  telemetry: none
+  romanian_language: false
+features:
+  completare_cod: free
+  lsp: 'no'
+  refactorizare: free
+  debugger: free
+  linter: free
+  formatare: free
+  git: free
+  compilare: free
+  testare: free
+  terminal: 'no'
+  extensii: free
+  open_source: free
+indicators:
+  popcon_rank:
+  stars:
+  stars_url: https://github.com/mono/monodevelop
+  latest_release: 2020-01
+  in_ubuntu_repos: false
+sources:
+- https://www.monodevelop.com/
+- https://github.com/mono/monodevelop
+- https://www.wikidata.org/wiki/Q764454
+- https://www.monodevelop.com/images/md-hero.png
+- https://commons.wikimedia.org/wiki/File:Monodevelop_Logo.svg
+confidence:
+  alternatives: manual
+screenshot: screenshots/monodevelop.jpg
+logo: logos/monodevelop.png

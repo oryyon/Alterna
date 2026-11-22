@@ -1,6 +1,6 @@
 # Apache OpenOffice — suita de birou clasică, predecesoarea LibreOffice
 id: openoffice
-popularity: 590
+popularity: 600
 name: Apache OpenOffice
 description: Suită de birou open source clasică, predecesoarea LibreOffice.
 category: office
@@ -30,6 +30,7 @@ indicators:
 
 sources:
 - https://www.openoffice.org
+- https://commons.wikimedia.org/wiki/File:OpenOffice.org.svg
 logo: logos/openoffice.png
 confidence:
   alternatives: manual

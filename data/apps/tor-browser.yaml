@@ -1,6 +1,6 @@
 # Tor Browser — navigare anonimă prin rețeaua Tor
 id: tor-browser
-popularity: 670
+popularity: 700
 name: Tor Browser
 description: Browser pentru navigare anonimă prin rețeaua Tor.
 category: internet
@@ -22,7 +22,7 @@ details:
 
 indicators:
   popcon_rank:
-  stars: 21
+  stars: 20
   stars_url: https://gitlab.torproject.org/tpo/applications/tor-browser
   latest_release: "2026-10"
   in_ubuntu_repos: false

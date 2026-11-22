@@ -1,6 +1,6 @@
 # Pencil2D — Animare 2D pe hârtie — cu cretă, fără costuri.
 id: pencil2d
-popularity: 2270
+popularity: 2650
 name: Pencil2D
 description: Animare 2D pe hârtie — cu cretă, fără costuri.
 category: 3d-cad
@@ -39,6 +39,7 @@ sources:
 - https://www.pencil2d.org/
 - https://github.com/pencil2d/pencil
 - https://www.wikidata.org/wiki/Q2398265
+- https://commons.wikimedia.org/wiki/File:Pencil2d_logo.jpg
 confidence:
   alternatives: manual
 features:
@@ -52,3 +53,4 @@ features:
   masuratori: 'no'
   parametrice: 'no'
   open_source: free
+logo: logos/pencil2d.jpg

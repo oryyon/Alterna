@@ -1,6 +1,6 @@
 # Tenacity — fork al Audacity, fără telemetrie
 id: tenacity
-popularity: 820
+popularity: 910
 name: Tenacity
 description: Fork al Audacity, fără telemetrie, menținut de comunitate.
 category: audio-production
@@ -35,6 +35,7 @@ sources:
 - https://tenacityaudio.org
 - https://github.com/tenacityteam/tenacity
 - https://tenacityaudio.org/images/screenshots/tenacity-screenshot-light-3840x2160.png
+- https://commons.wikimedia.org/wiki/File:Tenacity_logo.jpg
 logo: logos/tenacity.jpg
 confidence:
   details.romanian_language: manual

@@ -1,6 +1,6 @@
 # SimpleScreenRecorder — înregistrare de ecran ușoară pentru Linux
 id: ssr
-popularity: 790
+popularity: 870
 name: SimpleScreenRecorder
 package: simplescreenrecorder
 snap: simplescreenrecorder
@@ -37,6 +37,7 @@ sources:
 - https://www.maartenbaert.be/simplescreenrecorder
 - https://github.com/MaartenBaert/ssr
 - https://github.com/MaartenBaert/ssr/blob/HEAD/data/screenshots/screenshot01.png
+- https://commons.wikimedia.org/wiki/File:Biglinux-Icons_%E2%80%93_simplescreenrecorder.svg
 logo: logos/ssr.png
 confidence:
   details.install_size_mb: auto

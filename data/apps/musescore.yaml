@@ -1,6 +1,6 @@
 # MuseScore — Editor de partituri cu audiție și export în multe formate.
 id: musescore
-popularity: 960
+popularity: 1100
 name: MuseScore
 description: Editor de partituri cu audiție și export în multe formate.
 category: audio-production
@@ -21,6 +21,7 @@ alternatives:
 - lmms
 - tenacity
 - tuxguitar
+- sonic-pi
 details:
   install_size_mb: 474
   first_release_year: 2002
@@ -41,6 +42,7 @@ sources:
 - https://www.wikidata.org/wiki/Q240192
 - https://commons.wikimedia.org/wiki/File:MuseScore_4_in_dark_mode.png
 - https://musescore.org/telemetry
+- https://commons.wikimedia.org/wiki/File:MuseScore_Studio_Word_Logo.svg
 confidence:
   details.first_release_year: auto
   details.install_size_mb: auto
@@ -60,3 +62,4 @@ features:
   export: free
   pluginuri: partial
   open_source: free
+logo: logos/musescore.png

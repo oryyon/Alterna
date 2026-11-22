@@ -1,6 +1,6 @@
 # rkhunter — Caută rootkits și urme de intruziune pe sistemul local.
 id: rkhunter
-popularity: 2280
+popularity: 2660
 name: rkhunter
 description: Caută rootkits și urme de intruziune pe sistemul local.
 category: security

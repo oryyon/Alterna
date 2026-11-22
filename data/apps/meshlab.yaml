@@ -1,6 +1,6 @@
 # MeshLab — Prelucrare de rețele 3D: curățare, reparare, decimare și export.
 id: meshlab
-popularity: 1900
+popularity: 2240
 name: MeshLab
 description: "Prelucrare de rețele 3D: curățare, reparare, decimare și export."
 category: 3d-cad
@@ -40,6 +40,7 @@ sources:
 - https://www.meshlab.net/
 - https://github.com/cnr-isti-vclab/meshlab
 - https://www.wikidata.org/wiki/Q3306840
+- https://commons.wikimedia.org/wiki/File:MeshLab_logo_left_eye.png
 confidence:
   alternatives: manual
 features:
@@ -53,3 +54,4 @@ features:
   masuratori: partial
   parametrice: 'no'
   open_source: free
+logo: logos/meshlab.png

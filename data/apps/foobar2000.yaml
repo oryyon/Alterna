@@ -1,0 +1,61 @@
+# foobar2000 — Player audio foarte configurabil, cu bibliotecă extinsă și suport pentru multe formate.
+id: foobar2000
+popularity: 1090
+name: foobar2000
+description: Player audio foarte configurabil, cu bibliotecă extinsă și suport pentru multe formate.
+category: audio-players
+license: commercial
+price: free
+developer: Marcin Ryl
+website: https://www.foobar2000.org/
+snap: foobar2000
+platforms:
+- windows
+tags:
+- player
+- audio
+- extensii
+alternatives:
+- mpv
+- vlc
+- audacious
+- clementine
+- mediamonkey
+- musicbee
+details:
+  install_size_mb: 0
+  first_release_year: 2002
+  file_formats:
+  - mp3
+  - flac
+  - wav
+  - opus
+  - aac
+  telemetry: none
+  romanian_language: false
+features:
+  redare_formate: free
+  lista_redare: free
+  equalizator: free
+  vizualizare: free
+  radio_internet: free
+  conversie_tag: free
+  karaoke: partial
+  disc_burn: 'no'
+  gpu: 'no'
+  extensii: free
+  subtitrari: 'no'
+  open_source: 'no'
+indicators:
+  popcon_rank:
+  stars:
+  stars_url:
+  latest_release:
+  in_ubuntu_repos: false
+sources:
+- https://www.foobar2000.org/
+- https://www.wikidata.org/wiki/Q300915
+confidence:
+  details.first_release_year: auto
+  alternatives: manual
+logo: logos/foobar2000.svg

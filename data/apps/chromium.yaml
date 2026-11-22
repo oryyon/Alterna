@@ -20,7 +20,7 @@ alternatives:
 - chrome
 - falkon
 - gnome-web
-
+- waterfox
 details:
   install_size_mb: 300
   first_release_year: 2008
@@ -30,7 +30,7 @@ details:
 
 indicators:
   popcon_rank: 33835
-  stars: 25402
+  stars: 25403
   stars_url: https://github.com/chromium/chromium
   latest_release: "2026-11"
   in_ubuntu_repos: true
@@ -38,6 +38,7 @@ indicators:
 sources:
 - https://www.chromium.org
 - https://github.com/chromium/chromium
+- https://commons.wikimedia.org/wiki/File:Chromium_Material_Icon.svg
 logo: logos/chromium.png
 confidence:
   alternatives: manual

@@ -76,3 +76,30 @@ def test_semintele_sunt_inregistrate_in_git():
             ["git", "ls-files", "--error-unmatch", str(fișier.relative_to(ROOT))],
             capture_output=True, text=True, cwd=str(ROOT))
         assert rezultat.returncode == 0, f"{fișier.name} nu e în git"
+
+
+def test_antetele_de_categorie_sunt_la_locul_lor():
+    """Un antet de categorie nu poate sta în mijlocul unei aplicații.
+
+    Parserul strict (PyYAML) acceptă fișierul, dar editorul YAML îl
+    marchează: cheile `features` ale categoriei vecine par „duplicate”.
+    Antetul trebuie să fie înaintea primei aplicații din categorie, iar
+    fiecare categorie are un singur antet.
+    """
+    probleme = []
+    for fișier in sorted((ROOT / "tools" / "seminte").glob("*.yaml")):
+        linii = fișier.read_text(encoding="utf-8").splitlines()
+        văzute: set[str] = set()
+        for i, linie in enumerate(linii):
+            if not linie.startswith("# --- "):
+                continue
+            următorul = next((l for l in linii[i + 1:] if l.strip()), "")
+            if not următorul.startswith("- id:"):
+                probleme.append(
+                    f"{fișier.name}:{i + 1}: antetul nu e înaintea unei "
+                    f"aplicații")
+            if linie in văzute:
+                probleme.append(f"{fișier.name}:{i + 1}: antet repetat")
+            văzute.add(linie)
+    assert not probleme, "\n".join(probleme)
+

@@ -18,9 +18,8 @@
 # Valorile `features` sunt `free | paid | partial | 'no' | unknown`.
 # ATENȚIE YAML: `no`/`yes` se scriu cu ghilimele ('no'), altfel devin booleeni.
 
-# --- notițe (era 15) -------------------------------------------------------
 
-# --- notițe (era 15) -------------------------------------------------
+# --- notițe (era 15) ---------------------------------------------
 - id: evernote
   name: Evernote
   developer: Evernote Inc.
@@ -214,8 +213,7 @@
     scrise_gata: 'no'
     open_source: 'no'
 
-# --- producție audio (era 15) ---------------------------------------------
-# --- producție audio (era 15) ----------------------------------------
+# --- producție audio (era 15) ------------------------------------
 - id: ableton-live
   name: Ableton Live
   developer: Ableton
@@ -384,7 +382,6 @@
     open_source: free
 
 
-# --- internet (era 17) -----------------------------------------------------
 - id: sound-forge
   name: Sound Forge
   developer: Sony
@@ -413,7 +410,7 @@
     export: free
     pluginuri: free
     open_source: 'no'
-# --- internet (era 17) -----------------------------------------------
+# --- internet (era 17) -------------------------------------------
 - id: vivaldi
   name: Vivaldi
   developer: Vivaldi Technologies
@@ -504,7 +501,6 @@
   first_release_year: 2009
   website: https://palemoon.org/
 
-# --- comunicare (era 17) ---------------------------------------------------
   wikidata_qid: Q4046338
   features:
     browsere: free
@@ -543,7 +539,7 @@
     vpn: 'no'
     motor_rendering: 'no'
     open_source: free
-# --- comunicare (era 17) ---------------------------------------------
+# --- comunicare (era 17) -----------------------------------------
 - id: delta-chat
   name: Delta Chat
   developer: Delta Chat e.V.
@@ -673,7 +669,7 @@
     selfhost: 'no'
     boturi: free
     open_source: 'no'
-# --- grafică (era 18) ------------------------------------------------
+# --- grafică (era 18) --------------------------------------------
 - id: coreldraw
   name: CorelDRAW
   developer: Corel
@@ -782,7 +778,7 @@
     export_formate: free
     batch: 'no'
     open_source: free
-# --- video (era 18) --------------------------------------------------
+# --- video (era 18) ----------------------------------------------
 - id: lightworks
   name: Lightworks
   developer: Lightworks
@@ -889,7 +885,7 @@
     gpu: 'no'
     export_formate: partial
     open_source: free
-# --- audio & playere (era 18) ----------------------------------------
+# --- audio & playere (era 18) ------------------------------------
 - id: foobar2000
   name: foobar2000
   developer: Marcin Ryl
@@ -974,7 +970,7 @@
     extensii: free
     subtitrari: 'no'
     open_source: 'no'
-# --- dezvoltare (era 20) ---------------------------------------------
+# --- dezvoltare (era 20) -----------------------------------------
 - id: notepad-plus-plus
   name: Notepad++
   developer: Don Ho

@@ -47,6 +47,13 @@
   <update_contact>alterna_AT_github.com</update_contact>
 
   <releases>
+    <release version="0.1.28" date="2026-11-22">
+      <description>
+        <p>Corectări: structura fișierului de semințe (antete de categorie la
+        locul lor) și importurile din teste, rezolvate pentru analizatorul
+        static.</p>
+      </description>
+    </release>
     <release version="0.1.27" date="2026-11-22">
       <description>
         <p>Logo-uri din surse noi, limba română confirmată din traduceri și

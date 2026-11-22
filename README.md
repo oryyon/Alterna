@@ -44,7 +44,7 @@ Aplicație **desktop nativă pentru Kubuntu 24.04** (KDE Plasma) pentru descoper
 | 242 de logo-uri reale (Simple Icons CC0 + Wikimedia Commons) + fallback pe inițiale | [data/logos/](data/logos), [tools/fetch_logos.py](tools/fetch_logos.py) |
 | GitHub Actions: PR săptămânal cu indicatori reîmprospătați | [.github/workflows/refresh.yml](.github/workflows/refresh.yml) |
 | Aplicația desktop (PySide6/Qt Widgets) — cu surse clicabile, certitudine, detectarea instalării și actualizare din rețea | [app/](app) |
-| Suită de teste automate (424 de teste: build, validări, interogări, comparație, export, GUI, surse, certitudine, verificări, detectarea instalării, actualizare, AI, dialoguri, drop-down, contrast, licențiere, resurse, packaging, integrare GitHub) | [tests/](tests) |
+| Suită de teste automate (425 de teste: build, validări, interogări, comparație, export, GUI, surse, certitudine, verificări, detectarea instalării, actualizare, AI, dialoguri, drop-down, contrast, licențiere, resurse, packaging, integrare GitHub) | [tests/](tests) |
 
 > Indicatorii (popcon, stele, versiuni, „în repo Ubuntu") sunt acum **valori reale**, reîmprospătate automat săptămânal prin PR — aprobarea rămâne la maintainer (sec. 7).
 
@@ -150,7 +150,7 @@ kimi/
 │   ├── taxonomy/        ← taxonomii de funcționalități (pilot: security)
 │   ├── apps/            ← câte un fișier YAML per aplicație (100)
 │   └── logos/           ← logo-uri reale (95 aplicații; restul primesc inițiale)
-├── tests/               ← suita pytest (424 de teste)
+├── tests/               ← suita pytest (425 de teste)
 ├── tools/
 │   ├── build_catalog.py      ← build YAML → catalog.db (generat, gitignored)
 │   ├── refresh_indicators.py ← reîmprospătare indicatori (popcon/Ubuntu/GitHub)

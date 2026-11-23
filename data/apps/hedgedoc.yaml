@@ -45,7 +45,7 @@ features:
   open_source: free
 indicators:
   popcon_rank:
-  stars: 7518
+  stars: 7521
   stars_url: https://github.com/hedgedoc/hedgedoc
   latest_release: 2026-11
   in_ubuntu_repos: false

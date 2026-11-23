@@ -29,7 +29,7 @@ details:
   telemetry: none
   romanian_language: true
 indicators:
-  popcon_rank: 13413
+  popcon_rank: 13451
   stars: 181
   stars_url: https://github.com/AbiWord/abiword
   latest_release: 2019-11

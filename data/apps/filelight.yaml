@@ -25,7 +25,7 @@ details:
   telemetry: none
   romanian_language: true
 indicators:
-  popcon_rank: 7874
+  popcon_rank: 7865
   stars: 303
   stars_url: https://github.com/KDE/filelight
   latest_release: 2026-11

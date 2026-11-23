@@ -30,8 +30,8 @@ details:
   romanian_language: true
 
 indicators:
-  popcon_rank: 2248
-  stars: 20537
+  popcon_rank: 2249
+  stars: 20560
   stars_url: https://github.com/videolan/vlc
   latest_release: "2026-09"
   in_ubuntu_repos: true

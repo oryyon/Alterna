@@ -31,8 +31,8 @@ details:
   romanian_language: true
 
 indicators:
-  popcon_rank: 13908
-  stars: 4088
+  popcon_rank: 13919
+  stars: 4093
   stars_url: https://github.com/strawberrymusicplayer/strawberry
   latest_release: "2026-10"
   in_ubuntu_repos: true

@@ -43,7 +43,7 @@ features:
   open_source: free
 indicators:
   popcon_rank:
-  stars:
+  stars: 6397
   stars_url: https://github.com/BrowserWorks/Waterfox
   latest_release: 2026-11
   in_ubuntu_repos: false

@@ -23,7 +23,7 @@ details:
   romanian_language: true
 
 indicators:
-  popcon_rank: 9138
+  popcon_rank: 9134
   stars:
   stars_url: https://invent.kde.org/multimedia/elisa
   latest_release: "2026-10"

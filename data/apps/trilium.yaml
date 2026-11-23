@@ -30,7 +30,7 @@ details:
   romanian_language: true
 indicators:
   popcon_rank:
-  stars: 39045
+  stars: 39063
   stars_url: https://github.com/TriliumNext/Trilium
   latest_release: 2026-11
   in_ubuntu_repos: false

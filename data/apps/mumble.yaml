@@ -29,8 +29,8 @@ details:
   telemetry: none
   romanian_language: true
 indicators:
-  popcon_rank: 14045
-  stars: 8430
+  popcon_rank: 14036
+  stars: 8434
   stars_url: https://github.com/mumble-voip/mumble
   latest_release: 2026-10
   in_ubuntu_repos: true

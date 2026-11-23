@@ -32,8 +32,8 @@ details:
   telemetry: none
   romanian_language: true
 indicators:
-  popcon_rank: 6503
-  stars: 1313
+  popcon_rank: 6496
+  stars: 1315
   stars_url: https://github.com/audacious-media-player/audacious
   latest_release: 2026-10
   in_ubuntu_repos: true

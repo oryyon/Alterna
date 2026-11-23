@@ -24,8 +24,8 @@ details:
   romanian_language: true
 
 indicators:
-  popcon_rank: 19972
-  stars: 4005
+  popcon_rank: 19989
+  stars: 4007
   stars_url: https://github.com/giuspen/cherrytree
   latest_release: "2026-11"
   in_ubuntu_repos: true

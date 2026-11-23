@@ -49,7 +49,7 @@ features:
   open_source: free
 indicators:
   popcon_rank:
-  stars: 120572
+  stars: 120618
   stars_url: https://github.com/godotengine/godot
   latest_release: 2026-08
   in_ubuntu_repos: false

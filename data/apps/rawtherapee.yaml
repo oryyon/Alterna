@@ -29,8 +29,8 @@ details:
   telemetry: none
   romanian_language: false
 indicators:
-  popcon_rank: 11679
-  stars: 4301
+  popcon_rank: 11708
+  stars: 4302
   stars_url: https://github.com/RawTherapee/RawTherapee
   latest_release: 2026-07
   in_ubuntu_repos: true

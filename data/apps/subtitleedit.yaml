@@ -32,7 +32,7 @@ details:
   romanian_language: true
 indicators:
   popcon_rank:
-  stars: 15091
+  stars: 15109
   stars_url: https://github.com/SubtitleEdit/subtitleedit
   latest_release: 2026-11
   in_ubuntu_repos: false

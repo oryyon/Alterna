@@ -27,7 +27,7 @@ details:
   romanian_language: true
 
 indicators:
-  popcon_rank: 15034
+  popcon_rank: 15021
   stars: 1528
   stars_url: https://github.com/vkohaupt/vokoscreenNG
   latest_release: "2026-10"

@@ -24,7 +24,7 @@ details:
 
 indicators:
   popcon_rank:
-  stars: 30275
+  stars: 30276
   stars_url: https://github.com/jitsi/jitsi-meet
   latest_release: "2026-11"
   in_ubuntu_repos: false

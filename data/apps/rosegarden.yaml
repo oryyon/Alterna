@@ -29,7 +29,7 @@ details:
   telemetry: none
   romanian_language: false
 indicators:
-  popcon_rank: 17581
+  popcon_rank: 17555
   stars:
   stars_url: https://github.com/Rosegarden/rosegarden
   latest_release:

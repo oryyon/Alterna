@@ -27,8 +27,8 @@ details:
   telemetry: none
   romanian_language: false
 indicators:
-  popcon_rank: 1298
-  stars: 41327
+  popcon_rank: 1301
+  stars: 41422
   stars_url: https://github.com/vim/vim
   latest_release: 2026-11
   in_ubuntu_repos: true

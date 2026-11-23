@@ -27,7 +27,7 @@ details:
   telemetry: none
   romanian_language: false
 indicators:
-  popcon_rank: 7911
+  popcon_rank: 7909
   stars:
   stars_url: https://git.deluge-torrent.org/deluge
   latest_release:

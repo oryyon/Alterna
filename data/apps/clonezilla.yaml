@@ -24,11 +24,11 @@ details:
   telemetry: none
   romanian_language: false
 indicators:
-  popcon_rank: 15724
+  popcon_rank:
   stars: 1037
   stars_url: https://github.com/stevenshiau/clonezilla
   latest_release: 2026-11
-  in_ubuntu_repos: true
+  in_ubuntu_repos: false
 sources:
 - https://clonezilla.org/
 - https://github.com/stevenshiau/clonezilla

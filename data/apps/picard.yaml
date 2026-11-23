@@ -30,8 +30,8 @@ details:
   telemetry: none
   romanian_language: true
 indicators:
-  popcon_rank: 11447
-  stars: 5395
+  popcon_rank: 11471
+  stars: 5398
   stars_url: https://github.com/metabrainz/picard
   latest_release: 2026-11
   in_ubuntu_repos: true

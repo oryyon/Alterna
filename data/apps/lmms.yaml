@@ -34,8 +34,8 @@ details:
   romanian_language: true
 
 indicators:
-  popcon_rank: 13347
-  stars: 10707
+  popcon_rank: 13349
+  stars: 10712
   stars_url: https://github.com/LMMS/lmms
   latest_release: "2026-09"
   in_ubuntu_repos: true

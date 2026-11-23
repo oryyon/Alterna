@@ -29,7 +29,7 @@ details:
   telemetry: none
   romanian_language: true
 indicators:
-  popcon_rank: 3485
+  popcon_rank: 3484
   stars: 1770
   stars_url: https://github.com/quodlibet/quodlibet
   latest_release: 2025-05

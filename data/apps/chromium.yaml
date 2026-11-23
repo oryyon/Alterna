@@ -29,11 +29,11 @@ details:
   romanian_language: true
 
 indicators:
-  popcon_rank: 33835
-  stars: 25403
+  popcon_rank: 33843
+  stars: 25407
   stars_url: https://github.com/chromium/chromium
   latest_release: "2026-11"
-  in_ubuntu_repos: true
+  in_ubuntu_repos: false
 
 sources:
 - https://www.chromium.org

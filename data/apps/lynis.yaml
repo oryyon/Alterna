@@ -26,7 +26,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 16739
+  stars: 16748
   stars_url: https://github.com/CISOfy/lynis
   latest_release: 2026-06
   in_ubuntu_repos: false

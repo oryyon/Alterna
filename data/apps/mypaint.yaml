@@ -30,7 +30,7 @@ details:
   telemetry: none
   romanian_language: true
 indicators:
-  popcon_rank: 16671
+  popcon_rank: 16619
   stars: 3004
   stars_url: https://github.com/mypaint/mypaint
   latest_release: 2020-05

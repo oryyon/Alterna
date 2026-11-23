@@ -28,7 +28,7 @@ details:
 
 indicators:
   popcon_rank:
-  stars: 5296
+  stars: 5297
   stars_url: https://github.com/Automattic/simplenote-electron
   latest_release: "2026-07"
   in_ubuntu_repos: false

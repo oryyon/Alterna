@@ -25,7 +25,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 19083
+  stars: 19095
   stars_url: https://github.com/fail2ban/fail2ban
   latest_release: 2026-08
   in_ubuntu_repos: false

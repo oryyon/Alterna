@@ -21,8 +21,8 @@ details:
   romanian_language: true
 
 indicators:
-  popcon_rank: 16437
-  stars: 12681
+  popcon_rank: 16440
+  stars: 12686
   stars_url: https://github.com/hluk/CopyQ
   latest_release: "2026-10"
   in_ubuntu_repos: true

@@ -27,7 +27,7 @@ details:
   telemetry: none
   romanian_language: false
 indicators:
-  popcon_rank: 23871
+  popcon_rank: 23947
   stars:
   stars_url: https://gitlab.com/freepascal.org/lazarus
   latest_release:

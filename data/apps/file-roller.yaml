@@ -29,7 +29,7 @@ details:
   telemetry: none
   romanian_language: false
 indicators:
-  popcon_rank: 1519
+  popcon_rank: 1518
   stars:
   stars_url: https://git.gnome.org/browse/file-roller/
   latest_release:

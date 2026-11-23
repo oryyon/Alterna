@@ -22,7 +22,7 @@ details:
 
 indicators:
   popcon_rank:
-  stars: 20
+  stars: 21
   stars_url: https://gitlab.torproject.org/tpo/applications/tor-browser
   latest_release: "2026-10"
   in_ubuntu_repos: false

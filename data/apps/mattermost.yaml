@@ -31,7 +31,7 @@ details:
   romanian_language: true
 indicators:
   popcon_rank:
-  stars: 39685
+  stars: 39691
   stars_url: https://github.com/mattermost/mattermost
   latest_release: 2026-11
   in_ubuntu_repos: false

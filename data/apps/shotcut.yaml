@@ -31,8 +31,8 @@ details:
   romanian_language: true
 
 indicators:
-  popcon_rank: 10748
-  stars: 15750
+  popcon_rank: 10744
+  stars: 15774
   stars_url: https://github.com/mltframework/shotcut
   latest_release: "2026-11"
   in_ubuntu_repos: true

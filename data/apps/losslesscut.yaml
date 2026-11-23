@@ -33,7 +33,7 @@ details:
   romanian_language: true
 indicators:
   popcon_rank:
-  stars: 46310
+  stars: 46350
   stars_url: https://github.com/mifi/lossless-cut
   latest_release: 2026-10
   in_ubuntu_repos: false

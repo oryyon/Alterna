@@ -32,7 +32,7 @@ details:
   telemetry: none
   romanian_language: true
 indicators:
-  popcon_rank: 11399
+  popcon_rank: 11415
   stars:
   stars_url: https://github.com/Gnucash/gnucash.git
   latest_release:

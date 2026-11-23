@@ -27,7 +27,7 @@ details:
   telemetry: none
   romanian_language: false
 indicators:
-  popcon_rank: 2807
+  popcon_rank: 2801
   stars:
   stars_url: https://cgit.kde.org/kwalletmanager.git
   latest_release:

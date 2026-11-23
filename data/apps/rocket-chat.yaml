@@ -30,7 +30,7 @@ details:
   romanian_language: true
 indicators:
   popcon_rank:
-  stars: 46512
+  stars: 46598
   stars_url: https://github.com/RocketChat/Rocket.Chat
   latest_release: 2026-11
   in_ubuntu_repos: false

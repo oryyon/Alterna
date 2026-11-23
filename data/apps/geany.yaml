@@ -28,7 +28,7 @@ details:
 
 indicators:
   popcon_rank: 7148
-  stars: 3761
+  stars: 3763
   stars_url: https://github.com/geany/geany
   latest_release: "2025-07"
   in_ubuntu_repos: true

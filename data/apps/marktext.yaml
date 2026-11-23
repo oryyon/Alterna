@@ -32,7 +32,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 64242
+  stars: 64296
   stars_url: https://github.com/marktext/marktext
   latest_release: 2026-11
   in_ubuntu_repos: false

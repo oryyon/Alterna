@@ -27,7 +27,7 @@ details:
   telemetry: none
   romanian_language: true
 indicators:
-  popcon_rank: 17292
+  popcon_rank: 17242
   stars: 125
   stars_url: https://github.com/GNOME/pitivi
   latest_release: 2023-03

@@ -32,7 +32,7 @@ details:
   romanian_language: true
 indicators:
   popcon_rank:
-  stars: 14049
+  stars: 14071
   stars_url: https://github.com/nmap/nmap
   latest_release: 2026-10
   in_ubuntu_repos: false

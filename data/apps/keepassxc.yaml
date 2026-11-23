@@ -34,8 +34,8 @@ details:
   romanian_language: true
 
 indicators:
-  popcon_rank: 5813
-  stars: 30097
+  popcon_rank: 5814
+  stars: 30112
   stars_url: https://github.com/keepassxreboot/keepassxc
   latest_release: "2026-11"
   in_ubuntu_repos: true

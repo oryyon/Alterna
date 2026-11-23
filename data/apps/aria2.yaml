@@ -40,7 +40,7 @@ features:
   open_source: free
 indicators:
   popcon_rank:
-  stars: 43591
+  stars: 43595
   stars_url: https://github.com/aria2/aria2
   latest_release: 2023-11
   in_ubuntu_repos: false

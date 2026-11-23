@@ -33,7 +33,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 16004
+  stars: 16016
   stars_url: https://github.com/zotero/zotero
   latest_release: 2026-11
   in_ubuntu_repos: false

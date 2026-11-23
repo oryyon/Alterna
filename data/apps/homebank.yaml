@@ -31,7 +31,7 @@ details:
   telemetry: none
   romanian_language: true
 indicators:
-  popcon_rank: 20842
+  popcon_rank: 20813
   stars:
   stars_url: https://code.launchpad.net/~mdoyen/homebank/5.3.x
   latest_release:

@@ -27,8 +27,8 @@ details:
   romanian_language: false
 
 indicators:
-  popcon_rank: 8871
-  stars: 2907
+  popcon_rank: 8874
+  stars: 2908
   stars_url: https://github.com/MaartenBaert/ssr
   latest_release: "2021-05"
   in_ubuntu_repos: true

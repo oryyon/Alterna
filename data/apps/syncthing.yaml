@@ -23,8 +23,8 @@ details:
   romanian_language: true
 
 indicators:
-  popcon_rank: 6277
-  stars: 90673
+  popcon_rank: 6278
+  stars: 90741
   stars_url: https://github.com/syncthing/syncthing
   latest_release: "2026-10"
   in_ubuntu_repos: true

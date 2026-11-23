@@ -30,8 +30,8 @@ details:
   telemetry: none
   romanian_language: false
 indicators:
-  popcon_rank: 6658
-  stars: 26488
+  popcon_rank: 6665
+  stars: 26498
   stars_url: https://github.com/kovidgoyal/calibre
   latest_release: 2026-11
   in_ubuntu_repos: true

@@ -42,7 +42,7 @@ features:
   open_source: free
 indicators:
   popcon_rank:
-  stars:
+  stars: 2893
   stars_url: https://github.com/mono/monodevelop
   latest_release: 2020-01
   in_ubuntu_repos: false

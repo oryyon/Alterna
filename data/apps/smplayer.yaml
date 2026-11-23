@@ -24,7 +24,7 @@ details:
   romanian_language: true
 
 indicators:
-  popcon_rank: 5635
+  popcon_rank: 5625
   stars: 1089
   stars_url: https://github.com/smplayer-dev/smplayer
   latest_release: 2026-11

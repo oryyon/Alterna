@@ -33,7 +33,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 5752
+  stars: 5761
   stars_url: https://github.com/NatronGitHub/Natron
   latest_release: 2024-09
   in_ubuntu_repos: false

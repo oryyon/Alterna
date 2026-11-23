@@ -29,8 +29,8 @@ details:
   romanian_language: true
 
 indicators:
-  popcon_rank: 7240
-  stars: 22322
+  popcon_rank: 7226
+  stars: 22357
   stars_url: https://github.com/blender/blender
   latest_release: "2026-11"
   in_ubuntu_repos: true

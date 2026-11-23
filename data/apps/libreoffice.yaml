@@ -31,8 +31,8 @@ details:
   romanian_language: true
 
 indicators:
-  popcon_rank: 4833
-  stars: 4673
+  popcon_rank: 4834
+  stars: 4682
   stars_url: https://github.com/LibreOffice/core
   latest_release: "2026-11"
   in_ubuntu_repos: true

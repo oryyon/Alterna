@@ -27,7 +27,7 @@ details:
   telemetry: none
   romanian_language: false
 indicators:
-  popcon_rank: 2525
+  popcon_rank: 2543
   stars: 34
   stars_url: https://gitlab.gnome.org/GNOME/rhythmbox
   latest_release:

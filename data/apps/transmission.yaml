@@ -28,8 +28,8 @@ details:
   telemetry: none
   romanian_language: true
 indicators:
-  popcon_rank: 8802
-  stars: 15446
+  popcon_rank: 8805
+  stars: 15459
   stars_url: https://github.com/transmission/transmission
   latest_release: 2026-10
   in_ubuntu_repos: true

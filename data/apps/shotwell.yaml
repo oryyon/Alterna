@@ -29,7 +29,7 @@ details:
   telemetry: none
   romanian_language: false
 indicators:
-  popcon_rank: 1654
+  popcon_rank: 1655
   stars:
   stars_url: https://git.gnome.org/browse/shotwell/
   latest_release:

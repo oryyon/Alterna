@@ -26,11 +26,11 @@ details:
   telemetry: none
   romanian_language: false
 indicators:
-  popcon_rank: 11550
+  popcon_rank:
   stars:
   stars_url: https://sf.net/p/codeblocks/code/
   latest_release:
-  in_ubuntu_repos: true
+  in_ubuntu_repos: false
 sources:
 - https://www.codeblocks.org/
 - https://sf.net/p/codeblocks/code/

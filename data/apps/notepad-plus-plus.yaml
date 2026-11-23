@@ -41,7 +41,7 @@ features:
   open_source: free
 indicators:
   popcon_rank:
-  stars:
+  stars: 29962
   stars_url: https://github.com/notepad-plus-plus/notepad-plus-plus
   latest_release: 2026-11
   in_ubuntu_repos: false

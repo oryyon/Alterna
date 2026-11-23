@@ -29,7 +29,7 @@ details:
   telemetry: none
   romanian_language: false
 indicators:
-  popcon_rank: 17080
+  popcon_rank: 17044
   stars:
   stars_url: https://sourceforge.net/p/tuxguitar/code/HEAD/tree/
   latest_release:

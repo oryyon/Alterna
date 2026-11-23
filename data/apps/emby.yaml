@@ -33,7 +33,7 @@ details:
   romanian_language: true
 indicators:
   popcon_rank:
-  stars: 5028
+  stars: 5029
   stars_url: https://github.com/MediaBrowser/Emby
   latest_release: 2018-08
   in_ubuntu_repos: false

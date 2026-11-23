@@ -28,7 +28,7 @@ details:
 
 indicators:
   popcon_rank: 4811
-  stars: 19138
+  stars: 19146
   stars_url: https://github.com/audacity/audacity
   latest_release: "2026-11"
   in_ubuntu_repos: true

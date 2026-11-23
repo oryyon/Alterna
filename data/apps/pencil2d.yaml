@@ -31,7 +31,7 @@ details:
   romanian_language: true
 indicators:
   popcon_rank:
-  stars: 1916
+  stars: 1922
   stars_url: https://github.com/pencil2d/pencil
   latest_release: 2026-04
   in_ubuntu_repos: false

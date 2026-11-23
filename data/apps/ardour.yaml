@@ -24,8 +24,8 @@ details:
   romanian_language: false
 
 indicators:
-  popcon_rank: 11618
-  stars: 5453
+  popcon_rank: 11614
+  stars: 5456
   stars_url: https://github.com/Ardour/ardour
   latest_release: "2026-11"
   in_ubuntu_repos: true

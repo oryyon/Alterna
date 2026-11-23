@@ -24,7 +24,7 @@ details:
   telemetry: none
   romanian_language: true
 indicators:
-  popcon_rank: 2748
+  popcon_rank: 2749
   stars: 105
   stars_url: https://gitlab.xfce.org/xfce/thunar
   latest_release:

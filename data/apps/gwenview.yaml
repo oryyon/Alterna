@@ -29,7 +29,7 @@ details:
   telemetry: none
   romanian_language: true
 indicators:
-  popcon_rank: 2932
+  popcon_rank: 2929
   stars:
   stars_url: https://cgit.kde.org/gwenview.git
   latest_release:

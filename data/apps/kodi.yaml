@@ -34,8 +34,8 @@ details:
   telemetry: none
   romanian_language: true
 indicators:
-  popcon_rank: 10416
-  stars: 21526
+  popcon_rank: 10436
+  stars: 21531
   stars_url: https://github.com/xbmc/xbmc
   latest_release: 2026-11
   in_ubuntu_repos: true

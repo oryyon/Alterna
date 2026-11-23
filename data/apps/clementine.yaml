@@ -37,7 +37,7 @@ details:
   telemetry: none
   romanian_language: true
 indicators:
-  popcon_rank: 10790
+  popcon_rank: 10786
   stars: 4281
   stars_url: https://github.com/clementine-player/Clementine
   latest_release: 2026-11

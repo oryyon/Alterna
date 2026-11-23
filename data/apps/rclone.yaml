@@ -29,8 +29,8 @@ details:
   telemetry: none
   romanian_language: false
 indicators:
-  popcon_rank: 5700
-  stars: 61154
+  popcon_rank: 5699
+  stars: 61199
   stars_url: https://github.com/rclone/rclone
   latest_release: 2026-11
   in_ubuntu_repos: true

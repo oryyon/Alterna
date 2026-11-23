@@ -29,11 +29,11 @@ details:
   telemetry: none
   romanian_language: true
 indicators:
-  popcon_rank: 10751
+  popcon_rank: 10761
   stars:
   stars_url: https://sf.net/p/bluefish/code/
   latest_release:
-  in_ubuntu_repos: true
+  in_ubuntu_repos: false
 sources:
 - https://bluefish.openoffice.nl
 - https://sf.net/p/bluefish/code/

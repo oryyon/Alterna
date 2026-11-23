@@ -29,7 +29,7 @@ details:
   romanian_language: true
 indicators:
   popcon_rank:
-  stars: 1939
+  stars: 1942
   stars_url: https://github.com/qcad/qcad
   latest_release: 2026-11
   in_ubuntu_repos: false

@@ -44,7 +44,7 @@ features:
   open_source: free
 indicators:
   popcon_rank:
-  stars:
+  stars: 12286
   stars_url: https://github.com/sonic-pi-net/sonic-pi
   latest_release: 2026-08
   in_ubuntu_repos: false

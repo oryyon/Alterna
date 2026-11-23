@@ -32,7 +32,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 3381
+  stars: 3382
   stars_url: https://github.com/Aegisub/Aegisub
   latest_release: 2025-01
   in_ubuntu_repos: false

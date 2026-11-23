@@ -29,7 +29,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 2557
+  stars: 2558
   stars_url: https://github.com/wireapp/wire
   latest_release:
   in_ubuntu_repos: false

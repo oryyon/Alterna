@@ -26,7 +26,7 @@ details:
   telemetry: none
   romanian_language: false
 indicators:
-  popcon_rank: 22342
+  popcon_rank: 22371
   stars:
   stars_url: https://github.com/netsurf/netsurf
   latest_release:

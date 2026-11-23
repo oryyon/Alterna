@@ -31,11 +31,11 @@ details:
   telemetry: none
   romanian_language: true
 indicators:
-  popcon_rank: 42459
-  stars: 2463
+  popcon_rank:
+  stars: 2466
   stars_url: https://github.com/synfig/synfig
   latest_release: 2026-03
-  in_ubuntu_repos: true
+  in_ubuntu_repos: false
 sources:
 - https://synfig.org
 - https://github.com/synfig/synfig

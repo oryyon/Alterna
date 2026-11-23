@@ -23,8 +23,8 @@ details:
   romanian_language: true
 
 indicators:
-  popcon_rank: 6763
-  stars: 41791
+  popcon_rank: 6760
+  stars: 41841
   stars_url: https://github.com/qbittorrent/qBittorrent
   latest_release: "2026-10"
   in_ubuntu_repos: true

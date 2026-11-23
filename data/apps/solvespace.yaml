@@ -32,8 +32,8 @@ details:
   telemetry: none
   romanian_language: false
 indicators:
-  popcon_rank: 16692
-  stars: 4262
+  popcon_rank: 16656
+  stars: 4267
   stars_url: https://github.com/solvespace/solvespace
   latest_release: 2026-10
   in_ubuntu_repos: true

@@ -32,7 +32,7 @@ details:
   romanian_language: true
 indicators:
   popcon_rank:
-  stars: 15420
+  stars: 15423
   stars_url: https://github.com/Chocobozzz/PeerTube
   latest_release: 2026-11
   in_ubuntu_repos: false

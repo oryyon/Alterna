@@ -28,7 +28,7 @@ details:
   telemetry: none
   romanian_language: true
 indicators:
-  popcon_rank: 2900
+  popcon_rank: 2898
   stars:
   stars_url: https://anongit.kde.org/ark.git
   latest_release:

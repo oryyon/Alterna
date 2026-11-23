@@ -28,7 +28,7 @@ details:
   romanian_language: false
 indicators:
   popcon_rank:
-  stars: 23919
+  stars: 23917
   stars_url: https://github.com/beekeeper-studio/beekeeper-studio
   latest_release: 2026-11
   in_ubuntu_repos: false

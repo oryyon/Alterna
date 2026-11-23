@@ -31,7 +31,7 @@ details:
   telemetry: none
   romanian_language: false
 indicators:
-  popcon_rank: 10708
+  popcon_rank: 10705
   stars:
   stars_url: https://github.com/qt-creator/qt-creator.git
   latest_release:

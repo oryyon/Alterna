@@ -28,8 +28,8 @@ details:
   telemetry: none
   romanian_language: false
 indicators:
-  popcon_rank: 9031
-  stars: 3711
+  popcon_rank: 9037
+  stars: 3714
   stars_url: https://github.com/texstudio-org/texstudio
   latest_release: 2026-11
   in_ubuntu_repos: true

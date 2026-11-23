@@ -27,7 +27,7 @@ details:
 
 indicators:
   popcon_rank: 8562
-  stars: 6627
+  stars: 6632
   stars_url: https://github.com/LibreCAD/LibreCAD
   latest_release: "2026-11"
   in_ubuntu_repos: true

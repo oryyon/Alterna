@@ -46,7 +46,7 @@ features:
   open_source: free
 indicators:
   popcon_rank:
-  stars:
+  stars: 26291
   stars_url: https://github.com/zulip/zulip
   latest_release: 2026-11
   in_ubuntu_repos: false

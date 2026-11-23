@@ -28,7 +28,7 @@ details:
 
 indicators:
   popcon_rank:
-  stars: 4141
+  stars: 4144
   stars_url: https://github.com/PintaProject/Pinta
   latest_release: "2026-04"
   in_ubuntu_repos: false
